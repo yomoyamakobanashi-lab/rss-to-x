@@ -4,7 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       redirect_full_url:
-        description: "STEP2 用：X で許可後にブラウザのアドレス欄に出た URL を丸ごと貼り付け（未入力なら STEP1 を表示）"
+        description: "STEP2: Xで許可後、ブラウザのアドレス欄に出たURLを丸ごと貼り付け"
+        required: false
+        default: ""
+      code_verifier:
+        description: "STEP2: STEP1で表示された code_verifier を貼り付け"
         required: false
         default: ""
 
@@ -13,51 +17,61 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: STEP1: 認可URLを作る（まずはこれをブラウザで開いて許可）
-        if: ${{ inputs.redirect_full_url == '' }}
+        if: ${{ !inputs.redirect_full_url }}
         env:
           CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
+        shell: bash
         run: |
-          if [ -z "$CLIENT_ID" ]; then
+          set -euo pipefail
+          if [ -z "${CLIENT_ID:-}" ]; then
             echo "❌ X_CLIENT_ID が未設定です。Settings → Secrets → Actions で追加してください。"
             exit 1
           fi
+
           REDIRECT_URI="https://127.0.0.1/callback"
           SCOPES="tweet.read tweet.write users.read offline.access"
-          # PKCE 生成
-          CODE_VERIFIER=$(python3 - <<'PY'
-import os,base64;print(base64.urlsafe_b64encode(os.urandom(40)).rstrip(b"=").decode())
-PY
-)
-          CODE_CHALLENGE=$(python3 - <<PY
-import hashlib,base64,os
+
+          # PKCE 生成（code_verifier と code_challenge を出力）
+          CODE_VERIFIER=$(python3 -c 'import os,base64;print(base64.urlsafe_b64encode(os.urandom(40)).rstrip(b"=").decode())')
+          CODE_CHALLENGE=$(python3 - <<'PY'
+import os,hashlib,base64
 cv=os.environ["CODE_VERIFIER"]
 print(base64.urlsafe_b64encode(hashlib.sha256(cv.encode()).digest()).rstrip(b"=").decode())
 PY
 )
-          echo "code_verifier=$CODE_VERIFIER" >> $GITHUB_ENV
-          AUTH_URL="https://twitter.com/i/oauth2/authorize?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=$(python3 - <<'PY'
-print(__import__("urllib.parse").parse.quote("tweet.read tweet.write users.read offline.access"))
-PY
-)&state=xyz&code_challenge=${CODE_CHALLENGE}&code_challenge_method=S256"
-          echo ""
-          echo "🔗 このURLをコピーしてブラウザで開き、@_macobana で許可してください："
-          echo "$AUTH_URL"
-          echo ""
-          echo "✅ 許可後に表示された https://127.0.0.1/callback?code=XXXX... の『URL全体』をコピーしてください。"
-          echo "➡️ 次に、このワークフローをもう一度実行して、入力欄 redirect_full_url に貼り付けます。"
-          exit 0
+          echo "code_verifier=${CODE_VERIFIER}" >> $GITHUB_ENV
 
-      - name: STEP2: code を取り出して token に交換
-        if: ${{ inputs.redirect_full_url != '' }}
+          # URL エンコード済みスコープ
+          SCOPE_ENC=$(python3 -c 'import urllib.parse; print(urllib.parse.quote("tweet.read tweet.write users.read offline.access"))')
+
+          AUTH_URL="https://twitter.com/i/oauth2/authorize?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE_ENC}&state=xyz&code_challenge=${CODE_CHALLENGE}&code_challenge_method=S256"
+
+          echo ""
+          echo "🔗 下のURLをブラウザで開き、@_macobana で許可してください："
+          echo "${AUTH_URL}"
+          echo ""
+          echo "📌 必ずメモ： code_verifier（STEP2で使います）"
+          echo "${CODE_VERIFIER}"
+          echo ""
+          echo "✅ 許可後、ブラウザのアドレス欄に表示された https://127.0.0.1/callback?... の『URL全体』をコピー。"
+          echo "➡️ 次にこのワークフローをもう一度実行し、"
+          echo "   inputs の redirect_full_url と code_verifier を入力して Run してください。"
+
+      - name: STEP2: code を token に交換
+        if: ${{ inputs.redirect_full_url && inputs.code_verifier }}
         env:
           CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.X_CLIENT_SECRET }}
           REDIRECT_FULL: ${{ inputs.redirect_full_url }}
+          CODE_VERIFIER: ${{ inputs.code_verifier }}
+        shell: bash
         run: |
-          if [ -z "$CLIENT_ID" ] || [ -z "$CLIENT_SECRET" ]; then
+          set -euo pipefail
+          if [ -z "${CLIENT_ID:-}" ] || [ -z "${CLIENT_SECRET:-}" ]; then
             echo "❌ X_CLIENT_ID / X_CLIENT_SECRET が未設定です。Secrets を確認してください。"
             exit 1
           fi
+
           # URL から code を取り出す
           CODE=$(python3 - <<'PY'
 import os,urllib.parse
@@ -70,16 +84,20 @@ PY
             echo "❌ code が読み取れませんでした。入力URLを見直してください。"
             exit 1
           fi
+
           REDIRECT_URI="https://127.0.0.1/callback"
-          # token 交換
+
+          # token 交換（PKCE: code_verifier を使用）
           RESP=$(curl -sS -X POST "https://api.x.com/2/oauth2/token" \
             -u "${CLIENT_ID}:${CLIENT_SECRET}" \
             -d "grant_type=authorization_code" \
             -d "client_id=${CLIENT_ID}" \
             -d "redirect_uri=${REDIRECT_URI}" \
-            -d "code_verifier=dummy-not-needed-here" \
+            -d "code_verifier=${CODE_VERIFIER}" \
             -d "code=${CODE}")
+
           echo "[レスポンス] $RESP"
+
           ACCESS=$(python3 - <<'PY'
 import json,os; j=json.loads(os.environ["RESP"]); print(j.get("access_token",""))
 PY
@@ -88,6 +106,7 @@ PY
             echo "❌ access_token が取得できませんでした。User authentication settings と Callback URL を再確認してください。"
             exit 1
           fi
+
           echo ""
           echo "=================  取得した access_token  ================="
           echo "$ACCESS"
@@ -96,3 +115,7 @@ PY
           echo "👉 GitHub → Settings → Secrets → Actions → New repository secret"
           echo "   Name: X_BEARER_TOKEN"
           echo "   Value: （上の access_token を丸ごと貼り付け）"
+
+      - name: ヒント
+        if: ${{ !inputs.redirect_full_url }}
+        run: echo "次は Run workflow を再実行して redirect_full_url と code_verifier を入力してね！"
