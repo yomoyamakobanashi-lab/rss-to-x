@@ -9,7 +9,8 @@ def load_state():
 
 def save_state(s): json.dump(s, open(STATE_FILE,"w"))
 
-def short(text, n=260):  # Xの文字数ガード
+def short_safe(text, n=120):
+    # 140文字制限の噂に安全側で合わせ、さらに余裕を持って120に丸める
     return (text[:n-1] + "…") if len(text) > n else text
 
 def post_to_x(text):
@@ -21,10 +22,11 @@ def post_to_x(text):
         raise RuntimeError("Xのキーが未設定です（Secretsを確認）")
 
     auth = OAuth1(api_key, api_secret, access_token, access_secret)
+    # v1.1 のシンプルな投稿エンドポイントを使う
     r = requests.post(
-        "https://api.x.com/2/tweets",
+        "https://api.twitter.com/1.1/statuses/update.json",
         auth=auth,
-        json={"text": text},
+        data={"status": text},
         timeout=30
     )
     if r.status_code >= 300:
@@ -41,7 +43,7 @@ def main():
         program = feed.get("program_name","")
         parsed = feedparser.parse(url)
 
-        for entry in reversed(parsed.entries[:5]):  # 直近5件チェック
+        for entry in reversed(parsed.entries[:5]):
             uid_base = entry.get("id") or entry.get("guid") or entry.get("link") or entry.get("title")
             uid = hashlib.sha256((url + "|" + str(uid_base)).encode("utf-8")).hexdigest()
             if uid in state:
@@ -50,7 +52,7 @@ def main():
             title = (entry.get("title") or "").strip()
             link  = (entry.get("link") or "").strip()
             text  = tmpl.format(title=title, link=link, program=program)
-            text  = short(text, 260)
+            text  = short_safe(text)  # ← まずは確実に短く
 
             post_to_x(text)
             state[uid] = int(time.time())
@@ -61,3 +63,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
