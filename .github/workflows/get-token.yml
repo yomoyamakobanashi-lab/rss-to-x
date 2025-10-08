@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       redirect_full_url:
-        description: "STEP2: paste the full redirect URL after approving on X"
+        description: "STEP2: paste the full https://127.0.0.1/callback?... URL after approving on X"
         required: false
         default: ""
       code_verifier:
@@ -20,6 +20,7 @@ jobs:
         if: ${{ github.event.inputs.redirect_full_url == '' }}
         env:
           CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
+        shell: bash
         run: |
           set -e
           if [ -z "$CLIENT_ID" ]; then
@@ -29,11 +30,13 @@ jobs:
 
           REDIRECT_URI="https://127.0.0.1/callback"
 
-          # PKCE (all one-liners; no heredoc)
+          # PKCE（ワンライナーのみ）
           CODE_VERIFIER=$(python3 -c "import os,base64;print(base64.urlsafe_b64encode(os.urandom(40)).rstrip(b'=').decode())")
           export CODE_VERIFIER
           CODE_CHALLENGE=$(python3 -c "import os,hashlib,base64;cv=os.environ['CODE_VERIFIER'];print(base64.urlsafe_b64encode(hashlib.sha256(cv.encode()).digest()).rstrip(b'=').decode())")
-          SCOPE_ENC=$(python3 -c "import urllib.parse;print(urllib.parse.quote('tweet.read tweet.write users.read offline.access'))")
+
+          # スコープはURLエンコード済み文字列を直書き
+          SCOPE_ENC="tweet.read%20tweet.write%20users.read%20offline.access"
 
           AUTH_URL="https://twitter.com/i/oauth2/authorize?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE_ENC}&state=xyz&code_challenge=${CODE_CHALLENGE}&code_challenge_method=S256"
 
@@ -55,6 +58,7 @@ jobs:
           CLIENT_SECRET: ${{ secrets.X_CLIENT_SECRET }}
           REDIRECT_FULL: ${{ github.event.inputs.redirect_full_url }}
           CODE_VERIFIER_IN: ${{ github.event.inputs.code_verifier }}
+        shell: bash
         run: |
           set -e
           if [ -z "$CLIENT_ID" ] || [ -z "$CLIENT_SECRET" ]; then
@@ -62,10 +66,10 @@ jobs:
             exit 1
           fi
 
-          # parse ?code=... from the pasted URL (no heredoc)
-          CODE=$(python3 -c "import os,urllib.parse; u=os.environ['REDIRECT_FULL']; qs=urllib.parse.urlparse(u).query; print(urllib.parse.parse_qs(qs).get('code',[''])[0])")
+          # URL から code パラメータを抽出（sedのみ・heredocなし）
+          CODE=$(printf "%s\n" "$REDIRECT_FULL" | sed -n 's/.*[?&]code=\([^&]*\).*/\1/p')
           if [ -z "$CODE" ]; then
-            echo "Could not parse 'code' from the redirect URL. Paste the full URL."
+            echo "Could not parse 'code' from the redirect URL. Paste the FULL URL."
             exit 1
           fi
 
@@ -81,7 +85,7 @@ jobs:
 
           echo "[response] $RESP"
 
-          ACCESS=$(python3 -c "import os,json; j=json.loads(os.environ['RESP']); print(j.get('access_token',''))")
+          ACCESS=$(python3 -c "import os,json; j=json.loads(open(0).read()); print(j.get('access_token',''))" <<<"$RESP")
           if [ -z "$ACCESS" ]; then
             echo "No access_token in response. Check User authentication settings and Callback URL."
             exit 1
