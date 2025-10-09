@@ -9,7 +9,7 @@ MAX_TWEET_LEN = 240
 TITLE_MAXLEN   = 90
 CHECK_ITEMS    = 8
 FRESH_WAIT_MIN = 60       # 公開直後は反映待ちでスキップ
-ALLOW_MP3_FALLBACK = False  # ← mp3直リンクは使わない（Trueにすると最後にmp3を使う）
+ALLOW_MP3_FALLBACK = False  # ← mp3直リンクは使わない（Trueなら最後にmp3を使う）
 
 RE_SPOTIFY_URL = re.compile(r"https?://open\.spotify\.com/episode/([A-Za-z0-9]+)")
 RE_SPOTIFY_URI = re.compile(r"spotify:episode:([A-Za-z0-9]+)")
@@ -163,12 +163,6 @@ def find_spotify_episode_url(entry) -> str | None:
     if m2: return f"https://open.spotify.com/episode/{m2.group(1)}"
     return None
 
-def pick_mp3(entry) -> str | None:
-    for enc in entry.get("enclosures", []):
-        href = (enc.get("href") or "").strip()
-        if href: return href
-    return None
-
 def normalize_link(link: str) -> str:
     try:
         link = (link or "").strip()
@@ -191,47 +185,76 @@ def pick_best_link_for_podcast(entry, feed) -> str | None:
     if sp:
         return normalize_link(sp)
 
-    # 3) mp3（原則使わない）
+    # 3) mp3 は使わない（必要なら ALLOW_MP3_FALLBACK=True）
     if ALLOW_MP3_FALLBACK:
-        mp3 = pick_mp3(entry)
-        if mp3:
-            return normalize_link(mp3)
+        for enc in entry.get("enclosures", []):
+            href = (enc.get("href") or "").strip()
+            if href:
+                return normalize_link(href)
 
-    # 見つからないなら今回は投稿しない（次回以降で再挑戦）
+    # 見つからないなら今回は投稿しない（次回以降に再挑戦）
     return None
 
-# ---------- 日本語キー対応テンプレ & 文字数制御（URLは切らない） ----------
+# ---------- テンプレ（日本語キー対応） ----------
 def render_body_without_link(template: str, title: str, program: str) -> str:
     body = template
     for k in ("{title}","{タイトル}"):
         body = body.replace(k, title)
     for k in ("{program}","{番組名}"):
         body = body.replace(k, program)
+    # リンク系プレースホルダは空にする（最後にURLを付ける）
     for k in ["{link}","{URL}","{Url}","{url}","{エピソードURL}"]:
         body = body.replace(k, "").rstrip()
     return body.replace("\r","").rstrip()
 
-def compose_text(template: str, title: str, program: str, link: str, limit: int = MAX_TWEET_LEN) -> str:
+def extract_prefix(template: str, feed_type: str) -> str:
+    """テンプレ先頭の“固定フレーズ”を抽出（{title}/{program}/{link} 等の前まで）"""
+    keys = ["{title}","{タイトル}","{program}","{番組名}","{link}","{URL}","{Url}","{url}"]
+    keys += ["{エピソードURL}"] if feed_type=="podcast" else ["{記事URL}"]
+    idxs = [template.find(k) for k in keys if k in template]
+    cut = min([i for i in idxs if i >= 0], default=len(template))
+    return template[:cut].strip()
+
+# ---------- 文字数制御（URLは絶対に切らない／定型文は必ず残す） ----------
+def compose_text(template: str, title: str, program: str, link: str, feed_type: str, limit: int = MAX_TWEET_LEN) -> str:
     link = normalize_link(link)
     url_part = ("\n"+link) if link else ""
+    prefix = extract_prefix(template, feed_type)  # ← 最低限必ず残す
+
+    # 1) まず本文（リンクなし）を作る
     body = render_body_without_link(template, title, program)
     candidate = (body + url_part).strip()
     if len(candidate) <= limit:
         return candidate
-    for tag in [" #ReelPal"," #リルパル"," #Podcast"]:
+
+    # 2) タグを間引く
+    for tag in [" #ReelPal"," #リルパル"," #Podcast"," #note"]:
         if len(candidate) <= limit: break
         body = body.replace(tag, "")
         candidate = (body + url_part).strip()
     if len(candidate) <= limit:
         return candidate
+
+    # 3) タイトルを段階的に短縮
     for L in [90,70,50,30,15]:
         short_title = (title[:L-1]+"…") if len(title)>L else title
         body_short = render_body_without_link(template, short_title, program)
         candidate = (body_short + url_part).strip()
         if len(candidate) <= limit:
             return candidate
-    minimal = (program + url_part).strip() if link else program
-    return minimal if len(minimal) <= limit else link
+
+    # 4) 最低限：固定フレーズ＋番組名＋URL
+    minimal = ((prefix + " " + program).strip() + url_part) if link else (prefix + " " + program).strip()
+    if len(minimal) <= limit and minimal.strip():
+        return minimal
+
+    # 5) それでも入らなければ：固定フレーズ＋URL
+    prefix_only = (prefix + url_part).strip() if link else prefix
+    if len(prefix_only) <= limit and prefix_only.strip():
+        return prefix_only
+
+    # 6) 最後の砦：URL単体
+    return link
 
 # ---------- メイン ----------
 def main():
@@ -259,11 +282,10 @@ def main():
             title = shorten_title(entry.get("title") or "", maxlen=TITLE_MAXLEN)
             link  = pick_best_link_for_podcast(entry, feed)
             if not link:
-                # Apple/Spotify がまだ出ていない回は保留（次回以降に再挑戦）
                 print(f"[INFO] waiting for platform URL: {title}")
                 continue
 
-            text = compose_text(tmpl, title, program, link, limit=MAX_TWEET_LEN)
+            text = compose_text(tmpl, title, program, link, feed_type="podcast", limit=MAX_TWEET_LEN)
             ts   = entry_timestamp(entry)
             candidates.append({"ts": ts, "uid": uid, "text": text})
 
