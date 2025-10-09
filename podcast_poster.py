@@ -1,14 +1,15 @@
-import os, json, time, hashlib, re, requests, feedparser
+import os, json, time, hashlib, re, requests, feedparser, difflib
 from datetime import datetime, timezone
 from requests_oauthlib import OAuth1
 
 STATE_FILE = "state_podcast.json"
 
 # ===== 運用パラメータ =====
-MAX_TWEET_LEN = 240      # URLは切らない。本文は余裕を持たせる
+MAX_TWEET_LEN = 240
 TITLE_MAXLEN   = 90
 CHECK_ITEMS    = 8
-FRESH_WAIT_MIN = 60      # 公開直後は反映待ちでスキップ
+FRESH_WAIT_MIN = 60       # 公開直後は反映待ちでスキップ
+ALLOW_MP3_FALLBACK = False  # ← mp3直リンクは使わない（Trueにすると最後にmp3を使う）
 
 RE_SPOTIFY_URL = re.compile(r"https?://open\.spotify\.com/episode/([A-Za-z0-9]+)")
 RE_SPOTIFY_URI = re.compile(r"spotify:episode:([A-Za-z0-9]+)")
@@ -65,7 +66,76 @@ def post_to_x(text: str):
     except Exception as e:
         return 599, f"exception: {e}"
 
-# ---------- リンク検出・正規化 ----------
+# ---------- タイトル正規化（Apple照合用） ----------
+_PUNC = str.maketrans({c:"" for c in " \t\r\n\"'()[]{}.,!?！？。、・:：;；‐-–—―ー〜~…「」『』“”‘’／/\\|"})
+def norm_title(s: str) -> str:
+    if not s: return ""
+    s = s.lower().translate(_PUNC)
+    return s
+
+def title_sim(a: str, b: str) -> float:
+    return difflib.SequenceMatcher(a=norm_title(a), b=norm_title(b)).ratio()
+
+# ---------- Apple Podcasts 解決（collectionId 利用） ----------
+def find_apple_episode_url(entry, collection_id: str | None, country="JP") -> str | None:
+    if not collection_id:
+        return None
+    try:
+        url = f"https://itunes.apple.com/lookup?id={collection_id}&entity=podcastEpisode&limit=200&country={country}"
+        resp = requests.get(url, timeout=20)
+        if resp.status_code >= 300:
+            return None
+        data = resp.json()
+        results = [x for x in data.get("results", []) if x.get("wrapperType")=="podcastEpisode"]
+        if not results: return None
+
+        rss_title = (entry.get("title") or "").strip()
+        rss_guid  = str(entry.get("id") or entry.get("guid") or "").strip()
+        rss_ts    = entry_timestamp(entry)
+
+        # 1) episodeGuid 完全一致
+        if rss_guid:
+            for it in results:
+                if str(it.get("episodeGuid","")).strip() == rss_guid:
+                    return it.get("trackViewUrl")
+
+        # 2) タイトル完全一致（正規化後）
+        for it in results:
+            if norm_title(it.get("trackName","")) == norm_title(rss_title):
+                return it.get("trackViewUrl")
+
+        # 3) 類似度が高い（>=0.87）もの
+        best = None; best_sim = 0.0
+        for it in results:
+            sim = title_sim(it.get("trackName",""), rss_title)
+            if sim > best_sim:
+                best_sim, best = sim, it
+        if best and best_sim >= 0.87:
+            return best.get("trackViewUrl")
+
+        # 4) 公開日が近い（±3日）＋ 類似度中程度（>=0.65）を優先
+        if rss_ts:
+            near = []
+            for it in results:
+                try:
+                    adt = datetime.fromisoformat(it.get("releaseDate","").replace("Z","+00:00"))
+                    ats = int(adt.replace(tzinfo=timezone.utc).timestamp())
+                    days = abs(ats - rss_ts)/86400.0
+                except Exception:
+                    continue
+                if days <= 3:
+                    sim = title_sim(it.get("trackName",""), rss_title)
+                    near.append((sim, -abs(ats-rss_ts), it))
+            if near:
+                near.sort(reverse=True)
+                if near[0][0] >= 0.65:
+                    return near[0][2].get("trackViewUrl")
+
+        return None
+    except Exception:
+        return None
+
+# ---------- Spotify 解決 ----------
 def collect_text_blobs(entry) -> str:
     chunks = []
     for k in ("id","guid","link","title","summary"):
@@ -110,20 +180,27 @@ def normalize_link(link: str) -> str:
         return link
 
 def pick_best_link_for_podcast(entry, feed) -> str | None:
-    # Spotify優先 → mp3 → 最後に entry.link の順。管理系URLは極力避ける
-    sp = find_spotify_episode_url(entry)
-    if sp: return normalize_link(sp)
-    mp3 = pick_mp3(entry)
-    if mp3: return normalize_link(mp3)
-    link = (entry.get("link") or "").strip()
-    if any(s in link for s in ["/play/","creators.spotify.com","podcasters.spotify.com"]):
-        for ln in entry.get("links", []):
-            href = (ln.get("href") or "").strip()
-            if href and not any(s in href for s in ["/play/","creators.spotify.com","podcasters.spotify.com"]):
-                return normalize_link(href)
-    return normalize_link(link) if link else None
+    # 1) Apple（collectionId があれば最優先）
+    apple_id = feed.get("apple_collection_id")
+    ap = find_apple_episode_url(entry, apple_id)
+    if ap:
+        return normalize_link(ap)
 
-# ---------- テンプレ（日本語キー対応）＆文字数制御 ----------
+    # 2) Spotify
+    sp = find_spotify_episode_url(entry)
+    if sp:
+        return normalize_link(sp)
+
+    # 3) mp3（原則使わない）
+    if ALLOW_MP3_FALLBACK:
+        mp3 = pick_mp3(entry)
+        if mp3:
+            return normalize_link(mp3)
+
+    # 見つからないなら今回は投稿しない（次回以降で再挑戦）
+    return None
+
+# ---------- 日本語キー対応テンプレ & 文字数制御（URLは切らない） ----------
 def render_body_without_link(template: str, title: str, program: str) -> str:
     body = template
     for k in ("{title}","{タイトル}"):
@@ -161,7 +238,6 @@ def main():
     cfg   = json.load(open("feeds.json"))
     state = load_state()
 
-    # 全 podcast フィードから候補を集め、最新1件だけ投稿
     candidates = []  # {ts, uid, text}
 
     for feed in cfg.get("feeds", []):
@@ -183,7 +259,9 @@ def main():
             title = shorten_title(entry.get("title") or "", maxlen=TITLE_MAXLEN)
             link  = pick_best_link_for_podcast(entry, feed)
             if not link:
-                continue  # 再生URLが未確定なら保留
+                # Apple/Spotify がまだ出ていない回は保留（次回以降に再挑戦）
+                print(f"[INFO] waiting for platform URL: {title}")
+                continue
 
             text = compose_text(tmpl, title, program, link, limit=MAX_TWEET_LEN)
             ts   = entry_timestamp(entry)
