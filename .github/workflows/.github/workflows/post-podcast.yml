@@ -2,12 +2,14 @@ name: Post Podcast to X
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    # 3日に1回 01:00 UTC = 10:00 JST（※月初から 1,4,7,10... 日で実行）
+    - cron: "0 1 */3 * *"
   workflow_dispatch:
 
 jobs:
   post:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
