@@ -1,0 +1,61 @@
+name: Post Podcast to X
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install deps
+        run: pip install requests feedparser requests_oauthlib
+
+      - name: Run podcast poster
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+        run: |
+          set +e
+          python podcast_poster.py
+          EXIT=$?
+          if [ $EXIT -ne 0 ]; then
+            echo "::warning::podcast poster exited with $EXIT"
+          fi
+
+      - name: Save state (rebase-safe)
+        if: always()
+        run: |
+          set -e
+          if [ -f state_podcast.json ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            for i in 1 2 3; do
+              git fetch origin main
+              git checkout main
+              git pull --rebase origin main || true
+              git add state_podcast.json
+              git commit -m "update podcast state [skip ci]" || true
+              if git push origin HEAD:main; then
+                echo "✅ pushed on attempt $i"; break
+              else
+                echo "⚠️ push failed (attempt $i). Retrying..."; sleep 2
+              fi
+            done
+          else
+            echo "no podcast state to save"
+          fi
