@@ -14,17 +14,16 @@ STATE_FILE = "state.json"
 MAX_TWEET_LEN = 240
 TITLE_MAXLEN   = 90
 CHECK_ITEMS    = 8
-FRESH_WAIT_MIN = 60  # 直後ポストは各プラットフォーム反映待ち
+FRESH_WAIT_MIN = 60       # 直後は各プラットフォームの反映待ち
+MAX_RETRY_DAYS = 7        # 1週間は Spotify URL 出現を粘って待つ（過ぎたら mp3 で妥協するなら調整可）
 
-# 正規表現（SpotifyエピソードURLとURI）
 RE_SPOTIFY_URL = re.compile(r"https?://open\.spotify\.com/episode/([A-Za-z0-9]+)")
 RE_SPOTIFY_URI = re.compile(r"spotify:episode:([A-Za-z0-9]+)")
 
 def load_state():
     return json.load(open(STATE_FILE)) if os.path.exists(STATE_FILE) else {}
 
-def save_state(s):
-    json.dump(s, open(STATE_FILE, "w"))
+def save_state(s): json.dump(s, open(STATE_FILE, "w"))
 
 def short_safe(text: str, n: int = MAX_TWEET_LEN) -> str:
     return (text[:n-1] + "…") if len(text) > n else text
@@ -70,79 +69,45 @@ def minutes_since(entry) -> float:
     dt = datetime.fromtimestamp(time.mktime(t), tz=timezone.utc)
     return (datetime.now(timezone.utc) - dt).total_seconds() / 60.0
 
-def _text_fields(entry):
-    """Spotify URL/URI を拾うため、考えられる全テキストを列挙"""
-    fields = []
+def days_since(entry) -> float:
+    return minutes_since(entry) / 1440.0
+
+def collect_text_blobs(entry) -> str:
+    """Spotify URL/URI を拾うため、考えられる全テキストを結合"""
+    chunks = []
     for k in ("id", "guid", "link", "title", "summary"):
         v = entry.get(k)
-        if isinstance(v, str):
-            fields.append(v)
-    # summary_detail
+        if isinstance(v, str): chunks.append(v)
     sd = entry.get("summary_detail") or {}
     if isinstance(sd, dict):
         v = sd.get("value")
-        if isinstance(v, str):
-            fields.append(v)
-    # content[]
+        if isinstance(v, str): chunks.append(v)
     for c in entry.get("content", []):
         if isinstance(c, dict):
             v = c.get("value")
-            if isinstance(v, str):
-                fields.append(v)
-    # links[]
+            if isinstance(v, str): chunks.append(v)
     for ln in entry.get("links", []):
         if isinstance(ln, dict):
             href = ln.get("href")
-            if isinstance(href, str):
-                fields.append(href)
-    return "\n".join(fields)
+            if isinstance(href, str): chunks.append(href)
+    return "\n".join(chunks)
 
 def find_spotify_episode_url(entry) -> str | None:
     """
-    1) すべてのテキストから open.spotify.com/episode/<ID> を直接サーチ
-    2) それでも無ければ spotify:episode:<ID> から再生URLを組み立て
-    無ければ None
+    1) open.spotify.com/episode/<ID> を全フィールドから直接検出
+    2) spotify:episode:<ID> があれば open.spotify.com に組み立て
     """
-    blob = _text_fields(entry)
-
+    blob = collect_text_blobs(entry)
     m = RE_SPOTIFY_URL.search(blob)
     if m:
-        # 既に完全な再生URLがどこかに埋まっている
         return f"https://open.spotify.com/episode/{m.group(1)}"
-
     m2 = RE_SPOTIFY_URI.search(blob)
     if m2:
         return f"https://open.spotify.com/episode/{m2.group(1)}"
-
     return None
 
-def pick_best_link(entry) -> str:
-    """
-    優先度：
-      1) どこかに埋まっている SpotifyエピソードURL（強化版検出）
-      2) enclosure（mp3 直リンク）
-      3) entry.link（ただし /play/ や creators/podcasters は避けたい）
-    """
-    # 1) Spotify再生URLを総当たりで検出
-    sp = find_spotify_episode_url(entry)
-    if sp:
-        return sp
-
-    # 2) mp3
-    for enc in entry.get("enclosures", []):
-        href = (enc.get("href") or "").strip()
-        if href:
-            return href
-
-    # 3) fallback（アンカーの /play/ や creators/podcasters は避ける）
-    link = (entry.get("link") or "").strip()
-    if any(s in link for s in ["/play/", "creators.spotify.com", "podcasters.spotify.com"]):
-        # links の他候補を探してみる
-        for ln in entry.get("links", []):
-            href = (ln.get("href") or "").strip()
-            if href and not any(s in href for s in ["/play/", "creators.spotify.com", "podcasters.spotify.com"]):
-                return href
-    return link
+def pick_note_link(entry) -> str:
+    return (entry.get("link") or "").strip()
 
 def main():
     cfg = json.load(open("feeds.json"))
@@ -150,11 +115,11 @@ def main():
     posted = False
 
     for feed in cfg.get("feeds", []):
-        if posted:
-            break
+        if posted: break
 
         url = feed["url"]
         tmpl = feed["template"]
+        ftype = feed.get("type", "")
         program = feed.get("program_name", "")
 
         parsed = feedparser.parse(url)
@@ -165,25 +130,39 @@ def main():
             if uid in state:
                 continue
 
-            # 直後は各ディレクトリ取り込み待ち
-            if minutes_since(entry) < FRESH_WAIT_MIN:
-                print(f"[INFO] too fresh → skip for now: {(entry.get('title') or '').strip()}")
+            age_min = minutes_since(entry)
+            if age_min < FRESH_WAIT_MIN:
+                print(f"[INFO] too fresh ({age_min:.0f}m) → skip for now: {(entry.get('title') or '').strip()}")
                 continue
 
             title = shorten_title(entry.get("title") or "", maxlen=TITLE_MAXLEN)
-            best_link = pick_best_link(entry)
-            text = tmpl.format(title=title, link=best_link, program=program)
+
+            if ftype == "podcast":
+                # ✅ Spotify の再生URLが見つかった時だけ投稿（安全策）
+                sp = find_spotify_episode_url(entry)
+                if not sp:
+                    # 一定日数は再挑戦し続ける（stateに記録しない）
+                    d = days_since(entry)
+                    print(f"[INFO] Spotify URL not found yet (age {d:.1f}d). Will retry later: {title}")
+                    # もし「何日以上経ったら mp3 で妥協」したければ、ここで enclosure を拾って投稿する分岐を追加可
+                    continue
+                link = sp
+            else:
+                # note などはそのまま
+                link = pick_note_link(entry)
+
+            text = tmpl.format(title=title, link=link, program=program)
             text = short_safe(text, MAX_TWEET_LEN)
 
             status, body = post_to_x(text)
             if status < 300:
-                state[uid] = int(time.time())
-                save_state(state)
-                print(f"[OK] posted: {title} ({status}) -> {best_link}")
+                state[uid] = int(time.time()); save_state(state)
+                print(f"[OK] posted: {title} ({status}) -> {link}")
                 posted = True
                 break
             else:
                 print(f"[WARN] post failed ({status}): {body}")
+                # 失敗は state に記録しない＝次回も再挑戦できる
 
     if not posted:
         print("[INFO] no new items posted this run")
