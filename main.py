@@ -6,7 +6,7 @@ STATE_FILE = "state.json"
 
 # ===== 運用パラメータ =====
 MAX_TWEET_LEN = 240      # URLを切らないため本文に余裕を持たせる
-TITLE_MAXLEN   = 90       # タイトルの事前短縮目安（compose_text内でも段階短縮あり）
+TITLE_MAXLEN   = 90       # 事前のタイトル短縮目安
 CHECK_ITEMS    = 8        # 最新から最大ここまで試す
 FRESH_WAIT_MIN = 60       # 直後ポストは各プラットフォーム反映待ち
 
@@ -100,49 +100,6 @@ def find_spotify_episode_url(entry) -> str | None:
         return f"https://open.spotify.com/episode/{m2.group(1)}"
     return None
 
-def find_apple_episode_url(entry, collection_id: str | None, country="JP") -> str | None:
-    """
-    Appleの Lookup API で番組ID(collectionId)からエピソード一覧を取り、
-    RSS の id/guid や title と突き合わせて trackViewUrl を返す。
-    """
-    if not collection_id:
-        return None
-    try:
-        url = f"https://itunes.apple.com/lookup?id={collection_id}&entity=podcastEpisode&limit=200&country={country}"
-        resp = requests.get(url, timeout=20)
-        if resp.status_code >= 300:
-            return None
-        data = resp.json()
-        results = data.get("results", [])
-        if not results:
-            return None
-
-        rss_title = (entry.get("title") or "").strip().lower()
-        rss_guid  = str(entry.get("id") or entry.get("guid") or "").strip()
-
-        # 1) episodeGuid 完全一致
-        for it in results:
-            if it.get("wrapperType") == "podcastEpisode":
-                if rss_guid and str(it.get("episodeGuid","")).strip() == rss_guid:
-                    return it.get("trackViewUrl")
-
-        # 2) タイトル完全一致（大小無視）
-        for it in results:
-            if it.get("wrapperType") == "podcastEpisode":
-                name = (it.get("trackName") or "").strip().lower()
-                if name and rss_title and name == rss_title:
-                    return it.get("trackViewUrl")
-
-        # 3) タイトル部分一致（保険）
-        for it in results:
-            if it.get("wrapperType") == "podcastEpisode":
-                name = (it.get("trackName") or "").strip().lower()
-                if name and rss_title and (rss_title in name or name in rss_title):
-                    return it.get("trackViewUrl")
-        return None
-    except Exception:
-        return None
-
 def pick_mp3(entry) -> str | None:
     for enc in entry.get("enclosures", []):
         href = (enc.get("href") or "").strip()
@@ -166,76 +123,98 @@ def normalize_link(link: str) -> str:
 def pick_best_link(entry, feed) -> str | None:
     """
     優先度：
-      1) Apple（feeds.json に apple_collection_id がある場合）
-      2) Spotify（全フィールド総当たり）
-      3) enclosure（mp3）
-      4) fallback: entry.link（/play/・creators/podcasters は避けたい）
+      1) Spotify（全フィールド総当たりで再生URL検出）
+      2) enclosure（mp3）
+      3) fallback: entry.link（/play/・creators/podcasters は最後の手段）
+    ※ Apple優先にしたい場合はここに find_apple_episode_url を組み込んでください
     """
-    # 1) Apple
-    apple_id = feed.get("apple_collection_id")
-    if apple_id:
-        ap = find_apple_episode_url(entry, apple_id)
-        if ap:
-            return normalize_link(ap)
-
-    # 2) Spotify
     sp = find_spotify_episode_url(entry)
     if sp:
         return normalize_link(sp)
 
-    # 3) mp3
     mp3 = pick_mp3(entry)
     if mp3:
         return normalize_link(mp3)
 
-    # 4) fallback（管理系URLは避けたいが、最後の手段）
     link = (entry.get("link") or "").strip()
     if any(s in link for s in ["/play/", "creators.spotify.com", "podcasters.spotify.com"]):
-        # links の他候補を探す
         for ln in entry.get("links", []):
             href = (ln.get("href") or "").strip()
             if href and not any(s in href for s in ["/play/", "creators.spotify.com", "podcasters.spotify.com"]):
                 return normalize_link(href)
     return normalize_link(link) if link else None
 
+# ------------- テンプレ置換（日本語キー対応） -------------
+def render_body_without_link(template: str, title: str, program: str, feed_type: str) -> str:
+    """
+    {title}/{program}/{link} だけでなく、
+    {タイトル}/{番組名}/{エピソードURL}/{記事URL} もサポート。
+    ここではリンク系プレースホルダは空にし、本文だけ作る。
+    """
+    body = template
+
+    # タイトル置換（英/日）
+    for k in ("{title}", "{タイトル}"):
+        body = body.replace(k, title)
+
+    # 番組名置換（英/日）
+    for k in ("{program}", "{番組名}"):
+        body = body.replace(k, program)
+
+    # リンク系は空に（後で末尾にURLを付ける）
+    link_keys = ["{link}", "{URL}", "{Url}", "{url}"]
+    if feed_type == "podcast":
+        link_keys += ["{エピソードURL}"]
+    else:
+        link_keys += ["{記事URL}"]
+
+    for k in link_keys:
+        body = body.replace(k, "").rstrip()
+
+    # 余計な空白・改行を軽く整形
+    body = body.replace("\r", "").rstrip()
+    return body
+
 # ------------- 文字数制御（URLは絶対に切らない） -------------
-def compose_text(template: str, title: str, program: str, link: str, limit: int = MAX_TWEET_LEN) -> str:
+def compose_text(template: str, title: str, program: str, link: str, feed_type: str, limit: int = MAX_TWEET_LEN) -> str:
     """
     URLは必ず末尾に置き、URLは絶対に切らない。足りなければタイトルやタグ側を短縮。
-    想定テンプレ: "🎧 新着エピソード公開！『{title}』｜{program} #Podcast #リルパル #ReelPal\n{link}"
+    想定テンプレ例:
+      Podcast: "🎧 新着エピソード公開！『{title}』｜{program} #Podcast #リルパル #ReelPal\n{link}"
+      Note   : "📝 新着note『{title}』 #note #リルパル #ReelPal\n{link}"
     """
     link = normalize_link(link)
     url_part = ("\n" + link) if link else ""
-    body = template.replace("{title}", title).replace("{program}", program).replace("{link}", "").rstrip()
-    candidate = (body + url_part).strip()
 
+    # 1) まず本文（リンクなし）を作る
+    body = render_body_without_link(template, title, program, feed_type)
+    candidate = (body + url_part).strip()
     if len(candidate) <= limit:
         return candidate
 
-    # 余計なタグを順に間引く
+    # 2) タグを間引く（順に消す）
     for tag in [" #ReelPal", " #リルパル", " #Podcast", " #note"]:
         if len(candidate) <= limit:
             break
         body = body.replace(tag, "")
         candidate = (body + url_part).strip()
-
     if len(candidate) <= limit:
         return candidate
 
-    # タイトルを段階的に短縮（URLは守る）
+    # 3) タイトルを段階的に短縮（URLは守る）
     for L in [90, 70, 50, 30, 15]:
         short_title = (title[:L-1] + "…") if len(title) > L else title
-        body_short = template.replace("{title}", short_title).replace("{program}", program).replace("{link}", "").rstrip()
+        body_short = render_body_without_link(template, short_title, program, feed_type)
         candidate = (body_short + url_part).strip()
         if len(candidate) <= limit:
             return candidate
 
-    # 最後の手：番組名＋URLのみ
+    # 4) 最後の手：番組名＋URLのみ
     minimal = (program + url_part).strip() if link else program
     if len(minimal) <= limit:
         return minimal
 
-    # さらに最後：URL単体
+    # 5) さらに最後：URL単体
     return link
 
 # ------------- メイン -------------
@@ -250,7 +229,7 @@ def main():
 
         url = feed["url"]
         tmpl = feed["template"]
-        ftype = feed.get("type", "")
+        ftype = feed.get("type", "")  # "podcast" or "note" を想定
         program = feed.get("program_name", "")
 
         parsed = feedparser.parse(url)
@@ -270,7 +249,7 @@ def main():
 
             title = shorten_title(entry.get("title") or "", maxlen=TITLE_MAXLEN)
 
-            # リンク生成（podcastはApple/Spotify優先。note等はそのまま）
+            # リンク生成
             if ftype == "podcast":
                 best_link = pick_best_link(entry, feed)
                 if not best_link:
@@ -279,8 +258,8 @@ def main():
             else:
                 best_link = (entry.get("link") or "").strip()
 
-            # URLは末尾固定・URLは絶対に切らない本文生成
-            text = compose_text(tmpl, title, program, best_link, limit=MAX_TWEET_LEN)
+            # URLは末尾固定・URLは絶対に切らない本文生成（日本語キー対応）
+            text = compose_text(tmpl, title, program, best_link, feed_type=ftype, limit=MAX_TWEET_LEN)
 
             status, body = post_to_x(text)
             if status < 300:
