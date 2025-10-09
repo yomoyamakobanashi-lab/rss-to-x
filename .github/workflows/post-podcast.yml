@@ -2,9 +2,11 @@ name: Post Podcast to X
 
 on:
   schedule:
-    # 3日に1回 01:00 UTC = 10:00 JST（※月初から 1,4,7,10... 日で実行）
-    - cron: "0 1 */3 * *"
+    # 月曜 07:00 JST（= 日曜 22:00 UTC）
+    # 水曜 07:00 JST（= 火曜 22:00 UTC）
+    - cron: "0 22 * * 0,2"
   workflow_dispatch:
+
 
 jobs:
   post:
