@@ -2,12 +2,14 @@
   "feeds": [
     {
       "type": "podcast",
+      "program_name": "リルパル / ReelPal",
       "url": "https://anchor.fm/s/10422ca68/podcast/rss",
-      "program_name": "Reel Friends in Tokyo",
+      "apple_collection_id": "1810778208",
       "template": "🎧 新着エピソード公開！『{title}』｜{program} #Podcast #リルパル #ReelPal\n{link}"
     },
     {
       "type": "note",
+      "program_name": "リルパル / ReelPal",
       "url": "https://note.com/mako_reel_pal/rss",
       "template": "📝 新着note『{title}』 #note #リルパル #ReelPal\n{link}"
     }
