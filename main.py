@@ -9,11 +9,11 @@ def load_state():
 
 def save_state(s): json.dump(s, open(STATE_FILE,"w"))
 
-def short_safe(text, n=120):
-    # 140文字制限の噂に安全側で合わせ、さらに余裕を持って120に丸める
+def short(text, n=250):
     return (text[:n-1] + "…") if len(text) > n else text
 
 def post_to_x(text):
+    # OAuth1 (user context) で v2 /2/tweets に投稿
     api_key = os.getenv("X_API_KEY")
     api_secret = os.getenv("X_API_SECRET")
     access_token = os.getenv("X_ACCESS_TOKEN")
@@ -22,11 +22,11 @@ def post_to_x(text):
         raise RuntimeError("Xのキーが未設定です（Secretsを確認）")
 
     auth = OAuth1(api_key, api_secret, access_token, access_secret)
-    # v1.1 のシンプルな投稿エンドポイントを使う
     r = requests.post(
-        "https://api.twitter.com/1.1/statuses/update.json",
+        "https://api.twitter.com/2/tweets",  # v2 エンドポイント（twitter.com ドメインが安定）
         auth=auth,
-        data={"status": text},
+        json={"text": text},
+        headers={"User-Agent": "rss-to-x/1.0", "Content-Type": "application/json"},
         timeout=30
     )
     if r.status_code >= 300:
@@ -52,7 +52,7 @@ def main():
             title = (entry.get("title") or "").strip()
             link  = (entry.get("link") or "").strip()
             text  = tmpl.format(title=title, link=link, program=program)
-            text  = short_safe(text)  # ← まずは確実に短く
+            text  = short(text, 250)
 
             post_to_x(text)
             state[uid] = int(time.time())
@@ -63,4 +63,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
