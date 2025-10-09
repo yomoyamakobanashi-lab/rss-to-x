@@ -11,12 +11,14 @@ import re
 STATE_FILE = "state.json"
 
 # ===== 運用パラメータ =====
-MAX_TWEET_LEN = 240          # 絵文字/日本語を考慮して余裕を持つ
-TITLE_MAXLEN   = 90           # タイトル事前短縮
-CHECK_ITEMS    = 8            # 最新から最大ここまで試す
-FRESH_WAIT_MIN = 60           # 直後ポストは各プラットフォーム反映待ち
+MAX_TWEET_LEN = 240
+TITLE_MAXLEN   = 90
+CHECK_ITEMS    = 8
+FRESH_WAIT_MIN = 60  # 直後ポストは各プラットフォーム反映待ち
 
-SPOTIFY_EP_RE = re.compile(r"spotify:episode:([A-Za-z0-9]+)")
+# 正規表現（SpotifyエピソードURLとURI）
+RE_SPOTIFY_URL = re.compile(r"https?://open\.spotify\.com/episode/([A-Za-z0-9]+)")
+RE_SPOTIFY_URI = re.compile(r"spotify:episode:([A-Za-z0-9]+)")
 
 def load_state():
     return json.load(open(STATE_FILE)) if os.path.exists(STATE_FILE) else {}
@@ -32,7 +34,6 @@ def shorten_title(title: str, maxlen: int = TITLE_MAXLEN) -> str:
     return (t[:maxlen-1] + "…") if len(t) > maxlen else t
 
 def post_to_x(text: str):
-    """OAuth1（User context）で v2 /2/tweets に投稿。戻り値で成否を返す。"""
     api_key = os.getenv("X_API_KEY")
     api_secret = os.getenv("X_API_SECRET")
     access_token = os.getenv("X_ACCESS_TOKEN")
@@ -53,7 +54,6 @@ def post_to_x(text: str):
         return 599, f"exception: {e}"
 
 def entries_newest_first(parsed):
-    """RSSを新しい順に。published_parsed/updated_parsed が無い場合はそのまま。"""
     try:
         return sorted(
             parsed.entries,
@@ -64,63 +64,94 @@ def entries_newest_first(parsed):
         return list(parsed.entries)
 
 def minutes_since(entry) -> float:
-    """エピソード公開からの経過分（不明なら大きな数を返す＝待たずにOK）"""
     t = getattr(entry, "published_parsed", getattr(entry, "updated_parsed", None))
     if not t:
         return 1e9
     dt = datetime.fromtimestamp(time.mktime(t), tz=timezone.utc)
     return (datetime.now(timezone.utc) - dt).total_seconds() / 60.0
 
-def extract_spotify_episode_id(entry) -> str | None:
-    """GUIDやIDから spotify:episode:XXXX を抜き出し、IDを返す。"""
-    cand = entry.get("id") or entry.get("guid") or ""
-    m = SPOTIFY_EP_RE.search(str(cand))
-    if m:
-        return m.group(1)
-    # linksに "spotify:episode:..." が載るケースにも対応
+def _text_fields(entry):
+    """Spotify URL/URI を拾うため、考えられる全テキストを列挙"""
+    fields = []
+    for k in ("id", "guid", "link", "title", "summary"):
+        v = entry.get(k)
+        if isinstance(v, str):
+            fields.append(v)
+    # summary_detail
+    sd = entry.get("summary_detail") or {}
+    if isinstance(sd, dict):
+        v = sd.get("value")
+        if isinstance(v, str):
+            fields.append(v)
+    # content[]
+    for c in entry.get("content", []):
+        if isinstance(c, dict):
+            v = c.get("value")
+            if isinstance(v, str):
+                fields.append(v)
+    # links[]
     for ln in entry.get("links", []):
-        href = (ln.get("href") or "")
-        m2 = SPOTIFY_EP_RE.search(href)
-        if m2:
-            return m2.group(1)
+        if isinstance(ln, dict):
+            href = ln.get("href")
+            if isinstance(href, str):
+                fields.append(href)
+    return "\n".join(fields)
+
+def find_spotify_episode_url(entry) -> str | None:
+    """
+    1) すべてのテキストから open.spotify.com/episode/<ID> を直接サーチ
+    2) それでも無ければ spotify:episode:<ID> から再生URLを組み立て
+    無ければ None
+    """
+    blob = _text_fields(entry)
+
+    m = RE_SPOTIFY_URL.search(blob)
+    if m:
+        # 既に完全な再生URLがどこかに埋まっている
+        return f"https://open.spotify.com/episode/{m.group(1)}"
+
+    m2 = RE_SPOTIFY_URI.search(blob)
+    if m2:
+        return f"https://open.spotify.com/episode/{m2.group(1)}"
+
     return None
 
 def pick_best_link(entry) -> str:
     """
     優先度：
-      1) open.spotify.com/episode/... が links にあれば最優先
-      2) GUID/ID から spotify:episode:ID を抽出して open.spotify.com/episode/ID を生成
-      3) enclosure（mp3 直リンク）
-      4) entry.link（creators/podcasters ドメイン含む）
+      1) どこかに埋まっている SpotifyエピソードURL（強化版検出）
+      2) enclosure（mp3 直リンク）
+      3) entry.link（ただし /play/ や creators/podcasters は避けたい）
     """
-    # 1) links配列に episode の再生URLがあるか
-    for ln in entry.get("links", []):
-        href = (ln.get("href") or "").strip()
-        if "open.spotify.com/episode/" in href:
-            return href
+    # 1) Spotify再生URLを総当たりで検出
+    sp = find_spotify_episode_url(entry)
+    if sp:
+        return sp
 
-    # 2) GUID/ID から episode ID を生成
-    ep_id = extract_spotify_episode_id(entry)
-    if ep_id:
-        return f"https://open.spotify.com/episode/{ep_id}"
-
-    # 3) enclosure（音源直リンク）
+    # 2) mp3
     for enc in entry.get("enclosures", []):
         href = (enc.get("href") or "").strip()
         if href:
             return href
 
-    # 4) fallback
-    return (entry.get("link") or "").strip()
+    # 3) fallback（アンカーの /play/ や creators/podcasters は避ける）
+    link = (entry.get("link") or "").strip()
+    if any(s in link for s in ["/play/", "creators.spotify.com", "podcasters.spotify.com"]):
+        # links の他候補を探してみる
+        for ln in entry.get("links", []):
+            href = (ln.get("href") or "").strip()
+            if href and not any(s in href for s in ["/play/", "creators.spotify.com", "podcasters.spotify.com"]):
+                return href
+    return link
 
 def main():
     cfg = json.load(open("feeds.json"))
     state = load_state()
-    posted = False  # 今回1件でも成功したか
+    posted = False
 
     for feed in cfg.get("feeds", []):
         if posted:
-            break  # 1回の実行で最大1件のみ投稿（安定運用）
+            break
 
         url = feed["url"]
         tmpl = feed["template"]
@@ -128,17 +159,15 @@ def main():
 
         parsed = feedparser.parse(url)
 
-        # 最新→古い の順で最大 CHECK_ITEMS 件だけ試す
         for entry in entries_newest_first(parsed)[:CHECK_ITEMS]:
             uid_src = entry.get("id") or entry.get("guid") or entry.get("link") or entry.get("title")
             uid = hashlib.sha256((url + "|" + str(uid_src)).encode("utf-8")).hexdigest()
             if uid in state:
-                continue  # 既に投稿済み
+                continue
 
-            # 反映遅延対策：直後は少し待つ
-            age_min = minutes_since(entry)
-            if age_min < FRESH_WAIT_MIN:
-                print(f"[INFO] too fresh ({age_min:.0f}m) → skip for now: {(entry.get('title') or '').strip()}")
+            # 直後は各ディレクトリ取り込み待ち
+            if minutes_since(entry) < FRESH_WAIT_MIN:
+                print(f"[INFO] too fresh → skip for now: {(entry.get('title') or '').strip()}")
                 continue
 
             title = shorten_title(entry.get("title") or "", maxlen=TITLE_MAXLEN)
@@ -155,7 +184,6 @@ def main():
                 break
             else:
                 print(f"[WARN] post failed ({status}): {body}")
-                # 失敗は記録しない＝次回も再挑戦できる
 
     if not posted:
         print("[INFO] no new items posted this run")
