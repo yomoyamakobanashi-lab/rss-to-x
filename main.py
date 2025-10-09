@@ -5,11 +5,14 @@ STATE_FILE = "state.json"
 
 def load_state():
     return json.load(open(STATE_FILE)) if os.path.exists(STATE_FILE) else {}
-
 def save_state(s): json.dump(s, open(STATE_FILE,"w"))
 
-def short_safe(text, n=240):  # 日本語/絵文字を考慮して余裕を持つ
+def short_safe(text, n=240):
     return (text[:n-1] + "…") if len(text) > n else text
+
+def shorten_title(title, maxlen=90):
+    t = title.strip()
+    return (t[:maxlen-1] + "…") if len(t) > maxlen else t
 
 def post_to_x(text):
     api_key = os.getenv("X_API_KEY"); api_secret = os.getenv("X_API_SECRET")
@@ -26,36 +29,45 @@ def post_to_x(text):
     )
     return r.status_code, r.text
 
+def entries_newest_first(parsed):
+    # published_parsed / updated_parsed があれば新しい順にソート、なければそのまま
+    try:
+        e = sorted(parsed.entries, key=lambda x: getattr(x, "published_parsed", getattr(x,"updated_parsed", None)) or 0, reverse=True)
+        return e
+    except Exception:
+        return list(parsed.entries)
+
 def main():
     cfg = json.load(open("feeds.json"))
     state = load_state()
-    posted = False  # 今回の実行で1件でも成功したか
+    posted = False
+
     for feed in cfg["feeds"]:
-        if posted: break  # 1回の実行で最大1件のみ投稿
+        if posted: break
         url = feed["url"]; tmpl = feed["template"]; program = feed.get("program_name","")
         parsed = feedparser.parse(url)
 
-        for entry in reversed(parsed.entries[:5]):  # 新しめから最大5件チェック
+        # ✅ 最新→古い の順で確認（直近8件まで）
+        for entry in entries_newest_first(parsed)[:8]:
             uid_src = entry.get("id") or entry.get("guid") or entry.get("link") or entry.get("title")
             uid = hashlib.sha256((url + "|" + str(uid_src)).encode("utf-8")).hexdigest()
             if uid in state:
                 continue
 
-            title = (entry.get("title") or "").strip()
+            title = shorten_title(entry.get("title") or "", maxlen=90)  # ✅ タイトルを先に短縮
             link  = (entry.get("link") or "").strip()
-            text  = short_safe(tmpl.format(title=title, link=link, program=program))
+            text  = tmpl.format(title=title, link=link, program=program)
+            text  = short_safe(text, 240)  # ✅ 全文も最終ガード
 
             status, body = post_to_x(text)
             if status < 300:
-                state[uid] = int(time.time())
-                save_state(state)
-                print(f"[OK] posted: {title}")
+                state[uid] = int(time.time()); save_state(state)
+                print(f"[OK] posted (newest-first): {title}")
                 posted = True
                 break
             else:
-                # 失敗は警告ログに残して次の候補へ（ジョブは落とさない）
                 print(f"[WARN] post failed ({status}): {body}")
-                continue
+                # 失敗は state に保存しない＝次回も再挑戦できる
 
     if not posted:
         print("[INFO] no new items posted this run")
