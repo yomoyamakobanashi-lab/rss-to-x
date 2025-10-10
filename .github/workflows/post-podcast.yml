@@ -4,28 +4,28 @@ on:
   schedule:
     # 月曜 07:00 JST（= 日曜 22:00 UTC）
     # 水曜 07:00 JST（= 火曜 22:00 UTC）
-    - cron: '0 22 * * 0,2'
+    - cron: "0 22 * * 0,2"
   workflow_dispatch:
+
 
 jobs:
   post:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write   # state_podcast.json を push するため
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0              # rebase/push するので 0 推奨
-          persist-credentials: true   # GITHUB_TOKEN を保持
+          fetch-depth: 0
+          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.x'
 
       - name: Install deps
-        run: pip install requests feedparser requests-oauthlib
+        run: pip install requests feedparser requests_oauthlib
 
       - name: Run podcast poster
         env:
@@ -34,32 +34,30 @@ jobs:
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
         run: |
-          set -euo pipefail
+          set +e
           python podcast_poster.py
+          EXIT=$?
+          if [ $EXIT -ne 0 ]; then
+            echo "::warning::podcast poster exited with $EXIT"
+          fi
 
       - name: Save state (rebase-safe)
         if: always()
-        shell: bash
         run: |
-          set -euo pipefail
+          set -e
           if [ -f state_podcast.json ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-
             for i in 1 2 3; do
               git fetch origin main
               git checkout main
               git pull --rebase origin main || true
-
               git add state_podcast.json
               git commit -m "update podcast state [skip ci]" || true
-
               if git push origin HEAD:main; then
-                echo "✅ pushed on attempt $i"
-                break
+                echo "✅ pushed on attempt $i"; break
               else
-                echo "⚠️ push failed (attempt $i). Retrying..."
-                sleep 2
+                echo "⚠️ push failed (attempt $i). Retrying..."; sleep 2
               fi
             done
           else
