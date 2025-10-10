@@ -7,7 +7,6 @@ on:
     - cron: '0 22 * * 0,2'
   workflow_dispatch:
 
-# 同時多重起動を抑止（前回が走っていれば待機）
 concurrency:
   group: podcast-post
   cancel-in-progress: false
@@ -16,7 +15,7 @@ jobs:
   post:
     runs-on: ubuntu-latest
     permissions:
-      contents: write   # state_podcast.json を push するため
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,10 +34,10 @@ jobs:
 
       - name: Sanity check secrets
         run: |
-          test -n "${{ secrets.X_API_KEY }}"        || (echo "X_API_KEY is empty" && exit 1)
-          test -n "${{ secrets.X_API_SECRET }}"     || (echo "X_API_SECRET is empty" && exit 1)
-          test -n "${{ secrets.X_ACCESS_TOKEN }}"   || (echo "X_ACCESS_TOKEN is empty" && exit 1)
-          test -n "${{ secrets.X_ACCESS_SECRET }}"  || (echo "X_ACCESS_SECRET is empty" && exit 1)
+          test -n "${{ secrets.X_API_KEY }}"       || (echo "X_API_KEY is empty" && exit 1)
+          test -n "${{ secrets.X_API_SECRET }}"    || (echo "X_API_SECRET is empty" && exit 1)
+          test -n "${{ secrets.X_ACCESS_TOKEN }}"  || (echo "X_ACCESS_TOKEN is empty" && exit 1)
+          test -n "${{ secrets.X_ACCESS_SECRET }}" || (echo "X_ACCESS_SECRET is empty" && exit 1)
 
       - name: Run podcast poster
         env:
@@ -47,7 +46,9 @@ jobs:
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           LOG_LEVEL: INFO
-          DRY_RUN: "0"              # テスト時は "1"
+          DRY_RUN: "0"
+          # 重複時の挙動: skip（既定=stateに記録して再試行しない） / tweak（不可視文字で微調整して投稿）
+          DEDUPE_STRATEGY: "skip"
         run: |
           set -euo pipefail
           python podcast_poster.py
