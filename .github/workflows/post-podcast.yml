@@ -4,28 +4,41 @@ on:
   schedule:
     # 月曜 07:00 JST（= 日曜 22:00 UTC）
     # 水曜 07:00 JST（= 火曜 22:00 UTC）
-    - cron: "0 22 * * 0,2"
+    - cron: '0 22 * * 0,2'
   workflow_dispatch:
 
+# 同時多重起動を抑止（前回が走っていれば待機）
+concurrency:
+  group: podcast-post
+  cancel-in-progress: false
 
 jobs:
   post:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write   # state_podcast.json を push するため
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.12'
 
       - name: Install deps
-        run: pip install requests feedparser requests_oauthlib
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Sanity check secrets
+        run: |
+          test -n "${{ secrets.X_API_KEY }}"        || (echo "X_API_KEY is empty" && exit 1)
+          test -n "${{ secrets.X_API_SECRET }}"     || (echo "X_API_SECRET is empty" && exit 1)
+          test -n "${{ secrets.X_ACCESS_TOKEN }}"   || (echo "X_ACCESS_TOKEN is empty" && exit 1)
+          test -n "${{ secrets.X_ACCESS_SECRET }}"  || (echo "X_ACCESS_SECRET is empty" && exit 1)
 
       - name: Run podcast poster
         env:
@@ -33,33 +46,24 @@ jobs:
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          LOG_LEVEL: INFO
+          DRY_RUN: "0"              # テスト時は "1"
         run: |
-          set +e
+          set -euo pipefail
           python podcast_poster.py
-          EXIT=$?
-          if [ $EXIT -ne 0 ]; then
-            echo "::warning::podcast poster exited with $EXIT"
-          fi
 
       - name: Save state (rebase-safe)
         if: always()
+        shell: bash
         run: |
-          set -e
+          set -euo pipefail
           if [ -f state_podcast.json ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            for i in 1 2 3; do
-              git fetch origin main
-              git checkout main
-              git pull --rebase origin main || true
-              git add state_podcast.json
-              git commit -m "update podcast state [skip ci]" || true
-              if git push origin HEAD:main; then
-                echo "✅ pushed on attempt $i"; break
-              else
-                echo "⚠️ push failed (attempt $i). Retrying..."; sleep 2
-              fi
-            done
+            git pull --rebase
+            git add state_podcast.json
+            git commit -m "update podcast state [skip ci]" || exit 0
+            git push
           else
             echo "no podcast state to save"
           fi
