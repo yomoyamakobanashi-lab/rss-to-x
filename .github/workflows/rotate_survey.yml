@@ -1,0 +1,40 @@
+name: Rotate Survey Tweet
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # 6時間ごと
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read tweet
+        id: tweet
+        run: |
+          INDEX=$(cat index.txt)
+          TOTAL=$(wc -l < tweets.txt)
+          TWEET=$(sed -n "$((INDEX+1))p" tweets.txt)
+          echo "tweet=$TWEET" >> $GITHUB_OUTPUT
+          NEXT=$((INDEX+1))
+          if [ "$NEXT" -ge "$TOTAL" ]; then
+            NEXT=0
+          fi
+          echo $NEXT > index.txt
+
+      - name: Post to X
+        run: |
+          curl -X POST "https://api.twitter.com/2/tweets" \
+          -H "Authorization: Bearer ${{ secrets.X_BEARER_TOKEN }}" \
+          -H "Content-Type: application/json" \
+          -d "{\"text\":\"${{ steps.tweet.outputs.tweet }}\"}"
+
+      - name: Save index
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add index.txt
+          git commit -m "Rotate survey tweet"
+          git push
