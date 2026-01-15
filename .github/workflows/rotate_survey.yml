@@ -8,29 +8,61 @@ on:
 jobs:
   post:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
+      # ツイート文をローテーションで取得
       - name: Read tweet
         id: tweet
         run: |
           INDEX=$(cat index.txt)
           TOTAL=$(wc -l < tweets.txt)
           TWEET=$(sed -n "$((INDEX+1))p" tweets.txt)
+
           echo "tweet=$TWEET" >> $GITHUB_OUTPUT
+
           NEXT=$((INDEX+1))
           if [ "$NEXT" -ge "$TOTAL" ]; then
             NEXT=0
           fi
           echo $NEXT > index.txt
 
-      - name: Post to X
-        run: |
-          curl -X POST "https://api.twitter.com/2/tweets" \
-          -H "Authorization: Bearer ${{ secrets.X_BEARER_TOKEN }}" \
-          -H "Content-Type: application/json" \
-          -d "{\"text\":\"${{ steps.tweet.outputs.tweet }}\"}"
+      # Node.js セットアップ
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
+      # Twitter API ライブラリをインストール
+      - name: Install dependencies
+        run: npm install twitter-api-v2
+
+      # X に投稿（OAuth 1.0a）
+      - name: Post to X
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          TWEET: ${{ steps.tweet.outputs.tweet }}
+        run: |
+          node -e "
+          const { TwitterApi } = require('twitter-api-v2');
+
+          const client = new TwitterApi({
+            appKey: process.env.X_API_KEY,
+            appSecret: process.env.X_API_SECRET,
+            accessToken: process.env.X_ACCESS_TOKEN,
+            accessSecret: process.env.X_ACCESS_SECRET,
+          });
+
+          (async () => {
+            await client.v2.tweet(process.env.TWEET);
+            console.log('Tweet posted successfully');
+          })();
+          "
+
+      # index.txt を更新して保存
       - name: Save index
         run: |
           git config user.name github-actions
