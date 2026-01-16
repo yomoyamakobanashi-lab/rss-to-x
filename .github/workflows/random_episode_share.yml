@@ -2,7 +2,7 @@ name: Random Episode Share
 
 on:
   schedule:
-    - cron: '0 1 * * *'   # 毎日1回（UTC 1時 → JST 10時）
+    - cron: '0 1 * * *'   # 毎日1回（UTC 1時 = JST 10時）
   workflow_dispatch:
 
 jobs:
@@ -12,32 +12,56 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # episodes.txt からランダムに1エピソード選ぶ
       - name: Pick random episode
         id: pick
         run: |
-          TOTAL=$(grep -n "🎧" episodes.txt | wc -l)
+          # 🎧 が付いている行数を数える（= エピソード数）
+          TOTAL=$(grep -n "^🎧" episodes.txt | wc -l)
+
+          if [ "$TOTAL" -eq 0 ]; then
+            echo "No episodes found"
+            exit 1
+          fi
+
+          # ランダムで1つ選ぶ
           INDEX=$((RANDOM % TOTAL + 1))
-          EPISODE=$(grep -n "🎧" episodes.txt | sed -n "${INDEX}p" | cut -d: -f2-)
-          LINK=$(sed -n "$(( $(grep -n "🎧" episodes.txt | sed -n "${INDEX}p" | cut -d: -f1) + 1 ))p" episodes.txt)
 
-          echo "text=$EPISODE\n$LINK" >> $GITHUB_OUTPUT
+          # タイトル行
+          TITLE_LINE=$(grep -n "^🎧" episodes.txt | sed -n "${INDEX}p")
+          TITLE=$(echo "$TITLE_LINE" | cut -d: -f2-)
 
+          # リンク行（タイトル行の次の行）
+          LINE_NO=$(echo "$TITLE_LINE" | cut -d: -f1)
+          LINK=$(sed -n "$((LINE_NO + 1))p" episodes.txt)
+
+          # GitHub Actions の output に渡す（複数行OK）
+          {
+            echo "text<<EOF"
+            echo "$TITLE"
+            echo "$LINK"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      # Node.js セットアップ
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # Twitter API クライアントをインストール
       - name: Install dependencies
         run: npm install twitter-api-v2
 
+      # X に投稿（OAuth 1.0a）
       - name: Post to X
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          TEXT: ${{ steps.pick.outputs.text }}
+          EPISODE_TEXT: ${{ steps.pick.outputs.text }}
         run: |
-          node -e "
+          node << 'EOF'
           const { TwitterApi } = require('twitter-api-v2');
 
           const client = new TwitterApi({
@@ -47,10 +71,13 @@ jobs:
             accessSecret: process.env.X_ACCESS_SECRET,
           });
 
-          const text = `過去回ピックアップ🎬\n${process.env.TEXT}\n\n#リルパル`;
+          const text = `過去回ピックアップ🎬
+${process.env.EPISODE_TEXT}
+
+#リルパル`;
 
           (async () => {
             await client.v2.tweet(text);
             console.log('Random episode posted');
           })();
-          "
+          EOF
