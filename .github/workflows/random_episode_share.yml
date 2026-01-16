@@ -16,26 +16,18 @@ jobs:
       - name: Pick random episode
         id: pick
         run: |
-          # 🎧 が付いている行数を数える（= エピソード数）
           TOTAL=$(grep -n "^🎧" episodes.txt | wc -l)
-
           if [ "$TOTAL" -eq 0 ]; then
             echo "No episodes found"
             exit 1
           fi
 
-          # ランダムで1つ選ぶ
           INDEX=$((RANDOM % TOTAL + 1))
-
-          # タイトル行
           TITLE_LINE=$(grep -n "^🎧" episodes.txt | sed -n "${INDEX}p")
           TITLE=$(echo "$TITLE_LINE" | cut -d: -f2-)
-
-          # リンク行（タイトル行の次の行）
           LINE_NO=$(echo "$TITLE_LINE" | cut -d: -f1)
           LINK=$(sed -n "$((LINE_NO + 1))p" episodes.txt)
 
-          # GitHub Actions の output に渡す（複数行OK）
           {
             echo "text<<EOF"
             echo "$TITLE"
@@ -43,16 +35,14 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
-      # Node.js セットアップ
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # Twitter API クライアントをインストール
       - name: Install dependencies
         run: npm install twitter-api-v2
 
-      # X に投稿（OAuth 1.0a）
+      # X に投稿（YAML安全版）
       - name: Post to X
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
@@ -61,23 +51,21 @@ jobs:
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
           EPISODE_TEXT: ${{ steps.pick.outputs.text }}
         run: |
-          node << 'EOF'
-          const { TwitterApi } = require('twitter-api-v2');
-
-          const client = new TwitterApi({
-            appKey: process.env.X_API_KEY,
-            appSecret: process.env.X_API_SECRET,
-            accessToken: process.env.X_ACCESS_TOKEN,
-            accessSecret: process.env.X_ACCESS_SECRET,
-          });
-
-          const text = `過去回ピックアップ🎬
-${process.env.EPISODE_TEXT}
-
-#リルパル`;
-
-          (async () => {
-            await client.v2.tweet(text);
-            console.log('Random episode posted');
-          })();
-          EOF
+          echo "const { TwitterApi } = require('twitter-api-v2');" > post.js
+          echo "const client = new TwitterApi({" >> post.js
+          echo "  appKey: process.env.X_API_KEY," >> post.js
+          echo "  appSecret: process.env.X_API_SECRET," >> post.js
+          echo "  accessToken: process.env.X_ACCESS_TOKEN," >> post.js
+          echo "  accessSecret: process.env.X_ACCESS_SECRET," >> post.js
+          echo "});" >> post.js
+          echo "" >> post.js
+          echo "const text = \`過去回ピックアップ🎬" >> post.js
+          echo "${EPISODE_TEXT}" >> post.js
+          echo "" >> post.js
+          echo "#リルパル\`;" >> post.js
+          echo "" >> post.js
+          echo "(async () => {" >> post.js
+          echo "  await client.v2.tweet(text);" >> post.js
+          echo "  console.log('Random episode posted');" >> post.js
+          echo "})();" >> post.js
+          node post.js
