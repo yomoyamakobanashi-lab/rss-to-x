@@ -24,16 +24,10 @@ jobs:
 
           INDEX=$((RANDOM % TOTAL + 1))
           TITLE_LINE=$(grep -n "^🎧" episodes.txt | sed -n "${INDEX}p")
-          TITLE=$(echo "$TITLE_LINE" | cut -d: -f2-)
           LINE_NO=$(echo "$TITLE_LINE" | cut -d: -f1)
           LINK=$(sed -n "$((LINE_NO + 1))p" episodes.txt)
 
-          {
-            echo "text<<EOF"
-            echo "$TITLE"
-            echo "$LINK"
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+          echo "link=$LINK" >> "$GITHUB_OUTPUT"
 
       - uses: actions/setup-node@v4
         with:
@@ -42,14 +36,14 @@ jobs:
       - name: Install dependencies
         run: npm install twitter-api-v2
 
-      # X に投稿（YAML安全版）
+      # X に投稿（短文・安全構成）
       - name: Post to X
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          EPISODE_TEXT: ${{ steps.pick.outputs.text }}
+          EPISODE_LINK: ${{ steps.pick.outputs.link }}
         run: |
           echo "const { TwitterApi } = require('twitter-api-v2');" > post.js
           echo "const client = new TwitterApi({" >> post.js
@@ -59,9 +53,8 @@ jobs:
           echo "  accessSecret: process.env.X_ACCESS_SECRET," >> post.js
           echo "});" >> post.js
           echo "" >> post.js
-          echo "const text = \`過去回ピックアップ🎬" >> post.js
-          echo "${EPISODE_TEXT}" >> post.js
-          echo "" >> post.js
+          echo "const text = \`今日はこの回をもう一度🎬" >> post.js
+          echo "\${process.env.EPISODE_LINK}" >> post.js
           echo "#リルパル\`;" >> post.js
           echo "" >> post.js
           echo "(async () => {" >> post.js
