@@ -1,0 +1,56 @@
+name: Random Episode Share
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # 毎日1回（UTC 1時 → JST 10時）
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pick random episode
+        id: pick
+        run: |
+          TOTAL=$(grep -n "🎧" episodes.txt | wc -l)
+          INDEX=$((RANDOM % TOTAL + 1))
+          EPISODE=$(grep -n "🎧" episodes.txt | sed -n "${INDEX}p" | cut -d: -f2-)
+          LINK=$(sed -n "$(( $(grep -n "🎧" episodes.txt | sed -n "${INDEX}p" | cut -d: -f1) + 1 ))p" episodes.txt)
+
+          echo "text=$EPISODE\n$LINK" >> $GITHUB_OUTPUT
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install twitter-api-v2
+
+      - name: Post to X
+        env:
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          TEXT: ${{ steps.pick.outputs.text }}
+        run: |
+          node -e "
+          const { TwitterApi } = require('twitter-api-v2');
+
+          const client = new TwitterApi({
+            appKey: process.env.X_API_KEY,
+            appSecret: process.env.X_API_SECRET,
+            accessToken: process.env.X_ACCESS_TOKEN,
+            accessSecret: process.env.X_ACCESS_SECRET,
+          });
+
+          const text = `過去回ピックアップ🎬\n${process.env.TEXT}\n\n#リルパル`;
+
+          (async () => {
+            await client.v2.tweet(text);
+            console.log('Random episode posted');
+          })();
+          "
