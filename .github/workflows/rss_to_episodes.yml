@@ -1,0 +1,80 @@
+name: RSS to Episodes List
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'   # 12時間ごと
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install xml2js
+
+      - name: Fetch RSS
+        run: |
+          curl -L "https://anchor.fm/s/10422ca68/podcast/rss" > feed.xml
+
+      - name: Parse RSS and update episodes.txt
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const xml2js = require('xml2js');
+
+          const feed = fs.readFileSync('feed.xml', 'utf8');
+          const episodesFile = 'episodes.txt';
+          const idsFile = 'episode_ids.txt';
+
+          const knownIds = fs.existsSync(idsFile)
+            ? new Set(fs.readFileSync(idsFile, 'utf8').split('\n').filter(Boolean))
+            : new Set();
+
+          xml2js.parseString(feed, (err, result) => {
+            if (err) process.exit(1);
+
+            const items = result.rss.channel[0].item || [];
+            let newEpisodes = [];
+            let newIds = [];
+
+            items.forEach(item => {
+              const guid = item.guid?.[0]?._ || item.guid?.[0];
+              const title = item.title?.[0];
+              const link = item.link?.[0];
+
+              if (!guid || knownIds.has(guid)) return;
+
+              newEpisodes.push(`🎧 ${title}\n${link}`);
+              newIds.push(guid);
+              knownIds.add(guid);
+            });
+
+            if (newEpisodes.length === 0) {
+              console.log('No new episodes');
+              return;
+            }
+
+            fs.appendFileSync(
+              episodesFile,
+              (fs.existsSync(episodesFile) && fs.readFileSync(episodesFile, 'utf8').trim() ? '\n\n' : '') +
+              newEpisodes.join('\n\n')
+            );
+            fs.appendFileSync(idsFile, '\n' + newIds.join('\n'));
+          });
+          EOF
+
+      - name: Commit updates
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add episodes.txt episode_ids.txt
+          git commit -m "Update episodes from RSS" || echo "No changes"
+          git push
