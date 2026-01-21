@@ -19,12 +19,17 @@ jobs:
         with:
           node-version: 20
 
+      # 依存関係をまとめて安全にインストール
       - name: Install dependencies
-        run: npm install twitter-api-v2 node-fetch xml2js jq
+        run: |
+          npm install twitter-api-v2 node-fetch@2 xml2js jq
 
+      # RSS → Spotify直リンク生成
       - name: Build episodes from RSS
-        run: node scripts/buildEpisodesFromRSS.js
+        run: |
+          node scripts/buildEpisodesFromRSS.js
 
+      # エピソード＆文言をランダム選択
       - name: Pick random episode & phrase
         id: pick
         run: |
@@ -39,6 +44,7 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
+      # Xへ投稿（短文・安全構成）
       - name: Post to X
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
@@ -49,11 +55,12 @@ jobs:
         run: |
           echo "const { TwitterApi } = require('twitter-api-v2');" > post.js
           echo "const client = new TwitterApi({" >> post.js
-          echo "appKey: process.env.X_API_KEY," >> post.js
-          echo "appSecret: process.env.X_API_SECRET," >> post.js
-          echo "accessToken: process.env.X_ACCESS_TOKEN," >> post.js
-          echo "accessSecret: process.env.X_ACCESS_SECRET," >> post.js
+          echo "  appKey: process.env.X_API_KEY," >> post.js
+          echo "  appSecret: process.env.X_API_SECRET," >> post.js
+          echo "  accessToken: process.env.X_ACCESS_TOKEN," >> post.js
+          echo "  accessSecret: process.env.X_ACCESS_SECRET," >> post.js
           echo "});" >> post.js
+          echo "" >> post.js
           echo "const text = process.env.POST_TEXT;" >> post.js
-          echo "(async () => { await client.v2.tweet(text); })();" >> post.js
+          echo "(async () => { await client.v2.tweet(text); console.log('posted'); })();" >> post.js
           node post.js
