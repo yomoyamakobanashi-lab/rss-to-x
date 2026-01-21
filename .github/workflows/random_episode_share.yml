@@ -2,15 +2,22 @@ name: Random Episode Share
 
 on:
   schedule:
-    # JST 09:00 / 15:00 / 21:00 ＝ UTC 00:00 / 06:00 / 12:00
-    - cron: "0 0 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
+    # JST 09:00 / 15:00 / 21:00  ->  UTC 00:00 / 06:00 / 12:00
+    - cron: "0 0,6,12 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: random-episode-share
+  cancel-in-progress: false
 
 jobs:
   post:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -18,18 +25,24 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: "20"
 
-      - name: Install dependencies
-        run: npm install twitter-api-v2 node-fetch@2 xml2js
-
-      - name: Build episodes from RSS
-        run: node scripts/buildEpisodesFromRSS.js
-
-      - name: Post random episode to X
+      - name: Post to X
         env:
+          TZ: Asia/Tokyo
+          RSS_URL: https://anchor.fm/s/10422ca68/podcast/rss
+
+          # X (OAuth 1.0a User Context)
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-        run: node scripts/postRandomEpisodeToX.js
+
+          # Spotify (Client Credentials)
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+
+          # 任意：最近回を除外する日数（例：7 なら直近7日分は引かない）
+          EXCLUDE_DAYS: "7"
+
+        run: node .github/scripts/random_episode_share.mjs
