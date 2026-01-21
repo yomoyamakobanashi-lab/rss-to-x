@@ -2,7 +2,7 @@ name: random-episode-share
 
 on:
   schedule:
-    # JST 09:00 / 15:00 / 21:00  =  UTC 00:00 / 06:00 / 12:00
+    # JST 09:00 / 15:00 / 21:00 = UTC 00:00 / 06:00 / 12:00
     - cron: "0 0,6,12 * * *"
   workflow_dispatch: {}
 
@@ -27,14 +27,18 @@ jobs:
         env:
           RSS_URL: "https://anchor.fm/s/10422ca68/podcast/rss"
 
-          # X (OAuth 1.0a user context)
+          # あなたの Secrets 名に完全一致
           X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_KEY_SECRET: ${{ secrets.X_API_KEY_SECRET }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
 
-          # Spotify (任意：未設定でも落ちない設計)
-          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+          # これは OAuth2 用（今回未使用）。残してもOK
+          X_CLIENT_ID: ${{ secrets.X_CLIENT_ID }}
+          X_CLIENT_SECRET: ${{ secrets.X_CLIENT_SECRET }}
+
+          # 任意（Spotifyを使う実装にするなら後で追加）
+          # SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          # SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
 
         run: node scripts/random_episode_share.mjs
