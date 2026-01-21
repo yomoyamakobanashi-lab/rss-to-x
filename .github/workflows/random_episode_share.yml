@@ -2,7 +2,7 @@ name: Random Episode Share
 
 on:
   schedule:
-    # JST 09:00 / 15:00 / 21:00 ＝ UTC 00:00 / 06:00 / 12:00
+    # JST 9:00 / 15:00 / 21:00
     - cron: "0 0 * * *"
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
@@ -29,61 +29,46 @@ jobs:
         run: |
           node scripts/buildEpisodesFromRSS.js
 
-      - name: Pick random phrase and episode
-        id: pick
+      - name: Prepare random post data
         run: |
-          node -e "
+          mkdir -p data
+
+          # phrases.txt がなければ作る（保険）
+          if [ ! -f data/phrases.txt ]; then
+            cat << 'EOF' > data/phrases.txt
+今日はこの回をどうぞ🎬
+過去回から一本🎧
+この回、今聴くと刺さるかも
+あらためておすすめしたい一本
+ちょっと時間あるならこの回
+今日はこれを流してみてほしい
+忘れた頃にこの回
+過去回ピックアップ🎬
+気分に合いそうな回
+ラジオ感覚でどうぞ
+EOF
+          fi
+
+          # Nodeスクリプトを生成（bashと分離）
+          cat << 'EOF' > makePost.js
           const fs = require('fs');
 
-          // Ensure data dir
-          if (!fs.existsSync('data')) fs.mkdirSync('data');
-
-          // Ensure phrases.txt exists (failsafe)
-          const phrasesPath = 'data/phrases.txt';
-          if (!fs.existsSync(phrasesPath)) {
-            const defaults = [
-              '今日はこの回をどうぞ🎬',
-              '過去回から一本🎧',
-              'この回、今聴くと刺さるかも',
-              'あらためておすすめしたい一本',
-              'ちょっと時間あるならこの回',
-              '今日はこれを流してみてほしい',
-              '忘れた頃にこの回',
-              '過去回ピックアップ🎬',
-              '気分に合いそうな回',
-              'ラジオ感覚でどうぞ'
-            ];
-            fs.writeFileSync(phrasesPath, defaults.join('\\n'), 'utf8');
-          }
-
-          // Read phrases
-          const phrases = fs.readFileSync(phrasesPath, 'utf8')
+          const phrases = fs.readFileSync('data/phrases.txt', 'utf8')
             .split(/\\r?\\n/)
             .map(s => s.trim())
             .filter(Boolean);
 
-          // Read episodes
-          const episodesPath = 'data/episodes.json';
-          if (!fs.existsSync(episodesPath)) {
-            console.error('Missing data/episodes.json. Build step may have failed.');
-            process.exit(1);
-          }
-          const episodes = JSON.parse(fs.readFileSync(episodesPath, 'utf8'));
+          const episodes = JSON.parse(fs.readFileSync('data/episodes.json', 'utf8'));
 
-          if (!Array.isArray(episodes) || episodes.length === 0) {
-            console.error('No episodes found in data/episodes.json');
-            process.exit(1);
-          }
-
-          // Pick
           const phrase = phrases[Math.floor(Math.random() * phrases.length)];
           const episode = episodes[Math.floor(Math.random() * episodes.length)];
 
-          // Output for GitHub Actions
-          const out = process.env.GITHUB_OUTPUT;
-          fs.appendFileSync(out, `phrase=${phrase.replace(/\\r?\\n/g, ' ')}\\n`, 'utf8');
-          fs.appendFileSync(out, `episode=${episode}\\n`, 'utf8');
-          "
+          const text = `${phrase}\n${episode}\n#リルパル`;
+
+          fs.writeFileSync('post.txt', text, 'utf8');
+          EOF
+
+          node makePost.js
 
       - name: Post to X
         env:
@@ -91,10 +76,9 @@ jobs:
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          PHRASE: ${{ steps.pick.outputs.phrase }}
-          EPISODE: ${{ steps.pick.outputs.episode }}
         run: |
-          node -e "
+          cat << 'EOF' > postToX.js
+          const fs = require('fs');
           const { TwitterApi } = require('twitter-api-v2');
 
           const client = new TwitterApi({
@@ -104,11 +88,12 @@ jobs:
             accessSecret: process.env.X_ACCESS_SECRET,
           });
 
-          // X shortens links; keep it safely under 140 by design
-          const text = `${process.env.PHRASE}\\n${process.env.EPISODE}\\n#リルパル`;
+          const text = fs.readFileSync('post.txt', 'utf8');
 
           (async () => {
             await client.v2.tweet(text);
             console.log('posted');
           })();
-          "
+          EOF
+
+          node postToX.js
