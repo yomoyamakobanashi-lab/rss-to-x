@@ -7,17 +7,20 @@ const OUTPUT_DIR = 'data';
 const OUTPUT_FILE = 'data/episodes.json';
 
 (async () => {
-  // data ディレクトリがなければ作る
+  // Ensure output directory
   if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR);
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
   const res = await fetch(RSS_URL);
+  if (!res.ok) {
+    throw new Error(`Failed to fetch RSS: ${res.status} ${res.statusText}`);
+  }
+
   const xml = await res.text();
-
   const parsed = await xml2js.parseStringPromise(xml);
-  const items = parsed.rss.channel[0].item;
 
+  const items = parsed?.rss?.channel?.[0]?.item || [];
   const episodes = items
     .map(item => {
       const id = item['spotify:episodeId']?.[0];
@@ -26,6 +29,6 @@ const OUTPUT_FILE = 'data/episodes.json';
     })
     .filter(Boolean);
 
-  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(episodes, null, 2));
-  console.log(`Saved ${episodes.length} Spotify episode links`);
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(episodes, null, 2), 'utf8');
+  console.log(`Saved ${episodes.length} Spotify episode links to ${OUTPUT_FILE}`);
 })();
