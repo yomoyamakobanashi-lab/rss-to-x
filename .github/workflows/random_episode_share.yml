@@ -2,7 +2,7 @@ name: Random Episode Share
 
 on:
   schedule:
-    - cron: '0 1 * * *'   # 毎日1回（UTC 1時 = JST 10時）
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 jobs:
@@ -12,53 +12,45 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # episodes.txt からランダムに1エピソード選ぶ
-      - name: Pick random episode
-        id: pick
-        run: |
-          TOTAL=$(grep -n "^🎧" episodes.txt | wc -l)
-          if [ "$TOTAL" -eq 0 ]; then
-            echo "No episodes found"
-            exit 1
-          fi
-
-          INDEX=$((RANDOM % TOTAL + 1))
-          TITLE_LINE=$(grep -n "^🎧" episodes.txt | sed -n "${INDEX}p")
-          LINE_NO=$(echo "$TITLE_LINE" | cut -d: -f1)
-          LINK=$(sed -n "$((LINE_NO + 1))p" episodes.txt)
-
-          echo "link=$LINK" >> "$GITHUB_OUTPUT"
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install twitter-api-v2
+        run: npm install twitter-api-v2 node-fetch xml2js
 
-      # X に投稿（短文・安全構成）
+      - name: Build episodes from RSS
+        run: node scripts/buildEpisodesFromRSS.js
+
+      - name: Pick random episode & phrase
+        id: pick
+        run: |
+          EP=$(jq -r '.[]' data/episodes.json | shuf -n 1)
+          PH=$(shuf -n 1 data/phrases.txt)
+
+          {
+            echo "text<<EOF"
+            echo "$PH"
+            echo "$EP"
+            echo "#リルパル"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Post to X
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          EPISODE_LINK: ${{ steps.pick.outputs.link }}
+          POST_TEXT: ${{ steps.pick.outputs.text }}
         run: |
           echo "const { TwitterApi } = require('twitter-api-v2');" > post.js
           echo "const client = new TwitterApi({" >> post.js
-          echo "  appKey: process.env.X_API_KEY," >> post.js
-          echo "  appSecret: process.env.X_API_SECRET," >> post.js
-          echo "  accessToken: process.env.X_ACCESS_TOKEN," >> post.js
-          echo "  accessSecret: process.env.X_ACCESS_SECRET," >> post.js
+          echo "appKey: process.env.X_API_KEY," >> post.js
+          echo "appSecret: process.env.X_API_SECRET," >> post.js
+          echo "accessToken: process.env.X_ACCESS_TOKEN," >> post.js
+          echo "accessSecret: process.env.X_ACCESS_SECRET," >> post.js
           echo "});" >> post.js
-          echo "" >> post.js
-          echo "const text = \`今日はこの回をもう一度🎬" >> post.js
-          echo "\${process.env.EPISODE_LINK}" >> post.js
-          echo "#リルパル\`;" >> post.js
-          echo "" >> post.js
-          echo "(async () => {" >> post.js
-          echo "  await client.v2.tweet(text);" >> post.js
-          echo "  console.log('Random episode posted');" >> post.js
-          echo "})();" >> post.js
+          echo "const text = process.env.POST_TEXT;" >> post.js
+          echo "(async () => { await client.v2.tweet(text); })();" >> post.js
           node post.js
