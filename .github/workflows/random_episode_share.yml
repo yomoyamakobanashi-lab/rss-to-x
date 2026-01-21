@@ -2,7 +2,7 @@ name: Random Episode Share
 
 on:
   schedule:
-    # JST 9:00 / 15:00 / 21:00
+    # JST 09:00 / 15:00 / 21:00 ＝ UTC 00:00 / 06:00 / 12:00
     - cron: "0 0 * * *"
     - cron: "0 6 * * *"
     - cron: "0 12 * * *"
@@ -11,7 +11,6 @@ on:
 jobs:
   post:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,78 +21,15 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: |
-          npm install twitter-api-v2 node-fetch@2 xml2js
+        run: npm install twitter-api-v2 node-fetch@2 xml2js
 
       - name: Build episodes from RSS
-        run: |
-          node scripts/buildEpisodesFromRSS.js
+        run: node scripts/buildEpisodesFromRSS.js
 
-      - name: Prepare random post data
-        run: |
-          mkdir -p data
-
-          # phrases.txt がなければ作る（保険）
-          if [ ! -f data/phrases.txt ]; then
-            cat << 'EOF' > data/phrases.txt
-今日はこの回をどうぞ🎬
-過去回から一本🎧
-この回、今聴くと刺さるかも
-あらためておすすめしたい一本
-ちょっと時間あるならこの回
-今日はこれを流してみてほしい
-忘れた頃にこの回
-過去回ピックアップ🎬
-気分に合いそうな回
-ラジオ感覚でどうぞ
-EOF
-          fi
-
-          # Nodeスクリプトを生成（bashと分離）
-          cat << 'EOF' > makePost.js
-          const fs = require('fs');
-
-          const phrases = fs.readFileSync('data/phrases.txt', 'utf8')
-            .split(/\\r?\\n/)
-            .map(s => s.trim())
-            .filter(Boolean);
-
-          const episodes = JSON.parse(fs.readFileSync('data/episodes.json', 'utf8'));
-
-          const phrase = phrases[Math.floor(Math.random() * phrases.length)];
-          const episode = episodes[Math.floor(Math.random() * episodes.length)];
-
-          const text = `${phrase}\n${episode}\n#リルパル`;
-
-          fs.writeFileSync('post.txt', text, 'utf8');
-          EOF
-
-          node makePost.js
-
-      - name: Post to X
+      - name: Post random episode to X
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
           X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-        run: |
-          cat << 'EOF' > postToX.js
-          const fs = require('fs');
-          const { TwitterApi } = require('twitter-api-v2');
-
-          const client = new TwitterApi({
-            appKey: process.env.X_API_KEY,
-            appSecret: process.env.X_API_SECRET,
-            accessToken: process.env.X_ACCESS_TOKEN,
-            accessSecret: process.env.X_ACCESS_SECRET,
-          });
-
-          const text = fs.readFileSync('post.txt', 'utf8');
-
-          (async () => {
-            await client.v2.tweet(text);
-            console.log('posted');
-          })();
-          EOF
-
-          node postToX.js
+        run: node scripts/postRandomEpisodeToX.js
