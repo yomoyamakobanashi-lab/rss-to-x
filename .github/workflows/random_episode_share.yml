@@ -2,7 +2,10 @@ name: Random Episode Share
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    # 1日3回（JST 9:00 / 15:00 / 21:00）
+    - cron: '0 0 * * *'
+    - cron: '0 6 * * *'
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 jobs:
@@ -17,7 +20,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install twitter-api-v2 node-fetch xml2js
+        run: npm install twitter-api-v2 node-fetch xml2js jq
 
       - name: Build episodes from RSS
         run: node scripts/buildEpisodesFromRSS.js
