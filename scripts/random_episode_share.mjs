@@ -1,347 +1,333 @@
-// .github/scripts/random_episode_share.mjs
+import fs from "node:fs";
+import path from "node:path";
 import crypto from "node:crypto";
+import Parser from "rss-parser";
+import { parseTweet } from "twitter-text";
+import { TwitterApi } from "twitter-api-v2";
 
-const RSS_URL = process.env.RSS_URL;
-const EXCLUDE_DAYS = Number(process.env.EXCLUDE_DAYS ?? "7");
+const DEFAULT_RSS = "https://anchor.fm/s/10422ca68/podcast/rss";
+const PHRASES_PATH = path.join(process.cwd(), "data", "phrases.txt");
 
-const X_API_KEY = process.env.X_API_KEY;
-const X_API_SECRET = process.env.X_API_SECRET;
-const X_ACCESS_TOKEN = process.env.X_ACCESS_TOKEN;
-const X_ACCESS_SECRET = process.env.X_ACCESS_SECRET;
-
-const SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
-const SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
-
-function mustEnv(name, value) {
-  if (!value) throw new Error(`Missing env: ${name}`);
-  return value;
+// -------------------------
+// env helpers
+// -------------------------
+function env(name, fallback = undefined) {
+  const v = process.env[name];
+  return (v && String(v).trim()) ? String(v).trim() : fallback;
+}
+function mustEnv(name) {
+  const v = env(name);
+  if (!v) throw new Error(`Missing env: ${name}`);
+  return v;
 }
 
-function rfc3986Encode(str) {
-  return encodeURIComponent(str)
-    .replace(/[!'()*]/g, (c) => "%" + c.charCodeAt(0).toString(16).toUpperCase());
-}
-
-function decodeXmlEntities(s = "") {
-  return s
-    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&amp;/g, "&")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)));
-}
-
+// -------------------------
+// utils
+// -------------------------
 function pickRandom(arr) {
-  return arr[crypto.randomInt(0, arr.length)];
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function parseRss(xml) {
-  const channelBlock = (xml.match(/<channel\b[^>]*>[\s\S]*?<\/channel>/i) || [xml])[0];
-  const channelTitle = decodeXmlEntities(
-    (channelBlock.match(/<title>([\s\S]*?)<\/title>/i) || [,""])[1]
-  ).trim();
-
-  const items = [...xml.matchAll(/<item\b[^>]*>[\s\S]*?<\/item>/gi)].map((m) => m[0]);
-
-  const parsed = items.map((raw) => {
-    const title = decodeXmlEntities((raw.match(/<title>([\s\S]*?)<\/title>/i) || [,""])[1]).trim();
-    const link  = decodeXmlEntities((raw.match(/<link>([\s\S]*?)<\/link>/i) || [,""])[1]).trim();
-    const pub   = decodeXmlEntities((raw.match(/<pubDate>([\s\S]*?)<\/pubDate>/i) || [,""])[1]).trim();
-    const pubDate = pub ? new Date(pub) : null;
-
-    return { title, link, pubDate, raw };
-  }).filter(x => x.title);
-
-  return { channelTitle, items: parsed };
-}
-
-function extractSpotifyUrlFromText(text) {
-  // 1) open.spotify.com/episode/ID
-  const m1 = text.match(/https?:\/\/open\.spotify\.com\/episode\/([A-Za-z0-9]+)/i);
-  if (m1) return `https://open.spotify.com/episode/${m1[1]}`;
-
-  // 2) spotify:episode:ID
-  const m2 = text.match(/spotify:episode:([A-Za-z0-9]+)/i);
-  if (m2) return `https://open.spotify.com/episode/${m2[1]}`;
-
-  // 3) spotify.link short (変換は保証できないのでそのまま)
-  const m3 = text.match(/https?:\/\/spotify\.link\/[A-Za-z0-9]+/i);
-  if (m3) return m3[0];
-
-  return null;
-}
-
-async function spotifyGetToken() {
-  mustEnv("SPOTIFY_CLIENT_ID", SPOTIFY_CLIENT_ID);
-  mustEnv("SPOTIFY_CLIENT_SECRET", SPOTIFY_CLIENT_SECRET);
-
-  const basic = Buffer.from(`${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`).toString("base64");
-  const res = await fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${basic}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: "grant_type=client_credentials",
-  });
-
-  if (!res.ok) {
-    const t = await res.text();
-    throw new Error(`Spotify token failed: ${res.status} ${t}`);
-  }
-  const j = await res.json();
-  return j.access_token;
-}
-
-async function spotifySearchShowId(token, channelTitle) {
-  const q = encodeURIComponent(channelTitle);
-  const url = `https://api.spotify.com/v1/search?q=${q}&type=show&limit=5`;
-  const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
-  if (!res.ok) throw new Error(`Spotify show search failed: ${res.status} ${await res.text()}`);
-  const j = await res.json();
-  const items = j?.shows?.items ?? [];
-  if (!items.length) return null;
-
-  // シンプルに「完全一致優先 → 部分一致 → 先頭」
-  const ct = channelTitle.toLowerCase();
-  const exact = items.find(s => (s.name ?? "").toLowerCase() === ct);
-  if (exact) return exact.id;
-
-  const partial = items.find(s => (s.name ?? "").toLowerCase().includes(ct) || ct.includes((s.name ?? "").toLowerCase()));
-  return (partial ?? items[0]).id;
-}
-
-function normalizeTitle(s) {
-  return (s ?? "")
+function normalizeForMatch(s) {
+  return String(s ?? "")
+    .normalize("NFKC")
     .toLowerCase()
     .replace(/\s+/g, " ")
-    .replace(/[【】［］\[\]（）\(\)「」『』"“”'’]/g, "")
+    .replace(/[’'"]/g, "")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
-async function spotifyResolveEpisodeUrl(token, showId, episodeTitle, pubDate) {
-  const target = normalizeTitle(episodeTitle);
-  const targetTime = pubDate instanceof Date && !Number.isNaN(pubDate.getTime()) ? pubDate.getTime() : null;
+function readPhrasesFile() {
+  if (!fs.existsSync(PHRASES_PATH)) return null;
+  const raw = fs.readFileSync(PHRASES_PATH, "utf8");
+  const lines = raw
+    .split(/\r?\n/)
+    .map((l) => l.trim())
+    .filter((l) => l && !l.startsWith("#"));
+  return lines.length ? lines : null;
+}
 
-  let best = null; // { url, score }
-  const limit = 50;
+/**
+ * Compose text with placeholders:
+ *  - {title}
+ *  - {url}
+ * If {url} is missing in phrase, append it.
+ */
+function renderTemplate(phrase, { title, url }) {
+  let p = String(phrase);
+  if (!p.includes("{url}")) p = `${p} {url}`;
+  return p.replaceAll("{title}", title).replaceAll("{url}", url);
+}
 
-  for (let offset = 0; offset <= 500; offset += limit) {
-    const url = `https://api.spotify.com/v1/shows/${showId}/episodes?market=JP&limit=${limit}&offset=${offset}`;
-    const res = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
-    if (!res.ok) throw new Error(`Spotify show episodes failed: ${res.status} ${await res.text()}`);
+/**
+ * Fit title into X post length using official weighted counting.
+ * URLs count as 23, emoji/CJK count 2, etc. :contentReference[oaicite:2]{index=2}
+ */
+function fitTitleTo280(phrase, rawTitle, url) {
+  const ell = "…";
+  const title = String(rawTitle ?? "").trim().replace(/\s+/g, " ");
 
-    const j = await res.json();
-    const eps = j?.items ?? [];
-
-    for (const ep of eps) {
-      const name = ep?.name ?? "";
-      const nrm = normalizeTitle(name);
-
-      // タイトル一致の強さ（完全一致優先）
-      let titleScore = 0;
-      if (nrm === target) titleScore = 100;
-      else if (nrm.includes(target) || target.includes(nrm)) titleScore = 70;
-      else continue;
-
-      // 日付差（pubDateが取れるときだけ加点/減点）
-      let dateScore = 0;
-      if (targetTime && ep?.release_date) {
-        const epTime = new Date(ep.release_date).getTime();
-        const diffDays = Math.abs(epTime - targetTime) / (1000 * 60 * 60 * 24);
-        dateScore = Math.max(0, 30 - diffDays); // 最大30点
-      }
-
-      const score = titleScore + dateScore;
-      if (!best || score > best.score) {
-        best = { url: ep?.external_urls?.spotify ?? null, score };
-      }
+  // If phrase doesn't even use title, we only validate whole text once.
+  if (!String(phrase).includes("{title}")) {
+    const text = renderTemplate(phrase, { title, url });
+    const r = parseTweet(text);
+    if (!r.valid) {
+      // fallback: hard-trim whole text (rare; phrase should be short)
+      return hardTrimWholeText(text);
     }
-
-    if (!j?.next) break;
+    return { text, finalTitle: title };
   }
 
-  return best?.url ?? null;
-}
-
-const TEMPLATES = [
-  "{title}\n{url}",
-  "今日の1本：{title}\n{url}",
-  "過去回ランダム投下。{title}\n{url}",
-  "通勤・通学のお供に：{title}\n{url}",
-  "作業BGMにちょうどいい回：{title}\n{url}",
-  "気分転換にどうぞ：{title}\n{url}",
-  "この回、地味に刺さる。{title}\n{url}",
-  "再生ボタンを押す理由がここにある：{title}\n{url}",
-  "週の真ん中にこの回を。{title}\n{url}",
-  "夜に聴くと味が変わる回：{title}\n{url}",
-  "朝のテンション調整回：{title}\n{url}",
-  "昼休みの逃避行：{title}\n{url}",
-  "帰宅路線に最適解：{title}\n{url}",
-  "聞き逃し救済：{title}\n{url}",
-  "“今”じゃなくて“あの頃”の回：{title}\n{url}",
-  "過去回ガチャ結果はこちら：{title}\n{url}",
-  "あなたの耳に、ランダムで。{title}\n{url}",
-  "1エピソード、1リフレッシュ：{title}\n{url}",
-  "今日はこれでいこう：{title}\n{url}",
-  "気になったら即再生：{title}\n{url}",
-  "語りが乗ってる回を引いた。{title}\n{url}",
-  "会話の温度がちょうどいい回：{title}\n{url}",
-  "眠気覚ましに投げとく：{title}\n{url}",
-  "深掘り欲が満たされる回：{title}\n{url}",
-  "やたら濃い回、当選：{title}\n{url}",
-  "この回から入るの、アリ。{title}\n{url}",
-  "初見でもいける回：{title}\n{url}",
-  "“ながら聴き”推奨：{title}\n{url}",
-  "テンポ重視派へ：{title}\n{url}",
-  "雑談のキレがある回：{title}\n{url}",
-  "話題の散らかり具合が最高：{title}\n{url}",
-  "好きな人は絶対好きな回：{title}\n{url}",
-  "映画の話、してます：{title}\n{url}",
-  "一旦これ聴いて落ち着こう：{title}\n{url}",
-  "“時間が溶ける”やつ：{title}\n{url}",
-  "たぶん今日のあなたに必要：{title}\n{url}",
-  "おすすめというより、指名手配：{title}\n{url}",
-  "これは嗜好品。{title}\n{url}",
-  "脳内シアター開演：{title}\n{url} #リルパル",
-  "過去回を一緒に掘ろう：{title}\n{url} #リルパル",
-  "ReelFriendsInTokyo 過去回ガチャ：{title}\n{url} #ReelPal",
-  "今夜の相棒：{title}\n{url} #ReelPal",
-  "この回の空気感、良い。{title}\n{url} #リルパル",
-  "タイトルだけで勝ってる回：{title}\n{url}",
-  "耳が暇ならこれ：{title}\n{url}",
-  "おすすめの仕方が雑でごめん。聴けばわかる：{title}\n{url}",
-  "“とりあえず再生”でOK：{title}\n{url}",
-  "タイムラインに過去回を置いておく：{title}\n{url}",
-  "一周回ってこの回：{title}\n{url}"
-];
-
-function buildTweet(template, title, url) {
-  let t = title;
-  for (let i = 0; i < 200; i++) {
-    const text = template.replace("{title}", t).replace("{url}", url).trim();
-    if (text.length <= 280) return text;
-    t = t.slice(0, Math.max(0, t.length - 1));
-    if (!t) break;
+  // Try full title
+  {
+    const text = renderTemplate(phrase, { title, url });
+    const r = parseTweet(text);
+    if (r.valid) return { text, finalTitle: title };
   }
-  return `${title.slice(0, 60)}\n${url}`.trim();
+
+  // Binary search on Unicode codepoints (safe for surrogate pairs)
+  const cps = [...title];
+  let lo = 0;
+  let hi = cps.length;
+  let best = "";
+
+  while (lo <= hi) {
+    const mid = Math.floor((lo + hi) / 2);
+    const cand = cps.slice(0, mid).join("") + (mid < cps.length ? ell : "");
+    const text = renderTemplate(phrase, { title: cand, url });
+    const r = parseTweet(text);
+    if (r.valid) {
+      best = cand;
+      lo = mid + 1;
+    } else {
+      hi = mid - 1;
+    }
+  }
+
+  // If still nothing fits, drop title entirely
+  const finalTitle = best || "";
+  let text = renderTemplate(phrase, { title: finalTitle, url });
+  if (!parseTweet(text).valid) {
+    // last resort: trim whole text while keeping validity
+    text = hardTrimWholeText(text);
+  }
+  return { text, finalTitle };
 }
 
-function oauth1Header({ method, url, consumerKey, consumerSecret, token, tokenSecret }) {
-  const oauthParams = {
-    oauth_consumer_key: consumerKey,
-    oauth_nonce: crypto.randomBytes(16).toString("hex"),
-    oauth_signature_method: "HMAC-SHA1",
-    oauth_timestamp: Math.floor(Date.now() / 1000).toString(),
-    oauth_token: token,
-    oauth_version: "1.0",
-  };
+function hardTrimWholeText(text) {
+  const ell = "…";
+  const cps = [...String(text)];
+  let lo = 0;
+  let hi = cps.length;
+  let best = "";
 
-  const baseParams = Object.entries(oauthParams)
-    .sort(([a],[b]) => a.localeCompare(b))
-    .map(([k,v]) => `${rfc3986Encode(k)}=${rfc3986Encode(v)}`)
-    .join("&");
-
-  const baseString = [
-    method.toUpperCase(),
-    rfc3986Encode(url),
-    rfc3986Encode(baseParams),
-  ].join("&");
-
-  const signingKey = `${rfc3986Encode(consumerSecret)}&${rfc3986Encode(tokenSecret)}`;
-  const signature = crypto.createHmac("sha1", signingKey).update(baseString).digest("base64");
-
-  const headerParams = { ...oauthParams, oauth_signature: signature };
-  const header = "OAuth " + Object.entries(headerParams)
-    .sort(([a],[b]) => a.localeCompare(b))
-    .map(([k,v]) => `${rfc3986Encode(k)}="${rfc3986Encode(v)}"`)
-    .join(", ");
-
-  return header;
+  while (lo <= hi) {
+    const mid = Math.floor((lo + hi) / 2);
+    const cand = cps.slice(0, mid).join("") + (mid < cps.length ? ell : "");
+    const r = parseTweet(cand);
+    if (r.valid) {
+      best = cand;
+      lo = mid + 1;
+    } else {
+      hi = mid - 1;
+    }
+  }
+  return best || String(text).slice(0, 10); // extremely unlikely
 }
 
-async function postToX(text) {
-  mustEnv("X_API_KEY", X_API_KEY);
-  mustEnv("X_API_SECRET", X_API_SECRET);
-  mustEnv("X_ACCESS_TOKEN", X_ACCESS_TOKEN);
-  mustEnv("X_ACCESS_SECRET", X_ACCESS_SECRET);
-
-  const url = "https://api.x.com/2/tweets";
-  const auth = oauth1Header({
-    method: "POST",
-    url,
-    consumerKey: X_API_KEY,
-    consumerSecret: X_API_SECRET,
-    token: X_ACCESS_TOKEN,
-    tokenSecret: X_ACCESS_SECRET,
-  });
-
+// -------------------------
+// RSS + Spotify URL resolver
+// -------------------------
+async function fetchText(url) {
   const res = await fetch(url, {
+    redirect: "follow",
+    headers: {
+      "user-agent": "rss-to-x/1.0 (+github actions)",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    },
+  });
+  if (!res.ok) throw new Error(`Fetch failed: ${res.status} ${res.statusText} (${url})`);
+  return await res.text();
+}
+
+async function tryExtractSpotifyEpisodeUrlFromPage(pageUrl) {
+  if (!pageUrl) return null;
+  try {
+    const html = await fetchText(pageUrl);
+    const m = html.match(/https?:\/\/open\.spotify\.com\/episode\/[A-Za-z0-9]+(?:\?[^\s"'<>]*)?/);
+    return m ? m[0] : null;
+  } catch {
+    return null;
+  }
+}
+
+async function spotifyGetTokenOptional() {
+  const id = env("SPOTIFY_CLIENT_ID");
+  const secret = env("SPOTIFY_CLIENT_SECRET");
+  if (!id || !secret) return null;
+
+  const basic = Buffer.from(`${id}:${secret}`).toString("base64");
+  const res = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
-      Authorization: auth,
-      "Content-Type": "application/json",
+      "authorization": `Basic ${basic}`,
+      "content-type": "application/x-www-form-urlencoded",
     },
-    body: JSON.stringify({ text }),
+    body: new URLSearchParams({ grant_type: "client_credentials" }),
   });
 
-  const bodyText = await res.text();
-  if (!res.ok) throw new Error(`X post failed: ${res.status} ${bodyText}`);
-  return bodyText;
+  if (!res.ok) {
+    const t = await res.text().catch(() => "");
+    console.warn("[spotify] token failed:", res.status, t.slice(0, 200));
+    return null;
+  }
+  const json = await res.json();
+  return json?.access_token ?? null;
 }
 
-async function main() {
-  mustEnv("RSS_URL", RSS_URL);
+function scoreEpisodeMatch({ rssTitle, rssDateISO, spName, spDate }) {
+  const a = normalizeForMatch(rssTitle);
+  const b = normalizeForMatch(spName);
 
-  const rssRes = await fetch(RSS_URL);
-  if (!rssRes.ok) throw new Error(`RSS fetch failed: ${rssRes.status} ${await rssRes.text()}`);
-  const xml = await rssRes.text();
+  // basic similarity
+  let score = 0;
+  if (!a || !b) return score;
 
-  const { channelTitle, items } = parseRss(xml);
-  if (!items.length) throw new Error("No RSS items found.");
+  if (a === b) score += 1000;
+  if (b.includes(a)) score += 300;
+  if (a.includes(b)) score += 200;
 
-  // “過去回”定義：直近EXCLUDE_DAYS日を除外。取れない場合は最新1件だけ除外。
-  const now = Date.now();
-  const past = items.filter(it => it.pubDate instanceof Date && !Number.isNaN(it.pubDate.getTime()))
-    .filter(it => (now - it.pubDate.getTime()) >= EXCLUDE_DAYS * 24 * 60 * 60 * 1000);
+  // token overlap
+  const at = new Set(a.split(" "));
+  const bt = new Set(b.split(" "));
+  let overlap = 0;
+  for (const x of at) if (bt.has(x)) overlap++;
+  score += overlap * 25;
 
-  const pool = past.length ? past : items.slice(1); // fallback
-  if (!pool.length) throw new Error("No eligible episodes after filtering.");
-
-  const picked = pickRandom(pool);
-
-  // まずRSS内からspotify URLを探す
-  let spotifyUrl =
-    extractSpotifyUrlFromText(picked.raw) ||
-    (picked.link ? extractSpotifyUrlFromText(picked.link) : null);
-
-  // 無ければSpotify APIで照合して確定
-  if (!spotifyUrl) {
-    const token = await spotifyGetToken();
-    const showId = await spotifySearchShowId(token, channelTitle || "Reel Friends in Tokyo");
-    if (!showId) {
-      throw new Error("Spotify showId not found. (Check channel title or set show link in RSS.)");
-    }
-    spotifyUrl = await spotifyResolveEpisodeUrl(token, showId, picked.title, picked.pubDate);
-    if (!spotifyUrl) {
-      throw new Error(`Spotify episode URL not resolved for title: ${picked.title}`);
+  // date proximity (if both exist)
+  if (rssDateISO && spDate) {
+    const rss = new Date(rssDateISO).getTime();
+    const sp = new Date(spDate).getTime();
+    if (Number.isFinite(rss) && Number.isFinite(sp)) {
+      const days = Math.abs(rss - sp) / (1000 * 60 * 60 * 24);
+      score += Math.max(0, 200 - Math.min(200, days * 20)); // within ~10 days gets bonus
     }
   }
 
-  const template = pickRandom(TEMPLATES);
-  const tweet = buildTweet(template, picked.title, spotifyUrl);
+  return score;
+}
 
-  console.log("Picked:", picked.title);
-  console.log("Spotify:", spotifyUrl);
-  console.log("Tweet:\n" + tweet);
+async function tryResolveSpotifyEpisodeUrlViaSearch(token, rssTitle, rssDateISO) {
+  if (!token) return null;
+  const q = `"${String(rssTitle).replace(/"/g, "")}"`;
+  const url = `https://api.spotify.com/v1/search?type=episode&limit=10&q=${encodeURIComponent(q)}`;
+  const res = await fetch(url, {
+    headers: { authorization: `Bearer ${token}` },
+  });
+  if (!res.ok) return null;
 
-  const result = await postToX(tweet);
-  console.log("X result:", result);
+  const json = await res.json();
+  const items = json?.episodes?.items ?? [];
+  if (!items.length) return null;
+
+  let best = null;
+  let bestScore = -1;
+
+  for (const ep of items) {
+    const s = scoreEpisodeMatch({
+      rssTitle,
+      rssDateISO,
+      spName: ep?.name,
+      spDate: ep?.release_date,
+    });
+    if (s > bestScore) {
+      bestScore = s;
+      best = ep;
+    }
+  }
+
+  // safety: require some minimum plausibility
+  if (best && bestScore >= 250 && best?.external_urls?.spotify) return best.external_urls.spotify;
+  return null;
+}
+
+// -------------------------
+// main
+// -------------------------
+async function main() {
+  // X client
+  const xClient = new TwitterApi({
+    appKey: mustEnv("X_API_KEY"),
+    appSecret: mustEnv("X_API_KEY_SECRET"),
+    accessToken: mustEnv("X_ACCESS_TOKEN"),
+    accessSecret: mustEnv("X_ACCESS_TOKEN_SECRET"),
+  });
+
+  // phrases
+  const phrases = readPhrasesFile() ?? [
+    "過去回どうぞ：{title} {url}",
+    "今日のランダム回：{title} {url}",
+    "聴き逃し防止：{title} {url}",
+  ];
+
+  // RSS
+  const parser = new Parser();
+  const rssUrl = env("RSS_URL", DEFAULT_RSS);
+
+  let feed;
+  try {
+    feed = await parser.parseURL(rssUrl);
+  } catch (e) {
+    // rss-parser parseURL sometimes fails depending on TLS/redirects; fallback to fetchText+parseString
+    const xml = await fetchText(rssUrl);
+    feed = await parser.parseString(xml);
+  }
+
+  const items = (feed?.items ?? [])
+    .filter((it) => it?.title)
+    .filter((it) => !String(it.title).toLowerCase().includes("trailer"));
+
+  if (!items.length) throw new Error("No RSS items found.");
+
+  const picked = pickRandom(items);
+  const episodeTitle = String(picked.title).trim();
+  const episodePage = picked.link || picked.guid || null;
+  const rssDateISO = picked.isoDate || picked.pubDate || null;
+
+  // Resolve Spotify direct episode URL:
+  // 1) Try scraping episode page for open.spotify.com/episode/...
+  // 2) Try Spotify search (optional env)
+  // 3) Fallback to RSS link
+  let episodeUrl = await tryExtractSpotifyEpisodeUrlFromPage(episodePage);
+
+  if (!episodeUrl) {
+    const token = await spotifyGetTokenOptional();
+    if (token) {
+      episodeUrl = await tryResolveSpotifyEpisodeUrlViaSearch(token, episodeTitle, rssDateISO);
+    }
+  }
+  if (!episodeUrl) {
+    episodeUrl = episodePage || rssUrl;
+    console.warn("[warn] Could not resolve Spotify direct episode URL. Fallback:", episodeUrl);
+  }
+
+  // Compose tweet
+  const phrase = pickRandom(phrases);
+  const { text } = fitTitleTo280(phrase, episodeTitle, episodeUrl);
+
+  // final validation log
+  const r = parseTweet(text);
+  console.log("[tweet] weightedLength:", r.weightedLength, "valid:", r.valid);
+  console.log("[tweet] text:", text);
+
+  // Post
+  await xClient.v2.tweet(text);
+  console.log("OK: posted.");
 }
 
 main().catch((e) => {
-  console.error(e);
+  console.error(e?.stack || e);
   process.exit(1);
 });
