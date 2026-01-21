@@ -1,18 +1,10 @@
-name: Random Episode Share
+name: random-episode-share
 
 on:
   schedule:
-    # GitHub Actions の cron は UTC 基準
-    # JST 09:00 / 15:00 / 21:00 ＝ UTC 00:00 / 06:00 / 12:00
+    # JST 09:00 / 15:00 / 21:00  =  UTC 00:00 / 06:00 / 12:00
     - cron: "0 0,6,12 * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: read
-
-concurrency:
-  group: random-episode-share
-  cancel-in-progress: false
+  workflow_dispatch: {}
 
 jobs:
   post:
@@ -28,18 +20,20 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Run share script
+      - name: Install deps (no-save)
+        run: npm install --no-save rss-parser twitter-text twitter-api-v2
+
+      - name: Post random episode
         env:
-          TZ: Asia/Tokyo
-          RSS_URL: https://anchor.fm/s/10422ca68/podcast/rss
+          RSS_URL: "https://anchor.fm/s/10422ca68/podcast/rss"
 
-          # 既存の secrets 名に合わせて残してください（例）
+          # X (OAuth 1.0a user context)
           X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_API_KEY_SECRET: ${{ secrets.X_API_KEY_SECRET }}
           X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+          X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
 
-          # もし Spotify API を使う実装なら（使ってなければ消してOK）
+          # Spotify (任意：未設定でも落ちない設計)
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
 
