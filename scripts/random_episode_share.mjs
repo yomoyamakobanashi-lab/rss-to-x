@@ -41,10 +41,10 @@ function readPhrasesFile() {
 }
 
 /**
- * Compose text with placeholders:
+ * placeholders:
  *  - {title}
  *  - {url}
- * If {url} is missing in phrase, append it.
+ * If {url} missing, append.
  */
 function renderTemplate(phrase, { title, url }) {
   let p = String(phrase);
@@ -53,14 +53,14 @@ function renderTemplate(phrase, { title, url }) {
 }
 
 /**
- * Fit title into X post length using official weighted counting (twitter-text).
- * URLs count as 23, emoji/CJK count 2, etc.
+ * Xのweighted文字数で収まるように「タイトルだけ」省略（…付）。
+ * URLは 23 として扱われ、CJK/絵文字も正しく加重される（twitter-text）。
  */
 function fitTitleTo280(phrase, rawTitle, url) {
   const ell = "…";
   const title = String(rawTitle ?? "").trim().replace(/\s+/g, " ");
 
-  // If phrase doesn't use title, validate whole text only once.
+  // phraseがtitleを使わないなら、全体だけ検証
   if (!String(phrase).includes("{title}")) {
     const text = renderTemplate(phrase, { title, url });
     const r = parseTweet(text);
@@ -68,13 +68,13 @@ function fitTitleTo280(phrase, rawTitle, url) {
     return { text, finalTitle: title };
   }
 
-  // Try full title
+  // まずフルタイトル
   {
     const text = renderTemplate(phrase, { title, url });
     if (parseTweet(text).valid) return { text, finalTitle: title };
   }
 
-  // Binary search on Unicode codepoints (safe for emoji/surrogates)
+  // Unicode codepoints 単位で二分探索（絵文字でも壊れない）
   const cps = [...title];
   let lo = 0;
   let hi = cps.length;
@@ -94,9 +94,7 @@ function fitTitleTo280(phrase, rawTitle, url) {
 
   const finalTitle = best || "";
   let text = renderTemplate(phrase, { title: finalTitle, url });
-  if (!parseTweet(text).valid) {
-    text = hardTrimWholeText(text);
-  }
+  if (!parseTweet(text).valid) text = hardTrimWholeText(text);
   return { text, finalTitle };
 }
 
@@ -121,7 +119,7 @@ function hardTrimWholeText(text) {
 }
 
 // -------------------------
-// RSS + Spotify URL resolver (no Spotify env required)
+// RSS -> URL resolver
 // -------------------------
 async function fetchText(url) {
   const res = await fetch(url, {
@@ -146,103 +144,16 @@ async function tryExtractSpotifyEpisodeUrlFromPage(pageUrl) {
   }
 }
 
-// Optional Spotify lookup (only if env exists)
-async function spotifyGetTokenOptional() {
-  const id = env("SPOTIFY_CLIENT_ID");
-  const secret = env("SPOTIFY_CLIENT_SECRET");
-  if (!id || !secret) return null;
-
-  const basic = Buffer.from(`${id}:${secret}`).toString("base64");
-  const res = await fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      authorization: `Basic ${basic}`,
-      "content-type": "application/x-www-form-urlencoded",
-    },
-    body: new URLSearchParams({ grant_type: "client_credentials" }),
-  });
-
-  if (!res.ok) return null;
-  const json = await res.json();
-  return json?.access_token ?? null;
-}
-
-function normalizeForMatch(s) {
-  return String(s ?? "")
-    .normalize("NFKC")
-    .toLowerCase()
-    .replace(/\s+/g, " ")
-    .replace(/[’'"]/g, "")
-    .replace(/[^\p{L}\p{N}\s]/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function scoreEpisodeMatch({ rssTitle, rssDateISO, spName, spDate }) {
-  const a = normalizeForMatch(rssTitle);
-  const b = normalizeForMatch(spName);
-  if (!a || !b) return 0;
-
-  let score = 0;
-  if (a === b) score += 1000;
-  if (b.includes(a)) score += 300;
-  if (a.includes(b)) score += 200;
-
-  const at = new Set(a.split(" "));
-  const bt = new Set(b.split(" "));
-  let overlap = 0;
-  for (const x of at) if (bt.has(x)) overlap++;
-  score += overlap * 25;
-
-  if (rssDateISO && spDate) {
-    const rss = new Date(rssDateISO).getTime();
-    const sp = new Date(spDate).getTime();
-    if (Number.isFinite(rss) && Number.isFinite(sp)) {
-      const days = Math.abs(rss - sp) / (1000 * 60 * 60 * 24);
-      score += Math.max(0, 200 - Math.min(200, days * 20));
-    }
-  }
-  return score;
-}
-
-async function tryResolveSpotifyEpisodeUrlViaSearch(token, rssTitle, rssDateISO) {
-  if (!token) return null;
-  const q = `"${String(rssTitle).replace(/"/g, "")}"`;
-  const url = `https://api.spotify.com/v1/search?type=episode&limit=10&q=${encodeURIComponent(q)}`;
-  const res = await fetch(url, { headers: { authorization: `Bearer ${token}` } });
-  if (!res.ok) return null;
-
-  const json = await res.json();
-  const items = json?.episodes?.items ?? [];
-  if (!items.length) return null;
-
-  let best = null;
-  let bestScore = -1;
-  for (const ep of items) {
-    const s = scoreEpisodeMatch({
-      rssTitle,
-      rssDateISO,
-      spName: ep?.name,
-      spDate: ep?.release_date,
-    });
-    if (s > bestScore) {
-      bestScore = s;
-      best = ep;
-    }
-  }
-  if (best && bestScore >= 250 && best?.external_urls?.spotify) return best.external_urls.spotify;
-  return null;
-}
-
 // -------------------------
 // main
 // -------------------------
 async function main() {
+  // あなたの Secrets 名に合わせてここを固定
   const xClient = new TwitterApi({
     appKey: mustEnv("X_API_KEY"),
-    appSecret: mustEnv("X_API_KEY_SECRET"),
+    appSecret: mustEnv("X_API_SECRET"),
     accessToken: mustEnv("X_ACCESS_TOKEN"),
-    accessSecret: mustEnv("X_ACCESS_TOKEN_SECRET"),
+    accessSecret: mustEnv("X_ACCESS_SECRET"),
   });
 
   const phrases = readPhrasesFile() ?? [
@@ -268,21 +179,9 @@ async function main() {
   const picked = pickRandom(items);
   const episodeTitle = String(picked.title).trim();
   const episodePage = picked.link || picked.guid || null;
-  const rssDateISO = picked.isoDate || picked.pubDate || null;
 
-  // Resolve URL preference:
-  // 1) Try Spotify episode direct URL by scraping episode page
-  // 2) Optional Spotify API search (if env exists)
-  // 3) Fallback to RSS link
+  // まずエピソードページから Spotify episode URL を拾う（取れない場合はフォールバック）
   let episodeUrl = await tryExtractSpotifyEpisodeUrlFromPage(episodePage);
-
-  if (!episodeUrl) {
-    const token = await spotifyGetTokenOptional();
-    if (token) {
-      episodeUrl = await tryResolveSpotifyEpisodeUrlViaSearch(token, episodeTitle, rssDateISO);
-    }
-  }
-
   if (!episodeUrl) {
     episodeUrl = episodePage || rssUrl;
     console.warn("[warn] Spotify direct URL not resolved; fallback:", episodeUrl);
