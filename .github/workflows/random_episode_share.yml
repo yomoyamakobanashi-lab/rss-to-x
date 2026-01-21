@@ -2,7 +2,7 @@ name: Random Episode Share
 
 on:
   schedule:
-    # JST 09:00 / 15:00 / 21:00  ->  UTC 00:00 / 06:00 / 12:00
+    # GitHub Actions の cron は UTC。JST 9/15/21 = UTC 0/6/12
     - cron: "0 0,6,12 * * *"
   workflow_dispatch:
 
@@ -30,7 +30,9 @@ jobs:
       - name: Post to X
         env:
           TZ: Asia/Tokyo
+
           RSS_URL: https://anchor.fm/s/10422ca68/podcast/rss
+          EXCLUDE_DAYS: "7"
 
           # X (OAuth 1.0a User Context)
           X_API_KEY: ${{ secrets.X_API_KEY }}
@@ -42,7 +44,4 @@ jobs:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
 
-          # 任意：最近回を除外する日数（例：7 なら直近7日分は引かない）
-          EXCLUDE_DAYS: "7"
-
-        run: node .github/scripts/random_episode_share.mjs
+        run: node scripts/random_episode_share.mjs
