@@ -1,0 +1,36 @@
+name: weekly-digest-thread
+
+on:
+  schedule:
+    # Every Saturday 21:00 JST = 12:00 UTC (Saturday)
+    - cron: "0 12 * * 6"
+  workflow_dispatch: {}
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install deps (no-save)
+        run: npm install --no-save rss-parser twitter-text twitter-api-v2
+
+      - name: Post weekly digest thread
+        env:
+          RSS_URL: "https://anchor.fm/s/10422ca68/podcast/rss"
+
+          # あなたの Secrets 名に完全一致
+          X_API_KEY: ${{ secrets.X_API_KEY }}
+          X_API_SECRET: ${{ secrets.X_API_SECRET }}
+          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+
+        run: node scripts/weekly_digest_thread.mjs
