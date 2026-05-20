@@ -30,20 +30,22 @@ function normalizeTitle(title) {
   const items = parsed?.rss?.channel?.[0]?.item || [];
 
   const episodes = items
-    .map(item => {
-      const rawTitle = item.title?.[0] || '';
+    .map((item, index) => {
+      const title = item.title?.[0] || '';
       const spotifyId = item['spotify:episodeId']?.[0];
 
-      if (!rawTitle || !spotifyId) return null;
+      if (!title || !spotifyId) return null;
 
       return {
-        title: rawTitle,
-        normalizedTitle: normalizeTitle(rawTitle),
-        spotifyUrl: `https://open.spotify.com/episode/${spotifyId}`
+        index,
+        title,
+        normalizedTitle: normalizeTitle(title),
+        spotifyUrl: `https://open.spotify.com/episode/${spotifyId}`,
+        pubDate: item.pubDate?.[0] || ''
       };
     })
     .filter(Boolean);
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(episodes, null, 2), 'utf8');
-  console.log(`Saved ${episodes.length} Spotify episode links to ${OUTPUT_FILE}`);
+  console.log(`Saved ${episodes.length} Spotify episodes to ${OUTPUT_FILE}`);
 })();
