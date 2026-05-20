@@ -9,8 +9,8 @@ const OUTPUT_DIR = 'data';
 const SPOTIFY_FILE = 'data/spotify_episodes.json';
 const OUTPUT_FILE = 'data/thread_drafts.json';
 
-const MAX_PARENT_LENGTH = 180;
 const MAX_DRAFTS = 20;
+const MAX_PARENT_LENGTH = 220;
 
 function normalizeTitle(title) {
   return String(title || '')
@@ -24,9 +24,9 @@ function normalizeTitle(title) {
 function cleanText(text) {
   return String(text || '')
     .replace(/\s+/g, ' ')
+    .replace(/https?:\/\/\S+/g, '')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
-    .replace(/https?:\/\/\S+/g, '')
     .trim();
 }
 
@@ -39,13 +39,13 @@ function truncate(text, max) {
 function titleSimilarity(a, b) {
   const aa = normalizeTitle(a);
   const bb = normalizeTitle(b);
-  if (!aa || !bb) return 0;
 
+  if (!aa || !bb) return 0;
   if (aa === bb) return 1;
   if (aa.includes(bb) || bb.includes(aa)) return 0.85;
 
-  const aTokens = new Set(aa.split(/[ \-_/・、。〜]+/).filter(t => t.length >= 2));
-  const bTokens = new Set(bb.split(/[ \-_/・、。〜]+/).filter(t => t.length >= 2));
+  const aTokens = new Set(aa.split(/[ \-_/・、。〜｜|]+/).filter(t => t.length >= 2));
+  const bTokens = new Set(bb.split(/[ \-_/・、。〜｜|]+/).filter(t => t.length >= 2));
 
   if (aTokens.size === 0 || bTokens.size === 0) return 0;
 
@@ -57,82 +57,73 @@ function titleSimilarity(a, b) {
   return hit / Math.max(aTokens.size, bTokens.size);
 }
 
-function pickSpotifyUrl(listenTitle, spotifyEpisodes) {
-  let best = null;
-  let bestScore = 0;
-
-  for (const ep of spotifyEpisodes) {
-    const score = titleSimilarity(listenTitle, ep.title);
-    if (score > bestScore) {
-      best = ep;
-      bestScore = score;
-    }
-  }
-
-  if (!best || bestScore < 0.15) return null;
-
-  return {
-    spotifyUrl: best.spotifyUrl,
-    matchedSpotifyTitle: best.title,
-    score: bestScore
-  };
-}
-
 function extractEpisodeLinksFromIndex(html) {
   const $ = cheerio.load(html);
-  const links = [];
+  const urls = [];
 
   $('a[href]').each((_, el) => {
     const href = $(el).attr('href');
     if (!href) return;
 
-    if (/^\/p\/reelpal\/[a-z0-9]+$/i.test(href)) {
-      links.push(`https://listen.style${href}`);
+    let url = null;
+
+    if (href.startsWith('/p/reelpal/')) {
+      url = `https://listen.style${href.split('?')[0].split('#')[0]}`;
     }
 
-    if (/^https:\/\/listen\.style\/p\/reelpal\/[a-z0-9]+$/i.test(href)) {
-      links.push(href);
+    if (href.startsWith('https://listen.style/p/reelpal/')) {
+      url = href.split('?')[0].split('#')[0];
     }
+
+    if (!url) return;
+    if (url === LISTEN_URL) return;
+
+    const slug = url.replace('https://listen.style/p/reelpal/', '').trim();
+    if (!slug) return;
+    if (slug.includes('/')) return;
+
+    urls.push(url);
   });
 
-  return [...new Set(links)];
+  return [...new Set(urls)];
+}
+
+function extractTitle($) {
+  const h1 = cleanText($('h1').first().text());
+  if (h1 && h1.length > 3) return h1;
+
+  const title = cleanText($('title').first().text());
+  return title.replace(/- LISTEN.*$/i, '').trim();
 }
 
 function extractUsefulText($) {
   const parts = [];
 
-  $('h1, h2, h3, p, li, div').each((_, el) => {
+  $('h1, h2, h3, p, li, article, section, div').each((_, el) => {
     const text = cleanText($(el).text());
     if (!text) return;
-    if (text.length < 12) return;
+    if (text.length < 20) return;
 
-    const ng = [
+    const ngWords = [
+      'LISTEN',
       'Copy Link',
       'Share',
       'Play',
       'Pause',
       'Color Theme',
-      'Back',
-      'Embed',
-      'LISTEN',
       'Apple Podcast',
-      'Spotify'
+      'Spotify',
+      'RSS',
+      'ログイン',
+      '新規登録'
     ];
 
-    if (ng.some(word => text.includes(word))) return;
+    if (ngWords.some(w => text.includes(w))) return;
 
     parts.push(text);
   });
 
   return [...new Set(parts)].join(' ');
-}
-
-function extractTitle($) {
-  const h1 = cleanText($('h1').first().text());
-  if (h1 && h1.length > 5) return h1;
-
-  const title = cleanText($('title').first().text());
-  return title.replace(/- LISTEN.*$/i, '').trim();
 }
 
 function extractWorkName(title) {
@@ -146,11 +137,11 @@ function extractWorkName(title) {
   for (const p of patterns) {
     const m = title.match(p);
     if (m && m[1]) {
-      return cleanText(m[1]).slice(0, 30);
+      return cleanText(m[1]).slice(0, 32);
     }
   }
 
-  return truncate(title.replace(/Reel Friends.*$/i, ''), 30);
+  return truncate(title, 32);
 }
 
 function pickKeywords(text) {
@@ -159,7 +150,7 @@ function pickKeywords(text) {
     '社会', '歴史', '階級', '差別', '教育', '倫理', '神話', '都市伝説',
     'ノスタルジー', '資本主義', 'フェミニズム', '家父長制', '植民地主義',
     '身体', '恐怖', '怪異', '呪い', '孤独', '成長', '喪失', '欲望',
-    '自由', '選択', '責任', '友情', '愛', '死', '生', '正義'
+    '自由', '選択', '責任', '友情', '愛', '死', '正義', '映画', '文化'
   ];
 
   return candidates.filter(k => text.includes(k)).slice(0, 3);
@@ -168,13 +159,14 @@ function pickKeywords(text) {
 function buildParentDraft(title, body) {
   const work = extractWorkName(title);
   const keywords = pickKeywords(`${title} ${body}`);
+
   const k1 = keywords[0] || '作品の奥にある違和感';
   const k2 = keywords[1] || '観終わったあとに残る感触';
 
   const templates = [
-    `『${work}』、ただの映画として流すには少し厄介です。\n\n今回は、${k1}と${k2}のあいだに残る嫌な手触りを掘っています。\n#リルパル`,
+    `『${work}』、ただの作品紹介で済ませるには少し厄介です。\n\n今回は、${k1}と${k2}のあいだに残る手触りを掘っています。\n#リルパル`,
 
-    `この映画、面白い／怖いで済ませる前に、少し立ち止まりたくなる作品です。\n\n『${work}』を、${k1}という視点から話しています。\n#リルパル`,
+    `この映画、面白い／怖いで片づける前に、少し立ち止まりたくなる作品です。\n\n『${work}』を、${k1}という視点から話しています。\n#リルパル`,
 
     `『${work}』を観て残るのは、物語の筋よりも「なぜそれが引っかかるのか」という感覚かもしれません。\n\n今回はそのあたりを話しています。\n#リルパル`,
 
@@ -182,7 +174,7 @@ function buildParentDraft(title, body) {
 
     `『${work}』、油断すると娯楽の顔をしたまま、現実の嫌な部分をすっと差し出してくるタイプの作品です。\n\n今回はそのへんを語っています。\n#リルパル`,
 
-    `今回の回は、『${work}』を入口に、映画の中にある${k1}について話しています。\n\n観た人の感想も聞きたい一本です。\n#リルパル`
+    `今回は『${work}』を入口に、映画の中にある${k1}について話しています。\n\n観た人の感想も聞きたい一本です。\n#リルパル`
   ];
 
   let draft = templates[Math.floor(Math.random() * templates.length)];
@@ -194,6 +186,40 @@ function buildParentDraft(title, body) {
   if (draft.length <= MAX_PARENT_LENGTH) return draft;
 
   return `『${work}』回。\n\n作品の奥に残る違和感を、少し掘り下げて話しています。\n#リルパル`;
+}
+
+function pickSpotifyMatch(listenTitle, spotifyEpisodes, fallbackIndex) {
+  let best = null;
+  let bestScore = 0;
+
+  for (const ep of spotifyEpisodes) {
+    const score = titleSimilarity(listenTitle, ep.title);
+    if (score > bestScore) {
+      best = ep;
+      bestScore = score;
+    }
+  }
+
+  if (best && bestScore >= 0.12) {
+    return {
+      spotifyUrl: best.spotifyUrl,
+      matchedSpotifyTitle: best.title,
+      matchScore: bestScore,
+      matchMethod: 'title'
+    };
+  }
+
+  const fallback = spotifyEpisodes[fallbackIndex];
+  if (fallback) {
+    return {
+      spotifyUrl: fallback.spotifyUrl,
+      matchedSpotifyTitle: fallback.title,
+      matchScore: 0,
+      matchMethod: 'order-fallback'
+    };
+  }
+
+  return null;
 }
 
 async function fetchText(url) {
@@ -221,25 +247,38 @@ async function fetchText(url) {
 
   const spotifyEpisodes = JSON.parse(fs.readFileSync(SPOTIFY_FILE, 'utf8'));
 
+  console.log(`Spotify episodes: ${spotifyEpisodes.length}`);
+
   const indexHtml = await fetchText(LISTEN_URL);
   const episodeUrls = extractEpisodeLinksFromIndex(indexHtml).slice(0, MAX_DRAFTS);
 
+  console.log(`LISTEN episode URLs found: ${episodeUrls.length}`);
+
   const drafts = [];
 
-  for (const listenUrl of episodeUrls) {
+  for (let i = 0; i < episodeUrls.length; i++) {
+    const listenUrl = episodeUrls[i];
+
     try {
       const html = await fetchText(listenUrl);
       const $ = cheerio.load(html);
 
       const title = extractTitle($);
       const body = extractUsefulText($);
-      const match = pickSpotifyUrl(title, spotifyEpisodes);
+      const match = pickSpotifyMatch(title, spotifyEpisodes, i);
 
-      if (!title || !body || !match?.spotifyUrl) {
+      console.log(`Checking: ${title}`);
+      console.log(`Body length: ${body.length}`);
+      console.log(`Match: ${match ? match.matchMethod : 'none'} / ${match ? match.matchedSpotifyTitle : 'none'}`);
+
+      if (!title || !match?.spotifyUrl) {
+        console.log(`Skipped: missing title or Spotify URL`);
         continue;
       }
 
-      const parent = buildParentDraft(title, body);
+      const usableBody = body || title;
+      const parent = buildParentDraft(title, usableBody);
+
       const reply1 = `本編はこちら👇\n${match.spotifyUrl}\n#リルパル`;
       const reply2 = `感想・映画リクエストはこちら👇\n${FORM_URL}\n#リルパル`;
 
@@ -251,8 +290,9 @@ async function fetchText(url) {
         listenUrl,
         spotifyUrl: match.spotifyUrl,
         matchedSpotifyTitle: match.matchedSpotifyTitle,
-        matchScore: Number(match.score.toFixed(3)),
-        sourceTextSample: truncate(body, 260)
+        matchScore: Number(match.matchScore.toFixed(3)),
+        matchMethod: match.matchMethod,
+        sourceTextSample: truncate(usableBody, 260)
       });
     } catch (err) {
       console.error(`Skipped ${listenUrl}: ${err.message}`);
