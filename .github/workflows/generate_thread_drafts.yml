@@ -1,0 +1,37 @@
+name: Generate Thread Drafts
+
+on:
+  schedule:
+    # JST 21:00
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install node-fetch@2 cheerio xml2js
+
+      - name: Build Spotify episodes from RSS
+        run: node scripts/buildSpotifyEpisodesFromRSS.js
+
+      - name: Generate thread drafts from LISTEN
+        run: node scripts/generateThreadDraftsFromListen.js
+
+      - name: Commit generated drafts
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add data/spotify_episodes.json data/thread_drafts.json
+          git commit -m "Generate thread drafts" || echo "No changes"
+          git push
