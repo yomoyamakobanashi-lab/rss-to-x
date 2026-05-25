@@ -15,6 +15,16 @@ function normalizeTitle(title) {
     .toLowerCase();
 }
 
+function findSpotifyEpisodeUrl(text) {
+  const raw = String(text || '')
+    .replace(/\\u002F/g, '/')
+    .replace(/\\\//g, '/')
+    .replace(/&amp;/g, '&');
+
+  const match = raw.match(/https:\/\/open\.spotify\.com\/episode\/[A-Za-z0-9]+/);
+  return match ? match[0] : null;
+}
+
 (async () => {
   if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
@@ -32,20 +42,32 @@ function normalizeTitle(title) {
   const episodes = items
     .map((item, index) => {
       const title = item.title?.[0] || '';
-      const spotifyId = item['spotify:episodeId']?.[0];
+      if (!title) return null;
 
-      if (!title || !spotifyId) return null;
+      let spotifyUrl = null;
+
+      const spotifyId = item['spotify:episodeId']?.[0];
+      if (spotifyId) {
+        spotifyUrl = `https://open.spotify.com/episode/${spotifyId}`;
+      }
+
+      if (!spotifyUrl) {
+        spotifyUrl = findSpotifyEpisodeUrl(JSON.stringify(item));
+      }
 
       return {
         index,
         title,
         normalizedTitle: normalizeTitle(title),
-        spotifyUrl: `https://open.spotify.com/episode/${spotifyId}`,
+        spotifyUrl,
         pubDate: item.pubDate?.[0] || ''
       };
     })
     .filter(Boolean);
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(episodes, null, 2), 'utf8');
-  console.log(`Saved ${episodes.length} Spotify episodes to ${OUTPUT_FILE}`);
+
+  const withSpotify = episodes.filter(ep => ep.spotifyUrl).length;
+  console.log(`Saved ${episodes.length} RSS episodes to ${OUTPUT_FILE}`);
+  console.log(`RSS episodes with Spotify URL: ${withSpotify}`);
 })();
