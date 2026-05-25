@@ -27,7 +27,30 @@ function cleanText(text) {
     .replace(/https?:\/\/\S+/g, '')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&')
     .trim();
+}
+
+function normalizeHtmlText(text) {
+  return String(text || '')
+    .replace(/\\u002F/g, '/')
+    .replace(/\\\//g, '/')
+    .replace(/&amp;/g, '&')
+    .replace(/&#x2F;/g, '/')
+    .replace(/&#47;/g, '/');
+}
+
+function findSpotifyEpisodeUrlFromHtml(html) {
+  const normalized = normalizeHtmlText(html);
+  const directMatch = normalized.match(/https:\/\/open\.spotify\.com\/episode\/[A-Za-z0-9]+/);
+  if (directMatch) return directMatch[0];
+
+  const spotifyUriMatch = normalized.match(/spotify:episode:([A-Za-z0-9]+)/);
+  if (spotifyUriMatch) {
+    return `https://open.spotify.com/episode/${spotifyUriMatch[1]}`;
+  }
+
+  return null;
 }
 
 function truncate(text, max) {
@@ -150,7 +173,8 @@ function pickKeywords(text) {
     '社会', '歴史', '階級', '差別', '教育', '倫理', '神話', '都市伝説',
     'ノスタルジー', '資本主義', 'フェミニズム', '家父長制', '植民地主義',
     '身体', '恐怖', '怪異', '呪い', '孤独', '成長', '喪失', '欲望',
-    '自由', '選択', '責任', '友情', '愛', '死', '正義', '映画', '文化'
+    '自由', '選択', '責任', '友情', '愛', '死', '正義', '映画', '文化',
+    'コメディ', 'ホラー', 'ファンタジー', 'アクション', 'ドラマ'
   ];
 
   return candidates.filter(k => text.includes(k)).slice(0, 3);
@@ -188,11 +212,13 @@ function buildParentDraft(title, body) {
   return `『${work}』回。\n\n作品の奥に残る違和感を、少し掘り下げて話しています。\n#リルパル`;
 }
 
-function pickSpotifyMatch(listenTitle, spotifyEpisodes, fallbackIndex) {
+function pickSpotifyMatch(listenTitle, spotifyEpisodes) {
+  const available = spotifyEpisodes.filter(ep => ep.spotifyUrl);
+
   let best = null;
   let bestScore = 0;
 
-  for (const ep of spotifyEpisodes) {
+  for (const ep of available) {
     const score = titleSimilarity(listenTitle, ep.title);
     if (score > bestScore) {
       best = ep;
@@ -205,17 +231,7 @@ function pickSpotifyMatch(listenTitle, spotifyEpisodes, fallbackIndex) {
       spotifyUrl: best.spotifyUrl,
       matchedSpotifyTitle: best.title,
       matchScore: bestScore,
-      matchMethod: 'title'
-    };
-  }
-
-  const fallback = spotifyEpisodes[fallbackIndex];
-  if (fallback) {
-    return {
-      spotifyUrl: fallback.spotifyUrl,
-      matchedSpotifyTitle: fallback.title,
-      matchScore: 0,
-      matchMethod: 'order-fallback'
+      matchMethod: 'rss-title'
     };
   }
 
@@ -241,13 +257,14 @@ async function fetchText(url) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
-  if (!fs.existsSync(SPOTIFY_FILE)) {
-    throw new Error(`Missing ${SPOTIFY_FILE}. Run buildSpotifyEpisodesFromRSS.js first.`);
+  let spotifyEpisodes = [];
+
+  if (fs.existsSync(SPOTIFY_FILE)) {
+    spotifyEpisodes = JSON.parse(fs.readFileSync(SPOTIFY_FILE, 'utf8'));
   }
 
-  const spotifyEpisodes = JSON.parse(fs.readFileSync(SPOTIFY_FILE, 'utf8'));
-
-  console.log(`Spotify episodes: ${spotifyEpisodes.length}`);
+  console.log(`RSS episodes: ${spotifyEpisodes.length}`);
+  console.log(`RSS episodes with Spotify URL: ${spotifyEpisodes.filter(ep => ep.spotifyUrl).length}`);
 
   const indexHtml = await fetchText(LISTEN_URL);
   const episodeUrls = extractEpisodeLinksFromIndex(indexHtml).slice(0, MAX_DRAFTS);
@@ -265,13 +282,20 @@ async function fetchText(url) {
 
       const title = extractTitle($);
       const body = extractUsefulText($);
-      const match = pickSpotifyMatch(title, spotifyEpisodes, i);
+
+      const spotifyFromListen = findSpotifyEpisodeUrlFromHtml(html);
+      const rssMatch = pickSpotifyMatch(title, spotifyEpisodes);
+
+      const spotifyUrl = spotifyFromListen || rssMatch?.spotifyUrl || null;
+      const matchMethod = spotifyFromListen ? 'listen-html' : (rssMatch?.matchMethod || 'none');
+      const matchedSpotifyTitle = rssMatch?.matchedSpotifyTitle || null;
+      const matchScore = rssMatch?.matchScore || 0;
 
       console.log(`Checking: ${title}`);
       console.log(`Body length: ${body.length}`);
-      console.log(`Match: ${match ? match.matchMethod : 'none'} / ${match ? match.matchedSpotifyTitle : 'none'}`);
+      console.log(`Spotify URL: ${spotifyUrl ? 'found' : 'none'} / ${matchMethod}`);
 
-      if (!title || !match?.spotifyUrl) {
+      if (!title || !spotifyUrl) {
         console.log(`Skipped: missing title or Spotify URL`);
         continue;
       }
@@ -279,7 +303,7 @@ async function fetchText(url) {
       const usableBody = body || title;
       const parent = buildParentDraft(title, usableBody);
 
-      const reply1 = `本編はこちら👇\n${match.spotifyUrl}\n#リルパル`;
+      const reply1 = `本編はこちら👇\n${spotifyUrl}\n#リルパル`;
       const reply2 = `感想・映画リクエストはこちら👇\n${FORM_URL}\n#リルパル`;
 
       drafts.push({
@@ -288,10 +312,10 @@ async function fetchText(url) {
         reply1,
         reply2,
         listenUrl,
-        spotifyUrl: match.spotifyUrl,
-        matchedSpotifyTitle: match.matchedSpotifyTitle,
-        matchScore: Number(match.matchScore.toFixed(3)),
-        matchMethod: match.matchMethod,
+        spotifyUrl,
+        matchedSpotifyTitle,
+        matchScore: Number(matchScore.toFixed(3)),
+        matchMethod,
         sourceTextSample: truncate(usableBody, 260)
       });
     } catch (err) {
