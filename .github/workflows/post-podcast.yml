@@ -1,10 +1,9 @@
-name: Post Podcast to X
+name: Post Podcast via Buffer
 
 on:
   schedule:
-    # 月曜 07:00 JST（= 日曜 22:00 UTC）
-    # 水曜 07:00 JST（= 火曜 22:00 UTC）
-    - cron: '0 22 * * 0,2'
+    # 6時間ごとにRSSを確認。未投稿の新着がある時だけBufferへ送る。
+    - cron: '17 */6 * * *'
   workflow_dispatch:
 
 concurrency:
@@ -32,39 +31,29 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Sanity check secrets
+      - name: Sanity check Buffer secret
         run: |
-          test -n "${{ secrets.X_API_KEY }}"       || (echo "X_API_KEY is empty" && exit 1)
-          test -n "${{ secrets.X_API_SECRET }}"    || (echo "X_API_SECRET is empty" && exit 1)
-          test -n "${{ secrets.X_ACCESS_TOKEN }}"  || (echo "X_ACCESS_TOKEN is empty" && exit 1)
-          test -n "${{ secrets.X_ACCESS_SECRET }}" || (echo "X_ACCESS_SECRET is empty" && exit 1)
+          test -n "${{ secrets.BUFFER_API_KEY }}" || (echo "BUFFER_API_KEY is empty" && exit 1)
 
       - name: Run podcast poster
         env:
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-          LOG_LEVEL: INFO
-          DRY_RUN: "0"
-          # 重複時の挙動: skip（既定=stateに記録して再試行しない） / tweak（不可視文字で微調整して投稿）
-          DEDUPE_STRATEGY: "skip"
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
         run: |
           set -euo pipefail
-          python podcast_poster.py
+          python podcast_poster_buffer.py
 
-      - name: Save state (rebase-safe)
+      - name: Save podcast state
         if: always()
         shell: bash
         run: |
           set -euo pipefail
           if [ -f state_podcast.json ]; then
-            git config user.name  "github-actions[bot]"
+            git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git pull --rebase
             git add state_podcast.json
             git commit -m "update podcast state [skip ci]" || exit 0
             git push
-          else
-            echo "no podcast state to save"
           fi
