@@ -2,8 +2,8 @@ name: Post Podcast via Buffer
 
 on:
   schedule:
-    # 6時間ごとにRSSを確認。未投稿の新着がある時だけBufferへ送る。
-    - cron: '17 */6 * * *'
+    # 毎時17分にRSSを確認。最新回が未告知かつ公開48時間以内の時だけBufferへ送る。
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 concurrency:
@@ -40,6 +40,8 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+          PODCAST_MIN_AGE_MINUTES: '15'
+          PODCAST_MAX_CONTENT_AGE_HOURS: '48'
         run: |
           set -euo pipefail
           python podcast_poster_buffer.py

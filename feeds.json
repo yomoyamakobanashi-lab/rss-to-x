@@ -5,7 +5,7 @@
       "program_name": "リルパル / ReelPal",
       "url": "https://anchor.fm/s/10422ca68/podcast/rss",
       "apple_collection_id": "1810778208",
-      "template": "🎧 新着エピソード公開！『{title}』｜{program} #Podcast #リルパル #ReelPal\n{link}"
+      "template": "🎧 新着エピソード公開\n\n『{title}』\n\nまこ×オーマの映画談義、更新しました。\nあなたはどう観た？ 感想もぜひ聞かせてください。\n\n#リルパル\n{link}"
     },
     {
       "type": "note",
