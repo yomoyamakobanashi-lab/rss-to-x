@@ -26,6 +26,11 @@ def read_phrases() -> list[str]:
     ]
 
 
+def clip_title(title: str, limit: int = 90) -> str:
+    title = " ".join((title or "").split())
+    return title if len(title) <= limit else title[: limit - 1] + "…"
+
+
 def main() -> None:
     feed = feedparser.parse(RSS_URL)
     items = [entry for entry in feed.entries if (entry.get("title") and entry.get("link"))]
@@ -34,7 +39,9 @@ def main() -> None:
 
     item = random.choice(items)
     phrase = random.choice(read_phrases())
-    text = phrase.replace("{title}", item.get("title", "").strip()).replace("{url}", item.get("link", "").strip())
+    text = phrase.replace("{title}", clip_title(item.get("title", ""))).replace(
+        "{url}", item.get("link", "").strip()
+    )
     post_id = post_text(text)
     print(f"[OK] Buffer accepted random episode post: {post_id}")
 
