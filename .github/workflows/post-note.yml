@@ -2,8 +2,8 @@ name: Post Note via Buffer
 
 on:
   schedule:
-    # 12時間ごとに新着noteを確認
-    - cron: '41 */12 * * *'
+    # 毎時43分にRSSを確認。最新記事が未告知かつ公開48時間以内の時だけBufferへ送る。
+    - cron: '43 * * * *'
   workflow_dispatch:
 
 concurrency:
@@ -36,6 +36,8 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+          NOTE_MIN_AGE_MINUTES: '15'
+          NOTE_MAX_CONTENT_AGE_HOURS: '48'
         run: python note_poster_buffer.py
 
       - name: Save note state
