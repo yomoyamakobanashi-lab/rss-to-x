@@ -27,6 +27,11 @@ def read_hooks() -> list[str]:
     ]
 
 
+def clip_title(title: str, limit: int = 90) -> str:
+    title = " ".join((title or "").split())
+    return title if len(title) <= limit else title[: limit - 1] + "…"
+
+
 def timestamp(entry) -> float:
     parsed = entry.get("published_parsed") or entry.get("updated_parsed")
     if not parsed:
@@ -59,7 +64,9 @@ def main() -> None:
     episodes = choose_three(items)
     posts = [f"{random.choice(read_hooks())}\n（①〜③で貼ります）\n#リルパル #ReelPal"]
     for number, item in enumerate(episodes, start=1):
-        posts.append(f"{number}️⃣ {item.get('title', '').strip()}\n{item.get('link', '').strip()}")
+        posts.append(
+            f"{number}️⃣ {clip_title(item.get('title', ''))}\n{item.get('link', '').strip()}"
+        )
 
     post_id = post_thread(posts)
     print(f"[OK] Buffer accepted weekly thread: {post_id}")
