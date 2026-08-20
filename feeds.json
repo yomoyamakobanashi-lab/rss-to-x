@@ -11,7 +11,7 @@
       "type": "note",
       "program_name": "リルパル / ReelPal",
       "url": "https://note.com/mako_reel_pal/rss",
-      "template": "📝 新着note『{title}』 #note #リルパル #ReelPal\n{link}"
+      "template": "📝 新着note\n\n『{title}』\n\n{excerpt}\n\n続きはこちら。\n#リルパル\n{link}"
     }
   ]
 }
