@@ -1,8 +1,10 @@
 name: receive-dispatch
+
 on:
   repository_dispatch:
     types: [post-podcast, post-note]
   workflow_dispatch:
+
 jobs:
   post-podcast:
     if: github.event.action == 'post-podcast'
@@ -14,11 +16,10 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements.txt
       - env:
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-        run: python podcast_poster.py
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+        run: python podcast_poster_buffer.py
 
   post-note:
     if: github.event.action == 'post-note'
@@ -30,8 +31,7 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements.txt
       - env:
-          X_API_KEY: ${{ secrets.X_API_KEY }}
-          X_API_SECRET: ${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
-        run: python note_poster.py
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+        run: python note_poster_buffer.py
