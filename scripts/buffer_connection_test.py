@@ -23,6 +23,7 @@ def main() -> None:
     masked = channel_id[:4] + "…" + channel_id[-4:] if len(channel_id) > 10 else "(detected)"
     print(f"OK: Buffer API authenticated; organizations={len(orgs)}; X channel={masked}")
     print("No post was created by this test.")
+    print("Connection test completed successfully.")
 
 
 if __name__ == "__main__":
