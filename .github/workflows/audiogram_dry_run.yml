@@ -1,0 +1,51 @@
+name: Audiogram Dry Run
+
+on:
+  push:
+    branches: [social-pack-v1]
+    paths:
+      - '.audiogram-test-trigger'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python deps
+        run: |
+          pip install -r requirements.txt
+          pip install pillow
+      - name: Install fonts and ffmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+      - name: Resolve RSS audio and render card
+        run: |
+          python -m scripts.audiogram_prepare
+          python -m scripts.audiogram_render
+      - name: Render 20-30 second audiogram
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUDIO_URL=$(python -c 'import json; print(json.load(open("audiogram_meta.json"))["audio_url"])')
+          START=$(python -c 'import json; print(json.load(open("audiogram_meta.json"))["start_seconds"])')
+          DUR=$(python -c 'import json; print(json.load(open("audiogram_meta.json"))["duration_seconds"])')
+          ffmpeg -hide_banner -loglevel warning -y \
+            -ss "$START" -t "$DUR" -i "$AUDIO_URL" \
+            -loop 1 -i audiogram_card.png \
+            -filter_complex '[0:a]showwaves=s=1000x150:mode=line:colors=white,format=rgba[sw];[1:v][sw]overlay=100:455:shortest=1,format=yuv420p[v]' \
+            -map '[v]' -map 0:a -c:v libx264 -preset veryfast -crf 28 -c:a aac -b:a 128k -shortest audiogram.mp4
+          ffprobe -v error -show_entries format=duration,size -of json audiogram.mp4
+          test -s audiogram.mp4
+      - name: Upload dry-run artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: audiogram-dry-run
+          path: |
+            audiogram_meta.json
+            audiogram_card.png
+            audiogram.mp4
+          retention-days: 1
