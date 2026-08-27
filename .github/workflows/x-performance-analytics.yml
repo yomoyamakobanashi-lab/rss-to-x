@@ -5,6 +5,9 @@ on:
     # 毎日 22:45 JST (= 13:45 UTC)。Bufferのメトリクスは最大約24h遅延する。
     - cron: '45 13 * * *'
   workflow_dispatch:
+  push:
+    branches: [impression-analytics-v1]
+    paths: [.analytics-test-trigger]
 
 concurrency:
   group: x-performance-analytics
