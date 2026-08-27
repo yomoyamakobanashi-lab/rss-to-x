@@ -1,6 +1,6 @@
 # X Performance Dashboard
 
-- 更新: 2026-08-27 16:54 JST
+- 更新: 2026-08-27 16:57 JST
 - 対象: _macobana
 - Bufferが返すX subscriptionType: `None`
 - 集計窓: 直近28日
