@@ -26,12 +26,18 @@ jobs:
         run: python podcast_poster_buffer.py
       - name: Save podcast state
         if: always()
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase
           git add state_podcast.json
-          git commit -m "update podcast state [skip ci]" || exit 0
+          if git diff --cached --quiet; then
+            echo "No podcast state change"
+            exit 0
+          fi
+          git commit -m "update podcast state [skip ci]"
+          git pull --rebase
           git push
 
   post-note:
@@ -54,10 +60,16 @@ jobs:
         run: python note_poster_buffer.py
       - name: Save note state
         if: always()
+        shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase
           git add state_note.json
-          git commit -m "update note state [skip ci]" || exit 0
+          if git diff --cached --quiet; then
+            echo "No note state change"
+            exit 0
+          fi
+          git commit -m "update note state [skip ci]"
+          git pull --rebase
           git push

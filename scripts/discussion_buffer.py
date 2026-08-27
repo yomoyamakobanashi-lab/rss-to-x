@@ -11,14 +11,26 @@ if str(ROOT) not in sys.path:
 
 from buffer_client import post_text
 
-POSTS_PATH = ROOT / "data" / "discussion_posts.json"
+POSTS_PATHS = [
+    ROOT / "data" / "discussion_posts.json",
+    ROOT / "data" / "discussion_posts_extra.json",
+]
 STATE_PATH = ROOT / "state_discussion.json"
 
 
 def load_posts() -> list[dict]:
-    posts = json.loads(POSTS_PATH.read_text(encoding="utf-8"))
-    if not isinstance(posts, list) or not posts:
-        raise RuntimeError("discussion_posts.json is empty or invalid")
+    posts: list[dict] = []
+    for path in POSTS_PATHS:
+        if not path.exists():
+            continue
+        chunk = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(chunk, list):
+            raise RuntimeError(f"{path.name} is invalid")
+        posts.extend(chunk)
+
+    if not posts:
+        raise RuntimeError("discussion post bank is empty")
+
     for post in posts:
         text = (post.get("text") or "").strip()
         if not text:
@@ -28,29 +40,41 @@ def load_posts() -> list[dict]:
     return posts
 
 
-def load_index(total: int) -> int:
+def load_index() -> int:
     try:
         state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
-        return int(state.get("next_index", 0)) % total
+        return max(0, int(state.get("next_index", 0)))
     except (FileNotFoundError, ValueError, TypeError, json.JSONDecodeError):
         return 0
 
 
 def main() -> None:
     posts = load_posts()
-    index = load_index(len(posts))
+    index = load_index()
+
+    # Do not silently recycle old posts. Replenish the bank and continue from this index.
+    if index >= len(posts):
+        print(
+            f"[INFO] discussion bank exhausted: next_index={index}, total={len(posts)}. "
+            "No post sent; add new LISTEN-grounded posts."
+        )
+        return
+
     post = posts[index]
     text = post["text"].strip()
-
     post_id = post_text(text)
 
-    next_index = (index + 1) % len(posts)
+    next_index = index + 1
     STATE_PATH.write_text(
         json.dumps({"next_index": next_index}, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
     source = post.get("source", "")
-    print(f"[OK] Buffer accepted discussion post: {post_id}; source={source}; next_index={next_index}")
+    remaining = len(posts) - next_index
+    print(
+        f"[OK] Buffer accepted discussion post: {post_id}; "
+        f"source={source}; next_index={next_index}; remaining={remaining}"
+    )
 
 
 if __name__ == "__main__":
