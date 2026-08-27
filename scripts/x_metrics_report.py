@@ -131,6 +131,10 @@ def classify_post(text: str) -> str:
         return "discussion"
     if normalized in SURVEY_ROOTS:
         return "survey"
+    if "リルパル" in raw and (
+        "というニュース" in raw or "という話題" in raw or "こういうニュース" in raw
+    ):
+        return "trend_tiein"
     if raw.startswith("🎧 新着エピソード公開"):
         return "new_podcast"
     if raw.startswith("📝 新着note"):
