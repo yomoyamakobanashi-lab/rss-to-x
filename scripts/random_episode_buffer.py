@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import json
 import random
 import sys
 from pathlib import Path
@@ -11,30 +12,32 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from buffer_client import post_text
+from buffer_client import post_thread
 
 RSS_URL = "https://anchor.fm/s/10422ca68/podcast/rss"
-PHRASES_PATH = "data/phrases.txt"
-
-
-def read_phrases() -> list[str]:
-    try:
-        with open(PHRASES_PATH, encoding="utf-8") as f:
-            lines = [line.strip() for line in f if line.strip() and not line.lstrip().startswith("#")]
-            if lines:
-                return lines
-    except FileNotFoundError:
-        pass
-    return [
-        "今日の過去回：{title}\n{url}",
-        "聴き逃しから一本：{title}\n{url}",
-        "週の途中に過去回を一本。{title}\n{url}",
-    ]
+STATE_PATH = ROOT / "state_promo.json"
+MAX_RECENT_URLS = 16
 
 
 def clip_title(title: str, limit: int = 90) -> str:
     title = " ".join((title or "").split())
     return title if len(title) <= limit else title[: limit - 1] + "…"
+
+
+def load_recent_urls() -> list[str]:
+    try:
+        state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
+        urls = state.get("recent_urls", [])
+        return [str(url) for url in urls if str(url).strip()]
+    except (FileNotFoundError, json.JSONDecodeError, TypeError):
+        return []
+
+
+def save_recent_urls(urls: list[str]) -> None:
+    STATE_PATH.write_text(
+        json.dumps({"recent_urls": urls[-MAX_RECENT_URLS:]}, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
 
 
 def main() -> None:
@@ -43,13 +46,28 @@ def main() -> None:
     if not items:
         raise RuntimeError("No RSS items found")
 
-    item = random.choice(items)
-    phrase = random.choice(read_phrases())
-    text = phrase.replace("{title}", clip_title(item.get("title", ""))).replace(
-        "{url}", item.get("link", "").strip()
+    recent_urls = load_recent_urls()
+    available = [item for item in items if item.get("link", "").strip() not in recent_urls]
+    item = random.choice(available or items)
+
+    title = clip_title(item.get("title", ""))
+    url = item.get("link", "").strip()
+
+    root = (
+        f"今夜の一本は『{title}』。\n\n"
+        "この作品、あなたは「好き」「苦手」「まだ観てない」のどれ？"
     )
-    post_id = post_text(text)
-    print(f"[OK] Buffer accepted random episode post: {post_id}")
+    reply = (
+        "🎧 リルパルの過去回はこちら。\n"
+        f"{url}\n\n"
+        "聴いたことがある人は、異論も歓迎です。"
+    )
+
+    post_id = post_thread([root, reply])
+
+    recent_urls = [u for u in recent_urls if u != url] + [url]
+    save_recent_urls(recent_urls)
+    print(f"[OK] Buffer accepted Friday episode thread: {post_id}; url={url}")
 
 
 if __name__ == "__main__":
