@@ -7,7 +7,6 @@ import hashlib
 import html
 import json
 import os
-import random
 import re
 import unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -54,6 +53,26 @@ ALLOWED_SOURCE_FRAGMENTS = (
     "Disney",
     "ディズニー",
     "松竹",
+)
+BLOCKED_HEADLINE_TERMS = (
+    "訃報",
+    "死去",
+    "逝去",
+    "亡くな",
+    "死亡",
+    "追悼",
+    "事故",
+    "被害",
+    "殺害",
+    "自殺",
+    "逮捕",
+    "起訴",
+    "性加害",
+    "不祥事",
+    "病気",
+    "闘病",
+    "災害",
+    "炎上",
 )
 AMBIGUOUS_EXACT_TERMS = {"国宝"}
 TAG_RE = re.compile(r"<[^>]+>")
@@ -141,6 +160,11 @@ def clean_headline(entry, source: str) -> str:
     return title
 
 
+def headline_is_sensitive(headline: str) -> bool:
+    h = norm(headline)
+    return any(norm(term) in h for term in BLOCKED_HEADLINE_TERMS)
+
+
 def news_key(entry, headline: str, source: str) -> str:
     seed = str(entry.get("id") or entry.get("guid") or entry.get("link") or "")
     seed += "\n" + source + "\n" + headline
@@ -215,7 +239,7 @@ def collect_candidates(topics: list[dict], state: dict) -> list[dict]:
                 continue
 
             headline = clean_headline(entry, source)
-            if not headline:
+            if not headline or headline_is_sensitive(headline):
                 continue
             summary = clean_summary(entry)
             key = news_key(entry, headline, source)
