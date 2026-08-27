@@ -1,0 +1,51 @@
+name: Daily Funny Clips via Buffer
+
+on:
+  schedule:
+    # 毎日 14:20 JST (= 05:20 UTC)。通常の朝投稿・夜投稿から間隔を空ける。
+    - cron: '20 5 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: funny-clip-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Post LISTEN-grounded funny clip through Buffer
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+        run: python -m scripts.funny_clip_buffer
+
+      - name: Save funny clip rotation state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state_funny_clip.json
+          if git diff --cached --quiet; then
+            echo "No funny clip state change"
+            exit 0
+          fi
+          git commit -m "rotate funny clip post [skip ci]"
+          git pull --rebase
+          git push
