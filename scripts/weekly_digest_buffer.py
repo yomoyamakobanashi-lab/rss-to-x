@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import json
 import random
 import sys
 from datetime import datetime, timezone
@@ -15,22 +16,8 @@ if str(ROOT) not in sys.path:
 from buffer_client import post_thread
 
 RSS_URL = "https://anchor.fm/s/10422ca68/podcast/rss"
-HOOKS_PATH = "data/weekly_hooks.txt"
-
-
-def read_hooks() -> list[str]:
-    try:
-        with open(HOOKS_PATH, encoding="utf-8") as f:
-            hooks = [line.strip() for line in f if line.strip() and not line.lstrip().startswith("#")]
-            if hooks:
-                return hooks
-    except FileNotFoundError:
-        pass
-    return [
-        "週末の過去回セレクト、3本置いていきます。",
-        "聴き逃し救済。今週の3本です。",
-        "週末用に、過去回を3本まとめます。",
-    ]
+STATE_PATH = ROOT / "state_promo.json"
+MAX_RECENT_URLS = 16
 
 
 def clip_title(title: str, limit: int = 90) -> str:
@@ -48,17 +35,36 @@ def timestamp(entry) -> float:
         return 0
 
 
-def choose_three(items):
+def load_recent_urls() -> list[str]:
+    try:
+        state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
+        urls = state.get("recent_urls", [])
+        return [str(url) for url in urls if str(url).strip()]
+    except (FileNotFoundError, json.JSONDecodeError, TypeError):
+        return []
+
+
+def save_recent_urls(urls: list[str]) -> None:
+    STATE_PATH.write_text(
+        json.dumps({"recent_urls": urls[-MAX_RECENT_URLS:]}, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+
+def choose_three(items, recent_urls: list[str]):
     ordered = sorted(items, key=timestamp, reverse=True)
-    if len(ordered) <= 3:
-        return ordered
-    newest = ordered[0]
-    recent_pool = ordered[1:min(len(ordered), 20)]
-    older_pool = ordered[min(len(ordered), 20):] or ordered[1:]
-    second = random.choice(recent_pool)
-    third_pool = [x for x in older_pool if x.get("link") != second.get("link")]
-    third = random.choice(third_pool or ordered[1:])
-    return [newest, second, third]
+    archive_pool = ordered[3:] if len(ordered) > 6 else ordered
+    fresh_pool = [x for x in archive_pool if x.get("link", "").strip() not in recent_urls]
+
+    chosen = []
+    for pool in (fresh_pool, archive_pool, ordered):
+        remaining = [x for x in pool if x.get("link") not in {c.get("link") for c in chosen}]
+        random.shuffle(remaining)
+        for item in remaining:
+            chosen.append(item)
+            if len(chosen) == 3:
+                return chosen
+    return chosen
 
 
 def main() -> None:
@@ -67,15 +73,27 @@ def main() -> None:
     if not items:
         raise RuntimeError("No RSS items found")
 
-    episodes = choose_three(items)
-    posts = [f"{random.choice(read_hooks())}\n（①〜③で貼ります）\n#リルパル #ReelPal"]
+    recent_urls = load_recent_urls()
+    episodes = choose_three(items, recent_urls)
+    if len(episodes) < 3:
+        raise RuntimeError("Not enough RSS items for weekly digest")
+
+    posts = [
+        "週末、映画の話をもう少ししたい人へ。\n\n"
+        "過去回から3本選びました。①〜③、いま一番気になるのはどれ？"
+    ]
+    used_urls = []
     for number, item in enumerate(episodes, start=1):
-        posts.append(
-            f"{number}️⃣ {clip_title(item.get('title', ''))}\n{item.get('link', '').strip()}"
-        )
+        url = item.get("link", "").strip()
+        used_urls.append(url)
+        posts.append(f"{number}️⃣ {clip_title(item.get('title', ''))}\n{url}")
 
     post_id = post_thread(posts)
-    print(f"[OK] Buffer accepted weekly thread: {post_id}")
+
+    for url in used_urls:
+        recent_urls = [u for u in recent_urls if u != url] + [url]
+    save_recent_urls(recent_urls)
+    print(f"[OK] Buffer accepted weekly archive thread: {post_id}; urls={len(used_urls)}")
 
 
 if __name__ == "__main__":
