@@ -1,0 +1,51 @@
+name: Trend Episode Tie-in
+
+on:
+  schedule:
+    # 12:35 / 17:35 / 21:35 JST。1日最大1投稿。
+    - cron: '35 3,8,12 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: trend-episode-tiein
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Find trend and post episode tie-in
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+        run: python -m scripts.trend_episode_tiein_buffer
+
+      - name: Save state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state_trend_tiein.json
+          if git diff --cached --quiet; then
+            echo "No state change"
+            exit 0
+          fi
+          git commit -m "update trend tie-in state [skip ci]"
+          git pull --rebase
+          git push
