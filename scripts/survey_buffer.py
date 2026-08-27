@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from buffer_client import post_thread
+from buffer_client import post_text, post_thread
 
 INDEX_PATH = Path("index.txt")
 TWEETS_PATH = Path("tweets.txt")
@@ -47,11 +47,11 @@ def main() -> None:
         reply = f"リクエスト／感想フォームはこちら👇\n{url}"
         post_id = post_thread([root, reply])
     else:
-        post_id = post_thread([root])
+        post_id = post_text(root)
 
     next_index = (index + 1) % len(lines)
     INDEX_PATH.write_text(str(next_index) + "\n", encoding="utf-8")
-    print(f"[OK] Buffer accepted survey thread: {post_id}; next_index={next_index}")
+    print(f"[OK] Buffer accepted survey post: {post_id}; next_index={next_index}")
 
 
 if __name__ == "__main__":
