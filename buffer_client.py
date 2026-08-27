@@ -162,6 +162,20 @@ def post_text(text: str, *, image_url: Optional[str] = None) -> str:
     return _create_post(data)
 
 
+def post_video(text: str, video_url: str) -> str:
+    url = str(video_url or "").strip()
+    if not url.startswith("https://"):
+        raise BufferError("Video URL must be a public HTTPS URL.")
+    channel_id = resolve_x_channel_id()
+    return _create_post({
+        "text": text,
+        "channelId": channel_id,
+        "schedulingType": "automatic",
+        "mode": "shareNow",
+        "assets": [{"video": {"url": url}}],
+    })
+
+
 def post_thread(posts: Iterable[str]) -> str:
     texts = [str(p).strip() for p in posts if str(p).strip()]
     if not texts:
@@ -174,6 +188,30 @@ def post_thread(posts: Iterable[str]) -> str:
         "schedulingType": "automatic",
         "mode": "shareNow",
         "assets": [],
+        "metadata": {
+            "twitter": {
+                "thread": [{"text": text} for text in texts],
+            }
+        },
+    }
+    return _create_post(data)
+
+
+def post_video_thread(posts: Iterable[str], video_url: str) -> str:
+    texts = [str(p).strip() for p in posts if str(p).strip()]
+    if not texts:
+        raise BufferError("Video thread is empty.")
+    url = str(video_url or "").strip()
+    if not url.startswith("https://"):
+        raise BufferError("Video URL must be a public HTTPS URL.")
+
+    channel_id = resolve_x_channel_id()
+    data: Dict[str, Any] = {
+        "text": texts[0],
+        "channelId": channel_id,
+        "schedulingType": "automatic",
+        "mode": "shareNow",
+        "assets": [{"video": {"url": url}}],
         "metadata": {
             "twitter": {
                 "thread": [{"text": text} for text in texts],
