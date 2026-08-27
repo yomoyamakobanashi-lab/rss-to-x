@@ -18,7 +18,6 @@ ANALYTICS_DIR = ROOT / "analytics"
 HISTORY_PATH = ANALYTICS_DIR / "x_metrics_history.json"
 REPORT_PATH = ANALYTICS_DIR / "X_PERFORMANCE.md"
 JST = ZoneInfo("Asia/Tokyo")
-LOOKBACK_DAYS = 60
 REPORT_DAYS = 28
 URL_RE = re.compile(r"https?://\S+")
 
@@ -27,33 +26,32 @@ def gql_string(value: str) -> str:
     return json.dumps(str(value), ensure_ascii=False)
 
 
+def parse_dt(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
 def get_channel_context() -> dict:
     channel_id = resolve_x_channel_id()
     query = f"""
     query {{
       channel(input: {{ id: {gql_string(channel_id)} }}) {{
-        id
-        organizationId
-        displayName
-        name
-        service
-        timezone
-        metadata {{
-          ... on TwitterMetadata {{
-            subscriptionType
-          }}
-        }}
+        id organizationId displayName name service timezone
+        metadata {{ ... on TwitterMetadata {{ subscriptionType }} }}
       }}
     }}
     """
-    payload = graphql(query)
-    channel = payload.get("data", {}).get("channel") or {}
+    channel = (graphql(query).get("data", {}).get("channel") or {})
     if not channel.get("organizationId"):
         raise RuntimeError("Buffer channel query returned no organizationId")
     return channel
 
 
-def fetch_posts(org_id: str, channel_id: str, start_iso: str) -> list[dict]:
+def fetch_posts(org_id: str, channel_id: str) -> list[dict]:
     posts: list[dict] = []
     after: str | None = None
 
@@ -65,37 +63,20 @@ def fetch_posts(org_id: str, channel_id: str, start_iso: str) -> list[dict]:
             first: 100{after_arg}
             input: {{
               organizationId: {gql_string(org_id)}
-              filter: {{
-                status: [sent]
-                channelIds: [{gql_string(channel_id)}]
-                startDate: {gql_string(start_iso)}
-              }}
+              filter: {{ status: [sent], channelIds: [{gql_string(channel_id)}] }}
             }}
           ) {{
             edges {{
               node {{
-                id
-                text
-                dueAt
-                externalLink
-                metricsUpdatedAt
-                metrics {{
-                  type
-                  name
-                  value
-                  unit
-                }}
+                id text status createdAt sentAt dueAt externalLink metricsUpdatedAt
+                metrics {{ type name value unit }}
               }}
             }}
-            pageInfo {{
-              hasNextPage
-              endCursor
-            }}
+            pageInfo {{ hasNextPage endCursor }}
           }}
         }}
         """
-        payload = graphql(query)
-        result = payload.get("data", {}).get("posts") or {}
+        result = graphql(query).get("data", {}).get("posts") or {}
         posts.extend(edge.get("node") or {} for edge in result.get("edges", []))
         page_info = result.get("pageInfo") or {}
         if not page_info.get("hasNextPage"):
@@ -167,15 +148,6 @@ def classify_post(text: str) -> str:
     return "other"
 
 
-def parse_due_at(value: str | None) -> datetime | None:
-    if not value:
-        return None
-    try:
-        return datetime.fromisoformat(value.replace("Z", "+00:00"))
-    except ValueError:
-        return None
-
-
 def metrics_dict(post: dict) -> dict[str, float]:
     out: dict[str, float] = {}
     for metric in post.get("metrics") or []:
@@ -199,31 +171,34 @@ def load_history() -> dict[str, dict]:
 
 
 def update_history(history: dict[str, dict], posts: list[dict]) -> dict[str, dict]:
-    now_iso = datetime.now(timezone.utc).isoformat()
+    collected_at = datetime.now(timezone.utc).isoformat()
     for post in posts:
         post_id = str(post.get("id"))
-        due = parse_due_at(post.get("dueAt"))
         text = str(post.get("text") or "").strip()
-        metrics = metrics_dict(post)
+        published = parse_dt(post.get("sentAt")) or parse_dt(post.get("dueAt")) or parse_dt(post.get("createdAt"))
         history[post_id] = {
             "id": post_id,
             "text": text,
             "kind": classify_post(text),
-            "dueAt": due.isoformat() if due else post.get("dueAt"),
+            "status": post.get("status"),
+            "createdAt": post.get("createdAt"),
+            "sentAt": post.get("sentAt"),
+            "dueAt": post.get("dueAt"),
+            "publishedAt": published.isoformat() if published else None,
             "externalLink": post.get("externalLink"),
             "metricsUpdatedAt": post.get("metricsUpdatedAt"),
-            "metrics": metrics,
-            "lastCollectedAt": now_iso,
+            "metrics": metrics_dict(post),
+            "lastCollectedAt": collected_at,
         }
     return history
 
 
-def median(values: list[float]) -> float:
-    return float(statistics.median(values)) if values else 0.0
-
-
 def avg(values: list[float]) -> float:
     return sum(values) / len(values) if values else 0.0
+
+
+def med(values: list[float]) -> float:
+    return float(statistics.median(values)) if values else 0.0
 
 
 def fmt_number(value: float) -> str:
@@ -242,23 +217,19 @@ def report_rows(records: list[dict], key_fn) -> list[tuple]:
     rows = []
     for key, recs in groups.items():
         imps = [r["metrics"]["impressions"] for r in recs if "impressions" in r.get("metrics", {})]
-        ers = [r["metrics"]["engagementRate"] for r in recs if "engagementRate" in r.get("metrics", {})]
-        comments = [r["metrics"].get("comments", 0) for r in recs]
-        reposts = [r["metrics"].get("reposts", 0) for r in recs]
         if not imps:
             continue
-        rows.append(
-            (
-                key,
-                len(imps),
-                sum(imps),
-                avg(imps),
-                median(imps),
-                avg(ers),
-                sum(comments),
-                sum(reposts),
-            )
-        )
+        ers = [r["metrics"]["engagementRate"] for r in recs if "engagementRate" in r.get("metrics", {})]
+        rows.append((
+            key,
+            len(imps),
+            sum(imps),
+            avg(imps),
+            med(imps),
+            avg(ers),
+            sum(r["metrics"].get("comments", 0) for r in recs),
+            sum(r["metrics"].get("reposts", 0) for r in recs),
+        ))
     rows.sort(key=lambda row: row[4], reverse=True)
     return rows
 
@@ -270,9 +241,9 @@ def markdown_table(rows: list[tuple], first_header: str) -> str:
         f"| {first_header} | n | 総imp | 平均imp | 中央値imp | 平均ER | 返信 | RP |",
         "|---|---:|---:|---:|---:|---:|---:|---:|",
     ]
-    for key, n, total, average, med, er, comments, reposts in rows:
+    for key, n, total, average, median_value, er, comments, reposts in rows:
         lines.append(
-            f"| {key} | {n} | {fmt_number(total)} | {fmt_number(average)} | {fmt_number(med)} | {fmt_pct(er)} | {fmt_number(comments)} | {fmt_number(reposts)} |"
+            f"| {key} | {n} | {fmt_number(total)} | {fmt_number(average)} | {fmt_number(median_value)} | {fmt_pct(er)} | {fmt_number(comments)} | {fmt_number(reposts)} |"
         )
     return "\n".join(lines) + "\n"
 
@@ -280,55 +251,48 @@ def markdown_table(rows: list[tuple], first_header: str) -> str:
 def build_report(history: dict[str, dict], channel: dict) -> str:
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(days=REPORT_DAYS)
-
     records = []
+
     for rec in history.values():
-        due = parse_due_at(rec.get("dueAt"))
-        if not due or due < cutoff:
+        published = parse_dt(rec.get("publishedAt"))
+        if not published or published < cutoff:
             continue
         if "impressions" not in rec.get("metrics", {}):
             continue
-        rec = dict(rec)
-        local = due.astimezone(JST)
-        rec["weekday"] = "月火水木金土日"[local.weekday()]
-        rec["hour"] = local.hour
+        item = dict(rec)
+        local = published.astimezone(JST)
+        item["weekday"] = "月火水木金土日"[local.weekday()]
+        item["local_time"] = local
         if 6 <= local.hour < 12:
-            rec["time_bucket"] = "朝 6–12"
+            item["time_bucket"] = "朝 6–12"
         elif 12 <= local.hour < 18:
-            rec["time_bucket"] = "昼 12–18"
+            item["time_bucket"] = "昼 12–18"
         else:
-            rec["time_bucket"] = "夜 18–6"
-        records.append(rec)
+            item["time_bucket"] = "夜 18–6"
+        records.append(item)
 
     subscription = ((channel.get("metadata") or {}).get("subscriptionType") or "unknown")
     name = channel.get("displayName") or channel.get("name") or "X channel"
     updated = datetime.now(JST).strftime("%Y-%m-%d %H:%M JST")
 
     lines = [
-        "# X Performance Dashboard",
-        "",
+        "# X Performance Dashboard", "",
         f"- 更新: {updated}",
         f"- 対象: {name}",
         f"- Bufferが返すX subscriptionType: `{subscription}`",
         f"- 集計窓: 直近{REPORT_DAYS}日",
+        f"- 履歴保存済み投稿: {len(history)}",
         f"- imp取得済み投稿: {len(records)}",
         "",
         "> Bufferの投稿メトリクスは1日1回程度更新されるため、直近24時間の数字は未確定の場合があります。",
         "",
-        "## 投稿タイプ別",
-        "",
+        "## 投稿タイプ別", "",
         markdown_table(report_rows(records, lambda r: r.get("kind", "other")), "タイプ").rstrip(),
-        "",
-        "## 曜日別",
-        "",
+        "", "## 曜日別", "",
         markdown_table(report_rows(records, lambda r: r.get("weekday", "?")), "曜日").rstrip(),
-        "",
-        "## 時間帯別",
-        "",
+        "", "## 時間帯別", "",
         markdown_table(report_rows(records, lambda r: r.get("time_bucket", "?")), "時間帯").rstrip(),
-        "",
-        "## インプレッション上位",
-        "",
+        "", "## インプレッション上位", "",
     ]
 
     top = sorted(records, key=lambda r: r.get("metrics", {}).get("impressions", 0), reverse=True)[:10]
@@ -336,8 +300,7 @@ def build_report(history: dict[str, dict], channel: dict) -> str:
         lines.append("まだデータがありません。")
     else:
         for i, rec in enumerate(top, start=1):
-            due = parse_due_at(rec.get("dueAt"))
-            local = due.astimezone(JST).strftime("%m/%d %H:%M") if due else "?"
+            local = rec["local_time"].strftime("%m/%d %H:%M")
             text = normalize_text(rec.get("text", ""))
             if len(text) > 80:
                 text = text[:79] + "…"
@@ -358,12 +321,10 @@ def build_report(history: dict[str, dict], channel: dict) -> str:
             lines.append(f"- 曜日では **{day_rows[0][0]}曜** が中央値imp首位（n={day_rows[0][1]}）。")
         if time_rows:
             lines.append(f"- 時間帯では **{time_rows[0][0]}** が中央値imp首位（n={time_rows[0][1]}）。")
-        lines.append("- これは観察データなので因果とは限らない。勝ちパターン候補として次のA/Bテストに使う。")
+        lines.append("- 観察データなので因果とは限らない。勝ちパターン候補として次のA/Bテストに使う。")
 
     lines += [
-        "",
-        "## 次の最適化ルール",
-        "",
+        "", "## 次の最適化ルール", "",
         "1. 各タイプ最低3投稿までは固定運用。",
         "2. 3投稿以上たまったら中央値impを主指標、返信数を副指標にする。",
         "3. 勝ちタイプを増やす時も、1回に変える要因は曜日・時間・文型のどれか1つだけ。",
@@ -377,14 +338,12 @@ def build_report(history: dict[str, dict], channel: dict) -> str:
 def main() -> None:
     ANALYTICS_DIR.mkdir(parents=True, exist_ok=True)
     channel = get_channel_context()
-    now = datetime.now(timezone.utc)
-    start_iso = (now - timedelta(days=LOOKBACK_DAYS)).isoformat()
-    posts = fetch_posts(str(channel["organizationId"]), str(channel["id"]), start_iso)
-
+    posts = fetch_posts(str(channel["organizationId"]), str(channel["id"]))
     history = update_history(load_history(), posts)
     HISTORY_PATH.write_text(json.dumps(history, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     REPORT_PATH.write_text(build_report(history, channel), encoding="utf-8")
-    print(f"[OK] collected {len(posts)} sent X posts; history={len(history)}")
+    with_metrics = sum(1 for p in posts if metrics_dict(p))
+    print(f"[OK] collected {len(posts)} sent X posts; with_metrics={with_metrics}; history={len(history)}")
 
 
 if __name__ == "__main__":
