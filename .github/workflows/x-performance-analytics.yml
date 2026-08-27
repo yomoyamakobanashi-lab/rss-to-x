@@ -35,13 +35,16 @@ jobs:
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
         run: python -m scripts.x_metrics_report
 
+      - name: Select winner candidates
+        run: python -m scripts.winner_candidates
+
       - name: Save analytics
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add analytics/x_metrics_history.json analytics/X_PERFORMANCE.md
+          git add analytics/x_metrics_history.json analytics/X_PERFORMANCE.md data/winner_candidates.json
           if git diff --cached --quiet; then
             echo "No analytics change"
             exit 0
