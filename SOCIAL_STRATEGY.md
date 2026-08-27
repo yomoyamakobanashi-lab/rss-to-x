@@ -127,7 +127,7 @@ substantive な返信には原則24時間以内に人間が返す。
 - `data/discussion_posts.json`：既存のLISTEN準拠バンク
 - `data/discussion_posts_extra.json`：追加のLISTEN準拠バンク
 
-現在は合計38本で、月〜木の週4本運用なら約9週間分。
+現在は合計35本で、月〜木の週4本運用なら約8週間分。
 残り8本程度になった時点を補充の目安にする。
 
 更新時は必ずLISTEN本文・概要・文字起こしと照合する。
