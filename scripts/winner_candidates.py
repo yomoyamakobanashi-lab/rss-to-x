@@ -20,6 +20,7 @@ ELIGIBLE_KINDS = {
     "quick_reply",
     "discussion",
     "funny_clip",
+    "audiogram",
     "archive_weekend",
     "social_pack_three_hooks",
     "social_pack_host_split",
