@@ -12,7 +12,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parents[1]
 META_PATH = ROOT / "audiogram_meta.json"
 OUT_PATH = ROOT / "audiogram_card.png"
-W, H = 1200, 675
+W, H = 1200, 676
 
 
 def font(size: int, bold: bool = False):
@@ -55,7 +55,7 @@ def main() -> None:
         draw.text((70, y), line, font=font(30, False), fill=(225, 225, 225))
         y += 44
 
-    draw.text((70, 625), "listen.style/p/reelpal", font=font(22, False), fill=(175, 175, 175))
+    draw.text((70, 626), "listen.style/p/reelpal", font=font(22, False), fill=(175, 175, 175))
     image.save(OUT_PATH, "PNG")
     print(f"[OK] rendered {OUT_PATH.name} {W}x{H}")
 
