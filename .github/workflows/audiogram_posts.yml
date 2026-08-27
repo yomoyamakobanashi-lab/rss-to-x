@@ -1,0 +1,113 @@
+name: Weekly Audiogram via Buffer
+
+on:
+  schedule:
+    # 金曜 10:20 JST (= 01:20 UTC)。テキスト投稿とは別形式として週1だけ試す。
+    - cron: '20 1 * * 5'
+  workflow_dispatch:
+
+concurrency:
+  group: audiogram-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python deps
+        run: |
+          pip install -r requirements.txt
+          pip install pillow
+
+      - name: Install ffmpeg and Japanese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-cjk
+
+      - name: Resolve next LISTEN-grounded clip
+        id: prepare
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f audiogram_meta.json
+          python -m scripts.audiogram_prepare
+          if [ -f audiogram_meta.json ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            CLIP_ID=$(python -c 'import json; print(json.load(open("audiogram_meta.json"))["id"])')
+            echo "clip_id=$CLIP_ID" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Render audiogram card
+        if: steps.prepare.outputs.ready == 'true'
+        run: python -m scripts.audiogram_render
+
+      - name: Build native audiogram MP4
+        if: steps.prepare.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          AUDIO_URL=$(python -c 'import json; print(json.load(open("audiogram_meta.json"))["audio_url"])')
+          START=$(python -c 'import json; print(json.load(open("audiogram_meta.json"))["start_seconds"])')
+          DUR=$(python -c 'import json; print(json.load(open("audiogram_meta.json"))["duration_seconds"])')
+          ffmpeg -hide_banner -loglevel warning -y \
+            -ss "$START" -t "$DUR" -i "$AUDIO_URL" \
+            -loop 1 -i audiogram_card.png \
+            -filter_complex '[0:a]showwaves=s=1000x150:mode=line:colors=white,format=rgba[sw];[1:v][sw]overlay=100:455:shortest=1,format=yuv420p[v]' \
+            -map '[v]' -map 0:a -c:v libx264 -preset veryfast -crf 28 -c:a aac -b:a 128k -shortest audiogram.mp4
+          ffprobe -v error -show_entries format=duration,size -of json audiogram.mp4
+          test -s audiogram.mp4
+
+      - name: Publish MP4 to stable public repository URL
+        if: steps.prepare.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          CLIP_ID='${{ steps.prepare.outputs.clip_id }}'
+          mkdir -p media/audiograms
+          cp audiogram.mp4 "media/audiograms/${CLIP_ID}.mp4"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "media/audiograms/${CLIP_ID}.mp4"
+          if ! git diff --cached --quiet; then
+            git commit -m "add audiogram media ${CLIP_ID} [skip ci]"
+            git pull --rebase
+            git push
+          fi
+
+      - name: Post native audiogram through Buffer
+        if: steps.prepare.outputs.ready == 'true'
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+          AUDIOGRAM_PUBLIC_URL: https://raw.githubusercontent.com/yomoyamakobanashi-lab/rss-to-x/main/media/audiograms/${{ steps.prepare.outputs.clip_id }}.mp4
+        run: python -m scripts.audiogram_post
+
+      - name: Save audiogram state
+        if: steps.prepare.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state_audio_clip.json
+          if git diff --cached --quiet; then
+            echo "No audiogram state change"
+            exit 0
+          fi
+          git commit -m "rotate audiogram clip [skip ci]"
+          git pull --rebase
+          git push

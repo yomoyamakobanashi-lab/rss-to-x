@@ -1,17 +1,17 @@
-name: X Performance Analytics
+name: Social Pack Posts via Buffer
 
 on:
   schedule:
-    # 毎日 22:45 JST (= 13:45 UTC)。Bufferのメトリクスは最大約24h遅延する。
-    - cron: '45 13 * * *'
+    # 毎時07分にキューを確認。due itemがあっても1日最大1本だけ投稿する。
+    - cron: '7 * * * *'
   workflow_dispatch:
 
 concurrency:
-  group: x-performance-analytics
+  group: social-pack-post
   cancel-in-progress: false
 
 jobs:
-  analyze:
+  post:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -28,27 +28,24 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: Collect Buffer X metrics
+      - name: Post one due social pack item
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
-        run: python -m scripts.x_metrics_report_v2
+        run: python -m scripts.social_pack_buffer
 
-      - name: Select winner candidates
-        run: python -m scripts.winner_candidates
-
-      - name: Save analytics
+      - name: Save social pack state
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add analytics/x_metrics_history.json analytics/X_PERFORMANCE.md data/winner_candidates.json
+          git add state_social_pack.json
           if git diff --cached --quiet; then
-            echo "No analytics change"
+            echo "No social pack state change"
             exit 0
           fi
-          git commit -m "update X performance analytics [skip ci]"
+          git commit -m "rotate social pack post [skip ci]"
           git pull --rebase
           git push
