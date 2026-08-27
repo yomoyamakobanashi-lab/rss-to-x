@@ -5,10 +5,6 @@ on:
     # 12:35 / 17:35 / 21:35 JST。1日最大1投稿。
     - cron: '35 3,8,12 * * *'
   workflow_dispatch:
-  push:
-    branches: [auto-trend-episode-tieins]
-    paths:
-      - '.trend-tiein-test-trigger'
 
 concurrency:
   group: trend-episode-tiein
@@ -37,11 +33,9 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
-          TREND_TIEIN_DRY_RUN: ${{ github.event_name == 'push' && '1' || '0' }}
         run: python -m scripts.trend_episode_tiein_buffer
 
       - name: Save state
-        if: github.event_name != 'push'
         shell: bash
         run: |
           set -euo pipefail
