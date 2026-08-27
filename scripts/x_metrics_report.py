@@ -115,6 +115,7 @@ QUICK_TEXTS = load_json_posts(ROOT / "data" / "quick_reply_posts.json")
 DISCUSSION_TEXTS = load_json_posts(ROOT / "data" / "discussion_posts.json") | load_json_posts(
     ROOT / "data" / "discussion_posts_extra.json"
 )
+FUNNY_CLIP_TEXTS = load_json_posts(ROOT / "data" / "funny_clip_posts.json")
 SURVEY_ROOTS = survey_roots()
 
 
@@ -129,6 +130,10 @@ def classify_post(text: str) -> str:
         return "quick_reply"
     if raw in DISCUSSION_TEXTS:
         return "discussion"
+    # Funny clips add a short framing line before/after the LISTEN-grounded base text,
+    # so identify them by containment rather than exact equality.
+    if any(base and base in raw for base in FUNNY_CLIP_TEXTS):
+        return "funny_clip"
     if normalized in SURVEY_ROOTS:
         return "survey"
     if "リルパル" in raw and (
@@ -325,7 +330,7 @@ def build_report(history: dict[str, dict], channel: dict) -> str:
             lines.append(f"- 曜日では **{day_rows[0][0]}曜** が中央値imp首位（n={day_rows[0][1]}）。")
         if time_rows:
             lines.append(f"- 時間帯では **{time_rows[0][0]}** が中央値imp首位（n={time_rows[0][1]}）。")
-        lines.append("- 観察データなので因果とは限らない。勝ちパターン候補として次のA/Bテストに使う。")
+        lines.append("- これは観察データなので因果とは限らない。勝ちパターン候補として次のA/Bテストに使う。")
 
     lines += [
         "", "## 次の最適化ルール", "",
