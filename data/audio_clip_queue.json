@@ -25,5 +25,14 @@
     "duration_seconds": 25,
     "topic": "エアロスミス",
     "caption": "映画ポッドキャストなのに、突然『エアロスミスはもうロックの古典では』という授業が始まる。"
+  },
+  {
+    "id": "audio-aetobodm-chaos-theory",
+    "episode_title": "〖インターミッション〗　 #一ノ瀬ワタル とか#アンジェリーナ・ジョリー とか#ウィキッド とか",
+    "listen_url": "https://listen.style/p/reelpal/aetobodm",
+    "start_seconds": 904,
+    "duration_seconds": 25,
+    "topic": "カオス理論の人",
+    "caption": "ジェフ・ゴールドブラムを、なぜか作品名ではなくずっと『カオス理論の人』として覚えている二人。"
   }
 ]
