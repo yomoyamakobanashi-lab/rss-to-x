@@ -1,0 +1,23 @@
+name: Append latest funny clips
+on:
+  push:
+    branches: [listen-pack-aetobodm]
+    paths: ['.append-aetobodm-trigger']
+permissions:
+  contents: write
+jobs:
+  append:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: listen-pack-aetobodm
+      - name: Append verified LISTEN clips
+        run: python scripts/append_aetobodm_funny.py
+      - name: Commit result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/funny_clip_posts.json
+          git diff --cached --quiet || git commit -m "Add latest LISTEN funny clips"
+          git push origin HEAD:listen-pack-aetobodm
