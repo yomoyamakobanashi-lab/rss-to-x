@@ -28,12 +28,12 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: Post LISTEN-grounded funny clip through Buffer
+      - name: Post LISTEN-grounded funny clip with Spotify reply through Buffer
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
-        run: python -m scripts.funny_clip_buffer
+        run: python -m scripts.funny_clip_spotify
 
       - name: Save funny clip rotation state
         shell: bash
