@@ -18,6 +18,7 @@ BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts.json",
     ROOT / "data" / "funny_clip_posts_archive.json",
     ROOT / "data" / "funny_clip_posts_archive_2.json",
+    ROOT / "data" / "funny_clip_posts_archive_3.json",
 ]
 STATE_PATH = ROOT / "state_funny_clip.json"
 RECENT_SOURCE_WINDOW = 10
