@@ -94,8 +94,7 @@ def pick_clip(bank: list[dict], state: dict) -> dict | None:
 
 
 def _clean_fragment(value: str) -> str:
-    value = re.sub(r"\s+", " ", str(value or "")).strip(" 。、\n\t")
-    return value
+    return re.sub(r"\s+", " ", str(value or "")).strip(" 。、\n\t")
 
 
 def _clip_fragment(value: str, limit: int = 72) -> str:
@@ -106,28 +105,20 @@ def _clip_fragment(value: str, limit: int = 72) -> str:
 
 
 def _dialogue_lines(text: str, topic: str) -> tuple[str, str]:
-    """Turn transcript-grounded copy into short, conversational social copy.
+    """Make two conversational beats from the already grounded bank copy.
 
-    Existing Japanese quote spans are preferred. If an entry is descriptive rather
-    than already quoted, its own first clauses are tightened into dialogue-like
-    paraphrases; no new factual detail or speaker attribution is introduced.
+    Actual Japanese quote spans win. Descriptive entries are tightened from their
+    own clauses only; no speaker names or new factual claims are introduced.
     """
     quotes = [_clip_fragment(q) for q in re.findall(r"「([^」]+)」", text) if _clean_fragment(q)]
     if len(quotes) >= 2:
         return quotes[0], quotes[1]
 
     stripped = re.sub(r"「[^」]+」", "", text)
-    clauses = [
-        _clip_fragment(part)
-        for part in re.split(r"[。！？!?]+", stripped)
-        if _clean_fragment(part)
-    ]
+    clauses = [_clip_fragment(p) for p in re.split(r"[。！？!?]+", stripped) if _clean_fragment(p)]
 
     if quotes:
-        first = quotes[0]
-        second = clauses[0] if clauses else f"{topic}、どうなってんだよ"
-        return first, second
-
+        return quotes[0], clauses[0] if clauses else f"{topic}、どうなってんだよ"
     if len(clauses) >= 2:
         return clauses[0], clauses[1]
     if clauses:
@@ -139,8 +130,6 @@ def _punchline(item: dict) -> str:
     topic = _clean_fragment(item["topic"])
     clip_id = str(item.get("id") or "")
 
-    # A few recurring topics benefit from a more specific final beat than the
-    # generic fallback. These remain grounded in the stored clip summary.
     specific = {
         "orangutan-fringe-mystery": "オランウータンのフランジ、何でできてるかわからな過ぎて面白すぎる。",
         "experiment-sea-creatures": "イセエビ、海にいるという一点だけでだいぶ得してる。",
@@ -154,7 +143,18 @@ def _punchline(item: dict) -> str:
     }
     if clip_id in specific:
         return specific[clip_id]
-    return f"{topic}、こういう話が一番おもしろい。"
+
+    variants = [
+        f"{topic}、面白すぎる。",
+        f"{topic}、何の話してんだよ。",
+        f"{topic}、このくだり好きすぎる。",
+        f"{topic}、どうしてこうなった。",
+        f"{topic}、話が転がりすぎてる。",
+        f"{topic}、映画の話どこ行った。",
+        f"{topic}、ずっと聞いてられる。",
+    ]
+    selector = sum(ord(ch) for ch in clip_id) % len(variants)
+    return variants[selector]
 
 
 def render_root(item: dict) -> str:
@@ -162,8 +162,6 @@ def render_root(item: dict) -> str:
     punchline = _punchline(item)
     root = f"「{first}」\n\n「{second}」\n\n{punchline}\n\n{REELPAL_TAG}"
 
-    # Keep the X post comfortably below the limit. Preserve the two-line dialogue,
-    # punchline, and required tag while tightening long transcript fragments.
     if len(root) > 270:
         first = _clip_fragment(first, 54)
         second = _clip_fragment(second, 54)
