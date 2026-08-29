@@ -12,7 +12,7 @@ from scripts import funny_clip_buffer as base
 
 ROOT = Path(__file__).resolve().parents[1]
 SPOTIFY_EPISODES_PATH = ROOT / "data" / "spotify_episodes.json"
-SPOTIFY_SHOW_URL = "https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS"
+SPOTIFY_OVERRIDES_PATH = ROOT / "data" / "spotify_episode_overrides.json"
 REELPAL_TAG = "#リルパル"
 
 
@@ -31,10 +31,29 @@ def _load_spotify_index() -> list[dict]:
     return data if isinstance(data, list) else []
 
 
+def _load_overrides() -> dict[str, str]:
+    try:
+        data = json.loads(SPOTIFY_OVERRIDES_PATH.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+    if not isinstance(data, dict):
+        return {}
+    return {
+        str(key): str(value).strip()
+        for key, value in data.items()
+        if str(value).strip().startswith("https://open.spotify.com/episode/")
+    }
+
+
 def _exact_spotify_url(item: dict) -> str | None:
     explicit = str(item.get("spotify_url") or "").strip()
     if explicit.startswith("https://open.spotify.com/episode/"):
         return explicit
+
+    source = str(item.get("source") or "").strip()
+    override = _load_overrides().get(source)
+    if override:
+        return override
 
     wanted = _normalize(item.get("episode_title", ""))
     if not wanted:
