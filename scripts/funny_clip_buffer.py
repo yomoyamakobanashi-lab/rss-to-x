@@ -14,15 +14,26 @@ if str(ROOT) not in sys.path:
 
 from buffer_client import post_thread
 
-BANK_PATH = ROOT / "data" / "funny_clip_posts.json"
+BANK_PATHS = [
+    ROOT / "data" / "funny_clip_posts.json",
+    ROOT / "data" / "funny_clip_posts_archive.json",
+]
 STATE_PATH = ROOT / "state_funny_clip.json"
 RECENT_SOURCE_WINDOW = 10
 RECENT_TOPIC_WINDOW = 18
 
 
 def load_bank() -> list[dict]:
-    data = json.loads(BANK_PATH.read_text(encoding="utf-8"))
-    if not isinstance(data, list) or not data:
+    data: list[dict] = []
+    for path in BANK_PATHS:
+        if not path.exists():
+            continue
+        chunk = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(chunk, list):
+            raise RuntimeError(f"funny clip bank is invalid: {path.name}")
+        data.extend(chunk)
+
+    if not data:
         raise RuntimeError("funny clip bank is empty or invalid")
 
     seen_ids: set[str] = set()
@@ -79,7 +90,6 @@ def pick_clip(bank: list[dict], state: dict) -> dict | None:
 
 
 def render_root(item: dict) -> str:
-    # The clip itself is the hook. Avoid generic promotional framing.
     root = item["text"].strip()
     if len(root) > 250:
         raise RuntimeError(f"rendered funny clip is too long: {item['id']} ({len(root)})")
