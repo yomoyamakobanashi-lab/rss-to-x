@@ -16,15 +16,8 @@ from buffer_client import post_thread
 
 BANK_PATH = ROOT / "data" / "funny_clip_posts.json"
 STATE_PATH = ROOT / "state_funny_clip.json"
-RECENT_SOURCE_WINDOW = 7
-RECENT_TOPIC_WINDOW = 14
-
-LEAD_VARIANTS = [
-    lambda text: f"{text}\n\nリルパル、こういう脱線もしています。",
-    lambda text: f"映画の話をしていたはずなんですが。\n\n{text}",
-    lambda text: f"{text}\n\nこういう話も普通にしています。",
-    lambda text: f"インターミッションから一場面。\n\n{text}",
-]
+RECENT_SOURCE_WINDOW = 10
+RECENT_TOPIC_WINDOW = 18
 
 
 def load_bank() -> list[dict]:
@@ -46,7 +39,7 @@ def load_bank() -> list[dict]:
         seen_ids.add(clip_id)
         if not url.startswith("https://listen.style/p/reelpal/"):
             raise RuntimeError(f"funny clip source is not a ReelPal LISTEN URL: {url}")
-        if len(text) > 220:
+        if len(text) > 250:
             raise RuntimeError(f"funny clip base text is too long ({len(text)}): {clip_id}")
     return data
 
@@ -73,11 +66,8 @@ def pick_clip(bank: list[dict], state: dict) -> dict | None:
         return None
 
     recent_topics = set(state["recent_topics"][-RECENT_TOPIC_WINDOW:])
-
-    for source_window in (RECENT_SOURCE_WINDOW, 4, 0):
-        recent_sources = (
-            set(state["recent_sources"][-source_window:]) if source_window else set()
-        )
+    for source_window in (RECENT_SOURCE_WINDOW, 6, 3, 0):
+        recent_sources = set(state["recent_sources"][-source_window:]) if source_window else set()
         candidates = [
             item
             for item in unused
@@ -85,26 +75,21 @@ def pick_clip(bank: list[dict], state: dict) -> dict | None:
         ]
         if candidates:
             return candidates[0]
-
     return unused[0]
 
 
-def render_root(item: dict, used_count: int) -> str:
-    base = item["text"].strip()
-    root = LEAD_VARIANTS[used_count % len(LEAD_VARIANTS)](base)
-    if len(root) > 280:
-        raise RuntimeError(f"rendered funny clip exceeds 280 chars: {item['id']} ({len(root)})")
+def render_root(item: dict) -> str:
+    # The clip itself is the hook. Avoid generic promotional framing.
+    root = item["text"].strip()
+    if len(root) > 250:
+        raise RuntimeError(f"rendered funny clip is too long: {item['id']} ({len(root)})")
     return root
 
 
 def render_reply(item: dict) -> str:
-    reply = (
-        "この脱線はLISTENで👇\n"
-        f"{item['source_url']}\n\n"
-        "映画の話から、だいたいこうなります。"
-    )
-    if len(reply) > 280:
-        raise RuntimeError(f"funny clip reply exceeds 280 chars: {item['id']}")
+    reply = f"元の脱線はLISTENで👇\n{item['source_url']}"
+    if len(reply) > 260:
+        raise RuntimeError(f"funny clip reply exceeds safe length: {item['id']}")
     return reply
 
 
@@ -128,10 +113,8 @@ def save_state(state: dict, item: dict) -> None:
 
 
 def validate_full_bank(bank: list[dict]) -> None:
-    # Validate all four framing variants against every bank entry, not only today's selection.
-    for index, item in enumerate(bank):
-        for variant_index in range(len(LEAD_VARIANTS)):
-            render_root(item, variant_index)
+    for item in bank:
+        render_root(item)
         render_reply(item)
     print(f"[OK] validated {len(bank)} LISTEN-grounded funny clips")
 
@@ -145,7 +128,7 @@ def main() -> None:
         item = pick_clip(bank, state)
         if item:
             print(f"[DRY RUN] next id={item['id']} source={item['source']} topic={item['topic']}")
-            print(render_root(item, len(state["used_ids"])))
+            print(render_root(item))
             print("--- reply ---")
             print(render_reply(item))
         return
@@ -154,11 +137,11 @@ def main() -> None:
     if item is None:
         print(
             f"[INFO] funny clip bank exhausted: used={len(state['used_ids'])}, total={len(bank)}. "
-            "No post sent; replenish with LISTEN-grounded clips."
+            "No post sent; replenish with LISTEN-grounded clips from the archive."
         )
         return
 
-    root = render_root(item, len(state["used_ids"]))
+    root = render_root(item)
     reply = render_reply(item)
     post_id = post_thread([root, reply])
     save_state(state, item)

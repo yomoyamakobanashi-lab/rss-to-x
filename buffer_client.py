@@ -20,10 +20,25 @@ import requests
 
 BUFFER_API_URL = "https://api.buffer.com"
 TIMEOUT = 30
+REELPAL_TAG = "#リルパル"
 
 
 class BufferError(RuntimeError):
     pass
+
+
+def _ensure_reelpal_tag(text: str) -> str:
+    clean = str(text or "").strip()
+    if not clean:
+        raise BufferError("Post text is empty.")
+    if REELPAL_TAG in clean:
+        return clean
+    tagged = f"{clean}\n\n{REELPAL_TAG}"
+    if len(tagged) > 280:
+        raise BufferError(
+            f"Post exceeds 280 chars after required {REELPAL_TAG} tag is added: {len(tagged)}"
+        )
+    return tagged
 
 
 def _api_key() -> str:
@@ -151,7 +166,7 @@ def _create_post(input_data: Dict[str, Any]) -> str:
 def post_text(text: str, *, image_url: Optional[str] = None) -> str:
     channel_id = resolve_x_channel_id()
     data: Dict[str, Any] = {
-        "text": text,
+        "text": _ensure_reelpal_tag(text),
         "channelId": channel_id,
         "schedulingType": "automatic",
         "mode": "shareNow",
@@ -168,7 +183,7 @@ def post_video(text: str, video_url: str) -> str:
         raise BufferError("Video URL must be a public HTTPS URL.")
     channel_id = resolve_x_channel_id()
     return _create_post({
-        "text": text,
+        "text": _ensure_reelpal_tag(text),
         "channelId": channel_id,
         "schedulingType": "automatic",
         "mode": "shareNow",
@@ -177,7 +192,7 @@ def post_video(text: str, video_url: str) -> str:
 
 
 def post_thread(posts: Iterable[str]) -> str:
-    texts = [str(p).strip() for p in posts if str(p).strip()]
+    texts = [_ensure_reelpal_tag(p) for p in posts if str(p).strip()]
     if not texts:
         raise BufferError("Thread is empty.")
 
@@ -198,7 +213,7 @@ def post_thread(posts: Iterable[str]) -> str:
 
 
 def post_video_thread(posts: Iterable[str], video_url: str) -> str:
-    texts = [str(p).strip() for p in posts if str(p).strip()]
+    texts = [_ensure_reelpal_tag(p) for p in posts if str(p).strip()]
     if not texts:
         raise BufferError("Video thread is empty.")
     url = str(video_url or "").strip()

@@ -2,8 +2,8 @@ name: Daily Funny Clips via Buffer
 
 on:
   schedule:
-    # 毎日 14:20 JST (= 05:20 UTC)。通常の朝投稿・夜投稿から間隔を空ける。
-    - cron: '20 5 * * *'
+    # 毎日 21:20 JST (= 12:20 UTC)。夜の高反応帯に脱線会話を固定投入。
+    - cron: '20 12 * * *'
   workflow_dispatch:
 
 concurrency:

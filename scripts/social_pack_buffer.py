@@ -78,7 +78,7 @@ def load_state() -> dict:
         data = {}
     return {
         "posted_ids": [str(x) for x in data.get("posted_ids", []) if str(x).strip()],
-        "last_post_date_jst": data.get("last_post_date_jst"),
+        "last_posted_at": data.get("last_posted_at"),
     }
 
 
@@ -124,12 +124,6 @@ def main() -> None:
     queue = load_queue()
     state = load_state()
     now = datetime.now(timezone.utc)
-    today_jst = now.astimezone(JST).date().isoformat()
-
-    # This layer is supplemental; cap it at one root post per local calendar day.
-    if state.get("last_post_date_jst") == today_jst:
-        print("[INFO] social pack already posted today; skip")
-        return
 
     item = pick_due(queue, state, now)
     if item is None:
@@ -148,7 +142,7 @@ def main() -> None:
         raise
 
     state["posted_ids"] = state["posted_ids"] + [item["id"]]
-    state["last_post_date_jst"] = today_jst
+    state["last_posted_at"] = now.astimezone(JST).isoformat()
     save_state(state)
     print(
         f"[OK] Buffer accepted social pack: {post_id}; "
