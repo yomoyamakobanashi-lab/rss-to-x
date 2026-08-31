@@ -110,32 +110,11 @@ def _sentence_units(value: str) -> list[str]:
     return [x.strip() for x in re.findall(r".+?(?:[。！？!?]+|$)", clean) if x.strip()]
 
 
-def _strip_terminal(value: str) -> str:
-    return str(value or "").strip().rstrip("。！？!? ")
-
-
-def _quote_with_narration(value: str) -> str:
-    """Put only the spoken/thought portion inside Japanese quotation marks.
-
-    A bank sentence may contain an em-dash followed by editorial narration, e.g.
-    `事故ったら…——という、映画と一切関係ない心配までしています。`.
-    The old renderer put that narration inside the quote as well. Keep the quote
-    closed before the dash instead.
-    """
-    value = str(value or "").strip()
-    match = re.search(r"(——|――|—)", value)
-    if match:
-        spoken = _strip_terminal(value[: match.start()])
-        tail = value[match.start() :].strip()
-        return f"「{spoken}」{tail}" if spoken else tail
-    return f"「{_strip_terminal(value)}」"
-
-
 def _dialogue_blocks(item: dict) -> tuple[str, str]:
+    """Keep verified quote marks only; never turn paraphrase into fake dialogue."""
     text = str(item.get("text") or "").strip()
     clip_id = str(item.get("id") or "")
 
-    # Hand-tuned cases that exposed the previous renderer's weaknesses.
     specific = {
         "popcorn-koala": (
             "「コアラのマーチは絵を確認しながら食べたい」",
@@ -171,14 +150,28 @@ def _dialogue_blocks(item: dict) -> tuple[str, str]:
             second += f"\n{suffix}"
         return _clip_fragment(first), _clip_fragment(second)
 
+    if len(quotes) == 1:
+        before, after = text.split("「", 1)
+        quoted, tail = after.split("」", 1)
+        first = f"「{_clean_fragment(quoted)}」"
+        if before.strip():
+            first = f"{before.strip()}\n{first}"
+        tail_units = _sentence_units(tail)
+        if tail_units:
+            second = "".join(tail_units[:2])
+        else:
+            second = f"{item['topic']}の話から、また別の話へ転がっていく。"
+        return _clip_fragment(first), _clip_fragment(second)
+
+    # No quote marks in the grounded bank copy means it is a paraphrase/summary.
+    # Keep it as prose instead of fabricating dialogue quotation marks.
     units = _sentence_units(text)
     if len(units) >= 2:
-        first = _quote_with_narration(units[0])
-        rest = "".join(units[1:3])
-        second = _quote_with_narration(rest)
+        first = units[0]
+        second = "".join(units[1:3])
         return _clip_fragment(first), _clip_fragment(second)
     if units:
-        return _clip_fragment(_quote_with_narration(units[0])), _clip_fragment(f"{item['topic']}の話から、また別の話へ転がっていく。")
+        return _clip_fragment(units[0]), _clip_fragment(f"{item['topic']}の話から、また別の話へ転がっていく。")
     return _clip_fragment(str(item["topic"])), "このあと話はさらに別方向へ転がっていく。"
 
 
