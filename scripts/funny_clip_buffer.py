@@ -122,9 +122,10 @@ def _dialogue_lines(text: str, topic: str) -> tuple[str, str]:
     quotes = [_clean_fragment(q) for q in re.findall(r"「([^」]+)」", clean) if _clean_fragment(q)]
 
     if len(quotes) >= 2:
-        prefix = _clean_fragment(clean.split("「", 1)[0])
+        raw_prefix = str(text or "").split("「", 1)[0].strip()
+        prefix = _clean_fragment(raw_prefix)
         first = quotes[0]
-        if prefix and len(prefix) <= 34:
+        if raw_prefix.endswith(("。", "！", "？", "!", "?")) and prefix and len(prefix) <= 34:
             first = f"{prefix}。{first}"
         second = " / ".join(quotes[1:3])
         return _clip_fragment(first), _clip_fragment(second)
