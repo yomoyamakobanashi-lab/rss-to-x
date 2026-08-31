@@ -25,7 +25,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Refresh Spotify episode metadata from the canonical RSS feed
+      - name: Refresh Spotify episode metadata from RSS and official catalog
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
         run: node scripts/buildSpotifyEpisodesFromRSS.js
 
       - uses: actions/setup-python@v5
