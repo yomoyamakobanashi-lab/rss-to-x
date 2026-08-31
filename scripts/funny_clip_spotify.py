@@ -77,8 +77,6 @@ def _fit_body(text: str, budget: int) -> str:
     if len(clean) <= budget:
         return clean
 
-    # Keep original punctuation and quote positions. This regex treats a closing
-    # Japanese quote after sentence punctuation as part of the same sentence.
     parts = re.findall(r".+?(?:[。！？!?]+[」』]?|$)", clean)
     out = ""
     for part in parts:
@@ -89,7 +87,6 @@ def _fit_body(text: str, budget: int) -> str:
     if out.strip():
         return out.strip()
 
-    # Last-resort hard cut is quote-safe: do not leave an opening quote dangling.
     clipped = clean[: max(1, budget - 1)].rstrip("、。 ") + "…"
     if clipped.count("「") > clipped.count("」"):
         clipped = clipped.rstrip("…") + "」…"
@@ -127,12 +124,22 @@ _original_load_bank = base.load_bank
 
 def _load_spotify_ready_bank() -> list[dict]:
     full_bank = _original_load_bank()
-    ready = [item for item in full_bank if _exact_spotify_url(item)]
-    skipped = len(full_bank) - len(ready)
-    print(f"[INFO] Spotify-direct funny clips: ready={len(ready)} skipped_without_exact_url={skipped}")
-    if not ready:
-        raise RuntimeError("No funny clips have a verified Spotify episode URL.")
-    return ready
+    missing_by_source: dict[str, str] = {}
+    for item in full_bank:
+        if not _exact_spotify_url(item):
+            missing_by_source[str(item["source"])] = str(item.get("episode_title") or "")
+
+    if missing_by_source:
+        details = "\n".join(
+            f"- {source}: {title}" for source, title in sorted(missing_by_source.items())
+        )
+        raise RuntimeError(
+            "Spotify direct-link coverage is incomplete; no funny clip will be published "
+            "until every unique source episode has a verified /episode/ URL.\n" + details
+        )
+
+    print(f"[OK] Spotify direct-link coverage complete: clips={len(full_bank)}")
+    return full_bank
 
 
 base.load_bank = _load_spotify_ready_bank
