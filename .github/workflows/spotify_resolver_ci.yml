@@ -7,6 +7,7 @@ on:
     paths:
       - 'scripts/resolve_spotify_episode_links.py'
       - 'scripts/spotify_html_probe.py'
+      - 'scripts/spotify_browser_probe.py'
       - 'data/funny_clip_posts*.json'
       - '.github/workflows/spotify_resolver_ci.yml'
 
@@ -25,8 +26,11 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Probe public Spotify show HTML
-        run: python -m scripts.spotify_html_probe
+      - name: Install browser probe dependency
+        run: pip install selenium
+
+      - name: Probe full Spotify episode list in browser
+        run: python -m scripts.spotify_browser_probe
 
       - name: Resolve exact Spotify episode links only
         id: resolve
