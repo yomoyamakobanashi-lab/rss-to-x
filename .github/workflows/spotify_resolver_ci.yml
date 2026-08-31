@@ -1,0 +1,60 @@
+name: Resolve Spotify links safely
+
+on:
+  push:
+    branches:
+      - feat/funny-quote-hooks-all-spotify
+    paths:
+      - 'scripts/resolve_spotify_episode_links.py'
+      - 'data/funny_clip_posts*.json'
+      - '.github/workflows/spotify_resolver_ci.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Resolve exact Spotify episode links only
+        id: resolve
+        shell: bash
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: |
+          set +e
+          python -m scripts.resolve_spotify_episode_links
+          status=$?
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Persist any verified mappings found
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/spotify_episode_overrides.json
+          if git diff --cached --quiet; then
+            echo "No new Spotify mappings"
+          else
+            git commit -m "resolve verified Spotify episode links [skip ci]"
+            git push
+          fi
+
+      - name: Require complete resolution
+        shell: bash
+        run: |
+          if [ "${{ steps.resolve.outputs.status }}" != "0" ]; then
+            echo "Spotify resolution was incomplete; see resolver logs above."
+            exit 1
+          fi
