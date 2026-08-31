@@ -14,12 +14,26 @@ from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-from scripts import funny_clip_buffer as base
-
 ROOT = Path(__file__).resolve().parents[1]
+BANK_PATHS = [
+    ROOT / "data" / "funny_clip_posts.json",
+    ROOT / "data" / "funny_clip_posts_archive.json",
+    ROOT / "data" / "funny_clip_posts_archive_2.json",
+    ROOT / "data" / "funny_clip_posts_archive_3.json",
+]
 OVERRIDES_PATH = ROOT / "data" / "spotify_episode_overrides.json"
 SHOW_ID = "4o8l9DJWMuwUht2pvkEytS"
 USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/132 Safari/537.36"
+
+
+def _load_bank() -> list[dict]:
+    bank: list[dict] = []
+    for path in BANK_PATHS:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, list):
+            raise RuntimeError(f"Invalid funny clip bank: {path.name}")
+        bank.extend(item for item in data if isinstance(item, dict))
+    return bank
 
 
 def _json_get(url: str, headers: dict[str, str] | None = None, timeout: int = 30) -> dict:
@@ -59,9 +73,6 @@ def _spotify_token() -> str:
         if token:
             return token
 
-    # Spotify's web player exposes a short-lived anonymous token. This keeps the
-    # resolver useful without additional secrets; client credentials are preferred
-    # automatically whenever they are available.
     payload = _json_get(
         "https://open.spotify.com/get_access_token?reason=transport&productType=web_player",
         headers={"Referer": "https://open.spotify.com/"},
@@ -143,11 +154,13 @@ def _best_match(title: str, episodes: list[dict]) -> tuple[dict | None, float, f
 
 
 def resolve_all() -> dict[str, str]:
-    bank = base.load_bank()
+    bank = _load_bank()
     source_titles: dict[str, str] = {}
     for item in bank:
-        source = str(item["source"]).strip()
+        source = str(item.get("source") or "").strip()
         title = str(item.get("episode_title") or "").strip()
+        if not source or not title:
+            raise RuntimeError(f"Funny clip lacks source/title: {item.get('id')}")
         if source in source_titles and source_titles[source] != title:
             raise RuntimeError(f"Conflicting episode titles for source {source}")
         source_titles[source] = title
@@ -174,9 +187,6 @@ def resolve_all() -> dict[str, str]:
         url = str((best.get("external_urls") or {}).get("spotify") or "").strip()
         candidate_title = str(best.get("name") or "").strip()
         margin = score - second
-        # Same-show enumeration removes publisher ambiguity. Require a strong
-        # textual match, or a moderately strong match with a clear lead over the
-        # runner-up, so a generic intermission title can never silently map wrong.
         accepted = score >= 0.72 or (score >= 0.60 and margin >= 0.08)
         if not accepted or not url.startswith("https://open.spotify.com/episode/"):
             unresolved.append(source)
