@@ -1,0 +1,74 @@
+name: Temporary Spotify Episode Discovery
+
+on:
+  push:
+    branches:
+      - feat/funny-quotes-hooks-all-spotify
+    paths:
+      - .github/workflows/spotify_discovery.yml
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Scrape Spotify show episode links
+        run: |
+          cat > /tmp/scrape.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          import fs from 'fs';
+
+          const url = 'https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS';
+          const browser = await chromium.launch({headless:true});
+          const page = await browser.newPage({ viewport: { width: 1440, height: 1200 } });
+          const responses = [];
+          page.on('response', async (response) => {
+            const u = response.url();
+            if (u.includes('pathfinder') || u.includes('/v1/')) {
+              try {
+                const ct = response.headers()['content-type'] || '';
+                if (ct.includes('json')) {
+                  const body = await response.text();
+                  if (body.includes('episode')) responses.push({url:u, body});
+                }
+              } catch {}
+            }
+          });
+          await page.goto(url, { waitUntil:'domcontentloaded', timeout:90000 });
+          await page.waitForTimeout(8000);
+          for (const label of ['Accept Cookies','Accept all','同意する','すべて許可']) {
+            const btn = page.getByRole('button', {name:label});
+            if (await btn.count()) { try { await btn.first().click({timeout:1000}); } catch {} }
+          }
+          const found = new Map();
+          for (let i=0; i<80; i++) {
+            const rows = await page.locator('a[href*="/episode/"]').evaluateAll(as => as.map(a => ({href:a.href, text:(a.innerText || a.textContent || '').trim(), aria:a.getAttribute('aria-label') || ''})));
+            for (const r of rows) {
+              const m = r.href.match(/https:\/\/open\.spotify\.com\/episode\/([A-Za-z0-9]+)/);
+              if (m) found.set(m[1], {id:m[1], url:`https://open.spotify.com/episode/${m[1]}`, text:r.text, aria:r.aria});
+            }
+            await page.mouse.wheel(0, 2500);
+            await page.waitForTimeout(700);
+          }
+          fs.mkdirSync('spotify-discovery', {recursive:true});
+          fs.writeFileSync('spotify-discovery/dom.json', JSON.stringify([...found.values()], null, 2));
+          fs.writeFileSync('spotify-discovery/responses.json', JSON.stringify(responses, null, 2));
+          fs.writeFileSync('spotify-discovery/page.txt', await page.locator('body').innerText());
+          console.log(`DOM episode links: ${found.size}; captured API responses: ${responses.length}`);
+          await browser.close();
+          EOF
+          node /tmp/scrape.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spotify-discovery
+          path: spotify-discovery/
+          retention-days: 1
