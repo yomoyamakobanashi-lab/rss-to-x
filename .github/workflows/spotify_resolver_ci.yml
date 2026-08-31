@@ -6,6 +6,7 @@ on:
       - feat/funny-quote-hooks-all-spotify
     paths:
       - 'scripts/resolve_spotify_episode_links.py'
+      - 'scripts/spotify_html_probe.py'
       - 'data/funny_clip_posts*.json'
       - '.github/workflows/spotify_resolver_ci.yml'
 
@@ -23,6 +24,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
+      - name: Probe public Spotify show HTML
+        run: python -m scripts.spotify_html_probe
 
       - name: Resolve exact Spotify episode links only
         id: resolve
