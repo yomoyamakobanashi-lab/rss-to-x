@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from urllib.request import Request, urlopen
+from urllib.parse import quote
 from pathlib import Path
 import html as htmlmod
 import json
@@ -12,6 +13,14 @@ BANKS = [
     ROOT / "data" / "funny_clip_posts_archive_2.json",
     ROOT / "data" / "funny_clip_posts_archive_3.json",
 ]
+HEADERS = {"User-Agent":"Mozilla/5.0","Accept-Language":"ja,en;q=0.8"}
+
+def fetch(url):
+    with urlopen(Request(url, headers=HEADERS), timeout=30) as r:
+        return r.read().decode("utf-8", "replace")
+
+def ids(page):
+    return list(dict.fromkeys(re.findall(r'/episode/([A-Za-z0-9]{22})', page)))
 
 sources = {}
 for path in BANKS:
@@ -24,24 +33,24 @@ print("UNIQUE_SOURCES", len(sources))
 for source, title in sorted(sources.items()):
     print("SOURCE", source, "|||", title)
 
-url = "https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS"
-req = Request(url, headers={"User-Agent":"Mozilla/5.0","Accept-Language":"ja,en;q=0.8"})
-with urlopen(req, timeout=30) as r:
-    page = r.read().decode("utf-8", "replace")
-print("HTML_BYTES", len(page))
-links = []
-for m in re.finditer(r'<a[^>]+href="/episode/([A-Za-z0-9]{22})"[^>]*>\s*<h4[^>]*data-testid="episodeTitle"[^>]*>(.*?)</h4>', page, re.I | re.S):
-    episode_id = m.group(1)
-    title_html = m.group(2)
-    title = htmlmod.unescape(re.sub(r"<[^>]+>", "", title_html)).strip()
-    links.append((episode_id, title))
-print("PUBLIC_EPISODES", len(links))
-for episode_id, title in links:
-    print("EPISODE", episode_id, "|||", title)
+show_url = "https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS"
+page = fetch(show_url)
+print("SHOW_IDS", ids(page))
 
-for term in ["offset", "cursor", "showMore", "show-all", "see all", "episodes", "next"]:
-    positions = [m.start() for m in re.finditer(term, page, re.I)]
-    print("TERM", term, "COUNT", len(positions))
-    for pos in positions[:2]:
-        snippet = page[max(0, pos-350):pos+900].replace("\n", " ")
-        print("SNIP", term, snippet[:1250])
+# Probe Spotify's public HTML search only as an internal discovery mechanism.
+# Nothing here is ever used as a listener-facing link.
+for source, title in sorted(sources.items()):
+    search_url = "https://open.spotify.com/search/" + quote(title, safe="")
+    try:
+        search_page = fetch(search_url)
+    except Exception as exc:
+        print("SEARCH_ERROR", source, repr(exc))
+        continue
+    candidates = ids(search_page)
+    print("SEARCH", source, "CANDIDATES", candidates[:12])
+    for episode_id in candidates[:4]:
+        needle = "/episode/" + episode_id
+        pos = search_page.find(needle)
+        snippet = htmlmod.unescape(re.sub(r"<[^>]+>", " ", search_page[max(0,pos-500):pos+1500]))
+        snippet = re.sub(r"\s+", " ", snippet).strip()
+        print("CANDIDATE", source, episode_id, "|||", snippet[:500])
