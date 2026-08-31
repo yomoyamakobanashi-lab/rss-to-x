@@ -6,7 +6,6 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from urllib.parse import quote
 
 from scripts import funny_clip_buffer as base
 
@@ -73,38 +72,38 @@ def _exact_spotify_url(item: dict) -> str | None:
     return None
 
 
-def _search_hint(item: dict) -> str:
-    title = str(item.get("episode_title") or "")
-
-    hashtag = re.search(r"#([^\s　とか、，。…]+)", title)
-    if hashtag:
-        hint = hashtag.group(1).strip()
-    else:
-        quoted = re.search(r"[『「](.*?)[』」]", title)
-        hint = quoted.group(1).strip() if quoted else str(item.get("topic") or "").strip()
-
-    hint = re.sub(r"\s+", " ", hint).strip()
-    return hint[:18] or "リルパル"
-
-
-def _spotify_target(item: dict) -> tuple[str, bool]:
-    exact = _exact_spotify_url(item)
-    if exact:
-        return exact, True
-
-    query = f"Reel Friends TOKYO {_search_hint(item)}"
-    return f"https://open.spotify.com/search/{quote(query, safe='')}/episodes", False
-
-
 def render_reply(item: dict) -> str:
-    target, exact = _spotify_target(item)
-    lead = "この回をSpotifyで👇" if exact else "この回をSpotifyで探す👇"
-    return f"{lead}\n{target}\n\n{REELPAL_TAG}"
+    target = _exact_spotify_url(item)
+    if not target:
+        raise RuntimeError(
+            f"No verified Spotify episode URL for {item['id']} ({item['source']}); "
+            "refusing to publish a broken search fallback."
+        )
+    return f"この回をSpotifyで👇\n{target}\n\n{REELPAL_TAG}"
 
 
-# Keep LISTEN URL/timestamp inside the bank as source evidence, but make public
-# replies Spotify-first. base.main resolves render_reply dynamically, so replacing
-# the module global is enough to preserve the existing rotation/posting behavior.
+_original_load_bank = base.load_bank
+
+
+def _load_spotify_ready_bank() -> list[dict]:
+    full_bank = _original_load_bank()
+    ready = [item for item in full_bank if _exact_spotify_url(item)]
+    skipped = len(full_bank) - len(ready)
+    print(
+        f"[INFO] Spotify-direct funny clips: ready={len(ready)} skipped_without_exact_url={skipped}"
+    )
+    if not ready:
+        raise RuntimeError(
+            "No funny clips have a verified Spotify episode URL. "
+            "Add exact URLs to data/spotify_episode_overrides.json before posting."
+        )
+    return ready
+
+
+# Public posts must now satisfy both conditions: grounded LISTEN source evidence in
+# the bank and a verified Spotify /episode/ URL for the listener-facing reply.
+# There is intentionally no Spotify search-page fallback.
+base.load_bank = _load_spotify_ready_bank
 base.render_reply = render_reply
 
 
