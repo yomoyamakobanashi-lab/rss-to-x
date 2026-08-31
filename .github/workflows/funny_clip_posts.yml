@@ -28,24 +28,30 @@ jobs:
       - name: Install deps
         run: pip install -r requirements.txt
 
-      - name: Post LISTEN-grounded funny clip with Spotify reply through Buffer
+      - name: Resolve every funny-clip source to an exact Spotify episode URL
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: python -m scripts.resolve_spotify_episode_links
+
+      - name: Post LISTEN-grounded funny clip with exact Spotify reply through Buffer
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
         run: python -m scripts.funny_clip_spotify
 
-      - name: Save funny clip rotation state
+      - name: Save Spotify mappings and funny clip rotation state
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add state_funny_clip.json
+          git add data/spotify_episode_overrides.json state_funny_clip.json
           if git diff --cached --quiet; then
-            echo "No funny clip state change"
+            echo "No Spotify mapping or funny clip state change"
             exit 0
           fi
-          git commit -m "rotate funny clip post [skip ci]"
+          git commit -m "resolve Spotify links and rotate funny clip [skip ci]"
           git pull --rebase
           git push
