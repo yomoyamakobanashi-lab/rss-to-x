@@ -1,10 +1,50 @@
 #!/usr/bin/env python3
+import json
+import re
 import time
+import unicodedata
+from difflib import SequenceMatcher
+from pathlib import Path
+from urllib.parse import quote
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
-SHOW_URL = "https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS"
+ROOT = Path(__file__).resolve().parents[1]
+BANKS = [
+    ROOT / "data" / "funny_clip_posts.json",
+    ROOT / "data" / "funny_clip_posts_archive.json",
+    ROOT / "data" / "funny_clip_posts_archive_2.json",
+    ROOT / "data" / "funny_clip_posts_archive_3.json",
+]
+SHOW_ID = "4o8l9DJWMuwUht2pvkEytS"
+
+def norm(value: str) -> str:
+    value = unicodedata.normalize("NFKC", value or "").lower()
+    value = value.replace("replay", "")
+    value = re.sub(r"[\s　]+", "", value)
+    value = re.sub(r"[『』「」〖〗【】#\-_—–:：・,.!?！？…（）()\[\]/\\]", "", value)
+    return value
+
+def score(a: str, b: str) -> float:
+    na, nb = norm(a), norm(b)
+    if not na or not nb:
+        return 0.0
+    if na == nb:
+        return 1.0
+    if na in nb or nb in na:
+        return 0.9
+    return SequenceMatcher(None, na, nb).ratio()
+
+sources = {}
+for path in BANKS:
+    for item in json.loads(path.read_text(encoding="utf-8")):
+        source = str(item.get("source") or "").strip()
+        title = str(item.get("episode_title") or "").strip()
+        if source and title:
+            sources[source] = title
+
 opts = Options()
 opts.add_argument("--headless=new")
 opts.add_argument("--no-sandbox")
@@ -13,60 +53,32 @@ opts.add_argument("--window-size=1440,1200")
 opts.add_argument("--lang=ja-JP")
 
 driver = webdriver.Chrome(options=opts)
-seen: dict[str, str] = {}
 try:
-    driver.get(SHOW_URL)
-    time.sleep(4)
-    stable = 0
-    last_total = 0
-    for i in range(100):
-        anchors = driver.find_elements(By.CSS_SELECTOR, "a[href*='/episode/']")
-        for a in anchors:
+    for index, (source, title) in enumerate(sorted(sources.items()), 1):
+        query = f'"{title}"'
+        url = "https://open.spotify.com/search/" + quote(query, safe="")
+        driver.get(url)
+        time.sleep(2.2)
+        candidates = []
+        for a in driver.find_elements(By.CSS_SELECTOR, "a[href*='/episode/']"):
             href = a.get_attribute("href") or ""
             if "/episode/" not in href:
                 continue
             text = (a.text or a.get_attribute("aria-label") or "").strip().replace("\n", " ")
-            if href not in seen or (not seen[href] and text):
-                seen[href] = text
-
-        print("ITER", i, "DOM", len(anchors), "ACCUMULATED", len(seen))
-        if len(seen) == last_total:
-            stable += 1
-        else:
-            stable = 0
-            last_total = len(seen)
-        if len(seen) >= 120 or stable >= 14:
-            break
-
-        # Spotify uses an internal scroll container and virtualises episode rows.
-        scrollable = driver.execute_script("""
-            const els = [document.scrollingElement, ...document.querySelectorAll('*')];
-            let best = null, bestOverflow = 0;
-            for (const e of els) {
-              if (!e) continue;
-              const overflow = e.scrollHeight - e.clientHeight;
-              if (overflow > bestOverflow && e.clientHeight > 300) {
-                best = e; bestOverflow = overflow;
-              }
-            }
-            return best;
-        """)
-        if scrollable is not None:
-            driver.execute_script("arguments[0].scrollTop += Math.max(arguments[0].clientHeight * 0.78, 650);", scrollable)
-        else:
-            driver.execute_script("window.scrollBy(0, 900);")
-
-        for button in driver.find_elements(By.TAG_NAME, "button"):
-            label = (button.text or button.get_attribute("aria-label") or "").strip().lower()
-            if any(word in label for word in ("もっと見る", "さらに表示", "show more", "see more", "すべて表示", "show all", "episodes")):
+            # Search-result cards often put title in a descendant rather than anchor text.
+            if not text:
                 try:
-                    driver.execute_script("arguments[0].click();", button)
+                    text = a.find_element(By.XPATH, "ancestor::*[self::div or self::li][1]").text.strip().replace("\n", " ")
                 except Exception:
                     pass
-        time.sleep(0.8)
-
-    for href, text in seen.items():
-        print("LINK", href, "|||", text[:500])
-    print("FINAL_COUNT", len(seen))
+            if href not in {x[0] for x in candidates}:
+                candidates.append((href, text, score(title, text)))
+        candidates.sort(key=lambda x: x[2], reverse=True)
+        print("SOURCE", index, source, "|||", title)
+        if not candidates:
+            print("NO_CANDIDATES")
+            continue
+        for href, text, similarity in candidates[:5]:
+            print("CANDIDATE", f"{similarity:.3f}", href, "|||", text[:500])
 finally:
     driver.quit()
