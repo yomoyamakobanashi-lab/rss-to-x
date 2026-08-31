@@ -68,8 +68,45 @@ def _exact_spotify_url(item: dict) -> str | None:
         }
         if wanted in candidates:
             return url
-
     return None
+
+
+def _fit_body(text: str, budget: int) -> str:
+    """Shorten only at sentence boundaries; never manufacture quote marks."""
+    clean = re.sub(r"\s+", " ", str(text or "")).strip()
+    if len(clean) <= budget:
+        return clean
+
+    parts = re.findall(r".+?(?:[。！？!?]+[」』]?|$)", clean)
+    out = ""
+    for part in parts:
+        candidate = out + part
+        if len(candidate) > budget:
+            break
+        out = candidate
+    if out.strip():
+        return out.strip()
+
+    clipped = clean[: max(1, budget - 1)].rstrip("、。 ") + "…"
+    if clipped.count("「") > clipped.count("」"):
+        clipped = clipped.rstrip("…") + "」…"
+    if clipped.count("『") > clipped.count("』"):
+        clipped = clipped.rstrip("…") + "』…"
+    return clipped
+
+
+def render_root(item: dict) -> str:
+    hook = base._hook(item)
+    overhead = len(hook) + len(REELPAL_TAG) + 4
+    body = _fit_body(item["text"], 280 - overhead)
+    root = f"{body}\n\n{hook}\n\n{REELPAL_TAG}"
+    if len(root) > 280:
+        raise RuntimeError(f"rendered funny clip is too long: {item['id']} ({len(root)})")
+
+    banned = ("面白すぎ", "おもしろすぎ", "好きすぎる", "ずっと聞いてられる")
+    if any(word in hook for word in banned):
+        raise RuntimeError(f"self-congratulatory funny clip hook rejected: {item['id']} -> {hook}")
+    return root
 
 
 def render_reply(item: dict) -> str:
@@ -77,7 +114,7 @@ def render_reply(item: dict) -> str:
     if not target:
         raise RuntimeError(
             f"No verified Spotify episode URL for {item['id']} ({item['source']}); "
-            "refusing to publish a broken search fallback."
+            "refusing to publish without an exact /episode/ link."
         )
     return f"この回をSpotifyで👇\n{target}\n\n{REELPAL_TAG}"
 
@@ -87,23 +124,26 @@ _original_load_bank = base.load_bank
 
 def _load_spotify_ready_bank() -> list[dict]:
     full_bank = _original_load_bank()
-    ready = [item for item in full_bank if _exact_spotify_url(item)]
-    skipped = len(full_bank) - len(ready)
-    print(
-        f"[INFO] Spotify-direct funny clips: ready={len(ready)} skipped_without_exact_url={skipped}"
-    )
-    if not ready:
-        raise RuntimeError(
-            "No funny clips have a verified Spotify episode URL. "
-            "Add exact URLs to data/spotify_episode_overrides.json before posting."
+    missing_by_source: dict[str, str] = {}
+    for item in full_bank:
+        if not _exact_spotify_url(item):
+            missing_by_source[str(item["source"])] = str(item.get("episode_title") or "")
+
+    if missing_by_source:
+        details = "\n".join(
+            f"- {source}: {title}" for source, title in sorted(missing_by_source.items())
         )
-    return ready
+        raise RuntimeError(
+            "Spotify direct-link coverage is incomplete; no funny clip will be published "
+            "until every unique source episode has a verified /episode/ URL.\n" + details
+        )
+
+    print(f"[OK] Spotify direct-link coverage complete: clips={len(full_bank)}")
+    return full_bank
 
 
-# Public posts must now satisfy both conditions: grounded LISTEN source evidence in
-# the bank and a verified Spotify /episode/ URL for the listener-facing reply.
-# There is intentionally no Spotify search-page fallback.
 base.load_bank = _load_spotify_ready_bank
+base.render_root = render_root
 base.render_reply = render_reply
 
 
