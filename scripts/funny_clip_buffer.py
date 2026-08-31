@@ -21,6 +21,7 @@ BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts_archive_2.json",
     ROOT / "data" / "funny_clip_posts_archive_3.json",
 ]
+HOOKS_PATH = ROOT / "data" / "funny_hook_variants.json"
 STATE_PATH = ROOT / "state_funny_clip.json"
 RECENT_SOURCE_WINDOW = 10
 RECENT_TOPIC_WINDOW = 18
@@ -97,77 +98,105 @@ def _clean_fragment(value: str) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip(" 。、\n\t")
 
 
-def _clip_fragment(value: str, limit: int = 72) -> str:
+def _clip_fragment(value: str, limit: int = 96) -> str:
     value = _clean_fragment(value)
     if len(value) <= limit:
         return value
     return value[: limit - 1].rstrip("、。 ") + "…"
 
 
+def _sentences(value: str) -> list[str]:
+    return [_clean_fragment(p) for p in re.split(r"[。！？!?]+", value) if _clean_fragment(p)]
+
+
 def _dialogue_lines(text: str, topic: str) -> tuple[str, str]:
-    """Make two conversational beats from the already grounded bank copy.
+    """Preserve enough context for the tangent to make sense.
 
-    Actual Japanese quote spans win. Descriptive entries are tightened from their
-    own clauses only; no speaker names or new factual claims are introduced.
+    Verbatim Japanese quote spans are preferred. When the source bank is a
+    grounded paraphrase rather than direct dialogue, the first beat keeps the
+    setup and the second beat keeps the consequence/payoff. We deliberately do
+    not compress everything into tiny fragments; that was making the posts read
+    like contextless captions.
     """
-    quotes = [_clip_fragment(q) for q in re.findall(r"「([^」]+)」", text) if _clean_fragment(q)]
+    clean = _clean_fragment(text)
+    quotes = [_clean_fragment(q) for q in re.findall(r"「([^」]+)」", clean) if _clean_fragment(q)]
+
     if len(quotes) >= 2:
-        return quotes[0], quotes[1]
+        prefix = _clean_fragment(clean.split("「", 1)[0])
+        first = quotes[0]
+        if prefix and len(prefix) <= 34:
+            first = f"{prefix}。{first}"
+        second = " / ".join(quotes[1:3])
+        return _clip_fragment(first), _clip_fragment(second)
 
-    stripped = re.sub(r"「[^」]+」", "", text)
-    clauses = [_clip_fragment(p) for p in re.split(r"[。！？!?]+", stripped) if _clean_fragment(p)]
+    if len(quotes) == 1:
+        first = quotes[0]
+        after = clean.split("」", 1)[1] if "」" in clean else ""
+        after_parts = [p for p in _sentences(after) if len(p) >= 10]
+        if after_parts:
+            second = "。".join(after_parts[:2])
+        else:
+            before = clean.split("「", 1)[0]
+            before_parts = [p for p in _sentences(before) if len(p) >= 10]
+            second = before_parts[-1] if before_parts else f"{topic}の話から、また寄り道が始まる"
+        return _clip_fragment(first), _clip_fragment(second)
 
-    if quotes:
-        return quotes[0], clauses[0] if clauses else f"{topic}、どうなってんだよ"
-    if len(clauses) >= 2:
-        return clauses[0], clauses[1]
-    if clauses:
-        return clauses[0], f"いや、{topic}どうなってんだよ"
-    return topic, f"いや、{topic}どうなってんだよ"
+    parts = _sentences(clean)
+    if len(parts) >= 2:
+        first = parts[0]
+        second = "。".join(parts[1:3])
+        return _clip_fragment(first), _clip_fragment(second)
+    if parts:
+        return _clip_fragment(parts[0]), _clip_fragment(f"{topic}の話から、また別の話へ転がっていく")
+    return _clip_fragment(topic), _clip_fragment(f"{topic}の話から、また別の話へ転がっていく")
 
 
-def _punchline(item: dict) -> str:
-    topic = _clean_fragment(item["topic"])
+def _load_hooks() -> list[str]:
+    try:
+        hooks = json.loads(HOOKS_PATH.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        hooks = []
+    hooks = [_clean_fragment(x) for x in hooks if _clean_fragment(x)] if isinstance(hooks, list) else []
+    return hooks or [
+        "今日の脱線トークはどこにいくのか。",
+        "映画ポッドキャストと名乗っていいのだろうか。",
+        "このあと本題に戻れるのか。",
+    ]
+
+
+def _hook(item: dict) -> str:
     clip_id = str(item.get("id") or "")
-
     specific = {
-        "orangutan-fringe-mystery": "オランウータンのフランジ、何でできてるかわからな過ぎて面白すぎる。",
-        "experiment-sea-creatures": "イセエビ、海にいるという一点だけでだいぶ得してる。",
-        "wicked-giron-crawling": "言われた瞬間からもうハイハイしてる人にしか見えなくなった。",
-        "orangutan-old-man-face": "オランウータン、老いると急に人生2周目みたいな顔になる。",
-        "terminator-dyson": "ダイソン、名前だけで掃除機の方が強すぎる。",
-        "terminator3-dead-still-working": "乳酸菌、死してなお働かされるの業が深すぎる。",
-        "whiplash-oizumi": "映画ポッドキャストなのに毎回ほぼ水曜どうでしょう。",
-        "hugh-americanpie-sanity": "アメリカン・パイを周回してる人、ちょっとだけ心配になる。",
-        "mouth-hanayashiki-off": "最新映画情報の着地点が花やしきオフなの、自由すぎる。",
+        "popcorn-koala": "コアラのマーチから映画の話に戻れるのか。",
+        "mandalorian-opening": "収録開始10秒で、この先がちょっと不安になる。",
+        "sheep-detective": "同じ予告を見ても、ここまで理解が分かれる。",
+        "omg-opening": "映画の話が始まる前から、だいぶ寄り道している。",
     }
     if clip_id in specific:
         return specific[clip_id]
 
-    variants = [
-        f"{topic}、面白すぎる。",
-        f"{topic}、何の話してんだよ。",
-        f"{topic}、このくだり好きすぎる。",
-        f"{topic}、どうしてこうなった。",
-        f"{topic}、話が転がりすぎてる。",
-        f"{topic}、映画の話どこ行った。",
-        f"{topic}、ずっと聞いてられる。",
-    ]
-    selector = sum(ord(ch) for ch in clip_id) % len(variants)
-    return variants[selector]
+    hooks = _load_hooks()
+    selector = sum(ord(ch) for ch in clip_id) % len(hooks)
+    return hooks[selector]
 
 
 def render_root(item: dict) -> str:
     first, second = _dialogue_lines(item["text"], item["topic"])
-    punchline = _punchline(item)
-    root = f"「{first}」\n\n「{second}」\n\n{punchline}\n\n{REELPAL_TAG}"
+    hook = _hook(item)
+    root = f"「{first}」\n\n「{second}」\n\n{hook}\n\n{REELPAL_TAG}"
 
-    if len(root) > 270:
-        first = _clip_fragment(first, 54)
-        second = _clip_fragment(second, 54)
-        root = f"「{first}」\n\n「{second}」\n\n{punchline}\n\n{REELPAL_TAG}"
+    if len(root) > 280:
+        second = _clip_fragment(second, 72)
+        root = f"「{first}」\n\n「{second}」\n\n{hook}\n\n{REELPAL_TAG}"
+    if len(root) > 280:
+        first = _clip_fragment(first, 72)
+        root = f"「{first}」\n\n「{second}」\n\n{hook}\n\n{REELPAL_TAG}"
     if len(root) > 280:
         raise RuntimeError(f"rendered funny clip is too long: {item['id']} ({len(root)})")
+
+    banned = ("面白すぎ", "おもしろすぎ", "好きすぎる", "ずっと聞いてられる")
+    if any(word in hook for word in banned):
+        raise RuntimeError(f"self-congratulatory funny clip hook rejected: {item['id']} -> {hook}")
     return root
 
 
