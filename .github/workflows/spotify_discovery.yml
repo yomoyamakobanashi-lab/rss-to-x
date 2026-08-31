@@ -31,6 +31,14 @@ jobs:
           const browser = await chromium.launch({headless:true});
           const page = await browser.newPage({ viewport: { width: 1440, height: 1200 } });
           const responses = [];
+          const requests = [];
+          page.on('request', request => {
+            const u = request.url();
+            if (u.includes('api-partner.spotify.com/pathfinder/v2/query')) {
+              const postData = request.postData();
+              if (postData) requests.push({url:u, method:request.method(), postData});
+            }
+          });
           page.on('response', async (response) => {
             const u = response.url();
             if (u.includes('pathfinder') || u.includes('/v1/')) {
@@ -44,36 +52,33 @@ jobs:
             }
           });
           await page.goto(url, { waitUntil:'domcontentloaded', timeout:90000 });
-          await page.waitForTimeout(8000);
+          await page.waitForTimeout(9000);
           for (const label of ['Accept Cookies','Accept all','同意する','すべて許可']) {
             const btn = page.getByRole('button', {name:label});
             if (await btn.count()) { try { await btn.first().click({timeout:1000}); } catch {} }
           }
           const found = new Map();
-          let stagnant = 0;
-          let previous = -1;
-          for (let i=0; i<120 && stagnant < 20; i++) {
+          for (let i=0; i<35; i++) {
             const rows = await page.locator('a[href*="/episode/"]').evaluateAll(as => as.map(a => ({href:a.href, text:(a.innerText || a.textContent || '').trim(), aria:a.getAttribute('aria-label') || ''})));
             for (const r of rows) {
               const m = r.href.match(/https:\/\/open\.spotify\.com\/episode\/([A-Za-z0-9]+)/);
               if (m) found.set(m[1], {id:m[1], url:`https://open.spotify.com/episode/${m[1]}`, text:r.text, aria:r.aria});
             }
-            stagnant = found.size === previous ? stagnant + 1 : 0;
-            previous = found.size;
             await page.evaluate(() => {
+              const main = document.querySelector('main');
+              if (main) main.scrollTop = main.scrollHeight;
               const scrollers = [...document.querySelectorAll('*')].filter(el => el.scrollHeight > el.clientHeight + 100);
-              const target = scrollers.sort((a,b) => b.scrollHeight - a.scrollHeight)[0];
-              if (target) target.scrollBy(0, Math.max(2500, target.clientHeight * 2));
-              window.scrollBy(0, 2500);
+              for (const el of scrollers.slice(-8)) el.scrollTop = el.scrollHeight;
+              window.scrollTo(0, document.body.scrollHeight);
             });
-            await page.waitForTimeout(700);
+            await page.waitForTimeout(500);
           }
           fs.mkdirSync('spotify-discovery', {recursive:true});
           fs.writeFileSync('spotify-discovery/dom.json', JSON.stringify([...found.values()], null, 2));
+          fs.writeFileSync('spotify-discovery/requests.json', JSON.stringify(requests, null, 2));
           fs.writeFileSync('spotify-discovery/responses.json', JSON.stringify(responses, null, 2));
           fs.writeFileSync('spotify-discovery/page.txt', await page.locator('body').innerText());
-          fs.writeFileSync('spotify-discovery/html.html', await page.content());
-          console.log(`DOM episode links: ${found.size}; captured API responses: ${responses.length}`);
+          console.log(`DOM episode links: ${found.size}; pathfinder requests: ${requests.length}; captured responses: ${responses.length}`);
           await browser.close();
           EOF
           node scrape_spotify.mjs
