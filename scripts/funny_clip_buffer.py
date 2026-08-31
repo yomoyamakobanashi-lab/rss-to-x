@@ -98,58 +98,81 @@ def _clean_fragment(value: str) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip(" 。、\n\t")
 
 
-def _clip_fragment(value: str, limit: int = 96) -> str:
-    value = _clean_fragment(value)
+def _clip_fragment(value: str, limit: int = 112) -> str:
+    value = str(value or "").strip()
     if len(value) <= limit:
         return value
-    return value[: limit - 1].rstrip("、。 ") + "…"
+    return value[: limit - 1].rstrip("、。 \n") + "…"
 
 
-def _sentences(value: str) -> list[str]:
-    return [_clean_fragment(p) for p in re.split(r"[。！？!?]+", value) if _clean_fragment(p)]
+def _sentence_units(value: str) -> list[str]:
+    clean = re.sub(r"\s+", " ", str(value or "")).strip()
+    return [x.strip() for x in re.findall(r".+?(?:[。！？!?]+|$)", clean) if x.strip()]
 
 
-def _dialogue_lines(text: str, topic: str) -> tuple[str, str]:
-    """Preserve enough context for the tangent to make sense.
+def _dialogue_blocks(item: dict) -> tuple[str, str]:
+    """Keep verified quote marks only; never turn paraphrase into fake dialogue."""
+    text = str(item.get("text") or "").strip()
+    clip_id = str(item.get("id") or "")
 
-    Verbatim Japanese quote spans are preferred. When the source bank is a
-    grounded paraphrase rather than direct dialogue, the first beat keeps the
-    setup and the second beat keeps the consequence/payoff. We deliberately do
-    not compress everything into tiny fragments; that was making the posts read
-    like contextless captions.
-    """
-    clean = _clean_fragment(text)
-    quotes = [_clean_fragment(q) for q in re.findall(r"「([^」]+)」", clean) if _clean_fragment(q)]
+    specific = {
+        "popcorn-koala": (
+            "「コアラのマーチは絵を確認しながら食べたい」",
+            "「でも運転中にそれをやると危ない。事故ったら警察も半笑いになるのでは」——という、映画と一切関係ない心配までしています。",
+        ),
+        "mandalorian-opening": (
+            "3人収録で「インターミッション」の後に“ミッション、ミッション…”と続けた結果、",
+            "3人目が何をすればいいのか完全に迷子になる。収録開始10秒で連携が崩れています。",
+        ),
+        "sheep-detective": (
+            "「飼い主は最後まで生きてると思ってた」",
+            "「殺された飼い主の犯人を羊が探す話」——同じ予告を見たはずなのに理解がだいぶ違う。",
+        ),
+        "omg-opening": (
+            "インターミッションを始めるだけなのに「オーマイガー」を延々重ねる。",
+            "文字起こしで見ると、開始直後から何をしている番組なのか余計に分からなくなる。",
+        ),
+    }
+    if clip_id in specific:
+        return specific[clip_id]
 
+    quotes = [_clean_fragment(q) for q in re.findall(r"「([^」]+)」", text) if _clean_fragment(q)]
     if len(quotes) >= 2:
-        raw_prefix = str(text or "").split("「", 1)[0].strip()
-        prefix = _clean_fragment(raw_prefix)
-        first = quotes[0]
-        if raw_prefix.endswith(("。", "！", "？", "!", "?")) and prefix and len(prefix) <= 34:
-            first = f"{prefix}。{first}"
-        second = " / ".join(quotes[1:3])
+        prefix = text.split("「", 1)[0].strip()
+        suffix = text.rsplit("」", 1)[1].strip() if "」" in text else ""
+        first = f"「{quotes[0]}」"
+        if prefix:
+            first = f"{prefix}\n{first}"
+        second = f"「{quotes[1]}」"
+        if len(quotes) >= 3:
+            second += f" / 「{quotes[2]}」"
+        if suffix:
+            second += f"\n{suffix}"
         return _clip_fragment(first), _clip_fragment(second)
 
     if len(quotes) == 1:
-        first = quotes[0]
-        after = clean.split("」", 1)[1] if "」" in clean else ""
-        after_parts = [p for p in _sentences(after) if len(p) >= 10]
-        if after_parts:
-            second = "。".join(after_parts[:2])
+        before, after = text.split("「", 1)
+        quoted, tail = after.split("」", 1)
+        first = f"「{_clean_fragment(quoted)}」"
+        if before.strip():
+            first = f"{before.strip()}\n{first}"
+        tail_units = _sentence_units(tail)
+        if tail_units:
+            second = "".join(tail_units[:2])
         else:
-            before = clean.split("「", 1)[0]
-            before_parts = [p for p in _sentences(before) if len(p) >= 10]
-            second = before_parts[-1] if before_parts else f"{topic}の話から、また寄り道が始まる"
+            second = f"{item['topic']}の話から、また別の話へ転がっていく。"
         return _clip_fragment(first), _clip_fragment(second)
 
-    parts = _sentences(clean)
-    if len(parts) >= 2:
-        first = parts[0]
-        second = "。".join(parts[1:3])
+    # No quote marks in the grounded bank copy means it is a paraphrase/summary.
+    # Keep it as prose instead of fabricating dialogue quotation marks.
+    units = _sentence_units(text)
+    if len(units) >= 2:
+        first = units[0]
+        second = "".join(units[1:3])
         return _clip_fragment(first), _clip_fragment(second)
-    if parts:
-        return _clip_fragment(parts[0]), _clip_fragment(f"{topic}の話から、また別の話へ転がっていく")
-    return _clip_fragment(topic), _clip_fragment(f"{topic}の話から、また別の話へ転がっていく")
+    if units:
+        return _clip_fragment(units[0]), _clip_fragment(f"{item['topic']}の話から、また別の話へ転がっていく。")
+    return _clip_fragment(str(item["topic"])), "このあと話はさらに別方向へ転がっていく。"
 
 
 def _load_hooks() -> list[str]:
@@ -182,16 +205,16 @@ def _hook(item: dict) -> str:
 
 
 def render_root(item: dict) -> str:
-    first, second = _dialogue_lines(item["text"], item["topic"])
+    first, second = _dialogue_blocks(item)
     hook = _hook(item)
-    root = f"「{first}」\n\n「{second}」\n\n{hook}\n\n{REELPAL_TAG}"
+    root = f"{first}\n\n{second}\n\n{hook}\n\n{REELPAL_TAG}"
 
     if len(root) > 280:
-        second = _clip_fragment(second, 72)
-        root = f"「{first}」\n\n「{second}」\n\n{hook}\n\n{REELPAL_TAG}"
+        second = _clip_fragment(second, 82)
+        root = f"{first}\n\n{second}\n\n{hook}\n\n{REELPAL_TAG}"
     if len(root) > 280:
-        first = _clip_fragment(first, 72)
-        root = f"「{first}」\n\n「{second}」\n\n{hook}\n\n{REELPAL_TAG}"
+        first = _clip_fragment(first, 82)
+        root = f"{first}\n\n{second}\n\n{hook}\n\n{REELPAL_TAG}"
     if len(root) > 280:
         raise RuntimeError(f"rendered funny clip is too long: {item['id']} ({len(root)})")
 
