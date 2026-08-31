@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 from urllib.request import Request, urlopen
-from urllib.parse import quote
 from pathlib import Path
-import html as htmlmod
 import json
 import re
 
@@ -30,27 +28,15 @@ for path in BANKS:
         if source and title:
             sources[source] = title
 print("UNIQUE_SOURCES", len(sources))
-for source, title in sorted(sources.items()):
-    print("SOURCE", source, "|||", title)
 
 show_url = "https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS"
 page = fetch(show_url)
 print("SHOW_IDS", ids(page))
-
-# Probe Spotify's public HTML search only as an internal discovery mechanism.
-# Nothing here is ever used as a listener-facing link.
-for source, title in sorted(sources.items()):
-    search_url = "https://open.spotify.com/search/" + quote(title, safe="")
-    try:
-        search_page = fetch(search_url)
-    except Exception as exc:
-        print("SEARCH_ERROR", source, repr(exc))
-        continue
-    candidates = ids(search_page)
-    print("SEARCH", source, "CANDIDATES", candidates[:12])
-    for episode_id in candidates[:4]:
-        needle = "/episode/" + episode_id
-        pos = search_page.find(needle)
-        snippet = htmlmod.unescape(re.sub(r"<[^>]+>", " ", search_page[max(0,pos-500):pos+1500]))
-        snippet = re.sub(r"\s+", " ", snippet).strip()
-        print("CANDIDATE", source, episode_id, "|||", snippet[:500])
+for term in ["accessToken", "access_token", "clientId", "client_id", 'id="session"', "session", "initialState"]:
+    positions = [m.start() for m in re.finditer(term, page, re.I)]
+    print("TERM", term, "COUNT", len(positions))
+    for pos in positions[:4]:
+        snippet = page[max(0, pos-500):pos+1600].replace("\n", " ")
+        # Never dump a complete token into logs; retain enough structure to identify the field.
+        snippet = re.sub(r'("accessToken"\s*:\s*")[^"]+', r'\1<REDACTED>', snippet, flags=re.I)
+        print("SNIP", term, snippet[:2100])
