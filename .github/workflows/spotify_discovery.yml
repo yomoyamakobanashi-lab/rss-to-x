@@ -1,3 +1,4 @@
+# temporary merge-gate validation; removed before merge
 name: Temporary Funny + Spotify Validation
 
 on:
