@@ -14,14 +14,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 OUTPUT = ROOT / "funny_clip_transcript_snapshot.json"
-USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/1.1)"
+USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/1.2)"
 
 BANK_PATHS = [
-    DATA / "funny_clip_posts.json",
-    DATA / "funny_clip_posts_archive.json",
-    DATA / "funny_clip_posts_archive_2.json",
-    DATA / "funny_clip_posts_archive_3.json",
     DATA / "funny_clip_posts_all_episodes.json",
+    DATA / "funny_clip_legacy_canonical.json",
+    *sorted(DATA.glob("funny_clip_extras*.json")),
 ]
 
 
