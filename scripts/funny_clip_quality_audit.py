@@ -6,6 +6,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import unicodedata
 import urllib.request
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -50,8 +51,8 @@ LEGACY_SPOTIFY_OVERRIDE_BY_ID = {
 
 
 def normalize(value: str) -> str:
-    value = html.unescape(str(value or "")).lower()
-    value = value.replace("\u200b", "").replace("\ufeff", "")
+    value = unicodedata.normalize("NFKC", html.unescape(str(value or ""))).lower()
+    value = value.replace("\u200b", "").replace("\ufeff", "").replace("\ufffc", "")
     value = re.sub(r"[\s　]+", "", value)
     value = re.sub(r"[『』「」〖〗【】#\-_—–:：・,.!?！？…（）()\[\]“”\"'’]", "", value)
     return value
