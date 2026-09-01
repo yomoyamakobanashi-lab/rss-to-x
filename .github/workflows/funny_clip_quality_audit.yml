@@ -36,6 +36,8 @@ jobs:
         run: python scripts/funny_clip_transcript_snapshot.py
       - name: Build human QA packet
         run: python scripts/funny_clip_human_qa_packet.py
+      - name: Build legacy human QA packet
+        run: python scripts/funny_clip_legacy_qa_packet.py
       - name: Probe raw LISTEN transcript storage
         run: python scripts/funny_clip_raw_probe.py
       - name: Upload audit report
@@ -58,6 +60,13 @@ jobs:
         with:
           name: funny-clip-human-qa-packet
           path: funny_clip_human_qa_packet.json
+          if-no-files-found: error
+      - name: Upload legacy human QA packet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: funny-clip-legacy-qa-packet
+          path: funny_clip_legacy_qa_packet.json
           if-no-files-found: error
       - name: Upload raw probe
         if: always()
