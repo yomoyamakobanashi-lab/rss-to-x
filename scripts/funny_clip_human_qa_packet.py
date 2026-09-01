@@ -13,6 +13,7 @@ BANK = DATA / "funny_clip_posts_all_episodes.json"
 OVERRIDE_PATHS = [
     DATA / "funny_clip_quality_overrides.json",
     DATA / "funny_clip_quality_overrides_2.json",
+    DATA / "funny_clip_quality_overrides_3.json",
 ]
 SNAPSHOT = ROOT / "funny_clip_transcript_snapshot.json"
 OUTPUT = ROOT / "funny_clip_human_qa_packet.json"
@@ -57,7 +58,6 @@ def find_context(text: str, turns: list[str], radius: int = 900) -> tuple[str, i
             exact += 1
             hits.append(pos)
             continue
-        # ASR punctuation/spacing can differ. Try a stable 12–24 character seed.
         compact = re.sub(r"\s+", "", phrase)
         seeds = []
         if len(compact) >= 12:
