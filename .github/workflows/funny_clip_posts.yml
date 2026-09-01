@@ -10,6 +10,7 @@ on:
       - fix/funny-clip-quality-qa
     paths:
       - '.github/FUNNY_CLIP_POST_ONCE'
+      - '.github/workflows/funny_clip_posts.yml'
 
 concurrency:
   group: funny-clip-post
