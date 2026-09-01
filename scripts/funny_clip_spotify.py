@@ -20,7 +20,16 @@ QUALITY_OVERRIDE_PATHS = [
     ROOT / "data" / "funny_clip_quality_overrides.json",
     ROOT / "data" / "funny_clip_quality_overrides_2.json",
 ]
+CANONICAL_BANK_PATHS = [
+    ROOT / "data" / "funny_clip_posts_all_episodes.json",
+    ROOT / "data" / "funny_clip_legacy_canonical.json",
+]
 REELPAL_TAG = "#リルパル"
+
+# Production funny clips are one canonical clip per Spotify episode:
+# 105 all-episode clips + 22 curated legacy clips. The old archive banks remain
+# in the repository for provenance, but are deliberately excluded from posting.
+base.BANK_PATHS = CANONICAL_BANK_PATHS
 
 
 def _normalize(value: str) -> str:
@@ -141,6 +150,14 @@ _original_load_bank = base.load_bank
 
 def _load_spotify_ready_bank() -> list[dict]:
     full_bank = _apply_quality_overrides(_original_load_bank())
+    if len(full_bank) != 127:
+        raise RuntimeError(f"canonical funny clip bank must contain exactly 127 clips, got {len(full_bank)}")
+    unique_sources = {str(item.get("source") or "") for item in full_bank}
+    if len(unique_sources) != 127:
+        raise RuntimeError(
+            f"canonical funny clip bank must contain 127 unique episode sources, got {len(unique_sources)}"
+        )
+
     missing_by_source: dict[str, str] = {}
     mismatches: list[tuple[str, str, str]] = []
     for item in full_bank:
@@ -159,6 +176,7 @@ def _load_spotify_ready_bank() -> list[dict]:
         print(f"[WARN] stored Spotify URL mismatches: {len(mismatches)}")
         for clip_id, stored, canonical in mismatches:
             print(f"[WARN] {clip_id}: stored={stored} canonical={canonical}")
+    print(f"[OK] canonical funny clip bank: clips={len(full_bank)} unique_sources={len(unique_sources)}")
     print(f"[OK] Spotify direct-link coverage complete: clips={len(full_bank)}")
     return full_bank
 
