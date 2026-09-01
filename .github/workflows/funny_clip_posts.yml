@@ -5,6 +5,11 @@ on:
     # 毎日 21:20 JST (= 12:20 UTC)。夜の高反応帯に脱線会話を固定投入。
     - cron: '20 12 * * *'
   workflow_dispatch:
+  push:
+    branches:
+      - fix/funny-clip-quality-qa
+    paths:
+      - '.github/FUNNY_CLIP_POST_ONCE'
 
 concurrency:
   group: funny-clip-post
