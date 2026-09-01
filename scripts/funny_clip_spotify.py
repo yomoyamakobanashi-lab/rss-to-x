@@ -24,6 +24,30 @@ CANONICAL_BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts_all_episodes.json",
     ROOT / "data" / "funny_clip_legacy_canonical.json",
 ]
+LEGACY_SPOTIFY_OVERRIDE_BY_ID = {
+    "legacy-whiplash-oizumi": "archive-whiplash",
+    "legacy-godzilla2-biollante": "archive-godzilla2",
+    "legacy-fightclub-daiso": "archive-fightclub",
+    "legacy-popcorn-koala": "intermission-popcorn",
+    "legacy-orangutan-mnemonic": "intermission-orangutan",
+    "legacy-omg-kfc": "intermission-godzilla-mouth",
+    "legacy-aerosmith-admachi": "intermission-aerosmith",
+    "legacy-americanpie-sanity": "intermission-american-pie",
+    "legacy-mandalorian-third-person": "intermission-mandalorian",
+    "legacy-latest-german": "intermission-conan",
+    "legacy-scarymovie-michael-babe": "intermission-goosebumps",
+    "legacy-onmyoji-eikogo": "intermission-onmyoji",
+    "legacy-kiki-30times": "intermission-kiki",
+    "legacy-wicked-wifi": "archive-intermission-wicked-gamera",
+    "legacy-ichinose-chaos": "intermission-aetobodm",
+    "legacy-terminator1-micarm": "archive-terminator",
+    "legacy-terminator3-manuka": "archive-terminator3",
+    "legacy-experiment-first": "archive-experiment",
+    "legacy-fmj-monhan": "archive-fullmetaljacket",
+    "legacy-hellraiser-numbering": "archive-hellraiser",
+    "legacy-matrix-kunie": "archive-matrix",
+    "legacy-terminator2-frugra": "archive-terminator2",
+}
 REELPAL_TAG = "#リルパル"
 
 # Production funny clips are one canonical clip per Spotify episode:
@@ -121,8 +145,15 @@ def _exact_spotify_url(item: dict) -> str | None:
     by_title = _spotify_url_by_title(item)
     if by_title:
         return by_title
+
+    overrides = _load_overrides()
+    clip_id = str(item.get("id") or "").strip()
+    legacy_key = LEGACY_SPOTIFY_OVERRIDE_BY_ID.get(clip_id)
+    if legacy_key and legacy_key in overrides:
+        return overrides[legacy_key]
+
     source = str(item.get("source") or "").strip()
-    return _load_overrides().get(source)
+    return overrides.get(source)
 
 
 def _stored_spotify_mismatch(item: dict) -> tuple[str, str] | None:
