@@ -10,7 +10,7 @@ on:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,73 +21,79 @@ jobs:
           npm init -y >/dev/null 2>&1
           npm install playwright@1.55.0
           npx playwright install --with-deps chromium
-      - name: Crawl LISTEN episode pages in parallel
+      - name: Crawl LISTEN episode pages
         run: |
           cat > crawl_listen.mjs <<'EOF'
           import { chromium } from 'playwright';
           import fs from 'fs';
 
-          const browser = await chromium.launch({headless:true});
-          const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
           const episodeMap = new Map();
+          const headers = {
+            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36',
+            'accept-language': 'ja,en-US;q=0.8,en;q=0.6'
+          };
 
-          async function fetchList(p) {
-            const page = await context.newPage();
+          async function raw(url) {
+            const r = await fetch(url, {headers, redirect:'follow'});
+            if (!r.ok) throw new Error(`${r.status} ${url}`);
+            return await r.text();
+          }
+
+          // LISTEN's browser DOM can omit the server-rendered episode cards in headless mode.
+          // Discover slugs from the raw HTML instead, then use a browser only for transcript pages.
+          let emptyPages = 0;
+          for (let p = 1; p <= 20; p++) {
             const listUrl = p === 1 ? 'https://listen.style/p/reelpal' : `https://listen.style/p/reelpal?page=${p}`;
-            try {
-              const resp = await page.goto(listUrl, {waitUntil:'domcontentloaded', timeout:45000});
-              if (!resp || resp.status() >= 400) return [];
-              await page.waitForTimeout(900);
-              return await page.locator('a').evaluateAll(nodes => nodes.map(a => ({
-                href: a.href || a.getAttribute('href') || '', text: (a.textContent || '').trim()
-              })));
-            } finally { await page.close(); }
-          }
-
-          const listResults = await Promise.all(Array.from({length:10}, (_,i)=>fetchList(i+1)));
-          for (let i=0;i<listResults.length;i++) {
-            let added=0;
-            const listUrl = i===0 ? 'https://listen.style/p/reelpal' : `https://listen.style/p/reelpal?page=${i+1}`;
-            for (const item of listResults[i]) {
-              let parsed; try { parsed = new URL(item.href, listUrl); } catch { continue; }
-              const m = parsed.pathname.match(/^\/p\/reelpal\/([A-Za-z0-9_-]+)$/);
-              if (!m) continue;
-              const canonical = `https://listen.style/p/reelpal/${m[1]}`;
-              if (!episodeMap.has(canonical)) { episodeMap.set(canonical, item.text); added++; }
+            const html = await raw(listUrl);
+            const found = new Set();
+            for (const re of [
+              /href=["']\/p\/reelpal\/([A-Za-z0-9_-]+)(?:[?#][^"']*)?["']/g,
+              /https:\/\/listen\.style\/p\/reelpal\/([A-Za-z0-9_-]+)/g,
+              /\\u002Fp\\u002Freelpal\\u002F([A-Za-z0-9_-]+)/g,
+            ]) {
+              let m;
+              while ((m = re.exec(html))) found.add(m[1]);
             }
-            console.log(`list page ${i+1}: anchors=${listResults[i].length} new=${added} total=${episodeMap.size}`);
+            let added = 0;
+            for (const slug of found) {
+              const url = `https://listen.style/p/reelpal/${slug}`;
+              if (!episodeMap.has(url)) { episodeMap.set(url, slug); added++; }
+            }
+            console.log(`list page ${p}: html=${html.length} found=${found.size} new=${added} total=${episodeMap.size}`);
+            if (added === 0) emptyPages++; else emptyPages = 0;
+            if (p >= 4 && emptyPages >= 2) break;
           }
+          if (episodeMap.size < 80) throw new Error(`LISTEN discovery suspiciously low: ${episodeMap.size}`);
 
+          const browser = await chromium.launch({headless:true});
+          const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, extraHTTPHeaders: headers });
           const entries = [...episodeMap.entries()];
           const results = new Array(entries.length);
           let cursor = 0;
+
           async function worker(workerId) {
             const page = await context.newPage();
             while (true) {
               const idx = cursor++;
               if (idx >= entries.length) break;
-              const [url, listTitle] = entries[idx];
+              const [url, slug] = entries[idx];
               try {
                 const resp = await page.goto(url, {waitUntil:'domcontentloaded', timeout:45000});
-                await page.waitForTimeout(600);
-                const title = await page.locator('h1').first().innerText().catch(() => listTitle);
+                await page.waitForTimeout(300);
+                const title = await page.locator('h1').first().innerText().catch(() => '');
                 const bodyText = await page.locator('body').innerText();
                 const mainText = await page.locator('main').innerText().catch(() => bodyText);
-                const timed = await page.locator('a[href*="#t="], [data-start-time], [data-start], time').evaluateAll(nodes => nodes.slice(0,4000).map(n => ({
-                  text:(n.textContent||'').trim(), href:n.getAttribute?.('href')||null,
-                  start:n.getAttribute?.('data-start-time')||n.getAttribute?.('data-start')||null
-                }))).catch(()=>[]);
-                const scripts = await page.locator('script').evaluateAll(nodes => nodes.map(n=>n.textContent||'').filter(t=>/transcript|utterance|speaker|startTime|start_time/i.test(t)).slice(0,30)).catch(()=>[]);
-                results[idx] = {url,slug:url.split('/').pop(),listTitle,title:(title||'').trim(),status:resp?.status()||null,bodyText,mainText,timed,scripts};
-                console.log(`[w${workerId} ${idx+1}/${entries.length}] chars=${bodyText.length} timed=${timed.length} ${url}`);
+                // Transcript lines on LISTEN are server-rendered text interspersed with timestamp labels.
+                results[idx] = {url, slug, title:(title||'').trim(), status:resp?.status()||null, bodyText, mainText};
+                console.log(`[w${workerId} ${idx+1}/${entries.length}] chars=${bodyText.length} ${url}`);
               } catch (e) {
-                results[idx] = {url,slug:url.split('/').pop(),listTitle,error:String(e)};
+                results[idx] = {url, slug, error:String(e)};
                 console.log(`[w${workerId} ${idx+1}/${entries.length}] FAIL ${url}: ${e}`);
               }
             }
             await page.close();
           }
-          await Promise.all(Array.from({length:10},(_,i)=>worker(i+1)));
+          await Promise.all(Array.from({length:8},(_,i)=>worker(i+1)));
 
           fs.mkdirSync('listen-crawl', {recursive:true});
           fs.writeFileSync('listen-crawl/episodes.json', JSON.stringify(results.filter(Boolean), null, 2));
