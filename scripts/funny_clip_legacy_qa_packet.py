@@ -17,6 +17,13 @@ def clean(value: str) -> str:
     return re.sub(r"\s+", " ", str(value or "")).strip()
 
 
+def norm_title(value: str) -> str:
+    value = clean(value).lower()
+    value = re.sub(r"[\s　]+", "", value)
+    value = re.sub(r"[『』「」〖〗【】#\-_—–:：・,.!?！？…（）()\[\]“”\"'’]", "", value)
+    return value
+
+
 def find_context(text: str, turns: list[str], radius: int = 1000) -> tuple[str, int]:
     if not text:
         return "", 0
@@ -45,11 +52,17 @@ def find_context(text: str, turns: list[str], radius: int = 1000) -> tuple[str, 
 def main() -> None:
     legacy = json.loads(LEGACY.read_text(encoding="utf-8"))
     snap = json.loads(SNAPSHOT.read_text(encoding="utf-8"))
-    by_url = {str(x.get("source_url") or ""): str(x.get("text") or "") for x in snap.get("episodes", [])}
+    episodes = snap.get("episodes", [])
+    by_url = {str(x.get("source_url") or ""): str(x.get("text") or "") for x in episodes}
+    by_title = {norm_title(x.get("episode_title", "")): str(x.get("text") or "") for x in episodes}
     packet = []
     for item in legacy:
         turns = [clean(x) for x in item.get("dialogue", []) if clean(x)]
         transcript = by_url.get(str(item.get("source_url") or ""), "")
+        matched_by = "url" if transcript else ""
+        if not transcript:
+            transcript = by_title.get(norm_title(item.get("episode_title", "")), "")
+            matched_by = "title" if transcript else ""
         context, exact = find_context(transcript, turns)
         packet.append({
             "id": item.get("id"),
@@ -60,11 +73,13 @@ def main() -> None:
             "dialogue_turns": len(turns),
             "exact_turns_found_in_listen_text": exact,
             "listen_text_chars": len(transcript),
+            "matched_by": matched_by,
             "context": context,
         })
     payload = {
         "summary": {
             "episodes": len(packet),
+            "matched_transcripts": sum(1 for x in packet if x["listen_text_chars"]),
             "all_turns_exact": sum(1 for x in packet if x["dialogue_turns"] and x["dialogue_turns"] == x["exact_turns_found_in_listen_text"]),
             "zero_turns_exact": sum(1 for x in packet if x["exact_turns_found_in_listen_text"] == 0),
         },
