@@ -2,11 +2,6 @@ name: Funny Clip Audio Verify
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - fix/funny-clip-quality-qa
-    paths:
-      - '.github/workflows/funny_clip_audio_verify.yml'
 
 permissions:
   contents: read
