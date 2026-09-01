@@ -1,0 +1,35 @@
+name: Funny Clip Quality Audit
+
+on:
+  push:
+    branches:
+      - fix/funny-clip-quality-qa
+    paths:
+      - 'data/funny_clip_*.json'
+      - 'data/spotify_episodes.json'
+      - 'data/spotify_episode_overrides.json'
+      - 'scripts/funny_clip_*.py'
+      - '.github/workflows/funny_clip_quality_audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit stored episode links
+        run: python scripts/funny_clip_quality_audit.py
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: funny-clip-quality-report
+          path: funny_clip_quality_report.json
+          if-no-files-found: error
