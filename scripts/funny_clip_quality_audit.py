@@ -24,7 +24,7 @@ BANK_PATHS = [
 ]
 ALL_EPISODES_PATH = DATA / "funny_clip_posts_all_episodes.json"
 SPOTIFY_EPISODES_PATH = DATA / "spotify_episodes.json"
-USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/1.1)"
+USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/1.2)"
 
 
 def normalize(value: str) -> str:
@@ -45,6 +45,15 @@ def fetch(url: str, timeout: int = 8) -> str:
         return response.read().decode("utf-8", errors="replace")
 
 
+def _strip_listen_suffix(title: str) -> str:
+    title = html.unescape(str(title or "")).strip()
+    # LISTEN episode pages append the podcast title, e.g.
+    # "Episode title - 【#リルパル】Reel Friends ... - LISTEN".
+    title = re.sub(r"\s+-\s+【#リルパル】.*$", "", title).strip()
+    title = re.sub(r"\s+-\s+LISTEN\s*$", "", title, flags=re.I).strip()
+    return title
+
+
 def extract_page_title(page_html: str) -> str:
     patterns = [
         r'<meta[^>]+property=["\']og:title["\'][^>]+content=["\']([^"\']+)["\']',
@@ -53,12 +62,10 @@ def extract_page_title(page_html: str) -> str:
     for pattern in patterns:
         match = re.search(pattern, page_html, flags=re.I)
         if match:
-            return html.unescape(match.group(1)).strip()
+            return _strip_listen_suffix(match.group(1))
     match = re.search(r"<title>(.*?)</title>", page_html, flags=re.I | re.S)
     if match:
-        title = html.unescape(re.sub(r"\s+", " ", match.group(1))).strip()
-        title = re.sub(r"\s+-\s+.*?LISTEN.*$", "", title).strip()
-        return title
+        return _strip_listen_suffix(re.sub(r"\s+", " ", match.group(1)))
     return ""
 
 
