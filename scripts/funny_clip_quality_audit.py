@@ -6,9 +6,9 @@ from __future__ import annotations
 import html
 import json
 import re
-import time
 import urllib.request
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,7 +24,7 @@ BANK_PATHS = [
 ]
 ALL_EPISODES_PATH = DATA / "funny_clip_posts_all_episodes.json"
 SPOTIFY_EPISODES_PATH = DATA / "spotify_episodes.json"
-USER_AGENT = "rss-to-x funny-clip QA/1.1"
+USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/1.1)"
 
 
 def normalize(value: str) -> str:
@@ -39,7 +39,7 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def fetch(url: str, timeout: int = 30) -> str:
+def fetch(url: str, timeout: int = 8) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=timeout) as response:
         return response.read().decode("utf-8", errors="replace")
@@ -113,6 +113,27 @@ def group_by_episode(bank: list[dict]) -> dict[str, dict]:
     return grouped
 
 
+def verify_listen_group(group: dict) -> tuple[str, dict]:
+    urls = sorted(group["stored_urls"])
+    base = {
+        "episode_title": group["episode_title"],
+        "ids": sorted(group["ids"]),
+        "stored_urls": urls,
+        "banks": sorted(group["banks"]),
+    }
+    if len(urls) != 1:
+        return "multiple", base
+    try:
+        page_title = extract_page_title(fetch(urls[0]))
+    except Exception as exc:
+        return "error", {**base, "error": f"{type(exc).__name__}: {exc}"}
+    if not page_title:
+        return "error", {**base, "error": "no page title found"}
+    if normalize(page_title) != normalize(group["episode_title"]):
+        return "mismatch", {**base, "page_title": page_title}
+    return "ok", base
+
+
 def main() -> None:
     bank = load_bank_items()
     grouped = group_by_episode(bank)
@@ -126,53 +147,31 @@ def main() -> None:
         matches = spotify_index.get(normalize(title), [])
         if len(matches) != 1:
             spotify_missing.append({
-                "id": item.get("id"),
-                "episode_title": title,
-                "stored": item.get("spotify_url"),
-                "matches": matches,
+                "id": item.get("id"), "episode_title": title,
+                "stored": item.get("spotify_url"), "matches": matches,
             })
             continue
         canonical = matches[0]["url"]
         stored = str(item.get("spotify_url") or "").strip()
         if stored != canonical:
             spotify_mismatches.append({
-                "id": item.get("id"),
-                "episode_title": title,
-                "stored": stored,
-                "canonical": canonical,
+                "id": item.get("id"), "episode_title": title,
+                "stored": stored, "canonical": canonical,
             })
 
     listen_mismatches: list[dict] = []
     listen_fetch_errors: list[dict] = []
     listen_multiple_urls: list[dict] = []
-    verified_listen_titles = 0
+    verified = 0
 
-    for number, group in enumerate(grouped.values(), start=1):
-        urls = sorted(group["stored_urls"])
-        base = {
-            "episode_title": group["episode_title"],
-            "ids": sorted(group["ids"]),
-            "stored_urls": urls,
-            "banks": sorted(group["banks"]),
-        }
-        if len(urls) != 1:
-            listen_multiple_urls.append(base)
-            continue
-        url = urls[0]
-        try:
-            body = fetch(url)
-            page_title = extract_page_title(body)
-        except Exception as exc:
-            listen_fetch_errors.append({**base, "error": f"{type(exc).__name__}: {exc}"})
-            continue
-        if not page_title:
-            listen_fetch_errors.append({**base, "error": "no page title found"})
-            continue
-        verified_listen_titles += 1
-        if normalize(page_title) != normalize(group["episode_title"]):
-            listen_mismatches.append({**base, "page_title": page_title})
-        if number % 20 == 0:
-            time.sleep(0.1)
+    with ThreadPoolExecutor(max_workers=12) as pool:
+        futures = [pool.submit(verify_listen_group, group) for group in grouped.values()]
+        for future in as_completed(futures):
+            status, result = future.result()
+            if status == "ok": verified += 1
+            elif status == "mismatch": listen_mismatches.append(result)
+            elif status == "multiple": listen_multiple_urls.append(result)
+            else: listen_fetch_errors.append(result)
 
     report = {
         "summary": {
@@ -181,24 +180,19 @@ def main() -> None:
             "all_episode_items": len(all_episode_items),
             "spotify_stored_mismatches": len(spotify_mismatches),
             "spotify_title_unresolved_or_ambiguous": len(spotify_missing),
-            "listen_titles_verified": verified_listen_titles,
+            "listen_titles_verified": verified,
             "listen_source_mismatches": len(listen_mismatches),
             "listen_multiple_stored_urls_for_same_title": len(listen_multiple_urls),
             "listen_fetch_errors": len(listen_fetch_errors),
         },
         "spotify_mismatches": spotify_mismatches,
         "spotify_missing": spotify_missing,
-        "listen_mismatches": listen_mismatches,
-        "listen_multiple_urls": listen_multiple_urls,
-        "listen_fetch_errors": listen_fetch_errors,
+        "listen_mismatches": sorted(listen_mismatches, key=lambda x: x["episode_title"]),
+        "listen_multiple_urls": sorted(listen_multiple_urls, key=lambda x: x["episode_title"]),
+        "listen_fetch_errors": sorted(listen_fetch_errors, key=lambda x: x["episode_title"]),
     }
-
-    REPORT_PATH.write_text(
-        json.dumps(report, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    REPORT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
-    print(f"report={REPORT_PATH}")
 
 
 if __name__ == "__main__":
