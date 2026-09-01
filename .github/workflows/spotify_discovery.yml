@@ -1,4 +1,4 @@
-name: Temporary Spotify Episode Discovery
+name: Temporary Funny + Spotify Validation
 
 on:
   push:
@@ -8,139 +8,63 @@ on:
       - .github/workflows/spotify_discovery.yml
 
 jobs:
-  scrape:
+  validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: '20'
-      - name: Install Playwright
+          python-version: '3.12'
+      - run: python -m pip install requests
+      - name: Validate full funny bank with exact Spotify links
+        env:
+          FUNNY_CLIP_DRY_RUN: '1'
+        run: python scripts/funny_clip_spotify.py
+      - name: Validate coverage and quote boundary
         run: |
-          npm init -y >/dev/null 2>&1
-          npm install playwright@1.55.0
-          npx playwright install --with-deps chromium
-      - name: Build fully linked Spotify episode index
-        run: |
-          cat > scrape_spotify.mjs <<'EOF'
-          import { chromium } from 'playwright';
-          import fs from 'fs';
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from scripts import funny_clip_buffer as base
+          from scripts import funny_clip_spotify as spotify
 
-          const showUri = 'spotify:show:4o8l9DJWMuwUht2pvkEytS';
-          const showUrl = 'https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS';
-          const normalize = value => String(value || '')
-            .normalize('NFKC').toLowerCase()
-            .replace(/[\uFFFC\s\u3000#『』「」〖〗【】()（）\[\]<>〈〉《》・,:：;；.!！?？…〜~—–―ー_\-"'“”‘’]/g, '');
+          root = Path('.')
+          banks = []
+          for name in [
+              'funny_clip_posts.json',
+              'funny_clip_posts_archive.json',
+              'funny_clip_posts_archive_2.json',
+              'funny_clip_posts_archive_3.json',
+          ]:
+              banks.extend(json.loads((root / 'data' / name).read_text(encoding='utf-8')))
 
-          const browser = await chromium.launch({headless:true});
-          const context = await browser.newContext({ viewport: { width: 1440, height: 1200 } });
-          const page = await context.newPage();
-          let episodeRequest = null;
-          const episodeResponses = [];
-          page.on('request', async request => {
-            const postData = request.postData();
-            if (!postData || !request.url().includes('api-partner.spotify.com/pathfinder/v2/query')) return;
-            try {
-              const body = JSON.parse(postData);
-              if (body.operationName === 'queryPodcastEpisodes' && body.variables?.uri === showUri) {
-                episodeRequest = { url: request.url(), body, headers: await request.allHeaders() };
-              }
-            } catch {}
-          });
-          page.on('response', async response => {
-            if (!response.url().includes('api-partner.spotify.com/pathfinder/v2/query')) return;
-            try {
-              const postData = response.request().postData();
-              if (!postData) return;
-              const body = JSON.parse(postData);
-              if (body.operationName === 'queryPodcastEpisodes') episodeResponses.push(await response.json());
-            } catch {}
-          });
+          sources = {item['source'] for item in banks}
+          overrides = json.loads((root / 'data' / 'spotify_episode_overrides.json').read_text(encoding='utf-8'))
+          assert sources <= set(overrides), f'missing source mappings: {sorted(sources - set(overrides))}'
+          assert all(str(overrides[s]).startswith('https://open.spotify.com/episode/') for s in sources)
 
-          await page.goto(showUrl, { waitUntil:'domcontentloaded', timeout:90000 });
-          await page.waitForTimeout(10000);
-          if (!episodeRequest || !episodeResponses.length) throw new Error('Could not capture Spotify episode request');
-          const first = episodeResponses[0];
-          const total = first?.data?.podcastUnionV2?.episodesV2?.totalCount || 0;
-          const limit = episodeRequest.body.variables.limit || 50;
-          const pages = [first];
-          const headers = {...episodeRequest.headers};
-          for (const key of Object.keys(headers)) {
-            if (key.startsWith(':') || ['content-length','host','connection','accept-encoding'].includes(key.toLowerCase())) delete headers[key];
-          }
-          for (let offset = limit; offset < total; offset += limit) {
-            const body = JSON.parse(JSON.stringify(episodeRequest.body));
-            body.variables.offset = offset;
-            const resp = await context.request.post(episodeRequest.url, {headers, data:body, timeout:60000});
-            if (!resp.ok()) throw new Error(`Spotify offset ${offset} failed: ${resp.status()}`);
-            pages.push(await resp.json());
-          }
+          index = json.loads((root / 'data' / 'spotify_episodes.json').read_text(encoding='utf-8'))
+          assert len(index) == 127, len(index)
+          assert all(str(row.get('spotifyUrl') or '').startswith('https://open.spotify.com/episode/') for row in index)
 
-          const episodes = [];
-          for (const response of pages) {
-            for (const item of response?.data?.podcastUnionV2?.episodesV2?.items || []) {
-              const entity = item?.entity || {};
-              const data = entity?.data || {};
-              const uri = entity?._uri || data?.uri || '';
-              const m = String(uri).match(/spotify:episode:([A-Za-z0-9]+)/);
-              if (!m || !data?.name) continue;
-              episodes.push({
-                id:m[1],
-                spotifyUrl:`https://open.spotify.com/episode/${m[1]}`,
-                title:data.name,
-                normalized:normalize(data.name),
-                releaseDate:data?.releaseDate?.isoString || data?.releaseDateTime?.isoString || null,
-              });
-            }
-          }
+          koala = next(item for item in banks if item['id'] == 'popcorn-koala')
+          rendered = base.render_root(koala)
+          expected = '「でも運転中にそれをやると危ない。事故ったら警察も半笑いになるのでは」——という、映画と一切関係ない心配までしています'
+          assert expected in rendered, rendered
+          assert '心配までしています」' not in rendered, rendered
 
-          const index = JSON.parse(fs.readFileSync('data/spotify_episodes.json', 'utf8'));
-          const unresolved = [];
-          let linked = 0;
-          for (const row of index) {
-            const wanted = normalize(row.title || row.normalizedTitle);
-            let candidates = episodes.filter(ep => ep.normalized === wanted);
-            let method = 'title-exact';
-            if (!candidates.length) {
-              candidates = episodes.filter(ep => ep.normalized.includes(wanted) || wanted.includes(ep.normalized));
-              method = 'title-contains';
-            }
-            if (candidates.length !== 1 && row.pubDate) {
-              const t = new Date(row.pubDate).getTime();
-              const byTime = episodes.filter(ep => ep.releaseDate && Math.abs(new Date(ep.releaseDate).getTime() - t) <= 120000);
-              if (byTime.length === 1) {
-                candidates = byTime;
-                method = 'release-time';
-              }
-            }
-            if (candidates.length === 1) {
-              row.spotifyUrl = candidates[0].spotifyUrl;
-              linked += 1;
-            } else {
-              unresolved.push({index:row.index,title:row.title,pubDate:row.pubDate,method,candidateCount:candidates.length});
-            }
-          }
-          if (unresolved.length) throw new Error(`Unresolved Spotify index rows: ${JSON.stringify(unresolved)}`);
+          for item in banks:
+              root_post = base.render_root(item)
+              reply = spotify.render_reply(item)
+              assert len(root_post) <= 280, (item['id'], len(root_post))
+              assert '/search/' not in reply, (item['id'], reply)
+              assert 'open.spotify.com/episode/' in reply, (item['id'], reply)
 
-          fs.mkdirSync('spotify-discovery', {recursive:true});
-          fs.writeFileSync('spotify-discovery/spotify_episodes_enriched.json', JSON.stringify(index, null, 2) + '\n');
-          fs.writeFileSync('spotify-discovery/summary.json', JSON.stringify({spotifyReported:total, spotifyTitled:episodes.length, indexCount:index.length, linked, unresolved:unresolved.length}, null, 2));
-          console.log(`index=${index.length}; linked=${linked}; unresolved=${unresolved.length}`);
-          await browser.close();
-          EOF
-          node scrape_spotify.mjs
-      - name: Commit linked Spotify index
-        run: |
-          cp spotify-discovery/spotify_episodes_enriched.json data/spotify_episodes.json
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/spotify_episodes.json
-          git diff --cached --quiet || git commit -m "Fill all Spotify episode URLs"
-          git push origin HEAD:feat/funny-quotes-hooks-all-spotify
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: spotify-discovery
-          path: spotify-discovery/
-          retention-days: 1
+          hooks = json.loads((root / 'data' / 'funny_hook_variants.json').read_text(encoding='utf-8'))
+          assert len(hooks) >= 100, len(hooks)
+          print(f'OK: clips={len(banks)} unique_sources={len(sources)} spotify_index={len(index)} hooks={len(hooks)}')
+          print('KOALA SAMPLE:')
+          print(rendered)
+          print('REPLY SAMPLE:')
+          print(spotify.render_reply(koala))
+          PY
