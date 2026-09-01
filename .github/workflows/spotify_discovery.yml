@@ -69,7 +69,10 @@ jobs:
 
           const safeHeaders = {...episodeRequest.headers};
           for (const key of Object.keys(safeHeaders)) {
-            if (['content-length','host','connection','accept-encoding'].includes(key.toLowerCase())) delete safeHeaders[key];
+            const lower = key.toLowerCase();
+            if (key.startsWith(':') || ['content-length','host','connection','accept-encoding'].includes(lower)) {
+              delete safeHeaders[key];
+            }
           }
 
           for (let offset = limit; offset < total; offset += limit) {
@@ -81,8 +84,7 @@ jobs:
               timeout: 60000,
             });
             if (!resp.ok()) throw new Error(`Spotify page offset ${offset} failed: ${resp.status()} ${await resp.text()}`);
-            const json = await resp.json();
-            pages.push(json);
+            pages.push(await resp.json());
           }
 
           const episodes = [];
@@ -98,7 +100,6 @@ jobs:
                 spotifyUrl: `https://open.spotify.com/episode/${idMatch[1]}`,
                 title: data?.name || null,
                 releaseDate: data?.releaseDate?.isoString || data?.releaseDateTime?.isoString || null,
-                typename: data?.__typename || null,
               });
             }
           }
