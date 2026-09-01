@@ -5,11 +5,15 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from scripts import funny_clip_buffer as base
 
-ROOT = Path(__file__).resolve().parents[1]
 SPOTIFY_EPISODES_PATH = ROOT / "data" / "spotify_episodes.json"
 SPOTIFY_OVERRIDES_PATH = ROOT / "data" / "spotify_episode_overrides.json"
 REELPAL_TAG = "#リルパル"
@@ -71,44 +75,6 @@ def _exact_spotify_url(item: dict) -> str | None:
     return None
 
 
-def _fit_body(text: str, budget: int) -> str:
-    """Shorten only at sentence boundaries; never manufacture quote marks."""
-    clean = re.sub(r"\s+", " ", str(text or "")).strip()
-    if len(clean) <= budget:
-        return clean
-
-    parts = re.findall(r".+?(?:[。！？!?]+[」』]?|$)", clean)
-    out = ""
-    for part in parts:
-        candidate = out + part
-        if len(candidate) > budget:
-            break
-        out = candidate
-    if out.strip():
-        return out.strip()
-
-    clipped = clean[: max(1, budget - 1)].rstrip("、。 ") + "…"
-    if clipped.count("「") > clipped.count("」"):
-        clipped = clipped.rstrip("…") + "」…"
-    if clipped.count("『") > clipped.count("』"):
-        clipped = clipped.rstrip("…") + "』…"
-    return clipped
-
-
-def render_root(item: dict) -> str:
-    hook = base._hook(item)
-    overhead = len(hook) + len(REELPAL_TAG) + 4
-    body = _fit_body(item["text"], 280 - overhead)
-    root = f"{body}\n\n{hook}\n\n{REELPAL_TAG}"
-    if len(root) > 280:
-        raise RuntimeError(f"rendered funny clip is too long: {item['id']} ({len(root)})")
-
-    banned = ("面白すぎ", "おもしろすぎ", "好きすぎる", "ずっと聞いてられる")
-    if any(word in hook for word in banned):
-        raise RuntimeError(f"self-congratulatory funny clip hook rejected: {item['id']} -> {hook}")
-    return root
-
-
 def render_reply(item: dict) -> str:
     target = _exact_spotify_url(item)
     if not target:
@@ -142,8 +108,9 @@ def _load_spotify_ready_bank() -> list[dict]:
     return full_bank
 
 
+# Keep the quote-aware/conversation-aware root renderer from funny_clip_buffer.
+# Only replace bank eligibility and the listener-facing reply with Spotify-direct behavior.
 base.load_bank = _load_spotify_ready_bank
-base.render_root = render_root
 base.render_reply = render_reply
 
 
