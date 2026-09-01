@@ -24,6 +24,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Production funny clip dry run
+        env:
+          FUNNY_CLIP_DRY_RUN: '1'
+        run: python -m scripts.funny_clip_spotify
       - name: Audit stored episode links
         run: python scripts/funny_clip_quality_audit.py
       - name: Snapshot LISTEN transcripts for QA
