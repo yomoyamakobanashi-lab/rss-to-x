@@ -1,5 +1,6 @@
 name: Funny Clip Quality Audit
 
+# Canonical funny-clip QA gate: run on the QA branch and on main after merge.
 on:
   push:
     branches:
