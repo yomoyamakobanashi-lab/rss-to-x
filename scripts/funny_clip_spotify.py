@@ -175,19 +175,34 @@ def _load_spotify_ready_bank() -> list[dict]:
     full_bank = _apply_quality_overrides(_original_load_bank())
     if len(full_bank) != 127:
         raise RuntimeError(f"canonical funny clip bank must contain exactly 127 clips, got {len(full_bank)}")
+
+    ids = [str(item.get("id") or "").strip() for item in full_bank]
+    if len(set(ids)) != 127:
+        raise RuntimeError("canonical funny clip bank contains duplicate ids")
+
     unique_sources = {str(item.get("source") or "") for item in full_bank}
     if len(unique_sources) != 127:
         raise RuntimeError(
             f"canonical funny clip bank must contain 127 unique episode sources, got {len(unique_sources)}"
         )
+
     missing_by_source: dict[str, str] = {}
     mismatches: list[tuple[str, str, str]] = []
     for item in full_bank:
+        dialogue = item.get("dialogue")
+        if not isinstance(dialogue, list) or not 3 <= len(dialogue) <= 6:
+            raise RuntimeError(
+                f"canonical funny clip must contain 3-6 dialogue turns: {item.get('id')} -> "
+                f"{len(dialogue) if isinstance(dialogue, list) else 'missing'}"
+            )
+        if not str(item.get("source_url") or "").startswith("https://listen.style/p/reelpal/"):
+            raise RuntimeError(f"canonical funny clip has invalid LISTEN source URL: {item.get('id')}")
         if not _exact_spotify_url(item):
             missing_by_source[str(item["source"])] = str(item.get("episode_title") or "")
         mismatch = _stored_spotify_mismatch(item)
         if mismatch:
             mismatches.append((str(item["id"]), mismatch[0], mismatch[1]))
+
     if missing_by_source:
         details = "\n".join(f"- {source}: {title}" for source, title in sorted(missing_by_source.items()))
         raise RuntimeError(
@@ -199,6 +214,7 @@ def _load_spotify_ready_bank() -> list[dict]:
         for clip_id, stored, canonical in mismatches:
             print(f"[WARN] {clip_id}: stored={stored} canonical={canonical}")
     print(f"[OK] canonical funny clip bank: clips={len(full_bank)} unique_sources={len(unique_sources)}")
+    print("[OK] canonical dialogue shape: 3-6 turns for all 127 clips")
     print(f"[OK] Spotify direct-link coverage complete: clips={len(full_bank)}")
     return full_bank
 
