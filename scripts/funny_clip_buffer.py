@@ -208,6 +208,7 @@ def _format_dialogue_line(value: str) -> str:
     """Keep transcript wording, but don't expose unreliable ASR speaker labels."""
     clean = _clean_fragment(value)
     clean = re.sub(r"^(?:マコ|オーマ|おだしょー|おだしょー)\s+", "", clean)
+    clean = re.sub(r"「([^」]+)」", r"『\1』", clean)
     return f"「{clean}」"
 
 
