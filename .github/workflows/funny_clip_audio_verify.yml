@@ -59,7 +59,7 @@ jobs:
           CLIP_ID: ${{ matrix.clip_id }}
         run: |
           whisper "/tmp/funny-audio/${CLIP_ID}.m4a" \
-            --model base \
+            --model tiny \
             --language Japanese \
             --task transcribe \
             --output_dir /tmp/funny-asr \
