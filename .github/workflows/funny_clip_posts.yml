@@ -9,7 +9,6 @@ on:
     branches:
       - fix/funny-clip-quality-qa
     paths:
-      - '.github/FUNNY_CLIP_POST_ONCE'
       - '.github/workflows/funny_clip_posts.yml'
 
 concurrency:
@@ -27,16 +26,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Refresh Spotify episode metadata from RSS and official catalog
-        env:
-          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
-          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
-        run: node scripts/buildSpotifyEpisodesFromRSS.js
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -51,17 +40,17 @@ jobs:
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
         run: python -m scripts.funny_clip_spotify
 
-      - name: Save funny clip rotation state and refreshed Spotify metadata
+      - name: Save funny clip rotation state
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add state_funny_clip.json data/spotify_episodes.json
+          git add state_funny_clip.json
           if git diff --cached --quiet; then
-            echo "No funny clip state or Spotify metadata change"
+            echo "No funny clip state change"
             exit 0
           fi
-          git commit -m "refresh Spotify episode map and rotate funny clip [skip ci]"
+          git commit -m "rotate funny clip [skip ci]"
           git pull --rebase
           git push
