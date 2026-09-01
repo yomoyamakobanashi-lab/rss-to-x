@@ -26,32 +26,25 @@ jobs:
           - clip_id: all-episode-117
             audio_url: 'https://anchor.fm/s/10422ca68/podcast/play/103947600/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-10%2F401934579-44100-2-58e64b17ffb93.m4a'
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 20
     steps:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Install fast ASR runtime
         run: |
-          python -m pip install --quiet faster-whisper requests
-      - name: Download source audio
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python -m pip install --quiet faster-whisper
+      - name: Extract opening 15 minutes
         env:
           AUDIO_URL: ${{ matrix.audio_url }}
           CLIP_ID: ${{ matrix.clip_id }}
         run: |
           mkdir -p /tmp/funny-audio /tmp/funny-asr
-          python - <<'PY'
-          import os, requests
-          url = os.environ['AUDIO_URL']
-          out = f"/tmp/funny-audio/{os.environ['CLIP_ID']}.m4a"
-          with requests.get(url, stream=True, timeout=60) as response:
-              response.raise_for_status()
-              with open(out, 'wb') as fh:
-                  for chunk in response.iter_content(1024 * 1024):
-                      if chunk:
-                          fh.write(chunk)
-          print(out)
-          PY
+          ffmpeg -hide_banner -loglevel error -y \
+            -ss 0 -i "$AUDIO_URL" -t 900 \
+            -vn -ac 1 -ar 16000 "/tmp/funny-audio/${CLIP_ID}.wav"
       - name: Transcribe source audio
         env:
           CLIP_ID: ${{ matrix.clip_id }}
@@ -61,7 +54,7 @@ jobs:
           from faster_whisper import WhisperModel
 
           clip_id = os.environ['CLIP_ID']
-          audio = f"/tmp/funny-audio/{clip_id}.m4a"
+          audio = f"/tmp/funny-audio/{clip_id}.wav"
           out = f"/tmp/funny-asr/{clip_id}-whisper.json"
           model = WhisperModel("tiny", device="cpu", compute_type="int8", cpu_threads=4, num_workers=1)
           segments, info = model.transcribe(
@@ -72,11 +65,11 @@ jobs:
               condition_on_previous_text=False,
               vad_filter=True,
           )
-          rows = []
-          for seg in segments:
-              rows.append({"start": round(seg.start, 3), "end": round(seg.end, 3), "text": seg.text.strip()})
+          rows = [{"start": round(s.start, 3), "end": round(s.end, 3), "text": s.text.strip()} for s in segments]
           payload = {
               "clip_id": clip_id,
+              "probe_start": 0,
+              "probe_duration": 900,
               "language": info.language,
               "language_probability": info.language_probability,
               "duration": info.duration,
@@ -90,7 +83,7 @@ jobs:
       - name: Upload temporary QA transcript
         uses: actions/upload-artifact@v4
         with:
-          name: funny-audio-${{ matrix.clip_id }}
+          name: funny-audio-opening-${{ matrix.clip_id }}
           path: /tmp/funny-asr/${{ matrix.clip_id }}-whisper.json
           if-no-files-found: error
           retention-days: 7
