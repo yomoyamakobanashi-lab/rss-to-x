@@ -120,6 +120,31 @@ def _apply_quality_overrides(bank: list[dict]) -> list[dict]:
     return patched
 
 
+def _interleave_extra_clips(bank: list[dict]) -> list[dict]:
+    """Spread extra clips through the cycle instead of parking them at the end.
+
+    Source/topic recency checks in funny_clip_buffer still have the final say, so an
+    extra from the same episode cannot be selected too close to its base clip.
+    """
+    base_items = [item for item in bank if not item.get("parent_id")]
+    extras = [item for item in bank if item.get("parent_id")]
+    if not extras:
+        return base_items
+
+    result: list[dict] = []
+    extra_index = 0
+    for base_index, item in enumerate(base_items, start=1):
+        result.append(item)
+        while extra_index < len(extras):
+            target = round((extra_index + 1) * len(base_items) / (len(extras) + 1))
+            if base_index < max(1, target):
+                break
+            result.append(extras[extra_index])
+            extra_index += 1
+    result.extend(extras[extra_index:])
+    return result
+
+
 def _spotify_url_by_title(item: dict) -> str | None:
     wanted = _normalize(item.get("episode_title", ""))
     if not wanted:
@@ -221,7 +246,7 @@ def _load_spotify_ready_bank() -> list[dict]:
     print(f"[OK] canonical funny clip bank: clips={len(full_bank)} unique_sources={len(unique_sources)}")
     print(f"[OK] canonical dialogue shape: 3-6 turns for all {len(full_bank)} clips")
     print(f"[OK] Spotify direct-link coverage complete: clips={len(full_bank)}")
-    return full_bank
+    return _interleave_extra_clips(full_bank)
 
 
 base.load_bank = _load_spotify_ready_bank
