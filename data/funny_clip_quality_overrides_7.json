@@ -19,7 +19,19 @@
   "legacy-mandalorian-third-person": {"source_url": "https://listen.style/p/reelpal/jgim8ba1"},
   "legacy-latest-german": {"source_url": "https://listen.style/p/reelpal/thulg019"},
   "legacy-scarymovie-michael-babe": {"source_url": "https://listen.style/p/reelpal/yhkp4fmv"},
-  "legacy-onmyoji-eikogo": {"source_url": "https://listen.style/p/reelpal/uoqbtn0h"},
+  "legacy-onmyoji-eikogo": {
+    "source_url": "https://listen.style/p/reelpal/uoqbtn0h",
+    "dialogue": [
+      "今までね、僕は行き帰りの電車っていうのが非常に重要な映画鑑賞タイムだったんですよ。",
+      "はいはいはい。",
+      "それがですね、今、狩野英孝さんの。",
+      "EIKO!GO!!?",
+      "もうEIKO!GO!!に侵食されてしまっていて、全然見れない。",
+      "見なさいよ。"
+    ],
+    "text": "今までね、僕は行き帰りの電車っていうのが非常に重要な映画鑑賞タイムだったんですよ。 / はいはいはい。 / それがですね、今、狩野英孝さんの。 / EIKO!GO!!? / もうEIKO!GO!!に侵食されてしまっていて、全然見れない。 / 見なさいよ。",
+    "hook": "通勤電車の映画鑑賞タイムが、狩野英孝のゲーム実況に全部持っていかれる。"
+  },
   "legacy-kiki-30times": {"source_url": "https://listen.style/p/reelpal/6yqdsdgz"},
   "legacy-wicked-wifi": {"source_url": "https://listen.style/p/reelpal/ybutqiq4"},
   "legacy-ichinose-chaos": {"source_url": "https://listen.style/p/reelpal/aetobodm"},
