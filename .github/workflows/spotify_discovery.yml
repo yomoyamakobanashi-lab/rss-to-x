@@ -118,18 +118,26 @@ jobs:
               row.spotifyUrl = candidates[0].spotifyUrl;
               linked += 1;
             } else {
-              unresolved.push({index:row.index,title:row.title,pubDate:row.pubDate,method,candidateCount:candidates.length,candidates:candidates.map(x=>({title:x.title,url:x.spotifyUrl,releaseDate:x.releaseDate}))});
+              unresolved.push({index:row.index,title:row.title,pubDate:row.pubDate,method,candidateCount:candidates.length});
             }
           }
+          if (unresolved.length) throw new Error(`Unresolved Spotify index rows: ${JSON.stringify(unresolved)}`);
 
           fs.mkdirSync('spotify-discovery', {recursive:true});
           fs.writeFileSync('spotify-discovery/spotify_episodes_enriched.json', JSON.stringify(index, null, 2) + '\n');
-          fs.writeFileSync('spotify-discovery/unresolved_index.json', JSON.stringify(unresolved, null, 2));
           fs.writeFileSync('spotify-discovery/summary.json', JSON.stringify({spotifyReported:total, spotifyTitled:episodes.length, indexCount:index.length, linked, unresolved:unresolved.length}, null, 2));
           console.log(`index=${index.length}; linked=${linked}; unresolved=${unresolved.length}`);
           await browser.close();
           EOF
           node scrape_spotify.mjs
+      - name: Commit linked Spotify index
+        run: |
+          cp spotify-discovery/spotify_episodes_enriched.json data/spotify_episodes.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/spotify_episodes.json
+          git diff --cached --quiet || git commit -m "Fill all Spotify episode URLs"
+          git push origin HEAD:feat/funny-quotes-hooks-all-spotify
       - uses: actions/upload-artifact@v4
         if: always()
         with:
