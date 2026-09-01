@@ -20,7 +20,7 @@ QUALITY_OVERRIDE_PATHS = sorted((ROOT / "data").glob("funny_clip_quality_overrid
 CANONICAL_BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts_all_episodes.json",
     ROOT / "data" / "funny_clip_legacy_canonical.json",
-    ROOT / "data" / "funny_clip_extras.json",
+    *sorted((ROOT / "data").glob("funny_clip_extras*.json")),
 ]
 BASE_EPISODE_COVERAGE = 127
 LEGACY_SPOTIFY_OVERRIDE_BY_ID = {
