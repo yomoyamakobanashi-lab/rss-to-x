@@ -20,7 +20,9 @@ QUALITY_OVERRIDE_PATHS = sorted((ROOT / "data").glob("funny_clip_quality_overrid
 CANONICAL_BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts_all_episodes.json",
     ROOT / "data" / "funny_clip_legacy_canonical.json",
+    ROOT / "data" / "funny_clip_extras.json",
 ]
+BASE_EPISODE_COVERAGE = 127
 LEGACY_SPOTIFY_OVERRIDE_BY_ID = {
     "legacy-whiplash-oizumi": "archive-whiplash",
     "legacy-godzilla2-biollante": "archive-godzilla2",
@@ -173,17 +175,20 @@ _original_load_bank = base.load_bank
 
 def _load_spotify_ready_bank() -> list[dict]:
     full_bank = _apply_quality_overrides(_original_load_bank())
-    if len(full_bank) != 127:
-        raise RuntimeError(f"canonical funny clip bank must contain exactly 127 clips, got {len(full_bank)}")
+    if len(full_bank) < BASE_EPISODE_COVERAGE:
+        raise RuntimeError(
+            f"canonical funny clip bank must contain at least {BASE_EPISODE_COVERAGE} clips, got {len(full_bank)}"
+        )
 
     ids = [str(item.get("id") or "").strip() for item in full_bank]
-    if len(set(ids)) != 127:
+    if len(set(ids)) != len(ids):
         raise RuntimeError("canonical funny clip bank contains duplicate ids")
 
     unique_sources = {str(item.get("source") or "") for item in full_bank}
-    if len(unique_sources) != 127:
+    if len(unique_sources) != BASE_EPISODE_COVERAGE:
         raise RuntimeError(
-            f"canonical funny clip bank must contain 127 unique episode sources, got {len(unique_sources)}"
+            f"canonical funny clip bank must cover {BASE_EPISODE_COVERAGE} unique episode sources, "
+            f"got {len(unique_sources)}"
         )
 
     missing_by_source: dict[str, str] = {}
@@ -207,14 +212,14 @@ def _load_spotify_ready_bank() -> list[dict]:
         details = "\n".join(f"- {source}: {title}" for source, title in sorted(missing_by_source.items()))
         raise RuntimeError(
             "Spotify direct-link coverage is incomplete; no funny clip will be published "
-            "until every unique source episode has a verified /episode/ URL.\n" + details
+            "until every clip has a verified /episode/ URL.\n" + details
         )
     if mismatches:
         print(f"[WARN] stored Spotify URL mismatches: {len(mismatches)}")
         for clip_id, stored, canonical in mismatches:
             print(f"[WARN] {clip_id}: stored={stored} canonical={canonical}")
     print(f"[OK] canonical funny clip bank: clips={len(full_bank)} unique_sources={len(unique_sources)}")
-    print("[OK] canonical dialogue shape: 3-6 turns for all 127 clips")
+    print(f"[OK] canonical dialogue shape: 3-6 turns for all {len(full_bank)} clips")
     print(f"[OK] Spotify direct-link coverage complete: clips={len(full_bank)}")
     return full_bank
 
