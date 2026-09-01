@@ -88,16 +88,7 @@ def _apply_quality_overrides(bank: list[dict]) -> list[dict]:
     return patched
 
 
-def _exact_spotify_url(item: dict) -> str | None:
-    explicit = str(item.get("spotify_url") or "").strip()
-    if explicit.startswith("https://open.spotify.com/episode/"):
-        return explicit
-
-    source = str(item.get("source") or "").strip()
-    override = _load_overrides().get(source)
-    if override:
-        return override
-
+def _spotify_url_by_title(item: dict) -> str | None:
     wanted = _normalize(item.get("episode_title", ""))
     if not wanted:
         return None
@@ -112,6 +103,34 @@ def _exact_spotify_url(item: dict) -> str | None:
         }
         if wanted in candidates:
             return url
+    return None
+
+
+def _exact_spotify_url(item: dict) -> str | None:
+    # The episode title is the canonical join key. Do not trust a stored
+    # spotify_url merely because it has an /episode/ shape: an off-by-one
+    # assignment can still point to a perfectly valid but wrong episode.
+    by_title = _spotify_url_by_title(item)
+    if by_title:
+        return by_title
+
+    # Legacy banks use stable, manually verified source keys where the old
+    # episode title may not normalize exactly to the current Spotify index.
+    source = str(item.get("source") or "").strip()
+    override = _load_overrides().get(source)
+    if override:
+        return override
+
+    return None
+
+
+def _stored_spotify_mismatch(item: dict) -> tuple[str, str] | None:
+    stored = str(item.get("spotify_url") or "").strip()
+    if not stored.startswith("https://open.spotify.com/episode/"):
+        return None
+    canonical = _spotify_url_by_title(item)
+    if canonical and stored != canonical:
+        return stored, canonical
     return None
 
 
@@ -131,9 +150,14 @@ _original_load_bank = base.load_bank
 def _load_spotify_ready_bank() -> list[dict]:
     full_bank = _apply_quality_overrides(_original_load_bank())
     missing_by_source: dict[str, str] = {}
+    mismatches: list[tuple[str, str, str]] = []
+
     for item in full_bank:
         if not _exact_spotify_url(item):
             missing_by_source[str(item["source"])] = str(item.get("episode_title") or "")
+        mismatch = _stored_spotify_mismatch(item)
+        if mismatch:
+            mismatches.append((str(item["id"]), mismatch[0], mismatch[1]))
 
     if missing_by_source:
         details = "\n".join(
@@ -143,6 +167,11 @@ def _load_spotify_ready_bank() -> list[dict]:
             "Spotify direct-link coverage is incomplete; no funny clip will be published "
             "until every unique source episode has a verified /episode/ URL.\n" + details
         )
+
+    if mismatches:
+        print(f"[WARN] stored Spotify URL mismatches: {len(mismatches)}")
+        for clip_id, stored, canonical in mismatches:
+            print(f"[WARN] {clip_id}: stored={stored} canonical={canonical}")
 
     print(f"[OK] Spotify direct-link coverage complete: clips={len(full_bank)}")
     return full_bank
