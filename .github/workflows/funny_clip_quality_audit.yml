@@ -3,6 +3,7 @@ name: Funny Clip Quality Audit
 on:
   push:
     branches:
+      - main
       - fix/funny-clip-quality-qa
     paths:
       - 'data/funny_clip_*.json'
