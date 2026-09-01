@@ -19,6 +19,7 @@ SPOTIFY_OVERRIDES_PATH = ROOT / "data" / "spotify_episode_overrides.json"
 QUALITY_OVERRIDE_PATHS = [
     ROOT / "data" / "funny_clip_quality_overrides.json",
     ROOT / "data" / "funny_clip_quality_overrides_2.json",
+    ROOT / "data" / "funny_clip_quality_overrides_3.json",
 ]
 CANONICAL_BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts_all_episodes.json",
