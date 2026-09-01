@@ -16,6 +16,7 @@ from scripts import funny_clip_buffer as base
 
 SPOTIFY_EPISODES_PATH = ROOT / "data" / "spotify_episodes.json"
 SPOTIFY_OVERRIDES_PATH = ROOT / "data" / "spotify_episode_overrides.json"
+QUALITY_OVERRIDES_PATH = ROOT / "data" / "funny_clip_quality_overrides.json"
 REELPAL_TAG = "#リルパル"
 
 
@@ -46,6 +47,45 @@ def _load_overrides() -> dict[str, str]:
         for key, value in data.items()
         if str(value).strip().startswith("https://open.spotify.com/episode/")
     }
+
+
+def _load_quality_overrides() -> dict[str, dict]:
+    try:
+        data = json.loads(QUALITY_OVERRIDES_PATH.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+    if not isinstance(data, dict):
+        raise RuntimeError("funny clip quality overrides must be a JSON object")
+    return {
+        str(clip_id): patch
+        for clip_id, patch in data.items()
+        if str(clip_id).strip() and isinstance(patch, dict)
+    }
+
+
+def _apply_quality_overrides(bank: list[dict]) -> list[dict]:
+    patches = _load_quality_overrides()
+    if not patches:
+        return bank
+
+    by_id = {str(item.get("id") or ""): item for item in bank}
+    unknown = sorted(set(patches) - set(by_id))
+    if unknown:
+        raise RuntimeError(
+            "funny clip quality override references unknown ids: " + ", ".join(unknown)
+        )
+
+    patched: list[dict] = []
+    for item in bank:
+        clip_id = str(item.get("id") or "")
+        patch = patches.get(clip_id)
+        if patch:
+            merged = dict(item)
+            merged.update(patch)
+            patched.append(merged)
+        else:
+            patched.append(item)
+    return patched
 
 
 def _exact_spotify_url(item: dict) -> str | None:
@@ -89,7 +129,7 @@ _original_load_bank = base.load_bank
 
 
 def _load_spotify_ready_bank() -> list[dict]:
-    full_bank = _original_load_bank()
+    full_bank = _apply_quality_overrides(_original_load_bank())
     missing_by_source: dict[str, str] = {}
     for item in full_bank:
         if not _exact_spotify_url(item):
