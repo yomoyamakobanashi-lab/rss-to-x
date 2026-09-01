@@ -20,6 +20,7 @@ BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts_archive.json",
     ROOT / "data" / "funny_clip_posts_archive_2.json",
     ROOT / "data" / "funny_clip_posts_archive_3.json",
+    ROOT / "data" / "funny_clip_posts_all_episodes.json",
 ]
 HOOKS_PATH = ROOT / "data" / "funny_hook_variants.json"
 STATE_PATH = ROOT / "state_funny_clip.json"
@@ -57,6 +58,16 @@ def load_bank() -> list[dict]:
             raise RuntimeError(f"funny clip source is not a ReelPal LISTEN URL: {url}")
         if len(text) > 250:
             raise RuntimeError(f"funny clip base text is too long ({len(text)}): {clip_id}")
+
+        dialogue = item.get("dialogue")
+        if dialogue is not None:
+            if not isinstance(dialogue, list):
+                raise RuntimeError(f"dialogue must be a list: {clip_id}")
+            dialogue = [_clean_fragment(x) for x in dialogue if _clean_fragment(x)]
+            if len(dialogue) < 3:
+                raise RuntimeError(f"explicit dialogue needs at least 3 turns: {clip_id}")
+            if len(dialogue) > 8:
+                raise RuntimeError(f"explicit dialogue has too many turns: {clip_id}")
     return data
 
 
@@ -110,32 +121,22 @@ def _sentences(value: str) -> list[str]:
 
 
 def _quote_paraphrased_beat(value: str) -> str:
-    """Quote the spoken proposition while keeping editorial narration outside.
-
-    Bank copy sometimes summarizes a spoken beat and then appends narration such
-    as `——という、映画と一切関係ない心配までしています`.  The old renderer
-    wrapped that narration in Japanese quotation marks too.  Detect that boundary
-    and close the quote before the narrator's clause.
-    """
+    """Quote the spoken proposition while keeping editorial narration outside."""
     clean = _clean_fragment(value)
     if not clean:
         return ""
-
-    # Preserve explicit quote spans supplied by the grounded bank as-is.
     if "「" in clean and "」" in clean:
         return clean
-
     match = re.match(r"^(.*?)([—―]{2,}という[、,]?.*)$", clean)
     if match:
         spoken = match.group(1).rstrip(" 。、")
         narration = match.group(2).strip()
         return f"「{spoken}」{narration}"
-
     return f"「{clean}」"
 
 
 def _dialogue_beats(text: str, topic: str) -> tuple[str, str]:
-    """Build two readable beats without swallowing narration into quotation marks."""
+    """Legacy renderer for older summary-based banks."""
     original = str(text or "").strip()
     clean = _clean_fragment(original)
     quotes = [_clean_fragment(q) for q in re.findall(r"「([^」]+)」", original) if _clean_fragment(q)]
@@ -144,7 +145,6 @@ def _dialogue_beats(text: str, topic: str) -> tuple[str, str]:
         first = f"「{quotes[0]}」"
         second = " / ".join(f"「{q}」" for q in quotes[1:3])
         return _clip_fragment(first), _clip_fragment(second)
-
     if len(quotes) == 1:
         first = f"「{quotes[0]}」"
         after = original.split("」", 1)[1].strip() if "」" in original else ""
@@ -156,7 +156,6 @@ def _dialogue_beats(text: str, topic: str) -> tuple[str, str]:
             before_parts = [p for p in _sentences(before) if len(p) >= 8]
             second = before_parts[-1] if before_parts else f"{topic}の話から、また寄り道が始まる"
         return _clip_fragment(first), _clip_fragment(second)
-
     parts = _sentences(clean)
     if len(parts) >= 2:
         first = _quote_paraphrased_beat(parts[0])
@@ -181,6 +180,9 @@ def _load_hooks() -> list[str]:
 
 
 def _hook(item: dict) -> str:
+    explicit = _clean_fragment(item.get("hook") or "")
+    if explicit:
+        return explicit
     clip_id = str(item.get("id") or "")
     specific = {
         "popcorn-koala": "コアラのマーチから映画の話に戻れるのか。",
@@ -190,34 +192,53 @@ def _hook(item: dict) -> str:
     }
     if clip_id in specific:
         return specific[clip_id]
-
     hooks = _load_hooks()
     selector = sum(ord(ch) for ch in clip_id) % len(hooks)
     return hooks[selector]
 
 
+def _explicit_dialogue(item: dict) -> list[str]:
+    raw = item.get("dialogue")
+    if not isinstance(raw, list):
+        return []
+    return [_clean_fragment(x) for x in raw if _clean_fragment(x)]
+
+
+def _format_dialogue_line(value: str) -> str:
+    """Keep transcript wording, but don't expose unreliable ASR speaker labels."""
+    clean = _clean_fragment(value)
+    clean = re.sub(r"^(?:マコ|オーマ|おだしょー|おだしょー)\s+", "", clean)
+    return f"「{clean}」"
+
+
+def _render_explicit_dialogue(item: dict, hook: str) -> str:
+    lines = [_format_dialogue_line(x) for x in _explicit_dialogue(item)]
+    while len(lines) >= 3:
+        root = "\n\n".join(lines + [hook, REELPAL_TAG])
+        if len(root) <= 280:
+            return root
+        lines.pop()
+    raise RuntimeError(f"explicit dialogue cannot fit without losing context: {item['id']}")
+
+
 def render_root(item: dict) -> str:
-    first, second = _dialogue_beats(item["text"], item["topic"])
     hook = _hook(item)
-    root = f"{first}\n\n{second}\n\n{hook}\n\n{REELPAL_TAG}"
-
-    if len(root) > 280:
-        second = _clip_fragment(second, 82)
+    explicit = _explicit_dialogue(item)
+    if explicit:
+        root = _render_explicit_dialogue(item, hook)
+    else:
+        first, second = _dialogue_beats(item["text"], item["topic"])
         root = f"{first}\n\n{second}\n\n{hook}\n\n{REELPAL_TAG}"
-    if len(root) > 280:
-        first = _clip_fragment(first, 82)
-        root = f"{first}\n\n{second}\n\n{hook}\n\n{REELPAL_TAG}"
-    if len(root) > 280:
-        raise RuntimeError(f"rendered funny clip is too long: {item['id']} ({len(root)})")
+        if len(root) > 280:
+            second = _clip_fragment(second, 82)
+            root = f"{first}\n\n{second}\n\n{hook}\n\n{REELPAL_TAG}"
+        if len(root) > 280:
+            first = _clip_fragment(first, 82)
+            root = f"{first}\n\n{second}\n\n{hook}\n\n{REELPAL_TAG}"
+        if len(root) > 280:
+            raise RuntimeError(f"rendered funny clip is too long: {item['id']} ({len(root)})")
 
-    banned = (
-        "面白すぎ",
-        "おもしろすぎ",
-        "好きすぎる",
-        "ずっと聞いてられる",
-        "最高すぎ",
-        "神回",
-    )
+    banned = ("面白すぎ", "おもしろすぎ", "好きすぎる", "ずっと聞いてられる", "最高すぎ", "神回")
     if any(word in hook for word in banned):
         raise RuntimeError(f"self-congratulatory funny clip hook rejected: {item['id']} -> {hook}")
     return root
@@ -236,15 +257,10 @@ def save_state(state: dict, item: dict) -> None:
     recent_topics = (state["recent_topics"] + [item["topic"]])[-RECENT_TOPIC_WINDOW:]
     STATE_PATH.write_text(
         json.dumps(
-            {
-                "used_ids": used_ids,
-                "recent_sources": recent_sources,
-                "recent_topics": recent_topics,
-            },
+            {"used_ids": used_ids, "recent_sources": recent_sources, "recent_topics": recent_topics},
             ensure_ascii=False,
             separators=(",", ":"),
-        )
-        + "\n",
+        ) + "\n",
         encoding="utf-8",
     )
 
@@ -259,7 +275,6 @@ def validate_full_bank(bank: list[dict]) -> None:
 def main() -> None:
     bank = load_bank()
     state = load_state()
-
     if os.getenv("FUNNY_CLIP_DRY_RUN", "").strip().lower() in {"1", "true", "yes"}:
         validate_full_bank(bank)
         item = pick_clip(bank, state)
@@ -269,25 +284,16 @@ def main() -> None:
             print("--- reply ---")
             print(render_reply(item))
         return
-
     item = pick_clip(bank, state)
     if item is None:
-        print(
-            f"[INFO] funny clip bank exhausted: used={len(state['used_ids'])}, total={len(bank)}. "
-            "No post sent; replenish with LISTEN-grounded clips from the archive."
-        )
+        print(f"[INFO] funny clip bank exhausted: used={len(state['used_ids'])}, total={len(bank)}. No post sent; replenish with LISTEN-grounded clips from the archive.")
         return
-
     root = render_root(item)
     reply = render_reply(item)
     post_id = post_thread([root, reply])
     save_state(state, item)
-
     remaining = len(bank) - len(state["used_ids"]) - 1
-    print(
-        f"[OK] Buffer accepted funny clip thread: {post_id}; id={item['id']}; "
-        f"source={item['source']}; topic={item['topic']}; remaining={remaining}"
-    )
+    print(f"[OK] Buffer accepted funny clip thread: {post_id}; id={item['id']}; source={item['source']}; topic={item['topic']}; remaining={remaining}")
 
 
 if __name__ == "__main__":
