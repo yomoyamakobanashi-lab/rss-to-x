@@ -24,7 +24,7 @@ BANK_PATHS = [
 ]
 SPOTIFY_EPISODES_PATH = DATA / "spotify_episodes.json"
 SPOTIFY_OVERRIDES_PATH = DATA / "spotify_episode_overrides.json"
-USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/2.2)"
+USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/2.3)"
 
 LEGACY_SPOTIFY_OVERRIDE_BY_ID = {
     "legacy-whiplash-oizumi": "archive-whiplash",
@@ -95,7 +95,27 @@ def load_canonical_bank() -> list[dict]:
     unknown = sorted(set(patches) - {str(x.get("id") or "") for x in bank})
     if unknown:
         raise RuntimeError("quality overrides reference unknown canonical ids: " + ", ".join(unknown))
-    return bank
+
+    parents = {
+        str(item.get("id") or ""): item
+        for item in bank
+        if not item.get("parent_id")
+    }
+    hydrated: list[dict] = []
+    for item in bank:
+        parent_id = str(item.get("parent_id") or "").strip()
+        if not parent_id:
+            hydrated.append(item)
+            continue
+        parent = parents.get(parent_id)
+        if not parent:
+            raise RuntimeError(f"extra clip references unknown parent_id: {item.get('id')} -> {parent_id}")
+        merged = dict(item)
+        for key in ("source", "episode_title", "source_url", "spotify_url"):
+            if parent.get(key):
+                merged[key] = parent[key]
+        hydrated.append(merged)
+    return hydrated
 
 
 def fetch(url: str, timeout: int = 8) -> str:
