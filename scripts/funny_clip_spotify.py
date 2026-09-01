@@ -16,11 +16,7 @@ from scripts import funny_clip_buffer as base
 
 SPOTIFY_EPISODES_PATH = ROOT / "data" / "spotify_episodes.json"
 SPOTIFY_OVERRIDES_PATH = ROOT / "data" / "spotify_episode_overrides.json"
-QUALITY_OVERRIDE_PATHS = [
-    ROOT / "data" / "funny_clip_quality_overrides.json",
-    ROOT / "data" / "funny_clip_quality_overrides_2.json",
-    ROOT / "data" / "funny_clip_quality_overrides_3.json",
-]
+QUALITY_OVERRIDE_PATHS = sorted((ROOT / "data").glob("funny_clip_quality_overrides*.json"))
 CANONICAL_BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts_all_episodes.json",
     ROOT / "data" / "funny_clip_legacy_canonical.json",
@@ -51,9 +47,6 @@ LEGACY_SPOTIFY_OVERRIDE_BY_ID = {
 }
 REELPAL_TAG = "#リルパル"
 
-# Production funny clips are one canonical clip per Spotify episode:
-# 105 all-episode clips + 22 curated legacy clips. The old archive banks remain
-# in the repository for provenance, but are deliberately excluded from posting.
 base.BANK_PATHS = CANONICAL_BANK_PATHS
 
 
@@ -146,13 +139,11 @@ def _exact_spotify_url(item: dict) -> str | None:
     by_title = _spotify_url_by_title(item)
     if by_title:
         return by_title
-
     overrides = _load_overrides()
     clip_id = str(item.get("id") or "").strip()
     legacy_key = LEGACY_SPOTIFY_OVERRIDE_BY_ID.get(clip_id)
     if legacy_key and legacy_key in overrides:
         return overrides[legacy_key]
-
     source = str(item.get("source") or "").strip()
     return overrides.get(source)
 
@@ -189,7 +180,6 @@ def _load_spotify_ready_bank() -> list[dict]:
         raise RuntimeError(
             f"canonical funny clip bank must contain 127 unique episode sources, got {len(unique_sources)}"
         )
-
     missing_by_source: dict[str, str] = {}
     mismatches: list[tuple[str, str, str]] = []
     for item in full_bank:
