@@ -10,7 +10,7 @@ on:
 jobs:
   crawl:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,79 +21,77 @@ jobs:
           npm init -y >/dev/null 2>&1
           npm install playwright@1.55.0
           npx playwright install --with-deps chromium
-      - name: Crawl LISTEN episode pages
+      - name: Crawl LISTEN episode pages in parallel
         run: |
           cat > crawl_listen.mjs <<'EOF'
           import { chromium } from 'playwright';
           import fs from 'fs';
 
           const browser = await chromium.launch({headless:true});
-          const context = await browser.newContext({ viewport: { width: 1440, height: 1200 } });
-          const page = await context.newPage();
+          const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
           const episodeMap = new Map();
 
-          for (let p = 1; p <= 10; p++) {
+          async function fetchList(p) {
+            const page = await context.newPage();
             const listUrl = p === 1 ? 'https://listen.style/p/reelpal' : `https://listen.style/p/reelpal?page=${p}`;
-            const resp = await page.goto(listUrl, {waitUntil:'domcontentloaded', timeout:90000});
-            if (!resp || resp.status() >= 400) break;
-            await page.waitForTimeout(2500);
-            const items = await page.locator('a').evaluateAll(nodes => nodes.map(a => ({
-              href: a.href || a.getAttribute('href') || '',
-              text: (a.textContent || '').trim()
-            })));
-            let added = 0;
-            for (const item of items) {
-              let parsed;
-              try { parsed = new URL(item.href, listUrl); } catch { continue; }
+            try {
+              const resp = await page.goto(listUrl, {waitUntil:'domcontentloaded', timeout:45000});
+              if (!resp || resp.status() >= 400) return [];
+              await page.waitForTimeout(900);
+              return await page.locator('a').evaluateAll(nodes => nodes.map(a => ({
+                href: a.href || a.getAttribute('href') || '', text: (a.textContent || '').trim()
+              })));
+            } finally { await page.close(); }
+          }
+
+          const listResults = await Promise.all(Array.from({length:10}, (_,i)=>fetchList(i+1)));
+          for (let i=0;i<listResults.length;i++) {
+            let added=0;
+            const listUrl = i===0 ? 'https://listen.style/p/reelpal' : `https://listen.style/p/reelpal?page=${i+1}`;
+            for (const item of listResults[i]) {
+              let parsed; try { parsed = new URL(item.href, listUrl); } catch { continue; }
               const m = parsed.pathname.match(/^\/p\/reelpal\/([A-Za-z0-9_-]+)$/);
               if (!m) continue;
               const canonical = `https://listen.style/p/reelpal/${m[1]}`;
-              if (!episodeMap.has(canonical)) {
-                episodeMap.set(canonical, item.text);
-                added++;
+              if (!episodeMap.has(canonical)) { episodeMap.set(canonical, item.text); added++; }
+            }
+            console.log(`list page ${i+1}: anchors=${listResults[i].length} new=${added} total=${episodeMap.size}`);
+          }
+
+          const entries = [...episodeMap.entries()];
+          const results = new Array(entries.length);
+          let cursor = 0;
+          async function worker(workerId) {
+            const page = await context.newPage();
+            while (true) {
+              const idx = cursor++;
+              if (idx >= entries.length) break;
+              const [url, listTitle] = entries[idx];
+              try {
+                const resp = await page.goto(url, {waitUntil:'domcontentloaded', timeout:45000});
+                await page.waitForTimeout(600);
+                const title = await page.locator('h1').first().innerText().catch(() => listTitle);
+                const bodyText = await page.locator('body').innerText();
+                const mainText = await page.locator('main').innerText().catch(() => bodyText);
+                const timed = await page.locator('a[href*="#t="], [data-start-time], [data-start], time').evaluateAll(nodes => nodes.slice(0,4000).map(n => ({
+                  text:(n.textContent||'').trim(), href:n.getAttribute?.('href')||null,
+                  start:n.getAttribute?.('data-start-time')||n.getAttribute?.('data-start')||null
+                }))).catch(()=>[]);
+                const scripts = await page.locator('script').evaluateAll(nodes => nodes.map(n=>n.textContent||'').filter(t=>/transcript|utterance|speaker|startTime|start_time/i.test(t)).slice(0,30)).catch(()=>[]);
+                results[idx] = {url,slug:url.split('/').pop(),listTitle,title:(title||'').trim(),status:resp?.status()||null,bodyText,mainText,timed,scripts};
+                console.log(`[w${workerId} ${idx+1}/${entries.length}] chars=${bodyText.length} timed=${timed.length} ${url}`);
+              } catch (e) {
+                results[idx] = {url,slug:url.split('/').pop(),listTitle,error:String(e)};
+                console.log(`[w${workerId} ${idx+1}/${entries.length}] FAIL ${url}: ${e}`);
               }
             }
-            console.log(`list page ${p}: anchors=${items.length} new=${added} total=${episodeMap.size}`);
-            if (p > 1 && added === 0) break;
+            await page.close();
           }
-
-          const results = [];
-          let idx = 0;
-          for (const [url, listTitle] of episodeMap.entries()) {
-            idx++;
-            try {
-              const resp = await page.goto(url, {waitUntil:'domcontentloaded', timeout:90000});
-              await page.waitForTimeout(2200);
-              const title = await page.locator('h1').first().innerText().catch(() => listTitle);
-              const bodyText = await page.locator('body').innerText();
-              const allText = await page.locator('main').innerText().catch(() => bodyText);
-              const timed = await page.locator('a[href*="#t="], [data-start-time], [data-start], time').evaluateAll(nodes => nodes.slice(0,4000).map(n => ({
-                text: (n.textContent || '').trim(),
-                href: n.getAttribute?.('href') || null,
-                start: n.getAttribute?.('data-start-time') || n.getAttribute?.('data-start') || null
-              }))).catch(() => []);
-              const scripts = await page.locator('script').evaluateAll(nodes => nodes.map(n => n.textContent || '').filter(t => /transcript|utterance|speaker|startTime|start_time/i.test(t)).slice(0,30)).catch(() => []);
-              results.push({
-                url,
-                slug: url.split('/').pop(),
-                listTitle,
-                title: (title || '').trim(),
-                status: resp?.status() || null,
-                bodyText,
-                mainText: allText,
-                timed,
-                scripts
-              });
-              console.log(`[${idx}/${episodeMap.size}] ${url} chars=${bodyText.length} main=${allText.length} timed=${timed.length}`);
-            } catch (e) {
-              console.log(`[${idx}/${episodeMap.size}] FAIL ${url}: ${e}`);
-              results.push({url, slug:url.split('/').pop(), listTitle, error:String(e)});
-            }
-          }
+          await Promise.all(Array.from({length:10},(_,i)=>worker(i+1)));
 
           fs.mkdirSync('listen-crawl', {recursive:true});
-          fs.writeFileSync('listen-crawl/episodes.json', JSON.stringify(results, null, 2));
-          fs.writeFileSync('listen-crawl/summary.json', JSON.stringify({discovered:episodeMap.size, crawled:results.filter(x=>!x.error).length, failed:results.filter(x=>x.error).length}, null, 2));
+          fs.writeFileSync('listen-crawl/episodes.json', JSON.stringify(results.filter(Boolean), null, 2));
+          fs.writeFileSync('listen-crawl/summary.json', JSON.stringify({discovered:episodeMap.size,crawled:results.filter(x=>x&&!x.error).length,failed:results.filter(x=>x?.error).length}, null, 2));
           await browser.close();
           EOF
           node crawl_listen.mjs
