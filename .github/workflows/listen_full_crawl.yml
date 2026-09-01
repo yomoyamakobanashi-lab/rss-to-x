@@ -1,4 +1,4 @@
-name: Temporary LISTEN Full Crawl
+name: Temporary Transcript Recovery
 
 on:
   push:
@@ -8,108 +8,98 @@ on:
       - .github/workflows/listen_full_crawl.yml
 
 jobs:
-  crawl:
+  recover:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: '20'
-      - name: Install Playwright
+          python-version: '3.11'
+      - name: Install transcription tools
         run: |
-          npm init -y >/dev/null 2>&1
-          npm install playwright@1.55.0
-          npx playwright install --with-deps chromium
-      - name: Crawl LISTEN episode pages
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install requests feedparser faster-whisper
+      - name: Recover three broken transcripts from podcast audio
         run: |
-          cat > crawl_listen.mjs <<'EOF'
-          import { chromium } from 'playwright';
-          import fs from 'fs';
+          cat > recover.py <<'PY'
+          import json, re, unicodedata, subprocess
+          from pathlib import Path
+          import requests, feedparser
+          from faster_whisper import WhisperModel
 
-          const episodeMap = new Map();
-          const headers = {
-            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140 Safari/537.36',
-            'accept-language': 'ja,en-US;q=0.8,en;q=0.6'
-          };
+          targets = json.loads(Path('data/spotify_episodes.json').read_text(encoding='utf-8'))
+          targets = [x for x in targets if x['index'] in (9,33,117)]
 
-          async function raw(url) {
-            const r = await fetch(url, {headers, redirect:'follow'});
-            if (!r.ok) throw new Error(`${r.status} ${url}`);
-            return await r.text();
-          }
+          def norm(s):
+              s=unicodedata.normalize('NFKC', str(s or '')).lower()
+              s=re.sub(r'replay','',s,flags=re.I)
+              return re.sub(r'[\s　#『』「」〖〗【】()（）\[\]<>〈〉《》・,:：;；.!！?？…〜~—–―ー_\-"\'“”‘’\\/*]+','',s)
 
-          // LISTEN's browser DOM can omit the server-rendered episode cards in headless mode.
-          // Discover slugs from the raw HTML instead, then use a browser only for transcript pages.
-          let emptyPages = 0;
-          for (let p = 1; p <= 20; p++) {
-            const listUrl = p === 1 ? 'https://listen.style/p/reelpal' : `https://listen.style/p/reelpal?page=${p}`;
-            const html = await raw(listUrl);
-            const found = new Set();
-            for (const re of [
-              /href=["']\/p\/reelpal\/([A-Za-z0-9_-]+)(?:[?#][^"']*)?["']/g,
-              /https:\/\/listen\.style\/p\/reelpal\/([A-Za-z0-9_-]+)/g,
-              /\\u002Fp\\u002Freelpal\\u002F([A-Za-z0-9_-]+)/g,
-            ]) {
-              let m;
-              while ((m = re.exec(html))) found.add(m[1]);
-            }
-            let added = 0;
-            for (const slug of found) {
-              const url = `https://listen.style/p/reelpal/${slug}`;
-              if (!episodeMap.has(url)) { episodeMap.set(url, slug); added++; }
-            }
-            console.log(`list page ${p}: html=${html.length} found=${found.size} new=${added} total=${episodeMap.size}`);
-            if (added === 0) emptyPages++; else emptyPages = 0;
-            if (p >= 4 && emptyPages >= 2) break;
-          }
-          if (episodeMap.size < 80) throw new Error(`LISTEN discovery suspiciously low: ${episodeMap.size}`);
+          sess=requests.Session()
+          sess.headers.update({'User-Agent':'Mozilla/5.0'})
+          show=sess.get('https://listen.style/p/reelpal',timeout=30).text
+          feed_urls=[]
+          for pat in [r'<link[^>]+type=["\']application/rss\+xml["\'][^>]+href=["\']([^"\']+)', r'href=["\']([^"\']*(?:rss|feed)[^"\']*)']:
+              feed_urls += re.findall(pat, show, flags=re.I)
+          feed_urls += ['https://listen.style/p/reelpal/rss','https://listen.style/p/reelpal/rss.xml']
+          feed=None; feed_url=None
+          for u in dict.fromkeys(feed_urls):
+              if u.startswith('/'): u='https://listen.style'+u
+              try:
+                  r=sess.get(u,timeout=30)
+                  p=feedparser.parse(r.content)
+                  if len(p.entries)>=80:
+                      feed=p; feed_url=u; break
+              except Exception as e: print('feed try failed',u,e)
+          if feed is None: raise RuntimeError('Could not locate podcast RSS feed')
+          print('RSS',feed_url,'entries',len(feed.entries))
 
-          const browser = await chromium.launch({headless:true});
-          const context = await browser.newContext({ viewport: { width: 1280, height: 900 }, extraHTTPHeaders: headers });
-          const entries = [...episodeMap.entries()];
-          const results = new Array(entries.length);
-          let cursor = 0;
-
-          async function worker(workerId) {
-            const page = await context.newPage();
-            while (true) {
-              const idx = cursor++;
-              if (idx >= entries.length) break;
-              const [url, slug] = entries[idx];
-              try {
-                const resp = await page.goto(url, {waitUntil:'domcontentloaded', timeout:45000});
-                await page.waitForTimeout(300);
-                const title = await page.locator('h1').first().innerText().catch(() => '');
-                const bodyText = await page.locator('body').innerText();
-                const mainText = await page.locator('main').innerText().catch(() => bodyText);
-                // Transcript lines on LISTEN are server-rendered text interspersed with timestamp labels.
-                results[idx] = {url, slug, title:(title||'').trim(), status:resp?.status()||null, bodyText, mainText};
-                console.log(`[w${workerId} ${idx+1}/${entries.length}] chars=${bodyText.length} ${url}`);
-              } catch (e) {
-                results[idx] = {url, slug, error:String(e)};
-                console.log(`[w${workerId} ${idx+1}/${entries.length}] FAIL ${url}: ${e}`);
-              }
-            }
-            await page.close();
-          }
-          await Promise.all(Array.from({length:8},(_,i)=>worker(i+1)));
-
-          fs.mkdirSync('listen-crawl', {recursive:true});
-          fs.writeFileSync('listen-crawl/episodes.json', JSON.stringify(results.filter(Boolean), null, 2));
-          fs.writeFileSync('listen-crawl/summary.json', JSON.stringify({discovered:episodeMap.size,crawled:results.filter(x=>x&&!x.error).length,failed:results.filter(x=>x?.error).length}, null, 2));
-          await browser.close();
-          EOF
-          node crawl_listen.mjs
-      - name: Copy repo indexes for local coverage analysis
-        run: |
-          mkdir -p listen-crawl/repo-data
-          cp data/spotify_episodes.json listen-crawl/repo-data/
-          cp data/funny_clip_posts*.json listen-crawl/repo-data/
-          cp data/spotify_episode_overrides.json listen-crawl/repo-data/
+          outdir=Path('recovered'); outdir.mkdir(exist_ok=True)
+          model=WhisperModel('small', device='cpu', compute_type='int8')
+          recovered=[]
+          for target in targets:
+              wanted=norm(target['title'])
+              cand=[]
+              for entry in feed.entries:
+                  nt=norm(entry.get('title',''))
+                  if nt==wanted: cand=[entry]; break
+                  if wanted in nt or nt in wanted: cand.append(entry)
+              if len(cand)!=1:
+                  raise RuntimeError(f"RSS title match ambiguous for {target['index']}: {len(cand)}")
+              entry=cand[0]
+              enclosures=entry.get('enclosures',[])
+              audio=None
+              for enc in enclosures:
+                  href=enc.get('href') or enc.get('url')
+                  typ=enc.get('type','')
+                  if href and ('audio' in typ or re.search(r'\.(mp3|m4a|aac)(\?|$)',href,re.I)):
+                      audio=href; break
+              if not audio and enclosures: audio=enclosures[0].get('href') or enclosures[0].get('url')
+              if not audio: raise RuntimeError(f"No enclosure for {target['index']}")
+              print('AUDIO',target['index'],audio)
+              src=outdir/f"{target['index']}.audio"
+              with sess.get(audio,stream=True,timeout=60) as r:
+                  r.raise_for_status()
+                  with src.open('wb') as f:
+                      for ch in r.iter_content(1024*1024): f.write(ch)
+              wav=outdir/f"{target['index']}.wav"
+              subprocess.run(['ffmpeg','-y','-i',str(src),'-t','900','-ac','1','-ar','16000',str(wav)],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+              segments,info=model.transcribe(str(wav),language='ja',beam_size=5,vad_filter=True,condition_on_previous_text=True)
+              rows=[]
+              for seg in segments:
+                  text=re.sub(r'\s+',' ',seg.text).strip()
+                  if text: rows.append({'start':round(seg.start,2),'end':round(seg.end,2),'text':text})
+              recovered.append({'index':target['index'],'title':target['title'],'spotifyUrl':target['spotifyUrl'],'audio':audio,'segments':rows})
+              print('TRANSCRIBED',target['index'],len(rows))
+              src.unlink(missing_ok=True); wav.unlink(missing_ok=True)
+          (outdir/'transcripts.json').write_text(json.dumps(recovered,ensure_ascii=False,indent=2),encoding='utf-8')
+          PY
+          python recover.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: listen-full-crawl
-          path: listen-crawl/
+          name: recovered-transcripts
+          path: recovered/
           retention-days: 1
