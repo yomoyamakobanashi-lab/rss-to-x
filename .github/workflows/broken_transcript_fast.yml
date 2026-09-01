@@ -1,0 +1,52 @@
+name: Temporary Broken Transcript Fast Repair
+
+on:
+  push:
+    branches:
+      - feat/funny-clip-every-episode
+    paths:
+      - .github/workflows/broken_transcript_fast.yml
+
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install transcription stack
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install faster-whisper
+      - name: Download short audio excerpts
+        run: |
+          mkdir -p repaired-fast/audio repaired-fast/out
+          curl -L --retry 2 -o repaired-fast/audio/lt7ujaek.m4a 'https://anchor.fm/s/10422ca68/podcast/play/123013829/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-6-18%2F428201039-44100-2-5ef8ee6a11e43.m4a'
+          curl -L --retry 2 -o repaired-fast/audio/08x9zj0r.m4a 'https://anchor.fm/s/10422ca68/podcast/play/117970752/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-3-4%2F421425782-44100-2-7a33dddc0f121.m4a'
+          curl -L --retry 2 -o repaired-fast/audio/gnrdz2nn.m4a 'https://anchor.fm/s/10422ca68/podcast/play/103956165/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-11%2F401945779-44100-2-21237a91a6655.m4a'
+          curl -L --retry 2 -o repaired-fast/audio/mwnhzsa5.m4a 'https://anchor.fm/s/10422ca68/podcast/play/103947600/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-10%2F401934579-44100-2-58e64b17ffb93.m4a'
+          for f in repaired-fast/audio/*.m4a; do b=$(basename "$f" .m4a); ffmpeg -hide_banner -loglevel error -y -i "$f" -t 300 -ac 1 -ar 16000 "repaired-fast/audio/${b}.wav"; done
+      - name: Transcribe with tiny model
+        run: |
+          cat > transcribe_fast.py <<'PY'
+          import json, glob, os
+          from faster_whisper import WhisperModel
+          model=WhisperModel('tiny',device='cpu',compute_type='int8')
+          out={}
+          for path in sorted(glob.glob('repaired-fast/audio/*.wav')):
+              slug=os.path.basename(path).split('.')[0]
+              segs,info=model.transcribe(path,language='ja',beam_size=3,vad_filter=True)
+              rows=[{'start':round(s.start,2),'end':round(s.end,2),'text':s.text.strip()} for s in segs]
+              out[slug]={'segments':rows,'text':'\n'.join(r['text'] for r in rows)}
+              print(slug, len(rows), out[slug]['text'][:800])
+          with open('repaired-fast/out/transcripts.json','w',encoding='utf-8') as f: json.dump(out,f,ensure_ascii=False,indent=2)
+          PY
+          python transcribe_fast.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: repaired-transcripts-fast
+          path: repaired-fast/out/
+          retention-days: 1
