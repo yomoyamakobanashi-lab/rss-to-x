@@ -36,6 +36,8 @@ jobs:
         run: python scripts/funny_clip_quality_audit.py
       - name: Snapshot LISTEN transcripts for QA
         run: python scripts/funny_clip_transcript_snapshot.py
+      - name: Build full QA packet
+        run: python -m scripts.funny_clip_full_qa_packet
       - name: Build human QA packet
         run: python scripts/funny_clip_human_qa_packet.py
       - name: Build legacy human QA packet
@@ -55,6 +57,13 @@ jobs:
         with:
           name: funny-clip-transcript-snapshot
           path: funny_clip_transcript_snapshot.json
+          if-no-files-found: error
+      - name: Upload full QA packet
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: funny-clip-full-qa-packet
+          path: funny_clip_full_qa_packet.json
           if-no-files-found: error
       - name: Upload human QA packet
         if: always()
