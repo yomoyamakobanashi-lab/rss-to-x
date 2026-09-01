@@ -1,0 +1,105 @@
+name: Temporary social pack aon5ynuf
+on:
+  push:
+    branches:
+      - social-pack/aon5ynuf
+    paths:
+      - .github/workflows/tmp_social_pack_aon5ynuf.yml
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: social-pack/aon5ynuf
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Append verified social pack
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          source_url = 'https://listen.style/p/reelpal/aon5ynuf'
+          episode_title = '真夏のホラー企画　第一弾　映画『サユリ』これはジャンルシフトなのか……？ Midsummer Horror Series Vol.1: Sayuri — Is This a Genre Shift, or Something Else Entirely…?'
+
+          qpath = Path('data/social_pack_queue.json')
+          queue = json.loads(qpath.read_text(encoding='utf-8'))
+          new_queue = [
+            {
+              'id': 'aon5ynuf-three-hooks',
+              'kind': 'three_hooks',
+              'text': '『サユリ』回。①前半のJホラーから「ババア無双」へ振り切るジャンルシフト ②太極拳／太極図が作品の構造にどう効くか ③被害者だった霊が無関係な家族を殺したとき、なお「被害者だから仕方ない」で済むのか。笑える後半から、かなり重い問いまで行きました。',
+              'source_url': source_url,
+              'not_before': '2026-09-02T12:10:00+09:00',
+              'created_at': '2026-09-01T11:42:31+09:00'
+            },
+            {
+              'id': 'aon5ynuf-episode-hook',
+              'kind': 'episode_hook',
+              'text': '被害者だった幽霊は、無関係な人を殺した瞬間に「加害者」になるのか。『サユリ』を、怨霊ホラーの因果応報ではなく「被害と加害の偏り」として読むと、ババア無双の見え方がかなり変わります。',
+              'source_url': source_url,
+              'not_before': '2026-09-05T12:10:00+09:00',
+              'created_at': '2026-09-01T11:42:31+09:00'
+            }
+          ]
+          ids = {x.get('id') for x in queue}
+          urls_kinds = {(x.get('source_url'), x.get('kind')) for x in queue}
+          for item in new_queue:
+              if item['id'] not in ids and (item['source_url'], item['kind']) not in urls_kinds:
+                  assert len(item['text']) <= 280
+                  queue.append(item)
+          qpath.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          fpath = Path('data/funny_clip_posts.json')
+          funny = json.loads(fpath.read_text(encoding='utf-8'))
+          new_funny = [
+            {
+              'id': 'aon5ynuf-smart-fridge',
+              'source': 'sayuri-opening-fridge',
+              'episode_title': episode_title,
+              'source_url': source_url,
+              'topic': '高機能冷蔵庫',
+              'text': '冷蔵庫のAIや在庫管理アプリの話になった瞬間、「ああいうのマジでいらねえ」「そこまでやってくれるなら買ってこいお前」。映画の前に、スマート家電への要求水準だけが異様に高まっています。'
+            },
+            {
+              'id': 'aon5ynuf-donut-aftershave',
+              'source': 'sayuri-opening-aftershave',
+              'episode_title': episode_title,
+              'source_url': source_url,
+              'topic': 'グレイズドドーナツのアフターシェーブ',
+              'text': '海外通販で買った蛍光紫のアフターシェーブ。香りはラベンダーではなく「グレイズドドーナツ」。塗ると顔面からずっとクリスピークリームの匂いがする→「うぜえ」。『サユリ』の話に入る直前です。'
+            }
+          ]
+          fids = {x.get('id') for x in funny}
+          signatures = {(x.get('source_url'), x.get('topic')) for x in funny}
+          for item in new_funny:
+              if item['id'] not in fids and (item['source_url'], item['topic']) not in signatures:
+                  funny.append(item)
+          fpath.write_text(json.dumps(funny, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          # Audio clip intentionally omitted: no 20–30 second segment had a timestamp precise enough to add safely.
+          print('[OK] social=2 funny=2 audio=0 host_split=0')
+          PY
+      - name: Validate and commit
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for p in ['data/social_pack_queue.json','data/funny_clip_posts.json','data/audio_clip_queue.json']:
+              json.loads(Path(p).read_text(encoding='utf-8'))
+          q=json.loads(Path('data/social_pack_queue.json').read_text(encoding='utf-8'))
+          assert sum(1 for x in q if x.get('source_url')=='https://listen.style/p/reelpal/aon5ynuf') == 2
+          assert all(len(x['text']) <= 280 for x in q if x.get('source_url')=='https://listen.style/p/reelpal/aon5ynuf')
+          f=json.loads(Path('data/funny_clip_posts.json').read_text(encoding='utf-8'))
+          assert sum(1 for x in f if x.get('source_url')=='https://listen.style/p/reelpal/aon5ynuf') == 2
+          print('[OK] validation passed')
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/social_pack_queue.json data/funny_clip_posts.json
+          git commit -m 'Add social pack for Sayuri episode'
+          git push origin HEAD:social-pack/aon5ynuf
