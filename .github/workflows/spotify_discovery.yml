@@ -21,7 +21,7 @@ jobs:
           npm init -y >/dev/null 2>&1
           npm install playwright@1.55.0
           npx playwright install --with-deps chromium
-      - name: Fetch and match all Spotify podcast episodes
+      - name: Build fully linked Spotify episode index
         run: |
           cat > scrape_spotify.mjs <<'EOF'
           import { chromium } from 'playwright';
@@ -29,23 +29,15 @@ jobs:
 
           const showUri = 'spotify:show:4o8l9DJWMuwUht2pvkEytS';
           const showUrl = 'https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS';
-          const bankPaths = [
-            'data/funny_clip_posts.json',
-            'data/funny_clip_posts_archive.json',
-            'data/funny_clip_posts_archive_2.json',
-            'data/funny_clip_posts_archive_3.json',
-          ];
           const normalize = value => String(value || '')
             .normalize('NFKC').toLowerCase()
-            .replace(/replay|replay/gi, '')
-            .replace(/[\s\u3000#『』「」〖〗【】()（）\[\]<>〈〉《》・,:：;；.!！?？…〜~—–―ー_\-"'“”‘’]/g, '');
+            .replace(/[\uFFFC\s\u3000#『』「」〖〗【】()（）\[\]<>〈〉《》・,:：;；.!！?？…〜~—–―ー_\-"'“”‘’]/g, '');
 
           const browser = await chromium.launch({headless:true});
           const context = await browser.newContext({ viewport: { width: 1440, height: 1200 } });
           const page = await context.newPage();
           let episodeRequest = null;
           const episodeResponses = [];
-
           page.on('request', async request => {
             const postData = request.postData();
             if (!postData || !request.url().includes('api-partner.spotify.com/pathfinder/v2/query')) return;
@@ -68,21 +60,20 @@ jobs:
 
           await page.goto(showUrl, { waitUntil:'domcontentloaded', timeout:90000 });
           await page.waitForTimeout(10000);
-          if (!episodeRequest || !episodeResponses.length) throw new Error('Could not capture Spotify queryPodcastEpisodes request');
-
+          if (!episodeRequest || !episodeResponses.length) throw new Error('Could not capture Spotify episode request');
           const first = episodeResponses[0];
           const total = first?.data?.podcastUnionV2?.episodesV2?.totalCount || 0;
           const limit = episodeRequest.body.variables.limit || 50;
           const pages = [first];
-          const safeHeaders = {...episodeRequest.headers};
-          for (const key of Object.keys(safeHeaders)) {
-            if (key.startsWith(':') || ['content-length','host','connection','accept-encoding'].includes(key.toLowerCase())) delete safeHeaders[key];
+          const headers = {...episodeRequest.headers};
+          for (const key of Object.keys(headers)) {
+            if (key.startsWith(':') || ['content-length','host','connection','accept-encoding'].includes(key.toLowerCase())) delete headers[key];
           }
           for (let offset = limit; offset < total; offset += limit) {
             const body = JSON.parse(JSON.stringify(episodeRequest.body));
             body.variables.offset = offset;
-            const resp = await context.request.post(episodeRequest.url, {headers:safeHeaders, data:body, timeout:60000});
-            if (!resp.ok()) throw new Error(`Spotify page offset ${offset} failed: ${resp.status()} ${await resp.text()}`);
+            const resp = await context.request.post(episodeRequest.url, {headers, data:body, timeout:60000});
+            if (!resp.ok()) throw new Error(`Spotify offset ${offset} failed: ${resp.status()}`);
             pages.push(await resp.json());
           }
 
@@ -94,38 +85,48 @@ jobs:
               const uri = entity?._uri || data?.uri || '';
               const m = String(uri).match(/spotify:episode:([A-Za-z0-9]+)/);
               if (!m || !data?.name) continue;
-              episodes.push({id:m[1], spotifyUrl:`https://open.spotify.com/episode/${m[1]}`, title:data.name, releaseDate:data?.releaseDate?.isoString || null, normalized:normalize(data.name)});
+              episodes.push({
+                id:m[1],
+                spotifyUrl:`https://open.spotify.com/episode/${m[1]}`,
+                title:data.name,
+                normalized:normalize(data.name),
+                releaseDate:data?.releaseDate?.isoString || data?.releaseDateTime?.isoString || null,
+              });
             }
           }
 
-          const sourceTitles = new Map();
-          for (const path of bankPaths) {
-            const bank = JSON.parse(fs.readFileSync(path, 'utf8'));
-            for (const item of bank) {
-              if (!sourceTitles.has(item.source)) sourceTitles.set(item.source, item.episode_title || '');
-            }
-          }
-
-          const sourceMap = {};
-          const diagnostics = [];
-          for (const [source, title] of sourceTitles.entries()) {
-            const wanted = normalize(title);
+          const index = JSON.parse(fs.readFileSync('data/spotify_episodes.json', 'utf8'));
+          const unresolved = [];
+          let linked = 0;
+          for (const row of index) {
+            const wanted = normalize(row.title || row.normalizedTitle);
             let candidates = episodes.filter(ep => ep.normalized === wanted);
-            let method = 'exact';
+            let method = 'title-exact';
             if (!candidates.length) {
               candidates = episodes.filter(ep => ep.normalized.includes(wanted) || wanted.includes(ep.normalized));
-              method = 'contains';
+              method = 'title-contains';
             }
-            if (candidates.length === 1) sourceMap[source] = candidates[0].spotifyUrl;
-            diagnostics.push({source, title, wanted, method, candidateCount:candidates.length, candidates:candidates.map(x => ({title:x.title,url:x.spotifyUrl,releaseDate:x.releaseDate}))});
+            if (candidates.length !== 1 && row.pubDate) {
+              const t = new Date(row.pubDate).getTime();
+              const byTime = episodes.filter(ep => ep.releaseDate && Math.abs(new Date(ep.releaseDate).getTime() - t) <= 120000);
+              if (byTime.length === 1) {
+                candidates = byTime;
+                method = 'release-time';
+              }
+            }
+            if (candidates.length === 1) {
+              row.spotifyUrl = candidates[0].spotifyUrl;
+              linked += 1;
+            } else {
+              unresolved.push({index:row.index,title:row.title,pubDate:row.pubDate,method,candidateCount:candidates.length,candidates:candidates.map(x=>({title:x.title,url:x.spotifyUrl,releaseDate:x.releaseDate}))});
+            }
           }
 
           fs.mkdirSync('spotify-discovery', {recursive:true});
-          fs.writeFileSync('spotify-discovery/all_episodes.json', JSON.stringify(episodes, null, 2));
-          fs.writeFileSync('spotify-discovery/source_map.json', JSON.stringify(sourceMap, null, 2));
-          fs.writeFileSync('spotify-discovery/diagnostics.json', JSON.stringify(diagnostics, null, 2));
-          fs.writeFileSync('spotify-discovery/summary.json', JSON.stringify({totalReported:total, fetched:episodes.length, uniqueFunnySources:sourceTitles.size, mapped:Object.keys(sourceMap).length, unresolved:sourceTitles.size-Object.keys(sourceMap).length}, null, 2));
-          console.log(`Spotify episodes=${episodes.length}; funny sources=${sourceTitles.size}; mapped=${Object.keys(sourceMap).length}`);
+          fs.writeFileSync('spotify-discovery/spotify_episodes_enriched.json', JSON.stringify(index, null, 2) + '\n');
+          fs.writeFileSync('spotify-discovery/unresolved_index.json', JSON.stringify(unresolved, null, 2));
+          fs.writeFileSync('spotify-discovery/summary.json', JSON.stringify({spotifyReported:total, spotifyTitled:episodes.length, indexCount:index.length, linked, unresolved:unresolved.length}, null, 2));
+          console.log(`index=${index.length}; linked=${linked}; unresolved=${unresolved.length}`);
           await browser.close();
           EOF
           node scrape_spotify.mjs
