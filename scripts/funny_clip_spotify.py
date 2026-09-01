@@ -120,12 +120,32 @@ def _apply_quality_overrides(bank: list[dict]) -> list[dict]:
     return patched
 
 
-def _interleave_extra_clips(bank: list[dict]) -> list[dict]:
-    """Spread extra clips through the cycle instead of parking them at the end.
+def _inherit_parent_metadata(bank: list[dict]) -> list[dict]:
+    """Make parent_id authoritative for episode identity and outbound links."""
+    parents = {
+        str(item.get("id") or ""): item
+        for item in bank
+        if not item.get("parent_id")
+    }
+    inherited: list[dict] = []
+    for item in bank:
+        parent_id = str(item.get("parent_id") or "").strip()
+        if not parent_id:
+            inherited.append(item)
+            continue
+        parent = parents.get(parent_id)
+        if not parent:
+            raise RuntimeError(f"alternate funny clip references unknown parent_id: {item.get('id')} -> {parent_id}")
+        merged = dict(item)
+        for key in ("source", "episode_title", "source_url", "spotify_url"):
+            if parent.get(key):
+                merged[key] = parent[key]
+        inherited.append(merged)
+    return inherited
 
-    Source/topic recency checks in funny_clip_buffer still have the final say, so an
-    extra from the same episode cannot be selected too close to its base clip.
-    """
+
+def _interleave_extra_clips(bank: list[dict]) -> list[dict]:
+    """Spread extra clips through the cycle instead of parking them at the end."""
     base_items = [item for item in bank if not item.get("parent_id")]
     extras = [item for item in bank if item.get("parent_id")]
     if not extras:
@@ -199,7 +219,7 @@ _original_load_bank = base.load_bank
 
 
 def _load_spotify_ready_bank() -> list[dict]:
-    full_bank = _apply_quality_overrides(_original_load_bank())
+    full_bank = _inherit_parent_metadata(_apply_quality_overrides(_original_load_bank()))
     if len(full_bank) < BASE_EPISODE_COVERAGE:
         raise RuntimeError(
             f"canonical funny clip bank must contain at least {BASE_EPISODE_COVERAGE} clips, got {len(full_bank)}"
