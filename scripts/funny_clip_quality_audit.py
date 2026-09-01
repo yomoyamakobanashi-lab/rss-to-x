@@ -20,11 +20,11 @@ BASE_EPISODE_COVERAGE = 127
 BANK_PATHS = [
     DATA / "funny_clip_posts_all_episodes.json",
     DATA / "funny_clip_legacy_canonical.json",
-    DATA / "funny_clip_extras.json",
+    *sorted(DATA.glob("funny_clip_extras*.json")),
 ]
 SPOTIFY_EPISODES_PATH = DATA / "spotify_episodes.json"
 SPOTIFY_OVERRIDES_PATH = DATA / "spotify_episode_overrides.json"
-USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/2.1)"
+USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/2.2)"
 
 LEGACY_SPOTIFY_OVERRIDE_BY_ID = {
     "legacy-whiplash-oizumi": "archive-whiplash",
