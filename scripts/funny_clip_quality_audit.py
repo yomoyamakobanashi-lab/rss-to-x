@@ -16,15 +16,37 @@ DATA = ROOT / "data"
 REPORT_PATH = ROOT / "funny_clip_quality_report.json"
 
 BANK_PATHS = [
-    DATA / "funny_clip_posts.json",
-    DATA / "funny_clip_posts_archive.json",
-    DATA / "funny_clip_posts_archive_2.json",
-    DATA / "funny_clip_posts_archive_3.json",
     DATA / "funny_clip_posts_all_episodes.json",
+    DATA / "funny_clip_legacy_canonical.json",
 ]
-ALL_EPISODES_PATH = DATA / "funny_clip_posts_all_episodes.json"
 SPOTIFY_EPISODES_PATH = DATA / "spotify_episodes.json"
-USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/1.2)"
+SPOTIFY_OVERRIDES_PATH = DATA / "spotify_episode_overrides.json"
+USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/2.0)"
+
+LEGACY_SPOTIFY_OVERRIDE_BY_ID = {
+    "legacy-whiplash-oizumi": "archive-whiplash",
+    "legacy-godzilla2-biollante": "archive-godzilla2",
+    "legacy-fightclub-daiso": "archive-fightclub",
+    "legacy-popcorn-koala": "intermission-popcorn",
+    "legacy-orangutan-mnemonic": "intermission-orangutan",
+    "legacy-omg-kfc": "intermission-godzilla-mouth",
+    "legacy-aerosmith-admachi": "intermission-aerosmith",
+    "legacy-americanpie-sanity": "intermission-american-pie",
+    "legacy-mandalorian-third-person": "intermission-mandalorian",
+    "legacy-latest-german": "intermission-conan",
+    "legacy-scarymovie-michael-babe": "intermission-goosebumps",
+    "legacy-onmyoji-eikogo": "intermission-onmyoji",
+    "legacy-kiki-30times": "intermission-kiki",
+    "legacy-wicked-wifi": "archive-intermission-wicked-gamera",
+    "legacy-ichinose-chaos": "intermission-aetobodm",
+    "legacy-terminator1-micarm": "archive-terminator",
+    "legacy-terminator3-manuka": "archive-terminator3",
+    "legacy-experiment-first": "archive-experiment",
+    "legacy-fmj-monhan": "archive-fullmetaljacket",
+    "legacy-hellraiser-numbering": "archive-hellraiser",
+    "legacy-matrix-kunie": "archive-matrix",
+    "legacy-terminator2-frugra": "archive-terminator2",
+}
 
 
 def normalize(value: str) -> str:
@@ -39,6 +61,40 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_quality_overrides() -> dict[str, dict]:
+    patches: dict[str, dict] = {}
+    for path in sorted(DATA.glob("funny_clip_quality_overrides*.json")):
+        data = load_json(path)
+        if not isinstance(data, dict):
+            raise RuntimeError(f"quality override is not an object: {path.name}")
+        for clip_id, patch in data.items():
+            if not isinstance(patch, dict):
+                continue
+            clip_id = str(clip_id)
+            if clip_id in patches:
+                raise RuntimeError(f"duplicate quality override id: {clip_id}")
+            patches[clip_id] = patch
+    return patches
+
+
+def load_canonical_bank() -> list[dict]:
+    patches = load_quality_overrides()
+    bank: list[dict] = []
+    for path in BANK_PATHS:
+        chunk = load_json(path)
+        if not isinstance(chunk, list):
+            raise RuntimeError(f"canonical bank invalid: {path.name}")
+        for original in chunk:
+            item = dict(original)
+            item.update(patches.get(str(item.get("id") or ""), {}))
+            item["_bank"] = path.name
+            bank.append(item)
+    unknown = sorted(set(patches) - {str(x.get("id") or "") for x in bank})
+    if unknown:
+        raise RuntimeError("quality overrides reference unknown canonical ids: " + ", ".join(unknown))
+    return bank
+
+
 def fetch(url: str, timeout: int = 8) -> str:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=timeout) as response:
@@ -47,8 +103,6 @@ def fetch(url: str, timeout: int = 8) -> str:
 
 def _strip_listen_suffix(title: str) -> str:
     title = html.unescape(str(title or "")).strip()
-    # LISTEN episode pages append the podcast title, e.g.
-    # "Episode title - 【#リルパル】Reel Friends ... - LISTEN".
     title = re.sub(r"\s+-\s+【#リルパル】.*$", "", title).strip()
     title = re.sub(r"\s+-\s+LISTEN\s*$", "", title, flags=re.I).strip()
     return title
@@ -69,137 +123,128 @@ def extract_page_title(page_html: str) -> str:
     return ""
 
 
-def build_spotify_index() -> dict[str, list[dict]]:
-    index: dict[str, list[dict]] = defaultdict(list)
+def build_spotify_index() -> dict[str, list[str]]:
+    index: dict[str, list[str]] = defaultdict(list)
     for episode in load_json(SPOTIFY_EPISODES_PATH):
         url = str(episode.get("spotifyUrl") or "").strip()
-        title = str(episode.get("title") or "").strip()
-        if title and url.startswith("https://open.spotify.com/episode/"):
-            index[normalize(title)].append({"title": title, "url": url})
-        normalized_title = str(episode.get("normalizedTitle") or "").strip()
-        if normalized_title and url.startswith("https://open.spotify.com/episode/"):
-            key = normalize(normalized_title)
-            if not any(x["url"] == url for x in index[key]):
-                index[key].append({"title": title or normalized_title, "url": url})
+        if not url.startswith("https://open.spotify.com/episode/"):
+            continue
+        for title in (episode.get("title", ""), episode.get("normalizedTitle", "")):
+            key = normalize(title)
+            if key and url not in index[key]:
+                index[key].append(url)
     return dict(index)
 
 
-def load_bank_items() -> list[dict]:
-    items: list[dict] = []
-    for path in BANK_PATHS:
-        if not path.exists():
-            continue
-        chunk = load_json(path)
-        if not isinstance(chunk, list):
-            continue
-        for item in chunk:
-            copy = dict(item)
-            copy["_bank"] = path.name
-            items.append(copy)
-    return items
+def load_spotify_overrides() -> dict[str, str]:
+    data = load_json(SPOTIFY_OVERRIDES_PATH)
+    if not isinstance(data, dict):
+        return {}
+    return {str(k): str(v) for k, v in data.items() if str(v).startswith("https://open.spotify.com/episode/")}
 
 
-def group_by_episode(bank: list[dict]) -> dict[str, dict]:
-    grouped: dict[str, dict] = {}
-    for item in bank:
-        title = str(item.get("episode_title") or "").strip()
-        if not title:
-            continue
-        key = normalize(title)
-        group = grouped.setdefault(key, {
-            "episode_title": title,
-            "ids": [],
-            "stored_urls": set(),
-            "banks": set(),
-        })
-        group["ids"].append(str(item.get("id") or ""))
-        source_url = str(item.get("source_url") or "").strip()
-        if source_url:
-            group["stored_urls"].add(source_url)
-        group["banks"].add(str(item.get("_bank") or ""))
-    return grouped
+def resolve_spotify(item: dict, index: dict[str, list[str]], overrides: dict[str, str]) -> str | None:
+    matches = index.get(normalize(item.get("episode_title", "")), [])
+    if len(matches) == 1:
+        return matches[0]
+    key = LEGACY_SPOTIFY_OVERRIDE_BY_ID.get(str(item.get("id") or ""))
+    if key:
+        return overrides.get(key)
+    return None
 
 
-def verify_listen_group(group: dict) -> tuple[str, dict]:
-    urls = sorted(group["stored_urls"])
+def verify_listen(item: dict) -> tuple[str, dict]:
     base = {
-        "episode_title": group["episode_title"],
-        "ids": sorted(group["ids"]),
-        "stored_urls": urls,
-        "banks": sorted(group["banks"]),
+        "id": item.get("id"),
+        "episode_title": item.get("episode_title"),
+        "source_url": item.get("source_url"),
     }
-    if len(urls) != 1:
-        return "multiple", base
+    url = str(item.get("source_url") or "")
+    if not url.startswith("https://listen.style/p/reelpal/"):
+        return "error", {**base, "error": "invalid LISTEN URL shape"}
     try:
-        page_title = extract_page_title(fetch(urls[0]))
+        page_title = extract_page_title(fetch(url))
     except Exception as exc:
         return "error", {**base, "error": f"{type(exc).__name__}: {exc}"}
     if not page_title:
         return "error", {**base, "error": "no page title found"}
-    if normalize(page_title) != normalize(group["episode_title"]):
+    if normalize(page_title) != normalize(item.get("episode_title", "")):
         return "mismatch", {**base, "page_title": page_title}
     return "ok", base
 
 
 def main() -> None:
-    bank = load_bank_items()
-    grouped = group_by_episode(bank)
-    all_episode_items = load_json(ALL_EPISODES_PATH)
-    spotify_index = build_spotify_index()
+    bank = load_canonical_bank()
+    if len(bank) != 127:
+        raise RuntimeError(f"canonical audit requires 127 clips, got {len(bank)}")
 
-    spotify_mismatches: list[dict] = []
-    spotify_missing: list[dict] = []
-    for item in all_episode_items:
-        title = str(item.get("episode_title") or "")
-        matches = spotify_index.get(normalize(title), [])
-        if len(matches) != 1:
-            spotify_missing.append({
-                "id": item.get("id"), "episode_title": title,
-                "stored": item.get("spotify_url"), "matches": matches,
-            })
+    ids = [str(x.get("id") or "") for x in bank]
+    sources = [str(x.get("source") or "") for x in bank]
+    dialogue_bad = [
+        {"id": x.get("id"), "turns": len(x.get("dialogue", [])) if isinstance(x.get("dialogue"), list) else None}
+        for x in bank
+        if not isinstance(x.get("dialogue"), list) or not 3 <= len(x.get("dialogue")) <= 6
+    ]
+
+    spotify_index = build_spotify_index()
+    spotify_overrides = load_spotify_overrides()
+    spotify_missing = []
+    spotify_stored_mismatches = []
+    for item in bank:
+        resolved = resolve_spotify(item, spotify_index, spotify_overrides)
+        if not resolved:
+            spotify_missing.append({"id": item.get("id"), "episode_title": item.get("episode_title")})
             continue
-        canonical = matches[0]["url"]
         stored = str(item.get("spotify_url") or "").strip()
-        if stored != canonical:
-            spotify_mismatches.append({
-                "id": item.get("id"), "episode_title": title,
-                "stored": stored, "canonical": canonical,
-            })
+        if stored and stored.startswith("https://open.spotify.com/episode/") and stored != resolved:
+            spotify_stored_mismatches.append({"id": item.get("id"), "stored": stored, "resolved": resolved})
 
     listen_mismatches: list[dict] = []
     listen_fetch_errors: list[dict] = []
-    listen_multiple_urls: list[dict] = []
-    verified = 0
-
+    listen_verified = 0
     with ThreadPoolExecutor(max_workers=12) as pool:
-        futures = [pool.submit(verify_listen_group, group) for group in grouped.values()]
+        futures = [pool.submit(verify_listen, item) for item in bank]
         for future in as_completed(futures):
             status, result = future.result()
-            if status == "ok": verified += 1
-            elif status == "mismatch": listen_mismatches.append(result)
-            elif status == "multiple": listen_multiple_urls.append(result)
-            else: listen_fetch_errors.append(result)
+            if status == "ok":
+                listen_verified += 1
+            elif status == "mismatch":
+                listen_mismatches.append(result)
+            else:
+                listen_fetch_errors.append(result)
 
     report = {
         "summary": {
-            "bank_items": len(bank),
-            "unique_bank_episode_titles": len(grouped),
-            "all_episode_items": len(all_episode_items),
-            "spotify_stored_mismatches": len(spotify_mismatches),
-            "spotify_title_unresolved_or_ambiguous": len(spotify_missing),
-            "listen_titles_verified": verified,
+            "canonical_bank_items": len(bank),
+            "unique_ids": len(set(ids)),
+            "unique_episode_sources": len(set(sources)),
+            "dialogue_shape_errors": len(dialogue_bad),
+            "spotify_unresolved": len(spotify_missing),
+            "spotify_stored_mismatches": len(spotify_stored_mismatches),
+            "listen_titles_verified": listen_verified,
             "listen_source_mismatches": len(listen_mismatches),
-            "listen_multiple_stored_urls_for_same_title": len(listen_multiple_urls),
             "listen_fetch_errors": len(listen_fetch_errors),
         },
-        "spotify_mismatches": spotify_mismatches,
-        "spotify_missing": spotify_missing,
-        "listen_mismatches": sorted(listen_mismatches, key=lambda x: x["episode_title"]),
-        "listen_multiple_urls": sorted(listen_multiple_urls, key=lambda x: x["episode_title"]),
-        "listen_fetch_errors": sorted(listen_fetch_errors, key=lambda x: x["episode_title"]),
+        "dialogue_shape_errors": dialogue_bad,
+        "spotify_unresolved": spotify_missing,
+        "spotify_stored_mismatches": spotify_stored_mismatches,
+        "listen_mismatches": sorted(listen_mismatches, key=lambda x: str(x.get("id"))),
+        "listen_fetch_errors": sorted(listen_fetch_errors, key=lambda x: str(x.get("id"))),
     }
     REPORT_PATH.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))
+
+    hard_errors = (
+        len(set(ids)) != 127
+        or len(set(sources)) != 127
+        or dialogue_bad
+        or spotify_missing
+        or spotify_stored_mismatches
+        or listen_mismatches
+        or listen_fetch_errors
+    )
+    if hard_errors:
+        raise RuntimeError("canonical funny clip quality audit failed; inspect funny_clip_quality_report.json")
 
 
 if __name__ == "__main__":
