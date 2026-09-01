@@ -153,6 +153,22 @@ def resolve_spotify(item: dict, index: dict[str, list[str]], overrides: dict[str
     return None
 
 
+def _same_listen_title(expected: str, actual: str) -> bool:
+    """Accept the exact title or a clearly extended version of the same title.
+
+    Several older episodes store a concise Japanese title in the canonical bank,
+    while LISTEN now exposes that same Japanese title plus an English translation
+    or an additional subtitle. Require the shorter normalized form to be at least
+    12 characters so a generic fragment cannot accidentally validate a wrong page.
+    """
+    wanted = normalize(expected)
+    page = normalize(actual)
+    if wanted == page:
+        return True
+    shorter, longer = sorted((wanted, page), key=len)
+    return len(shorter) >= 12 and shorter in longer
+
+
 def verify_listen(item: dict) -> tuple[str, dict]:
     base = {
         "id": item.get("id"),
@@ -168,7 +184,7 @@ def verify_listen(item: dict) -> tuple[str, dict]:
         return "error", {**base, "error": f"{type(exc).__name__}: {exc}"}
     if not page_title:
         return "error", {**base, "error": "no page title found"}
-    if normalize(page_title) != normalize(item.get("episode_title", "")):
+    if not _same_listen_title(str(item.get("episode_title") or ""), page_title):
         return "mismatch", {**base, "page_title": page_title}
     return "ok", base
 
