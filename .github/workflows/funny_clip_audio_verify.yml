@@ -13,22 +13,6 @@ permissions:
 
 jobs:
   transcribe:
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - clip_id: all-episode-009
-            start: 40
-            audio_url: 'https://anchor.fm/s/10422ca68/podcast/play/123013829/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-6-18%2F428201039-44100-2-5ef8ee6a11e43.m4a'
-          - clip_id: all-episode-033
-            start: 90
-            audio_url: 'https://anchor.fm/s/10422ca68/podcast/play/117970752/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-3-4%2F421425782-44100-2-7a33dddc0f121.m4a'
-          - clip_id: all-episode-114
-            start: 235
-            audio_url: 'https://anchor.fm/s/10422ca68/podcast/play/103956165/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-11%2F401945779-44100-2-21237a91a6655.m4a'
-          - clip_id: all-episode-117
-            start: 10
-            audio_url: 'https://anchor.fm/s/10422ca68/podcast/play/103947600/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-10%2F401934579-44100-2-58e64b17ffb93.m4a'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -40,59 +24,38 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
           python -m pip install --quiet faster-whisper
-      - name: Extract candidate window
-        env:
-          AUDIO_URL: ${{ matrix.audio_url }}
-          CLIP_ID: ${{ matrix.clip_id }}
-          START: ${{ matrix.start }}
+      - name: Extract ambiguous speaker-boundary window
         run: |
           mkdir -p /tmp/funny-audio /tmp/funny-asr
           ffmpeg -hide_banner -loglevel error -y \
-            -ss "$START" -i "$AUDIO_URL" -t 70 \
-            -vn -ac 1 -ar 16000 "/tmp/funny-audio/${CLIP_ID}.wav"
-      - name: Transcribe candidate window
-        env:
-          CLIP_ID: ${{ matrix.clip_id }}
-          START: ${{ matrix.start }}
+            -ss 240 -i 'https://anchor.fm/s/10422ca68/podcast/play/103956165/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-11%2F401945779-44100-2-21237a91a6655.m4a' -t 25 \
+            -vn -ac 1 -ar 16000 /tmp/funny-audio/all-episode-114.wav
+      - name: Transcribe ambiguous window with small model
         run: |
           python - <<'PY'
-          import json, os
+          import json
           from faster_whisper import WhisperModel
 
-          clip_id = os.environ['CLIP_ID']
-          offset = float(os.environ['START'])
-          audio = f"/tmp/funny-audio/{clip_id}.wav"
-          out = f"/tmp/funny-asr/{clip_id}-base.json"
-          model = WhisperModel("base", device="cpu", compute_type="int8", cpu_threads=4, num_workers=1)
+          model = WhisperModel('small', device='cpu', compute_type='int8', cpu_threads=4, num_workers=1)
           segments, info = model.transcribe(
-              audio,
-              language="ja",
-              beam_size=5,
-              best_of=5,
-              condition_on_previous_text=True,
-              vad_filter=False,
+              '/tmp/funny-audio/all-episode-114.wav',
+              language='ja', beam_size=5, best_of=5,
+              condition_on_previous_text=True, vad_filter=False,
           )
           rows = [{
-              "start": round(offset + s.start, 3),
-              "end": round(offset + s.end, 3),
-              "text": s.text.strip(),
+              'start': round(240 + s.start, 3),
+              'end': round(240 + s.end, 3),
+              'text': s.text.strip(),
           } for s in segments]
-          payload = {
-              "clip_id": clip_id,
-              "probe_start": offset,
-              "probe_duration": 70,
-              "model": "base",
-              "segments": rows,
-              "text": " ".join(x["text"] for x in rows),
-          }
-          with open(out, "w", encoding="utf-8") as fh:
-              json.dump(payload, fh, ensure_ascii=False, indent=2)
-          print(json.dumps(rows, ensure_ascii=False))
+          payload = {'clip_id':'all-episode-114','probe_start':240,'probe_duration':25,'model':'small','segments':rows,'text':' '.join(x['text'] for x in rows)}
+          with open('/tmp/funny-asr/all-episode-114-small.json','w',encoding='utf-8') as fh:
+              json.dump(payload,fh,ensure_ascii=False,indent=2)
+          print(json.dumps(rows,ensure_ascii=False))
           PY
-      - name: Upload precise QA transcript
+      - name: Upload speaker-boundary QA transcript
         uses: actions/upload-artifact@v4
         with:
-          name: funny-audio-base-${{ matrix.clip_id }}
-          path: /tmp/funny-asr/${{ matrix.clip_id }}-base.json
+          name: funny-audio-small-all-episode-114
+          path: /tmp/funny-asr/all-episode-114-small.json
           if-no-files-found: error
           retention-days: 7
