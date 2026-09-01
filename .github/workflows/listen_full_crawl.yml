@@ -1,0 +1,100 @@
+name: Temporary LISTEN Full Crawl
+
+on:
+  push:
+    branches:
+      - feat/funny-clip-every-episode
+    paths:
+      - .github/workflows/listen_full_crawl.yml
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Playwright
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Crawl LISTEN episode pages
+        run: |
+          cat > crawl_listen.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          import fs from 'fs';
+
+          const browser = await chromium.launch({headless:true});
+          const context = await browser.newContext({ viewport: { width: 1440, height: 1200 } });
+          const page = await context.newPage();
+          const episodeMap = new Map();
+
+          for (let p = 1; p <= 10; p++) {
+            const url = p === 1 ? 'https://listen.style/p/reelpal' : `https://listen.style/p/reelpal?page=${p}`;
+            const resp = await page.goto(url, {waitUntil:'domcontentloaded', timeout:90000});
+            if (!resp || resp.status() >= 400) break;
+            await page.waitForTimeout(1800);
+            const items = await page.locator('a[href^="/p/reelpal/"]').evaluateAll(nodes => nodes.map(a => ({
+              href: a.getAttribute('href'),
+              text: (a.textContent || '').trim()
+            })));
+            let added = 0;
+            for (const item of items) {
+              if (!item.href || !/^\/p\/reelpal\/[A-Za-z0-9_-]+$/.test(item.href)) continue;
+              if (!episodeMap.has(item.href)) {
+                episodeMap.set(item.href, item.text);
+                added++;
+              }
+            }
+            console.log(`list page ${p}: links=${items.length} new=${added} total=${episodeMap.size}`);
+            if (added === 0) break;
+          }
+
+          const results = [];
+          let idx = 0;
+          for (const [href, listTitle] of episodeMap.entries()) {
+            idx++;
+            const url = `https://listen.style${href}`;
+            try {
+              const resp = await page.goto(url, {waitUntil:'domcontentloaded', timeout:90000});
+              await page.waitForTimeout(1800);
+              const title = await page.locator('h1').first().innerText().catch(() => listTitle);
+              const bodyText = await page.locator('body').innerText();
+              const timed = await page.locator('a[href*="#t="] , [data-start-time], time').evaluateAll(nodes => nodes.slice(0,2500).map(n => ({
+                text: (n.textContent || '').trim(),
+                href: n.getAttribute?.('href') || null,
+                start: n.getAttribute?.('data-start-time') || null
+              }))).catch(() => []);
+              const scripts = await page.locator('script').evaluateAll(nodes => nodes.map(n => n.textContent || '').filter(t => /transcript|utterance|speaker|startTime|start_time/i.test(t)).slice(0,20)).catch(() => []);
+              results.push({
+                url,
+                slug: href.split('/').pop(),
+                listTitle,
+                title: (title || '').trim(),
+                status: resp?.status() || null,
+                bodyText,
+                timed,
+                scripts
+              });
+              console.log(`[${idx}/${episodeMap.size}] ${url} chars=${bodyText.length} timed=${timed.length}`);
+            } catch (e) {
+              console.log(`[${idx}/${episodeMap.size}] FAIL ${url}: ${e}`);
+              results.push({url, slug:href.split('/').pop(), listTitle, error:String(e)});
+            }
+          }
+
+          fs.mkdirSync('listen-crawl', {recursive:true});
+          fs.writeFileSync('listen-crawl/episodes.json', JSON.stringify(results, null, 2));
+          fs.writeFileSync('listen-crawl/summary.json', JSON.stringify({discovered:episodeMap.size, crawled:results.filter(x=>!x.error).length, failed:results.filter(x=>x.error).length}, null, 2));
+          await browser.close();
+          EOF
+          node crawl_listen.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: listen-full-crawl
+          path: listen-crawl/
+          retention-days: 1
