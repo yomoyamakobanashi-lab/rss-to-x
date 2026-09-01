@@ -6,15 +6,15 @@ from __future__ import annotations
 import html
 import json
 import re
-import time
 import urllib.request
 from collections import OrderedDict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 OUTPUT = ROOT / "funny_clip_transcript_snapshot.json"
-USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/1.0)"
+USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/1.1)"
 
 BANK_PATHS = [
     DATA / "funny_clip_posts.json",
@@ -32,23 +32,20 @@ def normalize(value: str) -> str:
     return value
 
 
-def fetch(url: str, timeout: int = 30) -> str:
+def fetch(url: str, timeout: int = 8) -> str:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
     with urllib.request.urlopen(request, timeout=timeout) as response:
         return response.read().decode("utf-8", errors="replace")
 
 
 def visible_text(page_html: str) -> str:
-    # LISTEN renders episode/transcript content in the initial document. Remove
-    # code/style noise while retaining the visible transcript for human QA.
     text = re.sub(r"<script\b[^>]*>.*?</script>", " ", page_html, flags=re.I | re.S)
     text = re.sub(r"<style\b[^>]*>.*?</style>", " ", text, flags=re.I | re.S)
     text = re.sub(r"<svg\b[^>]*>.*?</svg>", " ", text, flags=re.I | re.S)
     text = re.sub(r"<br\s*/?>", "\n", text, flags=re.I)
     text = re.sub(r"</(?:p|div|li|h[1-6]|section|article|main|button)>", "\n", text, flags=re.I)
     text = re.sub(r"<[^>]+>", " ", text)
-    text = html.unescape(text)
-    text = text.replace("\r", "")
+    text = html.unescape(text).replace("\r", "")
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n[ \t]+", "\n", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
@@ -70,13 +67,17 @@ def load_unique_episodes() -> list[dict]:
                 continue
             key = normalize(title)
             if key not in episodes:
-                episodes[key] = {
-                    "episode_title": title,
-                    "source_url": url,
-                    "ids": [],
-                }
+                episodes[key] = {"episode_title": title, "source_url": url, "ids": []}
             episodes[key]["ids"].append(str(item.get("id") or ""))
     return list(episodes.values())
+
+
+def snapshot_episode(episode: dict) -> tuple[bool, dict]:
+    try:
+        text = visible_text(fetch(episode["source_url"]))
+        return True, {**episode, "text": text}
+    except Exception as exc:
+        return False, {**episode, "error": f"{type(exc).__name__}: {exc}"}
 
 
 def main() -> None:
@@ -84,18 +85,21 @@ def main() -> None:
     snapshots: list[dict] = []
     failures: list[dict] = []
 
-    for index, episode in enumerate(episodes, start=1):
-        try:
-            body = fetch(episode["source_url"])
-            text = visible_text(body)
-            snapshots.append({**episode, "text": text})
-            print(f"[OK] {index}/{len(episodes)} {episode['episode_title'][:70]} chars={len(text)}")
-        except Exception as exc:
-            failures.append({**episode, "error": f"{type(exc).__name__}: {exc}"})
-            print(f"[FAIL] {index}/{len(episodes)} {episode['source_url']}: {exc}")
-        if index % 20 == 0:
-            time.sleep(0.1)
+    with ThreadPoolExecutor(max_workers=12) as pool:
+        futures = {pool.submit(snapshot_episode, episode): episode for episode in episodes}
+        done = 0
+        for future in as_completed(futures):
+            ok, result = future.result()
+            done += 1
+            if ok:
+                snapshots.append(result)
+                print(f"[OK] {done}/{len(episodes)} chars={len(result['text'])} {result['episode_title'][:60]}")
+            else:
+                failures.append(result)
+                print(f"[FAIL] {done}/{len(episodes)} {result['source_url']} {result['error']}")
 
+    snapshots.sort(key=lambda x: x["episode_title"])
+    failures.sort(key=lambda x: x["episode_title"])
     payload = {
         "summary": {
             "unique_episodes": len(episodes),
