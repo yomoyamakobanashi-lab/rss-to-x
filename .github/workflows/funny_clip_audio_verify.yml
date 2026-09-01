@@ -26,16 +26,14 @@ jobs:
           - clip_id: all-episode-117
             audio_url: 'https://anchor.fm/s/10422ca68/podcast/play/103947600/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-10%2F401934579-44100-2-58e64b17ffb93.m4a'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 40
     steps:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install ffmpeg and Whisper
+      - name: Install fast ASR runtime
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg
-          python -m pip install --quiet openai-whisper requests
+          python -m pip install --quiet faster-whisper requests
       - name: Download source audio
         env:
           AUDIO_URL: ${{ matrix.audio_url }}
@@ -58,16 +56,37 @@ jobs:
         env:
           CLIP_ID: ${{ matrix.clip_id }}
         run: |
-          whisper "/tmp/funny-audio/${CLIP_ID}.m4a" \
-            --model tiny \
-            --language Japanese \
-            --task transcribe \
-            --output_dir /tmp/funny-asr \
-            --output_format json \
-            --fp16 False \
-            --condition_on_previous_text False \
-            --verbose False
-          mv "/tmp/funny-asr/${CLIP_ID}.json" "/tmp/funny-asr/${CLIP_ID}-whisper.json"
+          python - <<'PY'
+          import json, os
+          from faster_whisper import WhisperModel
+
+          clip_id = os.environ['CLIP_ID']
+          audio = f"/tmp/funny-audio/{clip_id}.m4a"
+          out = f"/tmp/funny-asr/{clip_id}-whisper.json"
+          model = WhisperModel("tiny", device="cpu", compute_type="int8", cpu_threads=4, num_workers=1)
+          segments, info = model.transcribe(
+              audio,
+              language="ja",
+              beam_size=1,
+              best_of=1,
+              condition_on_previous_text=False,
+              vad_filter=True,
+          )
+          rows = []
+          for seg in segments:
+              rows.append({"start": round(seg.start, 3), "end": round(seg.end, 3), "text": seg.text.strip()})
+          payload = {
+              "clip_id": clip_id,
+              "language": info.language,
+              "language_probability": info.language_probability,
+              "duration": info.duration,
+              "segments": rows,
+              "text": " ".join(x["text"] for x in rows),
+          }
+          with open(out, "w", encoding="utf-8") as fh:
+              json.dump(payload, fh, ensure_ascii=False, indent=2)
+          print(f"segments={len(rows)} duration={info.duration:.1f}s")
+          PY
       - name: Upload temporary QA transcript
         uses: actions/upload-artifact@v4
         with:
