@@ -10,11 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 BANK = DATA / "funny_clip_posts_all_episodes.json"
-OVERRIDE_PATHS = [
-    DATA / "funny_clip_quality_overrides.json",
-    DATA / "funny_clip_quality_overrides_2.json",
-    DATA / "funny_clip_quality_overrides_3.json",
-]
+OVERRIDE_PATHS = sorted(DATA.glob("funny_clip_quality_overrides*.json"))
 SNAPSHOT = ROOT / "funny_clip_transcript_snapshot.json"
 OUTPUT = ROOT / "funny_clip_human_qa_packet.json"
 
@@ -33,6 +29,8 @@ def load_overrides() -> dict[str, dict]:
             continue
         for key, value in data.items():
             if isinstance(value, dict):
+                if str(key) in result:
+                    raise RuntimeError(f"duplicate QA override id: {key}")
                 result[str(key)] = value
     return result
 
