@@ -1,0 +1,117 @@
+name: Temporary Funny Transcript Cleanup 2
+
+on:
+  push:
+    branches:
+      - fix/funny-clip-transcript-cleanup
+    paths:
+      - .github/workflows/funny_transcript_cleanup_2.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/funny-clip-transcript-cleanup
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install requests
+      - name: Apply context-sensitive corrections
+        run: |
+          cat > /tmp/fix2.py <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/funny_clip_posts_all_episodes.json')
+          bank=json.loads(p.read_text(encoding='utf-8'))
+          d={x['id']:x for x in bank}
+
+          def rep(cid, old, new):
+              item=d[cid]; n=0
+              if old in item['text']:
+                  item['text']=item['text'].replace(old,new); n+=1
+              if item.get('dialogue'):
+                  out=[]
+                  for line in item['dialogue']:
+                      if old in line:
+                          line=line.replace(old,new); n+=1
+                      out.append(line)
+                  item['dialogue']=out
+              if not n: raise RuntimeError(f'not found {cid}: {old}')
+
+          # Character name from Hanu-Man: protagonist is Hanumanthu, not Hanuman.
+          rep('all-episode-030','ハヌマン','ハヌマントゥ')
+
+          # Restore intentional wrong guesses/mispronunciations; they are the joke itself.
+          rep('all-episode-072','ホビットのビルボじゃなくて、','ホビットのイボンヌじゃなくて、')
+          rep('all-episode-077','え?レプティリアン?','え?レプリティアン?')
+
+          # The Hangover replacement must remain transcript-grounded, not normalized paraphrase.
+          h=d['all-episode-070']
+          h['dialogue']=[
+              '7たす8イコール15って、絶妙に気持ちよくない?',
+              'あんまり気持ちよくないですね',
+              '奇跡の気持ちよさだよね',
+              '7たす8が?',
+              'そう。なんかさ、9たす6が15は予定調和的な感じじゃん',
+              'うん',
+          ]
+          h['text']=' / '.join(h['dialogue'])
+
+          # Replace a heavily garbled Frankenstein excerpt with a clear contiguous funny exchange
+          # from the same LISTEN transcript.
+          f=d['all-episode-064']
+          f['dialogue']=[
+              'あとあの科学者ってお風呂でひらめかなきゃいけないんですかっていう',
+              'ユリーカ的な',
+              'なんだろうね、多いよね',
+              'アインシュタインもそんな逸話なかったっけ?',
+              'いや、アルキメデスじゃないの',
+              '違う、アインシュタインは風呂嫌いだ。ただの風呂嫌いだった',
+          ]
+          f['text']=' / '.join(f['dialogue'])
+
+          rep('all-episode-102','ブルームヒルドは、ヴィンランド沙賀の辺ですよね。','ブリュンヒルデは、ヴォルスンガ・サガの辺ですよね。')
+          rep('all-episode-105','あれ8回言う以外に何か入ってんの?','あれハッカ油以外に何か入ってんの?')
+          rep('all-episode-111','マニュアルのせいで','エマニエルのせいで')
+
+          p.write_text(json.dumps(bank,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('[OK] context-sensitive fixes applied')
+          PY
+          python /tmp/fix2.py
+      - name: Validate full production render
+        env:
+          FUNNY_CLIP_DRY_RUN: '1'
+        run: |
+          python scripts/funny_clip_spotify.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import scripts.funny_clip_spotify as sp
+          bank=json.loads(Path('data/funny_clip_posts_all_episodes.json').read_text(encoding='utf-8'))
+          blob=json.dumps(bank,ensure_ascii=False)
+          required=['ハヌマントゥ','ホビットのイボンヌじゃなくて','え?レプリティアン?','ハッカ油','エマニエルのせいで','ブリュンヒルデ','ヴォルスンガ・サガ','アルキメデス']
+          missing=[x for x in required if x not in blob]
+          if missing: raise RuntimeError(f'required corrected/intentional forms missing: {missing}')
+          forbidden=['あれ8回言う以外','マニュアルのせいで','ブルームヒルドは、ヴィンランド沙賀','ハヌマンじゃないの?']
+          stale=[x for x in forbidden if x in blob]
+          if stale: raise RuntimeError(f'stale forms remain: {stale}')
+          for item in sp.base.load_bank():
+              root=sp.base.render_root(item); reply=sp.render_reply(item)
+              assert len(root)<=280, item['id']
+              assert '/search/' not in reply, item['id']
+              assert '「「' not in root and '」」' not in root, item['id']
+          print('[OK] full render clean after context pass')
+          PY
+      - name: Commit refinements
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/funny_clip_posts_all_episodes.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Refine context-sensitive funny transcript fixes'
+          git push origin HEAD:fix/funny-clip-transcript-cleanup
