@@ -1,0 +1,66 @@
+{
+  "episode_id": "kynzvxkx",
+  "listen_episode_url": "https://listen.style/p/reelpal/kynzvxkx",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Childhood-Era-Series-Vol-4-Disneys-Toy-Story--What-Do-Toys-Really-Mean-to-Children-e3m8isl",
+  "title": "少年時代企画第４弾 ディズニー映画『トイ・ストーリー』 おもちゃは子どもにとってのなんだろう Childhood Era Series Vol.4: Disney's Toy Story — What Do Toys Really Mean to Children?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 44,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングとハムカツ論争"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:00",
+      "title": "『トイ・ストーリー』1〜4のあらすじ紹介"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:03",
+      "title": "おたより紹介：トイ・ストーリーのCGと人間が怖い"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:03",
+      "title": "『トイ・ストーリー1』の細かすぎる魅力と英語音声の発見"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:05",
+      "title": "『トイ・ストーリー2』の人形修理とオマージュ要素"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:01",
+      "title": "『トイ・ストーリー3』の解像度とサニーサイド保育園の懸念"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:04",
+      "title": "3の完璧なエンディングと大人になった世代への響き"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:06",
+      "title": "『トイ・ストーリー4』の違和感とキャラクターの変化"
+    },
+    {
+      "segment_index": 24,
+      "timestamp": "1:12:04",
+      "title": "大間による説：スティーブ・ジョブズの人生とトイ・ストーリー"
+    },
+    {
+      "segment_index": 31,
+      "timestamp": "1:33:01",
+      "title": "誠による説：トイ・ストーリーにみる父性のアップデート史"
+    },
+    {
+      "segment_index": 41,
+      "timestamp": "2:03:01",
+      "title": "次回予告：大邦画祭り『男はつらいよ』"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "episode_id": "wh0cqojf",
+  "listen_episode_url": "https://listen.style/p/reelpal/wh0cqojf",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3dedg3",
+  "title": "新年のご挨拶",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 15,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "新年のご挨拶と機材トラブルによる遅延"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:00",
+      "title": "昨年から今年へ向けた番組の振り返り"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:03",
+      "title": "リスナーからのリクエストや今後の告知"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:04",
+      "title": "映画『モンスターハンター』の感想とツッコミ"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:04",
+      "title": "映画『ドント・ルック・アップ』の爆笑コメディ要素"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:00",
+      "title": "思わぬところで大活躍していたロン・パールマン"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:00",
+      "title": "アリアナ・グランデの魅力と出演作の話題"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:04",
+      "title": "エンディングと今後の配信予定について"
+    }
+  ]
+}

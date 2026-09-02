@@ -1,0 +1,136 @@
+{
+  "episode_id": "ss6boava",
+  "listen_episode_url": "https://listen.style/p/reelpal/ss6boava",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-TheBucketList--LastVegas--How-Do-You-Choose-to-Face-the-End-e37qdi2",
+  "title": "【Replay】#映画『#最高の人生の見つけ方』『#最高の人生の作り方』あなたは死とどう向き合いたいですか？ [Replay] #TheBucketList & #LastVegas — How Do You Choose to Face the End?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 26,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングと映画タイトルの整理"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:03",
+      "title": "2本の映画のあらすじと概要"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:02",
+      "title": "死と向き合う多様な反応と『最高の人生の見つけ方』"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:05",
+      "title": "入院生活を通じた人間関係のリアル"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:06",
+      "title": "死を直球で描くテーマの魅力"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:06",
+      "title": "フィンクの危機モデルと映画のプロット"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:08",
+      "title": "映像表現の説得力と観光地の裏側"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:00",
+      "title": "ピラミッドのロケーションと死の象徴"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:00",
+      "title": "『最高の人生の作り方』と立ち止まる生者たち"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:02",
+      "title": "残された人々の生き方と死生観の比較"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:01",
+      "title": "人生の価値の再発見と「足るを知る」"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:00",
+      "title": "ライフステージの追体験と生命の充実"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:02",
+      "title": "死後の世界や葬式の持つ意味"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:04",
+      "title": "死を思うことと人間の営み"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:06",
+      "title": "現代社会における死の隠蔽と美化"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:01",
+      "title": "生命の利用と動物的な事実から目を背けないこと"
+    },
+    {
+      "segment_index": 16,
+      "timestamp": "48:03",
+      "title": "宗教と死生観・距離感のとり方"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:00",
+      "title": "人間の中の神と動物、家庭での教育について"
+    },
+    {
+      "segment_index": 18,
+      "timestamp": "54:05",
+      "title": "性教育とコミュニティの変容"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:03",
+      "title": "知識を持って向き合うことの重要性"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:04",
+      "title": "人と関わり自分を見つめ直すこと"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:00",
+      "title": "結論：死とどう向き合いたいか"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:04",
+      "title": "それぞれの死生観と日々の楽しみ方"
+    },
+    {
+      "segment_index": 23,
+      "timestamp": "1:09:04",
+      "title": "宗教観への想いと映画の感想"
+    },
+    {
+      "segment_index": 24,
+      "timestamp": "1:12:02",
+      "title": "エンディングと映画を語る時間"
+    }
+  ]
+}

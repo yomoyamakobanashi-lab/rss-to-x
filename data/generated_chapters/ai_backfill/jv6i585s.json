@@ -1,0 +1,46 @@
+{
+  "episode_id": "jv6i585s",
+  "listen_episode_url": "https://listen.style/p/reelpal/jv6i585s",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Any-Day-Now--The-Bittersweet-Shape-of-a-Happiness-That-Can-Never-Be-Made-Whole-e3jovth",
+  "title": "映画『チョコレートドーナツ』ほろ苦く決して埋まらない幸せの形 Any Day Now — The Bittersweet Shape of a Happiness That Can Never Be Made Whole",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 34,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングとクッキー・ビスケットへのこだわり"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:06",
+      "title": "映画『チョコレートドーナツ』のタイトルコールと導入"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:04",
+      "title": "『チョコレートドーナツ』のあらすじ紹介"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:03",
+      "title": "作中に登場するアメリカのドーナツをめぐる雑談"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:00",
+      "title": "同性カップルの育児と当時の法的背景を調べる"
+    },
+    {
+      "segment_index": 23,
+      "timestamp": "1:09:09",
+      "title": "母性を巡る考察：ルディとポールが描いたもの"
+    },
+    {
+      "segment_index": 31,
+      "timestamp": "1:33:03",
+      "title": "コンビニドーナツの魅力と次回予告"
+    }
+  ]
+}

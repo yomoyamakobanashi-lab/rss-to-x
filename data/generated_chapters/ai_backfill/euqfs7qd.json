@@ -1,0 +1,81 @@
+{
+  "episode_id": "euqfs7qd",
+  "listen_episode_url": "https://listen.style/p/reelpal/euqfs7qd",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replayher-Replay-her--The-Invisible-Threads-That-Bind-Us-e35in8q",
+  "title": "【Replay】映画『#her』人と人とをつなぐものとは？ [Replay] her — The Invisible Threads That Bind Us",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 25,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "映画『her／世界でひとつの彼女』のあらすじ紹介"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:01",
+      "title": "豪華キャストの魅力とスカーレット・ヨハンソンの声の出演"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:01",
+      "title": "見えないからこそ想像力を掻き立てられる表現"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:03",
+      "title": "AIとの恋愛の結末と本作が描きたかったもの"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:04",
+      "title": "セオドアの孤独と電話越しの印象的なシーン"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:01",
+      "title": "自己表現に臆病なセオドアとサマンサの対比"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:05",
+      "title": "元妻キャサリンとの思い出と実際の姿のギャップ"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:04",
+      "title": "隣人エイミーとコミュニケーションにおける理解の象徴"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:03",
+      "title": "人間の不完全さと言語の限界について"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:05",
+      "title": "プラトンのイデア論から見るセオドアとサマンサの世界"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:03",
+      "title": "フッサールの現象学とサマンサの認識のクリアさ"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:02",
+      "title": "言語の限界を超えて関係を再構築するセオドアとエイミー"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:00",
+      "title": "人間と人をつなぐもの、そして言葉への執着"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:03",
+      "title": "新ポッドキャスト番組の立ち上げと今後の展望"
+    }
+  ]
+}

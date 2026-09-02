@@ -1,0 +1,76 @@
+{
+  "episode_id": "ij7ssvcv",
+  "listen_episode_url": "https://listen.style/p/reelpal/ij7ssvcv",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Grand-Finale--Midsommar-Decoding-Danis-Final-Smile-e38f8ed",
+  "title": "真夏のホラー企画最終章 #ホラー映画 『#ミッドサマー』 ダニーの笑顔をどう読むか？ Summer Horror Grand Finale – #Midsommar: Decoding Dani’s Final Smile",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 41,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング・ドーナツをめぐる雑談"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:09",
+      "title": "真夏のホラー企画最終章『ミッドサマー』導入"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:01",
+      "title": "映画『ミッドサマー』あらすじ紹介"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:01",
+      "title": "先駆けとなったホラー映画『ウィッカーマン』"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:02",
+      "title": "クソ野郎の魅力・マークを演じた俳優について"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:07",
+      "title": "北欧神話と「エッダ」の世界観"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:05",
+      "title": "作中に登場するルーン文字の秘密"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:07",
+      "title": "アテストパーン（儀式）とクマの神聖視"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:02",
+      "title": "ホルガ村の宗教観と性の描写"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:10",
+      "title": "同化と異化：集団心理から見る恐怖"
+    },
+    {
+      "segment_index": 23,
+      "timestamp": "1:09:15",
+      "title": "依存と救い：ダニーの心理的変化"
+    },
+    {
+      "segment_index": 32,
+      "timestamp": "1:36:00",
+      "title": "ダニーの最後の笑顔をどう読むか"
+    },
+    {
+      "segment_index": 36,
+      "timestamp": "1:48:00",
+      "title": "エンディング・次回予告（エイリアンシリーズ）"
+    }
+  ]
+}

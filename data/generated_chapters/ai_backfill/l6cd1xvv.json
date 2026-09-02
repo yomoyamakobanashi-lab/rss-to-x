@@ -1,0 +1,66 @@
+{
+  "episode_id": "l6cd1xvv",
+  "listen_episode_url": "https://listen.style/p/reelpal/l6cd1xvv",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Summer-Japanese-Film-Festival-Otoko-wa-Tsurai-yo--Where-Did-That-Japan-Go-e3mj023",
+  "title": "夏の邦画祭り 映画『男はつらいよ』 あの頃の日本はどこへ行ったのか Summer Japanese Film Festival: Otoko wa Tsurai yo — Where Did That Japan Go?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 31,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング・雨の日の思い出と現代アート"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:02",
+      "title": "夏の邦画祭り『男はつらいよ』開幕"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:03",
+      "title": "『男はつらいよ』第一作のあらすじ"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:02",
+      "title": "テレビ版の伝説と映画化の背景"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:05",
+      "title": "テキ屋の口上と昭和の健康グッズ"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:00",
+      "title": "ヒロイン・冬子の神対応と寅さんの人間像"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:02",
+      "title": "寅さんは時代のトリックスターなのか"
+    },
+    {
+      "segment_index": 16,
+      "timestamp": "48:02",
+      "title": "高度経済成長期の裏で描かれた下町ノスタルジー"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:11",
+      "title": "理屈と人情：寅さんの名言に込められたカウンター"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:15",
+      "title": "「昔は良かった」の正体と共同体の光と影"
+    },
+    {
+      "segment_index": 27,
+      "timestamp": "1:21:00",
+      "title": "エンディング・次回予告と番組案内"
+    }
+  ]
+}

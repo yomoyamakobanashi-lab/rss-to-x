@@ -1,0 +1,66 @@
+{
+  "episode_id": "arpgdxmy",
+  "listen_episode_url": "https://listen.style/p/reelpal/arpgdxmy",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Special-Vol-2-The-Haunted-School-Series--Who-Are-Ghost-Stories-Really-For-e36d71c",
+  "title": "真夏のホラー映画特集その２ 夏休み映画の傑作『#学校の怪談』シリーズ～怪談は誰のためのものなのか Summer Horror Special Vol.2: The “Haunted School” Series – Who Are Ghost Stories Really For?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 34,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングと肉まんとポン酢のこだわり"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:00",
+      "title": "真夏のホラー映画特集その2『学校の怪談』シリーズ開幕"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:04",
+      "title": "90年代の怪談ブームと映画化の背景"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:11",
+      "title": "4作品を通した率直な感想とマスコットキャラクター"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:06",
+      "title": "旧校舎の思い出と学校の怪談の舞台"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:09",
+      "title": "大間の論：90年代日本の子供向け映画を装った大人のセラピー説"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:00",
+      "title": "異色作となった第4作目の評価と恐怖描写"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:04",
+      "title": "シリーズ4作品の個人的ランキングとそれぞれの見どころ"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:00",
+      "title": "大間のもう一つの論：真相心理のAV（アダルトビデオ）説"
+    },
+    {
+      "segment_index": 27,
+      "timestamp": "1:21:00",
+      "title": "怪談やホラー映画は誰のためのものなのか"
+    },
+    {
+      "segment_index": 29,
+      "timestamp": "1:27:00",
+      "title": "リスナーからのメッセージと次回予告"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "episode_id": "vpn0oyfu",
+  "listen_episode_url": "https://listen.style/p/reelpal/vpn0oyfu",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-ReplaySlasher-Flick-ChildsPlay--What-Exactly-Was-Chucky-to-the-World-of-Horror-e36r0av",
+  "title": "【Replay】スラッシャームービー『#チャイルド・プレイ』チャッキーとはホラー界の何だったのか？ 【Replay】Slasher Flick #ChildsPlay — What Exactly Was #Chucky to the World of Horror?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 25,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "チャッキーとはホラー界の何だったのか？"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:12",
+      "title": "『チャイルド・プレイ』のあらすじと見どころ"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:01",
+      "title": "ホラーの文脈で作られたコメディ作品"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:03",
+      "title": "生きた人形に対する生理的な恐怖"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:00",
+      "title": "人間に近いものへの生物的な拒絶反応"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:00",
+      "title": "日本と欧米における恐怖の捉え方の違い"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:03",
+      "title": "ホラー映画における適切な明るさと演出"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:06",
+      "title": "名作ホラー映画の意外なトリビア"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:02",
+      "title": "絶妙な設定とセリフ回しの魅力"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:02",
+      "title": "序盤から展開されるシュールなコメディ要素"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:01",
+      "title": "母親の圧倒的な精神的タフネス"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:01",
+      "title": "殺人鬼の視点を用いたPOV演出"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:02",
+      "title": "背筋が凍る電池のサプライズ演出"
+    },
+    {
+      "segment_index": 16,
+      "timestamp": "48:04",
+      "title": "人形とロボットを使い分けた撮影技術"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:05",
+      "title": "CG全盛期ではない時代が生んだ不気味さ"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:02",
+      "title": "殺人鬼チャッキーの浅はかさとシリーズ展開"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:00",
+      "title": "ブードゥー教の描き方に対する考察"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:04",
+      "title": "チャッキーがホラー界に残したゲームチェンジャーとしての功績"
+    }
+  ]
+}

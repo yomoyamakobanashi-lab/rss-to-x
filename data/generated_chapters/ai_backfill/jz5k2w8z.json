@@ -1,0 +1,91 @@
+{
+  "episode_id": "jz5k2w8z",
+  "listen_episode_url": "https://listen.style/p/reelpal/jz5k2w8z",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-TheFly--Is-Science-the-Path-to-Human-Joy-e37qeh4",
+  "title": "【Replay】#映画『#ザ・フライ』科学は人間を幸福にするのだろうか？ [Replay] #TheFly — Is Science the Path to Human Joy?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 23,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "『ザ・フライ』のあらすじと導入"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:04",
+      "title": "デヴィッド・クローネンバーグ監督とボディホラー"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:00",
+      "title": "映画を見た率直な感想と印象的な描写"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:03",
+      "title": "キャラクターの心理描写とアイデンティティの喪失"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:00",
+      "title": "肉体と精神の結びつきを描く世界観"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:01",
+      "title": "科学が踏み込んでいい領域についての考察"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:20",
+      "title": "オカルトマニアが語るフィラデルフィア計画"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:06",
+      "title": "ジェフ・ゴールドブラムの魅力と演技力"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:01",
+      "title": "共演者との関係性とセクシーな魅力"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:13",
+      "title": "特殊メイクが生み出す圧倒的な生理的不快感"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:00",
+      "title": "なぜ「ハエ」がモチーフになったのか"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:04",
+      "title": "外面と内面の変容がもたらすテーマ"
+    },
+    {
+      "segment_index": 16,
+      "timestamp": "48:03",
+      "title": "登場人物それぞれの愛の形"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:02",
+      "title": "肉体の変化に対する心理的リアクション"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:01",
+      "title": "科学は人を幸福にするのかという問い"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:02",
+      "title": "科学技術と研究倫理についての議論"
+    }
+  ]
+}

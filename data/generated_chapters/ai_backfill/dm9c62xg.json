@@ -1,0 +1,71 @@
+{
+  "episode_id": "dm9c62xg",
+  "listen_episode_url": "https://listen.style/p/reelpal/dm9c62xg",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/HBO-Netflix--IntermissionZootopia2--WarnerBros--HBO--Netflix--All-the-Stuff-We-Ended-Up-Talking-About-e3c2uj1",
+  "title": "【インターミッション】#ズートピア２ とか#ワーナーブラザーズ とか#HBO とか#Netflix とか… 【Intermission】#Zootopia2, #WarnerBros, #HBO, #Netflix — All the Stuff We Ended Up Talking About",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 13,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "『ズートピア2』の公開とレビューを巡る議論"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:03",
+      "title": "ディズニー続編アニメの歴史と評価"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:07",
+      "title": "『トイ・ストーリー』シリーズと『ズートピア2』の懸念点"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:05",
+      "title": "『ズートピア』のメッセージ性とグッズ炎上問題"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:04",
+      "title": "キャラクターの解釈違いとカップリング論争"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:10",
+      "title": "Netflixによるワーナー・ブラザース買収のニュース"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:05",
+      "title": "買収に伴うコンテンツの権利と今後の展望"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:04",
+      "title": "ストリーミング時代における映像体験と映画館の価値"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:05",
+      "title": "映画館とストリーミングそれぞれの鑑賞スタイル"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:03",
+      "title": "名作の再評価とストリーミングの出会いを生む力"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:05",
+      "title": "映画『ミッドナイトスワン』の感想と邦画への思い"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:12",
+      "title": "『ミッドナイトスワン』の演出とエンディング"
+    }
+  ]
+}

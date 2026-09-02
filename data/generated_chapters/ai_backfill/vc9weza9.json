@@ -1,0 +1,56 @@
+{
+  "episode_id": "vc9weza9",
+  "listen_episode_url": "https://listen.style/p/reelpal/vc9weza9",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/VforVendetta-e3fnd4e",
+  "title": "政治系#アクション映画 『#VforVendetta』 仮面の下はどんな顔？",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 36,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングとマリオパーティーの思い出"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:00",
+      "title": "メイドインワリオと隠しゲーム「ピョロ」"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:00",
+      "title": "本日のテーマ『Vフォー・ヴェンデッタ』のあらすじ紹介"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:02",
+      "title": "ガイ・フォークスの歴史と映画の背景"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:08",
+      "title": "ナタリー・ポートマンの魅力と坊主頭の裏話"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:04",
+      "title": "映画のアクションと原作コミックの魅力"
+    },
+    {
+      "segment_index": 18,
+      "timestamp": "54:06",
+      "title": "『Vフォー・ヴェンデッタ』事実上の宗教戦争説"
+    },
+    {
+      "segment_index": 25,
+      "timestamp": "1:15:04",
+      "title": "匿名の英雄と革命の裏に潜む構造"
+    },
+    {
+      "segment_index": 33,
+      "timestamp": "1:39:03",
+      "title": "エンディングと次回予告"
+    }
+  ]
+}

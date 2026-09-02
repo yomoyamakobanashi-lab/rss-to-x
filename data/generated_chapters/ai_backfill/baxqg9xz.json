@@ -1,0 +1,41 @@
+{
+  "episode_id": "baxqg9xz",
+  "listen_episode_url": "https://listen.style/p/reelpal/baxqg9xz",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/A-Christmas-Movie-Staple--Jingle-All-the-Way-Lost-Fatherhood-and-the-Emergence-of-a-New-Family-Model-e3crdp0",
+  "title": "#クリスマス 映画の定番？『#ジングルオールザウェイ』 失われた父性と新たな家族の形 A Christmas Movie Staple? Jingle All the Way: Lost Fatherhood and the Emergence of a New Family Model",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 32,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング・日本と海外の治安や文化の雑談"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:01",
+      "title": "『ジングル・オール・ザ・ウェイ』あらすじ紹介"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:01",
+      "title": "シュワルツェネガーの魅力と映画の細部を語る"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:04",
+      "title": "失われた父性と新たな家族の形を読み解く"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:01",
+      "title": "消費社会を風刺する映画としての見方"
+    },
+    {
+      "segment_index": 27,
+      "timestamp": "1:21:02",
+      "title": "リスナーのお便り紹介と次回予告"
+    }
+  ]
+}

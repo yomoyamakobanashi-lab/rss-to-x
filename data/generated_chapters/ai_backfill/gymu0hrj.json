@@ -1,0 +1,46 @@
+{
+  "episode_id": "gymu0hrj",
+  "listen_episode_url": "https://listen.style/p/reelpal/gymu0hrj",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Request--2001-A-Space-Odyssey-How-Free-Can-Art-Interpretation-Be-e3a0msf",
+  "title": "リスナーリクエスト 『#２００１年宇宙の旅』アートの解釈はどこまで自由でいられるか Listener Request – 2001: A Space Odyssey: How Free Can Art Interpretation Be?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 37,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング・服装のこだわりと雑談"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:12",
+      "title": "リスナーのお便り紹介と次回予告"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:06",
+      "title": "『2001年宇宙の旅』あらすじと全体像"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:03",
+      "title": "作品の解釈論と序盤の感想"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:04",
+      "title": "ホワイトアメリカとしての作品解釈"
+    },
+    {
+      "segment_index": 25,
+      "timestamp": "1:15:03",
+      "title": "オカルト的視点から読み解く宇宙人メッセージ"
+    },
+    {
+      "segment_index": 31,
+      "timestamp": "1:33:00",
+      "title": "アートの解釈の自由とエンディング"
+    }
+  ]
+}

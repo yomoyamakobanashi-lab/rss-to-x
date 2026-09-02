@@ -1,0 +1,61 @@
+{
+  "episode_id": "bfay3tr1",
+  "listen_episode_url": "https://listen.style/p/reelpal/bfay3tr1",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayGoodWillHunting--Replay-Facing-Emotional-Wounds-Lessons-from-the-Film-GoodWillHunting-e34jkkq",
+  "title": "【Replay】映画『#GoodWillHunting』に見る心の傷との向き合い方 [Replay] Facing Emotional Wounds: Lessons from the Film #GoodWillHunting",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 26,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "『グッド・ウィル・ハンティング』のあらすじ紹介"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:01",
+      "title": "制作背景と豪華キャストのキャリアについて"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:04",
+      "title": "主人公のキャラクター造形と天才像への違和感"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:02",
+      "title": "心理描写と脚本の巧みさを読み解く"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:01",
+      "title": "心理学の理論から見る人間関係とトラウマ"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:01",
+      "title": "名シーン「君は悪くない」が持つ意味と解釈"
+    },
+    {
+      "segment_index": 16,
+      "timestamp": "48:02",
+      "title": "登場人物それぞれの心の傷と豊かさの正体"
+    },
+    {
+      "segment_index": 18,
+      "timestamp": "54:00",
+      "title": "愛着スタイルで紐解くキャラクターたちの心理分析"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:06",
+      "title": "ジェラルド教授とショーンの対立に見る倫理的命題"
+    },
+    {
+      "segment_index": 23,
+      "timestamp": "1:09:07",
+      "title": "撮影裏のエピソードと映画の総括"
+    }
+  ]
+}

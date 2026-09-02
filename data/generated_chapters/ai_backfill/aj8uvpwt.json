@@ -1,0 +1,46 @@
+{
+  "episode_id": "aj8uvpwt",
+  "listen_episode_url": "https://listen.style/p/reelpal/aj8uvpwt",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3ioutu",
+  "title": "【インターミッション】 ￼ #スクリーム とか ￼#シドニープレスコット とか #任天堂",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 12,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "『スクリーム7』公開決定とシリーズの展開"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:02",
+      "title": "『バイオハザード』映画シリーズの思い出"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:00",
+      "title": "ゲームの難易度と懐かしのアーケードゲーム"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:02",
+      "title": "バイオハザードの最新作とゾンビ描写の進化"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:00",
+      "title": "任天堂のゲーム作りと佐藤二郎の新作映画"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:01",
+      "title": "佐藤二郎の魅力とテレビ番組へのこだわり"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:02",
+      "title": "エンディングと次回へ向けての挨拶"
+    }
+  ]
+}

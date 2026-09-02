@@ -1,0 +1,36 @@
+{
+  "episode_id": "yhkp4fmv",
+  "listen_episode_url": "https://listen.style/p/reelpal/yhkp4fmv",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/SCREAM-JackBlack-GooseBumps-e3lc2cn",
+  "title": "【インターミッション】 #最終絶叫計画 とか#SCREAM とか#JackBlack #GooseBumps とか",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 12,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "スーパーガールの初登場とキャラクターの話題"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:19",
+      "title": "ジャック・ブラックの出演作と児童向けホラー小説『グースバンプス』の思い出"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:09",
+      "title": "『グースバンプス』の怖かったエピソードとソニーマガジンズ版の魅力"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:06",
+      "title": "映画版『グースバンプス』への感想と今後の企画について"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:01",
+      "title": "映画館での応援上映の妄想とエンディング"
+    }
+  ]
+}

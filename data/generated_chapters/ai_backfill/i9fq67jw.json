@@ -1,0 +1,71 @@
+{
+  "episode_id": "i9fq67jw",
+  "listen_episode_url": "https://listen.style/p/reelpal/i9fq67jw",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-Psychological-Horror--BeauIsAfraid--of-What-Exactly-e36dgbd",
+  "title": "【Replay】サイコホラー映画？『#ボーは恐れている』……何を？ [Replay] Psychological Horror? \"#BeauIsAfraid\" … of What Exactly?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 26,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "作品紹介と2分間プレゼン"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:01",
+      "title": "ストーリーのあらすじと展開"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:03",
+      "title": "難解なラストシーンの振り返り"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:00",
+      "title": "エンタメとアートの線引き"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:02",
+      "title": "毒親の描写と心理的虐待について"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:01",
+      "title": "「中と外」の構造と胎内回帰願望"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:05",
+      "title": "母親の呪いとコミュニケーションの恐怖"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:01",
+      "title": "フロイトの心理発達段階とエディプスコンプレックス"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:04",
+      "title": "水のモチーフとラストの爆発"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:01",
+      "title": "バスタブ入浴時死亡説の考察"
+    },
+    {
+      "segment_index": 18,
+      "timestamp": "54:00",
+      "title": "精神病院説（シャッターアイランド風解釈）"
+    },
+    {
+      "segment_index": 23,
+      "timestamp": "1:09:01",
+      "title": "視聴時の注意点とまとめ"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "episode_id": "wx5qzthf",
+  "listen_episode_url": "https://listen.style/p/reelpal/wx5qzthf",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/EnterTheDragon--The-Birth-of-American-Kung-Fu-Cinema-Why-Was-BruceLee-One-of-a-Kind-e355gja",
+  "title": "アメリカ・カンフー映画の祖『#燃えよドラゴン』 〜ブルース・リーは何が特別なのか〜 #EnterTheDragon — The Birth of American Kung Fu Cinema: Why Was #BruceLee One of a Kind?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 25,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング・雑談とミントオイルの話題"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:02",
+      "title": "本日のテーマ：『燃えよドラゴン』とは"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:09",
+      "title": "『燃えよドラゴン』のあざやかなあらすじ紹介"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:01",
+      "title": "エキストラのクンフーとジャッキーの出演シーン"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:07",
+      "title": "アクション映画の古典を見る難しさと退屈さ"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:05",
+      "title": "アジアの解像度の低さとラストボトルの義手演出"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:00",
+      "title": "裏話とブルース・リーの遺作『死亡遊戯』について"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:00",
+      "title": "圧倒的な肉体美とブルース・リーの特別さ"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:06",
+      "title": "謎多きヒロインとごちゃついたストーリー構成"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:04",
+      "title": "多様な人種起用とブルース・リーが受けていたアジア人差別"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:01",
+      "title": "東洋哲学とリアルなカンフーの融合"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:03",
+      "title": "アメリカ文化への翻訳と本作が残した大きな足跡"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:03",
+      "title": "ブルース・リーが本当に伝えたかったこととは"
+    },
+    {
+      "segment_index": 16,
+      "timestamp": "48:00",
+      "title": "文化の理解とカンフー映画ブームの到来"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:04",
+      "title": "作劇の限界とストーリーの単純さへの疑問"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:00",
+      "title": "ジークンドーの本質とブルース・リーのカリスマ性"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:01",
+      "title": "言葉少なにすべてを語った伝説の裏側"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:04",
+      "title": "次回作の予告とエンディング・お便り案内"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "episode_id": "aetobodm",
+  "listen_episode_url": "https://listen.style/p/reelpal/aetobodm",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3nt0gj",
+  "title": "【インターミッション】 #一ノ瀬ワタル とか#アンジェリーナ・ジョリー とか#ウィキッド とか",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 14,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "一ノ瀬ワタルと出演作『4月の余白』について"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:00",
+      "title": "元格闘家から俳優へ、体を張る役者たち"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:02",
+      "title": "映画の隅々まで気づけない鑑賞スタイルへの反省"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:00",
+      "title": "『キングダム』の登場人物とストーリーの記憶の曖昧さ"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:01",
+      "title": "映画『ウィキッド』と二次創作に対する複雑な思い"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:04",
+      "title": "『ジュラシック・パーク』におけるカオス理論の印象"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:02",
+      "title": "『オズの魔法使い』の世界観とファンタジーの受容"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:00",
+      "title": "名作の裏側を描く二次創作への違和感と『マレフィセント』"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:02",
+      "title": "『マレフィセント』の演出とアンジェリーナ・ジョリーの魅力"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:00",
+      "title": "俳優の個性が強すぎる映画作品のジレンマ"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:03",
+      "title": "原作レイヤーと二次創作の境界線について"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:06",
+      "title": "ミュージカルとしての『ウィキッド』のクオリティとまとめ"
+    }
+  ]
+}

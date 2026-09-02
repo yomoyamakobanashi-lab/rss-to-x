@@ -1,0 +1,51 @@
+{
+  "episode_id": "farx2ucj",
+  "listen_episode_url": "https://listen.style/p/reelpal/farx2ucj",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay---Replay-TheShining-The-Reason-It-Doesnt-Hit-as-Hard-in-Japan-e37qcfe",
+  "title": "【Replay】#映画 『#シャイニング』日本人がイマイチ怖がれない理由は何なんだ？ [Replay] #TheShining: The Reason It Doesn’t Hit as Hard in Japan",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 27,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "本日のテーマ：映画『シャイニング』"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:02",
+      "title": "名作なのに「怖がれない」のはなぜか"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:03",
+      "title": "圧倒的な存在感を見せる俳優陣の演技"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:04",
+      "title": "空間と音の演出から探る日米の違い"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:01",
+      "title": "作中の描写に隠されたメタファーを考察する"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:01",
+      "title": "ツッコミどころ満載？気になるポイントを一刀両断"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:04",
+      "title": "双子の存在と謎に包まれたラストシーンの解釈"
+    },
+    {
+      "segment_index": 23,
+      "timestamp": "1:09:01",
+      "title": "ホラー映画における文化と宗教観のギャップ"
+    }
+  ]
+}

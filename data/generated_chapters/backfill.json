@@ -3,8 +3,7 @@
   "episode_count": 128,
   "counts": {
     "no_chapters": 90,
-    "ready": 30,
-    "invalid": 8
+    "ready": 38
   },
   "spotify_links_matched": 128,
   "episodes": [
@@ -14,6 +13,8 @@
       "title": "映画 『#エクスペリメント』 責任なんて誰もとりたくねえよ！#TheExperiment — “Nobody wants to take responsibility!”",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/TheExperiment--Nobody-wants-to-take-responsibility-e320u4p",
       "spotify_match_score": 1.0
@@ -24,6 +25,8 @@
       "title": "映画『#ヘルレイザー』 信仰と堕落は紙一重 The movie #Hellraiser — Faith and corruption are a paper-thin line apart.",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/The-movie-Hellraiser--Faith-and-corruption-are-a-paper-thin-line-apart-e32abq4",
       "spotify_match_score": 1.0
@@ -34,6 +37,8 @@
       "title": "映画「#フルメタルジャケット」人間を書き換えるプロンプトとは。\"The movie #FullMetalJacket : What is the prompt that rewrites a human being?\"",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/The-movie-FullMetalJacket--What-is-the-prompt-that-rewrites-a-human-being-e32ag09",
       "spotify_match_score": 1.0
@@ -44,6 +49,8 @@
       "title": "映画『#マトリックス』 サイファーという名の救世主。 \"The Matrix\" — A Messiah Called Cypher.",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/The-Matrix--A-Messiah-Called-Cypher-e330fr8",
       "spotify_match_score": 1.0
@@ -54,6 +61,8 @@
       "title": "タイムパラドックスSF映画『#ターミネーター 』 お前のオールを任せるな。〜核と未来と時々おとん〜 Time-Paradox Sci-Fi Flick: #Terminator Don’t leave your future in just anyone’s hands. — Nukes, the future, and sometimes... your dad.",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF----Time-Paradox-Sci-Fi-Flick-Terminator-Dont-leave-your-future-in-just-anyones-hands---Nukes--the-future--and-sometimes----your-dad-e339igt",
       "spotify_match_score": 1.0
@@ -64,6 +73,8 @@
       "title": "金字塔SF映画『#ターミネーター 』 その２ 運命という名の無気力症候群〜ターミネーターは俺だった〜カルチュラルリーディングを通して Sci-Fi Legend #Terminator — Pt.2 “Fate Fatigue” & That Shocking Realization: I Was the Terminator?! A Cultural Take",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF----Sci-Fi-Legend-Terminator--Pt-2-Fate-Fatigue--That-Shocking-Realization-I-Was-the-Terminator---A-Cultural-Take-e33l0ns",
       "spotify_match_score": 1.0
@@ -74,6 +85,8 @@
       "title": "ドル箱SF映画の末路『#ターミネーター 』 その３ どうしてこうなった。３部作構想全コケの運命を回避せよ！ The Downfall of a Cash Cow: “Terminator” – Part 3 – What the Hell Happened? How Do We Escape the Trilogy Curse?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF-----The-Downfall-of-a-Cash-Cow-Terminator--Part-3--What-the-Hell-Happened--How-Do-We-Escape-the-Trilogy-Curse-e33veau",
       "spotify_match_score": 1.0
@@ -84,6 +97,8 @@
       "title": "【Replay】「ファイトクラブで男が滾るのは罪なのか」 \"Must we apologize for how Fight Club stirs something in men?\"",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Must-we-apologize-for-how-Fight-Club-stirs-something-in-men-e34107g",
       "spotify_match_score": 1.0
@@ -94,6 +109,8 @@
       "title": "【RePlay】「映画#セッション から伺う変態達のセッション」オーマを迎えた映画鑑賞会 [RePlay] “#Whiplash and the Glorious Madness of Men” — A Viewing Session",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/RePlay--RePlay-Whiplash-and-the-Glorious-Madness-of-Men--A-Viewing-Session-e341bqs",
       "spotify_match_score": 1.0
@@ -104,6 +121,8 @@
       "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その１〜ゴジラ1954とゴジラ対メカゴジラ〜 (Replay) “Had to Talk About Godzilla Minus One” — Part 1 From Godzilla (1954) to Godzilla vs. Mechagodzilla (1974)",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-1954--Replay-Had-to-Talk-About-Godzilla-Minus-One--Part-1-From-Godzilla-1954-to-Godzilla-vs--Mechagodzilla-1974-e342nsg",
       "spotify_match_score": 1.0
@@ -114,6 +133,8 @@
       "title": "【Replay】『#ゴジラ-1.0 が語りたくて』その２〜平成ゴジラVSシリーズ〜 (Replay)“Had to Talk About Godzilla Minus One” Part 2: Heisei Era Godzilla VS Series A Movie Talk Session",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-VS-ReplayHad-to-Talk-About-Godzilla-Minus-One-Part-2-Heisei-Era-Godzilla-VS-Series-A-Movie-Talk-Session-e342vpu",
       "spotify_match_score": 1.0
@@ -124,6 +145,8 @@
       "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その3〜ハリウッド版ゴジラ〜 (Replay)“Had to Talk About Godzilla Minus One” — Part 3: Hollywood Godzilla",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-3-ReplayHad-to-Talk-About-Godzilla-Minus-One--Part-3-Hollywood-Godzilla-e343009",
       "spotify_match_score": 1.0
@@ -134,6 +157,8 @@
       "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その4〜ゴジラミレニアムシリーズとはいったいなんだったのか〜[Replay] “Had to Talk About Godzilla Minus One” Part 4 — What Was the Godzilla Millennium Series, Anyway?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-4Replay-Had-to-Talk-About-Godzilla-Minus-One-Part-4--What-Was-the-Godzilla-Millennium-Series--Anyway-e343085",
       "spotify_match_score": 1.0
@@ -144,6 +169,8 @@
       "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その5〜ゴジラ-1.0がやり遂げたことについて話そうとしたらシン・ゴジラでいっぱいいっぱいだった〜[Replay] “Had to Talk About Godzilla Minus One” Part 5 — Tried to Discuss What -1.0, But Got Completely Lost in Shin Godzilla",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 18,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -225,10 +252,10 @@
       "episode_id": "rwcc5ylm",
       "listen_episode_url": "https://listen.style/p/reelpal/rwcc5ylm",
       "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その6〜ゴジラ-1.0がやり遂げたこと〜 [Replay] “Had to Talk About Godzilla Minus One” — Part 6: What Minus One Achieved",
-      "status": "invalid",
-      "errors": [
-        "Chapters are less than 30 seconds apart: 52:15 -> 52:22"
-      ],
+      "status": "ready",
+      "errors": [],
+      "source_chapter_count": 11,
+      "chapters_dropped_for_spotify": 1,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -241,10 +268,6 @@
         {
           "timestamp": "52:15",
           "title": "戦争映画の新たな視点"
-        },
-        {
-          "timestamp": "52:22",
-          "title": "主人公の戦争の思い"
         },
         {
           "timestamp": "54:22",
@@ -284,6 +307,8 @@
       "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その7〜ゴジラ-1.0「おかわり！」〜 [Replay] “Had to Talk About Godzilla Minus One” — Part 7: The One More Round Episode",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 13,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -345,11 +370,10 @@
       "episode_id": "i0ydh69f",
       "listen_episode_url": "https://listen.style/p/reelpal/i0ydh69f",
       "title": "宮崎駿の集大成？『#君たちはどう生きるか 』 私小説としてのジブリアニメ。〜インコになんてなるな！〜 Miyazaki’s Final Masterpiece? The Boy and the Heron as Autobiographical Ghibli Cinema — Don’t Turn into a Parakeet!",
-      "status": "invalid",
-      "errors": [
-        "Chapters are less than 30 seconds apart: 15:07 -> 15:09",
-        "Chapters are less than 30 seconds apart: 44:56 -> 45:24"
-      ],
+      "status": "ready",
+      "errors": [],
+      "source_chapter_count": 21,
+      "chapters_dropped_for_spotify": 2,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -362,10 +386,6 @@
         {
           "timestamp": "15:07",
           "title": "物語の深層"
-        },
-        {
-          "timestamp": "15:09",
-          "title": "作品の難解さと個人的題材"
         },
         {
           "timestamp": "21:58",
@@ -386,10 +406,6 @@
         {
           "timestamp": "44:56",
           "title": "創作と消費に関する批判"
-        },
-        {
-          "timestamp": "45:24",
-          "title": "作品のテーマとキャラクター"
         },
         {
           "timestamp": "50:30",
@@ -443,10 +459,10 @@
       "episode_id": "865k3eya",
       "listen_episode_url": "https://listen.style/p/reelpal/865k3eya",
       "title": "無駄話映画？『#パルプ・フィクション 』 〜運命の歯車は誰が回すのか〜 “A Movie About Nothing?” Pulp Fiction and the Question: Who's Spinning the Gears of Fate?",
-      "status": "invalid",
-      "errors": [
-        "Chapters are less than 30 seconds apart: 1:03:38 -> 1:03:49"
-      ],
+      "status": "ready",
+      "errors": [],
+      "source_chapter_count": 21,
+      "chapters_dropped_for_spotify": 1,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -497,10 +513,6 @@
           "title": "偶然の連鎖"
         },
         {
-          "timestamp": "1:03:49",
-          "title": "社会と倫理の考察"
-        },
-        {
           "timestamp": "1:12:10",
           "title": "運命の選択"
         },
@@ -542,6 +554,8 @@
       "title": "【Replay】映画「#TheFirstSlumDunk」#スラムダンク がバスケ漫画の金字塔であり続けるわけ [Replay] Why the Movie “#TheFirstSlumDunk” (#SlamDunk) Remains the Gold Standard of Basketball Manga",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayTheFirstSlumDunk--Replay-Why-the-Movie-TheFirstSlumDunk-SlamDunk-Remains-the-Gold-Standard-of-Basketball-Manga-e34jk5o",
       "spotify_match_score": 1.0
@@ -552,6 +566,8 @@
       "title": "ガチカンフー映画『#イップ・マン 』 〜武の中に見る精神性〜 #IpMan — A Hardcore Kung Fu Film About the Spirit Behind the Fist",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/IpMan--A-Hardcore-Kung-Fu-Film-About-the-Spirit-Behind-the-Fist-e34rt24",
       "spotify_match_score": 1.0
@@ -562,6 +578,8 @@
       "title": "【Replay】映画「#ラヂオの時間 」三谷幸喜の最高傑作、実はラヂオの時間なのではないか [Replay] Is “Welcome Back, Mr. McDonald” Actually Koki Mitani’s Greatest Masterpiece?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--Replay-Is-Welcome-Back--Mr--McDonald-Actually-Koki-Mitanis-Greatest-Masterpiece-e34jkbf",
       "spotify_match_score": 1.0
@@ -572,6 +590,8 @@
       "title": "アメリカ・カンフー映画の祖『#燃えよドラゴン』 〜ブルース・リーは何が特別なのか〜 #EnterTheDragon — The Birth of American Kung Fu Cinema: Why Was #BruceLee One of a Kind?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/EnterTheDragon--The-Birth-of-American-Kung-Fu-Cinema-Why-Was-BruceLee-One-of-a-Kind-e355gja",
       "spotify_match_score": 1.0
@@ -582,6 +602,8 @@
       "title": "【Replay】映画『#GoodWillHunting』に見る心の傷との向き合い方 [Replay] Facing Emotional Wounds: Lessons from the Film #GoodWillHunting",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayGoodWillHunting--Replay-Facing-Emotional-Wounds-Lessons-from-the-Film-GoodWillHunting-e34jkkq",
       "spotify_match_score": 1.0
@@ -592,6 +614,8 @@
       "title": "カンフー映画最後の花火『#少林サッカー』 〜カンフーが映画界で返り咲くには……〜 Kung Fu’s Final Blaze: “#ShaolinSoccer” — Can Martial Arts Rise Again in Cinema?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Kung-Fus-Final-Blaze-ShaolinSoccer--Can-Martial-Arts-Rise-Again-in-Cinema-e35ej78",
       "spotify_match_score": 1.0
@@ -602,6 +626,8 @@
       "title": "【Replay】映画『#ジャンゴ繋がれざる者 』が真に繋がれていないのは何なのか [Replay] In the Movie #DjangoUnchained, What Is It That’s Not Really Unchained?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--Replay-In-the-Movie-DjangoUnchained--What-Is-It-Thats-Not-Really-Unchained-e34jlt6",
       "spotify_match_score": 1.0
@@ -612,6 +638,8 @@
       "title": "SFヒューマンドラマ映画？『#アド・アストラ』 〜エイリアンの正体に迫る……〜 Is #AdAstra Really a Sci-Fi Human Drama? — Searching for the Truth About the Aliens",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF--Is-AdAstra-Really-a-Sci-Fi-Human-Drama---Searching-for-the-Truth-About-the-Aliens-e35nvp7",
       "spotify_match_score": 1.0
@@ -622,6 +650,8 @@
       "title": "【Replay】映画『#アンドリューNDR114』人とロボットの境目はいったいどこに？ [Replay] #BicentennialMan — How Do We Define the Human in the Machine?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayNDR114-Replay-BicentennialMan--How-Do-We-Define-the-Human-in-the-Machine-e35in36",
       "spotify_match_score": 1.0
@@ -632,6 +662,8 @@
       "title": "ホラーオマージュ映画の傑作『#スクリーム』３部作～古典ホラーは“終わった”のか Is Classic Horror Over? Revisiting the #Scream Trilogy That Changed Everything",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Is-Classic-Horror-Over--Revisiting-the-Scream-Trilogy-That-Changed-Everything-e3618qk",
       "spotify_match_score": 1.0
@@ -642,6 +674,8 @@
       "title": "【Replay】映画『#her』人と人とをつなぐものとは？ [Replay] her — The Invisible Threads That Bind Us",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replayher-Replay-her--The-Invisible-Threads-That-Bind-Us-e35in8q",
       "spotify_match_score": 1.0
@@ -652,6 +686,8 @@
       "title": "真夏のホラー映画特集その２ 夏休み映画の傑作『#学校の怪談』シリーズ～怪談は誰のためのものなのか Summer Horror Special Vol.2: The “Haunted School” Series – Who Are Ghost Stories Really For?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Special-Vol-2-The-Haunted-School-Series--Who-Are-Ghost-Stories-Really-For-e36d71c",
       "spotify_match_score": 1.0
@@ -662,6 +698,8 @@
       "title": "【Replay】映画『#LUCY』人類の次のステージとは？ [Replay] LUCY — Where Does Humanity Go From Here?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayLUCY-Replay-LUCY--Where-Does-Humanity-Go-From-Here-e35ine0",
       "spotify_match_score": 1.0
@@ -672,6 +710,8 @@
       "title": "リスナーリクエスト第１弾 傑作タイムトラベル映画『#バック・トゥー・ザ・フューチャー』シリーズ～過去を書き換えるのは罪なのか Fan Request #1: #BackToTheFuture Trilogy – Should Changing the Past Be Against the Law?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Fan-Request-1-BackToTheFuture-Trilogy--Should-Changing-the-Past-Be-Against-the-Law-e36kmfu",
       "spotify_match_score": 1.0
@@ -682,6 +722,8 @@
       "title": "【Replay】サイコホラー映画？『#ボーは恐れている』……何を？ [Replay] Psychological Horror? \"#BeauIsAfraid\" … of What Exactly?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-Psychological-Horror--BeauIsAfraid--of-What-Exactly-e36dgbd",
       "spotify_match_score": 1.0
@@ -692,6 +734,8 @@
       "title": "【Replay】復讐劇『#Revenant』グラスが最後に見たものは何だったのか？ [Replay] Revenge Tale #TheRevenant – What Was the Last Thing Glass Saw?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayRevenant-Replay-Revenge-Tale-TheRevenant--What-Was-the-Last-Thing-Glass-Saw-e36qvgh",
       "spotify_match_score": 1.0
@@ -702,6 +746,8 @@
       "title": "真夏のホラー映画特集その３ 日本ホラー映画大賞受賞監督デビュー作『#ミッシングチャイルドビデオテープ』 〜山は神か、あるいは鬼か……〜 Summer Horror Marathon Part 3 – Award-Winning Japanese Horror Debut Missing Child Video Tape: Is the Mountain a God… or a Demon?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Marathon-Part-3--Award-Winning-Japanese-Horror-Debut-Missing-Child-Video-Tape-Is-the-Mountain-a-God-or-a-Demon-e3738er",
       "spotify_match_score": 1.0
@@ -712,6 +758,8 @@
       "title": "【Replay】ジャパニーズホラー『#リング』日本のホラーが持つ強みってなぁに？ [Replay] Japanese Horror “#Ring” – What Makes J-Horror So Damn Good?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-Japanese-Horror-Ring--What-Makes-J-Horror-So-Damn-Good-e36r02n",
       "spotify_match_score": 1.0
@@ -722,6 +770,8 @@
       "title": "リスナーリクエスト第２弾 古代ローマ歴史スペクタクル#映画 『# グラディエーター』 〜死と救済は表裏一体なのか……〜 Listener Request #2 – Ancient Rome Epic #Gladiator: Are Death and Salvation Two Sides of the Same Coin?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Request-2--Ancient-Rome-Epic-Gladiator-Are-Death-and-Salvation-Two-Sides-of-the-Same-Coin-e37dh4v",
       "spotify_match_score": 1.0
@@ -732,6 +782,8 @@
       "title": "真夏のホラー映画特集その４ #ティム・バートン映画『#スリーピー・ホロウ 〜科学は信仰を破壊したのか……〜 Summer Horror Special #4 – Tim Burton’s Sleepy Hollow: When Science Goes Head-to-Head with Faith",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Special-4--Tim-Burtons-Sleepy-Hollow-When-Science-Goes-Head-to-Head-with-Faith-e37hme7",
       "spotify_match_score": 1.0
@@ -742,6 +794,8 @@
       "title": "【Replay】スラッシャームービー『#チャイルド・プレイ』チャッキーとはホラー界の何だったのか？ 【Replay】Slasher Flick #ChildsPlay — What Exactly Was #Chucky to the World of Horror?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-ReplaySlasher-Flick-ChildsPlay--What-Exactly-Was-Chucky-to-the-World-of-Horror-e36r0av",
       "spotify_match_score": 1.0
@@ -752,6 +806,8 @@
       "title": "リスナーリクエスト！ #大どんでん返し 映画『#シャッター・アイランド』妄想と現実の境界はどこに？ Listener’s Pick! #ShutterIsland: The Big Twist and the Blurred Border of Reality",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listeners-Pick--ShutterIsland-The-Big-Twist-and-the-Blurred-Border-of-Reality-e37rq86",
       "spotify_match_score": 1.0
@@ -762,6 +818,8 @@
       "title": "【Replay】#映画 『#シャイニング』日本人がイマイチ怖がれない理由は何なんだ？ [Replay] #TheShining: The Reason It Doesn’t Hit as Hard in Japan",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay---Replay-TheShining-The-Reason-It-Doesnt-Hit-as-Hard-in-Japan-e37qcfe",
       "spotify_match_score": 1.0
@@ -772,6 +830,8 @@
       "title": "リスナーリクエスト！異色ホラー 映画『#ゲットアウト』被差別者に向けられる歪んだ妬みの正体とは？ Listener Pick! #GetOut — Unmasking the Warped Jealousy Behind Discrimination",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Pick--GetOut--Unmasking-the-Warped-Jealousy-Behind-Discrimination-e385nlo",
       "spotify_match_score": 1.0
@@ -782,6 +842,8 @@
       "title": "【Replay】#映画『#最高の人生の見つけ方』『#最高の人生の作り方』あなたは死とどう向き合いたいですか？ [Replay] #TheBucketList & #LastVegas — How Do You Choose to Face the End?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-TheBucketList--LastVegas--How-Do-You-Choose-to-Face-the-End-e37qdi2",
       "spotify_match_score": 1.0
@@ -792,6 +854,8 @@
       "title": "真夏のホラー企画最終章 #ホラー映画 『#ミッドサマー』 ダニーの笑顔をどう読むか？ Summer Horror Grand Finale – #Midsommar: Decoding Dani’s Final Smile",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Grand-Finale--Midsommar-Decoding-Danis-Final-Smile-e38f8ed",
       "spotify_match_score": 1.0
@@ -802,6 +866,8 @@
       "title": "【Replay】#映画『#ザ・フライ』科学は人間を幸福にするのだろうか？ [Replay] #TheFly — Is Science the Path to Human Joy?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-TheFly--Is-Science-the-Path-to-Human-Joy-e37qeh4",
       "spotify_match_score": 1.0
@@ -812,6 +878,8 @@
       "title": "リスナーリクエスト #エイリアン シリーズ その１『#エイリアン』『#エイリアン２』闇に潜むエイリアンの正体はいかに？ Listener Pick! Diving into the #Alien Saga (Part 1) — #Alien & #Aliens : What Hides in the Darkness?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Pick--Diving-into-the-Alien-Saga-Part-1--Alien--Aliens--What-Hides-in-the-Darkness-e38ouht",
       "spotify_match_score": 1.0
@@ -822,6 +890,8 @@
       "title": "【Replay】#コメディ映画 『#ズーランダー』事実上のガキの使い\"笑ってはいけない\"説 [Replay] Zoolander: The Accidental “No Laughing” Challenge of Hollywood Comedy",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--Replay-Zoolander-The-Accidental-No-Laughing-Challenge-of-Hollywood-Comedy-e38u1g4",
       "spotify_match_score": 1.0
@@ -832,6 +902,8 @@
       "title": "リスナーリクエスト #エイリアン シリーズ その2『#エイリアン3』『#エイリアン４』エイリアンが浮き彫りにした人が生きる意味とは？ Listener Request! Alien Series Part 2 – #Alien3 & #AlienResurrection : What Do These Films Reveal About the Meaning of Human Life?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/23-Listener-Request--Alien-Series-Part-2--Alien3--AlienResurrection--What-Do-These-Films-Reveal-About-the-Meaning-of-Human-Life-e3924t2",
       "spotify_match_score": 1.0
@@ -842,6 +914,8 @@
       "title": "【Replay】#コメディ映画 『#オースティンパワーズ』令和のおじさんはどう生きるべきか？ 【Replay】#ComedyFilm “#AustinPowers” — How Should Middle-Aged Men Live in the Reiwa Era?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--ReplayComedyFilm-AustinPowers--How-Should-Middle-Aged-Men-Live-in-the-Reiwa-Era-e38u9la",
       "spotify_match_score": 1.0
@@ -852,6 +926,8 @@
       "title": "リスナーリクエスト #エイリアン シリーズ その３『#プロメテウス』『#エイリアン：コヴェナント』人類はどこから来てどこへ向かうのか？ #Alien Series Part 3 “#Prometheus” & “#Covenant” — Where Do We Come From?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Alien-Series-Part-3-Prometheus--Covenant--Where-Do-We-Come-From-e39caj1",
       "spotify_match_score": 1.0
@@ -862,6 +938,8 @@
       "title": "【Replay】#ラブロマンス 『#ゴースト』令和の日本人は反面教師にせよ。 Replay】#RomanceFilm “#Ghost” — A Cautionary Tale for Reiwa-Era Japan",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--ReplayRomanceFilm-Ghost--A-Cautionary-Tale-for-Reiwa-Era-Japan-e38u9v1",
       "spotify_match_score": 1.0
@@ -872,6 +950,8 @@
       "title": "リスナーリクエスト #エイリアン シリーズ その４ #SFホラー 映画『#エイリアン：ロムルス』ノスタルジィリサイクルはイースターエッグの夢を見るか？ Listener Request! Alien Series Part 4 – Alien: Romulus: Do Nostalgia Reboots Dream of Easter Eggs?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF--Listener-Request--Alien-Series-Part-4--Alien-Romulus-Do-Nostalgia-Reboots-Dream-of-Easter-Eggs-e39maf9",
       "spotify_match_score": 1.0
@@ -882,6 +962,8 @@
       "title": "【Replay】#ジャンルシフト 映画『#サプライズ』ジャンルシフトは“あり”なのか？ [Replay] #GenreShift Film #You’re Next — Is Genre-Shifting Fair Play or Foul?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--Replay-GenreShift-Film-Youre-Next--Is-Genre-Shifting-Fair-Play-or-Foul-e38u9dq",
       "spotify_match_score": 1.0
@@ -892,6 +974,8 @@
       "title": "リスナーリクエスト 『#２００１年宇宙の旅』アートの解釈はどこまで自由でいられるか Listener Request – 2001: A Space Odyssey: How Free Can Art Interpretation Be?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Request--2001-A-Space-Odyssey-How-Free-Can-Art-Interpretation-Be-e3a0msf",
       "spotify_match_score": 1.0
@@ -902,6 +986,8 @@
       "title": "【Replay】#ホラーコメディ 映画『#ショーンオブザデッド』現代人はすでにゾンビであるって知ってた？ 【Replay】#HorrorComedy Film 『#ShaunoftheDead』 — Did You Know Modern Life Already Turned Us Into Zombies?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--ReplayHorrorComedy-Film-ShaunoftheDead--Did-You-Know-Modern-Life-Already-Turned-Us-Into-Zombies-e38uadn",
       "spotify_match_score": 1.0
@@ -912,6 +998,8 @@
       "title": "ハロウィン特別企画『アダムスファミリー』『アダムスファミリー２』その常識は誰のもの？ Halloween Special – “The Addams Family” & “Addams Family Values” Whose “Normal” Are We Talking About, Anyway?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Halloween-Special--The-Addams-Family--Addams-Family-Values-Whose-Normal-Are-We-Talking-About--Anyway-e3ac877",
       "spotify_match_score": 1.0
@@ -922,6 +1010,8 @@
       "title": "リスナーリクエスト コメディ映画『#ハングオーバー』マンダムワールドの終焉 “#TheHangover” – When the #Mandom Dream Died",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/TheHangover--When-the-Mandom-Dream-Died-e3almr6",
       "spotify_match_score": 1.0
@@ -932,6 +1022,8 @@
       "title": "新企画【インターミッション】#フランケンシュタイン とか #グレムリン３ とか…… [Intermission] #Frankenstein , #Gremlins3 ... and the Chaos Between",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Intermission-Frankenstein---Gremlins3-----and-the-Chaos-Between-e3alnm1",
       "spotify_match_score": 1.0
@@ -942,6 +1034,8 @@
       "title": "【Replay】#Netflix ドキュメンタリー『#アメリカンマーダー』映像ばかり信用するのも怖いもんよね 【Replay】#Netflix #AmericanMurder — Trusting Every Video? Yeah… Maybe Don’t.",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayNetflix--ReplayNetflix-AmericanMurder--Trusting-Every-Video--Yeah-Maybe-Dont-e3b209a",
       "spotify_match_score": 1.0
@@ -952,6 +1046,8 @@
       "title": "【Replay】#NETFLIX #ドキュメンタリー『#ポップスが最高に輝いた夜』ポップスは本当に死んだのか 【Replay】#NETFLIX #ドキュメンタリー 『#TheGreatestNightInPop』 Has Pop Music Already Seen Its Brightest Moment?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayNETFLIX--ReplayNETFLIX--TheGreatestNightInPop-Has-Pop-Music-Already-Seen-Its-Brightest-Moment-e3b20qq",
       "spotify_match_score": 1.0
@@ -962,6 +1058,8 @@
       "title": "リスナーリクエスト コメディ映画『#グレムリン』『#グレムリン２』子供を導くのは誰の仕事？ Listener Pick! “Gremlins” & “Gremlins 2” — So Who’s Actually Raising These Kids?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Pick--Gremlins--Gremlins-2--So-Whos-Actually-Raising-These-Kids-e3bc8hm",
       "spotify_match_score": 1.0
@@ -972,6 +1070,8 @@
       "title": "【インターミッション】#Wicked とか#クリステンベル とか#ガメラ とか... 【Intermission】#Wicked, #KristenBell, #Gamera...Yeah, We're All Over the Place Today",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Wicked-------IntermissionWicked--KristenBell--Gamera---Yeah--Were-All-Over-the-Place-Today-e3bh24i",
       "spotify_match_score": 1.0
@@ -982,6 +1082,8 @@
       "title": "#Netflix #ホラー #ヒューマンドラマ 映画『#フランケンシュタイン』父と子の正しいコミュニケーションのあり方 #Netflix #Horror #HumanDrama “#Frankenstein” – Fatherhood, Creation, and the Communication We Fail to Teach",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Netflix----Netflix-Horror-HumanDrama-Frankenstein--Fatherhood--Creation--and-the-Communication-We-Fail-to-Teach-e3bl7r0",
       "spotify_match_score": 1.0
@@ -992,6 +1094,8 @@
       "title": "リスナーリクエスト ナンセンスコメディ映画？ 『#スイスアーミーマン』人間関係を結ぶ恐怖の根源とは Listener Pick! “#SwissArmyMan” – The Deep, Strange Fear Behind Human Connection",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Pick--SwissArmyMan--The-Deep--Strange-Fear-Behind-Human-Connection-e3bvs5a",
       "spotify_match_score": 1.0
@@ -1002,6 +1106,8 @@
       "title": "【インターミッション】#ズートピア２ とか#ワーナーブラザーズ とか#HBO とか#Netflix とか… 【Intermission】#Zootopia2, #WarnerBros, #HBO, #Netflix — All the Stuff We Ended Up Talking About",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/HBO-Netflix--IntermissionZootopia2--WarnerBros--HBO--Netflix--All-the-Stuff-We-Ended-Up-Talking-About-e3c2uj1",
       "spotify_match_score": 1.0
@@ -1012,6 +1118,8 @@
       "title": "リスナーリクエスト #戦争映画 の金字塔 『#地獄の黙示録』戦争の罪は誰が被るのか Listener Request – The Pinnacle of #WarCinema: “#Apocalypse Now” Who Pays for the Sins of War?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Request--The-Pinnacle-of-WarCinema-Apocalypse-Now-Who-Pays-for-the-Sins-of-War-e3c9ghh",
       "spotify_match_score": 1.0
@@ -1022,6 +1130,8 @@
       "title": "【インターミッション】#ジャイアントピーチ とか#アバター とか#3D映画 とか #MCU とか… 【Intermission】A Ramble Through #JamesAndTheGiantPeach, #Avatar, #3DMovies, #MCU…",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/3D--MCU--IntermissionA-Ramble-Through-JamesAndTheGiantPeach--Avatar--3DMovies--MCU-e3c2uq6",
       "spotify_match_score": 1.0
@@ -1032,6 +1142,8 @@
       "title": "#細田守 監督作品『#未来のミライ』#アニメ だからこその描写とはなんなのか #MamoruHosoda’s film “#Mirai” — what can only #anime truly depict?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/MamoruHosodas-film-Mirai--what-can-only-anime-truly-depict-e3cljv4",
       "spotify_match_score": 1.0
@@ -1042,6 +1154,8 @@
       "title": "#クリスマス 映画の定番？『#ジングルオールザウェイ』 失われた父性と新たな家族の形 A Christmas Movie Staple? Jingle All the Way: Lost Fatherhood and the Emergence of a New Family Model",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/A-Christmas-Movie-Staple--Jingle-All-the-Way-Lost-Fatherhood-and-the-Emergence-of-a-New-Family-Model-e3crdp0",
       "spotify_match_score": 1.0
@@ -1052,6 +1166,8 @@
       "title": "【インターミッション】#特撮 とか#仮面ライダー とか#戦隊ヒーロー とか… [Intermission] #Tokusatsu and #KamenRider and #SuperSentai and…",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Intermission-Tokusatsu-and-KamenRider-and-SuperSentai-and-e3cre16",
       "spotify_match_score": 1.0
@@ -1062,6 +1178,8 @@
       "title": "新年のご挨拶",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3dedg3",
       "spotify_match_score": 1.0
@@ -1072,6 +1190,8 @@
       "title": "【番外編】まこジョナ散歩【前編】",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 19,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1159,6 +1279,8 @@
       "title": "【番外編】まこジョナ散歩【後編】",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 21,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1252,10 +1374,10 @@
       "episode_id": "lypjkmwb",
       "listen_episode_url": "https://listen.style/p/reelpal/lypjkmwb",
       "title": "リスナーリクエスト 風刺ホラー映画『#NOCEBO』 ファッション業界が抱える罪悪感のお話",
-      "status": "invalid",
-      "errors": [
-        "Chapters are less than 30 seconds apart: 18:46 -> 19:01"
-      ],
+      "status": "ready",
+      "errors": [],
+      "source_chapter_count": 23,
+      "chapters_dropped_for_spotify": 1,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1268,10 +1390,6 @@
         {
           "timestamp": "18:46",
           "title": "ファッション業界の課題"
-        },
-        {
-          "timestamp": "19:01",
-          "title": "クリスティンとダイアナの関係"
         },
         {
           "timestamp": "20:06",
@@ -1357,10 +1475,10 @@
       "episode_id": "jlpxduel",
       "listen_episode_url": "https://listen.style/p/reelpal/jlpxduel",
       "title": "映画『#シンウルトラマン』 宇宙と戦争と平和維持の話",
-      "status": "invalid",
-      "errors": [
-        "Chapters are less than 30 seconds apart: 14:56 -> 15:02"
-      ],
+      "status": "ready",
+      "errors": [],
+      "source_chapter_count": 27,
+      "chapters_dropped_for_spotify": 1,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1373,10 +1491,6 @@
         {
           "timestamp": "14:56",
           "title": "戦争と平和の重要性"
-        },
-        {
-          "timestamp": "15:02",
-          "title": "映画制作の背景"
         },
         {
           "timestamp": "16:17",
@@ -1480,6 +1594,8 @@
       "title": "【インターミッション】#ヒーマン とか#マスターズオブユニバース とか…",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 11,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1533,10 +1649,10 @@
       "episode_id": "bqkjsbxh",
       "listen_episode_url": "https://listen.style/p/reelpal/bqkjsbxh",
       "title": "映画『＃MAMA』 デル・トロ節で描かれる母性と恐怖の不協和音",
-      "status": "invalid",
-      "errors": [
-        "Chapters are less than 30 seconds apart: 44:53 -> 44:56"
-      ],
+      "status": "ready",
+      "errors": [],
+      "source_chapter_count": 18,
+      "chapters_dropped_for_spotify": 1,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1573,10 +1689,6 @@
         {
           "timestamp": "44:53",
           "title": "プラトンの洞窟の比喩"
-        },
-        {
-          "timestamp": "44:56",
-          "title": "認識の枠組みの変化"
         },
         {
           "timestamp": "47:09",
@@ -1620,6 +1732,8 @@
       "title": "【インターミッション】#犬 とか#ハプスブルク家 とか…",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 8,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1661,10 +1775,10 @@
       "episode_id": "cunwdmff",
       "listen_episode_url": "https://listen.style/p/reelpal/cunwdmff",
       "title": "映画『#スナッチ』おしゃれ演出マシマシ映画に觀る階層構造",
-      "status": "invalid",
-      "errors": [
-        "Chapters are less than 30 seconds apart: 17:09 -> 17:23"
-      ],
+      "status": "ready",
+      "errors": [],
+      "source_chapter_count": 15,
+      "chapters_dropped_for_spotify": 1,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1681,10 +1795,6 @@
         {
           "timestamp": "17:09",
           "title": "ブラッド・ピットの起用背景"
-        },
-        {
-          "timestamp": "17:23",
-          "title": "キャラクター分析"
         },
         {
           "timestamp": "22:22",
@@ -1736,6 +1846,8 @@
       "title": "【インターミッション】#パンダ とか#コンゴ とか#UMA とか…",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 9,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1783,6 +1895,8 @@
       "title": "リスナーリクエスト「映画『#帰ってきたヒトラー』歴史はコメディに落とし込めるのか」",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3f24u0",
       "spotify_match_score": 1.0
@@ -1793,6 +1907,8 @@
       "title": "【インターミッション】 #インド映画 とか#きっとうまくいく とか",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 8,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1836,6 +1952,8 @@
       "title": "庵野秀明映画『#シン仮面ライダー』幸福追求とエゴが奏でる不協和音",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3fcm8j",
       "spotify_match_score": 1.0
@@ -1846,6 +1964,8 @@
       "title": "【インターミッション】 #最新映画情報 とか#名探偵コナン とか",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 5,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1877,6 +1997,8 @@
       "title": "政治系#アクション映画 『#VforVendetta』 仮面の下はどんな顔？",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/VforVendetta-e3fnd4e",
       "spotify_match_score": 1.0
@@ -1885,10 +2007,10 @@
       "episode_id": "6s8wy0dc",
       "listen_episode_url": "https://listen.style/p/reelpal/6s8wy0dc",
       "title": "#ノンフィクション映画？ 『#でっちあげ』 真実はいつも一つ！・・・なんだけども。",
-      "status": "invalid",
-      "errors": [
-        "Chapters are less than 30 seconds apart: 1:29:25 -> 1:29:37"
-      ],
+      "status": "ready",
+      "errors": [],
+      "source_chapter_count": 19,
+      "chapters_dropped_for_spotify": 1,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -1951,10 +2073,6 @@
           "title": "大間の所感：子供は存在しなかった説"
         },
         {
-          "timestamp": "1:29:37",
-          "title": "大間の所感：自身の体験と構造的加害"
-        },
-        {
           "timestamp": "1:47:26",
           "title": "大間の所感：教育現場における権力構造の変化とSNSの影響"
         },
@@ -1976,6 +2094,8 @@
       "title": "【インターミッション】 #青春映画 とか#ハムナプトラ とか",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3g3d3o",
       "spotify_match_score": 1.0
@@ -1986,6 +2106,8 @@
       "title": "#ヒューマンドラマ 映画 『#きっとうまくいく』人生は学びの連続だ。",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 12,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2045,6 +2167,8 @@
       "title": "#クライムコメディ 映画『#レザボア・ドッグス』 すべてを手に入れるのは何者か",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3gpcn1",
       "spotify_match_score": 1.0
@@ -2055,6 +2179,8 @@
       "title": "【インターミッション】 #スパイダーマン 事情とか",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 6,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2090,6 +2216,8 @@
       "title": "#ホラー映画 『#聖なる鹿殺し』 罪を許すための最低条件",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3h2mvn",
       "spotify_match_score": 1.0
@@ -2100,6 +2228,8 @@
       "title": "【インターミッション】 #陰陽師 とか#西遊記とか",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 5,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2131,6 +2261,8 @@
       "title": "「#和製ファンタジー映画 『#陰陽師』 シリーズ 呪いは存在するか否か」 #JapaneseFantasy *#Onmyoji* Series — Spells, Spirits, and the Question of Curses",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/JapaneseFantasy-Onmyoji-Series--Spells--Spirits--and-the-Question-of-Curses-e3hdblf",
       "spotify_match_score": 1.0
@@ -2141,6 +2273,8 @@
       "title": "【インターミッション】 #ハムナプトラ とか #神話 とか #ジャック・ブラック とか",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3hemc0",
       "spotify_match_score": 1.0
@@ -2151,6 +2285,8 @@
       "title": "#シルクロード企画第２弾 映画『#モンキーマジック孫悟空誕生』『#超西遊記』 What Does Sun Wukong Mean to You? — The Monkey King and the Mirrors We Hold Up",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 13,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2214,6 +2350,8 @@
       "title": "【インターミッション】 #ドラえもん とか #鬼太郎 とか",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3hotl2",
       "spotify_match_score": 1.0
@@ -2224,6 +2362,8 @@
       "title": "シルクロード企画第３段 映画『HANUMAN』ヒーロー映画はどこにいくのか Silk Road Series: Part 3 — #HANUMAN Where Gods Wear Capes: The Future of the Hero Film",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 7,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2263,6 +2403,8 @@
       "title": "【インターミッション】 ￼ #オランウータン とか ￼#フランケンシュタイン とか",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3i2tp2",
       "spotify_match_score": 1.0
@@ -2273,6 +2415,8 @@
       "title": "シルクロード企画第４段 映画『バグダットの盗賊』ディズニー映画『アラジン』時代を越えた名作はどう変化したのか Silk Road Series Vol.4: Same Wish, Different World",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 19,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2360,6 +2504,8 @@
       "title": "リスナーリクエスト 映画『ホーム・アローン』『ホーム・アローン２』クリスマス映画の決定版ってことでいいかな？ Listener Request: Is Home Alone & Home Alone 2 Really the Ultimate Christmas Movie?",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 10,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2411,6 +2557,8 @@
       "title": "【インターミッション】 ￼ #スクリーム とか ￼#シドニープレスコット とか #任天堂",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3ioutu",
       "spotify_match_score": 1.0
@@ -2421,6 +2569,8 @@
       "title": "シルクロード企画大団円 映画『ハムナプトラ』古代エジプトの呪いに惹かれる僕らの心理とは？ Silk Road Series Grand Finale: The Mummy — Why Are We So Obsessed with Ancient Egypt's Curse?",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 13,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2484,6 +2634,8 @@
       "title": "【インターミッション】 #ヒュー・ジャックマン とか #アメリカンパイ とか",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 5,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2515,6 +2667,8 @@
       "title": "リスナーリクエスト 映画『君の名前で僕を呼んで』泡沫に消えた恋は人生を先へ進めるのか Listener Request: Call Me By Your Name — Can a Love That Fades Like a Dream Still Move Your Life Forward?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-Call-Me-By-Your-Name--Can-a-Love-That-Fades-Like-a-Dream-Still-Move-Your-Life-Forward-e3jk5o5",
       "spotify_match_score": 0.992
@@ -2525,6 +2679,8 @@
       "title": "【インターミッション】 #マイケル・ジャクソンとか #マイケル・ジャクソンとか #マイケル・ジャクソンとか [INTERMISSION] #MichaelJackson and more. #MichaelJackson and more. #MichaelJackson and more.",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 8,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2568,6 +2724,8 @@
       "title": "映画『チョコレートドーナツ』ほろ苦く決して埋まらない幸せの形 Any Day Now — The Bittersweet Shape of a Happiness That Can Never Be Made Whole",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Any-Day-Now--The-Bittersweet-Shape-of-a-Happiness-That-Can-Never-Be-Made-Whole-e3jovth",
       "spotify_match_score": 1.0
@@ -2578,6 +2736,8 @@
       "title": "【インターミッション】 #マンダロリアン とか#ストップモーション とか#ヒーマン とか",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 7,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2617,6 +2777,8 @@
       "title": "少年時代企画その１ 映画『スパイキッズ』ファミリー向け実写映画が輝いていたあの頃 Childhood Era Series Vol.1: Spy Kids — Back When Live-Action Family Films Were Everything",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Childhood-Era-Series-Vol-1-Spy-Kids--Back-When-Live-Action-Family-Films-Were-Everything-e3k3mcd",
       "spotify_match_score": 1.0
@@ -2627,6 +2789,8 @@
       "title": "【インターミッション】 #Michael とか#ポップコーン とか#マシュマロ とか",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 7,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2666,6 +2830,8 @@
       "title": "リスナーリクエスト 映画『ワンスアポンアタイムインハリウッド』創作における暴力はどこまで許されるのか Listener Request: Once Upon a Time in Hollywood — How Far Can Violence Go in Storytelling?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-Once-Upon-a-Time-in-Hollywood--How-Far-Can-Violence-Go-in-Storytelling-e3kfam3",
       "spotify_match_score": 1.0
@@ -2676,6 +2842,8 @@
       "title": "映画『#michael』 夢の追体験 Michael — Reliving a Dream",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 20,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2767,6 +2935,8 @@
       "title": "映画『国宝』伝統と狂気の間で",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 9,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2814,6 +2984,8 @@
       "title": "【インターミッション】 #最終絶叫計画 とか#SCREAM とか#JackBlack #GooseBumps とか",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/SCREAM-JackBlack-GooseBumps-e3lc2cn",
       "spotify_match_score": 1.0
@@ -2824,6 +2996,8 @@
       "title": "少年時代企画第二弾 映画『ジャイアントピーチ』童話は誰のためのもの Childhood Era Series Vol.2: James and the Giant Peach — Who Are Fairy Tales Really For?",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 8,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2867,6 +3041,8 @@
       "title": "【インターミッション】 ￼ #魔女の宅急便 とか#トイストーリー とか#氷の微笑 とか",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 3,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2890,6 +3066,8 @@
       "title": "少年時代企画第３弾 映画『ベイブ』『ベイブ都会へいく』偏見との戦いは続く Childhood Era Series Vol.3: Babe & Babe: Pig in the City — The Fight Against Prejudice Goes On",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Childhood-Era-Series-Vol-3-Babe--Babe-Pig-in-the-City--The-Fight-Against-Prejudice-Goes-On-e3lliqr",
       "spotify_match_score": 1.0
@@ -2900,6 +3078,8 @@
       "title": "リスナーリクエスト ホラー映画『ウィッチ』 信仰が生むのは救いか崩壊か Listener Request: The Witch — Does Faith Bring Salvation or Collapse?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-The-Witch--Does-Faith-Bring-Salvation-or-Collapse-e3lsko4",
       "spotify_match_score": 1.0
@@ -2910,6 +3090,8 @@
       "title": "【インターミッション】 #みんなおしゃべり とか#手話 とか#モアナ とか",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3m8j85",
       "spotify_match_score": 1.0
@@ -2920,6 +3102,8 @@
       "title": "少年時代企画第４弾 ディズニー映画『トイ・ストーリー』 おもちゃは子どもにとってのなんだろう Childhood Era Series Vol.4: Disney's Toy Story — What Do Toys Really Mean to Children?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Childhood-Era-Series-Vol-4-Disneys-Toy-Story--What-Do-Toys-Really-Mean-to-Children-e3m8isl",
       "spotify_match_score": 1.0
@@ -2930,6 +3114,8 @@
       "title": "【インターミッション】 #ゴジラ-0.0 とか#口に関するアンケート とか#東野圭吾 とか",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 5,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -2961,6 +3147,8 @@
       "title": "夏の邦画祭り 映画『男はつらいよ』 あの頃の日本はどこへ行ったのか Summer Japanese Film Festival: Otoko wa Tsurai yo — Where Did That Japan Go?",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Summer-Japanese-Film-Festival-Otoko-wa-Tsurai-yo--Where-Did-That-Japan-Go-e3mj023",
       "spotify_match_score": 1.0
@@ -2971,6 +3159,8 @@
       "title": "夏の邦画祭り第二弾 映画『打ち上げ花火、下から見るか？横から見るか？』小学校は青春時代に入りますか？ Summer Japanese Film Festival Vol.2: Fireworks, Should We See It from the Side or the Bottom? — Does Elementary School Count as Your Coming-of-Age?",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 14,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -3038,6 +3228,8 @@
       "title": "【インターミッション】 #スパイダーマン とか#シノラー とか#ミッキー・ローク とか#エアロスミス とか#黒柳徹子 とか",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3mrf3s",
       "spotify_match_score": 1.0
@@ -3048,6 +3240,8 @@
       "title": "夏の邦画祭り第３弾 映画『容疑者Xの献身』究極の愛の形ってなんだろう Summer Japanese Film Festival Vol.3: Suspect X — What Does the Ultimate Form of Love Look Like?",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 26,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -3163,6 +3357,8 @@
       "title": "夏の邦画祭り第４弾 映画『この世界のさらにいくつもの片隅に』戦火の人々は逞しかったのだろうか Summer Japanese Film Festival Vol.4: In This Corner (and Other Corners) of the World — Were People Living Through War Truly Resilient?",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 28,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -3286,6 +3482,8 @@
       "title": "【インターミッション】 #一ノ瀬ワタル とか#アンジェリーナ・ジョリー とか#ウィキッド とか",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3nt0gj",
       "spotify_match_score": 1.0
@@ -3296,6 +3494,8 @@
       "title": "真夏のホラー企画 第一弾 映画『サユリ』これはジャンルシフトなのか……？ Midsummer Horror Series Vol.1: Sayuri — Is This a Genre Shift, or Something Else Entirely…?",
       "status": "ready",
       "errors": [],
+      "source_chapter_count": 6,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [
         {
           "timestamp": "00:00",
@@ -3331,6 +3531,8 @@
       "title": "【インターミッション】 #ズートピア３ とか#アナと雪の女王3 とか#牧場物語 とか",
       "status": "no_chapters",
       "errors": [],
+      "source_chapter_count": 0,
+      "chapters_dropped_for_spotify": 0,
       "chapters": [],
       "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/3-e3o2fv8",
       "spotify_match_score": 1.0

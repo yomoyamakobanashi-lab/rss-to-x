@@ -1,0 +1,61 @@
+{
+  "episode_id": "xtzntwon",
+  "listen_episode_url": "https://listen.style/p/reelpal/xtzntwon",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF--Listener-Request--Alien-Series-Part-4--Alien-Romulus-Do-Nostalgia-Reboots-Dream-of-Easter-Eggs-e39maf9",
+  "title": "リスナーリクエスト #エイリアン シリーズ その４ #SFホラー 映画『#エイリアン：ロムルス』ノスタルジィリサイクルはイースターエッグの夢を見るか？ Listener Request! Alien Series Part 4 – Alien: Romulus: Do Nostalgia Reboots Dream of Easter Eggs?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 35,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング：百人一首と日本の古文を巡る雑談"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:01",
+      "title": "お便り紹介：リスナーからの温かいメッセージ"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:00",
+      "title": "映画『エイリアン：ロムルス』あらすじ紹介"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:00",
+      "title": "実物表現とボディホラーへのこだわり"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:00",
+      "title": "いびつなレトロフューチャーの世界観を絶賛"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:00",
+      "title": "細部のツッコミとイースターエッグの数々"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:01",
+      "title": "イースターエッグの是非とノスタルジーの功罪"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:01",
+      "title": "AIのプログラムと資本主義・社会構造批判"
+    },
+    {
+      "segment_index": 26,
+      "timestamp": "1:18:00",
+      "title": "生殖と性のメタファー、テクノロジーへの批判"
+    },
+    {
+      "segment_index": 31,
+      "timestamp": "1:33:01",
+      "title": "次回予告とリスナーからのリクエスト"
+    }
+  ]
+}

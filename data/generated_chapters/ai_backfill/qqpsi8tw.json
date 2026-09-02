@@ -1,0 +1,61 @@
+{
+  "episode_id": "qqpsi8tw",
+  "listen_episode_url": "https://listen.style/p/reelpal/qqpsi8tw",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-Call-Me-By-Your-Name--Can-a-Love-That-Fades-Like-a-Dream-Still-Move-Your-Life-Forward-e3jk5o5",
+  "title": "リスナーリクエスト 映画『君の名前で僕を呼んで』泡沫に消えた恋は人生を先へ進めるのか Listener Request: Call Me By Your Name — Can a Love That Fades Like a Dream Still Move Your Life Forward?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 36,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングとインフルエンザの近況報告"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:08",
+      "title": "リスナーリクエスト『君の名前で僕を呼んで』紹介へ"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:10",
+      "title": "映画『君の名前で僕を呼んで』あらすじ紹介"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:04",
+      "title": "LGBTQ映画をフラットに語る姿勢について"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:00",
+      "title": "北イタリアの大自然と羨ましいライフスタイル"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:16",
+      "title": "劇中の印象的なシーンと様々な話題"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:18",
+      "title": "映画『君の名前で僕を呼んで』の徹底考察と議論開始"
+    },
+    {
+      "segment_index": 25,
+      "timestamp": "1:15:08",
+      "title": "思春期のアイデンティティと心の成長プロセス"
+    },
+    {
+      "segment_index": 31,
+      "timestamp": "1:33:04",
+      "title": "泡沫の恋は人生を先へ進めるのか"
+    },
+    {
+      "segment_index": 33,
+      "timestamp": "1:39:04",
+      "title": "エンディングと次回作『チョコレートドーナツ』の予告"
+    }
+  ]
+}

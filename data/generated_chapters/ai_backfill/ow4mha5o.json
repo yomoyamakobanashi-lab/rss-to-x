@@ -1,0 +1,51 @@
+{
+  "episode_id": "ow4mha5o",
+  "listen_episode_url": "https://listen.style/p/reelpal/ow4mha5o",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Fan-Request-1-BackToTheFuture-Trilogy--Should-Changing-the-Past-Be-Against-the-Law-e36kmfu",
+  "title": "リスナーリクエスト第１弾 傑作タイムトラベル映画『#バック・トゥー・ザ・フューチャー』シリーズ～過去を書き換えるのは罪なのか Fan Request #1: #BackToTheFuture Trilogy – Should Changing the Past Be Against the Law?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 42,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングと番組紹介"
+    },
+    {
+      "segment_index": 33,
+      "timestamp": "1:39:07",
+      "title": "作中に隠された数々の都市伝説と陰謀論"
+    },
+    {
+      "segment_index": 35,
+      "timestamp": "1:45:07",
+      "title": "オカルトは信じるものではなく楽しむもの"
+    },
+    {
+      "segment_index": 36,
+      "timestamp": "1:48:01",
+      "title": "フリーメイソンや実在の組織をめぐる雑談"
+    },
+    {
+      "segment_index": 37,
+      "timestamp": "1:51:00",
+      "title": "過去を書き換えるのは本当に罪なのか"
+    },
+    {
+      "segment_index": 38,
+      "timestamp": "1:54:00",
+      "title": "便利な世の中でも変わらない人間の性"
+    },
+    {
+      "segment_index": 39,
+      "timestamp": "1:57:00",
+      "title": "次回鑑賞するホラー映画の候補と感想"
+    },
+    {
+      "segment_index": 40,
+      "timestamp": "2:00:01",
+      "title": "エンディングとリスナーへのメッセージ"
+    }
+  ]
+}

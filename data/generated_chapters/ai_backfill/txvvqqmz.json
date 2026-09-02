@@ -1,0 +1,46 @@
+{
+  "episode_id": "txvvqqmz",
+  "listen_episode_url": "https://listen.style/p/reelpal/txvvqqmz",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Pick--GetOut--Unmasking-the-Warped-Jealousy-Behind-Discrimination-e385nlo",
+  "title": "リスナーリクエスト！異色ホラー 映画『#ゲットアウト』被差別者に向けられる歪んだ妬みの正体とは？ Listener Pick! #GetOut — Unmasking the Warped Jealousy Behind Discrimination",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 39,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング・横浜のラーメン事情について語る"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:04",
+      "title": "リスナーリクエスト・映画『ゲット・アウト』を紹介"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:03",
+      "title": "映画『ゲット・アウト』のあらすじ紹介"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:01",
+      "title": "映画を観た感想とそれぞれの見どころ"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:00",
+      "title": "映画『ゲット・アウト』の考察・白人OSアップデート不能説"
+    },
+    {
+      "segment_index": 26,
+      "timestamp": "1:18:00",
+      "title": "映画のディテールとさらなる考察"
+    },
+    {
+      "segment_index": 35,
+      "timestamp": "1:45:00",
+      "title": "エンディング・次回予告「ミッドサマー」と今後の予定"
+    }
+  ]
+}

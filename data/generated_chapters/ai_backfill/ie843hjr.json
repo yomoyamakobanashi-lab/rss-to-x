@@ -1,0 +1,51 @@
+{
+  "episode_id": "ie843hjr",
+  "listen_episode_url": "https://listen.style/p/reelpal/ie843hjr",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--ReplayComedyFilm-AustinPowers--How-Should-Middle-Aged-Men-Live-in-the-Reiwa-Era-e38u9la",
+  "title": "【Replay】#コメディ映画 『#オースティンパワーズ』令和のおじさんはどう生きるべきか？ 【Replay】#ComedyFilm “#AustinPowers” — How Should Middle-Aged Men Live in the Reiwa Era?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 21,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "「オースティン・パワーズ」のあらすじ紹介"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:10",
+      "title": "おバカ映画の金字塔をどう観るか"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:00",
+      "title": "令和にオースティンが復活したら溶け込めるのか"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:07",
+      "title": "時代に迎合しないオースティンの生き様"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:04",
+      "title": "時代との距離感をめぐる対照的な生き方"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:03",
+      "title": "令和のおじさんはどう生きるべきか"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:02",
+      "title": "コンプラ時代の笑いと価値観の多様性"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:05",
+      "title": "おじさんである自分をポジティブに生きる"
+    }
+  ]
+}

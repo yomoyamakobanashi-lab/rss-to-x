@@ -1,0 +1,166 @@
+{
+  "episode_id": "rf6m9xmz",
+  "listen_episode_url": "https://listen.style/p/reelpal/rf6m9xmz",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3fcm8j",
+  "title": "庵野秀明映画『#シン仮面ライダー』幸福追求とエゴが奏でる不協和音",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 32,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング・ゲストのスイ君を迎えて"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:02",
+      "title": "本日のテーマ：映画『シン・仮面ライダー』"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:00",
+      "title": "スイ君による『シン・仮面ライダー』あらすじ紹介"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:00",
+      "title": "あらすじ終了と映画への率直な感想"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:00",
+      "title": "『シン・仮面ライダー』の基本情報とジャブのツッコミどころ"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:00",
+      "title": "ラストバトルのグダグダ感と制作背景の裏側"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:00",
+      "title": "全編を通したインディーズムービー感と散らかった演出"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:02",
+      "title": "テレビシリーズの総集編としての構造と演技への疑問"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:00",
+      "title": "見えてこない主人公像と共感できない人間関係"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:01",
+      "title": "本郷たけしというキャラクターと庵野監督の演出論"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:00",
+      "title": "エグゼクティブプロデューサーとしての庵野監督への苦言"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:01",
+      "title": "細かな演出や設定へのツッコミとルリコの謎"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:02",
+      "title": "戦闘シーンの評価とCGのクオリティについて"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:01",
+      "title": "国家権力の描写とアイドル起用についての意見"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:02",
+      "title": "特撮番組における若手俳優の演技と成長枠の是非"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:01",
+      "title": "他の大人の仮面ライダー作品との比較"
+    },
+    {
+      "segment_index": 16,
+      "timestamp": "48:01",
+      "title": "庵野監督の暴走と映画の評価をめぐる議論"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:00",
+      "title": "持論展開：『シン・仮面ライダー』個別最適化社会への警鐘説"
+    },
+    {
+      "segment_index": 18,
+      "timestamp": "54:00",
+      "title": "ショッカーの目的とAI時代における全肯定の恐怖"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:02",
+      "title": "主体性なき主人公・本郷たけしが描く現代の危機感"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:01",
+      "title": "スイ君の持論：ショッカーに見る「悪は滅びないのが正しい」説"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:01",
+      "title": "教育と制度設計から見るショッカーと仮面ライダーの関係性"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:00",
+      "title": "制度と例外、そして仮面ライダーがもたらす揺らぎ"
+    },
+    {
+      "segment_index": 23,
+      "timestamp": "1:09:01",
+      "title": "小ネタ紹介：ラスボス・緑川一郎の元ネタと演劇作品"
+    },
+    {
+      "segment_index": 24,
+      "timestamp": "1:12:02",
+      "title": "シン・なんちゃらシリーズの今後と雑談"
+    },
+    {
+      "segment_index": 25,
+      "timestamp": "1:15:02",
+      "title": "バイクのこだわりとマニアックなトーク"
+    },
+    {
+      "segment_index": 26,
+      "timestamp": "1:18:01",
+      "title": "リスナーから届いたお便りの紹介と感想"
+    },
+    {
+      "segment_index": 27,
+      "timestamp": "1:21:01",
+      "title": "過去作の感想や別の映画の話題で盛り上がる"
+    },
+    {
+      "segment_index": 28,
+      "timestamp": "1:24:02",
+      "title": "次回のリクエスト作品『Vフォー・ヴェンデッタ』について"
+    },
+    {
+      "segment_index": 29,
+      "timestamp": "1:27:01",
+      "title": "原作コミックやアラン・ムーア作品の魅力について語る"
+    },
+    {
+      "segment_index": 30,
+      "timestamp": "1:30:00",
+      "title": "エンディング・番組からの告知"
+    }
+  ]
+}

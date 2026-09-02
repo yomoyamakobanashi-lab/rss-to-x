@@ -1,0 +1,51 @@
+{
+  "episode_id": "dwmq5bvt",
+  "listen_episode_url": "https://listen.style/p/reelpal/dwmq5bvt",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-The-Witch--Does-Faith-Bring-Salvation-or-Collapse-e3lsko4",
+  "title": "リスナーリクエスト ホラー映画『ウィッチ』 信仰が生むのは救いか崩壊か Listener Request: The Witch — Does Faith Bring Salvation or Collapse?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 36,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングと洋服のタグの話"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:03",
+      "title": "リスナーリクエスト『ウィッチ』の紹介と第一印象"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:02",
+      "title": "映画『ウィッチ』のあらすじ紹介"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:00",
+      "title": "主演アニア・テイラー・ジョイとキャストの魅力"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:00",
+      "title": "映画への細かいツッコミと時代考証への疑問"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:00",
+      "title": "『ウィッチ』の核心：信仰が魔女を生んだ説"
+    },
+    {
+      "segment_index": 24,
+      "timestamp": "1:12:01",
+      "title": "『ウィッチ』ヤンキー誕生映画説とラベリング理論"
+    },
+    {
+      "segment_index": 32,
+      "timestamp": "1:36:02",
+      "title": "エンディングと次回予告のお知らせ"
+    }
+  ]
+}

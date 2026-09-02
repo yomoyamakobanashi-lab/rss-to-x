@@ -1,0 +1,76 @@
+{
+  "episode_id": "iebmlldx",
+  "listen_episode_url": "https://listen.style/p/reelpal/iebmlldx",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3g3d3o",
+  "title": "【インターミッション】 #青春映画 とか#ハムナプトラ とか",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 14,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "最新映画情報と「レンタルファミリー」"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:13",
+      "title": "柄本明の出演作としこふんじゃった"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:10",
+      "title": "青春映画が苦手になってきた理由"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:02",
+      "title": "国内外の青春映画に対する印象"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:02",
+      "title": "ホラー映画を見たはずが青春が始まった話"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:08",
+      "title": "映画「体探し」の展開へのツッコミ"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:08",
+      "title": "青春映画の枠組みを変える作品たち"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:05",
+      "title": "チャイルド・プレイシリーズの変遷"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:04",
+      "title": "音楽映画と青春映画の共通点"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:05",
+      "title": "名作と言われる青春映画について語る"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:00",
+      "title": "ハムナプトラシリーズの記憶を巡る"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:06",
+      "title": "往年の名作映画を語る難しさ"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:01",
+      "title": "エンディングと今回のまとめ"
+    }
+  ]
+}

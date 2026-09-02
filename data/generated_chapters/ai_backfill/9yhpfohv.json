@@ -1,0 +1,66 @@
+{
+  "episode_id": "9yhpfohv",
+  "listen_episode_url": "https://listen.style/p/reelpal/9yhpfohv",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Intermission-Frankenstein---Gremlins3-----and-the-Chaos-Between-e3alnm1",
+  "title": "新企画【インターミッション】#フランケンシュタイン とか #グレムリン３ とか…… [Intermission] #Frankenstein , #Gremlins3 ... and the Chaos Between",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 12,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "新企画のインターミッション開始"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:05",
+      "title": "配信開始のフランケンシュタインと監督ギレルモ・デル・トロ"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:02",
+      "title": "ダークファンタジーとしてのフランケンシュタインの魅力"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:00",
+      "title": "ネットフリックス映画の空虚感とピノキオの思い出"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:07",
+      "title": "制作決定したグレムリン3とクリス・コロンバス監督"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:01",
+      "title": "クリス・コロンバスの過去作と冒険ファンタジー映画の思い出"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:03",
+      "title": "グレムリンの思い出と映画のマスコットキャラクター論"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:00",
+      "title": "グレムリン3への期待とパペット・CGの表現手法について"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:02",
+      "title": "ハムナフトラ新シリーズの噂と過去作の思い出"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:00",
+      "title": "天使にラブ・ソングを3の制作状況と故マギー・スミスを偲ぶ"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:02",
+      "title": "ロビン・ウィリアムズ主演のトイズと映画トークの締めくくり"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "episode_id": "ds5xvnwo",
+  "listen_episode_url": "https://listen.style/p/reelpal/ds5xvnwo",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Intermission-Tokusatsu-and-KamenRider-and-SuperSentai-and-e3cre16",
+  "title": "【インターミッション】#特撮 とか#仮面ライダー とか#戦隊ヒーロー とか… [Intermission] #Tokusatsu and #KamenRider and #SuperSentai and…",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 12,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングと配信機材の雑談"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:01",
+      "title": "昭和ライダーの思い出と仮面ライダーの映画"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:00",
+      "title": "ウロブチゲンと平成特撮の作風について"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:01",
+      "title": "懐かしの戦隊ヒーローと特撮番組の思い出"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:03",
+      "title": "特装ロボジャンパーソンとロボコップの魅力"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:03",
+      "title": "映画『国宝』と脚本家についてのトーク"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:02",
+      "title": "エンディングと次回予告"
+    }
+  ]
+}

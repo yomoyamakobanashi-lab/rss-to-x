@@ -1,0 +1,66 @@
+{
+  "episode_id": "0pzhzwyt",
+  "listen_episode_url": "https://listen.style/p/reelpal/0pzhzwyt",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/3-e3o2fv8",
+  "title": "【インターミッション】 #ズートピア３ とか#アナと雪の女王3 とか#牧場物語 とか",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 12,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "『ズートピア3』と続編映画への不満"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:03",
+      "title": "『ズートピア2』のストーリーと感想"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:00",
+      "title": "ディズニー映画の表現制限と過去の遺産"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:01",
+      "title": "ゲーム産業の巨大化と『牧場物語』への不満"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:01",
+      "title": "版権ゲームや釣りゲームの思い出"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:13",
+      "title": "ゲームにおける新しい世界の提案と無双シリーズ"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:00",
+      "title": "多彩なコラボ無双シリーズの思い出"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:04",
+      "title": "歴史ゲームの超解釈とキャラクターの魅力"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:25",
+      "title": "『戦国BASARA』の破天荒な世界観"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:07",
+      "title": "歴史上の人物の扱いと織田信長の女体化"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:03",
+      "title": "信長名鑑の紹介と今回のまとめ"
+    }
+  ]
+}

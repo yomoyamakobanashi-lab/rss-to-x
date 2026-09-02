@@ -1,0 +1,46 @@
+{
+  "episode_id": "i3fzifzf",
+  "listen_episode_url": "https://listen.style/p/reelpal/i3fzifzf",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Special-4--Tim-Burtons-Sleepy-Hollow-When-Science-Goes-Head-to-Head-with-Faith-e37hme7",
+  "title": "真夏のホラー映画特集その４ #ティム・バートン映画『#スリーピー・ホロウ 〜科学は信仰を破壊したのか……〜 Summer Horror Special #4 – Tim Burton’s Sleepy Hollow: When Science Goes Head-to-Head with Faith",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 36,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングと『スリーピー・ホロウ』の導入"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:06",
+      "title": "クリスティーナ・リッチの魅力と出演作を振り返る"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:01",
+      "title": "ジョニー・デップの演技とアメリカの妖怪について"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:01",
+      "title": "『スリーピー・ホロウ』ティム・バートン版青春映画説"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:03",
+      "title": "ティム・バートンの世界観と幼少期の背景"
+    },
+    {
+      "segment_index": 26,
+      "timestamp": "1:18:00",
+      "title": "魔女裁判とミレニアム問題から読み解く映画の構図"
+    },
+    {
+      "segment_index": 33,
+      "timestamp": "1:39:01",
+      "title": "リスナーのお便りと次回予告『シャッター アイランド』"
+    }
+  ]
+}

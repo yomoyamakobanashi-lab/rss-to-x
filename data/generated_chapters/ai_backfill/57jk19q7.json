@@ -1,0 +1,121 @@
+{
+  "episode_id": "57jk19q7",
+  "listen_episode_url": "https://listen.style/p/reelpal/57jk19q7",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayNetflix--ReplayNetflix-AmericanMurder--Trusting-Every-Video--Yeah-Maybe-Dont-e3b209a",
+  "title": "【Replay】#Netflix ドキュメンタリー『#アメリカンマーダー』映像ばかり信用するのも怖いもんよね 【Replay】#Netflix #AmericanMurder — Trusting Every Video? Yeah… Maybe Don’t.",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 23,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングと『アメリカンマーダー』のあらすじ紹介"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:03",
+      "title": "Netflixのドキュメンタリーと魅力について"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:04",
+      "title": "ドキュメンタリー番組の楽しみ方とおすすめ作品"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:03",
+      "title": "エンタメとして昇華されたNetflixドキュメンタリーの凄さ"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:03",
+      "title": "ナレーション無しという革新的な映像手法"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:03",
+      "title": "『アメリカンマーダー 一家殺害事件』の事件の導入"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:17",
+      "title": "現実の事件が持つ創作を超える圧倒的な衝撃"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:15",
+      "title": "SNSの裏側とキラキラ家族のメッキが剥がれる瞬間"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:11",
+      "title": "ネット情報の継ぎ接ぎで物事を判断する怖さ"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:02",
+      "title": "パートナーシップの歪みと事件の背景を考える"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:02",
+      "title": "愛情という感情が持つ破壊力について"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:04",
+      "title": "別のシリーズ作品『ギャビー・ペティート殺人事件』"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:06",
+      "title": "Xで話題のオピオイドやフェンタニルについての余談"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:09",
+      "title": "作品タイトルの勘違いを巡るハプニング"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:00",
+      "title": "映像ばかりを信用することへの警鐘"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:18",
+      "title": "観測者の解釈によって変わる映像の真実性"
+    },
+    {
+      "segment_index": 16,
+      "timestamp": "48:07",
+      "title": "映像の二面性と陰謀論に惑わされる心理"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:07",
+      "title": "映像の背景にある真実を見極める読解力"
+    },
+    {
+      "segment_index": 18,
+      "timestamp": "54:04",
+      "title": "AIの進化がもたらす映像のフェイク問題"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:08",
+      "title": "AI時代における監視者と信頼性のジレンマ"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:10",
+      "title": "道具としてのAIの暴走と倫理観の重要性"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:07",
+      "title": "エンディングと今回のまとめ"
+    }
+  ]
+}

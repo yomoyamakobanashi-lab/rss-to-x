@@ -1,0 +1,61 @@
+{
+  "episode_id": "abjucgdb",
+  "listen_episode_url": "https://listen.style/p/reelpal/abjucgdb",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--Replay-In-the-Movie-DjangoUnchained--What-Is-It-Thats-Not-Really-Unchained-e34jlt6",
+  "title": "【Replay】映画『#ジャンゴ繋がれざる者 』が真に繋がれていないのは何なのか [Replay] In the Movie #DjangoUnchained, What Is It That’s Not Really Unchained?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 34,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "『ジャンゴ 繋がれざる者』のあらすじ紹介"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:02",
+      "title": "ドイツの民話とブルームヒルダの名前の謎"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:09",
+      "title": "タランティーノ監督の特徴とマカロニウエスタンの背景"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:01",
+      "title": "奴隷制度と差別、法とモラルについての考察"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:03",
+      "title": "ドクター・シュルツの生き様と人間性"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:00",
+      "title": "作中に仕込まれた皮肉とアレクサンドル・デュマの引用"
+    },
+    {
+      "segment_index": 18,
+      "timestamp": "54:02",
+      "title": "レオナルド・ディカプリオの怪演とキャンディの人物像"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:04",
+      "title": "情報社会のエコーチェンバーと差別の構造"
+    },
+    {
+      "segment_index": 26,
+      "timestamp": "1:18:04",
+      "title": "命名センスや服装に込められた演出意図"
+    },
+    {
+      "segment_index": 27,
+      "timestamp": "1:21:02",
+      "title": "ラストシーンの檻の描写とタイトルに隠された意味"
+    }
+  ]
+}
