@@ -1,0 +1,61 @@
+{
+  "episode_id": "5v7n9wed",
+  "listen_episode_url": "https://listen.style/p/reelpal/5v7n9wed",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF----Time-Paradox-Sci-Fi-Flick-Terminator-Dont-leave-your-future-in-just-anyones-hands---Nukes--the-future--and-sometimes----your-dad-e339igt",
+  "title": "タイムパラドックスSF映画『#ターミネーター 』 お前のオールを任せるな。〜核と未来と時々おとん〜 Time-Paradox Sci-Fi Flick: #Terminator Don’t leave your future in just anyone’s hands. — Nukes, the future, and sometimes... your dad.",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 34,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング・マイク音をめぐる小話と足のトラブル"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:01",
+      "title": "タイムパラドックスSF映画『ターミネーター』特集開始"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:05",
+      "title": "シリーズ第1作と第2作の魅力とシュワルツェネガーの配役"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:02",
+      "title": "ターミネーターとマトリックスに見る自己意識の変遷"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:01",
+      "title": "ターミネーター事実上のゴジラ説・核のメタファーを語る"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:02",
+      "title": "タイムパラドックスの矛盾と映画の茶番説を検証する"
+    },
+    {
+      "segment_index": 26,
+      "timestamp": "1:18:00",
+      "title": "キリスト教のモチーフと物語の構造について"
+    },
+    {
+      "segment_index": 28,
+      "timestamp": "1:24:01",
+      "title": "映画の細かいツッコミどころと名台詞の裏側"
+    },
+    {
+      "segment_index": 29,
+      "timestamp": "1:27:00",
+      "title": "シュワルツェネガー出演の他作品やコメディの魅力"
+    },
+    {
+      "segment_index": 32,
+      "timestamp": "1:36:01",
+      "title": "エンディング・次回予告と番組のお知らせ"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "episode_id": "aelcamtj",
+  "listen_episode_url": "https://listen.style/p/reelpal/aelcamtj",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-3-ReplayHad-to-Talk-About-Godzilla-Minus-One--Part-3-Hollywood-Godzilla-e343009",
+  "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その3〜ハリウッド版ゴジラ〜 (Replay)“Had to Talk About Godzilla Minus One” — Part 3: Hollywood Godzilla",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 43,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "ハリウッド版ゴジラ特集の導入と3作品の紹介"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:05",
+      "title": "1956年版『怪獣王ゴジラ』の評価とアメリカの立場"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:12",
+      "title": "『怪獣王ゴジラ』に見る日本観とコンプレックス"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:04",
+      "title": "国土の再建とアメリカの管理者としての視点"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:09",
+      "title": "1998年版『GODZILLA ゴジラ』の功罪とエンタメ性"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:03",
+      "title": "エメゴジの演出意図とゴジラ冠の功罪"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:02",
+      "title": "怪獣とモンスターの違い、そして駆除対象としてのゴジラ"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:05",
+      "title": "日米の恐怖の根源と歴史的背景の違い"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:05",
+      "title": "宗教観の違いがもたらすゴジラ像の乖離"
+    },
+    {
+      "segment_index": 24,
+      "timestamp": "1:12:06",
+      "title": "2014年版『GODZILLA ゴジラ』の総括とレジェゴジの魅力"
+    },
+    {
+      "segment_index": 28,
+      "timestamp": "1:24:02",
+      "title": "レジェゴジにおける核の描き方と人間ドラマ"
+    },
+    {
+      "segment_index": 33,
+      "timestamp": "1:39:01",
+      "title": "圧倒的な音響と映像美、ムートーの造形美について"
+    },
+    {
+      "segment_index": 36,
+      "timestamp": "1:48:03",
+      "title": "家族のテーマと超越者としてのゴジラの描き方"
+    },
+    {
+      "segment_index": 41,
+      "timestamp": "2:03:01",
+      "title": "次回予告とエンディング"
+    }
+  ]
+}

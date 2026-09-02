@@ -1,0 +1,41 @@
+{
+  "episode_id": "gnrdz2nn",
+  "listen_episode_url": "https://listen.style/p/reelpal/gnrdz2nn",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-4Replay-Had-to-Talk-About-Godzilla-Minus-One-Part-4--What-Was-the-Godzilla-Millennium-Series--Anyway-e343085",
+  "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その4〜ゴジラミレニアムシリーズとはいったいなんだったのか〜[Replay] “Had to Talk About Godzilla Minus One” Part 4 — What Was the Godzilla Millennium Series, Anyway?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 36,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングとゴジラ-1.0の振り返り"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:27",
+      "title": "ゴジラミレニアムシリーズの全体像"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:27",
+      "title": "ミレニアム各作品の特徴と見どころ"
+    },
+    {
+      "segment_index": 18,
+      "timestamp": "54:28",
+      "title": "平成ゴジラシリーズとの作風の違い"
+    },
+    {
+      "segment_index": 24,
+      "timestamp": "1:12:00",
+      "title": "ミレニアムシリーズが残した功績"
+    },
+    {
+      "segment_index": 30,
+      "timestamp": "1:30:09",
+      "title": "次回予告とエンディングトーク"
+    }
+  ]
+}

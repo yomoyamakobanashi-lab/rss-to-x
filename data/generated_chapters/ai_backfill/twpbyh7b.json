@@ -1,0 +1,51 @@
+{
+  "episode_id": "twpbyh7b",
+  "listen_episode_url": "https://listen.style/p/reelpal/twpbyh7b",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/The-movie-Hellraiser--Faith-and-corruption-are-a-paper-thin-line-apart-e32abq4",
+  "title": "映画『#ヘルレイザー』 信仰と堕落は紙一重 The movie #Hellraiser — Faith and corruption are a paper-thin line apart.",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 29,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング・ユングのシャドウについて"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:02",
+      "title": "映画『ヘルレイザー』のあらすじ紹介"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:05",
+      "title": "『ヘルレイザー』鑑賞のきっかけと第一印象"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:01",
+      "title": "旧約聖書・神話的モチーフとしての読み解き"
+    },
+    {
+      "segment_index": 14,
+      "timestamp": "42:06",
+      "title": "信仰と堕落の表裏一体性について"
+    },
+    {
+      "segment_index": 18,
+      "timestamp": "54:01",
+      "title": "逆転聖書としての『ヘルレイザー』解釈"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:04",
+      "title": "サッチャー政権時代のイギリス社会とメタファー"
+    },
+    {
+      "segment_index": 26,
+      "timestamp": "1:18:03",
+      "title": "次回予告とエンディング"
+    }
+  ]
+}

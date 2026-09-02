@@ -1,0 +1,61 @@
+{
+  "episode_id": "syxxiykl",
+  "listen_episode_url": "https://listen.style/p/reelpal/syxxiykl",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/TheExperiment--Nobody-wants-to-take-responsibility-e320u4p",
+  "title": "映画 『#エクスペリメント』 責任なんて誰もとりたくねえよ！#TheExperiment — “Nobody wants to take responsibility!”",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 35,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "新番組「The Reel Friends in TOKYO」の立ち上げと経緯"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:03",
+      "title": "映画『エクスペリメント』あらすじ紹介"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:08",
+      "title": "スタンフォード監獄実験の概要と背景"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:02",
+      "title": "BBC監獄実験と心理描写の魅力"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:01",
+      "title": "出演俳優の演技力とキャラクターの魅力"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:01",
+      "title": "正義の正当性と社会的役割の考察"
+    },
+    {
+      "segment_index": 20,
+      "timestamp": "1:00:06",
+      "title": "「赤ランプ」と現代の責任回避・SNS社会"
+    },
+    {
+      "segment_index": 24,
+      "timestamp": "1:12:01",
+      "title": "アブグレイブ捕虜虐待事件と環境が人を変える構造"
+    },
+    {
+      "segment_index": 27,
+      "timestamp": "1:21:16",
+      "title": "集団心理と抗えない恐怖、そしてまとめ"
+    },
+    {
+      "segment_index": 32,
+      "timestamp": "1:36:01",
+      "title": "次回予告：『ヘルレイザー』に向けて"
+    }
+  ]
+}

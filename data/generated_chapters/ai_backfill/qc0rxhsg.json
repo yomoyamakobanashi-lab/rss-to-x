@@ -1,0 +1,66 @@
+{
+  "episode_id": "qc0rxhsg",
+  "listen_episode_url": "https://listen.style/p/reelpal/qc0rxhsg",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/The-Matrix--A-Messiah-Called-Cypher-e330fr8",
+  "title": "映画『#マトリックス』 サイファーという名の救世主。 \"The Matrix\" — A Messiah Called Cypher.",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.5-flash-lite",
+  "transcript_segment_count": 34,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニングとマーモットの話題"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:07",
+      "title": "本日のテーマ：映画『マトリックス』"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:04",
+      "title": "『マトリックス』シリーズのあらすじと概要"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:01",
+      "title": "名シーンとターミネーターとの比較"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:05",
+      "title": "未来のAI発電量と中二病な衣装の魅力"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:05",
+      "title": "ネオ＝バズ・ライトイヤー説"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:09",
+      "title": "トランスジェンダー視点から見るマトリックス"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:00",
+      "title": "サイファーこそが救世主なのか"
+    },
+    {
+      "segment_index": 28,
+      "timestamp": "1:24:02",
+      "title": "海外のクッキーとマクビティの思い出"
+    },
+    {
+      "segment_index": 29,
+      "timestamp": "1:27:02",
+      "title": "次回予告：ターミネーターシリーズを語る"
+    },
+    {
+      "segment_index": 31,
+      "timestamp": "1:33:03",
+      "title": "番組の告知とエンディング"
+    }
+  ]
+}
