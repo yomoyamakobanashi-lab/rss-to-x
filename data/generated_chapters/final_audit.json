@@ -1,17 +1,10 @@
 {
   "episode_count": 128,
-  "chapter_issue_count": 127,
+  "chapter_issue_count": 128,
   "native_listen_ready": 38,
-  "ai_files": 89,
-  "created_this_run": 0,
+  "ai_files": 90,
+  "created_this_run": 1,
   "normalized_this_run": 0,
-  "unresolved_count": 1,
-  "unresolved": [
-    {
-      "episode_id": "lt7ujaek",
-      "title": "【インターミッション】 #みんなおしゃべり とか#手話 とか#モアナ とか",
-      "listen_episode_url": "https://listen.style/p/reelpal/lt7ujaek",
-      "status": "no_chapters"
-    }
-  ]
+  "unresolved_count": 0,
+  "unresolved": []
 }
