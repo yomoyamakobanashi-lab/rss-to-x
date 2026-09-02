@@ -74,7 +74,21 @@ jobs:
               echo '**Spotify for Creators の既存エピソード説明文は消さず、末尾に以下をそのまま追加してください。**'
               echo
               echo '```text'
-              cat data/generated_chapters/latest.txt
+              python - <<'PY'
+          import json
+
+          def spotify_ts(ts: str) -> str:
+              parts = [int(x) for x in ts.strip('()').split(':')]
+              if len(parts) == 2:
+                  return f"({parts[0]:02d}:{parts[1]:02d})"
+              if len(parts) == 3:
+                  return f"({parts[0]:02d}:{parts[1]:02d}:{parts[2]:02d})"
+              raise ValueError(ts)
+
+          data = json.load(open('data/generated_chapters/latest.json', encoding='utf-8'))
+          for c in data['chapters']:
+              print(f"{spotify_ts(c['timestamp'])} {c['title']}")
+          PY
               echo '```'
               echo
               echo "LISTEN: ${LISTEN_URL}"
