@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       max_episodes:
-        description: 'Maximum episodes to generate this run'
+        description: 'Maximum episodes to generate this run; 0 means all remaining'
         required: false
-        default: '10'
+        default: '0'
   schedule:
-    - cron: '30 18 * * *' # 03:30 JST daily; generation skips itself until GEMINI_API_KEY exists
+    - cron: '30 18 * * *' # 03:30 JST daily; skips episodes already generated
   push:
     branches: [main]
     paths:
@@ -44,7 +44,7 @@ jobs:
         id: ai
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          MAX_EPISODES: ${{ github.event.inputs.max_episodes || '10' }}
+          MAX_EPISODES: ${{ github.event.inputs.max_episodes || '0' }}
         shell: bash
         run: |
           if [ -z "$GEMINI_API_KEY" ]; then
@@ -143,5 +143,3 @@ jobs:
           git add data/generated_chapters/ai_backfill
           git commit -m 'Add transcript-derived Spotify chapters'
           git push
-
-# Manual pilot trigger: 2026-09-02
