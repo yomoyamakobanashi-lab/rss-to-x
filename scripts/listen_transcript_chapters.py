@@ -7,7 +7,7 @@ import os
 import re
 import sys
 import time
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -15,6 +15,13 @@ from bs4 import BeautifulSoup
 
 USER_AGENT = "rss-to-x/1.0 (+https://github.com/yomoyamakobanashi-lab/rss-to-x)"
 TIME_LINE_RE = re.compile(r"^(?:(?:\d{1,2}):)?\d{1,2}:\d{2}$")
+DEFAULT_MODELS = [
+    "gemini-3.5-flash-lite",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.5-flash",
+    "gemini-3.1-flash-lite",
+]
 
 
 @dataclass
@@ -132,69 +139,8 @@ def strip_json_fence(value: str) -> str:
     return value.strip()
 
 
-def generate_with_gemini(title: str, segments: list[Segment], model: str) -> list[dict]:
-    key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not key:
-        raise RuntimeError("GEMINI_API_KEY is not configured")
-
-    try:
-        from google import genai
-        from google.genai import types
-    except ImportError as exc:
-        raise RuntimeError("google-genai is not installed") from exc
-
-    transcript_rows = []
-    for seg in segments:
-        excerpt = seg.text[:2200]
-        transcript_rows.append(f"SEGMENT {seg.index} [{seg.timestamp}]\n{excerpt}")
-
-    prompt = f"""You are editing chapter markers for a Japanese movie-discussion podcast.
-Episode title: {title}
-
-Below is the LISTEN transcript divided at real timestamp markers. Choose chapter starts by SEGMENT index only.
-
-Requirements:
-- Return JSON only: {{"chapters":[{{"segment_index":0,"title":"..."}}, ...]}}
-- The first chapter MUST use segment_index 0.
-- Choose roughly 5-10 chapters for a normal 60-120 minute episode; fewer for short episodes.
-- Prefer genuine topic changes, not every small conversational detour.
-- Chapter titles must be concise natural Japanese (roughly 8-28 Japanese characters), concrete, and faithful to what is actually discussed.
-- Do not invent topics or facts.
-- Avoid generic titles such as 「トーク」「雑談」 when a more specific topic is available.
-- Do not return two adjacent chapter starts unless the topic clearly changes.
-
-TRANSCRIPT:
-
-""" + "\n\n".join(transcript_rows)
-
-    client = genai.Client(api_key=key)
-    response = None
-    last_exc: Exception | None = None
-    for attempt in range(1, 4):
-        try:
-            response = client.models.generate_content(
-                model=model,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type="application/json",
-                    temperature=0.2,
-                ),
-            )
-            break
-        except Exception as exc:
-            last_exc = exc
-            message = str(exc).lower()
-            transient = "503" in message or "unavailable" in message or "high demand" in message
-            if not transient or attempt == 3:
-                raise
-            wait = 8 * attempt
-            print(f"Gemini transient error; retrying in {wait}s (attempt {attempt}/3)", file=sys.stderr)
-            time.sleep(wait)
-    if response is None:
-        raise RuntimeError(f"Gemini returned no response: {last_exc}")
-
-    raw = strip_json_fence(response.text or "")
-    payload = json.loads(raw)
+def normalize_chapters(raw: str, segments: list[Segment]) -> list[dict]:
+    payload = json.loads(strip_json_fence(raw))
     requested = payload.get("chapters", payload if isinstance(payload, list) else [])
     if not isinstance(requested, list):
         raise ValueError("Gemini returned an unexpected chapter payload")
@@ -232,6 +178,87 @@ TRANSCRIPT:
     return cleaned
 
 
+def generate_with_gemini(title: str, segments: list[Segment], models: list[str]) -> tuple[list[dict], str]:
+    key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("GEMINI_API_KEY is not configured")
+
+    try:
+        from google import genai
+        from google.genai import types
+    except ImportError as exc:
+        raise RuntimeError("google-genai is not installed") from exc
+
+    transcript_rows = []
+    for seg in segments:
+        excerpt = seg.text[:2200]
+        transcript_rows.append(f"SEGMENT {seg.index} [{seg.timestamp}]\n{excerpt}")
+
+    prompt = f"""You are editing chapter markers for a Japanese movie-discussion podcast.
+Episode title: {title}
+
+Below is the LISTEN transcript divided at real timestamp markers. Choose chapter starts by SEGMENT index only.
+
+Requirements:
+- Return JSON only: {{"chapters":[{{"segment_index":0,"title":"..."}}, ...]}}
+- The first chapter MUST use segment_index 0.
+- Choose roughly 5-10 chapters for a normal 60-120 minute episode; fewer for short episodes.
+- Prefer genuine topic changes, not every small conversational detour.
+- Chapter titles must be concise natural Japanese (roughly 8-28 Japanese characters), concrete, and faithful to what is actually discussed.
+- Do not invent topics or facts.
+- Avoid generic titles such as 「トーク」「雑談」 when a more specific topic is available.
+- Do not return two adjacent chapter starts unless the topic clearly changes.
+
+TRANSCRIPT:
+
+""" + "\n\n".join(transcript_rows)
+
+    client = genai.Client(api_key=key)
+    failures: list[str] = []
+
+    for model in models:
+        for attempt in range(1, 3):
+            try:
+                print(f"Gemini model {model} attempt {attempt}/2", file=sys.stderr)
+                response = client.models.generate_content(
+                    model=model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(response_mime_type="application/json"),
+                )
+                chapters = normalize_chapters(response.text or "", segments)
+                return chapters, model
+            except Exception as exc:
+                message = str(exc)
+                lower = message.lower()
+                failures.append(f"{model}: {type(exc).__name__}: {message[:220]}")
+                transient = (
+                    "503" in message
+                    or "unavailable" in lower
+                    or "high demand" in lower
+                    or "429" in message
+                    or "quota" in lower
+                    or "rate" in lower
+                )
+                unavailable_model = "404" in message and ("model" in lower or "not_found" in lower)
+                if unavailable_model:
+                    print(f"{model} unavailable; trying next model.", file=sys.stderr)
+                    break
+                if transient:
+                    if attempt == 1:
+                        time.sleep(2)
+                        continue
+                    print(f"{model} still busy/limited; trying next model.", file=sys.stderr)
+                    break
+                # Bad JSON or another model-specific response problem: one retry,
+                # then move to the next model instead of killing the whole batch.
+                if attempt == 1:
+                    time.sleep(1)
+                    continue
+                break
+
+    raise RuntimeError("All Gemini models failed: " + " | ".join(failures[-8:]))
+
+
 def probe(episodes: list[dict]) -> int:
     candidates = [e for e in episodes if e.get("status") == "no_chapters"]
     if not candidates:
@@ -250,7 +277,7 @@ def probe(episodes: list[dict]) -> int:
     return 0
 
 
-def generate(episodes: list[dict], output_dir: Path, limit: int, model: str, delay: float) -> int:
+def generate(episodes: list[dict], output_dir: Path, limit: int, models: list[str], delay: float) -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     candidates = [e for e in episodes if e.get("status") == "no_chapters"]
     attempted = 0
@@ -269,33 +296,23 @@ def generate(episodes: list[dict], output_dir: Path, limit: int, model: str, del
             title, segments = extract_transcript(ep["listen_episode_url"])
             if len(segments) < 3:
                 raise ValueError(f"Only {len(segments)} transcript segments found")
-            chapters = generate_with_gemini(title, segments, model)
+            chapters, model_used = generate_with_gemini(title, segments, models)
             payload = {
                 "episode_id": eid,
                 "listen_episode_url": ep["listen_episode_url"],
                 "spotify_creator_url": ep.get("spotify_creator_url"),
                 "title": title or ep.get("title", ""),
                 "source": "LISTEN transcript + Gemini",
-                "model": model,
+                "model": model_used,
                 "transcript_segment_count": len(segments),
                 "chapters": chapters,
             }
             out.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             generated += 1
-            print(f"Generated {eid}: {len(chapters)} chapters — {payload['title']}")
+            print(f"Generated {eid}: {len(chapters)} chapters via {model_used} — {payload['title']}")
         except Exception as exc:
             errors += 1
-            message = str(exc)
-            print(f"ERROR {eid}: {type(exc).__name__}: {message}", file=sys.stderr)
-            lower = message.lower()
-            if (
-                "429" in message
-                or "quota" in lower
-                or "rate" in lower
-                or ("404" in message and ("model" in lower or "not_found" in lower))
-            ):
-                print("Stopping batch due to model/API configuration or quota error.", file=sys.stderr)
-                break
+            print(f"ERROR {eid}: {type(exc).__name__}: {exc}", file=sys.stderr)
         if delay > 0:
             time.sleep(delay)
 
@@ -309,14 +326,18 @@ def main() -> int:
     ap.add_argument("--output-dir", default="data/generated_chapters/ai_backfill")
     ap.add_argument("--probe", action="store_true")
     ap.add_argument("--limit", type=int, default=10)
-    ap.add_argument("--model", default="gemini-3.1-flash-lite")
-    ap.add_argument("--delay", type=float, default=3.0)
+    ap.add_argument("--model", action="append", dest="models", help="Gemini model, repeatable")
+    ap.add_argument("--delay", type=float, default=1.0)
     args = ap.parse_args()
+
+    models = args.models or DEFAULT_MODELS
+    # Preserve order while removing duplicates.
+    models = list(dict.fromkeys(models))
 
     episodes = load_backfill(Path(args.backfill))
     if args.probe:
         return probe(episodes)
-    return generate(episodes, Path(args.output_dir), args.limit, args.model, args.delay)
+    return generate(episodes, Path(args.output_dir), args.limit, models, args.delay)
 
 
 if __name__ == "__main__":
