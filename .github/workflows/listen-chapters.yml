@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '15 0 * * *' # 09:15 JST daily
+  push:
+    paths:
+      - 'scripts/listen_to_spotify_chapters.py'
+      - '.github/workflows/listen-chapters.yml'
 
 permissions:
   contents: write
@@ -13,9 +17,9 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
@@ -32,12 +36,14 @@ jobs:
         id: changes
         shell: bash
         run: |
-          if git diff --quiet -- data/generated_chapters; then
+          STATUS=$(git status --porcelain -- data/generated_chapters)
+          if [ -z "$STATUS" ]; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
             echo 'No chapter changes.'
           else
             echo 'changed=true' >> "$GITHUB_OUTPUT"
-            echo 'New or changed LISTEN chapter output found.'
+            echo 'New or changed LISTEN chapter output found:'
+            echo "$STATUS"
           fi
 
       - name: Create Spotify paste Issue
@@ -60,27 +66,26 @@ jobs:
 
           if [ -n "$EXISTING" ]; then
             echo "Issue #${EXISTING} already exists for ${LISTEN_URL}; skipping duplicate creation."
-            exit 0
+          else
+            {
+              echo '<!-- '"${MARKER}"' -->'
+              echo 'LISTENでチャプター生成が確認されました。'
+              echo
+              echo '**Spotify for Creators の既存エピソード説明文は消さず、末尾に以下をそのまま追加してください。**'
+              echo
+              echo '```text'
+              cat data/generated_chapters/latest.txt
+              echo '```'
+              echo
+              echo "LISTEN: ${LISTEN_URL}"
+              echo
+              echo '貼り付けが終わったら、このIssueをCloseすれば完了です。'
+            } > /tmp/spotify-chapters-issue.md
+
+            gh issue create \
+              --title "$ISSUE_TITLE" \
+              --body-file /tmp/spotify-chapters-issue.md
           fi
-
-          {
-            echo '<!-- '"${MARKER}"' -->'
-            echo 'LISTENでチャプター生成が確認されました。'
-            echo
-            echo '**Spotify for Creators の既存エピソード説明文は消さず、末尾に以下をそのまま追加してください。**'
-            echo
-            echo '```text'
-            cat data/generated_chapters/latest.txt
-            echo '```'
-            echo
-            echo "LISTEN: ${LISTEN_URL}"
-            echo
-            echo '貼り付けが終わったら、このIssueをCloseすれば完了です。'
-          } > /tmp/spotify-chapters-issue.md
-
-          gh issue create \
-            --title "$ISSUE_TITLE" \
-            --body-file /tmp/spotify-chapters-issue.md
 
       - name: Commit changed chapter output
         if: steps.changes.outputs.changed == 'true'
