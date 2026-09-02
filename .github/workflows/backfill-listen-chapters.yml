@@ -52,6 +52,14 @@ jobs:
           import tempfile
           from pathlib import Path
 
+          def spotify_ts(ts: str) -> str:
+              parts = [int(x) for x in str(ts).strip('()').split(':')]
+              if len(parts) == 2:
+                  return f"({parts[0]:02d}:{parts[1]:02d})"
+              if len(parts) == 3:
+                  return f"({parts[0]:02d}:{parts[1]:02d}:{parts[2]:02d})"
+              raise ValueError(ts)
+
           report_path = Path('data/generated_chapters/backfill.json')
           data = json.loads(report_path.read_text(encoding='utf-8'))
           episodes = data['episodes']
@@ -95,7 +103,7 @@ jobs:
                   '',
                   '```text',
               ]
-              lines.extend(f"{c['timestamp']} {c['title']}" for c in ep['chapters'])
+              lines.extend(f"{spotify_ts(c['timestamp'])} {c['title']}" for c in ep['chapters'])
               lines.extend(['```', ''])
               if ep.get('spotify_creator_url'):
                   lines.append(f"Spotify / Podcasters: {ep['spotify_creator_url']}")
