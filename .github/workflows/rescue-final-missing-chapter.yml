@@ -1,0 +1,63 @@
+name: Rescue final missing Spotify chapter from audio
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/rescue_missing_chapter_from_audio.py'
+      - '.github/workflows/rescue-final-missing-chapter.yml'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: spotify-chapter-audio-rescue
+  cancel-in-progress: false
+
+jobs:
+  rescue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install Gemini SDK
+        run: pip install -U google-genai
+
+      - name: Generate chapters directly from RSS audio
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/rescue_missing_chapter_from_audio.py
+
+      - name: Create final missing Issue and re-audit coverage
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: python scripts/finalize_spotify_chapter_backfill.py
+
+      - name: Show rescued episode and final audit
+        run: |
+          cat data/generated_chapters/ai_backfill/lt7ujaek.json
+          echo
+          cat data/generated_chapters/final_audit.json
+
+      - name: Commit rescued chapter data
+        shell: bash
+        run: |
+          STATUS=$(git status --porcelain -- data/generated_chapters)
+          if [ -z "$STATUS" ]; then
+            echo 'No rescue data changed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/generated_chapters
+          git commit -m 'Complete Spotify chapter coverage at 128 of 128'
+          git pull --rebase origin main
+          git push
