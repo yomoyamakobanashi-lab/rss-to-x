@@ -1,0 +1,3339 @@
+{
+  "podcast_url": "https://listen.style/p/reelpal",
+  "episode_count": 128,
+  "counts": {
+    "no_chapters": 90,
+    "ready": 30,
+    "invalid": 8
+  },
+  "spotify_links_matched": 128,
+  "episodes": [
+    {
+      "episode_id": "syxxiykl",
+      "listen_episode_url": "https://listen.style/p/reelpal/syxxiykl",
+      "title": "映画 『#エクスペリメント』 責任なんて誰もとりたくねえよ！#TheExperiment — “Nobody wants to take responsibility!”",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/TheExperiment--Nobody-wants-to-take-responsibility-e320u4p",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "twpbyh7b",
+      "listen_episode_url": "https://listen.style/p/reelpal/twpbyh7b",
+      "title": "映画『#ヘルレイザー』 信仰と堕落は紙一重 The movie #Hellraiser — Faith and corruption are a paper-thin line apart.",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/The-movie-Hellraiser--Faith-and-corruption-are-a-paper-thin-line-apart-e32abq4",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "hii8mg0z",
+      "listen_episode_url": "https://listen.style/p/reelpal/hii8mg0z",
+      "title": "映画「#フルメタルジャケット」人間を書き換えるプロンプトとは。\"The movie #FullMetalJacket : What is the prompt that rewrites a human being?\"",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/The-movie-FullMetalJacket--What-is-the-prompt-that-rewrites-a-human-being-e32ag09",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "qc0rxhsg",
+      "listen_episode_url": "https://listen.style/p/reelpal/qc0rxhsg",
+      "title": "映画『#マトリックス』 サイファーという名の救世主。 \"The Matrix\" — A Messiah Called Cypher.",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/The-Matrix--A-Messiah-Called-Cypher-e330fr8",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "5v7n9wed",
+      "listen_episode_url": "https://listen.style/p/reelpal/5v7n9wed",
+      "title": "タイムパラドックスSF映画『#ターミネーター 』 お前のオールを任せるな。〜核と未来と時々おとん〜 Time-Paradox Sci-Fi Flick: #Terminator Don’t leave your future in just anyone’s hands. — Nukes, the future, and sometimes... your dad.",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF----Time-Paradox-Sci-Fi-Flick-Terminator-Dont-leave-your-future-in-just-anyones-hands---Nukes--the-future--and-sometimes----your-dad-e339igt",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "wiyoewu0",
+      "listen_episode_url": "https://listen.style/p/reelpal/wiyoewu0",
+      "title": "金字塔SF映画『#ターミネーター 』 その２ 運命という名の無気力症候群〜ターミネーターは俺だった〜カルチュラルリーディングを通して Sci-Fi Legend #Terminator — Pt.2 “Fate Fatigue” & That Shocking Realization: I Was the Terminator?! A Cultural Take",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF----Sci-Fi-Legend-Terminator--Pt-2-Fate-Fatigue--That-Shocking-Realization-I-Was-the-Terminator---A-Cultural-Take-e33l0ns",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "q3bhpmna",
+      "listen_episode_url": "https://listen.style/p/reelpal/q3bhpmna",
+      "title": "ドル箱SF映画の末路『#ターミネーター 』 その３ どうしてこうなった。３部作構想全コケの運命を回避せよ！ The Downfall of a Cash Cow: “Terminator” – Part 3 – What the Hell Happened? How Do We Escape the Trilogy Curse?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF-----The-Downfall-of-a-Cash-Cow-Terminator--Part-3--What-the-Hell-Happened--How-Do-We-Escape-the-Trilogy-Curse-e33veau",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "vumbaxru",
+      "listen_episode_url": "https://listen.style/p/reelpal/vumbaxru",
+      "title": "【Replay】「ファイトクラブで男が滾るのは罪なのか」 \"Must we apologize for how Fight Club stirs something in men?\"",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Must-we-apologize-for-how-Fight-Club-stirs-something-in-men-e34107g",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "otrmwe5e",
+      "listen_episode_url": "https://listen.style/p/reelpal/otrmwe5e",
+      "title": "【RePlay】「映画#セッション から伺う変態達のセッション」オーマを迎えた映画鑑賞会 [RePlay] “#Whiplash and the Glorious Madness of Men” — A Viewing Session",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/RePlay--RePlay-Whiplash-and-the-Glorious-Madness-of-Men--A-Viewing-Session-e341bqs",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "mwnhzsa5",
+      "listen_episode_url": "https://listen.style/p/reelpal/mwnhzsa5",
+      "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その１〜ゴジラ1954とゴジラ対メカゴジラ〜 (Replay) “Had to Talk About Godzilla Minus One” — Part 1 From Godzilla (1954) to Godzilla vs. Mechagodzilla (1974)",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-1954--Replay-Had-to-Talk-About-Godzilla-Minus-One--Part-1-From-Godzilla-1954-to-Godzilla-vs--Mechagodzilla-1974-e342nsg",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "zmufceas",
+      "listen_episode_url": "https://listen.style/p/reelpal/zmufceas",
+      "title": "【Replay】『#ゴジラ-1.0 が語りたくて』その２〜平成ゴジラVSシリーズ〜 (Replay)“Had to Talk About Godzilla Minus One” Part 2: Heisei Era Godzilla VS Series A Movie Talk Session",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-VS-ReplayHad-to-Talk-About-Godzilla-Minus-One-Part-2-Heisei-Era-Godzilla-VS-Series-A-Movie-Talk-Session-e342vpu",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "aelcamtj",
+      "listen_episode_url": "https://listen.style/p/reelpal/aelcamtj",
+      "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その3〜ハリウッド版ゴジラ〜 (Replay)“Had to Talk About Godzilla Minus One” — Part 3: Hollywood Godzilla",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-3-ReplayHad-to-Talk-About-Godzilla-Minus-One--Part-3-Hollywood-Godzilla-e343009",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "gnrdz2nn",
+      "listen_episode_url": "https://listen.style/p/reelpal/gnrdz2nn",
+      "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その4〜ゴジラミレニアムシリーズとはいったいなんだったのか〜[Replay] “Had to Talk About Godzilla Minus One” Part 4 — What Was the Godzilla Millennium Series, Anyway?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-4Replay-Had-to-Talk-About-Godzilla-Minus-One-Part-4--What-Was-the-Godzilla-Millennium-Series--Anyway-e343085",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "8sqtwwrt",
+      "listen_episode_url": "https://listen.style/p/reelpal/8sqtwwrt",
+      "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その5〜ゴジラ-1.0がやり遂げたことについて話そうとしたらシン・ゴジラでいっぱいいっぱいだった〜[Replay] “Had to Talk About Godzilla Minus One” Part 5 — Tried to Discuss What -1.0, But Got Completely Lost in Shin Godzilla",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "シン・ゴジラの再定義"
+        },
+        {
+          "timestamp": "04:18",
+          "title": "ゴジラ-1の革新"
+        },
+        {
+          "timestamp": "08:12",
+          "title": "怪獣映画の未来"
+        },
+        {
+          "timestamp": "15:29",
+          "title": "ゴジラのメッセージ性"
+        },
+        {
+          "timestamp": "18:31",
+          "title": "音楽と初代ゴジラへのオマージュ"
+        },
+        {
+          "timestamp": "22:28",
+          "title": "世代交代と今後の日本"
+        },
+        {
+          "timestamp": "31:20",
+          "title": "庵野監督とジブリの関係"
+        },
+        {
+          "timestamp": "36:40",
+          "title": "シン・ゴジラにおける日本のプライド"
+        },
+        {
+          "timestamp": "40:49",
+          "title": "電車とゴジラの新たな関係"
+        },
+        {
+          "timestamp": "45:31",
+          "title": "キャスティングの問題"
+        },
+        {
+          "timestamp": "57:16",
+          "title": "発音とリアリティ"
+        },
+        {
+          "timestamp": "57:46",
+          "title": "キャスティングの代替案"
+        },
+        {
+          "timestamp": "59:48",
+          "title": "ゴジラの尻尾の重要性"
+        },
+        {
+          "timestamp": "1:09:59",
+          "title": "G細胞の役割"
+        },
+        {
+          "timestamp": "1:12:11",
+          "title": "神話との関連"
+        },
+        {
+          "timestamp": "1:13:49",
+          "title": "シン・ゴジラの魅力"
+        },
+        {
+          "timestamp": "1:14:47",
+          "title": "ゴジラのメタファー"
+        },
+        {
+          "timestamp": "1:19:14",
+          "title": "人間的進化の考察"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-5-1-0Replay-Had-to-Talk-About-Godzilla-Minus-One-Part-5--Tried-to-Discuss-What--1-0--But-Got-Completely-Lost-in-Shin-Godzilla-e3430fb",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "rwcc5ylm",
+      "listen_episode_url": "https://listen.style/p/reelpal/rwcc5ylm",
+      "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その6〜ゴジラ-1.0がやり遂げたこと〜 [Replay] “Had to Talk About Godzilla Minus One” — Part 6: What Minus One Achieved",
+      "status": "invalid",
+      "errors": [
+        "Chapters are less than 30 seconds apart: 52:15 -> 52:22"
+      ],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "橘の視点と内面的葛藤"
+        },
+        {
+          "timestamp": "49:43",
+          "title": "過去と未来の関係"
+        },
+        {
+          "timestamp": "52:15",
+          "title": "戦争映画の新たな視点"
+        },
+        {
+          "timestamp": "52:22",
+          "title": "主人公の戦争の思い"
+        },
+        {
+          "timestamp": "54:22",
+          "title": "命を散らす意味"
+        },
+        {
+          "timestamp": "59:13",
+          "title": "メタファーとしての四季島"
+        },
+        {
+          "timestamp": "1:09:01",
+          "title": "ゴジラ-1.0の影響"
+        },
+        {
+          "timestamp": "1:15:11",
+          "title": "戦争の描写"
+        },
+        {
+          "timestamp": "1:20:28",
+          "title": "文化と歴史の再認識"
+        },
+        {
+          "timestamp": "1:26:29",
+          "title": "ゴジラ-1.0の新たな視点"
+        },
+        {
+          "timestamp": "1:30:38",
+          "title": "日本の歴史とメッセージ"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-6-1-0-Replay-Had-to-Talk-About-Godzilla-Minus-One--Part-6-What-Minus-One-Achieved-e3430lq",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "bl7mmlwv",
+      "listen_episode_url": "https://listen.style/p/reelpal/bl7mmlwv",
+      "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その7〜ゴジラ-1.0「おかわり！」〜 [Replay] “Had to Talk About Godzilla Minus One” — Part 7: The One More Round Episode",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "おかわりの理由"
+        },
+        {
+          "timestamp": "02:16",
+          "title": "時代と文化の影響"
+        },
+        {
+          "timestamp": "15:12",
+          "title": "現代と過去のリンク"
+        },
+        {
+          "timestamp": "15:57",
+          "title": "ゴジラの象徴性"
+        },
+        {
+          "timestamp": "20:02",
+          "title": "シキシマの葛藤"
+        },
+        {
+          "timestamp": "23:42",
+          "title": "新しい時代の希望"
+        },
+        {
+          "timestamp": "32:30",
+          "title": "ゴジラ-1.0のテーマ探索"
+        },
+        {
+          "timestamp": "38:05",
+          "title": "演出に関する考察"
+        },
+        {
+          "timestamp": "48:41",
+          "title": "キャラクターの描写"
+        },
+        {
+          "timestamp": "49:23",
+          "title": "韓国映画との比較"
+        },
+        {
+          "timestamp": "52:02",
+          "title": "ゴジラにおけるがんの象徴性"
+        },
+        {
+          "timestamp": "59:08",
+          "title": "ゴジラの真のテーマ"
+        },
+        {
+          "timestamp": "1:05:43",
+          "title": "ゴジラに関する価値観"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-7-1-0--Replay-Had-to-Talk-About-Godzilla-Minus-One--Part-7-The-One-More-Round-Episode-e34311f",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "i0ydh69f",
+      "listen_episode_url": "https://listen.style/p/reelpal/i0ydh69f",
+      "title": "宮崎駿の集大成？『#君たちはどう生きるか 』 私小説としてのジブリアニメ。〜インコになんてなるな！〜 Miyazaki’s Final Masterpiece? The Boy and the Heron as Autobiographical Ghibli Cinema — Don’t Turn into a Parakeet!",
+      "status": "invalid",
+      "errors": [
+        "Chapters are less than 30 seconds apart: 15:07 -> 15:09",
+        "Chapters are less than 30 seconds apart: 44:56 -> 45:24"
+      ],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "番組の紹介"
+        },
+        {
+          "timestamp": "01:30",
+          "title": "作品の概要"
+        },
+        {
+          "timestamp": "15:07",
+          "title": "物語の深層"
+        },
+        {
+          "timestamp": "15:09",
+          "title": "作品の難解さと個人的題材"
+        },
+        {
+          "timestamp": "21:58",
+          "title": "アートとしての評価"
+        },
+        {
+          "timestamp": "24:52",
+          "title": "観客との関係"
+        },
+        {
+          "timestamp": "30:09",
+          "title": "作品のテーマとジブリオタク"
+        },
+        {
+          "timestamp": "40:47",
+          "title": "鳥のメタファーと宮崎駿の意図"
+        },
+        {
+          "timestamp": "44:56",
+          "title": "創作と消費に関する批判"
+        },
+        {
+          "timestamp": "45:24",
+          "title": "作品のテーマとキャラクター"
+        },
+        {
+          "timestamp": "50:30",
+          "title": "消費社会の影響"
+        },
+        {
+          "timestamp": "58:24",
+          "title": "結論とメッセージ"
+        },
+        {
+          "timestamp": "59:42",
+          "title": "宮崎駿の新たな視点"
+        },
+        {
+          "timestamp": "1:03:57",
+          "title": "集団へのメッセージ"
+        },
+        {
+          "timestamp": "1:11:35",
+          "title": "理想と現実の狭間"
+        },
+        {
+          "timestamp": "1:15:06",
+          "title": "現実と空想の融合"
+        },
+        {
+          "timestamp": "1:16:35",
+          "title": "インコの象徴性"
+        },
+        {
+          "timestamp": "1:19:47",
+          "title": "作品のメッセージ"
+        },
+        {
+          "timestamp": "1:30:14",
+          "title": "宮崎駿のメッセージ"
+        },
+        {
+          "timestamp": "1:33:18",
+          "title": "作品の受け取り方"
+        },
+        {
+          "timestamp": "1:36:28",
+          "title": "次回の作品紹介"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Miyazakis-Final-Masterpiece--The-Boy-and-the-Heron-as-Autobiographical-Ghibli-Cinema--Dont-Turn-into-a-Parakeet-e3496dv",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "865k3eya",
+      "listen_episode_url": "https://listen.style/p/reelpal/865k3eya",
+      "title": "無駄話映画？『#パルプ・フィクション 』 〜運命の歯車は誰が回すのか〜 “A Movie About Nothing?” Pulp Fiction and the Question: Who's Spinning the Gears of Fate?",
+      "status": "invalid",
+      "errors": [
+        "Chapters are less than 30 seconds apart: 1:03:38 -> 1:03:49"
+      ],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "映画の紹介と初期エピソード"
+        },
+        {
+          "timestamp": "11:03",
+          "title": "ストーリーの複雑さ"
+        },
+        {
+          "timestamp": "15:44",
+          "title": "映画の感想と作家性"
+        },
+        {
+          "timestamp": "16:33",
+          "title": "無駄話の影響"
+        },
+        {
+          "timestamp": "19:53",
+          "title": "キャラクター紹介の手法"
+        },
+        {
+          "timestamp": "27:28",
+          "title": "映画の魅力とスタイル"
+        },
+        {
+          "timestamp": "32:22",
+          "title": "キャラクターの努力と倫理"
+        },
+        {
+          "timestamp": "43:23",
+          "title": "社会との不整合"
+        },
+        {
+          "timestamp": "45:17",
+          "title": "タランティーノの進化"
+        },
+        {
+          "timestamp": "47:20",
+          "title": "描かれる人間の生き様"
+        },
+        {
+          "timestamp": "52:04",
+          "title": "偶然と運命の境界"
+        },
+        {
+          "timestamp": "1:03:38",
+          "title": "偶然の連鎖"
+        },
+        {
+          "timestamp": "1:03:49",
+          "title": "社会と倫理の考察"
+        },
+        {
+          "timestamp": "1:12:10",
+          "title": "運命の選択"
+        },
+        {
+          "timestamp": "1:18:31",
+          "title": "作品のメッセージ"
+        },
+        {
+          "timestamp": "1:19:23",
+          "title": "物語の構造"
+        },
+        {
+          "timestamp": "1:21:52",
+          "title": "自己表現とテーマ性"
+        },
+        {
+          "timestamp": "1:29:00",
+          "title": "エンターテインメントの価値"
+        },
+        {
+          "timestamp": "1:35:55",
+          "title": "駄菓子の思い出"
+        },
+        {
+          "timestamp": "1:39:42",
+          "title": "映画の選択"
+        },
+        {
+          "timestamp": "1:43:01",
+          "title": "運命と映画の考察"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/A-Movie-About-Nothing--Pulp-Fiction-and-the-Question-Whos-Spinning-the-Gears-of-Fate-e34i8f0",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ezmyy98k",
+      "listen_episode_url": "https://listen.style/p/reelpal/ezmyy98k",
+      "title": "【Replay】映画「#TheFirstSlumDunk」#スラムダンク がバスケ漫画の金字塔であり続けるわけ [Replay] Why the Movie “#TheFirstSlumDunk” (#SlamDunk) Remains the Gold Standard of Basketball Manga",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayTheFirstSlumDunk--Replay-Why-the-Movie-TheFirstSlumDunk-SlamDunk-Remains-the-Gold-Standard-of-Basketball-Manga-e34jk5o",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "v6kgfzd5",
+      "listen_episode_url": "https://listen.style/p/reelpal/v6kgfzd5",
+      "title": "ガチカンフー映画『#イップ・マン 』 〜武の中に見る精神性〜 #IpMan — A Hardcore Kung Fu Film About the Spirit Behind the Fist",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/IpMan--A-Hardcore-Kung-Fu-Film-About-the-Spirit-Behind-the-Fist-e34rt24",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ubkqnf3q",
+      "listen_episode_url": "https://listen.style/p/reelpal/ubkqnf3q",
+      "title": "【Replay】映画「#ラヂオの時間 」三谷幸喜の最高傑作、実はラヂオの時間なのではないか [Replay] Is “Welcome Back, Mr. McDonald” Actually Koki Mitani’s Greatest Masterpiece?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--Replay-Is-Welcome-Back--Mr--McDonald-Actually-Koki-Mitanis-Greatest-Masterpiece-e34jkbf",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "wx5qzthf",
+      "listen_episode_url": "https://listen.style/p/reelpal/wx5qzthf",
+      "title": "アメリカ・カンフー映画の祖『#燃えよドラゴン』 〜ブルース・リーは何が特別なのか〜 #EnterTheDragon — The Birth of American Kung Fu Cinema: Why Was #BruceLee One of a Kind?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/EnterTheDragon--The-Birth-of-American-Kung-Fu-Cinema-Why-Was-BruceLee-One-of-a-Kind-e355gja",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "bfay3tr1",
+      "listen_episode_url": "https://listen.style/p/reelpal/bfay3tr1",
+      "title": "【Replay】映画『#GoodWillHunting』に見る心の傷との向き合い方 [Replay] Facing Emotional Wounds: Lessons from the Film #GoodWillHunting",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayGoodWillHunting--Replay-Facing-Emotional-Wounds-Lessons-from-the-Film-GoodWillHunting-e34jkkq",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "wse9308j",
+      "listen_episode_url": "https://listen.style/p/reelpal/wse9308j",
+      "title": "カンフー映画最後の花火『#少林サッカー』 〜カンフーが映画界で返り咲くには……〜 Kung Fu’s Final Blaze: “#ShaolinSoccer” — Can Martial Arts Rise Again in Cinema?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Kung-Fus-Final-Blaze-ShaolinSoccer--Can-Martial-Arts-Rise-Again-in-Cinema-e35ej78",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "abjucgdb",
+      "listen_episode_url": "https://listen.style/p/reelpal/abjucgdb",
+      "title": "【Replay】映画『#ジャンゴ繋がれざる者 』が真に繋がれていないのは何なのか [Replay] In the Movie #DjangoUnchained, What Is It That’s Not Really Unchained?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--Replay-In-the-Movie-DjangoUnchained--What-Is-It-Thats-Not-Really-Unchained-e34jlt6",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "bgolkvsj",
+      "listen_episode_url": "https://listen.style/p/reelpal/bgolkvsj",
+      "title": "SFヒューマンドラマ映画？『#アド・アストラ』 〜エイリアンの正体に迫る……〜 Is #AdAstra Really a Sci-Fi Human Drama? — Searching for the Truth About the Aliens",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF--Is-AdAstra-Really-a-Sci-Fi-Human-Drama---Searching-for-the-Truth-About-the-Aliens-e35nvp7",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "sv4kdgac",
+      "listen_episode_url": "https://listen.style/p/reelpal/sv4kdgac",
+      "title": "【Replay】映画『#アンドリューNDR114』人とロボットの境目はいったいどこに？ [Replay] #BicentennialMan — How Do We Define the Human in the Machine?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayNDR114-Replay-BicentennialMan--How-Do-We-Define-the-Human-in-the-Machine-e35in36",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "z6mfhsus",
+      "listen_episode_url": "https://listen.style/p/reelpal/z6mfhsus",
+      "title": "ホラーオマージュ映画の傑作『#スクリーム』３部作～古典ホラーは“終わった”のか Is Classic Horror Over? Revisiting the #Scream Trilogy That Changed Everything",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Is-Classic-Horror-Over--Revisiting-the-Scream-Trilogy-That-Changed-Everything-e3618qk",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "euqfs7qd",
+      "listen_episode_url": "https://listen.style/p/reelpal/euqfs7qd",
+      "title": "【Replay】映画『#her』人と人とをつなぐものとは？ [Replay] her — The Invisible Threads That Bind Us",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replayher-Replay-her--The-Invisible-Threads-That-Bind-Us-e35in8q",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "arpgdxmy",
+      "listen_episode_url": "https://listen.style/p/reelpal/arpgdxmy",
+      "title": "真夏のホラー映画特集その２ 夏休み映画の傑作『#学校の怪談』シリーズ～怪談は誰のためのものなのか Summer Horror Special Vol.2: The “Haunted School” Series – Who Are Ghost Stories Really For?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Special-Vol-2-The-Haunted-School-Series--Who-Are-Ghost-Stories-Really-For-e36d71c",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "flezxg28",
+      "listen_episode_url": "https://listen.style/p/reelpal/flezxg28",
+      "title": "【Replay】映画『#LUCY』人類の次のステージとは？ [Replay] LUCY — Where Does Humanity Go From Here?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayLUCY-Replay-LUCY--Where-Does-Humanity-Go-From-Here-e35ine0",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ow4mha5o",
+      "listen_episode_url": "https://listen.style/p/reelpal/ow4mha5o",
+      "title": "リスナーリクエスト第１弾 傑作タイムトラベル映画『#バック・トゥー・ザ・フューチャー』シリーズ～過去を書き換えるのは罪なのか Fan Request #1: #BackToTheFuture Trilogy – Should Changing the Past Be Against the Law?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Fan-Request-1-BackToTheFuture-Trilogy--Should-Changing-the-Past-Be-Against-the-Law-e36kmfu",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "i9fq67jw",
+      "listen_episode_url": "https://listen.style/p/reelpal/i9fq67jw",
+      "title": "【Replay】サイコホラー映画？『#ボーは恐れている』……何を？ [Replay] Psychological Horror? \"#BeauIsAfraid\" … of What Exactly?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-Psychological-Horror--BeauIsAfraid--of-What-Exactly-e36dgbd",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "bu3ivyth",
+      "listen_episode_url": "https://listen.style/p/reelpal/bu3ivyth",
+      "title": "【Replay】復讐劇『#Revenant』グラスが最後に見たものは何だったのか？ [Replay] Revenge Tale #TheRevenant – What Was the Last Thing Glass Saw?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayRevenant-Replay-Revenge-Tale-TheRevenant--What-Was-the-Last-Thing-Glass-Saw-e36qvgh",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "xrwokvja",
+      "listen_episode_url": "https://listen.style/p/reelpal/xrwokvja",
+      "title": "真夏のホラー映画特集その３ 日本ホラー映画大賞受賞監督デビュー作『#ミッシングチャイルドビデオテープ』 〜山は神か、あるいは鬼か……〜 Summer Horror Marathon Part 3 – Award-Winning Japanese Horror Debut Missing Child Video Tape: Is the Mountain a God… or a Demon?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Marathon-Part-3--Award-Winning-Japanese-Horror-Debut-Missing-Child-Video-Tape-Is-the-Mountain-a-God-or-a-Demon-e3738er",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "tkelakuz",
+      "listen_episode_url": "https://listen.style/p/reelpal/tkelakuz",
+      "title": "【Replay】ジャパニーズホラー『#リング』日本のホラーが持つ強みってなぁに？ [Replay] Japanese Horror “#Ring” – What Makes J-Horror So Damn Good?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-Japanese-Horror-Ring--What-Makes-J-Horror-So-Damn-Good-e36r02n",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "cyxtqyw5",
+      "listen_episode_url": "https://listen.style/p/reelpal/cyxtqyw5",
+      "title": "リスナーリクエスト第２弾 古代ローマ歴史スペクタクル#映画 『# グラディエーター』 〜死と救済は表裏一体なのか……〜 Listener Request #2 – Ancient Rome Epic #Gladiator: Are Death and Salvation Two Sides of the Same Coin?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Request-2--Ancient-Rome-Epic-Gladiator-Are-Death-and-Salvation-Two-Sides-of-the-Same-Coin-e37dh4v",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "i3fzifzf",
+      "listen_episode_url": "https://listen.style/p/reelpal/i3fzifzf",
+      "title": "真夏のホラー映画特集その４ #ティム・バートン映画『#スリーピー・ホロウ 〜科学は信仰を破壊したのか……〜 Summer Horror Special #4 – Tim Burton’s Sleepy Hollow: When Science Goes Head-to-Head with Faith",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Special-4--Tim-Burtons-Sleepy-Hollow-When-Science-Goes-Head-to-Head-with-Faith-e37hme7",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "vpn0oyfu",
+      "listen_episode_url": "https://listen.style/p/reelpal/vpn0oyfu",
+      "title": "【Replay】スラッシャームービー『#チャイルド・プレイ』チャッキーとはホラー界の何だったのか？ 【Replay】Slasher Flick #ChildsPlay — What Exactly Was #Chucky to the World of Horror?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-ReplaySlasher-Flick-ChildsPlay--What-Exactly-Was-Chucky-to-the-World-of-Horror-e36r0av",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "e1bzdrq8",
+      "listen_episode_url": "https://listen.style/p/reelpal/e1bzdrq8",
+      "title": "リスナーリクエスト！ #大どんでん返し 映画『#シャッター・アイランド』妄想と現実の境界はどこに？ Listener’s Pick! #ShutterIsland: The Big Twist and the Blurred Border of Reality",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listeners-Pick--ShutterIsland-The-Big-Twist-and-the-Blurred-Border-of-Reality-e37rq86",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "farx2ucj",
+      "listen_episode_url": "https://listen.style/p/reelpal/farx2ucj",
+      "title": "【Replay】#映画 『#シャイニング』日本人がイマイチ怖がれない理由は何なんだ？ [Replay] #TheShining: The Reason It Doesn’t Hit as Hard in Japan",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay---Replay-TheShining-The-Reason-It-Doesnt-Hit-as-Hard-in-Japan-e37qcfe",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "txvvqqmz",
+      "listen_episode_url": "https://listen.style/p/reelpal/txvvqqmz",
+      "title": "リスナーリクエスト！異色ホラー 映画『#ゲットアウト』被差別者に向けられる歪んだ妬みの正体とは？ Listener Pick! #GetOut — Unmasking the Warped Jealousy Behind Discrimination",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Pick--GetOut--Unmasking-the-Warped-Jealousy-Behind-Discrimination-e385nlo",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ss6boava",
+      "listen_episode_url": "https://listen.style/p/reelpal/ss6boava",
+      "title": "【Replay】#映画『#最高の人生の見つけ方』『#最高の人生の作り方』あなたは死とどう向き合いたいですか？ [Replay] #TheBucketList & #LastVegas — How Do You Choose to Face the End?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-TheBucketList--LastVegas--How-Do-You-Choose-to-Face-the-End-e37qdi2",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ij7ssvcv",
+      "listen_episode_url": "https://listen.style/p/reelpal/ij7ssvcv",
+      "title": "真夏のホラー企画最終章 #ホラー映画 『#ミッドサマー』 ダニーの笑顔をどう読むか？ Summer Horror Grand Finale – #Midsommar: Decoding Dani’s Final Smile",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Summer-Horror-Grand-Finale--Midsommar-Decoding-Danis-Final-Smile-e38f8ed",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "jz5k2w8z",
+      "listen_episode_url": "https://listen.style/p/reelpal/jz5k2w8z",
+      "title": "【Replay】#映画『#ザ・フライ』科学は人間を幸福にするのだろうか？ [Replay] #TheFly — Is Science the Path to Human Joy?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Replay-TheFly--Is-Science-the-Path-to-Human-Joy-e37qeh4",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "qsiju1wp",
+      "listen_episode_url": "https://listen.style/p/reelpal/qsiju1wp",
+      "title": "リスナーリクエスト #エイリアン シリーズ その１『#エイリアン』『#エイリアン２』闇に潜むエイリアンの正体はいかに？ Listener Pick! Diving into the #Alien Saga (Part 1) — #Alien & #Aliens : What Hides in the Darkness?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Pick--Diving-into-the-Alien-Saga-Part-1--Alien--Aliens--What-Hides-in-the-Darkness-e38ouht",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "abhzqjjm",
+      "listen_episode_url": "https://listen.style/p/reelpal/abhzqjjm",
+      "title": "【Replay】#コメディ映画 『#ズーランダー』事実上のガキの使い\"笑ってはいけない\"説 [Replay] Zoolander: The Accidental “No Laughing” Challenge of Hollywood Comedy",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--Replay-Zoolander-The-Accidental-No-Laughing-Challenge-of-Hollywood-Comedy-e38u1g4",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "cxscgkxe",
+      "listen_episode_url": "https://listen.style/p/reelpal/cxscgkxe",
+      "title": "リスナーリクエスト #エイリアン シリーズ その2『#エイリアン3』『#エイリアン４』エイリアンが浮き彫りにした人が生きる意味とは？ Listener Request! Alien Series Part 2 – #Alien3 & #AlienResurrection : What Do These Films Reveal About the Meaning of Human Life?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/23-Listener-Request--Alien-Series-Part-2--Alien3--AlienResurrection--What-Do-These-Films-Reveal-About-the-Meaning-of-Human-Life-e3924t2",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ie843hjr",
+      "listen_episode_url": "https://listen.style/p/reelpal/ie843hjr",
+      "title": "【Replay】#コメディ映画 『#オースティンパワーズ』令和のおじさんはどう生きるべきか？ 【Replay】#ComedyFilm “#AustinPowers” — How Should Middle-Aged Men Live in the Reiwa Era?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--ReplayComedyFilm-AustinPowers--How-Should-Middle-Aged-Men-Live-in-the-Reiwa-Era-e38u9la",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "jz6wgq3g",
+      "listen_episode_url": "https://listen.style/p/reelpal/jz6wgq3g",
+      "title": "リスナーリクエスト #エイリアン シリーズ その３『#プロメテウス』『#エイリアン：コヴェナント』人類はどこから来てどこへ向かうのか？ #Alien Series Part 3 “#Prometheus” & “#Covenant” — Where Do We Come From?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Alien-Series-Part-3-Prometheus--Covenant--Where-Do-We-Come-From-e39caj1",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "fqokbtyn",
+      "listen_episode_url": "https://listen.style/p/reelpal/fqokbtyn",
+      "title": "【Replay】#ラブロマンス 『#ゴースト』令和の日本人は反面教師にせよ。 Replay】#RomanceFilm “#Ghost” — A Cautionary Tale for Reiwa-Era Japan",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--ReplayRomanceFilm-Ghost--A-Cautionary-Tale-for-Reiwa-Era-Japan-e38u9v1",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "xtzntwon",
+      "listen_episode_url": "https://listen.style/p/reelpal/xtzntwon",
+      "title": "リスナーリクエスト #エイリアン シリーズ その４ #SFホラー 映画『#エイリアン：ロムルス』ノスタルジィリサイクルはイースターエッグの夢を見るか？ Listener Request! Alien Series Part 4 – Alien: Romulus: Do Nostalgia Reboots Dream of Easter Eggs?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF--Listener-Request--Alien-Series-Part-4--Alien-Romulus-Do-Nostalgia-Reboots-Dream-of-Easter-Eggs-e39maf9",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "sjmoxcsu",
+      "listen_episode_url": "https://listen.style/p/reelpal/sjmoxcsu",
+      "title": "【Replay】#ジャンルシフト 映画『#サプライズ』ジャンルシフトは“あり”なのか？ [Replay] #GenreShift Film #You’re Next — Is Genre-Shifting Fair Play or Foul?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--Replay-GenreShift-Film-Youre-Next--Is-Genre-Shifting-Fair-Play-or-Foul-e38u9dq",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "gymu0hrj",
+      "listen_episode_url": "https://listen.style/p/reelpal/gymu0hrj",
+      "title": "リスナーリクエスト 『#２００１年宇宙の旅』アートの解釈はどこまで自由でいられるか Listener Request – 2001: A Space Odyssey: How Free Can Art Interpretation Be?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Request--2001-A-Space-Odyssey-How-Free-Can-Art-Interpretation-Be-e3a0msf",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "q8ghoojk",
+      "listen_episode_url": "https://listen.style/p/reelpal/q8ghoojk",
+      "title": "【Replay】#ホラーコメディ 映画『#ショーンオブザデッド』現代人はすでにゾンビであるって知ってた？ 【Replay】#HorrorComedy Film 『#ShaunoftheDead』 — Did You Know Modern Life Already Turned Us Into Zombies?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay--ReplayHorrorComedy-Film-ShaunoftheDead--Did-You-Know-Modern-Life-Already-Turned-Us-Into-Zombies-e38uadn",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "cmvran3o",
+      "listen_episode_url": "https://listen.style/p/reelpal/cmvran3o",
+      "title": "ハロウィン特別企画『アダムスファミリー』『アダムスファミリー２』その常識は誰のもの？ Halloween Special – “The Addams Family” & “Addams Family Values” Whose “Normal” Are We Talking About, Anyway?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Halloween-Special--The-Addams-Family--Addams-Family-Values-Whose-Normal-Are-We-Talking-About--Anyway-e3ac877",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "msdnkk8a",
+      "listen_episode_url": "https://listen.style/p/reelpal/msdnkk8a",
+      "title": "リスナーリクエスト コメディ映画『#ハングオーバー』マンダムワールドの終焉 “#TheHangover” – When the #Mandom Dream Died",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/TheHangover--When-the-Mandom-Dream-Died-e3almr6",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "9yhpfohv",
+      "listen_episode_url": "https://listen.style/p/reelpal/9yhpfohv",
+      "title": "新企画【インターミッション】#フランケンシュタイン とか #グレムリン３ とか…… [Intermission] #Frankenstein , #Gremlins3 ... and the Chaos Between",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Intermission-Frankenstein---Gremlins3-----and-the-Chaos-Between-e3alnm1",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "57jk19q7",
+      "listen_episode_url": "https://listen.style/p/reelpal/57jk19q7",
+      "title": "【Replay】#Netflix ドキュメンタリー『#アメリカンマーダー』映像ばかり信用するのも怖いもんよね 【Replay】#Netflix #AmericanMurder — Trusting Every Video? Yeah… Maybe Don’t.",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayNetflix--ReplayNetflix-AmericanMurder--Trusting-Every-Video--Yeah-Maybe-Dont-e3b209a",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "yigmxs1w",
+      "listen_episode_url": "https://listen.style/p/reelpal/yigmxs1w",
+      "title": "【Replay】#NETFLIX #ドキュメンタリー『#ポップスが最高に輝いた夜』ポップスは本当に死んだのか 【Replay】#NETFLIX #ドキュメンタリー 『#TheGreatestNightInPop』 Has Pop Music Already Seen Its Brightest Moment?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ReplayNETFLIX--ReplayNETFLIX--TheGreatestNightInPop-Has-Pop-Music-Already-Seen-Its-Brightest-Moment-e3b20qq",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "5t0gzx93",
+      "listen_episode_url": "https://listen.style/p/reelpal/5t0gzx93",
+      "title": "リスナーリクエスト コメディ映画『#グレムリン』『#グレムリン２』子供を導くのは誰の仕事？ Listener Pick! “Gremlins” & “Gremlins 2” — So Who’s Actually Raising These Kids?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Pick--Gremlins--Gremlins-2--So-Whos-Actually-Raising-These-Kids-e3bc8hm",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ybutqiq4",
+      "listen_episode_url": "https://listen.style/p/reelpal/ybutqiq4",
+      "title": "【インターミッション】#Wicked とか#クリステンベル とか#ガメラ とか... 【Intermission】#Wicked, #KristenBell, #Gamera...Yeah, We're All Over the Place Today",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Wicked-------IntermissionWicked--KristenBell--Gamera---Yeah--Were-All-Over-the-Place-Today-e3bh24i",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "fnen9zrr",
+      "listen_episode_url": "https://listen.style/p/reelpal/fnen9zrr",
+      "title": "#Netflix #ホラー #ヒューマンドラマ 映画『#フランケンシュタイン』父と子の正しいコミュニケーションのあり方 #Netflix #Horror #HumanDrama “#Frankenstein” – Fatherhood, Creation, and the Communication We Fail to Teach",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Netflix----Netflix-Horror-HumanDrama-Frankenstein--Fatherhood--Creation--and-the-Communication-We-Fail-to-Teach-e3bl7r0",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "t3n6rlgd",
+      "listen_episode_url": "https://listen.style/p/reelpal/t3n6rlgd",
+      "title": "リスナーリクエスト ナンセンスコメディ映画？ 『#スイスアーミーマン』人間関係を結ぶ恐怖の根源とは Listener Pick! “#SwissArmyMan” – The Deep, Strange Fear Behind Human Connection",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Pick--SwissArmyMan--The-Deep--Strange-Fear-Behind-Human-Connection-e3bvs5a",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "dm9c62xg",
+      "listen_episode_url": "https://listen.style/p/reelpal/dm9c62xg",
+      "title": "【インターミッション】#ズートピア２ とか#ワーナーブラザーズ とか#HBO とか#Netflix とか… 【Intermission】#Zootopia2, #WarnerBros, #HBO, #Netflix — All the Stuff We Ended Up Talking About",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/HBO-Netflix--IntermissionZootopia2--WarnerBros--HBO--Netflix--All-the-Stuff-We-Ended-Up-Talking-About-e3c2uj1",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "enedh0if",
+      "listen_episode_url": "https://listen.style/p/reelpal/enedh0if",
+      "title": "リスナーリクエスト #戦争映画 の金字塔 『#地獄の黙示録』戦争の罪は誰が被るのか Listener Request – The Pinnacle of #WarCinema: “#Apocalypse Now” Who Pays for the Sins of War?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Listener-Request--The-Pinnacle-of-WarCinema-Apocalypse-Now-Who-Pays-for-the-Sins-of-War-e3c9ghh",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ajlmpz1g",
+      "listen_episode_url": "https://listen.style/p/reelpal/ajlmpz1g",
+      "title": "【インターミッション】#ジャイアントピーチ とか#アバター とか#3D映画 とか #MCU とか… 【Intermission】A Ramble Through #JamesAndTheGiantPeach, #Avatar, #3DMovies, #MCU…",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/3D--MCU--IntermissionA-Ramble-Through-JamesAndTheGiantPeach--Avatar--3DMovies--MCU-e3c2uq6",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "iddedwgg",
+      "listen_episode_url": "https://listen.style/p/reelpal/iddedwgg",
+      "title": "#細田守 監督作品『#未来のミライ』#アニメ だからこその描写とはなんなのか #MamoruHosoda’s film “#Mirai” — what can only #anime truly depict?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/MamoruHosodas-film-Mirai--what-can-only-anime-truly-depict-e3cljv4",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "baxqg9xz",
+      "listen_episode_url": "https://listen.style/p/reelpal/baxqg9xz",
+      "title": "#クリスマス 映画の定番？『#ジングルオールザウェイ』 失われた父性と新たな家族の形 A Christmas Movie Staple? Jingle All the Way: Lost Fatherhood and the Emergence of a New Family Model",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/A-Christmas-Movie-Staple--Jingle-All-the-Way-Lost-Fatherhood-and-the-Emergence-of-a-New-Family-Model-e3crdp0",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ds5xvnwo",
+      "listen_episode_url": "https://listen.style/p/reelpal/ds5xvnwo",
+      "title": "【インターミッション】#特撮 とか#仮面ライダー とか#戦隊ヒーロー とか… [Intermission] #Tokusatsu and #KamenRider and #SuperSentai and…",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Intermission-Tokusatsu-and-KamenRider-and-SuperSentai-and-e3cre16",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "wh0cqojf",
+      "listen_episode_url": "https://listen.style/p/reelpal/wh0cqojf",
+      "title": "新年のご挨拶",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3dedg3",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "3xcy6vqd",
+      "listen_episode_url": "https://listen.style/p/reelpal/3xcy6vqd",
+      "title": "【番外編】まこジョナ散歩【前編】",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "ジョナさんの初回野外ロケ"
+        },
+        {
+          "timestamp": "03:36",
+          "title": "同窓会の思い出"
+        },
+        {
+          "timestamp": "06:07",
+          "title": "再会と世の中の狭さ"
+        },
+        {
+          "timestamp": "12:34",
+          "title": "ドンキホーテのイメージ"
+        },
+        {
+          "timestamp": "15:30",
+          "title": "ツバメグリルとドイツ料理"
+        },
+        {
+          "timestamp": "22:19",
+          "title": "品川の街と歴史"
+        },
+        {
+          "timestamp": "25:42",
+          "title": "神社と狛犬の話"
+        },
+        {
+          "timestamp": "28:13",
+          "title": "聖書への興味"
+        },
+        {
+          "timestamp": "35:38",
+          "title": "競馬場の環境"
+        },
+        {
+          "timestamp": "39:21",
+          "title": "ロサンゼルスの思い出"
+        },
+        {
+          "timestamp": "42:15",
+          "title": "旅行中の体験"
+        },
+        {
+          "timestamp": "44:51",
+          "title": "食文化の影響"
+        },
+        {
+          "timestamp": "51:49",
+          "title": "散歩の始まりと教育"
+        },
+        {
+          "timestamp": "53:59",
+          "title": "高輪御所の探求"
+        },
+        {
+          "timestamp": "1:00:05",
+          "title": "文化と社会的背景"
+        },
+        {
+          "timestamp": "1:04:27",
+          "title": "エルカンターレの考察"
+        },
+        {
+          "timestamp": "1:06:15",
+          "title": "町田商店の探求"
+        },
+        {
+          "timestamp": "1:09:49",
+          "title": "在海二世学院について"
+        },
+        {
+          "timestamp": "1:20:05",
+          "title": "自由が丘のランチ探訪"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3dfh40",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "eg7symag",
+      "listen_episode_url": "https://listen.style/p/reelpal/eg7symag",
+      "title": "【番外編】まこジョナ散歩【後編】",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "インモンタクでの食事体験"
+        },
+        {
+          "timestamp": "02:41",
+          "title": "ディズニーとその体験談"
+        },
+        {
+          "timestamp": "10:08",
+          "title": "パーティーの雰囲気"
+        },
+        {
+          "timestamp": "21:45",
+          "title": "ガネーシャの神話"
+        },
+        {
+          "timestamp": "29:52",
+          "title": "ウールの魅力"
+        },
+        {
+          "timestamp": "34:26",
+          "title": "ネパール料理の魅力"
+        },
+        {
+          "timestamp": "35:04",
+          "title": "コーヒーとネパール料理"
+        },
+        {
+          "timestamp": "37:48",
+          "title": "ローバーミニの購入計画"
+        },
+        {
+          "timestamp": "47:52",
+          "title": "車の維持費の考察"
+        },
+        {
+          "timestamp": "52:14",
+          "title": "金銭的安定の重要性"
+        },
+        {
+          "timestamp": "58:11",
+          "title": "宝くじの現実"
+        },
+        {
+          "timestamp": "59:05",
+          "title": "1億万の謎"
+        },
+        {
+          "timestamp": "1:07:43",
+          "title": "宝くじとお金の話"
+        },
+        {
+          "timestamp": "1:12:01",
+          "title": "競馬とYouTuberの夢"
+        },
+        {
+          "timestamp": "1:20:18",
+          "title": "やんちゃと犯罪"
+        },
+        {
+          "timestamp": "1:21:49",
+          "title": "ウルトラマンの描写"
+        },
+        {
+          "timestamp": "1:29:16",
+          "title": "時代背景の影響"
+        },
+        {
+          "timestamp": "1:31:08",
+          "title": "ウルトラマンの魅力"
+        },
+        {
+          "timestamp": "1:33:14",
+          "title": "怪獣のバリエーション"
+        },
+        {
+          "timestamp": "1:40:59",
+          "title": "ストーリーの構造"
+        },
+        {
+          "timestamp": "1:43:30",
+          "title": "友人との軽快な会話"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3dfh8g",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "lypjkmwb",
+      "listen_episode_url": "https://listen.style/p/reelpal/lypjkmwb",
+      "title": "リスナーリクエスト 風刺ホラー映画『#NOCEBO』 ファッション業界が抱える罪悪感のお話",
+      "status": "invalid",
+      "errors": [
+        "Chapters are less than 30 seconds apart: 18:46 -> 19:01"
+      ],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "番組の紹介とゲストの紹介"
+        },
+        {
+          "timestamp": "16:03",
+          "title": "映画『#NOCEBO』のあらすじ"
+        },
+        {
+          "timestamp": "18:46",
+          "title": "ファッション業界の課題"
+        },
+        {
+          "timestamp": "19:01",
+          "title": "クリスティンとダイアナの関係"
+        },
+        {
+          "timestamp": "20:06",
+          "title": "映画のテーマと批評"
+        },
+        {
+          "timestamp": "23:15",
+          "title": "衝撃的な結末と反響"
+        },
+        {
+          "timestamp": "33:38",
+          "title": "ファッション業界の闇"
+        },
+        {
+          "timestamp": "38:48",
+          "title": "評価とアイデンティティ"
+        },
+        {
+          "timestamp": "44:58",
+          "title": "思い込みの力"
+        },
+        {
+          "timestamp": "47:16",
+          "title": "娘を通じたプラセボの考察"
+        },
+        {
+          "timestamp": "48:21",
+          "title": "赤い靴とその象徴"
+        },
+        {
+          "timestamp": "53:54",
+          "title": "ファッション業界への批判"
+        },
+        {
+          "timestamp": "1:00:28",
+          "title": "プラセボと評価の関係"
+        },
+        {
+          "timestamp": "1:02:31",
+          "title": "ファッション業界の影響"
+        },
+        {
+          "timestamp": "1:06:53",
+          "title": "トロッコ問題と倫理"
+        },
+        {
+          "timestamp": "1:14:28",
+          "title": "主人公の倫理的ジレンマ"
+        },
+        {
+          "timestamp": "1:23:15",
+          "title": "ダイアナの復讐心"
+        },
+        {
+          "timestamp": "1:26:15",
+          "title": "クリスティーンの選択"
+        },
+        {
+          "timestamp": "1:30:26",
+          "title": "映画『#NOCEBO』の紹介"
+        },
+        {
+          "timestamp": "1:32:08",
+          "title": "責任と倫理の探求"
+        },
+        {
+          "timestamp": "1:39:44",
+          "title": "消費者の視点"
+        },
+        {
+          "timestamp": "1:45:10",
+          "title": "風刺ホラー映画『#NOCEBO』の紹介"
+        },
+        {
+          "timestamp": "1:52:03",
+          "title": "リスナーからのフィードバック"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/NOCEBO-e3dojol",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "jlpxduel",
+      "listen_episode_url": "https://listen.style/p/reelpal/jlpxduel",
+      "title": "映画『#シンウルトラマン』 宇宙と戦争と平和維持の話",
+      "status": "invalid",
+      "errors": [
+        "Chapters are less than 30 seconds apart: 14:56 -> 15:02"
+      ],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "映画の紹介とテーマ"
+        },
+        {
+          "timestamp": "13:24",
+          "title": "クリエイターの視点"
+        },
+        {
+          "timestamp": "14:56",
+          "title": "戦争と平和の重要性"
+        },
+        {
+          "timestamp": "15:02",
+          "title": "映画制作の背景"
+        },
+        {
+          "timestamp": "16:17",
+          "title": "ウルトラマンの物語"
+        },
+        {
+          "timestamp": "19:28",
+          "title": "キャラクターとテーマ"
+        },
+        {
+          "timestamp": "28:58",
+          "title": "ウルトラマンの新たな解釈"
+        },
+        {
+          "timestamp": "30:30",
+          "title": "ゼットンとの戦い"
+        },
+        {
+          "timestamp": "41:36",
+          "title": "ウルトラ警備隊の役割"
+        },
+        {
+          "timestamp": "42:46",
+          "title": "ウルトラマンの戦闘能力"
+        },
+        {
+          "timestamp": "44:46",
+          "title": "怪獣デザインと制作の工夫"
+        },
+        {
+          "timestamp": "53:28",
+          "title": "キャストの英語と社会的テーマ"
+        },
+        {
+          "timestamp": "56:17",
+          "title": "ウルトラマンのバトルスタイル"
+        },
+        {
+          "timestamp": "1:00:17",
+          "title": "新たな宇宙生命体の存在"
+        },
+        {
+          "timestamp": "1:08:39",
+          "title": "偽ウルトラマンの登場"
+        },
+        {
+          "timestamp": "1:10:11",
+          "title": "ウルトラマンの戦闘と感情"
+        },
+        {
+          "timestamp": "1:13:19",
+          "title": "キャラクターの登場と展開"
+        },
+        {
+          "timestamp": "1:15:27",
+          "title": "ゼットンの登場と物語の締め"
+        },
+        {
+          "timestamp": "1:22:39",
+          "title": "ゼットンとの戦い"
+        },
+        {
+          "timestamp": "1:26:49",
+          "title": "ウルトラマンの使命"
+        },
+        {
+          "timestamp": "1:32:07",
+          "title": "日本の未来と軍備"
+        },
+        {
+          "timestamp": "1:36:50",
+          "title": "外的な侵略の影響"
+        },
+        {
+          "timestamp": "1:38:46",
+          "title": "メフィラス星人の役割"
+        },
+        {
+          "timestamp": "1:40:42",
+          "title": "核抑止力の考察"
+        },
+        {
+          "timestamp": "1:51:53",
+          "title": "ウルトラマンのキャラクター性の変遷"
+        },
+        {
+          "timestamp": "1:52:38",
+          "title": "次回の話題と参加者"
+        },
+        {
+          "timestamp": "1:53:39",
+          "title": "番組の参加と配信情報"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3e3nju",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "2irzevsv",
+      "listen_episode_url": "https://listen.style/p/reelpal/2irzevsv",
+      "title": "【インターミッション】#ヒーマン とか#マスターズオブユニバース とか…",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "ゲスト紹介とオープニング"
+        },
+        {
+          "timestamp": "02:17",
+          "title": "映画に関するスピーチ"
+        },
+        {
+          "timestamp": "06:33",
+          "title": "B級映画の魅力"
+        },
+        {
+          "timestamp": "10:11",
+          "title": "『13ゴースト』の特典映像"
+        },
+        {
+          "timestamp": "12:38",
+          "title": "『ハムナプトラ』の新作"
+        },
+        {
+          "timestamp": "19:23",
+          "title": "映画の思い出"
+        },
+        {
+          "timestamp": "20:39",
+          "title": "ハムナプトラのリメイク"
+        },
+        {
+          "timestamp": "23:49",
+          "title": "ヒーマンの新たな展開"
+        },
+        {
+          "timestamp": "29:29",
+          "title": "ポリコレ時代のヒーマン"
+        },
+        {
+          "timestamp": "30:46",
+          "title": "ヒーマンと映画の重要性"
+        },
+        {
+          "timestamp": "33:14",
+          "title": "フィギュアと人気の懸念"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3eaald",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "bqkjsbxh",
+      "listen_episode_url": "https://listen.style/p/reelpal/bqkjsbxh",
+      "title": "映画『＃MAMA』 デル・トロ節で描かれる母性と恐怖の不協和音",
+      "status": "invalid",
+      "errors": [
+        "Chapters are less than 30 seconds apart: 44:53 -> 44:56"
+      ],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "番組の紹介"
+        },
+        {
+          "timestamp": "11:11",
+          "title": "リスナーからの感想"
+        },
+        {
+          "timestamp": "15:12",
+          "title": "映画『ママ』のテーマ"
+        },
+        {
+          "timestamp": "15:47",
+          "title": "映画『ママ』の概要"
+        },
+        {
+          "timestamp": "17:40",
+          "title": "姉妹とママの関係"
+        },
+        {
+          "timestamp": "21:48",
+          "title": "物語の結末とテーマ"
+        },
+        {
+          "timestamp": "29:48",
+          "title": "リリーとビクトリアの世界"
+        },
+        {
+          "timestamp": "33:34",
+          "title": "社会の相互影響"
+        },
+        {
+          "timestamp": "44:53",
+          "title": "プラトンの洞窟の比喩"
+        },
+        {
+          "timestamp": "44:56",
+          "title": "認識の枠組みの変化"
+        },
+        {
+          "timestamp": "47:09",
+          "title": "社会への適応"
+        },
+        {
+          "timestamp": "48:51",
+          "title": "母性の商品化"
+        },
+        {
+          "timestamp": "1:00:36",
+          "title": "イーリスの母性の葛藤"
+        },
+        {
+          "timestamp": "1:03:55",
+          "title": "偽りの母性を求める人物"
+        },
+        {
+          "timestamp": "1:06:55",
+          "title": "本物の母性とは"
+        },
+        {
+          "timestamp": "1:15:51",
+          "title": "収録の進行"
+        },
+        {
+          "timestamp": "1:17:46",
+          "title": "恐怖の描写"
+        },
+        {
+          "timestamp": "1:18:54",
+          "title": "リクエストと映画の紹介"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/MAMA-e3ee8bh",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "xwytnorr",
+      "listen_episode_url": "https://listen.style/p/reelpal/xwytnorr",
+      "title": "【インターミッション】#犬 とか#ハプスブルク家 とか…",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "収録の振り返りと反省"
+        },
+        {
+          "timestamp": "02:31",
+          "title": "友情と過去の思い出"
+        },
+        {
+          "timestamp": "04:51",
+          "title": "犬の可愛さと雑談"
+        },
+        {
+          "timestamp": "13:04",
+          "title": "犬の多様性と人間の形質"
+        },
+        {
+          "timestamp": "14:30",
+          "title": "ハプスブルク家の遺伝的特性"
+        },
+        {
+          "timestamp": "17:11",
+          "title": "権力と近親交配の影響"
+        },
+        {
+          "timestamp": "27:39",
+          "title": "犬と趣味の話"
+        },
+        {
+          "timestamp": "31:46",
+          "title": "映画『ファイブナイツアットフレディーズ』"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3ekgit",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "cunwdmff",
+      "listen_episode_url": "https://listen.style/p/reelpal/cunwdmff",
+      "title": "映画『#スナッチ』おしゃれ演出マシマシ映画に觀る階層構造",
+      "status": "invalid",
+      "errors": [
+        "Chapters are less than 30 seconds apart: 17:09 -> 17:23"
+      ],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "映画の紹介"
+        },
+        {
+          "timestamp": "03:56",
+          "title": "物語の構造"
+        },
+        {
+          "timestamp": "16:22",
+          "title": "キャラクターの多様性"
+        },
+        {
+          "timestamp": "17:09",
+          "title": "ブラッド・ピットの起用背景"
+        },
+        {
+          "timestamp": "17:23",
+          "title": "キャラクター分析"
+        },
+        {
+          "timestamp": "22:22",
+          "title": "ストーリー展開と演出"
+        },
+        {
+          "timestamp": "32:23",
+          "title": "映画のテーマとアプローチ"
+        },
+        {
+          "timestamp": "36:12",
+          "title": "トリクルダウン理論の概念"
+        },
+        {
+          "timestamp": "39:29",
+          "title": "複数のストーリーラインとキャラクター"
+        },
+        {
+          "timestamp": "48:07",
+          "title": "トリクルダウン理論の批判"
+        },
+        {
+          "timestamp": "53:40",
+          "title": "パイキーの存在と階層構造"
+        },
+        {
+          "timestamp": "56:54",
+          "title": "映画の社会的視点"
+        },
+        {
+          "timestamp": "1:04:20",
+          "title": "アメリカの力と空回り"
+        },
+        {
+          "timestamp": "1:06:25",
+          "title": "旧ソ連の崩壊と暴力"
+        },
+        {
+          "timestamp": "1:07:45",
+          "title": "イスラエルと非国家勢力の台頭"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3eoohs",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "e3hntxur",
+      "listen_episode_url": "https://listen.style/p/reelpal/e3hntxur",
+      "title": "【インターミッション】#パンダ とか#コンゴ とか#UMA とか…",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "通信障害とゲームの話"
+        },
+        {
+          "timestamp": "06:14",
+          "title": "ゴートシミュレーターの魅力と攻略"
+        },
+        {
+          "timestamp": "14:57",
+          "title": "ホグワーツ・レガシーのゲームシステム"
+        },
+        {
+          "timestamp": "18:25",
+          "title": "最新映画情報とパンダへの疑問"
+        },
+        {
+          "timestamp": "22:31",
+          "title": "カモノハシの不思議"
+        },
+        {
+          "timestamp": "25:36",
+          "title": "バビルサと進化の謎"
+        },
+        {
+          "timestamp": "30:33",
+          "title": "テングザルとオランウータン"
+        },
+        {
+          "timestamp": "31:43",
+          "title": "ゴリラの逸話と映画『コンゴ』"
+        },
+        {
+          "timestamp": "38:54",
+          "title": "映画の話は尽きない"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/UMA-e3eo8vc",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "kuusix2k",
+      "listen_episode_url": "https://listen.style/p/reelpal/kuusix2k",
+      "title": "リスナーリクエスト「映画『#帰ってきたヒトラー』歴史はコメディに落とし込めるのか」",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3f24u0",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "ijl5oxfv",
+      "listen_episode_url": "https://listen.style/p/reelpal/ijl5oxfv",
+      "title": "【インターミッション】 #インド映画 とか#きっとうまくいく とか",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "インターミッションと番組のスタンス"
+        },
+        {
+          "timestamp": "05:17",
+          "title": "「あなたを構成する映画」という企画"
+        },
+        {
+          "timestamp": "08:24",
+          "title": "理想の大人像と影響を受けた作品"
+        },
+        {
+          "timestamp": "14:19",
+          "title": "「キャバレー」の視聴困難と魅力"
+        },
+        {
+          "timestamp": "18:52",
+          "title": "インド映画への傾倒と「きっとうまくいく」"
+        },
+        {
+          "timestamp": "23:55",
+          "title": "インド映画の社会問題提起と俳優"
+        },
+        {
+          "timestamp": "28:25",
+          "title": "インドドラマとその他のインド映画"
+        },
+        {
+          "timestamp": "32:25",
+          "title": "まとめと次回の予告"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/ep-e3f9g4r",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "rf6m9xmz",
+      "listen_episode_url": "https://listen.style/p/reelpal/rf6m9xmz",
+      "title": "庵野秀明映画『#シン仮面ライダー』幸福追求とエゴが奏でる不協和音",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3fcm8j",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "thulg019",
+      "listen_episode_url": "https://listen.style/p/reelpal/thulg019",
+      "title": "【インターミッション】 #最新映画情報 とか#名探偵コナン とか",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングと映画「ハッシュタグ拡散」"
+        },
+        {
+          "timestamp": "04:22",
+          "title": "映画「デッチアゲ」と仮面ライダー"
+        },
+        {
+          "timestamp": "11:27",
+          "title": "マイケル・ジャクソン映画と「名探偵コナン」"
+        },
+        {
+          "timestamp": "24:42",
+          "title": "名探偵コナンの相関図とキャラクター解説"
+        },
+        {
+          "timestamp": "35:37",
+          "title": "エンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3flmd6",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "vc9weza9",
+      "listen_episode_url": "https://listen.style/p/reelpal/vc9weza9",
+      "title": "政治系#アクション映画 『#VforVendetta』 仮面の下はどんな顔？",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/VforVendetta-e3fnd4e",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "6s8wy0dc",
+      "listen_episode_url": "https://listen.style/p/reelpal/6s8wy0dc",
+      "title": "#ノンフィクション映画？ 『#でっちあげ』 真実はいつも一つ！・・・なんだけども。",
+      "status": "invalid",
+      "errors": [
+        "Chapters are less than 30 seconds apart: 1:29:25 -> 1:29:37"
+      ],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングトーク：小学校の同窓会と人間関係"
+        },
+        {
+          "timestamp": "07:32",
+          "title": "本日のテーマ紹介：映画『でっちあげ』"
+        },
+        {
+          "timestamp": "09:23",
+          "title": "映画『でっちあげ』あらすじ紹介"
+        },
+        {
+          "timestamp": "12:03",
+          "title": "事件の背景解説：福岡殺人教師事件"
+        },
+        {
+          "timestamp": "18:15",
+          "title": "ジャブ①：柴咲コウの魅力について"
+        },
+        {
+          "timestamp": "27:10",
+          "title": "ジャブ②：ミッキーマウスの著作権とパブリシティ権"
+        },
+        {
+          "timestamp": "28:58",
+          "title": "ジャブ③：綾野剛の演技力とアウトローな役柄"
+        },
+        {
+          "timestamp": "32:03",
+          "title": "ジャブ④：織田裕二とアルパカの意外な共通点"
+        },
+        {
+          "timestamp": "34:11",
+          "title": "ジャブ⑤：週刊誌の報道姿勢とステレオタイプ"
+        },
+        {
+          "timestamp": "39:14",
+          "title": "ジャブ⑥：強気な男のステレオタイプ"
+        },
+        {
+          "timestamp": "41:29",
+          "title": "深井の所感：印象を伴わない情報伝達皆無説"
+        },
+        {
+          "timestamp": "55:26",
+          "title": "深井の所感：疑似環境と記憶の再構成"
+        },
+        {
+          "timestamp": "1:15:17",
+          "title": "深井の所感：虚偽記憶実験とマクマーティン保育園裁判"
+        },
+        {
+          "timestamp": "1:21:46",
+          "title": "深井の所感：真実とは何か、ラショウモン的考察"
+        },
+        {
+          "timestamp": "1:29:25",
+          "title": "大間の所感：子供は存在しなかった説"
+        },
+        {
+          "timestamp": "1:29:37",
+          "title": "大間の所感：自身の体験と構造的加害"
+        },
+        {
+          "timestamp": "1:47:26",
+          "title": "大間の所感：教育現場における権力構造の変化とSNSの影響"
+        },
+        {
+          "timestamp": "1:51:17",
+          "title": "大間の所感：子供を中心に据えることの重要性"
+        },
+        {
+          "timestamp": "2:03:02",
+          "title": "エンディングトーク：次回予告とリスナーへのメッセージ"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3g2902",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "iebmlldx",
+      "listen_episode_url": "https://listen.style/p/reelpal/iebmlldx",
+      "title": "【インターミッション】 #青春映画 とか#ハムナプトラ とか",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3g3d3o",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "tnjvtd9u",
+      "listen_episode_url": "https://listen.style/p/reelpal/tnjvtd9u",
+      "title": "#ヒューマンドラマ 映画 『#きっとうまくいく』人生は学びの連続だ。",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングトーク：季節と映画の話題"
+        },
+        {
+          "timestamp": "02:56",
+          "title": "『オズの魔法使い』と『ウィキッド』の考察"
+        },
+        {
+          "timestamp": "15:15",
+          "title": "『きっとうまくいく』の紹介と感想"
+        },
+        {
+          "timestamp": "23:35",
+          "title": "『きっとうまくいく』のディテールと考察（インドのスクーター、ランチョー無能説"
+        },
+        {
+          "timestamp": "33:44",
+          "title": "『きっとうまくいく』のテーマ：基礎研究と応用研究"
+        },
+        {
+          "timestamp": "1:10:52",
+          "title": "『きっとうまくいく』と国家の近代化ルート"
+        },
+        {
+          "timestamp": "1:29:27",
+          "title": "自己決定理論と学びの意義"
+        },
+        {
+          "timestamp": "1:32:34",
+          "title": "教育制度への提言と学びのプロセス"
+        },
+        {
+          "timestamp": "1:36:06",
+          "title": "人生は学びの連続だ：映画からの学びと考察"
+        },
+        {
+          "timestamp": "1:40:13",
+          "title": "エンディングトーク：骨壺とヤンキー映画"
+        },
+        {
+          "timestamp": "1:44:55",
+          "title": "次回予告：『レザボア・ドッグス』"
+        },
+        {
+          "timestamp": "1:47:26",
+          "title": "エンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3gdsba",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "nuz6fdmq",
+      "listen_episode_url": "https://listen.style/p/reelpal/nuz6fdmq",
+      "title": "#クライムコメディ 映画『#レザボア・ドッグス』 すべてを手に入れるのは何者か",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3gpcn1",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "olpvafwx",
+      "listen_episode_url": "https://listen.style/p/reelpal/olpvafwx",
+      "title": "【インターミッション】 #スパイダーマン 事情とか",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "チャック・ノリス氏へのネットの反応と俳優のキャラクター性"
+        },
+        {
+          "timestamp": "05:06",
+          "title": "最新スパイダーマン映画とソニーのユニバース戦略"
+        },
+        {
+          "timestamp": "13:33",
+          "title": "新作スパイダーマンの展開とヴィラン候補"
+        },
+        {
+          "timestamp": "17:00",
+          "title": "スパイダーマンのキャラクターとマルチバース"
+        },
+        {
+          "timestamp": "27:04",
+          "title": "アメコミ映画の現状とディズニーのヴィラン戦略"
+        },
+        {
+          "timestamp": "34:26",
+          "title": "エピソードの締めくくり"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3gpknc",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "d1veblud",
+      "listen_episode_url": "https://listen.style/p/reelpal/d1veblud",
+      "title": "#ホラー映画 『#聖なる鹿殺し』 罪を許すための最低条件",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3h2mvn",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "uoqbtn0h",
+      "listen_episode_url": "https://listen.style/p/reelpal/uoqbtn0h",
+      "title": "【インターミッション】 #陰陽師 とか#西遊記とか",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "インターミッションと映画鑑賞の近況"
+        },
+        {
+          "timestamp": "03:44",
+          "title": "映画興行収入と中国神話映画「ナタ」"
+        },
+        {
+          "timestamp": "09:30",
+          "title": "西遊記の多様なメディア展開と歴史映画の定義"
+        },
+        {
+          "timestamp": "18:22",
+          "title": "西遊記まつり企画と今後の展望"
+        },
+        {
+          "timestamp": "29:26",
+          "title": "次回の予告とエンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3h8f3r",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "qlklisxe",
+      "listen_episode_url": "https://listen.style/p/reelpal/qlklisxe",
+      "title": "「#和製ファンタジー映画 『#陰陽師』 シリーズ 呪いは存在するか否か」 #JapaneseFantasy *#Onmyoji* Series — Spells, Spirits, and the Question of Curses",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/JapaneseFantasy-Onmyoji-Series--Spells--Spirits--and-the-Question-of-Curses-e3hdblf",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "08x9zj0r",
+      "listen_episode_url": "https://listen.style/p/reelpal/08x9zj0r",
+      "title": "【インターミッション】 #ハムナプトラ とか #神話 とか #ジャック・ブラック とか",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3hemc0",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "d5usiyuv",
+      "listen_episode_url": "https://listen.style/p/reelpal/d5usiyuv",
+      "title": "#シルクロード企画第２弾 映画『#モンキーマジック孫悟空誕生』『#超西遊記』 What Does Sun Wukong Mean to You? — The Monkey King and the Mirrors We Hold Up",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングと食の好み"
+        },
+        {
+          "timestamp": "03:54",
+          "title": "西遊記のキャラクターと現代への広がり"
+        },
+        {
+          "timestamp": "08:33",
+          "title": "スガキヤとソフトクリーム、そして古典の拡張性"
+        },
+        {
+          "timestamp": "13:16",
+          "title": "映画紹介：モンキーマジックと超西遊記"
+        },
+        {
+          "timestamp": "18:58",
+          "title": "各映画の詳細なあらすじと感想"
+        },
+        {
+          "timestamp": "24:08",
+          "title": "作品へのジャブ：キャラクター描写と解釈"
+        },
+        {
+          "timestamp": "32:16",
+          "title": "孫悟空のキャラクター性と現代への投影"
+        },
+        {
+          "timestamp": "42:58",
+          "title": "西遊記のキャラクターと仏教的解釈"
+        },
+        {
+          "timestamp": "51:18",
+          "title": "西遊記のキャラクターと現代のナロウ系"
+        },
+        {
+          "timestamp": "1:16:05",
+          "title": "ヤンキーと神への憧れ"
+        },
+        {
+          "timestamp": "1:22:26",
+          "title": "孫悟空への憧れと指針"
+        },
+        {
+          "timestamp": "1:24:38",
+          "title": "モンキーマジックの細部への疑問"
+        },
+        {
+          "timestamp": "1:28:03",
+          "title": "次回予告とリスナーからのメール"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/What-Does-Sun-Wukong-Mean-to-You---The-Monkey-King-and-the-Mirrors-We-Hold-Up-e3hosc7",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "muqreyoh",
+      "listen_episode_url": "https://listen.style/p/reelpal/muqreyoh",
+      "title": "【インターミッション】 #ドラえもん とか #鬼太郎 とか",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3hotl2",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "wwisepd9",
+      "listen_episode_url": "https://listen.style/p/reelpal/wwisepd9",
+      "title": "シルクロード企画第３段 映画『HANUMAN』ヒーロー映画はどこにいくのか Silk Road Series: Part 3 — #HANUMAN Where Gods Wear Capes: The Future of the Hero Film",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングトーク：ファミマの鴨串と食文化について"
+        },
+        {
+          "timestamp": "09:49",
+          "title": "映画『HANUMAN』のテーマ発表とあらすじ紹介"
+        },
+        {
+          "timestamp": "13:39",
+          "title": "『HANUMAN』のジャブ（細かなツッコミどころ"
+        },
+        {
+          "timestamp": "24:34",
+          "title": "「伝統と革新の二項対立映画説」：社会テーマの分析"
+        },
+        {
+          "timestamp": "37:40",
+          "title": "「ハヌマン伝道入りインフルエンサー説」：ヒーロー像の比較とSNS"
+        },
+        {
+          "timestamp": "59:54",
+          "title": "ヒーロー映画の未来と『HANUMAN』の位置づけ"
+        },
+        {
+          "timestamp": "1:04:28",
+          "title": "エンディングトーク：マンゴーアチャールとリスナーからのメッセージ"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/HANUMAN-Silk-Road-Series-Part-3--HANUMAN-Where-Gods-Wear-Capes-The-Future-of-the-Hero-Film-e3i2t3p",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "9azjde2x",
+      "listen_episode_url": "https://listen.style/p/reelpal/9azjde2x",
+      "title": "【インターミッション】 ￼ #オランウータン とか ￼#フランケンシュタイン とか",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3i2tp2",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "zmlj8opb",
+      "listen_episode_url": "https://listen.style/p/reelpal/zmlj8opb",
+      "title": "シルクロード企画第４段 映画『バグダットの盗賊』ディズニー映画『アラジン』時代を越えた名作はどう変化したのか Silk Road Series Vol.4: Same Wish, Different World",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングと寝具の話題"
+        },
+        {
+          "timestamp": "03:57",
+          "title": "快適な睡眠のための工夫と北欧の習慣"
+        },
+        {
+          "timestamp": "06:02",
+          "title": "キャンプの思い出と企画紹介"
+        },
+        {
+          "timestamp": "07:36",
+          "title": "『バグダッドの盗賊』と『アラジン』の概要"
+        },
+        {
+          "timestamp": "11:42",
+          "title": "『アラジン』の魅力とロビン・ウィリアムズ"
+        },
+        {
+          "timestamp": "15:35",
+          "title": "『バグダッドの盗賊』のツッコミどころ①"
+        },
+        {
+          "timestamp": "18:17",
+          "title": "『バグダッドの盗賊』のツッコミどころ②"
+        },
+        {
+          "timestamp": "23:34",
+          "title": "『アラジン』のジャブと王の無能さ"
+        },
+        {
+          "timestamp": "25:37",
+          "title": "『バグダッドの盗賊』のジーニー登場シーン"
+        },
+        {
+          "timestamp": "28:11",
+          "title": "『バグダッドの盗賊』の千里眼の森手"
+        },
+        {
+          "timestamp": "32:06",
+          "title": "『バグダッドの盗賊』のジャファー可愛い問題"
+        },
+        {
+          "timestamp": "36:29",
+          "title": "『バグダッドの盗賊』の実質ドラえもん説"
+        },
+        {
+          "timestamp": "37:15",
+          "title": "王の頼りなさという共通モチーフ"
+        },
+        {
+          "timestamp": "43:28",
+          "title": "王座から外れた視点と物語の構造"
+        },
+        {
+          "timestamp": "48:12",
+          "title": "王権の正当性への問いかけ"
+        },
+        {
+          "timestamp": "50:52",
+          "title": "時代による物語の変化と権力の継承"
+        },
+        {
+          "timestamp": "53:30",
+          "title": "『バグダッドの盗賊』はヒルメロドラマ説"
+        },
+        {
+          "timestamp": "59:16",
+          "title": "現代における「愛」の描き方とヒロインの自我"
+        },
+        {
+          "timestamp": "1:03:26",
+          "title": "エンディングと次回予告"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Silk-Road-Series-Vol-4-Same-Wish--Different-World-e3iecr4",
+      "spotify_match_score": 0.989
+    },
+    {
+      "episode_id": "hhafyleo",
+      "listen_episode_url": "https://listen.style/p/reelpal/hhafyleo",
+      "title": "リスナーリクエスト 映画『ホーム・アローン』『ホーム・アローン２』クリスマス映画の決定版ってことでいいかな？ Listener Request: Is Home Alone & Home Alone 2 Really the Ultimate Christmas Movie?",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングと近況報告"
+        },
+        {
+          "timestamp": "10:38",
+          "title": "リスナーからのメッセージと番組のスタンス"
+        },
+        {
+          "timestamp": "15:14",
+          "title": "映画『ホーム・アローン』シリーズの概要"
+        },
+        {
+          "timestamp": "25:23",
+          "title": "『ホーム・アローン』シリーズの登場人物分析"
+        },
+        {
+          "timestamp": "34:14",
+          "title": "子供時代の恐怖体験とクリエイティブな描写"
+        },
+        {
+          "timestamp": "38:32",
+          "title": "劇中映画とトラップの描写について"
+        },
+        {
+          "timestamp": "46:09",
+          "title": "『ホーム・アローン』が与えた影響と考察"
+        },
+        {
+          "timestamp": "48:52",
+          "title": "『ホーム・アローン』シリーズの「理想のアメリカ家族像」"
+        },
+        {
+          "timestamp": "1:04:24",
+          "title": "『ホーム・アローン』シリーズの「子婚発達説」"
+        },
+        {
+          "timestamp": "1:21:05",
+          "title": "次回予告とエンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-Is-Home-Alone--Home-Alone-2-Really-the-Ultimate-Christmas-Movie-e3iotsr",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "aj8uvpwt",
+      "listen_episode_url": "https://listen.style/p/reelpal/aj8uvpwt",
+      "title": "【インターミッション】 ￼ #スクリーム とか ￼#シドニープレスコット とか #任天堂",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3ioutu",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "7ys00snc",
+      "listen_episode_url": "https://listen.style/p/reelpal/7ys00snc",
+      "title": "シルクロード企画大団円 映画『ハムナプトラ』古代エジプトの呪いに惹かれる僕らの心理とは？ Silk Road Series Grand Finale: The Mummy — Why Are We So Obsessed with Ancient Egypt's Curse?",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングとISS観測"
+        },
+        {
+          "timestamp": "04:39",
+          "title": "『ホーム・アローン』に関するリスナーメールと倫理観"
+        },
+        {
+          "timestamp": "09:04",
+          "title": "『ハムナプトラ』のテーマと古代エジプトへの興味"
+        },
+        {
+          "timestamp": "12:18",
+          "title": "『ハムナプトラ』あらすじ紹介"
+        },
+        {
+          "timestamp": "16:35",
+          "title": "「死者の書」とその元ネタ"
+        },
+        {
+          "timestamp": "23:04",
+          "title": "映画『ハムナプトラ』へのツッコミ（ジャブ）①"
+        },
+        {
+          "timestamp": "28:27",
+          "title": "映画『ハムナプトラ』へのツッコミ（ジャブ）②"
+        },
+        {
+          "timestamp": "37:39",
+          "title": "オリジナル『ミイラ再生』との比較"
+        },
+        {
+          "timestamp": "46:55",
+          "title": "ツタンカーメンの呪いとオカルト"
+        },
+        {
+          "timestamp": "56:12",
+          "title": "『ハムナプトラ』におけるアメリカン・ドリームと植民地主義"
+        },
+        {
+          "timestamp": "1:08:55",
+          "title": "古代エジプトの思想と現代への影響"
+        },
+        {
+          "timestamp": "1:21:24",
+          "title": "『ハムナプトラ』シリーズの評価と次回の予告"
+        },
+        {
+          "timestamp": "1:30:49",
+          "title": "エンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Silk-Road-Series-Grand-Finale-The-Mummy--Why-Are-We-So-Obsessed-with-Ancient-Egypts-Curse-e3j3uh3",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "jx5brdwq",
+      "listen_episode_url": "https://listen.style/p/reelpal/jx5brdwq",
+      "title": "【インターミッション】 #ヒュー・ジャックマン とか #アメリカンパイ とか",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "ヒュー・ジャックマン主演作と「ベイブ」への言及"
+        },
+        {
+          "timestamp": "05:22",
+          "title": "ヒュー・ジャックマンのキャリアと「バンヘルシング」"
+        },
+        {
+          "timestamp": "12:55",
+          "title": "「ニューヨークの恋人」と「スクリーム」の関連性"
+        },
+        {
+          "timestamp": "16:27",
+          "title": "「エボリューション」と「アメリカン・パイ」の思い出"
+        },
+        {
+          "timestamp": "26:22",
+          "title": "最新映画情報と今後の展望"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3jk4nk",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "qqpsi8tw",
+      "listen_episode_url": "https://listen.style/p/reelpal/qqpsi8tw",
+      "title": "リスナーリクエスト 映画『君の名前で僕を呼んで』泡沫に消えた恋は人生を先へ進めるのか Listener Request: Call Me By Your Name — Can a Love That Fades Like a Dream Still Move Your Life Forward?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-Call-Me-By-Your-Name--Can-a-Love-That-Fades-Like-a-Dream-Still-Move-Your-Life-Forward-e3jk5o5",
+      "spotify_match_score": 0.992
+    },
+    {
+      "episode_id": "xds1p5cy",
+      "listen_episode_url": "https://listen.style/p/reelpal/xds1p5cy",
+      "title": "【インターミッション】 #マイケル・ジャクソンとか #マイケル・ジャクソンとか #マイケル・ジャクソンとか [INTERMISSION] #MichaelJackson and more. #MichaelJackson and more. #MichaelJackson and more.",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "インターミッション開始と近況報告"
+        },
+        {
+          "timestamp": "01:37",
+          "title": "映画情報とマイケル・ジャクソン映画の紹介"
+        },
+        {
+          "timestamp": "03:52",
+          "title": "マイケル・ジャクソンのダンスの再現性と凄さ"
+        },
+        {
+          "timestamp": "10:06",
+          "title": "マイケル・ジャクソンの体型と体幹の秘密"
+        },
+        {
+          "timestamp": "14:45",
+          "title": "マイケル・ジャクソンの影響力とメディア報道"
+        },
+        {
+          "timestamp": "21:18",
+          "title": "メディア報道とマイケル・ジャクソンの子供時代"
+        },
+        {
+          "timestamp": "25:47",
+          "title": "作品と人物の切り離し、そして今後の期待"
+        },
+        {
+          "timestamp": "28:52",
+          "title": "マイケル・ジャクソンの楽曲紹介とエンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/INTERMISSION-MichaelJackson-and-more--MichaelJackson-and-more--MichaelJackson-and-more-e3jt28q",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "jv6i585s",
+      "listen_episode_url": "https://listen.style/p/reelpal/jv6i585s",
+      "title": "映画『チョコレートドーナツ』ほろ苦く決して埋まらない幸せの形 Any Day Now — The Bittersweet Shape of a Happiness That Can Never Be Made Whole",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Any-Day-Now--The-Bittersweet-Shape-of-a-Happiness-That-Can-Never-Be-Made-Whole-e3jovth",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "jgim8ba1",
+      "listen_episode_url": "https://listen.style/p/reelpal/jgim8ba1",
+      "title": "【インターミッション】 #マンダロリアン とか#ストップモーション とか#ヒーマン とか",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "インターミッションとゲスト紹介"
+        },
+        {
+          "timestamp": "01:29",
+          "title": "伝記映画の隆盛と想像力の衰退"
+        },
+        {
+          "timestamp": "07:23",
+          "title": "マンダロリアンとストップモーションの魅力"
+        },
+        {
+          "timestamp": "13:46",
+          "title": "クリーチャーデザインとスター・ウォーズの世界観"
+        },
+        {
+          "timestamp": "17:50",
+          "title": "スター・ウォーズのキャラクター設定とクローン兵"
+        },
+        {
+          "timestamp": "24:41",
+          "title": "スター・ウォーズとMCUの現状"
+        },
+        {
+          "timestamp": "28:48",
+          "title": "マスターズ・オブ・ユニバースへの期待"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3k46k4",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "nu5r3oiq",
+      "listen_episode_url": "https://listen.style/p/reelpal/nu5r3oiq",
+      "title": "少年時代企画その１ 映画『スパイキッズ』ファミリー向け実写映画が輝いていたあの頃 Childhood Era Series Vol.1: Spy Kids — Back When Live-Action Family Films Were Everything",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Childhood-Era-Series-Vol-1-Spy-Kids--Back-When-Live-Action-Family-Films-Were-Everything-e3k3mcd",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "38hmlv8z",
+      "listen_episode_url": "https://listen.style/p/reelpal/38hmlv8z",
+      "title": "【インターミッション】 #Michael とか#ポップコーン とか#マシュマロ とか",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "マイケル・ジャクソン映画とファンの反応"
+        },
+        {
+          "timestamp": "06:36",
+          "title": "たべっ子どうぶつとティーンの消費文化"
+        },
+        {
+          "timestamp": "08:34",
+          "title": "お菓子と食感の楽しみ方"
+        },
+        {
+          "timestamp": "16:34",
+          "title": "映画館のポップコーンと食べ方"
+        },
+        {
+          "timestamp": "23:04",
+          "title": "キャンプのお菓子とマシュマロ"
+        },
+        {
+          "timestamp": "26:27",
+          "title": "福岡のお土産話と地域性"
+        },
+        {
+          "timestamp": "29:43",
+          "title": "エンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Michael-e3kilr0",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "fuhvb7jn",
+      "listen_episode_url": "https://listen.style/p/reelpal/fuhvb7jn",
+      "title": "リスナーリクエスト 映画『ワンスアポンアタイムインハリウッド』創作における暴力はどこまで許されるのか Listener Request: Once Upon a Time in Hollywood — How Far Can Violence Go in Storytelling?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-Once-Upon-a-Time-in-Hollywood--How-Far-Can-Violence-Go-in-Storytelling-e3kfam3",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "hueifwxt",
+      "listen_episode_url": "https://listen.style/p/reelpal/hueifwxt",
+      "title": "映画『#michael』 夢の追体験 Michael — Reliving a Dream",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングとサウナでの衝撃体験"
+        },
+        {
+          "timestamp": "08:35",
+          "title": "マイケル・ジャクソン映画『マイケル』の紹介"
+        },
+        {
+          "timestamp": "14:15",
+          "title": "『This Is It』と『ムーンウォーカー』の考察"
+        },
+        {
+          "timestamp": "20:11",
+          "title": "キャプテンEOとマイケルのパフォーマンス"
+        },
+        {
+          "timestamp": "27:33",
+          "title": "映画『マイケル』の楽しみ方とドラマ性の議論"
+        },
+        {
+          "timestamp": "35:47",
+          "title": "マイケルの音楽制作スタイルと幼少期の家庭環境"
+        },
+        {
+          "timestamp": "43:19",
+          "title": "ジャクソン5結成秘話と父親ジョセフの厳しさ"
+        },
+        {
+          "timestamp": "49:50",
+          "title": "孤独と友達、そしてマイケルの動物好き"
+        },
+        {
+          "timestamp": "56:18",
+          "title": "ジャクソン5からソロへの移行と父親との対立"
+        },
+        {
+          "timestamp": "1:02:00",
+          "title": "社会へのメッセージとゴシップ"
+        },
+        {
+          "timestamp": "1:06:59",
+          "title": "鼻の整形と白斑、そして肌の色"
+        },
+        {
+          "timestamp": "1:12:51",
+          "title": "ペプシ事件と火傷、そして寄付"
+        },
+        {
+          "timestamp": "1:19:25",
+          "title": "エンドクレジットと『ハートブレイクホテル』"
+        },
+        {
+          "timestamp": "1:23:04",
+          "title": "ジャファー・ジャクソンの演技とリスペクト"
+        },
+        {
+          "timestamp": "1:27:43",
+          "title": "応援上映と今後の展望"
+        },
+        {
+          "timestamp": "1:30:23",
+          "title": "グッズとサイズ展開への不満"
+        },
+        {
+          "timestamp": "1:31:58",
+          "title": "映画の鑑賞体験とマイケルへの愛"
+        },
+        {
+          "timestamp": "1:33:57",
+          "title": "高額グッズとマイケル・ジャクソンコレクション"
+        },
+        {
+          "timestamp": "1:37:36",
+          "title": "ダジャレとマイケル・ジョーダン"
+        },
+        {
+          "timestamp": "1:42:06",
+          "title": "エンディングと今後の予定"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/michael----Michael--Reliving-a-Dream-e3kvtpt",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "t8osyl08",
+      "listen_episode_url": "https://listen.style/p/reelpal/t8osyl08",
+      "title": "映画『国宝』伝統と狂気の間で",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニング：台風と失われゆく日本の風景"
+        },
+        {
+          "timestamp": "04:28",
+          "title": "映画『国宝』の紹介と邦画界への提言"
+        },
+        {
+          "timestamp": "12:35",
+          "title": "映画『国宝』のあらすじとテーマ"
+        },
+        {
+          "timestamp": "19:15",
+          "title": "雑談：銭湯での和彫り体験と映画の小ネタ"
+        },
+        {
+          "timestamp": "37:29",
+          "title": "考察：美は舞台にない説"
+        },
+        {
+          "timestamp": "1:07:55",
+          "title": "考察：美とは深淵である（怖さの正体"
+        },
+        {
+          "timestamp": "1:18:34",
+          "title": "考察：国宝というタイトルに込められた意味"
+        },
+        {
+          "timestamp": "1:24:45",
+          "title": "キャスト陣への言及と映画の感想"
+        },
+        {
+          "timestamp": "1:28:13",
+          "title": "今後の放送予定とリスナーへのメッセージ"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3lc10d",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "yhkp4fmv",
+      "listen_episode_url": "https://listen.style/p/reelpal/yhkp4fmv",
+      "title": "【インターミッション】 #最終絶叫計画 とか#SCREAM とか#JackBlack #GooseBumps とか",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/SCREAM-JackBlack-GooseBumps-e3lc2cn",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "shdmay5l",
+      "listen_episode_url": "https://listen.style/p/reelpal/shdmay5l",
+      "title": "少年時代企画第二弾 映画『ジャイアントピーチ』童話は誰のためのもの Childhood Era Series Vol.2: James and the Giant Peach — Who Are Fairy Tales Really For?",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "映画館の思い出と現代の変化"
+        },
+        {
+          "timestamp": "09:59",
+          "title": "『ジャイアント・ピーチ』概要と制作背景"
+        },
+        {
+          "timestamp": "16:20",
+          "title": "子供の頃の記憶と童話の機能"
+        },
+        {
+          "timestamp": "19:16",
+          "title": "登場人物と印象的なシーンの考察"
+        },
+        {
+          "timestamp": "37:36",
+          "title": "『ジャイアント・ピーチ』の移民物語としての解釈"
+        },
+        {
+          "timestamp": "1:00:24",
+          "title": "『ジャイアント・ピーチ』のセルフセラピー映画としての解釈"
+        },
+        {
+          "timestamp": "1:22:56",
+          "title": "作品の評価と今後の展望"
+        },
+        {
+          "timestamp": "1:34:13",
+          "title": "エンディングと次回予告"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Childhood-Era-Series-Vol-2-James-and-the-Giant-Peach--Who-Are-Fairy-Tales-Really-For-e3lc1ro",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "6yqdsdgz",
+      "listen_episode_url": "https://listen.style/p/reelpal/6yqdsdgz",
+      "title": "【インターミッション】 ￼ #魔女の宅急便 とか#トイストーリー とか#氷の微笑 とか",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "『魔女の宅急便』4Kリマスター版への期待と懸念"
+        },
+        {
+          "timestamp": "18:21",
+          "title": "『トイ・ストーリー』シリーズの考察と『トイ・ストーリー5』への展望"
+        },
+        {
+          "timestamp": "28:56",
+          "title": "『氷の微笑』続編脚本完成と今後の展望"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3lsjqp",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "c9trures",
+      "listen_episode_url": "https://listen.style/p/reelpal/c9trures",
+      "title": "少年時代企画第３弾 映画『ベイブ』『ベイブ都会へいく』偏見との戦いは続く Childhood Era Series Vol.3: Babe & Babe: Pig in the City — The Fight Against Prejudice Goes On",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Childhood-Era-Series-Vol-3-Babe--Babe-Pig-in-the-City--The-Fight-Against-Prejudice-Goes-On-e3lliqr",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "dwmq5bvt",
+      "listen_episode_url": "https://listen.style/p/reelpal/dwmq5bvt",
+      "title": "リスナーリクエスト ホラー映画『ウィッチ』 信仰が生むのは救いか崩壊か Listener Request: The Witch — Does Faith Bring Salvation or Collapse?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-The-Witch--Does-Faith-Bring-Salvation-or-Collapse-e3lsko4",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "lt7ujaek",
+      "listen_episode_url": "https://listen.style/p/reelpal/lt7ujaek",
+      "title": "【インターミッション】 #みんなおしゃべり とか#手話 とか#モアナ とか",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3m8j85",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "kynzvxkx",
+      "listen_episode_url": "https://listen.style/p/reelpal/kynzvxkx",
+      "title": "少年時代企画第４弾 ディズニー映画『トイ・ストーリー』 おもちゃは子どもにとってのなんだろう Childhood Era Series Vol.4: Disney's Toy Story — What Do Toys Really Mean to Children?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Childhood-Era-Series-Vol-4-Disneys-Toy-Story--What-Do-Toys-Really-Mean-to-Children-e3m8isl",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "0qienhys",
+      "listen_episode_url": "https://listen.style/p/reelpal/0qienhys",
+      "title": "【インターミッション】 #ゴジラ-0.0 とか#口に関するアンケート とか#東野圭吾 とか",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "俳優・江本明とその息子、そしてアニメ・特撮映画の話題"
+        },
+        {
+          "timestamp": "13:58",
+          "title": "夏休み映画と『魔法少女まどか☆マギカ』の考察"
+        },
+        {
+          "timestamp": "20:22",
+          "title": "東野圭吾とミステリーにおける「人の死」の扱い"
+        },
+        {
+          "timestamp": "22:48",
+          "title": "『容疑者Xの献身』の魅力と俳優陣の演技"
+        },
+        {
+          "timestamp": "29:14",
+          "title": "浅草花やしきと遊園地の思い出"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/-0-0-e3mnfi0",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "l6cd1xvv",
+      "listen_episode_url": "https://listen.style/p/reelpal/l6cd1xvv",
+      "title": "夏の邦画祭り 映画『男はつらいよ』 あの頃の日本はどこへ行ったのか Summer Japanese Film Festival: Otoko wa Tsurai yo — Where Did That Japan Go?",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Summer-Japanese-Film-Festival-Otoko-wa-Tsurai-yo--Where-Did-That-Japan-Go-e3mj023",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "1lliljr6",
+      "listen_episode_url": "https://listen.style/p/reelpal/1lliljr6",
+      "title": "夏の邦画祭り第二弾 映画『打ち上げ花火、下から見るか？横から見るか？』小学校は青春時代に入りますか？ Summer Japanese Film Festival Vol.2: Fireworks, Should We See It from the Side or the Bottom? — Does Elementary School Count as Your Coming-of-Age?",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングとスイカの話"
+        },
+        {
+          "timestamp": "03:22",
+          "title": "ココナッツ売りとバイト経験"
+        },
+        {
+          "timestamp": "09:26",
+          "title": "夏の思い出と映画のテーマ"
+        },
+        {
+          "timestamp": "10:57",
+          "title": "映画「打ち上げ花火、下から見るか？横から見るか？」あらすじ紹介"
+        },
+        {
+          "timestamp": "18:02",
+          "title": "ドラマ版「if もしも」シリーズと視聴体験"
+        },
+        {
+          "timestamp": "22:08",
+          "title": "岩井俊二監督の他の作品とアニメ版について"
+        },
+        {
+          "timestamp": "26:16",
+          "title": "コンプライアンスと当時の描写"
+        },
+        {
+          "timestamp": "33:51",
+          "title": "当時の社会情勢と作品のメッセージ性"
+        },
+        {
+          "timestamp": "39:11",
+          "title": "ゆうすけの行動と心理描写"
+        },
+        {
+          "timestamp": "43:31",
+          "title": "なずなの行動と反実仮想思考"
+        },
+        {
+          "timestamp": "55:26",
+          "title": "花火の見え方と物語の構造"
+        },
+        {
+          "timestamp": "1:00:26",
+          "title": "ノスタルジーと自己肯定感"
+        },
+        {
+          "timestamp": "1:21:51",
+          "title": "なずなの服装と個人的な感想"
+        },
+        {
+          "timestamp": "1:24:17",
+          "title": "エンディングと次回予告"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Summer-Japanese-Film-Festival-Vol-2-Fireworks--Should-We-See-It-from-the-Side-or-the-Bottom---Does-Elementary-School-Count-as-Your-Coming-of-Age-e3mretv",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "vtef0k1l",
+      "listen_episode_url": "https://listen.style/p/reelpal/vtef0k1l",
+      "title": "【インターミッション】 #スパイダーマン とか#シノラー とか#ミッキー・ローク とか#エアロスミス とか#黒柳徹子 とか",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3mrf3s",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "gzmgbqts",
+      "listen_episode_url": "https://listen.style/p/reelpal/gzmgbqts",
+      "title": "夏の邦画祭り第３弾 映画『容疑者Xの献身』究極の愛の形ってなんだろう Summer Japanese Film Festival Vol.3: Suspect X — What Does the Ultimate Form of Love Look Like?",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングと日常の失敗談"
+        },
+        {
+          "timestamp": "04:16",
+          "title": "映画『容疑者Xの献身』の紹介と東野圭吾氏への追悼"
+        },
+        {
+          "timestamp": "13:15",
+          "title": "あらすじ紹介"
+        },
+        {
+          "timestamp": "15:20",
+          "title": "ネタバレトーク開始と初期の感想（ジャブ"
+        },
+        {
+          "timestamp": "21:16",
+          "title": "オープニングのレールガン実験シーンへの疑問"
+        },
+        {
+          "timestamp": "25:05",
+          "title": "「実に面白い」というセリフについて"
+        },
+        {
+          "timestamp": "26:30",
+          "title": "登山パートと演出への疑問"
+        },
+        {
+          "timestamp": "29:56",
+          "title": "警察の捜査能力への疑問とトリックの考察"
+        },
+        {
+          "timestamp": "32:34",
+          "title": "石神の献身が逆に罪を重くしたという考察"
+        },
+        {
+          "timestamp": "35:12",
+          "title": "堤真一の演技と石神のキャラクター"
+        },
+        {
+          "timestamp": "37:06",
+          "title": "ラストシーンのモニター表示へのツッコミ"
+        },
+        {
+          "timestamp": "40:27",
+          "title": "『真夏の方程式』と『沈黙のパレード』への言及"
+        },
+        {
+          "timestamp": "41:40",
+          "title": "『容疑者Xの献身』の作品としての完成度"
+        },
+        {
+          "timestamp": "42:39",
+          "title": "石神の献身の真意：自己犠牲か、自己満足か"
+        },
+        {
+          "timestamp": "47:20",
+          "title": "石神の孤独と靖子への恋"
+        },
+        {
+          "timestamp": "49:05",
+          "title": "石神の行為の二面性：献身と自己否定"
+        },
+        {
+          "timestamp": "53:48",
+          "title": "ハンナ・アーレントの「悪の陳腐さ」と石神"
+        },
+        {
+          "timestamp": "57:54",
+          "title": "愛の歪みと社会への問いかけ"
+        },
+        {
+          "timestamp": "1:01:25",
+          "title": "石神と富樫の比較：献身という名の鎖"
+        },
+        {
+          "timestamp": "1:05:40",
+          "title": "献身の宛先：靖子か、自己か"
+        },
+        {
+          "timestamp": "1:09:36",
+          "title": "靖子の自立と石神の気づき"
+        },
+        {
+          "timestamp": "1:10:47",
+          "title": "四色問題と石神の数学者としての終わり"
+        },
+        {
+          "timestamp": "1:13:12",
+          "title": "石神の一人相撲と物語の虚しさ"
+        },
+        {
+          "timestamp": "1:14:28",
+          "title": "数学の解法と人生の工夫"
+        },
+        {
+          "timestamp": "1:17:09",
+          "title": "次回予告：『この世界の片隅に』"
+        },
+        {
+          "timestamp": "1:19:37",
+          "title": "エンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/X-Summer-Japanese-Film-Festival-Vol-3-Suspect-X--What-Does-the-Ultimate-Form-of-Love-Look-Like-e3nb29a",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "zu5qulia",
+      "listen_episode_url": "https://listen.style/p/reelpal/zu5qulia",
+      "title": "夏の邦画祭り第４弾 映画『この世界のさらにいくつもの片隅に』戦火の人々は逞しかったのだろうか Summer Japanese Film Festival Vol.4: In This Corner (and Other Corners) of the World — Were People Living Through War Truly Resilient?",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングトーク：おうちキャンプとテントのロマン"
+        },
+        {
+          "timestamp": "09:10",
+          "title": "本日のテーマ発表：映画『この世界のさらにいくつもの片隅に』"
+        },
+        {
+          "timestamp": "11:13",
+          "title": "『はだしのゲン』との比較と戦争アニメの意義"
+        },
+        {
+          "timestamp": "16:13",
+          "title": "『火垂るの墓』、『少年H』との比較"
+        },
+        {
+          "timestamp": "19:19",
+          "title": "映画『この世界のさらにいくつもの片隅に』あらすじ紹介"
+        },
+        {
+          "timestamp": "22:29",
+          "title": "劇中の食文化：戦時下の食事と野草"
+        },
+        {
+          "timestamp": "26:50",
+          "title": "食文化の継承と失われた知恵"
+        },
+        {
+          "timestamp": "30:54",
+          "title": "マテガイの採取と食文化"
+        },
+        {
+          "timestamp": "33:16",
+          "title": "命を育む経験と労働の対価"
+        },
+        {
+          "timestamp": "34:05",
+          "title": "リンの幼少期と「知らぬふり」の優しさ"
+        },
+        {
+          "timestamp": "35:53",
+          "title": "アニメ表現の意義：戦争の悲惨さを描く手法"
+        },
+        {
+          "timestamp": "39:17",
+          "title": "戦争教育とミクロ・マクロ視点"
+        },
+        {
+          "timestamp": "41:24",
+          "title": "すずの「絵」を通した生き方"
+        },
+        {
+          "timestamp": "43:24",
+          "title": "「たくましさ」の再考：生きざるを得なかった人々"
+        },
+        {
+          "timestamp": "45:44",
+          "title": "「良かった」という言葉の基準線のずれ"
+        },
+        {
+          "timestamp": "46:51",
+          "title": "極音放送と情報統制下の認識"
+        },
+        {
+          "timestamp": "48:48",
+          "title": "『火垂るの墓』との対比：戦争終結の認識"
+        },
+        {
+          "timestamp": "49:38",
+          "title": "「絵」を通して見た世界と現実"
+        },
+        {
+          "timestamp": "53:57",
+          "title": "「贅沢は敵だ」と「贅沢は素敵だ」"
+        },
+        {
+          "timestamp": "1:03:29",
+          "title": "代用品としての「自分」と本物の人生"
+        },
+        {
+          "timestamp": "1:09:11",
+          "title": "ヴィクトール・フランクルと人間の最後の自由"
+        },
+        {
+          "timestamp": "1:12:00",
+          "title": "すずの生き方と「贅沢」の意味"
+        },
+        {
+          "timestamp": "1:14:57",
+          "title": "リンの「贅沢」：記憶と愛の引き受け"
+        },
+        {
+          "timestamp": "1:20:53",
+          "title": "最終的なメッセージ：生きる場所を見つけること"
+        },
+        {
+          "timestamp": "1:22:06",
+          "title": "映画の価値と鑑賞体験"
+        },
+        {
+          "timestamp": "1:26:09",
+          "title": "最後のメッセージとリスナーへの呼びかけ"
+        },
+        {
+          "timestamp": "1:29:47",
+          "title": "次回予告：真夏のホラー映画祭り"
+        },
+        {
+          "timestamp": "1:34:01",
+          "title": "エンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Summer-Japanese-Film-Festival-Vol-4-In-This-Corner-and-Other-Corners-of-the-World--Were-People-Living-Through-War-Truly-Resilient-e3nnqsd",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "aetobodm",
+      "listen_episode_url": "https://listen.style/p/reelpal/aetobodm",
+      "title": "【インターミッション】 #一ノ瀬ワタル とか#アンジェリーナ・ジョリー とか#ウィキッド とか",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3nt0gj",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "aon5ynuf",
+      "listen_episode_url": "https://listen.style/p/reelpal/aon5ynuf",
+      "title": "真夏のホラー企画 第一弾 映画『サユリ』これはジャンルシフトなのか……？ Midsummer Horror Series Vol.1: Sayuri — Is This a Genre Shift, or Something Else Entirely…?",
+      "status": "ready",
+      "errors": [],
+      "chapters": [
+        {
+          "timestamp": "00:00",
+          "title": "オープニングと冷蔵庫の話題"
+        },
+        {
+          "timestamp": "11:08",
+          "title": "映画『サユリ』の紹介とジャンルシフト"
+        },
+        {
+          "timestamp": "24:57",
+          "title": "作品のユニークな要素とテーマの考察"
+        },
+        {
+          "timestamp": "58:00",
+          "title": "対極図と登場人物の偏り"
+        },
+        {
+          "timestamp": "1:14:10",
+          "title": "社会へのメッセージと作品の意義"
+        },
+        {
+          "timestamp": "1:22:39",
+          "title": "次回予告とエンディング"
+        }
+      ],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Midsummer-Horror-Series-Vol-1-Sayuri--Is-This-a-Genre-Shift--or-Something-Else-Entirely-e3o1eb0",
+      "spotify_match_score": 1.0
+    },
+    {
+      "episode_id": "0pzhzwyt",
+      "listen_episode_url": "https://listen.style/p/reelpal/0pzhzwyt",
+      "title": "【インターミッション】 #ズートピア３ とか#アナと雪の女王3 とか#牧場物語 とか",
+      "status": "no_chapters",
+      "errors": [],
+      "chapters": [],
+      "spotify_creator_url": "https://podcasters.spotify.com/pod/show/reelpal/episodes/3-e3o2fv8",
+      "spotify_match_score": 1.0
+    }
+  ]
+}
