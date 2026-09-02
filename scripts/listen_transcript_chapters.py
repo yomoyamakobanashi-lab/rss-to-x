@@ -69,9 +69,6 @@ def extract_transcript(url: str) -> tuple[str, list[Segment]]:
     lines = [" ".join(line.split()) for line in soup.get_text("\n", strip=True).splitlines()]
     lines = [line for line in lines if line]
 
-    # LISTEN transcript timestamps are standalone visible lines such as 00:01,
-    # 03:07 or 1:14:10. Build the longest monotonic sequence that begins near
-    # the start of the episode, which avoids dates/player duration/UI text.
     markers: list[tuple[int, str]] = []
     for i, line in enumerate(lines):
         if TIME_LINE_RE.fullmatch(line):
@@ -93,8 +90,6 @@ def extract_transcript(url: str) -> tuple[str, list[Segment]]:
             cur_s = seconds(item[1])
             if cur_s <= last_s:
                 break
-            # LISTEN normally emits a marker every few minutes. A gap larger
-            # than 25 minutes strongly suggests we left the transcript region.
             if cur_s - last_s > 1500:
                 break
             seq.append(item)
@@ -109,7 +104,6 @@ def extract_transcript(url: str) -> tuple[str, list[Segment]]:
     for pos, (line_index, ts) in enumerate(best):
         end_index = best[pos + 1][0] if pos + 1 < len(best) else min(len(lines), line_index + 120)
         text_lines = lines[line_index + 1 : end_index]
-        # Remove obvious controls that can appear in the rendered page text.
         noise = {
             "Play", "Pause", "Stop", "Copy Link", "Share", "Close",
             "再生", "停止", "リンクをコピー", "シェア",
@@ -151,8 +145,10 @@ def generate_with_gemini(title: str, segments: list[Segment], model: str) -> lis
 
     transcript_rows = []
     for seg in segments:
-        # Enough context for topic identification without bloating a huge show.
-        excerpt = seg.text[:5000]
+        # Segment starts are already spaced every few minutes. Roughly 2,200
+        # characters per segment is enough for topic detection while keeping
+        # batch latency and free-tier token usage under control.
+        excerpt = seg.text[:2200]
         transcript_rows.append(f"SEGMENT {seg.index} [{seg.timestamp}]\n{excerpt}")
 
     prompt = f"""You are editing chapter markers for a Japanese movie-discussion podcast.
@@ -243,6 +239,7 @@ def probe(episodes: list[dict]) -> int:
 def generate(episodes: list[dict], output_dir: Path, limit: int, model: str, delay: float) -> int:
     output_dir.mkdir(parents=True, exist_ok=True)
     candidates = [e for e in episodes if e.get("status") == "no_chapters"]
+    attempted = 0
     generated = 0
     errors = 0
 
@@ -251,8 +248,9 @@ def generate(episodes: list[dict], output_dir: Path, limit: int, model: str, del
         out = output_dir / f"{eid}.json"
         if out.exists():
             continue
-        if limit > 0 and generated >= limit:
+        if limit > 0 and attempted >= limit:
             break
+        attempted += 1
         try:
             title, segments = extract_transcript(ep["listen_episode_url"])
             if len(segments) < 3:
@@ -273,16 +271,21 @@ def generate(episodes: list[dict], output_dir: Path, limit: int, model: str, del
             print(f"Generated {eid}: {len(chapters)} chapters — {payload['title']}")
         except Exception as exc:
             errors += 1
-            print(f"ERROR {eid}: {type(exc).__name__}: {exc}", file=sys.stderr)
-            # A quota/API problem is likely to affect every remaining episode;
-            # stop this batch while preserving already-generated files.
-            if "429" in str(exc) or "quota" in str(exc).lower() or "rate" in str(exc).lower():
-                print("Stopping batch due to API quota/rate limit.", file=sys.stderr)
+            message = str(exc)
+            print(f"ERROR {eid}: {type(exc).__name__}: {message}", file=sys.stderr)
+            lower = message.lower()
+            if (
+                "429" in message
+                or "quota" in lower
+                or "rate" in lower
+                or ("404" in message and ("model" in lower or "not_found" in lower))
+            ):
+                print("Stopping batch due to model/API configuration or quota error.", file=sys.stderr)
                 break
         if delay > 0:
             time.sleep(delay)
 
-    print(f"AI fallback batch complete: generated={generated}, errors={errors}")
+    print(f"AI fallback batch complete: attempted={attempted}, generated={generated}, errors={errors}")
     return 0
 
 
@@ -292,7 +295,7 @@ def main() -> int:
     ap.add_argument("--output-dir", default="data/generated_chapters/ai_backfill")
     ap.add_argument("--probe", action="store_true")
     ap.add_argument("--limit", type=int, default=10)
-    ap.add_argument("--model", default="gemini-2.5-flash-lite")
+    ap.add_argument("--model", default="gemini-3.5-flash-lite")
     ap.add_argument("--delay", type=float, default=3.0)
     args = ap.parse_args()
 
