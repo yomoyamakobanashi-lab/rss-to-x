@@ -1,0 +1,186 @@
+name: Backfill Spotify chapters from LISTEN
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_issues:
+        description: 'Maximum new Issues to create (0 = all)'
+        required: false
+        default: '0'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/listen_backfill_chapters.py'
+      - '.github/workflows/backfill-listen-chapters.yml'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: listen-chapter-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install parser dependency
+        run: pip install beautifulsoup4
+
+      - name: Scan every LISTEN episode
+        run: python scripts/listen_backfill_chapters.py
+
+      - name: Create missing Spotify chapter Issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MAX_ISSUES: ${{ github.event.inputs.max_issues || '0' }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import re
+          import subprocess
+          import tempfile
+          from pathlib import Path
+
+          report_path = Path('data/generated_chapters/backfill.json')
+          data = json.loads(report_path.read_text(encoding='utf-8'))
+          episodes = data['episodes']
+          max_issues = int(os.environ.get('MAX_ISSUES', '0') or '0')
+
+          existing = json.loads(subprocess.check_output([
+              'gh', 'issue', 'list', '--state', 'all', '--limit', '1000',
+              '--json', 'number,title,body,state'
+          ], text=True))
+
+          episode_markers = set()
+          summary_number = None
+          for issue in existing:
+              body = issue.get('body') or ''
+              episode_markers.update(re.findall(r'listen-chapter:([A-Za-z0-9_-]+)', body))
+              if 'listen-backfill-summary' in body:
+                  summary_number = issue['number']
+
+          ready = [e for e in episodes if e['status'] == 'ready']
+          missing = [e for e in episodes if e['status'] != 'ready']
+          created = 0
+          skipped = 0
+
+          for ep in ready:
+              eid = ep['episode_id']
+              if eid in episode_markers:
+                  skipped += 1
+                  continue
+              if max_issues > 0 and created >= max_issues:
+                  break
+
+              issue_title = f"Spotifyチャプター貼り付け: {ep['title']}"
+              if len(issue_title) > 245:
+                  issue_title = issue_title[:242] + '…'
+
+              lines = [
+                  f'<!-- listen-chapter:{eid} -->',
+                  'LISTENの過去回からチャプターを取得しました。',
+                  '',
+                  '**Spotify for Creators の既存エピソード説明文は消さず、末尾へ以下を追加してください。**',
+                  '',
+                  '```text',
+              ]
+              lines.extend(f"{c['timestamp']} {c['title']}" for c in ep['chapters'])
+              lines.extend(['```', ''])
+              if ep.get('spotify_creator_url'):
+                  lines.append(f"Spotify / Podcasters: {ep['spotify_creator_url']}")
+              else:
+                  lines.append('Spotifyリンク: 自動照合できませんでした（Spotify for Creatorsからタイトル検索してください）')
+              lines.append(f"LISTEN: {ep['listen_episode_url']}")
+              lines.extend(['', 'Spotifyへの貼り付けが終わったら、このIssueをCloseすれば完了です。'])
+
+              with tempfile.NamedTemporaryFile('w', encoding='utf-8', delete=False) as f:
+                  f.write('\n'.join(lines) + '\n')
+                  body_file = f.name
+              try:
+                  out = subprocess.check_output([
+                      'gh', 'issue', 'create', '--title', issue_title, '--body-file', body_file
+                  ], text=True).strip()
+                  print(f"Created: {out}")
+              finally:
+                  os.unlink(body_file)
+              episode_markers.add(eid)
+              created += 1
+
+          counts = data.get('counts', {})
+          matched = data.get('spotify_links_matched', 0)
+          summary = [
+              '<!-- listen-backfill-summary -->',
+              '# Spotifyチャプター 過去回バックフィル状況',
+              '',
+              f"- LISTENで検出したエピソード: **{data['episode_count']}件**",
+              f"- Spotify仕様でそのまま使えるチャプターあり: **{counts.get('ready', 0)}件**",
+              f"- LISTEN側でチャプター未生成: **{counts.get('no_chapters', 0)}件**",
+              f"- Spotify仕様検証NG: **{counts.get('invalid', 0)}件**",
+              f"- 取得エラー: **{counts.get('error', 0)}件**",
+              f"- Spotify/Podcastersリンク自動照合: **{matched}/{data['episode_count']}件**",
+              f"- 今回新規作成した貼り付けIssue: **{created}件**",
+              f"- 既存Issueのためスキップ: **{skipped}件**",
+              '',
+              '各「Spotifyチャプター貼り付け」Issueを1件ずつ処理し、Spotifyへ貼り付けたらCloseしてください。',
+          ]
+
+          if max_issues > 0 and created >= max_issues:
+              summary.extend(['', f'⚠️ 今回は max_issues={max_issues} のため途中で停止しています。再実行すれば残りを追加できます。'])
+
+          if missing:
+              summary.extend(['', '## LISTEN側でそのまま処理できなかった回'])
+              for ep in missing:
+                  reason = ep['status']
+                  if ep.get('errors'):
+                      reason += ': ' + '; '.join(ep['errors'])
+                  title = ep.get('title') or '(タイトル取得失敗)'
+                  summary.append(f"- [{title}]({ep['listen_episode_url']}) — `{reason}`")
+
+          with tempfile.NamedTemporaryFile('w', encoding='utf-8', delete=False) as f:
+              f.write('\n'.join(summary) + '\n')
+              summary_file = f.name
+          try:
+              if summary_number:
+                  subprocess.run([
+                      'gh', 'issue', 'edit', str(summary_number),
+                      '--title', 'Spotifyチャプター 過去回バックフィル状況',
+                      '--body-file', summary_file
+                  ], check=True)
+                  print(f"Updated summary Issue #{summary_number}")
+              else:
+                  out = subprocess.check_output([
+                      'gh', 'issue', 'create',
+                      '--title', 'Spotifyチャプター 過去回バックフィル状況',
+                      '--body-file', summary_file
+                  ], text=True).strip()
+                  print(f"Created summary: {out}")
+          finally:
+              os.unlink(summary_file)
+
+          print(f"Backfill issue creation complete: created={created}, skipped={skipped}, ready={len(ready)}, missing={len(missing)}")
+          PY
+
+      - name: Commit backfill report
+        shell: bash
+        run: |
+          STATUS=$(git status --porcelain -- data/generated_chapters/backfill.json)
+          if [ -z "$STATUS" ]; then
+            echo 'Backfill report unchanged.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/generated_chapters/backfill.json
+          git commit -m 'Update LISTEN chapter backfill report'
+          git push
