@@ -145,9 +145,6 @@ def generate_with_gemini(title: str, segments: list[Segment], model: str) -> lis
 
     transcript_rows = []
     for seg in segments:
-        # Segment starts are already spaced every few minutes. Roughly 2,200
-        # characters per segment is enough for topic detection while keeping
-        # batch latency and free-tier token usage under control.
         excerpt = seg.text[:2200]
         transcript_rows.append(f"SEGMENT {seg.index} [{seg.timestamp}]\n{excerpt}")
 
@@ -171,14 +168,31 @@ TRANSCRIPT:
 """ + "\n\n".join(transcript_rows)
 
     client = genai.Client(api_key=key)
-    response = client.models.generate_content(
-        model=model,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            temperature=0.2,
-        ),
-    )
+    response = None
+    last_exc: Exception | None = None
+    for attempt in range(1, 4):
+        try:
+            response = client.models.generate_content(
+                model=model,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    temperature=0.2,
+                ),
+            )
+            break
+        except Exception as exc:
+            last_exc = exc
+            message = str(exc).lower()
+            transient = "503" in message or "unavailable" in message or "high demand" in message
+            if not transient or attempt == 3:
+                raise
+            wait = 8 * attempt
+            print(f"Gemini transient error; retrying in {wait}s (attempt {attempt}/3)", file=sys.stderr)
+            time.sleep(wait)
+    if response is None:
+        raise RuntimeError(f"Gemini returned no response: {last_exc}")
+
     raw = strip_json_fence(response.text or "")
     payload = json.loads(raw)
     requested = payload.get("chapters", payload if isinstance(payload, list) else [])
@@ -295,7 +309,7 @@ def main() -> int:
     ap.add_argument("--output-dir", default="data/generated_chapters/ai_backfill")
     ap.add_argument("--probe", action="store_true")
     ap.add_argument("--limit", type=int, default=10)
-    ap.add_argument("--model", default="gemini-3.5-flash-lite")
+    ap.add_argument("--model", default="gemini-3.1-flash-lite")
     ap.add_argument("--delay", type=float, default=3.0)
     args = ap.parse_args()
 
