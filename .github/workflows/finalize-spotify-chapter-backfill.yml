@@ -1,0 +1,68 @@
+name: Finalize Spotify chapter backfill
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/finalize_spotify_chapter_backfill.py'
+      - '.github/workflows/finalize-spotify-chapter-backfill.yml'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: spotify-chapter-finalizer
+  cancel-in-progress: false
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install beautifulsoup4 google-genai
+
+      - name: Refresh LISTEN backfill scan
+        run: python scripts/listen_backfill_chapters.py
+
+      - name: Retry every still-missing transcript-derived chapter set
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        shell: bash
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo 'GEMINI_API_KEY missing'
+            exit 1
+          fi
+          python scripts/listen_transcript_chapters.py --limit 0
+
+      - name: Create any missing Issues and audit all chapter Issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: python scripts/finalize_spotify_chapter_backfill.py
+
+      - name: Show final audit
+        run: cat data/generated_chapters/final_audit.json
+
+      - name: Commit final chapter data
+        shell: bash
+        run: |
+          STATUS=$(git status --porcelain -- data/generated_chapters)
+          if [ -z "$STATUS" ]; then
+            echo 'No generated chapter data changed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/generated_chapters
+          git commit -m 'Finalize Spotify chapter backfill coverage'
+          git push
