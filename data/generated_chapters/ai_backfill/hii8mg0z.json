@@ -1,0 +1,61 @@
+{
+  "episode_id": "hii8mg0z",
+  "listen_episode_url": "https://listen.style/p/reelpal/hii8mg0z",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/The-movie-FullMetalJacket--What-is-the-prompt-that-rewrites-a-human-being-e32ag09",
+  "title": "映画「#フルメタルジャケット」人間を書き換えるプロンプトとは。\"The movie #FullMetalJacket : What is the prompt that rewrites a human being?\"",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.1-flash-lite",
+  "transcript_segment_count": 33,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "モンハンワイルズと過去作の思い出"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:06",
+      "title": "山つかみとラオシャンロンの思い出"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:15",
+      "title": "番組タイトルの変更と第0話の構想"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:08",
+      "title": "映画『フルメタル・ジャケット』の概要"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:04",
+      "title": "前半パート：ほほえみデブとハートマン軍曹"
+    },
+    {
+      "segment_index": 8,
+      "timestamp": "24:02",
+      "title": "ラストシーンのミッキーマウスマーチ"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:01",
+      "title": "タイトル「フルメタル・ジャケット」のメタファー"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:01",
+      "title": "ベトナム戦争とアメリカの正義"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:06",
+      "title": "心理学実験から見る兵士の役割と加害性"
+    },
+    {
+      "segment_index": 26,
+      "timestamp": "1:18:02",
+      "title": "人間を書き換えるプロンプトとは"
+    }
+  ]
+}

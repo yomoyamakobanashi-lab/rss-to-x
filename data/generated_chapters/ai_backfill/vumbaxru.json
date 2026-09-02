@@ -1,0 +1,56 @@
+{
+  "episode_id": "vumbaxru",
+  "listen_episode_url": "https://listen.style/p/reelpal/vumbaxru",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-Must-we-apologize-for-how-Fight-Club-stirs-something-in-men-e34107g",
+  "title": "【Replay】「ファイトクラブで男が滾るのは罪なのか」 \"Must we apologize for how Fight Club stirs something in men?\"",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.1-flash-lite",
+  "transcript_segment_count": 24,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "映画『ファイト・クラブ』の概要とあらすじ"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:04",
+      "title": "物語の結末とどんでん返しの構造"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:09",
+      "title": "エドワード・ノートンの演技とキャスティングの妙"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:03",
+      "title": "マーラという存在と人格の解釈"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:07",
+      "title": "爆弾とタイラーの存在をめぐる考察"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:06",
+      "title": "ラストシーンの銃撃とタイラーの死"
+    },
+    {
+      "segment_index": 12,
+      "timestamp": "36:11",
+      "title": "暴力の受容と痛みによる自己確認"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:15",
+      "title": "タイラーへの憧れと現代社会の虚無感"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:18",
+      "title": "ボブの抱擁と男性性のコンプレックス"
+    }
+  ]
+}

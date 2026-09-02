@@ -1,0 +1,66 @@
+{
+  "episode_id": "q3bhpmna",
+  "listen_episode_url": "https://listen.style/p/reelpal/q3bhpmna",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/SF-----The-Downfall-of-a-Cash-Cow-Terminator--Part-3--What-the-Hell-Happened--How-Do-We-Escape-the-Trilogy-Curse-e33veau",
+  "title": "ドル箱SF映画の末路『#ターミネーター 』 その３ どうしてこうなった。３部作構想全コケの運命を回避せよ！ The Downfall of a Cash Cow: “Terminator” – Part 3 – What the Hell Happened? How Do We Escape the Trilogy Curse?",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.1-flash-lite",
+  "transcript_segment_count": 37,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "オープニング：ヨーグルトメーカーと発酵の科学"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:00",
+      "title": "本日のテーマ：ターミネーター三部作構想の末路"
+    },
+    {
+      "segment_index": 3,
+      "timestamp": "09:01",
+      "title": "『ジェニシス』と『ニューフェイト』あらすじ紹介"
+    },
+    {
+      "segment_index": 5,
+      "timestamp": "15:01",
+      "title": "なぜターミネーターは三部作構想に失敗し続けるのか"
+    },
+    {
+      "segment_index": 6,
+      "timestamp": "18:03",
+      "title": "『ジェニシス』の混沌としたタイムラインとメタバース設定"
+    },
+    {
+      "segment_index": 9,
+      "timestamp": "27:05",
+      "title": "ジョン・コナーの敵化とシリーズの哲学なき改変"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:05",
+      "title": "『ニューフェイト』とガールズパワー映画の違和感"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:01",
+      "title": "ジョン・コナー射殺とキャラクターの老害化"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:16",
+      "title": "なぜターミネーターから哲学が消えたのか"
+    },
+    {
+      "segment_index": 25,
+      "timestamp": "1:15:01",
+      "title": "現代社会におけるターミネーターの可能性と妄想続編"
+    },
+    {
+      "segment_index": 34,
+      "timestamp": "1:42:02",
+      "title": "次回予告とエンディング"
+    }
+  ]
+}

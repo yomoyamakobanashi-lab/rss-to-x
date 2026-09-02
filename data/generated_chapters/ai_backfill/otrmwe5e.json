@@ -1,0 +1,56 @@
+{
+  "episode_id": "otrmwe5e",
+  "listen_episode_url": "https://listen.style/p/reelpal/otrmwe5e",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/RePlay--RePlay-Whiplash-and-the-Glorious-Madness-of-Men--A-Viewing-Session-e341bqs",
+  "title": "【RePlay】「映画#セッション から伺う変態達のセッション」オーマを迎えた映画鑑賞会 [RePlay] “#Whiplash and the Glorious Madness of Men” — A Viewing Session",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.1-flash-lite",
+  "transcript_segment_count": 30,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "映画『セッション』のあらすじと導入"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:02",
+      "title": "フレッチャー教授をどう評価するか"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:04",
+      "title": "指導か洗脳か：フレッチャーの異常性"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:07",
+      "title": "教育現場における権力と役割遂行"
+    },
+    {
+      "segment_index": 11,
+      "timestamp": "33:04",
+      "title": "ラストシーンの「にっこり」の真意"
+    },
+    {
+      "segment_index": 15,
+      "timestamp": "45:00",
+      "title": "伏線回収：フレッチャーの「グッジョブ」"
+    },
+    {
+      "segment_index": 17,
+      "timestamp": "51:01",
+      "title": "ニーマンは勝利したのか？狂気の化学反応"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:00",
+      "title": "『セッション』は「なろう系」作品なのか"
+    },
+    {
+      "segment_index": 22,
+      "timestamp": "1:06:00",
+      "title": "人生で狂気的なまでに熱中したものはあるか"
+    }
+  ]
+}

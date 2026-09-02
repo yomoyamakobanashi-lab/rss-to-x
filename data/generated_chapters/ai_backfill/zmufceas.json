@@ -1,0 +1,71 @@
+{
+  "episode_id": "zmufceas",
+  "listen_episode_url": "https://listen.style/p/reelpal/zmufceas",
+  "spotify_creator_url": "https://podcasters.spotify.com/pod/show/t0hv6bcd4s/episodes/Replay-1-0-VS-ReplayHad-to-Talk-About-Godzilla-Minus-One-Part-2-Heisei-Era-Godzilla-VS-Series-A-Movie-Talk-Session-e342vpu",
+  "title": "【Replay】『#ゴジラ-1.0 が語りたくて』その２〜平成ゴジラVSシリーズ〜 (Replay)“Had to Talk About Godzilla Minus One” Part 2: Heisei Era Godzilla VS Series A Movie Talk Session",
+  "source": "LISTEN transcript + Gemini",
+  "model": "gemini-3.1-flash-lite",
+  "transcript_segment_count": 35,
+  "chapters": [
+    {
+      "segment_index": 0,
+      "timestamp": "00:00",
+      "title": "平成ゴジラVSシリーズの概要と選出作品"
+    },
+    {
+      "segment_index": 1,
+      "timestamp": "03:14",
+      "title": "1984年版『ゴジラ』の作品背景と構造"
+    },
+    {
+      "segment_index": 2,
+      "timestamp": "06:05",
+      "title": "『ゴジラvsモスラ』と『ゴジラvsデストロイア』の紹介"
+    },
+    {
+      "segment_index": 4,
+      "timestamp": "12:03",
+      "title": "1984年版『ゴジラ』の社会派な側面と核のメタファー"
+    },
+    {
+      "segment_index": 7,
+      "timestamp": "21:14",
+      "title": "ゴジラを生物として描くことと帰巣本能"
+    },
+    {
+      "segment_index": 10,
+      "timestamp": "30:04",
+      "title": "核兵器の恐怖と反戦メッセージの継承"
+    },
+    {
+      "segment_index": 13,
+      "timestamp": "39:02",
+      "title": "1984年版の演出と武田鉄矢のキャラクター"
+    },
+    {
+      "segment_index": 16,
+      "timestamp": "48:02",
+      "title": "特撮の美学とスーパーXのデザイン"
+    },
+    {
+      "segment_index": 19,
+      "timestamp": "57:09",
+      "title": "核の管理と人類の過信に対する警鐘"
+    },
+    {
+      "segment_index": 21,
+      "timestamp": "1:03:00",
+      "title": "『ゴジラvsモスラ』と環境破壊のテーマ"
+    },
+    {
+      "segment_index": 25,
+      "timestamp": "1:15:02",
+      "title": "『ゴジラvsデストロイア』と平成ゴジラの結末"
+    },
+    {
+      "segment_index": 32,
+      "timestamp": "1:36:02",
+      "title": "ゴジラの目と恐怖の演出について"
+    }
+  ]
+}
