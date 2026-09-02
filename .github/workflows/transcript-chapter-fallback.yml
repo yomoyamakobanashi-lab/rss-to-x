@@ -42,7 +42,6 @@ jobs:
 
       - name: Generate chapter files with Gemini
         id: ai
-        if: github.event_name != 'push'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MAX_EPISODES: ${{ github.event.inputs.max_episodes || '10' }}
