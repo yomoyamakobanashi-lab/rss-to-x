@@ -1,0 +1,146 @@
+name: Generate missing chapters from LISTEN transcripts
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_episodes:
+        description: 'Maximum episodes to generate this run'
+        required: false
+        default: '10'
+  schedule:
+    - cron: '30 18 * * *' # 03:30 JST daily; generation skips itself until GEMINI_API_KEY exists
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/listen_transcript_chapters.py'
+      - '.github/workflows/transcript-chapter-fallback.yml'
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: listen-transcript-chapter-fallback
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Install HTML parser
+        run: pip install beautifulsoup4
+
+      - name: Probe LISTEN transcript extraction
+        run: python scripts/listen_transcript_chapters.py --probe
+
+      - name: Generate chapter files with Gemini
+        id: ai
+        if: github.event_name != 'push'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MAX_EPISODES: ${{ github.event.inputs.max_episodes || '10' }}
+        shell: bash
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo 'GEMINI_API_KEY is not configured; transcript extraction works, AI generation is skipped.'
+            echo 'ran=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          pip install -U google-genai
+          python scripts/listen_transcript_chapters.py --limit "$MAX_EPISODES"
+          echo 'ran=true' >> "$GITHUB_OUTPUT"
+
+      - name: Create Spotify paste Issues for AI-generated chapters
+        if: steps.ai.outputs.ran == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import re
+          import subprocess
+          import tempfile
+          from pathlib import Path
+
+          root = Path('data/generated_chapters/ai_backfill')
+          if not root.exists():
+              print('No AI chapter directory; nothing to issue.')
+              raise SystemExit(0)
+
+          existing = json.loads(subprocess.check_output([
+              'gh', 'issue', 'list', '--state', 'all', '--limit', '1000',
+              '--json', 'number,body'
+          ], text=True))
+          markers = set()
+          for issue in existing:
+              markers.update(re.findall(r'listen-chapter:([A-Za-z0-9_-]+)', issue.get('body') or ''))
+
+          created = 0
+          for path in sorted(root.glob('*.json')):
+              ep = json.loads(path.read_text(encoding='utf-8'))
+              eid = ep['episode_id']
+              if eid in markers:
+                  continue
+
+              title = f"Spotifyチャプター貼り付け: {ep['title']}"
+              if len(title) > 245:
+                  title = title[:242] + '…'
+
+              lines = [
+                  f'<!-- listen-chapter:{eid} -->',
+                  'LISTENの文字起こし全文をもとに、AIで過去回のチャプターを補完しました。',
+                  '',
+                  '**Spotify for Creators の既存エピソード説明文は消さず、末尾へ以下を追加してください。**',
+                  '',
+                  '```text',
+              ]
+              lines.extend(f"{c['timestamp']} {c['title']}" for c in ep['chapters'])
+              lines.extend(['```', ''])
+              if ep.get('spotify_creator_url'):
+                  lines.append(f"Spotify / Podcasters: {ep['spotify_creator_url']}")
+              lines.append(f"LISTEN: {ep['listen_episode_url']}")
+              lines.extend([
+                  '',
+                  f"生成元: {ep.get('source', 'LISTEN transcript')} / {ep.get('model', '')}",
+                  '貼り付け前に見出しだけざっと確認し、問題なければSpotifyへ貼り付けてください。',
+                  '貼り付けが終わったら、このIssueをCloseすれば完了です。',
+              ])
+
+              with tempfile.NamedTemporaryFile('w', encoding='utf-8', delete=False) as f:
+                  f.write('\n'.join(lines) + '\n')
+                  body_file = f.name
+              try:
+                  out = subprocess.check_output([
+                      'gh', 'issue', 'create', '--title', title, '--body-file', body_file
+                  ], text=True).strip()
+                  print(f'Created: {out}')
+                  created += 1
+                  markers.add(eid)
+              finally:
+                  os.unlink(body_file)
+          print(f'AI chapter Issues created: {created}')
+          PY
+
+      - name: Commit AI chapter files
+        if: steps.ai.outputs.ran == 'true'
+        shell: bash
+        run: |
+          STATUS=$(git status --porcelain -- data/generated_chapters/ai_backfill)
+          if [ -z "$STATUS" ]; then
+            echo 'No new AI chapter files.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/generated_chapters/ai_backfill
+          git commit -m 'Add transcript-derived Spotify chapters'
+          git push
