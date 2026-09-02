@@ -1,0 +1,96 @@
+name: Normalize Spotify chapter Issues
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/normalize-spotify-chapter-issues.yml'
+  schedule:
+    - cron: '7 * * * *' # safety net for Issues created by other workflows
+
+permissions:
+  issues: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Normalize chapter code blocks
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import re
+          import subprocess
+          import tempfile
+
+          repo = os.environ['GH_REPO']
+          issues = json.loads(subprocess.check_output([
+              'gh', 'issue', 'list', '--repo', repo,
+              '--state', 'open', '--limit', '1000',
+              '--json', 'number,title,body'
+          ], text=True))
+
+          chapter_line = re.compile(
+              r'^(?P<indent>\s*)\(?(?P<ts>(?:\d{1,2}:)?\d{1,2}:\d{2})\)?\s+(?P<title>.+)$'
+          )
+
+          def spotify_ts(ts: str) -> str:
+              parts = [int(x) for x in ts.split(':')]
+              if len(parts) == 2:
+                  return f"({parts[0]:02d}:{parts[1]:02d})"
+              if len(parts) == 3:
+                  return f"({parts[0]:02d}:{parts[1]:02d}:{parts[2]:02d})"
+              raise ValueError(ts)
+
+          changed = 0
+          for issue in issues:
+              if not issue['title'].startswith('Spotifyチャプター貼り付け:'):
+                  continue
+              body = issue.get('body') or ''
+              lines = body.splitlines()
+              in_code = False
+              out = []
+              local_change = False
+
+              for line in lines:
+                  if line.strip().startswith('```'):
+                      in_code = not in_code
+                      out.append(line)
+                      continue
+                  if in_code:
+                      m = chapter_line.match(line)
+                      if m:
+                          replacement = f"{m.group('indent')}{spotify_ts(m.group('ts'))} {m.group('title')}"
+                          if replacement != line:
+                              local_change = True
+                          out.append(replacement)
+                          continue
+                  out.append(line)
+
+              if not local_change:
+                  continue
+
+              new_body = '\n'.join(out)
+              if body.endswith('\n'):
+                  new_body += '\n'
+              with tempfile.NamedTemporaryFile('w', encoding='utf-8', delete=False) as f:
+                  f.write(new_body)
+                  path = f.name
+              try:
+                  subprocess.run([
+                      'gh', 'issue', 'edit', str(issue['number']),
+                      '--repo', repo, '--body-file', path
+                  ], check=True)
+              finally:
+                  os.unlink(path)
+              changed += 1
+              print(f"Normalized Issue #{issue['number']}: {issue['title']}")
+
+          print(f"Normalized Spotify chapter Issues: {changed}")
+          PY
