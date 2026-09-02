@@ -143,3 +143,5 @@ jobs:
           git add data/generated_chapters/ai_backfill
           git commit -m 'Add transcript-derived Spotify chapters'
           git push
+
+# Manual pilot trigger: 2026-09-02
