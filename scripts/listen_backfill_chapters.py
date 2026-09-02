@@ -154,10 +154,37 @@ def extract_chapters(episode_url: str) -> tuple[str, list[Chapter]]:
             continue
         chapters.append(Chapter(ts, chapter_title))
 
-    if chapters and seconds(chapters[0].timestamp) != 0:
-        chapters[0].timestamp = "00:00"
-
     return title, chapters
+
+
+def sanitize_for_spotify(chapters: list[Chapter]) -> tuple[list[Chapter], int]:
+    """Normalize LISTEN chapters to Spotify manual-chapter constraints.
+
+    Spotify requires the first chapter at 00:00 and chapter starts at least
+    30 seconds apart. LISTEN can occasionally emit several headings only a
+    few seconds apart. Keep the earliest heading in each 30-second window and
+    drop the later near-duplicate boundary rather than shifting timestamps and
+    making them inaccurate.
+    """
+    if not chapters:
+        return [], 0
+
+    cleaned: list[Chapter] = []
+    dropped = 0
+    for idx, chapter in enumerate(chapters):
+        candidate = Chapter(chapter.timestamp, chapter.title)
+        if idx == 0:
+            candidate.timestamp = "00:00"
+            cleaned.append(candidate)
+            continue
+
+        delta = seconds(candidate.timestamp) - seconds(cleaned[-1].timestamp)
+        if delta < 30:
+            dropped += 1
+            continue
+        cleaned.append(candidate)
+
+    return cleaned, dropped
 
 
 def validate_for_spotify(chapters: list[Chapter]) -> list[str]:
@@ -199,7 +226,6 @@ def read_spotify_episode_index(path: Path) -> list[dict[str, str]]:
                 current = []
             continue
         if line.startswith("🎧") and current:
-            # A malformed/missing URL should not poison the next title.
             current = [line]
         else:
             current.append(line)
@@ -220,7 +246,6 @@ def match_spotify_url(title: str, records: list[dict[str, str]]) -> tuple[str | 
         if candidate == needle:
             return rec["url"], 1.0
         score = SequenceMatcher(None, needle, candidate).ratio()
-        # Long bilingual titles often differ only at the tail; containment is a strong signal.
         if min(len(needle), len(candidate)) >= 16 and (needle in candidate or candidate in needle):
             score = max(score, 0.92)
         if score > best_score:
@@ -252,9 +277,10 @@ def main() -> int:
     results: list[dict] = []
     for idx, url in enumerate(urls, 1):
         try:
-            title, chapters = extract_chapters(url)
+            title, source_chapters = extract_chapters(url)
+            chapters, dropped = sanitize_for_spotify(source_chapters)
             errors = validate_for_spotify(chapters) if chapters else []
-            if not chapters:
+            if not source_chapters:
                 status = "no_chapters"
             elif errors:
                 status = "invalid"
@@ -267,6 +293,8 @@ def main() -> int:
                 "title": title,
                 "status": status,
                 "errors": errors,
+                "source_chapter_count": len(source_chapters),
+                "chapters_dropped_for_spotify": dropped,
                 "chapters": [asdict(c) for c in chapters],
                 "spotify_creator_url": spotify_url,
                 "spotify_match_score": round(match_score, 3),
@@ -274,9 +302,9 @@ def main() -> int:
             results.append(result)
             print(
                 f"[{idx}/{len(urls)}] {status:11} chapters={len(chapters):2d} "
-                f"spotify={'yes' if spotify_url else 'no '} {title[:80]}"
+                f"dropped={dropped:2d} spotify={'yes' if spotify_url else 'no '} {title[:80]}"
             )
-        except Exception as exc:  # keep the full backfill moving; report failures in JSON
+        except Exception as exc:
             results.append(
                 {
                     "episode_id": url.rstrip("/").split("/")[-1],
@@ -284,6 +312,8 @@ def main() -> int:
                     "title": "",
                     "status": "error",
                     "errors": [f"{type(exc).__name__}: {exc}"],
+                    "source_chapter_count": 0,
+                    "chapters_dropped_for_spotify": 0,
                     "chapters": [],
                     "spotify_creator_url": None,
                     "spotify_match_score": 0.0,
