@@ -2,8 +2,8 @@ name: Trend Episode Tie-in
 
 on:
   schedule:
-    # 12:35 / 17:35 / 21:35 JST。1日最大1投稿。
-    - cron: '35 3,8,12 * * *'
+    # 12:35 / 15:35 / 19:35 JST。通常3枠から90分以上離し、1日最大1投稿。
+    - cron: '35 3,6,10 * * *'
   workflow_dispatch:
 
 concurrency:

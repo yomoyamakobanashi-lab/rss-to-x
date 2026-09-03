@@ -55,6 +55,8 @@ AUDIOGRAM_CAPTIONS = load_audiogram_captions()
 
 def classify_post(text: str) -> str:
     raw = str(text or "").strip()
+    if raw.startswith("映画好きに聞きたい。"):
+        return "trend_discovery"
     dynamic = SOCIAL_PACK_KIND.get(raw)
     if dynamic:
         return dynamic

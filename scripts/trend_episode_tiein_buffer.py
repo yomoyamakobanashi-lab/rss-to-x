@@ -26,12 +26,50 @@ from buffer_client import post_thread
 
 TOPICS_PATH = ROOT / "data" / "trend_episode_topics.json"
 STATE_PATH = ROOT / "state_trend_tiein.json"
+DAILY_STATE_PATH = ROOT / "state_daily_content.json"
 JST = ZoneInfo("Asia/Tokyo")
 NEWS_MAX_AGE_HOURS = 30
 EPISODE_COOLDOWN_DAYS = 14
 MAX_SEEN_NEWS = 80
 REQUEST_TIMEOUT = 15
 MAX_ROOT_LEN = 275
+MIN_POST_GAP_MINUTES = 90
+BASELINE_SLOT_MINUTES = (8 * 60 + 10, 17 * 60 + 10, 21 * 60 + 20)
+
+# The curated searches remain the highest-confidence path.  These broad feeds
+# let the same matcher discover timely hooks for the full verified archive
+# without making one Google News request per episode.
+BROAD_DISCOVERY_QUERIES = (
+    "映画 公開 予告",
+    "映画 続編 キャスト",
+    "Netflix 映画 ディズニー ピクサー",
+    "ホラー映画 SF映画 アニメ映画",
+)
+
+AUTO_TOPIC_BANKS = (
+    ROOT / "data" / "funny_clip_posts_all_episodes.json",
+    ROOT / "data" / "funny_clip_legacy_canonical.json",
+)
+
+AUTO_CONTEXT_TERMS = (
+    "映画", "作品", "公開", "予告", "続編", "シリーズ", "上映", "配信",
+    "興行", "監督", "主演", "キャスト", "Netflix", "ディズニー", "ピクサー",
+)
+
+# Short or generic tokens create convincing-looking false matches.  They are
+# deliberately excluded from automatic expansion; hand-curated topics may
+# still opt in with additional context checks.
+AUTO_BLOCKED_TERMS = {
+    "映画", "ホラー", "アニメ", "神話", "特撮", "パンダ", "コンゴ", "犬",
+    "手話", "任天堂", "最新映画情報", "口に関するアンケート", "michael", "her",
+    "lucy", "mama", "国宝", "wicked", "hbo", "netflix", "mcu", "uma",
+    "ホラー映画", "アクション映画", "コメディ映画", "sfホラー", "ラブロマンス",
+    "クリスマス", "ヒューマンドラマ", "ノンフィクション映画", "ジャンルシフト",
+    "大どんでん返し", "戦争映画", "和製ファンタジー映画", "3d映画",
+    "ドキュメンタリー", "ホラーコメディ", "horror", "comedyfilm", "romancefilm",
+    "クライムコメディ", "humandrama", "warcinema", "apocalypse", "genreshift",
+    "you’re", "mandom", "監督", "主演", "配信", "replay",
+}
 
 ALLOWED_SOURCE_FRAGMENTS = (
     "映画.com",
@@ -85,11 +123,97 @@ def norm(value: str) -> str:
     return SPACE_RE.sub(" ", value).strip().casefold()
 
 
+def _clean_auto_term(value: str) -> str:
+    value = unicodedata.normalize("NFKC", str(value or ""))
+    value = value.strip(" #＃　\t\r\n『』「」〖〗【】\"'“”*,:;()（）")
+    value = re.sub(r"[’']s$", "", value, flags=re.IGNORECASE)
+    value = re.sub(r"\s+", " ", value)
+    value = re.sub(r"(?:とか|など|事情)$", "", value).strip()
+    return value
+
+
+def extract_episode_terms(title: str) -> list[str]:
+    title = unicodedata.normalize("NFKC", str(title or ""))
+    candidates = re.findall(r"『([^』]{2,60})』", title)
+    candidates += re.findall(r"[#＃]([^#＃\s　、。…『』「」【】〖〗〜～!?！？:：,，]+)", title)
+    out: list[str] = []
+    seen: set[str] = set()
+    for candidate in candidates:
+        term = _clean_auto_term(candidate)
+        key = norm(term)
+        if not key or key in AUTO_BLOCKED_TERMS or key in seen:
+            continue
+        if len(key) < 3 or len(term) > 42:
+            continue
+        # Reject accidental captures such as "ティム・バートン映画『".
+        if (
+            "映画『" in term
+            or "企画" in term
+            or term.endswith("映画")
+            or term.isdigit()
+            or (term.isascii() and len(term) < 6)
+        ):
+            continue
+        seen.add(key)
+        out.append(term)
+    return out[:4]
+
+
+def load_auto_topics(curated: list[dict]) -> list[dict]:
+    curated_urls = {str(item.get("listen_url") or "").strip() for item in curated}
+    used_terms = {
+        norm(term)
+        for item in curated
+        for term in item.get("exact_terms", [])
+        if str(term).strip()
+    }
+    topics: list[dict] = []
+    seen_urls: set[str] = set()
+    for path in AUTO_TOPIC_BANKS:
+        try:
+            rows = json.loads(path.read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError):
+            continue
+        if not isinstance(rows, list):
+            continue
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            listen_url = str(row.get("source_url") or "").strip()
+            if (
+                not listen_url.startswith("https://listen.style/p/reelpal/")
+                or listen_url in curated_urls
+                or listen_url in seen_urls
+            ):
+                continue
+            terms = [
+                term for term in extract_episode_terms(str(row.get("episode_title") or ""))
+                if norm(term) not in used_terms
+            ]
+            if not terms:
+                continue
+            seen_urls.add(listen_url)
+            used_terms.update(norm(term) for term in terms)
+            topics.append({
+                "episode_title": terms[0],
+                "listen_url": listen_url,
+                "search_queries": [],
+                "exact_terms": terms,
+                "related_terms": [],
+                "context_terms": list(AUTO_CONTEXT_TERMS),
+                "angle": "",
+                "discovery_mode": True,
+            })
+    return topics
+
+
 def load_topics() -> list[dict]:
     data = json.loads(TOPICS_PATH.read_text(encoding="utf-8"))
     if not isinstance(data, list) or not data:
         raise RuntimeError("trend_episode_topics.json is empty")
-    return data
+    for item in data:
+        item.setdefault("discovery_mode", False)
+    return data + load_auto_topics(data)
 
 
 def load_state() -> dict:
@@ -97,12 +221,18 @@ def load_state() -> dict:
         data = json.loads(STATE_PATH.read_text(encoding="utf-8"))
         if isinstance(data, dict):
             data.setdefault("last_post_date", None)
+            data.setdefault("last_posted_at", None)
             data.setdefault("seen_news", [])
             data.setdefault("episode_last_posted", {})
             return data
     except Exception:
         pass
-    return {"last_post_date": None, "seen_news": [], "episode_last_posted": {}}
+    return {
+        "last_post_date": None,
+        "last_posted_at": None,
+        "seen_news": [],
+        "episode_last_posted": {},
+    }
 
 
 def save_state(state: dict) -> None:
@@ -174,8 +304,8 @@ def news_key(entry, headline: str, source: str) -> str:
 def score_candidate(topic: dict, headline: str, summary: str) -> tuple[int, list[str]]:
     h = norm(headline)
     body = norm(headline + " " + summary)
-    exact_hits = [term for term in topic.get("exact_terms", []) if norm(term) in h]
-    related_hits = [term for term in topic.get("related_terms", []) if norm(term) in h]
+    exact_hits = [term for term in topic.get("exact_terms", []) if contains_term(h, term)]
+    related_hits = [term for term in topic.get("related_terms", []) if contains_term(h, term)]
     context_hits = [term for term in topic.get("context_terms", []) if norm(term) in body]
 
     if exact_hits:
@@ -187,6 +317,60 @@ def score_candidate(topic: dict, headline: str, summary: str) -> tuple[int, list
         return 6 + min(4, (len(related_hits) - 1) * 2) + min(2, len(context_hits)), related_hits + context_hits
 
     return 0, []
+
+
+def contains_term(normalized_text: str, term: str) -> bool:
+    needle = norm(term)
+    if not needle:
+        return False
+    # Long titles are distinctive enough for substring matching.  Short film
+    # names need boundaries so, for example, 「リング」 does not match
+    # 「スプリング」.
+    if len(needle) > 4:
+        return needle in normalized_text
+    start = 0
+    while True:
+        index = normalized_text.find(needle, start)
+        if index < 0:
+            return False
+        left = normalized_text[index - 1] if index > 0 else ""
+        right_index = index + len(needle)
+        right = normalized_text[right_index] if right_index < len(normalized_text) else ""
+        if not (left and left.isalnum()) and not (right and right.isalnum()):
+            return True
+        start = index + 1
+
+
+def parse_iso(value: str | None) -> datetime | None:
+    if not value:
+        return None
+    try:
+        dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=JST)
+    return dt.astimezone(timezone.utc)
+
+
+def too_close_to_daily_content(now: datetime) -> bool:
+    local = now.astimezone(JST)
+    minute_of_day = local.hour * 60 + local.minute
+    # Protect the next nominal baseline slot even if GitHub's cron is delayed.
+    if min(abs(minute_of_day - slot) for slot in BASELINE_SLOT_MINUTES) < MIN_POST_GAP_MINUTES:
+        return True
+
+    try:
+        data = json.loads(DAILY_STATE_PATH.read_text(encoding="utf-8"))
+        today = (data.get("days") or {}).get(local.date().isoformat()) or {}
+        values = (today.get("posted_at") or {}).values()
+    except (FileNotFoundError, json.JSONDecodeError, AttributeError):
+        values = []
+    for value in values:
+        posted = parse_iso(str(value))
+        if posted and abs((now - posted).total_seconds()) < MIN_POST_GAP_MINUTES * 60:
+            return True
+    return False
 
 
 def episode_on_cooldown(state: dict, url: str, now: datetime) -> bool:
@@ -205,28 +389,29 @@ def episode_on_cooldown(state: dict, url: str, now: datetime) -> bool:
 def collect_candidates(topics: list[dict], state: dict) -> list[dict]:
     now = datetime.now(timezone.utc)
     seen_news = set(str(x) for x in state.get("seen_news", []))
-    work: list[tuple[dict, str]] = []
+    work: list[tuple[str, dict | None, str]] = []
     for topic in topics:
         for query in topic.get("search_queries", []):
             if str(query).strip():
-                work.append((topic, str(query).strip()))
+                work.append(("specific", topic, str(query).strip()))
+    for query in BROAD_DISCOVERY_QUERIES:
+        work.append(("broad", None, query))
 
-    results: list[tuple[dict, str, list[dict]]] = []
+    results: list[tuple[str, dict | None, str, list[dict]]] = []
     with ThreadPoolExecutor(max_workers=6) as executor:
-        futures = {executor.submit(fetch_feed, query): (topic, query) for topic, query in work}
+        futures = {
+            executor.submit(fetch_feed, query): (mode, topic, query)
+            for mode, topic, query in work
+        }
         for future in as_completed(futures):
-            topic, query = futures[future]
+            mode, topic, query = futures[future]
             try:
-                results.append((topic, query, future.result()))
+                results.append((mode, topic, query, future.result()))
             except Exception as exc:
                 print(f"[WARN] trend feed failed: {query}: {exc}")
 
     dedupe: dict[str, dict] = {}
-    for topic, query, entries in results:
-        url = str(topic.get("listen_url") or "").strip()
-        if not url or episode_on_cooldown(state, url, now):
-            continue
-
+    for mode, selected_topic, query, entries in results:
         for entry in entries:
             source = source_name(entry)
             if not allowed_source(source):
@@ -246,24 +431,31 @@ def collect_candidates(topics: list[dict], state: dict) -> list[dict]:
             if key in seen_news:
                 continue
 
-            score, matches = score_candidate(topic, headline, summary)
-            if score < 6:
-                continue
+            candidate_topics = [selected_topic] if mode == "specific" else topics
+            for topic in candidate_topics:
+                if not topic:
+                    continue
+                url = str(topic.get("listen_url") or "").strip()
+                if not url or episode_on_cooldown(state, url, now):
+                    continue
+                score, matches = score_candidate(topic, headline, summary)
+                if score < 6:
+                    continue
 
-            candidate = {
-                "key": key,
-                "score": score,
-                "published": published,
-                "headline": headline,
-                "source": source,
-                "news_url": str(entry.get("link") or "").strip(),
-                "query": query,
-                "matches": matches,
-                "topic": topic,
-            }
-            previous = dedupe.get(key)
-            if previous is None or candidate["score"] > previous["score"]:
-                dedupe[key] = candidate
+                candidate = {
+                    "key": key,
+                    "score": score,
+                    "published": published,
+                    "headline": headline,
+                    "source": source,
+                    "news_url": str(entry.get("link") or "").strip(),
+                    "query": query,
+                    "matches": matches,
+                    "topic": topic,
+                }
+                previous = dedupe.get(key)
+                if previous is None or candidate["score"] > previous["score"]:
+                    dedupe[key] = candidate
 
     return sorted(dedupe.values(), key=lambda c: (c["score"], c["published"]), reverse=True)
 
@@ -280,13 +472,21 @@ def compose(candidate: dict) -> tuple[str, str]:
     episode = clip(str(topic.get("episode_title") or ""), 58)
     angle = clip(str(topic.get("angle") or ""), 105)
 
-    variants = [
-        f"{source}で「{headline}」というニュース。\n\nこの話題で思い出したのが『{episode}』。リルパルでは「{angle}」という方向から話しています。",
-        f"「{headline}」という話題を見て、『{episode}』を思い出した。\n\nリルパルでも「{angle}」あたりをけっこう話しています。",
-        f"{source}の「{headline}」が気になる。\n\nこういうニュースから連想するのが『{episode}』。リルパルでは「{angle}」まで寄り道しています。",
-    ]
     seed = int(candidate["key"][:8], 16)
-    root = variants[seed % len(variants)]
+    if topic.get("discovery_mode"):
+        variants = [
+            f"映画好きに聞きたい。\n\n{source}の「{headline}」。\nこのニュース、第一印象は「楽しみ」「様子見」どっち？",
+            f"映画好きに聞きたい。\n\n「{headline}」という話題。\nこれを見て、いま一番話したくなったことは何ですか？",
+            f"映画好きに聞きたい。\n\n{source}で「{headline}」。\nこの話題、あなたはどう受け取りました？",
+        ]
+        root = variants[seed % len(variants)]
+    else:
+        variants = [
+            f"{source}で「{headline}」というニュース。\n\nこの話題で思い出したのが『{episode}』。リルパルでは「{angle}」という方向から話しています。",
+            f"「{headline}」という話題を見て、『{episode}』を思い出した。\n\nリルパルでも「{angle}」あたりをけっこう話しています。",
+            f"{source}の「{headline}」が気になる。\n\nこういうニュースから連想するのが『{episode}』。リルパルでは「{angle}」まで寄り道しています。",
+        ]
+        root = variants[seed % len(variants)]
     if len(root) > MAX_ROOT_LEN:
         headline = clip(candidate["headline"], 70)
         angle = clip(str(topic.get("angle") or ""), 78)
@@ -297,7 +497,7 @@ def compose(candidate: dict) -> tuple[str, str]:
     if len(root) > MAX_ROOT_LEN:
         root = clip(root, MAX_ROOT_LEN)
 
-    reply = f"🎧 関連回\n『{episode}』\n{topic['listen_url']}"
+    reply = f"🎧 リルパルにも『{episode}』を話した回があります。\n{topic['listen_url']}"
     if len(reply) > 280:
         reply = f"🎧 関連回はこちら\n{topic['listen_url']}"
     return root, reply
@@ -312,6 +512,9 @@ def main() -> None:
 
     if not dry_run and state.get("last_post_date") == today_jst:
         print(f"[SKIP] trend tie-in already posted on {today_jst}")
+        return
+    if not dry_run and too_close_to_daily_content(now):
+        print(f"[SKIP] discovery post would be within {MIN_POST_GAP_MINUTES} minutes of daily content")
         return
 
     candidates = collect_candidates(topics, state)
@@ -334,6 +537,7 @@ def main() -> None:
 
     post_id = post_thread([root, reply])
     state["last_post_date"] = today_jst
+    state["last_posted_at"] = now.isoformat()
     seen = [str(x) for x in state.get("seen_news", []) if str(x) != chosen["key"]]
     state["seen_news"] = (seen + [chosen["key"]])[-MAX_SEEN_NEWS:]
     episode_last = dict(state.get("episode_last_posted") or {})
