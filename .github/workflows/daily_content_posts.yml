@@ -1,6 +1,11 @@
 name: Daily Multi-Pattern Posts via Buffer
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/daily_content_posts.yml'
   schedule:
     # Twice-hourly heartbeat. The dispatcher publishes at most one missing JST
     # slot per run: 08:10 engagement, 17:10 feature, 21:20 funny clip.
