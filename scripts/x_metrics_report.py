@@ -229,15 +229,19 @@ def report_rows(records: list[dict], key_fn) -> list[tuple]:
         if not imps:
             continue
         ers = [r["metrics"]["engagementRate"] for r in recs if "engagementRate" in r.get("metrics", {})]
+        clicks = sum(r["metrics"].get("clicks", 0) for r in recs)
+        total_impressions = sum(imps)
         rows.append((
             key,
             len(imps),
-            sum(imps),
+            total_impressions,
             avg(imps),
             med(imps),
             avg(ers),
             sum(r["metrics"].get("comments", 0) for r in recs),
             sum(r["metrics"].get("reposts", 0) for r in recs),
+            clicks,
+            (clicks / total_impressions * 100) if total_impressions else 0,
         ))
     rows.sort(key=lambda row: row[4], reverse=True)
     return rows
@@ -247,12 +251,12 @@ def markdown_table(rows: list[tuple], first_header: str) -> str:
     if not rows:
         return "まだ比較に使えるインプレッションデータがありません。\n"
     lines = [
-        f"| {first_header} | n | 総imp | 平均imp | 中央値imp | 平均ER | 返信 | RP |",
-        "|---|---:|---:|---:|---:|---:|---:|---:|",
+        f"| {first_header} | n | 総imp | 平均imp | 中央値imp | 平均ER | 返信 | RP | クリック | CTR |",
+        "|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ]
-    for key, n, total, average, median_value, er, comments, reposts in rows:
+    for key, n, total, average, median_value, er, comments, reposts, clicks, ctr in rows:
         lines.append(
-            f"| {key} | {n} | {fmt_number(total)} | {fmt_number(average)} | {fmt_number(median_value)} | {fmt_pct(er)} | {fmt_number(comments)} | {fmt_number(reposts)} |"
+            f"| {key} | {n} | {fmt_number(total)} | {fmt_number(average)} | {fmt_number(median_value)} | {fmt_pct(er)} | {fmt_number(comments)} | {fmt_number(reposts)} | {fmt_number(clicks)} | {fmt_pct(ctr)} |"
         )
     return "\n".join(lines) + "\n"
 
@@ -315,7 +319,11 @@ def build_report(history: dict[str, dict], channel: dict) -> str:
                 text = text[:79] + "…"
             imp = rec.get("metrics", {}).get("impressions", 0)
             er = rec.get("metrics", {}).get("engagementRate", 0)
-            lines.append(f"{i}. **{fmt_number(imp)} imp / {fmt_pct(er)}** — {local} — `{rec.get('kind')}` — {text}")
+            clicks = rec.get("metrics", {}).get("clicks", 0)
+            lines.append(
+                f"{i}. **{fmt_number(imp)} imp / {fmt_pct(er)} / {fmt_number(clicks)} click** "
+                f"— {local} — `{rec.get('kind')}` — {text}"
+            )
 
     lines += ["", "## 読み方", ""]
     if len(records) < 12:
@@ -339,6 +347,7 @@ def build_report(history: dict[str, dict], channel: dict) -> str:
         "3. 勝ちタイプを増やす時も、1回に変える要因は曜日・時間・文型のどれか1つだけ。",
         "4. 外部リンク投稿はリンクなし投稿と別カテゴリで比較する。",
         "5. 新着回の特殊な伸びは通常投稿と混ぜて評価しない。",
+        "6. 新規リスナー導線は、発見投稿のimp・返信と、リンク投稿のクリック率を分けて追う。クリックは聴取開始そのものではなく代理指標として扱う。",
         "",
     ]
     return "\n".join(lines)

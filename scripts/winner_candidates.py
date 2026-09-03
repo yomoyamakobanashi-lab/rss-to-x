@@ -26,6 +26,7 @@ ELIGIBLE_KINDS = {
     "social_pack_host_split",
     "social_pack_episode_hook",
     "winner_remix",
+    "trend_discovery",
 }
 
 

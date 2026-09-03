@@ -11,7 +11,12 @@ on:
       - 'scripts/social_pack_buffer.py'
       - 'scripts/random_episode_buffer.py'
       - 'scripts/weekly_digest_buffer.py'
-      - 'tests/test_daily_content.py'
+      - 'scripts/trend_episode_tiein_buffer.py'
+      - 'scripts/x_metrics_report.py'
+      - 'scripts/x_metrics_report_v2.py'
+      - 'scripts/winner_candidates.py'
+      - 'tests/test_*.py'
+      - '.github/workflows/trend-episode-tiein.yml'
       - '.github/workflows/daily_content_*.yml'
   pull_request:
     paths:
@@ -20,7 +25,12 @@ on:
       - 'scripts/social_pack_buffer.py'
       - 'scripts/random_episode_buffer.py'
       - 'scripts/weekly_digest_buffer.py'
-      - 'tests/test_daily_content.py'
+      - 'scripts/trend_episode_tiein_buffer.py'
+      - 'scripts/x_metrics_report.py'
+      - 'scripts/x_metrics_report_v2.py'
+      - 'scripts/winner_candidates.py'
+      - 'tests/test_*.py'
+      - '.github/workflows/trend-episode-tiein.yml'
       - '.github/workflows/daily_content_*.yml'
   workflow_dispatch:
 
@@ -48,6 +58,10 @@ jobs:
           scripts/social_pack_buffer.py
           scripts/random_episode_buffer.py
           scripts/weekly_digest_buffer.py
+          scripts/trend_episode_tiein_buffer.py
+          scripts/x_metrics_report.py
+          scripts/x_metrics_report_v2.py
+          scripts/winner_candidates.py
           scripts/restore_spotify_map_from_canonical.py
       - name: Verify Spotify map restoration
         run: python -m scripts.restore_spotify_map_from_canonical
