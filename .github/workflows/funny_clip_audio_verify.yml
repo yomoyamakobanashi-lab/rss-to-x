@@ -1,0 +1,56 @@
+name: Funny Clip Audio Verify
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install precise ASR runtime
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python -m pip install --quiet faster-whisper
+      - name: Extract ambiguous speaker-boundary window
+        run: |
+          mkdir -p /tmp/funny-audio /tmp/funny-asr
+          ffmpeg -hide_banner -loglevel error -y \
+            -ss 240 -i 'https://anchor.fm/s/10422ca68/podcast/play/103956165/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2025-5-11%2F401945779-44100-2-21237a91a6655.m4a' -t 25 \
+            -vn -ac 1 -ar 16000 /tmp/funny-audio/all-episode-114.wav
+      - name: Transcribe ambiguous window with small model
+        run: |
+          python - <<'PY'
+          import json
+          from faster_whisper import WhisperModel
+
+          model = WhisperModel('small', device='cpu', compute_type='int8', cpu_threads=4, num_workers=1)
+          segments, info = model.transcribe(
+              '/tmp/funny-audio/all-episode-114.wav',
+              language='ja', beam_size=5, best_of=5,
+              condition_on_previous_text=True, vad_filter=False,
+          )
+          rows = [{
+              'start': round(240 + s.start, 3),
+              'end': round(240 + s.end, 3),
+              'text': s.text.strip(),
+          } for s in segments]
+          payload = {'clip_id':'all-episode-114','probe_start':240,'probe_duration':25,'model':'small','segments':rows,'text':' '.join(x['text'] for x in rows)}
+          with open('/tmp/funny-asr/all-episode-114-small.json','w',encoding='utf-8') as fh:
+              json.dump(payload,fh,ensure_ascii=False,indent=2)
+          print(json.dumps(rows,ensure_ascii=False))
+          PY
+      - name: Upload speaker-boundary QA transcript
+        uses: actions/upload-artifact@v4
+        with:
+          name: funny-audio-small-all-episode-114
+          path: /tmp/funny-asr/all-episode-114-small.json
+          if-no-files-found: error
+          retention-days: 7

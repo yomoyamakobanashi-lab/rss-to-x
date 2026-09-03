@@ -1,0 +1,97 @@
+{
+  "legacy-fightclub-daiso": {"source_url": "https://listen.style/p/reelpal/vumbaxru"},
+  "legacy-popcorn-koala": {"source_url": "https://listen.style/p/reelpal/38hmlv8z"},
+  "legacy-orangutan-mnemonic": {"source_url": "https://listen.style/p/reelpal/9azjde2x"},
+  "legacy-omg-kfc": {"source_url": "https://listen.style/p/reelpal/0qienhys"},
+  "legacy-aerosmith-admachi": {"source_url": "https://listen.style/p/reelpal/vtef0k1l"},
+  "legacy-americanpie-sanity": {
+    "source_url": "https://listen.style/p/reelpal/jx5brdwq",
+    "dialogue": [
+      "あのこんにゃく温めるみたいなそういう話ですね。",
+      "やめてくださいね。",
+      "やめてください。",
+      "温かいんですよね、多分ね。",
+      "やかましいね。もういいわ。本当にもう。"
+    ],
+    "text": "あのこんにゃく温めるみたいなそういう話ですね。 / やめてくださいね。 / やめてください。 / 温かいんですよね、多分ね。 / やかましいね。もういいわ。本当にもう。",
+    "hook": "『アメリカン・パイ』の話から、こんにゃくを温める方向へ行く。"
+  },
+  "legacy-mandalorian-third-person": {"source_url": "https://listen.style/p/reelpal/jgim8ba1"},
+  "legacy-latest-german": {"source_url": "https://listen.style/p/reelpal/thulg019"},
+  "legacy-scarymovie-michael-babe": {"source_url": "https://listen.style/p/reelpal/yhkp4fmv"},
+  "legacy-onmyoji-eikogo": {
+    "source_url": "https://listen.style/p/reelpal/uoqbtn0h",
+    "dialogue": [
+      "今までね、僕は行き帰りの電車っていうのが非常に重要な映画鑑賞タイムだったんですよ。",
+      "はいはいはい。",
+      "それがですね、今、狩野英孝さんの。",
+      "EIKO!GO!!?",
+      "もうEIKO!GO!!に侵食されてしまっていて、全然見れない。",
+      "見なさいよ。"
+    ],
+    "text": "今までね、僕は行き帰りの電車っていうのが非常に重要な映画鑑賞タイムだったんですよ。 / はいはいはい。 / それがですね、今、狩野英孝さんの。 / EIKO!GO!!? / もうEIKO!GO!!に侵食されてしまっていて、全然見れない。 / 見なさいよ。",
+    "hook": "通勤電車の映画鑑賞タイムが、狩野英孝のゲーム実況に全部持っていかれる。"
+  },
+  "legacy-kiki-30times": {"source_url": "https://listen.style/p/reelpal/6yqdsdgz"},
+  "legacy-wicked-wifi": {"source_url": "https://listen.style/p/reelpal/ybutqiq4"},
+  "legacy-ichinose-chaos": {"source_url": "https://listen.style/p/reelpal/aetobodm"},
+  "legacy-terminator1-micarm": {"source_url": "https://listen.style/p/reelpal/5v7n9wed"},
+  "legacy-terminator3-manuka": {"source_url": "https://listen.style/p/reelpal/q3bhpmna"},
+  "legacy-experiment-first": {"source_url": "https://listen.style/p/reelpal/syxxiykl"},
+  "legacy-fmj-monhan": {"source_url": "https://listen.style/p/reelpal/hii8mg0z"},
+  "legacy-hellraiser-numbering": {"source_url": "https://listen.style/p/reelpal/twpbyh7b"},
+  "legacy-matrix-kunie": {"source_url": "https://listen.style/p/reelpal/qc0rxhsg"},
+  "legacy-terminator2-frugra": {
+    "source_url": "https://listen.style/p/reelpal/wiyoewu0",
+    "dialogue": [
+      "本日のテーマは、金字塔SF映画『ターミネーター』その2、運命という名の無気力症候群、ターミネーターは俺だった、カルチュラルリーディングを通して、ということでね。",
+      "長いよ。",
+      "もうさ、フランス料理なのよ。",
+      "フランス料理だね、これはね。",
+      "日本のフランス料理ね。"
+    ],
+    "text": "本日のテーマは、金字塔SF映画『ターミネーター』その2、運命という名の無気力症候群、ターミネーターは俺だった、カルチュラルリーディングを通して、ということでね。 / 長いよ。 / もうさ、フランス料理なのよ。 / フランス料理だね、これはね。 / 日本のフランス料理ね。",
+    "hook": "副題を盛りすぎたら、映画タイトルがフランス料理になる。"
+  },
+  "all-episode-009": {
+    "dialogue": [
+      "ピーノさん、何か気になってる映画とかあります？ 最近の映画で。",
+      "映画でしょ？ 全然今、映画を……えっと、なんだっけ、『みんな、おしゃべり！』っていうのが。最近じゃないか、去年の映画なんですけど。",
+      "あれですか、手話のやつですか？"
+    ],
+    "text": "ピーノさん、何か気になってる映画とかあります？ 最近の映画で。 / 映画でしょ？ 全然今、映画を……えっと、なんだっけ、『みんな、おしゃべり！』っていうのが。最近じゃないか、去年の映画なんですけど。 / あれですか、手話のやつですか？",
+    "hook": "最新映画を聞かれて、去年の映画を出す。"
+  },
+  "all-episode-033": {
+    "dialogue": [
+      "今日の昼見たんですよ。",
+      "何を？",
+      "ハムナプトラ。",
+      "見たくなって見ちゃった、ハムナプトラ。やっぱりいいわ。",
+      "やるよね。",
+      "やっぱりいいわ。"
+    ],
+    "text": "今日の昼見たんですよ。 / 何を？ / ハムナプトラ。 / 見たくなって見ちゃった、ハムナプトラ。やっぱりいいわ。 / やるよね。 / やっぱりいいわ。",
+    "hook": "ハムナプトラを見直した報告だけで、だいぶ満足している。"
+  },
+  "all-episode-114": {
+    "dialogue": [
+      "今、完全に通信が飛んでましたね。",
+      "まこちゃんが止まっていた。ほんと僕はずーっとしゃべり続けていたんで。",
+      "よかったよかったよかった。あ、よかったです。",
+      "むしろ35秒残ってるところでずっと止まってたから、ちょっと困りましたね。"
+    ],
+    "text": "今、完全に通信が飛んでましたね。 / まこちゃんが止まっていた。ほんと僕はずーっとしゃべり続けていたんで。 / よかったよかったよかった。あ、よかったです。 / むしろ35秒残ってるところでずっと止まってたから、ちょっと困りましたね。",
+    "hook": "通信が飛んでも、片方だけはずっとしゃべっていた。"
+  },
+  "all-episode-117": {
+    "dialogue": [
+      "今日なんか普通だね。",
+      "いや、まあまあ、こんな感じでいいかなとね。多分1回じゃ済まないってことが分かってるから、もうあらかじめ『その1』って打っちゃうっていう。",
+      "ああ。",
+      "今なんか、どういうこと言われるかなとすげえ気になってたんだけど、今日なんか割と普通でちょっと安心したわ。"
+    ],
+    "text": "今日なんか普通だね。 / いや、まあまあ、こんな感じでいいかなとね。多分1回じゃ済まないってことが分かってるから、もうあらかじめ『その1』って打っちゃうっていう。 / ああ。 / 今なんか、どういうこと言われるかなとすげえ気になってたんだけど、今日なんか割と普通でちょっと安心したわ。",
+    "hook": "最初から『その1』を付ける。1回で終わらない前提。"
+  }
+}

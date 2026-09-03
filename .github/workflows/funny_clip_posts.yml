@@ -25,11 +25,18 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Refresh Spotify episode metadata from RSS and official catalog
+      - name: Refresh Spotify episode metadata when API credentials are available
         env:
           SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
           SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
-        run: node scripts/buildSpotifyEpisodesFromRSS.js
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -n "${SPOTIFY_CLIENT_ID:-}" && -n "${SPOTIFY_CLIENT_SECRET:-}" ]]; then
+            node scripts/buildSpotifyEpisodesFromRSS.js
+          else
+            echo "Spotify API credentials are not configured; preserving checked-in verified Spotify map."
+          fi
 
       - uses: actions/setup-python@v5
         with:
