@@ -2,13 +2,16 @@
   "days": {
     "2026-09-03": {
       "posted_slots": [
-        "engagement"
+        "engagement",
+        "feature"
       ],
       "posted_at": {
-        "engagement": "2026-09-03T12:59:16.787469+09:00"
+        "engagement": "2026-09-03T12:59:16.787469+09:00",
+        "feature": "2026-09-03T17:53:16.312575+09:00"
       },
       "content_types": {
-        "engagement": "scripts.discussion_buffer"
+        "engagement": "scripts.discussion_buffer",
+        "feature": "scripts.random_episode_buffer"
       }
     }
   }
