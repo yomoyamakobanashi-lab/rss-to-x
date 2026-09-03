@@ -17,8 +17,23 @@ from buffer_client import post_thread
 
 RSS_URL = "https://anchor.fm/s/10422ca68/podcast/rss"
 STATE_PATH = ROOT / "state_promo.json"
-MAX_RECENT_URLS = 16
+MAX_RECENT_URLS = 60
 ARCHIVE_MIN_AGE_DAYS = 14
+
+ROOT_TEMPLATES = [
+    "アーカイブから今日の一本。『{title}』。\n\n観た人、まず一言で言うとどんな映画でした？",
+    "いま掘り返したい過去回は『{title}』。\n\n好き、苦手、未見。いまの距離感はどれ？",
+    "今日のリルパル発掘枠は『{title}』。\n\nこの作品、誰かと話したくなるタイプでした？",
+    "過去回を一つだけ置いていきます。『{title}』。\n\nあなたがこの映画で一番覚えている場面は？",
+    "本日のアーカイブ散歩は『{title}』。\n\n初見の印象と、いまの評価は同じですか？",
+    "少し前の映画談義から『{title}』を。\n\n人に薦めるなら、どんな一言を添えます？",
+    "今日もう一度話したいのは『{title}』。\n\nこの作品、どこで好みが分かれると思う？",
+    "リルパルの棚から一回分。『{title}』。\n\nタイトルを見て、最初に浮かんだ感想は？",
+    "いま聴き返すなら『{title}』回。\n\n観た当時の自分に一言返せるなら、何と言います？",
+    "今日の過去回ルーレットは『{title}』。\n\nこれは一人で観たい映画？ 誰かと観たい映画？",
+    "アーカイブに眠らせておくには惜しいので『{title}』。\n\nこの映画の話、どこから始めたい？",
+    "本日の一本は『{title}』。\n\n評価より先に、観終わった直後の感情を一語でどうぞ。",
+]
 
 
 def clip_title(title: str, limit: int = 90) -> str:
@@ -37,18 +52,27 @@ def age_days(entry) -> float | None:
         return None
 
 
-def load_recent_urls() -> list[str]:
+def load_state() -> dict:
     try:
         state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
         urls = state.get("recent_urls", [])
-        return [str(url) for url in urls if str(url).strip()]
-    except (FileNotFoundError, json.JSONDecodeError, TypeError):
-        return []
+        return {
+            "recent_urls": [str(url) for url in urls if str(url).strip()],
+            "spotlight_variant": max(0, int(state.get("spotlight_variant", 0))),
+        }
+    except (FileNotFoundError, json.JSONDecodeError, TypeError, ValueError):
+        return {"recent_urls": [], "spotlight_variant": 0}
 
 
-def save_recent_urls(urls: list[str]) -> None:
+def save_state(state: dict) -> None:
     STATE_PATH.write_text(
-        json.dumps({"recent_urls": urls[-MAX_RECENT_URLS:]}, ensure_ascii=False) + "\n",
+        json.dumps(
+            {
+                "recent_urls": state["recent_urls"][-MAX_RECENT_URLS:],
+                "spotlight_variant": int(state.get("spotlight_variant", 0)),
+            },
+            ensure_ascii=False,
+        ) + "\n",
         encoding="utf-8",
     )
 
@@ -65,17 +89,16 @@ def main() -> None:
     ]
     pool = archive_items or items
 
-    recent_urls = load_recent_urls()
+    state = load_state()
+    recent_urls = state["recent_urls"]
     available = [item for item in pool if item.get("link", "").strip() not in recent_urls]
     item = random.choice(available or pool)
 
     title = clip_title(item.get("title", ""))
     url = item.get("link", "").strip()
 
-    root = (
-        f"今夜の一本は『{title}』。\n\n"
-        "この作品、あなたは「好き」「苦手」「まだ観てない」のどれ？"
-    )
+    variant = state["spotlight_variant"] % len(ROOT_TEMPLATES)
+    root = ROOT_TEMPLATES[variant].format(title=title)
     reply = (
         "🎧 リルパルの過去回はこちら。\n"
         f"{url}\n\n"
@@ -84,9 +107,13 @@ def main() -> None:
 
     post_id = post_thread([root, reply])
 
-    recent_urls = [u for u in recent_urls if u != url] + [url]
-    save_recent_urls(recent_urls)
-    print(f"[OK] Buffer accepted Friday episode thread: {post_id}; url={url}")
+    state["recent_urls"] = [u for u in recent_urls if u != url] + [url]
+    state["spotlight_variant"] += 1
+    save_state(state)
+    print(
+        f"[OK] Buffer accepted archive spotlight thread: {post_id}; "
+        f"url={url}; variant={variant}"
+    )
 
 
 if __name__ == "__main__":

@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm install node-fetch@2 cheerio xml2js
 
+      - name: Restore verified Spotify URLs before refresh
+        run: python -m scripts.restore_spotify_map_from_canonical
+
       - name: Build Spotify episodes from RSS
         run: node scripts/buildSpotifyEpisodesFromRSS.js
 

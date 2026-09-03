@@ -1,8 +1,7 @@
 name: Random Episode via Buffer
 
 on:
-  schedule:
-    - cron: '0 11 * * 5' # 金曜 20:00 JST
+  # Scheduled publishing is centralized in daily_content_posts.yml.
   workflow_dispatch:
 
 concurrency:

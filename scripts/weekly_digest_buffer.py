@@ -17,7 +17,7 @@ from buffer_client import post_thread
 
 RSS_URL = "https://anchor.fm/s/10422ca68/podcast/rss"
 STATE_PATH = ROOT / "state_promo.json"
-MAX_RECENT_URLS = 16
+MAX_RECENT_URLS = 60
 
 
 def clip_title(title: str, limit: int = 90) -> str:
@@ -35,18 +35,27 @@ def timestamp(entry) -> float:
         return 0
 
 
-def load_recent_urls() -> list[str]:
+def load_state() -> dict:
     try:
         state = json.loads(STATE_PATH.read_text(encoding="utf-8"))
         urls = state.get("recent_urls", [])
-        return [str(url) for url in urls if str(url).strip()]
-    except (FileNotFoundError, json.JSONDecodeError, TypeError):
-        return []
+        return {
+            "recent_urls": [str(url) for url in urls if str(url).strip()],
+            "spotlight_variant": max(0, int(state.get("spotlight_variant", 0))),
+        }
+    except (FileNotFoundError, json.JSONDecodeError, TypeError, ValueError):
+        return {"recent_urls": [], "spotlight_variant": 0}
 
 
-def save_recent_urls(urls: list[str]) -> None:
+def save_state(state: dict) -> None:
     STATE_PATH.write_text(
-        json.dumps({"recent_urls": urls[-MAX_RECENT_URLS:]}, ensure_ascii=False) + "\n",
+        json.dumps(
+            {
+                "recent_urls": state["recent_urls"][-MAX_RECENT_URLS:],
+                "spotlight_variant": int(state.get("spotlight_variant", 0)),
+            },
+            ensure_ascii=False,
+        ) + "\n",
         encoding="utf-8",
     )
 
@@ -73,7 +82,8 @@ def main() -> None:
     if not items:
         raise RuntimeError("No RSS items found")
 
-    recent_urls = load_recent_urls()
+    state = load_state()
+    recent_urls = state["recent_urls"]
     episodes = choose_three(items, recent_urls)
     if len(episodes) < 3:
         raise RuntimeError("Not enough RSS items for weekly digest")
@@ -92,7 +102,8 @@ def main() -> None:
 
     for url in used_urls:
         recent_urls = [u for u in recent_urls if u != url] + [url]
-    save_recent_urls(recent_urls)
+    state["recent_urls"] = recent_urls
+    save_state(state)
     print(f"[OK] Buffer accepted weekly archive thread: {post_id}; urls={len(used_urls)}")
 
 

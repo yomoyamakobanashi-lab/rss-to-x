@@ -1,11 +1,7 @@
 name: Discussion Posts via Buffer
 
 on:
-  schedule:
-    # 火曜 09:10 JST（= 00:10 UTC）
-    - cron: '10 0 * * 2'
-    # 木曜 09:40 JST（= 00:40 UTC）
-    - cron: '40 0 * * 4'
+  # Scheduled publishing is centralized in daily_content_posts.yml.
   workflow_dispatch:
 
 concurrency:

@@ -1,8 +1,7 @@
 name: Weekly Digest via Buffer
 
 on:
-  schedule:
-    - cron: '0 12 * * 6' # 土曜 21:00 JST
+  # Scheduled publishing is centralized in daily_content_posts.yml.
   workflow_dispatch:
 
 concurrency:
