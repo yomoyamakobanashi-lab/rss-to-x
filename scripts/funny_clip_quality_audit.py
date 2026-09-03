@@ -184,6 +184,9 @@ def resolve_spotify(item: dict, index: dict[str, list[str]], overrides: dict[str
     matches = index.get(normalize(item.get("episode_title", "")), [])
     if len(matches) == 1:
         return matches[0]
+    stored = str(item.get("spotify_url") or "").strip()
+    if stored.startswith("https://open.spotify.com/episode/"):
+        return stored
     key = LEGACY_SPOTIFY_OVERRIDE_BY_ID.get(str(item.get("id") or ""))
     if key:
         return overrides.get(key)

@@ -1,0 +1,65 @@
+name: Daily Multi-Pattern Posts via Buffer
+
+on:
+  schedule:
+    # Twice-hourly heartbeat. The dispatcher publishes at most one missing JST
+    # slot per run: 08:10 engagement, 17:10 feature, 21:20 funny clip.
+    # Repeated runs absorb GitHub scheduler delays without duplicate posts.
+    - cron: '12,42 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: daily-content-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Restore checked-in verified Spotify map
+        run: python -m scripts.restore_spotify_map_from_canonical
+
+      - name: Post at most one missing daily slot
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+        run: python -m scripts.daily_content_buffer
+
+      - name: Save all rotation and daily guard state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add \
+            state_daily_content.json \
+            state_quick_reply.json \
+            state_discussion.json \
+            state_social_pack.json \
+            state_promo.json \
+            state_funny_clip.json \
+            index.txt \
+            data/social_pack_queue.json \
+            data/spotify_episodes.json
+          if git diff --cached --quiet; then
+            echo "No daily content state change"
+            exit 0
+          fi
+          git commit -m "rotate daily multi-pattern posts [skip ci]"
+          git pull --rebase
+          git push

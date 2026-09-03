@@ -186,6 +186,12 @@ def _exact_spotify_url(item: dict) -> str | None:
     by_title = _spotify_url_by_title(item)
     if by_title:
         return by_title
+    # Canonical clips were individually audited against Spotify and LISTEN.
+    # Keep their checked-in direct URL as a fail-safe if an unrelated RSS
+    # refresh temporarily lacks Spotify metadata.
+    stored = str(item.get("spotify_url") or "").strip()
+    if stored.startswith("https://open.spotify.com/episode/"):
+        return stored
     overrides = _load_overrides()
     clip_id = str(item.get("id") or "").strip()
     legacy_key = LEGACY_SPOTIFY_OVERRIDE_BY_ID.get(clip_id)

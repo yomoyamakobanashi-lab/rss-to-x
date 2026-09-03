@@ -1,0 +1,59 @@
+name: Daily Content Quality
+
+on:
+  push:
+    branches:
+      - main
+      - fix/daily-multi-pattern-posts
+    paths:
+      - 'scripts/daily_content_buffer.py'
+      - 'scripts/social_pack_autofill.py'
+      - 'scripts/social_pack_buffer.py'
+      - 'scripts/random_episode_buffer.py'
+      - 'scripts/weekly_digest_buffer.py'
+      - 'tests/test_daily_content.py'
+      - '.github/workflows/daily_content_*.yml'
+  pull_request:
+    paths:
+      - 'scripts/daily_content_buffer.py'
+      - 'scripts/social_pack_autofill.py'
+      - 'scripts/social_pack_buffer.py'
+      - 'scripts/random_episode_buffer.py'
+      - 'scripts/weekly_digest_buffer.py'
+      - 'tests/test_daily_content.py'
+      - '.github/workflows/daily_content_*.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install runtime dependencies
+        run: pip install -r requirements.txt
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile changed Python modules
+        run: >-
+          python -m py_compile
+          scripts/daily_content_buffer.py
+          scripts/social_pack_autofill.py
+          scripts/social_pack_buffer.py
+          scripts/random_episode_buffer.py
+          scripts/weekly_digest_buffer.py
+          scripts/restore_spotify_map_from_canonical.py
+      - name: Verify Spotify map restoration
+        run: python -m scripts.restore_spotify_map_from_canonical
+      - name: Validate social-pack queue
+        run: python -c "from scripts.social_pack_buffer import load_queue; print(f'valid social-pack items={len(load_queue())}')"
+      - name: Production funny-bank dry run
+        env:
+          FUNNY_CLIP_DRY_RUN: '1'
+        run: python -m scripts.funny_clip_spotify

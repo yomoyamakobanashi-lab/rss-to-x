@@ -125,6 +125,11 @@ def main() -> None:
     state = load_state()
     now = datetime.now(timezone.utc)
 
+    last_posted = parse_dt(state.get("last_posted_at"))
+    if last_posted and last_posted.astimezone(JST).date() == now.astimezone(JST).date():
+        print("[INFO] social pack already posted today")
+        return
+
     item = pick_due(queue, state, now)
     if item is None:
         print("[INFO] no due social pack item")

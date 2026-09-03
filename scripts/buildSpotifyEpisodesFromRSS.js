@@ -4,6 +4,10 @@ const RSS_URL = 'https://anchor.fm/s/10422ca68/podcast/rss';
 const SPOTIFY_SHOW_ID = '4o8l9DJWMuwUht2pvkEytS';
 const OUTPUT_DIR = 'data';
 const OUTPUT_FILE = 'data/spotify_episodes.json';
+const CANONICAL_FILES = [
+  'data/funny_clip_posts_all_episodes.json',
+  'data/funny_clip_legacy_canonical.json'
+];
 
 function decodeXml(value) {
   return String(value || '')
@@ -25,9 +29,10 @@ function tag(block, name) {
 
 function normalizeTitle(title) {
   return String(title || '')
-    .replace(/[#＃]/g, '')
-    .replace(/[【】「」『』"“”'’]/g, '')
-    .replace(/\s+/g, ' ')
+    .normalize('NFKC')
+    .replace(/[\u200b\ufeff\ufffc]/g, '')
+    .replace(/[\s　]+/g, '')
+    .replace(/[『』「」〖〗【】#\-_—–:：・,.!?！？…（）()\[\]“”"'’〜~]/g, '')
     .trim()
     .toLowerCase();
 }
@@ -125,19 +130,65 @@ function mergeExactSpotifyUrls(rssEpisodes, spotifyEpisodes) {
   });
 }
 
+function loadVerifiedSeeds() {
+  const byTitle = new Map();
+  const sources = [OUTPUT_FILE, ...CANONICAL_FILES];
+  for (const file of sources) {
+    if (!fs.existsSync(file)) continue;
+    let rows;
+    try {
+      rows = JSON.parse(fs.readFileSync(file, 'utf8'));
+    } catch (error) {
+      console.warn(`[WARN] Could not read Spotify seed file ${file}: ${error.message}`);
+      continue;
+    }
+    if (!Array.isArray(rows)) continue;
+    for (const row of rows) {
+      const title = normalizeTitle(row.title || row.episode_title);
+      const url = String(row.spotifyUrl || row.spotify_url || '').trim();
+      if (!title || !url.startsWith('https://open.spotify.com/episode/')) continue;
+      const existing = byTitle.get(title);
+      if (existing && existing !== url) {
+        throw new Error(`Conflicting verified Spotify URLs for: ${title}`);
+      }
+      byTitle.set(title, url);
+    }
+  }
+  return byTitle;
+}
+
+function preserveVerifiedSpotifyUrls(rssEpisodes, seeds) {
+  return rssEpisodes.map(ep => {
+    if (ep.spotifyUrl?.startsWith('https://open.spotify.com/episode/')) return ep;
+    let preserved = seeds.get(ep.normalizedTitle);
+    if (!preserved) {
+      const matches = new Set();
+      for (const [knownTitle, url] of seeds.entries()) {
+        if (Math.min(knownTitle.length, ep.normalizedTitle.length) < 12) continue;
+        if (knownTitle.includes(ep.normalizedTitle) || ep.normalizedTitle.includes(knownTitle)) {
+          matches.add(url);
+        }
+      }
+      if (matches.size === 1) preserved = [...matches][0];
+    }
+    return preserved ? { ...ep, spotifyUrl: preserved } : ep;
+  });
+}
+
 (async () => {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
+  const verifiedSeeds = loadVerifiedSeeds();
   const rssEpisodes = await fetchRssEpisodes();
-  let episodes = rssEpisodes;
+  let episodes = preserveVerifiedSpotifyUrls(rssEpisodes, verifiedSeeds);
   const token = await spotifyAccessToken();
 
   if (token) {
     const spotifyEpisodes = await fetchSpotifyCatalog(token);
-    episodes = mergeExactSpotifyUrls(rssEpisodes, spotifyEpisodes);
+    episodes = mergeExactSpotifyUrls(episodes, spotifyEpisodes);
     console.log(`Spotify official catalog episodes fetched: ${spotifyEpisodes.length}`);
   } else {
-    console.log('[WARN] SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET are not configured; RSS-only refresh used.');
+    console.log(`[WARN] Spotify credentials are not configured; preserved ${verifiedSeeds.size} checked-in verified URL(s).`);
   }
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(episodes, null, 2) + '\n', 'utf8');

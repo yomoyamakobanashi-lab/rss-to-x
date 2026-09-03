@@ -1,9 +1,7 @@
 name: Survey via Buffer
 
 on:
-  schedule:
-    # 日曜 18:00 JST（= 09:00 UTC）
-    - cron: '0 9 * * 0'
+  # Scheduled publishing is centralized in daily_content_posts.yml.
   workflow_dispatch:
 
 concurrency:

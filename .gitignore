@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+funny_clip_quality_report.json
+funny_clip_*_packet.json
+funny_clip_transcript_snapshot.json
+funny_clip_raw_probe.json
