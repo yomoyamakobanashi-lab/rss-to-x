@@ -19,13 +19,16 @@
     },
     "2026-09-04": {
       "posted_slots": [
-        "engagement"
+        "engagement",
+        "feature"
       ],
       "posted_at": {
-        "engagement": "2026-09-04T09:21:38.854417+09:00"
+        "engagement": "2026-09-04T09:21:38.854417+09:00",
+        "feature": "2026-09-04T18:33:48.447675+09:00"
       },
       "content_types": {
-        "engagement": "scripts.quick_reply_buffer"
+        "engagement": "scripts.quick_reply_buffer",
+        "feature": "scripts.random_episode_buffer"
       }
     }
   }
