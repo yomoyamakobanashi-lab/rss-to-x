@@ -17,6 +17,7 @@ if str(ROOT) not in sys.path:
 
 from buffer_client import BufferError, post_video_thread
 from note_poster import x_length
+from scripts.episode_links import render_episode_reply
 
 META_PATH = ROOT / "audiogram_meta.json"
 STATE_PATH = ROOT / "state_audio_clip.json"
@@ -81,7 +82,11 @@ def main() -> None:
         print(f"[INFO] audiogram already posted: {clip_id}")
         return
 
-    reply = f"このくだりはLISTENで👇\n{listen_url}"
+    reply = render_episode_reply(
+        title=meta.get("rss_title") or meta.get("episode_title"),
+        listen_url=listen_url,
+        intro="🎧 このくだりの本編を聴く",
+    )
     if x_length(reply) > ROOT_LIMIT:
         raise RuntimeError(f"audiogram reply exceeds X limit: {clip_id}")
 

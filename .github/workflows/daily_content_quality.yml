@@ -7,6 +7,14 @@ on:
       - fix/daily-multi-pattern-posts
     paths:
       - 'scripts/daily_content_buffer.py'
+      - 'scripts/episode_links.py'
+      - 'scripts/refresh_episode_platform_links.py'
+      - 'scripts/audiogram_post.py'
+      - 'scripts/audiogram_render.py'
+      - 'scripts/funny_clip_buffer.py'
+      - 'scripts/funny_clip_spotify.py'
+      - 'podcast_poster_buffer.py'
+      - 'data/episode_platform_links.json'
       - 'scripts/social_pack_autofill.py'
       - 'scripts/social_pack_buffer.py'
       - 'scripts/random_episode_buffer.py'
@@ -18,9 +26,21 @@ on:
       - 'tests/test_*.py'
       - '.github/workflows/trend-episode-tiein.yml'
       - '.github/workflows/daily_content_*.yml'
+      - '.github/workflows/post-podcast.yml'
+      - '.github/workflows/receive-dispatch.yml'
+      - '.github/workflows/funny_clip_posts.yml'
+      - '.github/workflows/generate_thread_drafts.yml'
   pull_request:
     paths:
       - 'scripts/daily_content_buffer.py'
+      - 'scripts/episode_links.py'
+      - 'scripts/refresh_episode_platform_links.py'
+      - 'scripts/audiogram_post.py'
+      - 'scripts/audiogram_render.py'
+      - 'scripts/funny_clip_buffer.py'
+      - 'scripts/funny_clip_spotify.py'
+      - 'podcast_poster_buffer.py'
+      - 'data/episode_platform_links.json'
       - 'scripts/social_pack_autofill.py'
       - 'scripts/social_pack_buffer.py'
       - 'scripts/random_episode_buffer.py'
@@ -32,6 +52,10 @@ on:
       - 'tests/test_*.py'
       - '.github/workflows/trend-episode-tiein.yml'
       - '.github/workflows/daily_content_*.yml'
+      - '.github/workflows/post-podcast.yml'
+      - '.github/workflows/receive-dispatch.yml'
+      - '.github/workflows/funny_clip_posts.yml'
+      - '.github/workflows/generate_thread_drafts.yml'
   workflow_dispatch:
 
 permissions:
@@ -54,6 +78,13 @@ jobs:
         run: >-
           python -m py_compile
           scripts/daily_content_buffer.py
+          scripts/episode_links.py
+          scripts/refresh_episode_platform_links.py
+          scripts/audiogram_post.py
+          scripts/audiogram_render.py
+          scripts/funny_clip_buffer.py
+          scripts/funny_clip_spotify.py
+          podcast_poster_buffer.py
           scripts/social_pack_autofill.py
           scripts/social_pack_buffer.py
           scripts/random_episode_buffer.py
@@ -67,6 +98,8 @@ jobs:
         run: python -m scripts.restore_spotify_map_from_canonical
       - name: Validate social-pack queue
         run: python -c "from scripts.social_pack_buffer import load_queue; print(f'valid social-pack items={len(load_queue())}')"
+      - name: Validate multi-platform episode links
+        run: python -m scripts.refresh_episode_platform_links --check
       - name: Production funny-bank dry run
         env:
           FUNNY_CLIP_DRY_RUN: '1'

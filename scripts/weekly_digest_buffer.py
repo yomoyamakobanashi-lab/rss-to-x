@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from buffer_client import post_thread
+from scripts.episode_links import render_episode_reply
 
 RSS_URL = "https://anchor.fm/s/10422ca68/podcast/rss"
 STATE_PATH = ROOT / "state_promo.json"
@@ -96,7 +97,13 @@ def main() -> None:
     for number, item in enumerate(episodes, start=1):
         url = item.get("link", "").strip()
         used_urls.append(url)
-        posts.append(f"{number}️⃣ {clip_title(item.get('title', ''))}\n{url}")
+        posts.append(
+            render_episode_reply(
+                title=item.get("title"),
+                guid=item.get("id") or item.get("guid"),
+                intro=f"{number}️⃣ {clip_title(item.get('title', ''), limit=42)}",
+            )
+        )
 
     post_id = post_thread(posts)
 

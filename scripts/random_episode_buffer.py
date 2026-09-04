@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from buffer_client import post_thread
+from scripts.episode_links import render_episode_reply
 
 RSS_URL = "https://anchor.fm/s/10422ca68/podcast/rss"
 STATE_PATH = ROOT / "state_promo.json"
@@ -99,10 +100,10 @@ def main() -> None:
 
     variant = state["spotlight_variant"] % len(ROOT_TEMPLATES)
     root = ROOT_TEMPLATES[variant].format(title=title)
-    reply = (
-        "🎧 リルパルの過去回はこちら。\n"
-        f"{url}\n\n"
-        "聴いたことがある人は、異論も歓迎です。"
+    reply = render_episode_reply(
+        title=item.get("title"),
+        guid=item.get("id") or item.get("guid"),
+        intro="🎧 リルパルの過去回を聴く",
     )
 
     post_id = post_thread([root, reply])

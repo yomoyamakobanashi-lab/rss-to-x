@@ -42,8 +42,8 @@ class TrendDiscoveryTests(unittest.TestCase):
             "headline": "グレムリン最新作の予告が公開",
             "source": "映画.com",
             "topic": {
-                "episode_title": "グレムリン",
-                "listen_url": "https://listen.style/p/reelpal/example",
+                "episode_title": "真夏のホラー企画 第一弾 映画『サユリ』",
+                "listen_url": "https://listen.style/p/reelpal/aon5ynuf",
                 "angle": "",
                 "discovery_mode": True,
             },
@@ -51,7 +51,10 @@ class TrendDiscoveryTests(unittest.TestCase):
         root, reply = trend.compose(candidate)
         self.assertTrue(root.startswith("映画好きに聞きたい。"))
         self.assertNotIn("http", root)
-        self.assertIn("https://listen.style/p/reelpal/example", reply)
+        self.assertIn("https://open.spotify.com/episode/", reply)
+        self.assertIn("https://podcasts.apple.com/jp/podcast/", reply)
+        self.assertIn("https://youtu.be/", reply)
+        self.assertNotIn("listen.style", reply)
         self.assertLessEqual(len(root), trend.MAX_ROOT_LEN)
         self.assertLessEqual(len(reply), 280)
 

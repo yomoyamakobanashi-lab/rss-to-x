@@ -11,7 +11,7 @@ from typing import Any, Dict, List
 
 import feedparser
 
-from buffer_client import BufferError, post_text
+from buffer_client import BufferError, post_thread
 from podcast_poster import (
     MAX_TWEET_LIMIT,
     TITLE_MAXLEN,
@@ -20,10 +20,11 @@ from podcast_poster import (
     entry_timestamp,
     load_state,
     minutes_since,
-    pick_best_link_for_podcast,
+    find_spotify_episode_url,
     save_state,
     shorten_title,
 )
+from scripts.episode_links import render_episode_reply
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger("podcast_poster_buffer")
@@ -95,19 +96,44 @@ def main() -> None:
             logger.info("最新回はすでに告知済み")
             continue
 
-        link = pick_best_link_for_podcast(entry, feed)
-        if not link:
-            # Do not mark it as posted: the next hourly run will retry after
-            # Apple/Spotify has had time to expose a public episode URL.
-            logger.info("Apple/Spotify URL未解決。次回実行で再試行: %s", getattr(entry, "title", ""))
-            continue
+        rss_spotify = find_spotify_episode_url(entry)
+        try:
+            reply = render_episode_reply(
+                title=getattr(entry, "title", ""),
+                guid=getattr(entry, "id", "") or getattr(entry, "guid", ""),
+                spotify_url=rss_spotify,
+                intro="🎧 新着エピソードを聴く",
+            )
+        except RuntimeError:
+            # A truly new episode may not be in the checked-in catalogue yet.
+            # Refresh once only when an eligible, unannounced episode needs it.
+            try:
+                from scripts.episode_links import load_catalog
+                from scripts.refresh_episode_platform_links import refresh
+
+                refresh()
+                load_catalog.cache_clear()
+                reply = render_episode_reply(
+                    title=getattr(entry, "title", ""),
+                    guid=getattr(entry, "id", "") or getattr(entry, "guid", ""),
+                    spotify_url=rss_spotify,
+                    intro="🎧 新着エピソードを聴く",
+                )
+            except RuntimeError:
+                # Do not mark it as posted: the next hourly run will retry.
+                logger.info(
+                    "Spotify個別回URL未解決。次回実行で再試行: %s",
+                    getattr(entry, "title", ""),
+                )
+                continue
 
         title = shorten_title(getattr(entry, "title", "") or "", maxlen=TITLE_MAXLEN)
-        text = compose_text(template, title, program, link, limit=MAX_TWEET_LIMIT)
+        text = compose_text(template, title, program, "", limit=MAX_TWEET_LIMIT)
         candidates.append({
             "ts": entry_timestamp(entry),
             "uid": uid,
             "text": text,
+            "reply": reply,
         })
 
     if not candidates:
@@ -118,7 +144,7 @@ def main() -> None:
     logger.info("Posting new episode announcement through Buffer:\n%s", chosen["text"])
 
     try:
-        post_id = post_text(chosen["text"])
+        post_id = post_thread([chosen["text"], chosen["reply"]])
     except BufferError as exc:
         logger.error("Buffer投稿失敗: %s", exc)
         sys.exit(4)

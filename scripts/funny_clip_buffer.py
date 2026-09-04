@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from buffer_client import post_thread
+from scripts.episode_links import render_episode_reply
 
 BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts.json",
@@ -246,10 +247,12 @@ def render_root(item: dict) -> str:
 
 
 def render_reply(item: dict) -> str:
-    reply = f"元の脱線はLISTENで👇\n{item['source_url']}"
-    if len(reply) > 260:
-        raise RuntimeError(f"funny clip reply exceeds safe length: {item['id']}")
-    return reply
+    return render_episode_reply(
+        title=item.get("episode_title") or item.get("source"),
+        listen_url=item.get("source_url"),
+        spotify_url=item.get("spotify_url"),
+        intro="🎧 元の脱線を聴く",
+    )
 
 
 def save_state(state: dict, item: dict) -> None:
