@@ -16,6 +16,17 @@
         "feature": "scripts.random_episode_buffer",
         "funny": "scripts.funny_clip_spotify"
       }
+    },
+    "2026-09-04": {
+      "posted_slots": [
+        "engagement"
+      ],
+      "posted_at": {
+        "engagement": "2026-09-04T09:21:38.854417+09:00"
+      },
+      "content_types": {
+        "engagement": "scripts.quick_reply_buffer"
+      }
     }
   }
 }
