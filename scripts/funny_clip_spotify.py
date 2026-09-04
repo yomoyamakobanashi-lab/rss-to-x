@@ -13,6 +13,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts import funny_clip_buffer as base
+from scripts.episode_links import render_episode_reply
 
 SPOTIFY_EPISODES_PATH = ROOT / "data" / "spotify_episodes.json"
 SPOTIFY_OVERRIDES_PATH = ROOT / "data" / "spotify_episode_overrides.json"
@@ -218,7 +219,12 @@ def render_reply(item: dict) -> str:
             f"No verified Spotify episode URL for {item['id']} ({item['source']}); "
             "refusing to publish without an exact /episode/ link."
         )
-    return f"この回をSpotifyで👇\n{target}\n\n{REELPAL_TAG}"
+    return render_episode_reply(
+        title=item.get("episode_title") or item.get("source"),
+        listen_url=item.get("source_url"),
+        spotify_url=target,
+        intro="🎧 元の脱線を聴く",
+    )
 
 
 _original_load_bank = base.load_bank

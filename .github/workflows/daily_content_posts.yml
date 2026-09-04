@@ -38,6 +38,9 @@ jobs:
       - name: Restore checked-in verified Spotify map
         run: python -m scripts.restore_spotify_map_from_canonical
 
+      - name: Validate verified episode listening links
+        run: python -m scripts.refresh_episode_platform_links --check
+
       - name: Post at most one missing daily slot
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}

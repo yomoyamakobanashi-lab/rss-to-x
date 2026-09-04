@@ -29,7 +29,13 @@ jobs:
         run: python -m scripts.restore_spotify_map_from_canonical
 
       - name: Build Spotify episodes from RSS
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
         run: node scripts/buildSpotifyEpisodesFromRSS.js
+
+      - name: Refresh Apple Podcasts and YouTube episode links
+        run: python -m scripts.refresh_episode_platform_links
 
       - name: Generate thread drafts from LISTEN
         run: node scripts/generateThreadDraftsFromListen.js
@@ -38,6 +44,6 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add data/spotify_episodes.json data/thread_drafts.json
+          git add data/spotify_episodes.json data/episode_platform_links.json data/thread_drafts.json
           git commit -m "Generate thread drafts" || echo "No changes"
           git push

@@ -23,6 +23,7 @@ if str(ROOT) not in os.sys.path:
     os.sys.path.insert(0, str(ROOT))
 
 from buffer_client import post_thread
+from scripts.episode_links import render_episode_reply
 
 TOPICS_PATH = ROOT / "data" / "trend_episode_topics.json"
 STATE_PATH = ROOT / "state_trend_tiein.json"
@@ -497,9 +498,11 @@ def compose(candidate: dict) -> tuple[str, str]:
     if len(root) > MAX_ROOT_LEN:
         root = clip(root, MAX_ROOT_LEN)
 
-    reply = f"🎧 リルパルにも『{episode}』を話した回があります。\n{topic['listen_url']}"
-    if len(reply) > 280:
-        reply = f"🎧 関連回はこちら\n{topic['listen_url']}"
+    reply = render_episode_reply(
+        title=topic.get("episode_title"),
+        listen_url=topic.get("listen_url"),
+        intro="🎧 リルパルの関連回を聴く",
+    )
     return root, reply
 
 

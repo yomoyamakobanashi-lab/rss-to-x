@@ -15,6 +15,7 @@ if str(ROOT) not in sys.path:
 
 from buffer_client import BufferError, post_text, post_thread
 from note_poster import x_length
+from scripts.episode_links import render_episode_reply
 
 QUEUE_PATH = ROOT / "data" / "social_pack_queue.json"
 STATE_PATH = ROOT / "state_social_pack.json"
@@ -94,12 +95,12 @@ def build_reply(item: dict) -> str | None:
     if not source_url:
         return None
     label = {
-        "three_hooks": "この回はLISTENで👇",
-        "host_split": "二人の着地点は本編で👇",
-        "episode_hook": "この話の続きはLISTENで👇",
-        "winner_remix": "元になった回はこちら👇",
-    }.get(item["kind"], "本編はこちら👇")
-    reply = f"{label}\n{source_url}"
+        "three_hooks": "🎧 この回を聴く",
+        "host_split": "🎧 二人の着地点を聴く",
+        "episode_hook": "🎧 この話の続きを聴く",
+        "winner_remix": "🎧 元になった回を聴く",
+    }.get(item["kind"], "🎧 本編を聴く")
+    reply = render_episode_reply(listen_url=source_url, intro=label)
     if x_length(reply) > ROOT_LIMIT:
         raise RuntimeError(f"social pack reply exceeds X limit: {item['id']}")
     return reply

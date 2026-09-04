@@ -6,7 +6,7 @@ const LISTEN_URL = 'https://listen.style/p/reelpal';
 const FORM_URL = 'https://forms.gle/4PT2GBA7TY8vAoCx7';
 
 const OUTPUT_DIR = 'data';
-const SPOTIFY_FILE = 'data/spotify_episodes.json';
+const PLATFORM_FILE = 'data/episode_platform_links.json';
 const OUTPUT_FILE = 'data/thread_drafts.json';
 
 const MAX_DRAFTS = 20;
@@ -31,53 +31,10 @@ function cleanText(text) {
     .trim();
 }
 
-function normalizeHtmlText(text) {
-  return String(text || '')
-    .replace(/\\u002F/g, '/')
-    .replace(/\\\//g, '/')
-    .replace(/&amp;/g, '&')
-    .replace(/&#x2F;/g, '/')
-    .replace(/&#47;/g, '/');
-}
-
-function findSpotifyEpisodeUrlFromHtml(html) {
-  const normalized = normalizeHtmlText(html);
-  const directMatch = normalized.match(/https:\/\/open\.spotify\.com\/episode\/[A-Za-z0-9]+/);
-  if (directMatch) return directMatch[0];
-
-  const spotifyUriMatch = normalized.match(/spotify:episode:([A-Za-z0-9]+)/);
-  if (spotifyUriMatch) {
-    return `https://open.spotify.com/episode/${spotifyUriMatch[1]}`;
-  }
-
-  return null;
-}
-
 function truncate(text, max) {
   const t = cleanText(text);
   if (t.length <= max) return t;
   return t.slice(0, max - 1).trim() + '…';
-}
-
-function titleSimilarity(a, b) {
-  const aa = normalizeTitle(a);
-  const bb = normalizeTitle(b);
-
-  if (!aa || !bb) return 0;
-  if (aa === bb) return 1;
-  if (aa.includes(bb) || bb.includes(aa)) return 0.85;
-
-  const aTokens = new Set(aa.split(/[ \-_/・、。〜｜|]+/).filter(t => t.length >= 2));
-  const bTokens = new Set(bb.split(/[ \-_/・、。〜｜|]+/).filter(t => t.length >= 2));
-
-  if (aTokens.size === 0 || bTokens.size === 0) return 0;
-
-  let hit = 0;
-  for (const token of aTokens) {
-    if (bTokens.has(token)) hit++;
-  }
-
-  return hit / Math.max(aTokens.size, bTokens.size);
 }
 
 function extractEpisodeLinksFromIndex(html) {
@@ -212,30 +169,34 @@ function buildParentDraft(title, body) {
   return `『${work}』回。\n\n作品の奥に残る違和感を、少し掘り下げて話しています。\n#リルパル`;
 }
 
-function pickSpotifyMatch(listenTitle, spotifyEpisodes) {
-  const available = spotifyEpisodes.filter(ep => ep.spotifyUrl);
+function pickVerifiedPlatformMatch(listenUrl, listenTitle, platformEpisodes) {
+  const direct = platformEpisodes.filter(ep =>
+    Array.isArray(ep.listen_urls) && ep.listen_urls.includes(listenUrl)
+  );
+  if (direct.length === 1) return direct[0];
 
-  let best = null;
-  let bestScore = 0;
+  const wanted = normalizeTitle(listenTitle);
+  const exact = platformEpisodes.filter(ep => normalizeTitle(ep.title) === wanted);
+  if (exact.length === 1) return exact[0];
 
-  for (const ep of available) {
-    const score = titleSimilarity(listenTitle, ep.title);
-    if (score > bestScore) {
-      best = ep;
-      bestScore = score;
-    }
+  const contained = platformEpisodes.filter(ep => {
+    const candidate = normalizeTitle(ep.title);
+    return Math.min(wanted.length, candidate.length) >= 18 &&
+      (wanted.startsWith(candidate) || candidate.startsWith(wanted));
+  });
+  return contained.length === 1 ? contained[0] : null;
+}
+
+function buildListeningReply(platform) {
+  const lines = ['🎧 この回を聴く', 'Spotify', platform.spotify_url];
+  if (platform.apple_url) lines.push('Apple Podcasts', platform.apple_url);
+  if (platform.youtube_url) lines.push('YouTube', platform.youtube_url);
+  lines.push('', '#リルパル');
+  const reply = lines.join('\n');
+  if (reply.length > 280 || reply.includes('listen.style')) {
+    throw new Error('verified multi-platform reply is invalid');
   }
-
-  if (best && bestScore >= 0.12) {
-    return {
-      spotifyUrl: best.spotifyUrl,
-      matchedSpotifyTitle: best.title,
-      matchScore: bestScore,
-      matchMethod: 'rss-title'
-    };
-  }
-
-  return null;
+  return reply;
 }
 
 async function fetchText(url) {
@@ -257,14 +218,12 @@ async function fetchText(url) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   }
 
-  let spotifyEpisodes = [];
+  let platformEpisodes = [];
 
-  if (fs.existsSync(SPOTIFY_FILE)) {
-    spotifyEpisodes = JSON.parse(fs.readFileSync(SPOTIFY_FILE, 'utf8'));
+  if (fs.existsSync(PLATFORM_FILE)) {
+    platformEpisodes = JSON.parse(fs.readFileSync(PLATFORM_FILE, 'utf8'));
   }
-
-  console.log(`RSS episodes: ${spotifyEpisodes.length}`);
-  console.log(`RSS episodes with Spotify URL: ${spotifyEpisodes.filter(ep => ep.spotifyUrl).length}`);
+  console.log(`Verified platform episodes: ${platformEpisodes.length}`);
 
   const indexHtml = await fetchText(LISTEN_URL);
   const episodeUrls = extractEpisodeLinksFromIndex(indexHtml).slice(0, MAX_DRAFTS);
@@ -283,13 +242,11 @@ async function fetchText(url) {
       const title = extractTitle($);
       const body = extractUsefulText($);
 
-      const spotifyFromListen = findSpotifyEpisodeUrlFromHtml(html);
-      const rssMatch = pickSpotifyMatch(title, spotifyEpisodes);
-
-      const spotifyUrl = spotifyFromListen || rssMatch?.spotifyUrl || null;
-      const matchMethod = spotifyFromListen ? 'listen-html' : (rssMatch?.matchMethod || 'none');
-      const matchedSpotifyTitle = rssMatch?.matchedSpotifyTitle || null;
-      const matchScore = rssMatch?.matchScore || 0;
+      const platform = pickVerifiedPlatformMatch(listenUrl, title, platformEpisodes);
+      const spotifyUrl = platform?.spotify_url || null;
+      const matchMethod = platform ? 'verified-platform-catalog' : 'none';
+      const matchedSpotifyTitle = platform?.title || null;
+      const matchScore = platform ? 1 : 0;
 
       console.log(`Checking: ${title}`);
       console.log(`Body length: ${body.length}`);
@@ -303,7 +260,7 @@ async function fetchText(url) {
       const usableBody = body || title;
       const parent = buildParentDraft(title, usableBody);
 
-      const reply1 = `本編はこちら👇\n${spotifyUrl}\n#リルパル`;
+      const reply1 = buildListeningReply(platform);
       const reply2 = `感想・映画リクエストはこちら👇\n${FORM_URL}\n#リルパル`;
 
       drafts.push({
@@ -311,8 +268,10 @@ async function fetchText(url) {
         parent,
         reply1,
         reply2,
-        listenUrl,
+        sourceListenUrl: listenUrl,
         spotifyUrl,
+        appleUrl: platform.apple_url || null,
+        youtubeUrl: platform.youtube_url || null,
         matchedSpotifyTitle,
         matchScore: Number(matchScore.toFixed(3)),
         matchMethod,
