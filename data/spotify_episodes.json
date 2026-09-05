@@ -1,6 +1,24 @@
 [
   {
     "index": 0,
+    "title": "【補足版】リスナーリクエスト 映画『#ファニーゲーム 』これもジャンルシフトなのか……？",
+    "normalizedTitle": "補足版リスナーリクエスト映画ファニーゲームこれもジャンルシフトなのか",
+    "spotifyUrl": null,
+    "guid": "74dcdd98-ac74-4d5e-944b-948ab9694774",
+    "link": "https://podcasters.spotify.com/pod/show/reelpal/episodes/ep-e3ocbln",
+    "pubDate": "Sat, 05 Sep 2026 07:50:44 GMT"
+  },
+  {
+    "index": 1,
+    "title": "リスナーリクエスト　映画『ファニーゲーム』これもジャンルシフトなのか……？ Listener Request: Funny Games — Is This a Genre Shift Too…?",
+    "normalizedTitle": "リスナーリクエスト映画ファニーゲームこれもジャンルシフトなのかlistenerrequestfunnygamesisthisagenreshifttoo",
+    "spotifyUrl": null,
+    "guid": "a240fa5f-3b8e-4326-bbdc-392142937ebd",
+    "link": "https://podcasters.spotify.com/pod/show/reelpal/episodes/Listener-Request-Funny-Games--Is-This-a-Genre-Shift-Too-e3ocavj",
+    "pubDate": "Sat, 05 Sep 2026 07:38:50 GMT"
+  },
+  {
+    "index": 2,
     "title": "【インターミッション】　 #ズートピア３ とか#アナと雪の女王3 とか#牧場物語 とか",
     "normalizedTitle": "インターミッションズートピア3とかアナと雪の女王3とか牧場物語とか",
     "spotifyUrl": "https://open.spotify.com/episode/1kKJIgESabkQshd3sSwRLH",
@@ -9,7 +27,7 @@
     "pubDate": "Tue, 01 Sep 2026 20:10:00 GMT"
   },
   {
-    "index": 1,
+    "index": 3,
     "title": "真夏のホラー企画　第一弾　映画『サユリ』これはジャンルシフトなのか……？ Midsummer Horror Series Vol.1: Sayuri — Is This a Genre Shift, or Something Else Entirely…?",
     "normalizedTitle": "真夏のホラー企画第一弾映画サユリこれはジャンルシフトなのかmidsummerhorrorseriesvol1sayuriisthisagenreshiftorsomethingelseentirely",
     "spotifyUrl": "https://open.spotify.com/episode/6Q7qVUECcQGDC2AU3fj0Cz",
@@ -18,7 +36,7 @@
     "pubDate": "Fri, 28 Aug 2026 20:37:31 GMT"
   },
   {
-    "index": 2,
+    "index": 4,
     "title": "【インターミッション】　 #一ノ瀬ワタル とか#アンジェリーナ・ジョリー とか#ウィキッド とか",
     "normalizedTitle": "インターミッション一ノ瀬ワタルとかアンジェリーナジョリーとかウィキッドとか",
     "spotifyUrl": "https://open.spotify.com/episode/0bf9bYVDBwnsvyfzvhiSO2",
@@ -27,7 +45,7 @@
     "pubDate": "Tue, 25 Aug 2026 21:03:23 GMT"
   },
   {
-    "index": 3,
+    "index": 5,
     "title": "夏の邦画祭り第４弾　映画『この世界のさらにいくつもの片隅に』戦火の人々は逞しかったのだろうか　　Summer Japanese Film Festival Vol.4: In This Corner (and Other Corners) of the World — Were People Living Through War Truly Resilient?",
     "normalizedTitle": "夏の邦画祭り第4弾映画この世界のさらにいくつもの片隅に戦火の人々は逞しかったのだろうかsummerjapanesefilmfestivalvol4inthiscornerandothercornersoftheworldwerepeoplelivingthroughwartrulyresilient",
     "spotifyUrl": "https://open.spotify.com/episode/61HB0Yo1H2SMXHqfLbAc2B",
@@ -36,7 +54,7 @@
     "pubDate": "Fri, 21 Aug 2026 23:09:43 GMT"
   },
   {
-    "index": 4,
+    "index": 6,
     "title": "夏の邦画祭り第３弾　映画『容疑者Xの献身』究極の愛の形ってなんだろう　Summer Japanese Film Festival Vol.3: Suspect X — What Does the Ultimate Form of Love Look Like?",
     "normalizedTitle": "夏の邦画祭り第3弾映画容疑者xの献身究極の愛の形ってなんだろうsummerjapanesefilmfestivalvol3suspectxwhatdoestheultimateformoflovelooklike",
     "spotifyUrl": "https://open.spotify.com/episode/7ciIFSIYsXf6AUJr5QZ4UJ",
@@ -45,7 +63,7 @@
     "pubDate": "Fri, 14 Aug 2026 20:15:00 GMT"
   },
   {
-    "index": 5,
+    "index": 7,
     "title": "【インターミッション】　 #スパイダーマン とか#シノラー とか#ミッキー・ローク とか#エアロスミス とか#黒柳徹子 とか",
     "normalizedTitle": "インターミッションスパイダーマンとかシノラーとかミッキーロークとかエアロスミスとか黒柳徹子とか",
     "spotifyUrl": "https://open.spotify.com/episode/6OVkyZV9jFwnKnWf094SxL",
@@ -54,7 +72,7 @@
     "pubDate": "Tue, 11 Aug 2026 20:00:00 GMT"
   },
   {
-    "index": 6,
+    "index": 8,
     "title": "夏の邦画祭り第二弾　映画『打ち上げ花火、下から見るか？横から見るか？』小学校は青春時代に入りますか？　Summer Japanese Film Festival Vol.2: Fireworks, Should We See It from the Side or the Bottom? — Does Elementary School Count as Your Coming-of-Age?",
     "normalizedTitle": "夏の邦画祭り第二弾映画打ち上げ花火、下から見るか横から見るか小学校は青春時代に入りますかsummerjapanesefilmfestivalvol2fireworksshouldweseeitfromthesideorthebottomdoeselementaryschoolcountasyourcomingofage",
     "spotifyUrl": "https://open.spotify.com/episode/2BGbUFeT6ItMcNWLJJDwQd",
@@ -63,7 +81,7 @@
     "pubDate": "Fri, 07 Aug 2026 20:04:00 GMT"
   },
   {
-    "index": 7,
+    "index": 9,
     "title": "夏の邦画祭り　映画『男はつらいよ』　あの頃の日本はどこへ行ったのか　Summer Japanese Film Festival: Otoko wa Tsurai yo — Where Did That Japan Go?",
     "normalizedTitle": "夏の邦画祭り映画男はつらいよあの頃の日本はどこへ行ったのかsummerjapanesefilmfestivalotokowatsuraiyowheredidthatjapango",
     "spotifyUrl": "https://open.spotify.com/episode/0Z9rHX2vi6pbdT8fqTW68C",
@@ -72,7 +90,7 @@
     "pubDate": "Fri, 31 Jul 2026 20:39:00 GMT"
   },
   {
-    "index": 8,
+    "index": 10,
     "title": "【インターミッション】　 #ゴジラ-0.0 とか#口に関するアンケート とか#東野圭吾 とか",
     "normalizedTitle": "インターミッションゴジラ00とか口に関するアンケートとか東野圭吾とか",
     "spotifyUrl": "https://open.spotify.com/episode/1TQEl6wqJIkvp64Iyv1IAM",
@@ -81,7 +99,7 @@
     "pubDate": "Wed, 29 Jul 2026 20:36:36 GMT"
   },
   {
-    "index": 9,
+    "index": 11,
     "title": "少年時代企画第４弾　ディズニー映画『トイ・ストーリー』　おもちゃは子どもにとってのなんだろう  Childhood Era Series Vol.4: Disney's Toy Story — What Do Toys Really Mean to Children?",
     "normalizedTitle": "少年時代企画第4弾ディズニー映画トイストーリーおもちゃは子どもにとってのなんだろうchildhooderaseriesvol4disneystoystorywhatdotoysreallymeantochildren",
     "spotifyUrl": "https://open.spotify.com/episode/64h0EryD1xI7WHpq3Xg5LD",
@@ -90,7 +108,7 @@
     "pubDate": "Fri, 24 Jul 2026 20:00:00 GMT"
   },
   {
-    "index": 10,
+    "index": 12,
     "title": "【インターミッション】　 #みんなおしゃべり とか#手話 とか#モアナ とか",
     "normalizedTitle": "インターミッションみんなおしゃべりとか手話とかモアナとか",
     "spotifyUrl": "https://open.spotify.com/episode/5y1WMizmSCqpj6x0MwAxDc",
@@ -99,7 +117,7 @@
     "pubDate": "Tue, 21 Jul 2026 20:00:00 GMT"
   },
   {
-    "index": 11,
+    "index": 13,
     "title": "リスナーリクエスト　ホラー映画『ウィッチ』　信仰が生むのは救いか崩壊か　　Listener Request: The Witch — Does Faith Bring Salvation or Collapse?",
     "normalizedTitle": "リスナーリクエストホラー映画ウィッチ信仰が生むのは救いか崩壊かlistenerrequestthewitchdoesfaithbringsalvationorcollapse",
     "spotifyUrl": "https://open.spotify.com/episode/169EVTiKLy8YKQXjhFUlir",
@@ -108,7 +126,7 @@
     "pubDate": "Sat, 18 Jul 2026 03:27:35 GMT"
   },
   {
-    "index": 12,
+    "index": 14,
     "title": "少年時代企画第３弾　映画『ベイブ』『ベイブ都会へいく』偏見との戦いは続く Childhood Era Series Vol.3: Babe & Babe: Pig in the City — The Fight Against Prejudice Goes On",
     "normalizedTitle": "少年時代企画第3弾映画ベイブベイブ都会へいく偏見との戦いは続くchildhooderaseriesvol3babe&babepiginthecitythefightagainstprejudicegoeson",
     "spotifyUrl": "https://open.spotify.com/episode/3Ay0YSJonRvtXEDiwf0ZWj",
@@ -117,7 +135,7 @@
     "pubDate": "Fri, 10 Jul 2026 20:00:00 GMT"
   },
   {
-    "index": 13,
+    "index": 15,
     "title": "【インターミッション】　￼ #魔女の宅急便 とか#トイストーリー とか#氷の微笑 とか",
     "normalizedTitle": "インターミッション魔女の宅急便とかトイストーリーとか氷の微笑とか",
     "spotifyUrl": "https://open.spotify.com/episode/78gXcFQTWCbcizkfqma0hz",
@@ -126,7 +144,7 @@
     "pubDate": "Thu, 09 Jul 2026 20:29:07 GMT"
   },
   {
-    "index": 14,
+    "index": 16,
     "title": "少年時代企画第二弾　映画『ジャイアントピーチ』童話は誰のためのもの　　Childhood Era Series Vol.2: James and the Giant Peach — Who Are Fairy Tales Really For?",
     "normalizedTitle": "少年時代企画第二弾映画ジャイアントピーチ童話は誰のためのものchildhooderaseriesvol2jamesandthegiantpeachwhoarefairytalesreallyfor",
     "spotifyUrl": "https://open.spotify.com/episode/0a4Y1RNMvjtRtQLcV6XCkp",
@@ -135,7 +153,7 @@
     "pubDate": "Fri, 03 Jul 2026 21:00:00 GMT"
   },
   {
-    "index": 15,
+    "index": 17,
     "title": "【インターミッション】　 #最終絶叫計画　とか#SCREAM とか#JackBlack #GooseBumps とか",
     "normalizedTitle": "インターミッション最終絶叫計画とかscreamとかjackblackgoosebumpsとか",
     "spotifyUrl": "https://open.spotify.com/episode/2E14xh8YtKibd4Ja1kcSwG",
@@ -144,7 +162,7 @@
     "pubDate": "Tue, 30 Jun 2026 21:00:00 GMT"
   },
   {
-    "index": 16,
+    "index": 18,
     "title": "映画『国宝』伝統と狂気の間で",
     "normalizedTitle": "映画国宝伝統と狂気の間で",
     "spotifyUrl": "https://open.spotify.com/episode/3I4hwUnyBnyGTkZdHSyWaI",
@@ -153,7 +171,7 @@
     "pubDate": "Sat, 27 Jun 2026 22:41:01 GMT"
   },
   {
-    "index": 17,
+    "index": 19,
     "title": "映画『#michael』　夢の追体験　　 Michael — Reliving a Dream",
     "normalizedTitle": "映画michael夢の追体験michaelrelivingadream",
     "spotifyUrl": "https://open.spotify.com/episode/4110INpcKWPfxv3LORhr57",
@@ -162,7 +180,7 @@
     "pubDate": "Fri, 19 Jun 2026 20:00:00 GMT"
   },
   {
-    "index": 18,
+    "index": 20,
     "title": "リスナーリクエスト　映画『ワンスアポンアタイムインハリウッド』創作における暴力はどこまで許されるのか Listener Request: Once Upon a Time in Hollywood — How Far Can Violence Go in Storytelling?",
     "normalizedTitle": "リスナーリクエスト映画ワンスアポンアタイムインハリウッド創作における暴力はどこまで許されるのかlistenerrequestonceuponatimeinhollywoodhowfarcanviolencegoinstorytelling",
     "spotifyUrl": "https://open.spotify.com/episode/4dyxzOWS936ULVpdUBmWOo",
@@ -171,7 +189,7 @@
     "pubDate": "Fri, 12 Jun 2026 21:00:00 GMT"
   },
   {
-    "index": 19,
+    "index": 21,
     "title": "【インターミッション】　 #Michael とか#ポップコーン とか#マシュマロ とか",
     "normalizedTitle": "インターミッションmichaelとかポップコーンとかマシュマロとか",
     "spotifyUrl": "https://open.spotify.com/episode/079Av3CKASHP5YbL9jSO9y",
@@ -180,7 +198,7 @@
     "pubDate": "Tue, 09 Jun 2026 20:35:39 GMT"
   },
   {
-    "index": 20,
+    "index": 22,
     "title": "少年時代企画その１　映画『スパイキッズ』ファミリー向け実写映画が輝いていたあの頃　Childhood Era Series Vol.1: Spy Kids — Back When Live-Action Family Films Were Everything",
     "normalizedTitle": "少年時代企画その1映画スパイキッズファミリー向け実写映画が輝いていたあの頃childhooderaseriesvol1spykidsbackwhenliveactionfamilyfilmswereeverything",
     "spotifyUrl": "https://open.spotify.com/episode/2V2kd3FXUpqfuY0pmo4RqM",
@@ -189,7 +207,7 @@
     "pubDate": "Fri, 05 Jun 2026 21:00:00 GMT"
   },
   {
-    "index": 21,
+    "index": 23,
     "title": "【インターミッション】　 #マンダロリアン とか#ストップモーション とか#ヒーマン とか",
     "normalizedTitle": "インターミッションマンダロリアンとかストップモーションとかヒーマンとか",
     "spotifyUrl": "https://open.spotify.com/episode/64EcZU8GsoyVGXnKwVnllD",
@@ -198,7 +216,7 @@
     "pubDate": "Tue, 02 Jun 2026 21:00:00 GMT"
   },
   {
-    "index": 22,
+    "index": 24,
     "title": "映画『チョコレートドーナツ』ほろ苦く決して埋まらない幸せの形　　Any Day Now — The Bittersweet Shape of a Happiness That Can Never Be Made Whole",
     "normalizedTitle": "映画チョコレートドーナツほろ苦く決して埋まらない幸せの形anydaynowthebittersweetshapeofahappinessthatcanneverbemadewhole",
     "spotifyUrl": "https://open.spotify.com/episode/5bU5693lTnHIU12XuB8tPT",
@@ -207,7 +225,7 @@
     "pubDate": "Fri, 29 May 2026 21:00:00 GMT"
   },
   {
-    "index": 23,
+    "index": 25,
     "title": "【インターミッション】　#マイケル・ジャクソンとか　#マイケル・ジャクソンとか　#マイケル・ジャクソンとか　　 [INTERMISSION] #MichaelJackson and more. #MichaelJackson and more. #MichaelJackson and more.",
     "normalizedTitle": "インターミッションマイケルジャクソンとかマイケルジャクソンとかマイケルジャクソンとかintermissionmichaeljacksonandmoremichaeljacksonandmoremichaeljacksonandmore",
     "spotifyUrl": "https://open.spotify.com/episode/0yi2JqIT3j2gzdZnxbfOsn",
@@ -216,7 +234,7 @@
     "pubDate": "Tue, 26 May 2026 20:39:00 GMT"
   },
   {
-    "index": 24,
+    "index": 26,
     "title": "リスナーリクエスト　映画『君の名前で僕を呼んで』泡沫に消えた恋は人生を先へ進めるのか　 Listener Request: Call Me By Your Name — Can a Love That Fades Like a Dream Still Move Your Life Forward?",
     "normalizedTitle": "リスナーリクエスト映画君の名前で僕を呼んで泡沫に消えた恋は人生を先へ進めるのかlistenerrequestcallmebyyournamecanalovethatfadeslikeadreamstillmoveyourlifeforward",
     "spotifyUrl": "https://open.spotify.com/episode/3BbdEeobjtSpVC1s26bC4D",
@@ -225,7 +243,7 @@
     "pubDate": "Fri, 22 May 2026 20:56:00 GMT"
   },
   {
-    "index": 25,
+    "index": 27,
     "title": "【インターミッション】　 #ヒュー・ジャックマン とか　#アメリカンパイ とか",
     "normalizedTitle": "インターミッションヒュージャックマンとかアメリカンパイとか",
     "spotifyUrl": "https://open.spotify.com/episode/5as1xUFo0t1u827bQ8hAlv",
@@ -234,7 +252,7 @@
     "pubDate": "Tue, 19 May 2026 20:34:16 GMT"
   },
   {
-    "index": 26,
+    "index": 28,
     "title": "シルクロード企画大団円　映画『ハムナプトラ』古代エジプトの呪いに惹かれる僕らの心理とは？　Silk Road Series Grand Finale: The Mummy — Why Are We So Obsessed with Ancient Egypt's Curse?",
     "normalizedTitle": "シルクロード企画大団円映画ハムナプトラ古代エジプトの呪いに惹かれる僕らの心理とはsilkroadseriesgrandfinalethemummywhyarewesoobsessedwithancientegyptscurse",
     "spotifyUrl": "https://open.spotify.com/episode/3m8T6EtusYWJ8RqIhkVLsa",
@@ -243,7 +261,7 @@
     "pubDate": "Fri, 08 May 2026 23:13:42 GMT"
   },
   {
-    "index": 27,
+    "index": 29,
     "title": "【インターミッション】　￼ #スクリーム とか　￼#シドニープレスコット とか　#任天堂",
     "normalizedTitle": "インターミッションスクリームとかシドニープレスコットとか任天堂",
     "spotifyUrl": "https://open.spotify.com/episode/4MknklpQ0PbdXogisFlFGD",
@@ -252,7 +270,7 @@
     "pubDate": "Tue, 05 May 2026 20:48:00 GMT"
   },
   {
-    "index": 28,
+    "index": 30,
     "title": "リスナーリクエスト　映画『ホーム・アローン』『ホーム・アローン２』クリスマス映画の決定版ってことでいいかな？ Listener Request: Is Home Alone & Home Alone 2 Really the Ultimate Christmas Movie?",
     "normalizedTitle": "リスナーリクエスト映画ホームアローンホームアローン2クリスマス映画の決定版ってことでいいかなlistenerrequestishomealone&homealone2reallytheultimatechristmasmovie",
     "spotifyUrl": "https://open.spotify.com/episode/4z2DK1Ny6Io3y8RLY6AOBO",
@@ -261,7 +279,7 @@
     "pubDate": "Fri, 01 May 2026 20:47:51 GMT"
   },
   {
-    "index": 29,
+    "index": 31,
     "title": "シルクロード企画第４段　映画『バグダットの盗賊』ディズニー映画『アラジン』時代を越えた名作はどう変化したのか　Silk Road Series Vol.4: Same Wish, Different World",
     "normalizedTitle": "シルクロード企画第4段映画バグダットの盗賊ディズニー映画アラジン時代を越えた名作はどう変化したのかsilkroadseriesvol4samewishdifferentworld",
     "spotifyUrl": "https://open.spotify.com/episode/6FtNdu9maa20nCexm2UrbM",
@@ -270,7 +288,7 @@
     "pubDate": "Fri, 24 Apr 2026 20:26:19 GMT"
   },
   {
-    "index": 30,
+    "index": 32,
     "title": "【インターミッション】　￼ #オランウータン とか　￼#フランケンシュタイン とか",
     "normalizedTitle": "インターミッションオランウータンとかフランケンシュタインとか",
     "spotifyUrl": "https://open.spotify.com/episode/6pxrYvGBbWseqlWf8oa4C9",
@@ -279,7 +297,7 @@
     "pubDate": "Tue, 21 Apr 2026 21:00:00 GMT"
   },
   {
-    "index": 31,
+    "index": 33,
     "title": "シルクロード企画第３段　映画『HANUMAN』ヒーロー映画はどこにいくのか　Silk Road Series: Part 3 — #HANUMAN Where Gods Wear Capes: The Future of the Hero Film",
     "normalizedTitle": "シルクロード企画第3段映画hanumanヒーロー映画はどこにいくのかsilkroadseriespart3hanumanwheregodswearcapesthefutureoftheherofilm",
     "spotifyUrl": "https://open.spotify.com/episode/3scTmbUAPFpIXnoz84NWj3",
@@ -288,7 +306,7 @@
     "pubDate": "Fri, 17 Apr 2026 21:30:14 GMT"
   },
   {
-    "index": 32,
+    "index": 34,
     "title": "【インターミッション】　 #ドラえもん とか　 #鬼太郎　とか",
     "normalizedTitle": "インターミッションドラえもんとか鬼太郎とか",
     "spotifyUrl": "https://open.spotify.com/episode/2kyGoL2A4IZLOMwT8hTM1m",
@@ -297,7 +315,7 @@
     "pubDate": "Tue, 14 Apr 2026 21:00:00 GMT"
   },
   {
-    "index": 33,
+    "index": 35,
     "title": "#シルクロード企画第２弾　映画『#モンキーマジック孫悟空誕生』『#超西遊記』 What Does Sun Wukong Mean to You? — The Monkey King and the Mirrors We Hold Up",
     "normalizedTitle": "シルクロード企画第2弾映画モンキーマジック孫悟空誕生超西遊記whatdoessunwukongmeantoyouthemonkeykingandthemirrorsweholdup",
     "spotifyUrl": "https://open.spotify.com/episode/2dsrqCJceKon2Popc4Mnyp",
@@ -306,7 +324,7 @@
     "pubDate": "Sat, 11 Apr 2026 21:50:20 GMT"
   },
   {
-    "index": 34,
+    "index": 36,
     "title": "【インターミッション】　#ハムナプトラ とか　#神話 とか　#ジャック・ブラック とか",
     "normalizedTitle": "インターミッションハムナプトラとか神話とかジャックブラックとか",
     "spotifyUrl": "https://open.spotify.com/episode/37YQRX2ynTMGeB9dQI9W56",
@@ -315,7 +333,7 @@
     "pubDate": "Sat, 04 Apr 2026 23:34:20 GMT"
   },
   {
-    "index": 35,
+    "index": 37,
     "title": "「#和製ファンタジー映画　『#陰陽師』 シリーズ　呪いは存在するか否か」　　#JapaneseFantasy *#Onmyoji* Series — Spells, Spirits, and the Question of Curses",
     "normalizedTitle": "和製ファンタジー映画陰陽師シリーズ呪いは存在するか否かjapanesefantasy*onmyoji*seriesspellsspiritsandthequestionofcurses",
     "spotifyUrl": "https://open.spotify.com/episode/2suEFEiVTBFD4sogXTcgwH",
@@ -324,7 +342,7 @@
     "pubDate": "Fri, 03 Apr 2026 21:46:13 GMT"
   },
   {
-    "index": 36,
+    "index": 38,
     "title": "【インターミッション】　#陰陽師 とか#西遊記とか",
     "normalizedTitle": "インターミッション陰陽師とか西遊記とか",
     "spotifyUrl": "https://open.spotify.com/episode/205jsU5HyC6TIJFQfd2hAb",
@@ -333,7 +351,7 @@
     "pubDate": "Tue, 31 Mar 2026 20:38:06 GMT"
   },
   {
-    "index": 37,
+    "index": 39,
     "title": "#ホラー映画 『#聖なる鹿殺し』 罪を許すための最低条件",
     "normalizedTitle": "ホラー映画聖なる鹿殺し罪を許すための最低条件",
     "spotifyUrl": "https://open.spotify.com/episode/648713hXiVC3tyrTWIihYr",
@@ -342,7 +360,7 @@
     "pubDate": "Fri, 27 Mar 2026 20:31:17 GMT"
   },
   {
-    "index": 38,
+    "index": 40,
     "title": "【インターミッション】　#スパイダーマン 事情とか",
     "normalizedTitle": "インターミッションスパイダーマン事情とか",
     "spotifyUrl": "https://open.spotify.com/episode/4UCL3BS0o0Bhy7u4OJ3dCV",
@@ -351,7 +369,7 @@
     "pubDate": "Tue, 24 Mar 2026 20:40:00 GMT"
   },
   {
-    "index": 39,
+    "index": 41,
     "title": "#クライムコメディ 映画『#レザボア・ドッグス』 すべてを手に入れるのは何者か",
     "normalizedTitle": "クライムコメディ映画レザボアドッグスすべてを手に入れるのは何者か",
     "spotifyUrl": "https://open.spotify.com/episode/2lYfIbbKeVK8EuCYFEuYWX",
@@ -360,7 +378,7 @@
     "pubDate": "Sat, 21 Mar 2026 15:34:45 GMT"
   },
   {
-    "index": 40,
+    "index": 42,
     "title": "#ヒューマンドラマ 映画 　『#きっとうまくいく』人生は学びの連続だ。",
     "normalizedTitle": "ヒューマンドラマ映画きっとうまくいく人生は学びの連続だ。",
     "spotifyUrl": "https://open.spotify.com/episode/1twnfcINJ8xaOHwB4Aaxed",
@@ -369,7 +387,7 @@
     "pubDate": "Sat, 14 Mar 2026 02:34:41 GMT"
   },
   {
-    "index": 41,
+    "index": 43,
     "title": "【インターミッション】　#青春映画　とか#ハムナプトラ　とか",
     "normalizedTitle": "インターミッション青春映画とかハムナプトラとか",
     "spotifyUrl": "https://open.spotify.com/episode/0UyibrNdhLLPxFMnQ9GSsQ",
@@ -378,7 +396,7 @@
     "pubDate": "Tue, 10 Mar 2026 21:00:00 GMT"
   },
   {
-    "index": 42,
+    "index": 44,
     "title": "#ノンフィクション映画？ 　『#でっちあげ』 真実はいつも一つ！・・・なんだけども。",
     "normalizedTitle": "ノンフィクション映画でっちあげ真実はいつも一つなんだけども。",
     "spotifyUrl": "https://open.spotify.com/episode/3SK441gYxk9zIeZXyUkmof",
@@ -387,7 +405,7 @@
     "pubDate": "Fri, 06 Mar 2026 22:04:24 GMT"
   },
   {
-    "index": 43,
+    "index": 45,
     "title": "政治系#アクション映画　『#VforVendetta』　仮面の下はどんな顔？",
     "normalizedTitle": "政治系アクション映画vforvendetta仮面の下はどんな顔",
     "spotifyUrl": "https://open.spotify.com/episode/2g39INDfmaIx1WJr9i85p5",
@@ -396,7 +414,7 @@
     "pubDate": "Fri, 27 Feb 2026 21:37:35 GMT"
   },
   {
-    "index": 44,
+    "index": 46,
     "title": "【インターミッション】　#最新映画情報　とか#名探偵コナン　とか",
     "normalizedTitle": "インターミッション最新映画情報とか名探偵コナンとか",
     "spotifyUrl": "https://open.spotify.com/episode/03lLFJf2t99qUZmLyiCJob",
@@ -405,7 +423,7 @@
     "pubDate": "Thu, 26 Feb 2026 19:55:07 GMT"
   },
   {
-    "index": 45,
+    "index": 47,
     "title": "庵野秀明映画『#シン仮面ライダー』幸福追求とエゴが奏でる不協和音",
     "normalizedTitle": "庵野秀明映画シン仮面ライダー幸福追求とエゴが奏でる不協和音",
     "spotifyUrl": "https://open.spotify.com/episode/6F0d63Ch3mqw43xOWiHVfZ",
@@ -414,7 +432,7 @@
     "pubDate": "Fri, 20 Feb 2026 21:31:15 GMT"
   },
   {
-    "index": 46,
+    "index": 48,
     "title": "【インターミッション】　#インド映画　とか#きっとうまくいく　とか",
     "normalizedTitle": "インターミッションインド映画とかきっとうまくいくとか",
     "spotifyUrl": "https://open.spotify.com/episode/5xp0q26VPDAkL8MfxL78YC",
@@ -423,7 +441,7 @@
     "pubDate": "Wed, 18 Feb 2026 20:35:23 GMT"
   },
   {
-    "index": 47,
+    "index": 49,
     "title": "リスナーリクエスト「映画『#帰ってきたヒトラー』歴史はコメディに落とし込めるのか」",
     "normalizedTitle": "リスナーリクエスト映画帰ってきたヒトラー歴史はコメディに落とし込めるのか",
     "spotifyUrl": "https://open.spotify.com/episode/4svMwM9Mm4Kl2ziD2jcDG3",
@@ -432,7 +450,7 @@
     "pubDate": "Fri, 13 Feb 2026 16:08:37 GMT"
   },
   {
-    "index": 48,
+    "index": 50,
     "title": "【インターミッション】#パンダ とか#コンゴ とか#UMA とか…",
     "normalizedTitle": "インターミッションパンダとかコンゴとかumaとか",
     "spotifyUrl": "https://open.spotify.com/episode/5wFEtP0EWNJ6P3DRFL0ooR",
@@ -441,7 +459,7 @@
     "pubDate": "Tue, 10 Feb 2026 21:00:00 GMT"
   },
   {
-    "index": 49,
+    "index": 51,
     "title": "映画『#スナッチ』おしゃれ演出マシマシ映画に觀る階層構造",
     "normalizedTitle": "映画スナッチおしゃれ演出マシマシ映画に觀る階層構造",
     "spotifyUrl": "https://open.spotify.com/episode/61FWife7rjt4u4WQs9ZBSF",
@@ -450,7 +468,7 @@
     "pubDate": "Sat, 07 Feb 2026 06:27:04 GMT"
   },
   {
-    "index": 50,
+    "index": 52,
     "title": "【インターミッション】#犬 とか#ハプスブルク家 とか…",
     "normalizedTitle": "インターミッション犬とかハプスブルク家とか",
     "spotifyUrl": "https://open.spotify.com/episode/5mVDg8TyBc51ucP6JMEsGR",
@@ -459,7 +477,7 @@
     "pubDate": "Wed, 04 Feb 2026 12:43:45 GMT"
   },
   {
-    "index": 51,
+    "index": 53,
     "title": "映画『＃MAMA』　デル・トロ節で描かれる母性と恐怖の不協和音",
     "normalizedTitle": "映画mamaデルトロ節で描かれる母性と恐怖の不協和音",
     "spotifyUrl": "https://open.spotify.com/episode/3c9bJqwFLeMzKMvcFpLb74",
@@ -468,7 +486,7 @@
     "pubDate": "Sat, 31 Jan 2026 20:17:08 GMT"
   },
   {
-    "index": 52,
+    "index": 54,
     "title": "【インターミッション】#ヒーマン とか#マスターズオブユニバース とか…",
     "normalizedTitle": "インターミッションヒーマンとかマスターズオブユニバースとか",
     "spotifyUrl": "https://open.spotify.com/episode/74hdWBTfJoQQlQruCRlHtj",
@@ -477,7 +495,7 @@
     "pubDate": "Wed, 28 Jan 2026 13:32:31 GMT"
   },
   {
-    "index": 53,
+    "index": 55,
     "title": "映画『#シンウルトラマン』　宇宙と戦争と平和維持の話",
     "normalizedTitle": "映画シンウルトラマン宇宙と戦争と平和維持の話",
     "spotifyUrl": "https://open.spotify.com/episode/2SBvZIjCqwfZVyW9rADG5S",
@@ -486,7 +504,7 @@
     "pubDate": "Fri, 23 Jan 2026 23:51:43 GMT"
   },
   {
-    "index": 54,
+    "index": 56,
     "title": "リスナーリクエスト　風刺ホラー映画『#NOCEBO』　ファッション業界が抱える罪悪感のお話",
     "normalizedTitle": "リスナーリクエスト風刺ホラー映画noceboファッション業界が抱える罪悪感のお話",
     "spotifyUrl": "https://open.spotify.com/episode/4mUKnjJv9459rJudcLTKkN",
@@ -495,7 +513,7 @@
     "pubDate": "Fri, 16 Jan 2026 20:47:07 GMT"
   },
   {
-    "index": 55,
+    "index": 57,
     "title": "【番外編】まこジョナ散歩【後編】",
     "normalizedTitle": "番外編まこジョナ散歩後編",
     "spotifyUrl": "https://open.spotify.com/episode/6P5vtT5eHTWh3y9RmfgfXC",
@@ -504,7 +522,7 @@
     "pubDate": "Wed, 14 Jan 2026 03:12:00 GMT"
   },
   {
-    "index": 56,
+    "index": 58,
     "title": "【番外編】まこジョナ散歩【前編】",
     "normalizedTitle": "番外編まこジョナ散歩前編",
     "spotifyUrl": "https://open.spotify.com/episode/2J3Miamep8ilKeKljCnCP5",
@@ -513,7 +531,7 @@
     "pubDate": "Sun, 11 Jan 2026 03:11:32 GMT"
   },
   {
-    "index": 57,
+    "index": 59,
     "title": "新年のご挨拶",
     "normalizedTitle": "新年のご挨拶",
     "spotifyUrl": "https://open.spotify.com/episode/4xicgu1uWJ9paQNJYOChF6",
@@ -522,7 +540,7 @@
     "pubDate": "Sat, 10 Jan 2026 01:33:48 GMT"
   },
   {
-    "index": 58,
+    "index": 60,
     "title": "【インターミッション】#特撮 とか#仮面ライダー とか#戦隊ヒーロー とか… [Intermission] #Tokusatsu and #KamenRider and #SuperSentai and…",
     "normalizedTitle": "インターミッション特撮とか仮面ライダーとか戦隊ヒーローとかintermissiontokusatsuandkamenriderandsupersentaiand",
     "spotifyUrl": "https://open.spotify.com/episode/6lXnJwY5sV8VYs2OLBqH3t",
@@ -531,7 +549,7 @@
     "pubDate": "Tue, 30 Dec 2025 21:00:00 GMT"
   },
   {
-    "index": 59,
+    "index": 61,
     "title": "#クリスマス 映画の定番？『#ジングルオールザウェイ』　失われた父性と新たな家族の形 A Christmas Movie Staple? Jingle All the Way: Lost Fatherhood and the Emergence of a New Family Model",
     "normalizedTitle": "クリスマス映画の定番ジングルオールザウェイ失われた父性と新たな家族の形achristmasmoviestaplejingleallthewaylostfatherhoodandtheemergenceofanewfamilymodel",
     "spotifyUrl": "https://open.spotify.com/episode/77eBAIcOuMG0XpaYY2Q7HC",
@@ -540,7 +558,7 @@
     "pubDate": "Fri, 26 Dec 2025 21:12:55 GMT"
   },
   {
-    "index": 60,
+    "index": 62,
     "title": "#細田守 監督作品『#未来のミライ』#アニメ だからこその描写とはなんなのか　#MamoruHosoda’s film “#Mirai” — what can only #anime truly depict?",
     "normalizedTitle": "細田守監督作品未来のミライアニメだからこその描写とはなんなのかmamoruhosodasfilmmiraiwhatcanonlyanimetrulydepict",
     "spotifyUrl": "https://open.spotify.com/episode/1JKii5rXbQuCiSZGKwQx2g",
@@ -549,7 +567,7 @@
     "pubDate": "Sun, 21 Dec 2025 20:46:22 GMT"
   },
   {
-    "index": 61,
+    "index": 63,
     "title": "【インターミッション】#ジャイアントピーチ とか#アバター とか#3D映画 とか #MCU とか…　【Intermission】A Ramble Through #JamesAndTheGiantPeach, #Avatar, #3DMovies, #MCU…",
     "normalizedTitle": "インターミッションジャイアントピーチとかアバターとか3d映画とかmcuとかintermissionaramblethroughjamesandthegiantpeachavatar3dmoviesmcu",
     "spotifyUrl": "https://open.spotify.com/episode/6XI86S1PbjKvSJon08FYtE",
@@ -558,7 +576,7 @@
     "pubDate": "Tue, 16 Dec 2025 21:00:00 GMT"
   },
   {
-    "index": 62,
+    "index": 64,
     "title": "リスナーリクエスト #戦争映画 の金字塔 『#地獄の黙示録』戦争の罪は誰が被るのか　Listener Request – The Pinnacle of #WarCinema: “#Apocalypse Now” Who Pays for the Sins of War?",
     "normalizedTitle": "リスナーリクエスト戦争映画の金字塔地獄の黙示録戦争の罪は誰が被るのかlistenerrequestthepinnacleofwarcinemaapocalypsenowwhopaysforthesinsofwar",
     "spotifyUrl": "https://open.spotify.com/episode/70MEMVFoLSC4RO3cYAJs45",
@@ -567,7 +585,7 @@
     "pubDate": "Fri, 12 Dec 2025 20:53:40 GMT"
   },
   {
-    "index": 63,
+    "index": 65,
     "title": "【インターミッション】#ズートピア２ とか#ワーナーブラザーズ とか#HBO とか#Netflix とか…　【Intermission】#Zootopia2, #WarnerBros, #HBO, #Netflix — All the Stuff We Ended Up Talking About",
     "normalizedTitle": "インターミッションズートピア2とかワーナーブラザーズとかhboとかnetflixとかintermissionzootopia2warnerbroshbonetflixallthestuffweendeduptalkingabout",
     "spotifyUrl": "https://open.spotify.com/episode/7E8YmMbOlbZRgrU4oiaaB9",
@@ -576,7 +594,7 @@
     "pubDate": "Tue, 09 Dec 2025 21:00:00 GMT"
   },
   {
-    "index": 64,
+    "index": 66,
     "title": "リスナーリクエスト　ナンセンスコメディ映画？ 『#スイスアーミーマン』人間関係を結ぶ恐怖の根源とは　Listener Pick! “#SwissArmyMan” – The Deep, Strange Fear Behind Human Connection",
     "normalizedTitle": "リスナーリクエストナンセンスコメディ映画スイスアーミーマン人間関係を結ぶ恐怖の根源とはlistenerpickswissarmymanthedeepstrangefearbehindhumanconnection",
     "spotifyUrl": "https://open.spotify.com/episode/4fJSLazTME9fSXmrKD5eiv",
@@ -585,7 +603,7 @@
     "pubDate": "Sat, 06 Dec 2025 21:40:50 GMT"
   },
   {
-    "index": 65,
+    "index": 67,
     "title": "#Netflix #ホラー #ヒューマンドラマ 映画『#フランケンシュタイン』父と子の正しいコミュニケーションのあり方 #Netflix #Horror #HumanDrama “#Frankenstein” – Fatherhood, Creation, and the Communication We Fail to Teach",
     "normalizedTitle": "netflixホラーヒューマンドラマ映画フランケンシュタイン父と子の正しいコミュニケーションのあり方netflixhorrorhumandramafrankensteinfatherhoodcreationandthecommunicationwefailtoteach",
     "spotifyUrl": "https://open.spotify.com/episode/5HIJyo7hKtGMc9nZ2j4yhs",
@@ -594,7 +612,7 @@
     "pubDate": "Sat, 29 Nov 2025 21:18:06 GMT"
   },
   {
-    "index": 66,
+    "index": 68,
     "title": "【インターミッション】#Wicked とか#クリステンベル とか#ガメラ とか...　【Intermission】#Wicked, #KristenBell, #Gamera...Yeah, We're All Over the Place Today",
     "normalizedTitle": "インターミッションwickedとかクリステンベルとかガメラとかintermissionwickedkristenbellgamerayeahwereallovertheplacetoday",
     "spotifyUrl": "https://open.spotify.com/episode/5tDxLMASVmkl3dvVFaR9D5",
@@ -603,7 +621,7 @@
     "pubDate": "Wed, 26 Nov 2025 20:43:55 GMT"
   },
   {
-    "index": 67,
+    "index": 69,
     "title": "リスナーリクエスト　コメディ映画『#グレムリン』『#グレムリン２』子供を導くのは誰の仕事？　Listener Pick! “Gremlins” & “Gremlins 2” — So Who’s Actually Raising These Kids?",
     "normalizedTitle": "リスナーリクエストコメディ映画グレムリングレムリン2子供を導くのは誰の仕事listenerpickgremlins&gremlins2sowhosactuallyraisingthesekids",
     "spotifyUrl": "https://open.spotify.com/episode/3JAaKf1rJtzd5V1NkSWTCB",
@@ -612,7 +630,7 @@
     "pubDate": "Sun, 23 Nov 2025 21:51:38 GMT"
   },
   {
-    "index": 68,
+    "index": 70,
     "title": "【Replay】#NETFLIX #ドキュメンタリー『#ポップスが最高に輝いた夜』ポップスは本当に死んだのか　【Replay】#NETFLIX #ドキュメンタリー 『#TheGreatestNightInPop』 Has Pop Music Already Seen Its Brightest Moment?",
     "normalizedTitle": "replaynetflixドキュメンタリーポップスが最高に輝いた夜ポップスは本当に死んだのかreplaynetflixドキュメンタリーthegreatestnightinpophaspopmusicalreadyseenitsbrightestmoment",
     "spotifyUrl": "https://open.spotify.com/episode/0Dp2aE6Oz97iojHPDSsxNT",
@@ -621,7 +639,7 @@
     "pubDate": "Tue, 18 Nov 2025 21:01:00 GMT"
   },
   {
-    "index": 69,
+    "index": 71,
     "title": "【Replay】#Netflix ドキュメンタリー『#アメリカンマーダー』映像ばかり信用するのも怖いもんよね　【Replay】#Netflix #AmericanMurder — Trusting Every Video? Yeah… Maybe Don’t.",
     "normalizedTitle": "replaynetflixドキュメンタリーアメリカンマーダー映像ばかり信用するのも怖いもんよねreplaynetflixamericanmurdertrustingeveryvideoyeahmaybedont",
     "spotifyUrl": "https://open.spotify.com/episode/3L35F2C4AXqKcZjPnhcUf6",
@@ -630,7 +648,7 @@
     "pubDate": "Sun, 16 Nov 2025 19:59:37 GMT"
   },
   {
-    "index": 70,
+    "index": 72,
     "title": "新企画【インターミッション】#フランケンシュタイン とか #グレムリン３ とか……　[Intermission] #Frankenstein , #Gremlins3 ... and the Chaos Between",
     "normalizedTitle": "新企画インターミッションフランケンシュタインとかグレムリン3とかintermissionfrankensteingremlins3andthechaosbetween",
     "spotifyUrl": "https://open.spotify.com/episode/03bX5DSnrWDUGOFlENFv6A",
@@ -639,7 +657,7 @@
     "pubDate": "Tue, 11 Nov 2025 22:39:58 GMT"
   },
   {
-    "index": 71,
+    "index": 73,
     "title": "リスナーリクエスト　コメディ映画『#ハングオーバー』マンダムワールドの終焉 “#TheHangover” – When the #Mandom Dream Died",
     "normalizedTitle": "リスナーリクエストコメディ映画ハングオーバーマンダムワールドの終焉thehangoverwhenthemandomdreamdied",
     "spotifyUrl": "https://open.spotify.com/episode/4qiOluDWRndZ1euuUFX02r",
@@ -648,7 +666,7 @@
     "pubDate": "Fri, 07 Nov 2025 22:28:13 GMT"
   },
   {
-    "index": 72,
+    "index": 74,
     "title": "ハロウィン特別企画『アダムスファミリー』『アダムスファミリー２』その常識は誰のもの？ Halloween Special – “The Addams Family” & “Addams Family Values” Whose “Normal” Are We Talking About, Anyway?",
     "normalizedTitle": "ハロウィン特別企画アダムスファミリーアダムスファミリー2その常識は誰のものhalloweenspecialtheaddamsfamily&addamsfamilyvalueswhosenormalarewetalkingaboutanyway",
     "spotifyUrl": "https://open.spotify.com/episode/5bEBblxEFEHsOOOMHxK2S2",
@@ -657,7 +675,7 @@
     "pubDate": "Sat, 01 Nov 2025 21:27:20 GMT"
   },
   {
-    "index": 73,
+    "index": 75,
     "title": "【Replay】#ホラーコメディ 映画『#ショーンオブザデッド』現代人はすでにゾンビであるって知ってた？　【Replay】#HorrorComedy Film 『#ShaunoftheDead』 — Did You Know Modern Life Already Turned Us Into Zombies?",
     "normalizedTitle": "replayホラーコメディ映画ショーンオブザデッド現代人はすでにゾンビであるって知ってたreplayhorrorcomedyfilmshaunofthedeaddidyouknowmodernlifealreadyturnedusintozombies",
     "spotifyUrl": "https://open.spotify.com/episode/0Ueh5FHp1hBnZHv8M1sHqO",
@@ -666,7 +684,7 @@
     "pubDate": "Tue, 28 Oct 2025 21:00:00 GMT"
   },
   {
-    "index": 74,
+    "index": 76,
     "title": "リスナーリクエスト 『#２００１年宇宙の旅』アートの解釈はどこまで自由でいられるか　Listener Request – 2001: A Space Odyssey: How Free Can Art Interpretation Be?",
     "normalizedTitle": "リスナーリクエスト2001年宇宙の旅アートの解釈はどこまで自由でいられるかlistenerrequest2001aspaceodysseyhowfreecanartinterpretationbe",
     "spotifyUrl": "https://open.spotify.com/episode/119Ff9mxb8aveHqHuevXyW",
@@ -675,7 +693,7 @@
     "pubDate": "Fri, 24 Oct 2025 20:36:10 GMT"
   },
   {
-    "index": 75,
+    "index": 77,
     "title": "【Replay】#ジャンルシフト 映画『#サプライズ』ジャンルシフトは“あり”なのか？ [Replay] #GenreShift Film #You’re Next — Is Genre-Shifting Fair Play or Foul?",
     "normalizedTitle": "replayジャンルシフト映画サプライズジャンルシフトはありなのかreplaygenreshiftfilmyourenextisgenreshiftingfairplayorfoul",
     "spotifyUrl": "https://open.spotify.com/episode/0sc29felNRyN5eSsCLZeUB",
@@ -684,7 +702,7 @@
     "pubDate": "Tue, 21 Oct 2025 21:00:00 GMT"
   },
   {
-    "index": 76,
+    "index": 78,
     "title": "リスナーリクエスト #エイリアン シリーズ その４　#SFホラー 映画『#エイリアン：ロムルス』ノスタルジィリサイクルはイースターエッグの夢を見るか？　Listener Request! Alien Series Part 4 – Alien: Romulus: Do Nostalgia Reboots Dream of Easter Eggs?",
     "normalizedTitle": "リスナーリクエストエイリアンシリーズその4sfホラー映画エイリアンロムルスノスタルジィリサイクルはイースターエッグの夢を見るかlistenerrequestalienseriespart4alienromulusdonostalgiarebootsdreamofeastereggs",
     "spotifyUrl": "https://open.spotify.com/episode/0jpuEUOhZLra7J9RZiwOF1",
@@ -693,7 +711,7 @@
     "pubDate": "Fri, 17 Oct 2025 21:54:26 GMT"
   },
   {
-    "index": 77,
+    "index": 79,
     "title": "【Replay】#ラブロマンス 『#ゴースト』令和の日本人は反面教師にせよ。　Replay】#RomanceFilm “#Ghost” — A Cautionary Tale for Reiwa-Era Japan",
     "normalizedTitle": "replayラブロマンスゴースト令和の日本人は反面教師にせよ。replayromancefilmghostacautionarytaleforreiwaerajapan",
     "spotifyUrl": "https://open.spotify.com/episode/73xpBA2vEInL6LcN9ea9yM",
@@ -702,7 +720,7 @@
     "pubDate": "Tue, 14 Oct 2025 21:00:00 GMT"
   },
   {
-    "index": 78,
+    "index": 80,
     "title": "リスナーリクエスト #エイリアン シリーズ その３『#プロメテウス』『#エイリアン：コヴェナント』人類はどこから来てどこへ向かうのか？ #Alien Series Part 3 “#Prometheus” & “#Covenant” — Where Do We Come From?",
     "normalizedTitle": "リスナーリクエストエイリアンシリーズその3プロメテウスエイリアンコヴェナント人類はどこから来てどこへ向かうのかalienseriespart3prometheus&covenantwheredowecomefrom",
     "spotifyUrl": "https://open.spotify.com/episode/4HZCkdEzXkIm1PM2FaCPcv",
@@ -711,7 +729,7 @@
     "pubDate": "Fri, 10 Oct 2025 21:46:24 GMT"
   },
   {
-    "index": 79,
+    "index": 81,
     "title": "【Replay】#コメディ映画 『#オースティンパワーズ』令和のおじさんはどう生きるべきか？　【Replay】#ComedyFilm “#AustinPowers” — How Should Middle-Aged Men Live in the Reiwa Era?",
     "normalizedTitle": "replayコメディ映画オースティンパワーズ令和のおじさんはどう生きるべきかreplaycomedyfilmaustinpowershowshouldmiddleagedmenliveinthereiwaera",
     "spotifyUrl": "https://open.spotify.com/episode/4gJ7dTvLJavUoluhiDssVV",
@@ -720,7 +738,7 @@
     "pubDate": "Tue, 07 Oct 2025 21:00:00 GMT"
   },
   {
-    "index": 80,
+    "index": 82,
     "title": "リスナーリクエスト #エイリアン シリーズ その2『#エイリアン3』『#エイリアン４』エイリアンが浮き彫りにした人が生きる意味とは？　Listener Request! Alien Series Part 2 – #Alien3 & #AlienResurrection : What Do These Films Reveal About the Meaning of Human Life?",
     "normalizedTitle": "リスナーリクエストエイリアンシリーズその2エイリアン3エイリアン4エイリアンが浮き彫りにした人が生きる意味とはlistenerrequestalienseriespart2alien3&alienresurrectionwhatdothesefilmsrevealaboutthemeaningofhumanlife",
     "spotifyUrl": "https://open.spotify.com/episode/43pLPZGw1dORIm4xp8eEDB",
@@ -729,7 +747,7 @@
     "pubDate": "Fri, 03 Oct 2025 21:00:00 GMT"
   },
   {
-    "index": 81,
+    "index": 83,
     "title": "【Replay】#コメディ映画 『#ズーランダー』事実上のガキの使い\"笑ってはいけない\"説 [Replay] Zoolander: The Accidental “No Laughing” Challenge of Hollywood Comedy",
     "normalizedTitle": "replayコメディ映画ズーランダー事実上のガキの使い笑ってはいけない説replayzoolandertheaccidentalnolaughingchallengeofhollywoodcomedy",
     "spotifyUrl": "https://open.spotify.com/episode/55cF1jdPexlIojLOnIEyRW",
@@ -738,7 +756,7 @@
     "pubDate": "Tue, 30 Sep 2025 20:44:24 GMT"
   },
   {
-    "index": 82,
+    "index": 84,
     "title": "リスナーリクエスト #エイリアン シリーズ その１『#エイリアン』『#エイリアン２』闇に潜むエイリアンの正体はいかに？　Listener Pick! Diving into the #Alien Saga (Part 1) — #Alien & #Aliens : What Hides in the Darkness?",
     "normalizedTitle": "リスナーリクエストエイリアンシリーズその1エイリアンエイリアン2闇に潜むエイリアンの正体はいかにlistenerpickdivingintothealiensagapart1alien&alienswhathidesinthedarkness",
     "spotifyUrl": "https://open.spotify.com/episode/212AGJOKQhOqHoyIyp9wnK",
@@ -747,7 +765,7 @@
     "pubDate": "Fri, 26 Sep 2025 22:29:18 GMT"
   },
   {
-    "index": 83,
+    "index": 85,
     "title": "【Replay】#映画『#ザ・フライ』科学は人間を幸福にするのだろうか？ [Replay] #TheFly — Is Science the Path to Human Joy?",
     "normalizedTitle": "replay映画ザフライ科学は人間を幸福にするのだろうかreplaytheflyissciencethepathtohumanjoy",
     "spotifyUrl": "https://open.spotify.com/episode/5cRYCwL6z9cwugLeDmWrDY",
@@ -756,7 +774,7 @@
     "pubDate": "Tue, 23 Sep 2025 21:00:00 GMT"
   },
   {
-    "index": 84,
+    "index": 86,
     "title": "真夏のホラー企画最終章　#ホラー映画　『#ミッドサマー』　ダニーの笑顔をどう読むか？ Summer Horror Grand Finale – #Midsommar: Decoding Dani’s Final Smile",
     "normalizedTitle": "真夏のホラー企画最終章ホラー映画ミッドサマーダニーの笑顔をどう読むかsummerhorrorgrandfinalemidsommardecodingdanisfinalsmile",
     "spotifyUrl": "https://open.spotify.com/episode/46aaKdua7BJRbHcLWl9gJj",
@@ -765,7 +783,7 @@
     "pubDate": "Fri, 19 Sep 2025 21:13:30 GMT"
   },
   {
-    "index": 85,
+    "index": 87,
     "title": "【Replay】#映画『#最高の人生の見つけ方』『#最高の人生の作り方』あなたは死とどう向き合いたいですか？　[Replay]　#TheBucketList & #LastVegas — How Do You Choose to Face the End?",
     "normalizedTitle": "replay映画最高の人生の見つけ方最高の人生の作り方あなたは死とどう向き合いたいですかreplaythebucketlist&lastvegashowdoyouchoosetofacetheend",
     "spotifyUrl": "https://open.spotify.com/episode/2BOUyOQXXXwGteVqviN3jY",
@@ -774,7 +792,7 @@
     "pubDate": "Tue, 16 Sep 2025 21:00:00 GMT"
   },
   {
-    "index": 86,
+    "index": 88,
     "title": "リスナーリクエスト！異色ホラー 映画『#ゲットアウト』被差別者に向けられる歪んだ妬みの正体とは？ Listener Pick! #GetOut — Unmasking the Warped Jealousy Behind Discrimination",
     "normalizedTitle": "リスナーリクエスト異色ホラー映画ゲットアウト被差別者に向けられる歪んだ妬みの正体とはlistenerpickgetoutunmaskingthewarpedjealousybehinddiscrimination",
     "spotifyUrl": "https://open.spotify.com/episode/3N1c2DHq671P4X9QfGLzu7",
@@ -783,7 +801,7 @@
     "pubDate": "Sat, 13 Sep 2025 04:52:22 GMT"
   },
   {
-    "index": 87,
+    "index": 89,
     "title": "【Replay】#映画 『#シャイニング』日本人がイマイチ怖がれない理由は何なんだ？　　[Replay] #TheShining: The Reason It Doesn’t Hit as Hard in Japan",
     "normalizedTitle": "replay映画シャイニング日本人がイマイチ怖がれない理由は何なんだreplaytheshiningthereasonitdoesnthitashardinjapan",
     "spotifyUrl": "https://open.spotify.com/episode/3YUFAeNccjfBgI4wgyeI93",
@@ -792,7 +810,7 @@
     "pubDate": "Tue, 09 Sep 2025 21:00:00 GMT"
   },
   {
-    "index": 88,
+    "index": 90,
     "title": "リスナーリクエスト！　#大どんでん返し 映画『#シャッター・アイランド』妄想と現実の境界はどこに？　Listener’s Pick! #ShutterIsland: The Big Twist and the Blurred Border of Reality",
     "normalizedTitle": "リスナーリクエスト大どんでん返し映画シャッターアイランド妄想と現実の境界はどこにlistenerspickshutterislandthebigtwistandtheblurredborderofreality",
     "spotifyUrl": "https://open.spotify.com/episode/4V6O0VwgBrK33SVntNGTDM",
@@ -801,7 +819,7 @@
     "pubDate": "Fri, 05 Sep 2025 22:46:23 GMT"
   },
   {
-    "index": 89,
+    "index": 91,
     "title": "【Replay】スラッシャームービー『#チャイルド・プレイ』チャッキーとはホラー界の何だったのか？　【Replay】Slasher Flick #ChildsPlay — What Exactly Was #Chucky to the World of Horror?",
     "normalizedTitle": "replayスラッシャームービーチャイルドプレイチャッキーとはホラー界の何だったのかreplayslasherflickchildsplaywhatexactlywaschuckytotheworldofhorror",
     "spotifyUrl": "https://open.spotify.com/episode/4KoHORovdD4IYLfLwQgiaO",
@@ -810,7 +828,7 @@
     "pubDate": "Tue, 02 Sep 2025 21:00:00 GMT"
   },
   {
-    "index": 90,
+    "index": 92,
     "title": "真夏のホラー映画特集その４　#ティム・バートン映画『#スリーピー・ホロウ　〜科学は信仰を破壊したのか……〜 Summer Horror Special #4 – Tim Burton’s Sleepy Hollow: When Science Goes Head-to-Head with Faith",
     "normalizedTitle": "真夏のホラー映画特集その4ティムバートン映画スリーピーホロウ科学は信仰を破壊したのかsummerhorrorspecial4timburtonssleepyhollowwhensciencegoesheadtoheadwithfaith",
     "spotifyUrl": "https://open.spotify.com/episode/0OrUdMYPeX2e4sD4qTZAKE",
@@ -819,7 +837,7 @@
     "pubDate": "Sat, 30 Aug 2025 22:31:54 GMT"
   },
   {
-    "index": 91,
+    "index": 93,
     "title": "リスナーリクエスト第２弾　古代ローマ歴史スペクタクル#映画 『# グラディエーター』　〜死と救済は表裏一体なのか……〜　　Listener Request #2 – Ancient Rome Epic #Gladiator: Are Death and Salvation Two Sides of the Same Coin?",
     "normalizedTitle": "リスナーリクエスト第2弾古代ローマ歴史スペクタクル映画グラディエーター死と救済は表裏一体なのかlistenerrequest2ancientromeepicgladiatoraredeathandsalvationtwosidesofthesamecoin",
     "spotifyUrl": "https://open.spotify.com/episode/4dUtIAtGJIPP6TbterZSK2",
@@ -828,7 +846,7 @@
     "pubDate": "Wed, 27 Aug 2025 21:01:05 GMT"
   },
   {
-    "index": 92,
+    "index": 94,
     "title": "【Replay】ジャパニーズホラー『#リング』日本のホラーが持つ強みってなぁに？　[Replay] Japanese Horror “#Ring” – What Makes J-Horror So Damn Good?",
     "normalizedTitle": "replayジャパニーズホラーリング日本のホラーが持つ強みってなぁにreplayjapanesehorrorringwhatmakesjhorrorsodamngood",
     "spotifyUrl": "https://open.spotify.com/episode/6uwHSlknoXZ6MF4ijiSfdO",
@@ -837,7 +855,7 @@
     "pubDate": "Tue, 26 Aug 2025 21:00:00 GMT"
   },
   {
-    "index": 93,
+    "index": 95,
     "title": "真夏のホラー映画特集その３　日本ホラー映画大賞受賞監督デビュー作『#ミッシングチャイルドビデオテープ』　〜山は神か、あるいは鬼か……〜　　Summer Horror Marathon Part 3 – Award-Winning Japanese Horror Debut Missing Child Video Tape: Is the Mountain a God… or a Demon?",
     "normalizedTitle": "真夏のホラー映画特集その3日本ホラー映画大賞受賞監督デビュー作ミッシングチャイルドビデオテープ山は神か、あるいは鬼かsummerhorrormarathonpart3awardwinningjapanesehorrordebutmissingchildvideotapeisthemountainagodorademon",
     "spotifyUrl": "https://open.spotify.com/episode/4E4Dtr0bNM4dEw9deXDsKi",
@@ -846,7 +864,7 @@
     "pubDate": "Wed, 20 Aug 2025 14:11:31 GMT"
   },
   {
-    "index": 94,
+    "index": 96,
     "title": "【Replay】復讐劇『#Revenant』グラスが最後に見たものは何だったのか？　[Replay] Revenge Tale #TheRevenant – What Was the Last Thing Glass Saw?",
     "normalizedTitle": "replay復讐劇revenantグラスが最後に見たものは何だったのかreplayrevengetaletherevenantwhatwasthelastthingglasssaw",
     "spotifyUrl": "https://open.spotify.com/episode/10HlmJNuRhQtYqyp4Uc0OV",
@@ -855,7 +873,7 @@
     "pubDate": "Tue, 19 Aug 2025 21:00:00 GMT"
   },
   {
-    "index": 95,
+    "index": 97,
     "title": "【Replay】サイコホラー映画？『#ボーは恐れている』……何を？　[Replay] Psychological Horror? \"#BeauIsAfraid\" … of What Exactly?",
     "normalizedTitle": "replayサイコホラー映画ボーは恐れている何をreplaypsychologicalhorrorbeauisafraidofwhatexactly",
     "spotifyUrl": "https://open.spotify.com/episode/6ixNI31XLRlBEA3yhLE27p",
@@ -864,7 +882,7 @@
     "pubDate": "Tue, 12 Aug 2025 21:00:00 GMT"
   },
   {
-    "index": 96,
+    "index": 98,
     "title": "リスナーリクエスト第１弾　傑作タイムトラベル映画『#バック・トゥー・ザ・フューチャー』シリーズ～過去を書き換えるのは罪なのか　Fan Request #1: #BackToTheFuture Trilogy – Should Changing the Past Be Against the Law?",
     "normalizedTitle": "リスナーリクエスト第1弾傑作タイムトラベル映画バックトゥーザフューチャーシリーズ過去を書き換えるのは罪なのかfanrequest1backtothefuturetrilogyshouldchangingthepastbeagainstthelaw",
     "spotifyUrl": "https://open.spotify.com/episode/6Plg0C0v3BHQijTB4GaaLQ",
@@ -873,7 +891,7 @@
     "pubDate": "Fri, 08 Aug 2025 23:09:23 GMT"
   },
   {
-    "index": 97,
+    "index": 99,
     "title": "【Replay】映画『#LUCY』人類の次のステージとは？　[Replay] LUCY — Where Does Humanity Go From Here?",
     "normalizedTitle": "replay映画lucy人類の次のステージとはreplaylucywheredoeshumanitygofromhere",
     "spotifyUrl": "https://open.spotify.com/episode/6hPSgdnnCffGaUAK34Ffb1",
@@ -882,7 +900,7 @@
     "pubDate": "Tue, 05 Aug 2025 22:00:00 GMT"
   },
   {
-    "index": 98,
+    "index": 100,
     "title": "真夏のホラー映画特集その２　夏休み映画の傑作『#学校の怪談』シリーズ～怪談は誰のためのものなのか　Summer Horror Special Vol.2: The “Haunted School” Series – Who Are Ghost Stories Really For?",
     "normalizedTitle": "真夏のホラー映画特集その2夏休み映画の傑作学校の怪談シリーズ怪談は誰のためのものなのかsummerhorrorspecialvol2thehauntedschoolserieswhoareghoststoriesreallyfor",
     "spotifyUrl": "https://open.spotify.com/episode/2Y8jQbz7nsKN2GL7R82M5D",
@@ -891,7 +909,7 @@
     "pubDate": "Sun, 03 Aug 2025 20:46:40 GMT"
   },
   {
-    "index": 99,
+    "index": 101,
     "title": "【Replay】映画『#her』人と人とをつなぐものとは？ [Replay] her — The Invisible Threads That Bind Us",
     "normalizedTitle": "replay映画her人と人とをつなぐものとはreplayhertheinvisiblethreadsthatbindus",
     "spotifyUrl": "https://open.spotify.com/episode/09hAknDXbwpe6VWdsJzERS",
@@ -900,7 +918,7 @@
     "pubDate": "Tue, 29 Jul 2025 21:00:00 GMT"
   },
   {
-    "index": 100,
+    "index": 102,
     "title": "ホラーオマージュ映画の傑作『#スクリーム』３部作～古典ホラーは“終わった”のか　　Is Classic Horror Over? Revisiting the #Scream Trilogy That Changed Everything",
     "normalizedTitle": "ホラーオマージュ映画の傑作スクリーム3部作古典ホラーは終わったのかisclassichorroroverrevisitingthescreamtrilogythatchangedeverything",
     "spotifyUrl": "https://open.spotify.com/episode/1xrnqbZ75xXa7tpjO3QQC7",
@@ -909,7 +927,7 @@
     "pubDate": "Fri, 25 Jul 2025 20:58:50 GMT"
   },
   {
-    "index": 101,
+    "index": 103,
     "title": "【Replay】映画『#アンドリューNDR114』人とロボットの境目はいったいどこに？　[Replay] #BicentennialMan — How Do We Define the Human in the Machine?",
     "normalizedTitle": "replay映画アンドリューndr114人とロボットの境目はいったいどこにreplaybicentennialmanhowdowedefinethehumaninthemachine",
     "spotifyUrl": "https://open.spotify.com/episode/6F8vgoI2Lq0Ob0YfAzGlRj",
@@ -918,7 +936,7 @@
     "pubDate": "Tue, 22 Jul 2025 21:00:00 GMT"
   },
   {
-    "index": 102,
+    "index": 104,
     "title": "SFヒューマンドラマ映画？『#アド・アストラ』　〜エイリアンの正体に迫る……〜 Is #AdAstra Really a Sci-Fi Human Drama? — Searching for the Truth About the Aliens",
     "normalizedTitle": "sfヒューマンドラマ映画アドアストラエイリアンの正体に迫るisadastrareallyascifihumandramasearchingforthetruthaboutthealiens",
     "spotifyUrl": "https://open.spotify.com/episode/2Z4EguP9467cfM9KpOznDL",
@@ -927,7 +945,7 @@
     "pubDate": "Fri, 18 Jul 2025 20:22:11 GMT"
   },
   {
-    "index": 103,
+    "index": 105,
     "title": "【Replay】映画『#ジャンゴ繋がれざる者 』が真に繋がれていないのは何なのか　[Replay] In the Movie #DjangoUnchained, What Is It That’s Not Really Unchained?",
     "normalizedTitle": "replay映画ジャンゴ繋がれざる者が真に繋がれていないのは何なのかreplayinthemoviedjangounchainedwhatisitthatsnotreallyunchained",
     "spotifyUrl": "https://open.spotify.com/episode/4JQRF21aV7OJv7PJgd9ezf",
@@ -936,7 +954,7 @@
     "pubDate": "Tue, 15 Jul 2025 21:00:00 GMT"
   },
   {
-    "index": 104,
+    "index": 106,
     "title": "カンフー映画最後の花火『#少林サッカー』　〜カンフーが映画界で返り咲くには……〜　　　Kung Fu’s Final Blaze: “#ShaolinSoccer” — Can Martial Arts Rise Again in Cinema?",
     "normalizedTitle": "カンフー映画最後の花火少林サッカーカンフーが映画界で返り咲くにはkungfusfinalblazeshaolinsoccercanmartialartsriseagainincinema",
     "spotifyUrl": "https://open.spotify.com/episode/3hVoylg4g1EhqztloodeZ1",
@@ -945,7 +963,7 @@
     "pubDate": "Fri, 11 Jul 2025 23:58:24 GMT"
   },
   {
-    "index": 105,
+    "index": 107,
     "title": "【Replay】映画『#GoodWillHunting』に見る心の傷との向き合い方　　[Replay] Facing Emotional Wounds: Lessons from the Film #GoodWillHunting",
     "normalizedTitle": "replay映画goodwillhuntingに見る心の傷との向き合い方replayfacingemotionalwoundslessonsfromthefilmgoodwillhunting",
     "spotifyUrl": "https://open.spotify.com/episode/4irPDmIApTHnOZZFNpZgFd",
@@ -954,7 +972,7 @@
     "pubDate": "Tue, 08 Jul 2025 21:00:00 GMT"
   },
   {
-    "index": 106,
+    "index": 108,
     "title": "アメリカ・カンフー映画の祖『#燃えよドラゴン』　〜ブルース・リーは何が特別なのか〜　　　#EnterTheDragon — The Birth of American Kung Fu Cinema: Why Was #BruceLee One of a Kind?",
     "normalizedTitle": "アメリカカンフー映画の祖燃えよドラゴンブルースリーは何が特別なのかenterthedragonthebirthofamericankungfucinemawhywasbruceleeoneofakind",
     "spotifyUrl": "https://open.spotify.com/episode/21rrazcAOzotqLCArVCaV7",
@@ -963,7 +981,7 @@
     "pubDate": "Sun, 06 Jul 2025 04:42:23 GMT"
   },
   {
-    "index": 107,
+    "index": 109,
     "title": "【Replay】映画「#ラヂオの時間 」三谷幸喜の最高傑作、実はラヂオの時間なのではないか　[Replay] Is “Welcome Back, Mr. McDonald” Actually Koki Mitani’s Greatest Masterpiece?",
     "normalizedTitle": "replay映画ラヂオの時間三谷幸喜の最高傑作、実はラヂオの時間なのではないかreplayiswelcomebackmrmcdonaldactuallykokimitanisgreatestmasterpiece",
     "spotifyUrl": "https://open.spotify.com/episode/0TMz6W3UcJdoCv28TQA5Oq",
@@ -972,7 +990,7 @@
     "pubDate": "Tue, 01 Jul 2025 21:00:00 GMT"
   },
   {
-    "index": 108,
+    "index": 110,
     "title": "ガチカンフー映画『#イップ・マン 』　〜武の中に見る精神性〜 　#IpMan — A Hardcore Kung Fu Film About the Spirit Behind the Fist",
     "normalizedTitle": "ガチカンフー映画イップマン武の中に見る精神性ipmanahardcorekungfufilmaboutthespiritbehindthefist",
     "spotifyUrl": "https://open.spotify.com/episode/1DcLo5QvYaYcZFlBqUhmg6",
@@ -981,7 +999,7 @@
     "pubDate": "Sun, 29 Jun 2025 00:37:02 GMT"
   },
   {
-    "index": 109,
+    "index": 111,
     "title": "【Replay】映画「#TheFirstSlumDunk」#スラムダンク がバスケ漫画の金字塔であり続けるわけ　[Replay] Why the Movie “#TheFirstSlumDunk” (#SlamDunk) Remains the Gold Standard of Basketball Manga",
     "normalizedTitle": "replay映画thefirstslumdunkスラムダンクがバスケ漫画の金字塔であり続けるわけreplaywhythemoviethefirstslumdunkslamdunkremainsthegoldstandardofbasketballmanga",
     "spotifyUrl": "https://open.spotify.com/episode/03sbelX6Kbq9Y72OkU7CuN",
@@ -990,7 +1008,7 @@
     "pubDate": "Tue, 24 Jun 2025 21:00:00 GMT"
   },
   {
-    "index": 110,
+    "index": 112,
     "title": "無駄話映画？『#パルプ・フィクション 』　〜運命の歯車は誰が回すのか〜     “A Movie About Nothing?” Pulp Fiction and the Question: Who's Spinning the Gears of Fate?",
     "normalizedTitle": "無駄話映画パルプフィクション運命の歯車は誰が回すのかamovieaboutnothingpulpfictionandthequestionwhosspinningthegearsoffate",
     "spotifyUrl": "https://open.spotify.com/episode/47Ytl7YClLThS0uZ54hLAX",
@@ -999,7 +1017,7 @@
     "pubDate": "Sat, 21 Jun 2025 20:27:50 GMT"
   },
   {
-    "index": 111,
+    "index": 113,
     "title": "宮崎駿の集大成？『#君たちはどう生きるか 』　私小説としてのジブリアニメ。〜インコになんてなるな！〜 Miyazaki’s Final Masterpiece? The Boy and the Heron as Autobiographical Ghibli Cinema — Don’t Turn into a Parakeet!",
     "normalizedTitle": "宮崎駿の集大成君たちはどう生きるか私小説としてのジブリアニメ。インコになんてなるなmiyazakisfinalmasterpiecetheboyandtheheronasautobiographicalghiblicinemadontturnintoaparakeet",
     "spotifyUrl": "https://open.spotify.com/episode/0eZQDG65vdoqB0HHsjbEF3",
@@ -1008,7 +1026,7 @@
     "pubDate": "Sun, 15 Jun 2025 14:25:06 GMT"
   },
   {
-    "index": 112,
+    "index": 114,
     "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その7〜ゴジラ-1.0「おかわり！」〜　　[Replay] “Had to Talk About Godzilla Minus One” — Part 7: The One More Round Episode",
     "normalizedTitle": "replayゴジラ10が語りたくてその7ゴジラ10おかわりreplayhadtotalkaboutgodzillaminusonepart7theonemoreroundepisode",
     "spotifyUrl": "https://open.spotify.com/episode/50u5CYi8gli6McUvJRHpWZ",
@@ -1017,7 +1035,7 @@
     "pubDate": "Wed, 11 Jun 2025 01:09:00 GMT"
   },
   {
-    "index": 113,
+    "index": 115,
     "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その6〜ゴジラ-1.0がやり遂げたこと〜 [Replay] “Had to Talk About Godzilla Minus One” — Part 6: What Minus One Achieved",
     "normalizedTitle": "replayゴジラ10が語りたくてその6ゴジラ10がやり遂げたことreplayhadtotalkaboutgodzillaminusonepart6whatminusoneachieved",
     "spotifyUrl": "https://open.spotify.com/episode/0QYczEgswkIYzZpqDU9m16",
@@ -1026,7 +1044,7 @@
     "pubDate": "Wed, 11 Jun 2025 01:04:35 GMT"
   },
   {
-    "index": 114,
+    "index": 116,
     "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その5〜ゴジラ-1.0がやり遂げたことについて話そうとしたらシン・ゴジラでいっぱいいっぱいだった〜[Replay] “Had to Talk About Godzilla Minus One” Part 5 — Tried to Discuss What -1.0, But Got Completely Lost in Shin Godzilla",
     "normalizedTitle": "replayゴジラ10が語りたくてその5ゴジラ10がやり遂げたことについて話そうとしたらシンゴジラでいっぱいいっぱいだったreplayhadtotalkaboutgodzillaminusonepart5triedtodiscusswhat10butgotcompletelylostinshingodzilla",
     "spotifyUrl": "https://open.spotify.com/episode/1NkJizoxt398UcdFnaQHUN",
@@ -1035,7 +1053,7 @@
     "pubDate": "Wed, 11 Jun 2025 00:50:35 GMT"
   },
   {
-    "index": 115,
+    "index": 117,
     "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その4〜ゴジラミレニアムシリーズとはいったいなんだったのか〜[Replay] “Had to Talk About Godzilla Minus One” Part 4 — What Was the Godzilla Millennium Series, Anyway?",
     "normalizedTitle": "replayゴジラ10が語りたくてその4ゴジラミレニアムシリーズとはいったいなんだったのかreplayhadtotalkaboutgodzillaminusonepart4whatwasthegodzillamillenniumseriesanyway",
     "spotifyUrl": "https://open.spotify.com/episode/2mZIs4PNdGHoIFUQ12xLug",
@@ -1044,7 +1062,7 @@
     "pubDate": "Wed, 11 Jun 2025 00:43:37 GMT"
   },
   {
-    "index": 116,
+    "index": 118,
     "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その3〜ハリウッド版ゴジラ〜 (Replay)“Had to Talk About Godzilla Minus One” — Part 3: Hollywood Godzilla",
     "normalizedTitle": "replayゴジラ10が語りたくてその3ハリウッド版ゴジラreplayhadtotalkaboutgodzillaminusonepart3hollywoodgodzilla",
     "spotifyUrl": "https://open.spotify.com/episode/0So1e843mjYBE84GY6im8z",
@@ -1053,7 +1071,7 @@
     "pubDate": "Wed, 11 Jun 2025 00:36:10 GMT"
   },
   {
-    "index": 117,
+    "index": 119,
     "title": "【Replay】『#ゴジラ-1.0 が語りたくて』その２〜平成ゴジラVSシリーズ〜 (Replay)“Had to Talk About Godzilla Minus One” Part 2: Heisei Era Godzilla VS Series A Movie Talk Session",
     "normalizedTitle": "replayゴジラ10が語りたくてその2平成ゴジラvsシリーズreplayhadtotalkaboutgodzillaminusonepart2heiseieragodzillavsseriesamovietalksession",
     "spotifyUrl": "https://open.spotify.com/episode/765mLfdie2iGHZykgzXa7p",
@@ -1062,7 +1080,7 @@
     "pubDate": "Wed, 11 Jun 2025 00:28:20 GMT"
   },
   {
-    "index": 118,
+    "index": 120,
     "title": "【Replay】「#ゴジラ-1.0 が語りたくて」その１〜ゴジラ1954とゴジラ対メカゴジラ〜　　(Replay) “Had to Talk About Godzilla Minus One” — Part 1 From Godzilla (1954) to Godzilla vs. Mechagodzilla (1974)",
     "normalizedTitle": "replayゴジラ10が語りたくてその1ゴジラ1954とゴジラ対メカゴジラreplayhadtotalkaboutgodzillaminusonepart1fromgodzilla1954togodzillavsmechagodzilla1974",
     "spotifyUrl": "https://open.spotify.com/episode/0DrSqPwPs092wjmmqapaWm",
@@ -1071,7 +1089,7 @@
     "pubDate": "Tue, 10 Jun 2025 20:35:00 GMT"
   },
   {
-    "index": 119,
+    "index": 121,
     "title": "【RePlay】「映画#セッション から伺う変態達のセッション」オーマを迎えた映画鑑賞会 [RePlay] “#Whiplash and the Glorious Madness of Men” — A Viewing Session",
     "normalizedTitle": "replay映画セッションから伺う変態達のセッションオーマを迎えた映画鑑賞会replaywhiplashandthegloriousmadnessofmenaviewingsession",
     "spotifyUrl": "https://open.spotify.com/episode/1rXp4NLh5MtPESL30ZQDpG",
@@ -1080,7 +1098,7 @@
     "pubDate": "Tue, 10 Jun 2025 01:48:04 GMT"
   },
   {
-    "index": 120,
+    "index": 122,
     "title": "【Replay】「ファイトクラブで男が滾るのは罪なのか」　\"Must we apologize for how Fight Club stirs something in men?\"",
     "normalizedTitle": "replayファイトクラブで男が滾るのは罪なのかmustweapologizeforhowfightclubstirssomethinginmen",
     "spotifyUrl": "https://open.spotify.com/episode/7j8GVBS1lJuFGGZzYduCJJ",
@@ -1089,7 +1107,7 @@
     "pubDate": "Mon, 09 Jun 2025 20:46:07 GMT"
   },
   {
-    "index": 121,
+    "index": 123,
     "title": "ドル箱SF映画の末路『#ターミネーター 』　その３　どうしてこうなった。３部作構想全コケの運命を回避せよ！　　The Downfall of a Cash Cow: “Terminator” – Part 3 – What the Hell Happened? How Do We Escape the Trilogy Curse?",
     "normalizedTitle": "ドル箱sf映画の末路ターミネーターその3どうしてこうなった。3部作構想全コケの運命を回避せよthedownfallofacashcowterminatorpart3whatthehellhappenedhowdoweescapethetrilogycurse",
     "spotifyUrl": "https://open.spotify.com/episode/7q62fMVBF8U6SzlIUygUms",
@@ -1098,7 +1116,7 @@
     "pubDate": "Sun, 08 Jun 2025 21:13:46 GMT"
   },
   {
-    "index": 122,
+    "index": 124,
     "title": "金字塔SF映画『#ターミネーター 』　その２　運命という名の無気力症候群〜ターミネーターは俺だった〜カルチュラルリーディングを通して Sci-Fi Legend #Terminator — Pt.2 “Fate Fatigue” & That Shocking Realization: I Was the Terminator?! A Cultural Take",
     "normalizedTitle": "金字塔sf映画ターミネーターその2運命という名の無気力症候群ターミネーターは俺だったカルチュラルリーディングを通してscifilegendterminatorpt2fatefatigue&thatshockingrealizationiwastheterminatoraculturaltake",
     "spotifyUrl": "https://open.spotify.com/episode/6VQs88K9eJoKDBovWQIK1p",
@@ -1107,7 +1125,7 @@
     "pubDate": "Sun, 01 Jun 2025 11:37:28 GMT"
   },
   {
-    "index": 123,
+    "index": 125,
     "title": "タイムパラドックスSF映画『#ターミネーター 』　お前のオールを任せるな。〜核と未来と時々おとん〜　　Time-Paradox Sci-Fi Flick: #Terminator Don’t leave your future in just anyone’s hands. — Nukes, the future, and sometimes... your dad.",
     "normalizedTitle": "タイムパラドックスsf映画ターミネーターお前のオールを任せるな。核と未来と時々おとんtimeparadoxscififlickterminatordontleaveyourfutureinjustanyoneshandsnukesthefutureandsometimesyourdad",
     "spotifyUrl": "https://open.spotify.com/episode/5yWBpi0Rulg0YcOx69Yu25",
@@ -1116,7 +1134,7 @@
     "pubDate": "Sat, 24 May 2025 00:06:52 GMT"
   },
   {
-    "index": 124,
+    "index": 126,
     "title": "映画『#マトリックス』　サイファーという名の救世主。　　\"The Matrix\" — A Messiah Called Cypher.",
     "normalizedTitle": "映画マトリックスサイファーという名の救世主。thematrixamessiahcalledcypher",
     "spotifyUrl": "https://open.spotify.com/episode/0KadruUQ9iHtnok2g7fEWM",
@@ -1125,7 +1143,7 @@
     "pubDate": "Sun, 18 May 2025 12:02:03 GMT"
   },
   {
-    "index": 125,
+    "index": 127,
     "title": "映画「#フルメタルジャケット」人間を書き換えるプロンプトとは。\"The movie #FullMetalJacket : What is the prompt that rewrites a human being?\"",
     "normalizedTitle": "映画フルメタルジャケット人間を書き換えるプロンプトとは。themoviefullmetaljacketwhatisthepromptthatrewritesahumanbeing",
     "spotifyUrl": "https://open.spotify.com/episode/0zwFBXoQ8V4NpEiflDCAXp",
@@ -1134,7 +1152,7 @@
     "pubDate": "Sat, 10 May 2025 00:30:00 GMT"
   },
   {
-    "index": 126,
+    "index": 128,
     "title": "映画『#ヘルレイザー』　信仰と堕落は紙一重　The movie #Hellraiser — Faith and corruption are a paper-thin line apart.",
     "normalizedTitle": "映画ヘルレイザー信仰と堕落は紙一重themoviehellraiserfaithandcorruptionareapaperthinlineapart",
     "spotifyUrl": "https://open.spotify.com/episode/5zD3K21sNJvrQ2JF3urupE",
@@ -1143,7 +1161,7 @@
     "pubDate": "Fri, 02 May 2025 21:54:18 GMT"
   },
   {
-    "index": 127,
+    "index": 129,
     "title": "映画　『#エクスペリメント』　責任なんて誰もとりたくねえよ！#TheExperiment — “Nobody wants to take responsibility!”",
     "normalizedTitle": "映画エクスペリメント責任なんて誰もとりたくねえよtheexperimentnobodywantstotakeresponsibility",
     "spotifyUrl": "https://open.spotify.com/episode/2TBdanJ3fxhBlR3nFXtvcB",
