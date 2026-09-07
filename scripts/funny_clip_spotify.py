@@ -14,6 +14,7 @@ if str(ROOT) not in sys.path:
 
 from scripts import funny_clip_buffer as base
 from scripts.episode_links import render_episode_reply
+from scripts.funny_clip_topology import validate_dynamic_topology
 
 SPOTIFY_EPISODES_PATH = ROOT / "data" / "spotify_episodes.json"
 SPOTIFY_OVERRIDES_PATH = ROOT / "data" / "spotify_episode_overrides.json"
@@ -22,8 +23,8 @@ CANONICAL_BANK_PATHS = [
     ROOT / "data" / "funny_clip_posts_all_episodes.json",
     ROOT / "data" / "funny_clip_legacy_canonical.json",
     *sorted((ROOT / "data").glob("funny_clip_extras*.json")),
+    ROOT / "data" / "funny_clip_auto.json",
 ]
-BASE_EPISODE_COVERAGE = 127
 LEGACY_SPOTIFY_OVERRIDE_BY_ID = {
     "legacy-whiplash-oizumi": "archive-whiplash",
     "legacy-godzilla2-biollante": "archive-godzilla2",
@@ -232,21 +233,11 @@ _original_load_bank = base.load_bank
 
 def _load_spotify_ready_bank() -> list[dict]:
     full_bank = _inherit_parent_metadata(_apply_quality_overrides(_original_load_bank()))
-    if len(full_bank) < BASE_EPISODE_COVERAGE:
-        raise RuntimeError(
-            f"canonical funny clip bank must contain at least {BASE_EPISODE_COVERAGE} clips, got {len(full_bank)}"
-        )
+    topology = validate_dynamic_topology(full_bank)
 
     ids = [str(item.get("id") or "").strip() for item in full_bank]
     if len(set(ids)) != len(ids):
         raise RuntimeError("canonical funny clip bank contains duplicate ids")
-
-    unique_sources = {str(item.get("source") or "") for item in full_bank}
-    if len(unique_sources) != BASE_EPISODE_COVERAGE:
-        raise RuntimeError(
-            f"canonical funny clip bank must cover {BASE_EPISODE_COVERAGE} unique episode sources, "
-            f"got {len(unique_sources)}"
-        )
 
     missing_by_source: dict[str, str] = {}
     mismatches: list[tuple[str, str, str]] = []
@@ -275,7 +266,10 @@ def _load_spotify_ready_bank() -> list[dict]:
         print(f"[WARN] stored Spotify URL mismatches: {len(mismatches)}")
         for clip_id, stored, canonical in mismatches:
             print(f"[WARN] {clip_id}: stored={stored} canonical={canonical}")
-    print(f"[OK] canonical funny clip bank: clips={len(full_bank)} unique_sources={len(unique_sources)}")
+    print(
+        f"[OK] canonical funny clip bank: clips={len(full_bank)} "
+        f"base_episodes={topology['base_episodes']}"
+    )
     print(f"[OK] canonical dialogue shape: 3-6 turns for all {len(full_bank)} clips")
     print(f"[OK] Spotify direct-link coverage complete: clips={len(full_bank)}")
     return _interleave_extra_clips(full_bank)

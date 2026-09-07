@@ -201,6 +201,7 @@ def _source_aliases() -> list[tuple[str, str]]:
         ROOT / "data" / "funny_clip_posts.json",
         ROOT / "data" / "funny_clip_posts_all_episodes.json",
         ROOT / "data" / "funny_clip_legacy_canonical.json",
+        ROOT / "data" / "funny_clip_auto.json",
         ROOT / "data" / "generated_chapters" / "latest.json",
         *sorted((ROOT / "data").glob("funny_clip_extras*.json")),
     ]

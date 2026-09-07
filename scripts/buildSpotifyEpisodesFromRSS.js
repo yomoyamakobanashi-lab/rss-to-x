@@ -6,7 +6,8 @@ const OUTPUT_DIR = 'data';
 const OUTPUT_FILE = 'data/spotify_episodes.json';
 const CANONICAL_FILES = [
   'data/funny_clip_posts_all_episodes.json',
-  'data/funny_clip_legacy_canonical.json'
+  'data/funny_clip_legacy_canonical.json',
+  'data/funny_clip_auto.json'
 ];
 
 function decodeXml(value) {

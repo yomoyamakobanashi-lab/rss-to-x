@@ -6,6 +6,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import sys
 import unicodedata
 import urllib.request
 from collections import defaultdict
@@ -13,14 +14,19 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from scripts.funny_clip_topology import validate_dynamic_topology
+
 DATA = ROOT / "data"
 REPORT_PATH = ROOT / "funny_clip_quality_report.json"
-BASE_EPISODE_COVERAGE = 127
 
 BANK_PATHS = [
     DATA / "funny_clip_posts_all_episodes.json",
     DATA / "funny_clip_legacy_canonical.json",
     *sorted(DATA.glob("funny_clip_extras*.json")),
+    DATA / "funny_clip_auto.json",
 ]
 SPOTIFY_EPISODES_PATH = DATA / "spotify_episodes.json"
 SPOTIFY_OVERRIDES_PATH = DATA / "spotify_episode_overrides.json"
@@ -221,7 +227,7 @@ def verify_listen(item: dict) -> tuple[str, dict]:
     if not _same_listen_title(str(item.get("episode_title") or ""), page_title):
         return "mismatch", {**base, "page_title": page_title}
 
-    if item.get("parent_id"):
+    if item.get("parent_id") or item.get("auto_generated"):
         page_text = normalize(visible_text(page_html))
         missing_turns = []
         for turn in item.get("dialogue", []):
@@ -236,10 +242,7 @@ def verify_listen(item: dict) -> tuple[str, dict]:
 
 def main() -> None:
     bank = load_canonical_bank()
-    if len(bank) < BASE_EPISODE_COVERAGE:
-        raise RuntimeError(
-            f"canonical audit requires at least {BASE_EPISODE_COVERAGE} clips, got {len(bank)}"
-        )
+    topology = validate_dynamic_topology(bank)
 
     ids = [str(x.get("id") or "") for x in bank]
     sources = [str(x.get("source") or "") for x in bank]
@@ -282,8 +285,9 @@ def main() -> None:
     report = {
         "summary": {
             "canonical_bank_items": len(bank),
+            "base_episode_items": topology["base_episodes"],
             "unique_ids": len(set(ids)),
-            "unique_episode_sources": len(set(sources)),
+            "unique_episode_sources": topology["base_episodes"],
             "extra_clips": sum(1 for x in bank if x.get("parent_id")),
             "dialogue_shape_errors": len(dialogue_bad),
             "spotify_unresolved": len(spotify_missing),
@@ -305,7 +309,6 @@ def main() -> None:
 
     hard_errors = (
         len(set(ids)) != len(bank)
-        or len(set(sources)) != BASE_EPISODE_COVERAGE
         or dialogue_bad
         or spotify_missing
         or spotify_stored_mismatches
