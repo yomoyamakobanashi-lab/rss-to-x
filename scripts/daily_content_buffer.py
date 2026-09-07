@@ -50,12 +50,14 @@ def next_due_slot(now: datetime, state: dict) -> str | None:
     local = now.astimezone(JST)
     date_key = local.date().isoformat()
     posted = set((state.get("days", {}).get(date_key) or {}).get("posted_slots", []))
-    for slot, hour, minute in SLOTS:
-        if slot in posted:
-            continue
-        if (local.hour, local.minute) >= (hour, minute):
-            return slot
-    return None
+    due = [
+        slot
+        for slot, hour, minute in SLOTS
+        if slot not in posted and (local.hour, local.minute) >= (hour, minute)
+    ]
+    # Prefer the newest due slot.  An earlier slot can retry on the following
+    # heartbeat, but it must never starve the feature or funny-clip slot.
+    return due[-1] if due else None
 
 
 def _run_module(module: str) -> tuple[bool, str]:

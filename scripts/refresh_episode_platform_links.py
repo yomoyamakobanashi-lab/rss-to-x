@@ -9,12 +9,84 @@ import re
 import urllib.request
 from pathlib import Path
 
-from scripts.episode_links import CATALOG_PATH, ROOT, normalize_title, validate_catalog
+from scripts.episode_links import (
+    CATALOG_PATH,
+    ROOT,
+    SPOTIFY_RE,
+    normalize_title,
+    validate_catalog,
+)
 
 SPOTIFY_PATH = ROOT / "data" / "spotify_episodes.json"
 APPLE_COLLECTION_ID = "1810778208"
 YOUTUBE_PLAYLIST_ID = "PLYmlpbAXfSqRgb4mdFLmV3ol1PsL0NUzo"
 USER_AGENT = "Mozilla/5.0 (compatible; ReelPalLinkAudit/1.0)"
+
+
+def _partition_spotify(rows: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Separate publishable episodes from new episodes awaiting a Spotify URL."""
+    if not isinstance(rows, list) or not rows:
+        raise RuntimeError("Spotify episode index is unavailable")
+
+    resolved: list[dict] = []
+    pending: list[dict] = []
+    seen_guids: set[str] = set()
+    for row in rows:
+        if not isinstance(row, dict):
+            raise RuntimeError("Spotify episode index contains an invalid row")
+        guid = str(row.get("guid") or "").strip()
+        if not guid or guid in seen_guids:
+            raise RuntimeError("Spotify episode index contains a missing or duplicate GUID")
+        seen_guids.add(guid)
+
+        url = str(row.get("spotifyUrl") or "").split("?", 1)[0].strip()
+        if not url:
+            pending.append(row)
+            continue
+        if not SPOTIFY_RE.fullmatch(url):
+            raise RuntimeError(f"Spotify episode index contains an invalid URL: {url}")
+        resolved.append(row)
+
+    if not resolved:
+        raise RuntimeError("Spotify episode index has no resolved episode URLs")
+    return resolved, pending
+
+
+def validate_index_catalog_alignment(spotify: list[dict], catalog: list[dict]) -> dict[str, int]:
+    """Require every resolved Spotify row, while allowing genuinely pending new rows.
+
+    A new RSS item can appear before Spotify exposes its episode URL.  That item
+    must not invalidate the already verified catalogue or stop unrelated daily
+    posts.  As soon as a URL becomes available it moves into ``resolved`` and a
+    missing catalogue row becomes a hard failure again.
+    """
+    resolved, pending = _partition_spotify(spotify)
+    expected = {
+        str(row["guid"]): str(row["spotifyUrl"]).split("?", 1)[0]
+        for row in resolved
+    }
+    actual = {
+        str(row.get("guid") or "").strip(): str(row.get("spotify_url") or "").strip()
+        for row in catalog
+        if isinstance(row, dict)
+    }
+    if expected != actual:
+        missing = sorted(set(expected) - set(actual))
+        stale = sorted(set(actual) - set(expected))
+        mismatched = sorted(
+            guid for guid in set(expected) & set(actual) if expected[guid] != actual[guid]
+        )
+        raise RuntimeError(
+            "platform catalogue differs from resolved Spotify episodes: "
+            f"missing={len(missing)}, stale={len(stale)}, mismatched={len(mismatched)}, "
+            f"pending={len(pending)}"
+        )
+    return {
+        "index_episodes": len(spotify),
+        "resolved_episodes": len(resolved),
+        "pending_episodes": len(pending),
+        "catalog_episodes": len(catalog),
+    }
 
 
 def _fetch(url: str, *, data: bytes | None = None, content_type: str = "") -> bytes:
@@ -179,13 +251,7 @@ def _match_title(
 
 def refresh() -> dict[str, int]:
     spotify = json.loads(SPOTIFY_PATH.read_text(encoding="utf-8"))
-    if not isinstance(spotify, list) or not spotify:
-        raise RuntimeError("Spotify episode index is unavailable")
-    missing_spotify = [row.get("title") for row in spotify if not row.get("spotifyUrl")]
-    if missing_spotify:
-        raise RuntimeError(
-            "Spotify index is missing exact episode URLs: " + ", ".join(map(str, missing_spotify))
-        )
+    resolved_spotify, pending_spotify = _partition_spotify(spotify)
 
     try:
         old_rows = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
@@ -208,11 +274,11 @@ def refresh() -> dict[str, int]:
     aliases = _source_aliases()
     aliases_by_guid: dict[str, set[str]] = {}
     for url, alias_title in aliases:
-        matched_episode = _match_title(alias_title, spotify, youtube=True, min_prefix=12)
+        matched_episode = _match_title(alias_title, resolved_spotify, youtube=True, min_prefix=12)
         if matched_episode:
             aliases_by_guid.setdefault(str(matched_episode.get("guid") or ""), set()).add(url)
     rows: list[dict] = []
-    for episode in spotify:
+    for episode in resolved_spotify:
         guid = str(episode.get("guid") or "").strip()
         title = str(episode.get("title") or "").strip()
         old = old_by_guid.get(guid, {})
@@ -251,8 +317,16 @@ def refresh() -> dict[str, int]:
 
     episode_links.load_catalog.cache_clear()
     counts = validate_catalog()
-    if counts["episodes"] != len(spotify) or counts["spotify"] != len(spotify):
+    if (
+        counts["episodes"] != len(resolved_spotify)
+        or counts["spotify"] != len(resolved_spotify)
+    ):
         raise RuntimeError(f"incomplete platform catalogue: {counts}")
+    if pending_spotify:
+        print(
+            "[WARN] New episode(s) awaiting exact Spotify URLs; "
+            f"kept out of listener-facing links without blocking existing posts: {len(pending_spotify)}"
+        )
     print(
         "[OK] platform links: "
         f"Spotify {counts['spotify']}/{counts['episodes']}, "
@@ -271,17 +345,14 @@ def main() -> None:
         if counts["spotify"] != counts["episodes"]:
             raise RuntimeError(f"incomplete required platform coverage: {counts}")
         spotify = json.loads(SPOTIFY_PATH.read_text(encoding="utf-8"))
-        expected = {
-            str(row.get("guid")): str(row.get("spotifyUrl") or "").split("?", 1)[0]
-            for row in spotify
-        }
-        actual = {
-            str(row["guid"]): str(row["spotify_url"])
-            for row in json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
-        }
-        if expected != actual:
-            raise RuntimeError("platform catalogue and Spotify episode index differ")
-        print(json.dumps(counts, ensure_ascii=False))
+        catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+        alignment = validate_index_catalog_alignment(spotify, catalog)
+        if alignment["pending_episodes"]:
+            print(
+                "[WARN] Exact Spotify URL pending for "
+                f"{alignment['pending_episodes']} new episode(s); existing verified links remain usable"
+            )
+        print(json.dumps({**counts, **alignment}, ensure_ascii=False))
         return
     refresh()
 

@@ -10,6 +10,7 @@ from scripts.episode_links import (
     validate_catalog,
     x_length,
 )
+from scripts.refresh_episode_platform_links import validate_index_catalog_alignment
 
 
 class EpisodePlatformLinkTests(unittest.TestCase):
@@ -59,6 +60,41 @@ class EpisodePlatformLinkTests(unittest.TestCase):
     def test_unknown_episode_fails_instead_of_using_a_fallback(self):
         with self.assertRaises(RuntimeError):
             resolve_episode_links(title="存在しない架空の回")
+
+    def test_pending_new_episode_does_not_invalidate_verified_catalog(self):
+        spotify = [
+            {
+                "guid": "resolved-guid",
+                "title": "既存回",
+                "spotifyUrl": "https://open.spotify.com/episode/Resolved123",
+            },
+            {
+                "guid": "pending-guid",
+                "title": "公開直後の新着回",
+                "spotifyUrl": None,
+            },
+        ]
+        catalog = [
+            {
+                "guid": "resolved-guid",
+                "spotify_url": "https://open.spotify.com/episode/Resolved123",
+            }
+        ]
+        alignment = validate_index_catalog_alignment(spotify, catalog)
+        self.assertEqual(alignment["resolved_episodes"], 1)
+        self.assertEqual(alignment["pending_episodes"], 1)
+        self.assertEqual(alignment["catalog_episodes"], 1)
+
+    def test_resolved_episode_missing_from_catalog_still_fails(self):
+        spotify = [
+            {
+                "guid": "resolved-guid",
+                "title": "解決済み新着回",
+                "spotifyUrl": "https://open.spotify.com/episode/Resolved123",
+            }
+        ]
+        with self.assertRaises(RuntimeError):
+            validate_index_catalog_alignment(spotify, [])
 
 
 if __name__ == "__main__":

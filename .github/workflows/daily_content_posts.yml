@@ -38,7 +38,7 @@ jobs:
       - name: Restore checked-in verified Spotify map
         run: python -m scripts.restore_spotify_map_from_canonical
 
-      - name: Validate verified episode listening links
+      - name: Validate resolved listening links (pending new episodes do not block)
         run: python -m scripts.refresh_episode_platform_links --check
 
       - name: Post at most one missing daily slot
