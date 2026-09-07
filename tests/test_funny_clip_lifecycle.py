@@ -6,6 +6,7 @@ from scripts.funny_clip_auto_ingest import (
     TranscriptTurn,
     extract_transcript_turns,
     materialize_clips,
+    prioritize_episode_urls,
     transcript_health,
 )
 from scripts.funny_clip_buffer import pick_clip, render_root, rollover_state
@@ -67,6 +68,14 @@ class RotationCycleTests(unittest.TestCase):
 
 
 class AutoIngestGateTests(unittest.TestCase):
+    def test_never_seen_episodes_are_prioritized_over_due_retries(self):
+        urls = ["retry-newer", "new-unseen", "retry-older"]
+        state = {"episodes": {"retry-newer": {}, "retry-older": {}}}
+        self.assertEqual(
+            prioritize_episode_urls(urls, state),
+            ["new-unseen", "retry-newer", "retry-older"],
+        )
+
     def test_transcript_dom_becomes_stable_exact_turn_ids(self):
         page = """
         <html><body><h1>新着テスト回</h1>
