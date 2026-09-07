@@ -16,11 +16,12 @@ DATA = ROOT / "data"
 OUTPUT = ROOT / "funny_clip_transcript_snapshot.json"
 USER_AGENT = "Mozilla/5.0 (compatible; ReelPalFunnyClipQA/1.3)"
 
-# Extras inherit their episode identity from parent_id, so the 127 base/legacy
-# clips are the authoritative source list for transcript snapshots.
+# Extras inherit their episode identity from parent_id. Base/legacy clips plus
+# automatically admitted new episodes are the authoritative source list.
 BANK_PATHS = [
     DATA / "funny_clip_posts_all_episodes.json",
     DATA / "funny_clip_legacy_canonical.json",
+    DATA / "funny_clip_auto.json",
 ]
 
 

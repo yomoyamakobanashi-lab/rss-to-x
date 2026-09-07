@@ -1,0 +1,93 @@
+name: Auto-ingest New LISTEN Funny Clips
+
+on:
+  schedule:
+    # 04:30 JST daily, after the 03:30 transcript/chapter fallback.
+    - cron: '30 19 * * *'
+  workflow_dispatch:
+    inputs:
+      scan:
+        description: 'Recent LISTEN episodes to inspect'
+        required: false
+        default: '12'
+      limit:
+        description: 'Maximum new episodes to process'
+        required: false
+        default: '2'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/funny_clip_auto_ingest.py'
+      - 'scripts/funny_clip_topology.py'
+      - '.github/workflows/funny_clip_auto_ingest.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: funny-clip-auto-ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install runtime dependencies
+        run: |
+          pip install -r requirements.txt
+          if [ -n "${{ secrets.GEMINI_API_KEY }}" ]; then pip install -U google-genai; fi
+
+      - name: Refresh exact Spotify episode index
+        env:
+          SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+          SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+        run: node scripts/buildSpotifyEpisodesFromRSS.js
+
+      - name: Refresh verified listening-link catalogue
+        run: python -m scripts.refresh_episode_platform_links
+
+      - name: Extract and validate new funny clips
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SCAN: ${{ github.event.inputs.scan || '12' }}
+          LIMIT: ${{ github.event.inputs.limit || '2' }}
+        run: python -m scripts.funny_clip_auto_ingest --scan "$SCAN" --limit "$LIMIT"
+
+      - name: Validate full publishable bank
+        env:
+          FUNNY_CLIP_DRY_RUN: '1'
+        run: |
+          python -m scripts.refresh_episode_platform_links --check
+          python -m scripts.funny_clip_spotify
+
+      - name: Save admitted clips and ingest state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            data/funny_clip_auto.json \
+            data/spotify_episodes.json \
+            data/episode_platform_links.json \
+            state_funny_ingest.json
+          if git diff --cached --quiet; then
+            echo 'No funny ingest changes.'
+            exit 0
+          fi
+          git commit -m 'Auto-ingest new LISTEN funny clips'
+          git pull --rebase
+          git push

@@ -1,3 +1,4 @@
 requests
 feedparser
 requests-oauthlib
+beautifulsoup4>=4.12,<5

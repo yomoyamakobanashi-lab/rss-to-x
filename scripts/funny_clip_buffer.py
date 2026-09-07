@@ -84,7 +84,26 @@ def load_state() -> dict:
         "used_ids": [str(x) for x in state.get("used_ids", []) if str(x).strip()],
         "recent_sources": [str(x) for x in state.get("recent_sources", []) if str(x).strip()],
         "recent_topics": [str(x) for x in state.get("recent_topics", []) if str(x).strip()],
+        "cycle": max(1, int(state.get("cycle", 1))),
     }
+
+
+def rollover_state(bank: list[dict], state: dict) -> tuple[dict, bool]:
+    """Start a new cycle after every current item has been posted once.
+
+    Recent source/topic windows survive rollover, so the new cycle cannot begin
+    by immediately repeating the end of the previous one.
+    """
+    bank_ids = {str(item.get("id") or "").strip() for item in bank}
+    used_ids = list(dict.fromkeys(x for x in state["used_ids"] if x in bank_ids))
+    exhausted = bool(bank_ids) and set(used_ids) == bank_ids
+    prepared = {
+        "used_ids": [] if exhausted else used_ids,
+        "recent_sources": state["recent_sources"][-RECENT_SOURCE_WINDOW:],
+        "recent_topics": state["recent_topics"][-RECENT_TOPIC_WINDOW:],
+        "cycle": int(state.get("cycle", 1)) + (1 if exhausted else 0),
+    }
+    return prepared, exhausted
 
 
 def pick_clip(bank: list[dict], state: dict) -> dict | None:
@@ -261,7 +280,12 @@ def save_state(state: dict, item: dict) -> None:
     recent_topics = (state["recent_topics"] + [item["topic"]])[-RECENT_TOPIC_WINDOW:]
     STATE_PATH.write_text(
         json.dumps(
-            {"used_ids": used_ids, "recent_sources": recent_sources, "recent_topics": recent_topics},
+            {
+                "used_ids": used_ids,
+                "recent_sources": recent_sources,
+                "recent_topics": recent_topics,
+                "cycle": int(state.get("cycle", 1)),
+            },
             ensure_ascii=False,
             separators=(",", ":"),
         ) + "\n",
@@ -278,7 +302,9 @@ def validate_full_bank(bank: list[dict]) -> None:
 
 def main() -> None:
     bank = load_bank()
-    state = load_state()
+    state, rolled_over = rollover_state(bank, load_state())
+    if rolled_over:
+        print(f"[OK] funny clip rotation started cycle {state['cycle']}")
     if os.getenv("FUNNY_CLIP_DRY_RUN", "").strip().lower() in {"1", "true", "yes"}:
         validate_full_bank(bank)
         item = pick_clip(bank, state)

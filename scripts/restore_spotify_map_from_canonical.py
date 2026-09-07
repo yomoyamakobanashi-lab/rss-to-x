@@ -14,6 +14,7 @@ MAP_PATH = DATA / "spotify_episodes.json"
 CANONICAL_PATHS = [
     DATA / "funny_clip_posts_all_episodes.json",
     DATA / "funny_clip_legacy_canonical.json",
+    DATA / "funny_clip_auto.json",
 ]
 OVERRIDES_PATH = DATA / "spotify_episode_overrides.json"
 

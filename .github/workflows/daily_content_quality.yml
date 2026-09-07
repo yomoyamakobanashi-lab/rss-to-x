@@ -12,9 +12,12 @@ on:
       - 'scripts/audiogram_post.py'
       - 'scripts/audiogram_render.py'
       - 'scripts/funny_clip_buffer.py'
+      - 'scripts/funny_clip_auto_ingest.py'
+      - 'scripts/funny_clip_topology.py'
       - 'scripts/funny_clip_spotify.py'
       - 'podcast_poster_buffer.py'
       - 'data/episode_platform_links.json'
+      - 'data/funny_clip_auto.json'
       - 'scripts/social_pack_autofill.py'
       - 'scripts/social_pack_buffer.py'
       - 'scripts/random_episode_buffer.py'
@@ -29,6 +32,7 @@ on:
       - '.github/workflows/post-podcast.yml'
       - '.github/workflows/receive-dispatch.yml'
       - '.github/workflows/funny_clip_posts.yml'
+      - '.github/workflows/funny_clip_auto_ingest.yml'
       - '.github/workflows/generate_thread_drafts.yml'
   pull_request:
     paths:
@@ -38,9 +42,12 @@ on:
       - 'scripts/audiogram_post.py'
       - 'scripts/audiogram_render.py'
       - 'scripts/funny_clip_buffer.py'
+      - 'scripts/funny_clip_auto_ingest.py'
+      - 'scripts/funny_clip_topology.py'
       - 'scripts/funny_clip_spotify.py'
       - 'podcast_poster_buffer.py'
       - 'data/episode_platform_links.json'
+      - 'data/funny_clip_auto.json'
       - 'scripts/social_pack_autofill.py'
       - 'scripts/social_pack_buffer.py'
       - 'scripts/random_episode_buffer.py'
@@ -55,6 +62,7 @@ on:
       - '.github/workflows/post-podcast.yml'
       - '.github/workflows/receive-dispatch.yml'
       - '.github/workflows/funny_clip_posts.yml'
+      - '.github/workflows/funny_clip_auto_ingest.yml'
       - '.github/workflows/generate_thread_drafts.yml'
   workflow_dispatch:
 
@@ -83,6 +91,8 @@ jobs:
           scripts/audiogram_post.py
           scripts/audiogram_render.py
           scripts/funny_clip_buffer.py
+          scripts/funny_clip_auto_ingest.py
+          scripts/funny_clip_topology.py
           scripts/funny_clip_spotify.py
           podcast_poster_buffer.py
           scripts/social_pack_autofill.py
