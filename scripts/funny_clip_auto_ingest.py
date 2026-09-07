@@ -344,6 +344,14 @@ def _record(state: dict, url: str, status: str, detail: str, now: datetime) -> N
     }
 
 
+def prioritize_episode_urls(urls: list[str], state: dict) -> list[str]:
+    """Inspect never-seen episodes before due retries without changing recency order."""
+    records = state.get("episodes", {})
+    indexed = list(enumerate(urls))
+    indexed.sort(key=lambda pair: (pair[1] in records, pair[0]))
+    return [url for _, url in indexed]
+
+
 def ingest(scan: int, limit: int, models: list[str]) -> dict[str, int]:
     if not os.environ.get("GEMINI_API_KEY", "").strip():
         print("[INFO] GEMINI_API_KEY is not configured; funny clip auto-ingest skipped")
@@ -355,6 +363,7 @@ def ingest(scan: int, limit: int, models: list[str]) -> dict[str, int]:
     existing_bank = load_canonical_bank()
     known_urls = {str(item.get("source_url") or "") for item in existing_bank}
     urls = [url for url in find_episode_urls("https://listen.style/p/reelpal", scan) if url not in known_urls]
+    urls = prioritize_episode_urls(urls, state)
 
     attempted = 0
     episodes_added = 0
