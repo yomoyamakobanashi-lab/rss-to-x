@@ -12,6 +12,13 @@ on:
       - 'data/spotify_episode_overrides.json'
       - 'scripts/funny_clip_*.py'
       - '.github/workflows/funny_clip_quality_audit.yml'
+  pull_request:
+    paths:
+      - 'data/funny_clip_*.json'
+      - 'data/spotify_episodes.json'
+      - 'data/spotify_episode_overrides.json'
+      - 'scripts/funny_clip_*.py'
+      - '.github/workflows/funny_clip_quality_audit.yml'
   workflow_dispatch:
 
 permissions:
