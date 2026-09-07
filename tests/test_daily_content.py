@@ -51,6 +51,21 @@ class DailyContentScheduleTests(unittest.TestCase):
             next_due_slot(datetime(2026, 9, 3, 23, 59, tzinfo=JST), state)
         )
 
+    def test_later_slot_is_not_starved_by_an_earlier_failure(self):
+        empty = {"days": {}}
+        self.assertEqual(
+            next_due_slot(datetime(2026, 9, 3, 21, 25, tzinfo=JST), empty),
+            "funny",
+        )
+
+        after_funny = {
+            "days": {"2026-09-03": {"posted_slots": ["funny"]}}
+        }
+        self.assertEqual(
+            next_due_slot(datetime(2026, 9, 3, 21, 55, tzinfo=JST), after_funny),
+            "feature",
+        )
+
     @patch("scripts.daily_content_buffer._run_module")
     def test_engagement_falls_back_without_dropping_the_slot(self, run_module):
         run_module.side_effect = [(False, "bank exhausted"), (True, "accepted")]
