@@ -61,13 +61,16 @@
     },
     "2026-09-08": {
       "posted_slots": [
-        "engagement"
+        "engagement",
+        "feature"
       ],
       "posted_at": {
-        "engagement": "2026-09-08T08:44:04.376384+09:00"
+        "engagement": "2026-09-08T08:44:04.376384+09:00",
+        "feature": "2026-09-08T18:03:41.413571+09:00"
       },
       "content_types": {
-        "engagement": "scripts.discussion_buffer"
+        "engagement": "scripts.discussion_buffer",
+        "feature": "scripts.social_pack_buffer"
       }
     }
   }
