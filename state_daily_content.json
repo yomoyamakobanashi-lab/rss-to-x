@@ -72,6 +72,17 @@
         "engagement": "scripts.discussion_buffer",
         "feature": "scripts.social_pack_buffer"
       }
+    },
+    "2026-09-09": {
+      "posted_slots": [
+        "engagement"
+      ],
+      "posted_at": {
+        "engagement": "2026-09-09T10:12:49.729102+09:00"
+      },
+      "content_types": {
+        "engagement": "scripts.quick_reply_buffer"
+      }
     }
   }
 }
