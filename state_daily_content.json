@@ -94,6 +94,17 @@
       "content_types": {
         "engagement": "scripts.discussion_buffer"
       }
+    },
+    "2026-09-11": {
+      "posted_slots": [
+        "engagement"
+      ],
+      "posted_at": {
+        "engagement": "2026-09-11T09:04:55.233495+09:00"
+      },
+      "content_types": {
+        "engagement": "scripts.quick_reply_buffer"
+      }
     }
   }
 }
