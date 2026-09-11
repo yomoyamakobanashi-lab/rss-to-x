@@ -3,7 +3,7 @@
     "https://listen.style/p/reelpal/wssjgxxo": {
       "status": "pending_links",
       "detail": "No verified Spotify episode URL for the requested episode; refusing to publish a fallback link",
-      "attempted_at": "2026-09-10T21:47:47.542467+00:00"
+      "attempted_at": "2026-09-11T21:52:00.934457+00:00"
     },
     "https://listen.style/p/reelpal/ulvhtuhv": {
       "status": "pending_links",
@@ -14,6 +14,11 @@
       "status": "added",
       "detail": "clips=2 model=gemini-3.5-flash-lite",
       "attempted_at": "2026-09-07T02:58:47.309635+00:00"
+    },
+    "https://listen.style/p/reelpal/einwgofa": {
+      "status": "pending_links",
+      "detail": "No verified Spotify episode URL for the requested episode; refusing to publish a fallback link",
+      "attempted_at": "2026-09-11T21:52:00.934457+00:00"
     }
   }
 }
