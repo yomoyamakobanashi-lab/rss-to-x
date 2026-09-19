@@ -23,7 +23,12 @@
     "https://listen.style/p/reelpal/6ejtw4yh": {
       "status": "pending_links",
       "detail": "No verified Spotify episode URL for the requested episode; refusing to publish a fallback link",
-      "attempted_at": "2026-09-18T21:47:45.220475+00:00"
+      "attempted_at": "2026-09-19T21:39:02.682486+00:00"
+    },
+    "https://listen.style/p/reelpal/duvt8bwu": {
+      "status": "pending_links",
+      "detail": "No verified Spotify episode URL for the requested episode; refusing to publish a fallback link",
+      "attempted_at": "2026-09-19T21:39:02.682486+00:00"
     }
   }
 }
