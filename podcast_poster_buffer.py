@@ -31,7 +31,9 @@ logger = logging.getLogger("podcast_poster_buffer")
 
 # New-episode announcements should be timely, but must never backfill old episodes.
 MIN_AGE_MINUTES = int(os.getenv("PODCAST_MIN_AGE_MINUTES", "15"))
-MAX_CONTENT_AGE_HOURS = int(os.getenv("PODCAST_MAX_CONTENT_AGE_HOURS", "48"))
+MAX_CONTENT_AGE_HOURS = int(os.getenv("PODCAST_MAX_CONTENT_AGE_HOURS", "24"))
+SPOTIFY_SHOW_URL = "https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS"
+REELPAL_TAG = "#リルパル"
 
 
 def main() -> None:
@@ -120,12 +122,19 @@ def main() -> None:
                     intro="🎧 新着エピソードを聴く",
                 )
             except RuntimeError:
-                # Do not mark it as posted: the next hourly run will retry.
-                logger.info(
-                    "Spotify個別回URL未解決。次回実行で再試行: %s",
+                # Never block a same-day announcement just because the exact
+                # Spotify episode URL has not propagated into our catalogue yet.
+                # Use the verified show page as a safe temporary destination.
+                logger.warning(
+                    "Spotify個別回URL未解決。番組ページへフォールバックして告知を継続: %s",
                     getattr(entry, "title", ""),
                 )
-                continue
+                reply = (
+                    "🎧 新着エピソードを聴く\n"
+                    "Spotify\n"
+                    f"{SPOTIFY_SHOW_URL}\n\n"
+                    f"{REELPAL_TAG}"
+                )
 
         title = shorten_title(getattr(entry, "title", "") or "", maxlen=TITLE_MAXLEN)
         text = compose_text(template, title, program, "", limit=MAX_TWEET_LIMIT)
