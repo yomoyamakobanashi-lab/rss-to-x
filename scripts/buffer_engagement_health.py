@@ -18,13 +18,13 @@ def main():
           engagementType: __type(name: "EngagementType") { enumValues { name } }
           queryType: __type(name: "Query") { fields { name } }
         }'''
-        p=graphql(q).get("data",{})
-        vals=[v.get("name") for v in ((p.get("engagementType") or {}).get("enumValues") or [])]
-        fields=[v.get("name") for v in ((p.get("queryType") or {}).get("fields") or [])]
-        report["engagement_api"]["schema_detected"]="EngagementType" in ["EngagementType"] if p.get("engagementType") else False
-        report["engagement_api"]["comment_type"]="comment" in vals
-        report["engagement_api"]["mention_type"]="mention" in vals
-        report["engagement_api"]["query_fields_matching"]=[x for x in fields if any(k in x.lower() for k in ("engag","comment","mention"))]
+        try:\n            p=graphql(q).get("data",{})
+            vals=[v.get("name") for v in ((p.get("engagementType") or {}).get("enumValues") or [])]
+            fields=[v.get("name") for v in ((p.get("queryType") or {}).get("fields") or [])]
+            report["engagement_api"]["schema_detected"]=bool(p.get("engagementType"))
+            report["engagement_api"]["comment_type"]="comment" in vals
+            report["engagement_api"]["mention_type"]="mention" in vals
+            report["engagement_api"]["query_fields_matching"]=[x for x in fields if any(k in x.lower() for k in ("engag","comment","mention"))]\n        except Exception as probe_exc:\n            report["engagement_api"]["probe_warning"]=f"{type(probe_exc).__name__}: {probe_exc}"
         report["ok"]=True
         report["notes"].append("Publishing connection is healthy if this check succeeds.")
         if not report["engagement_api"]["query_fields_matching"]:
