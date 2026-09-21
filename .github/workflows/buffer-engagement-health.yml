@@ -1,4 +1,4 @@
-name: Buffer engagement health
+name: Buffer engagement health\n# Publishing health and engagement-capability probe
 
 on:
   workflow_dispatch:
