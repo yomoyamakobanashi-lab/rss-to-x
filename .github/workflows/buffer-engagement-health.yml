@@ -2,6 +2,12 @@ name: Buffer engagement health
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/buffer-engagement-health.yml'
+      - 'scripts/buffer_engagement_health.py'
+      - 'buffer_client.py'
   schedule:
     - cron: '17 0,12 * * *'
 
