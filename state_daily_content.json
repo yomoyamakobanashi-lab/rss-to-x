@@ -270,6 +270,17 @@
       "content_types": {
         "engagement": "scripts.discussion_buffer"
       }
+    },
+    "2026-09-27": {
+      "posted_slots": [
+        "engagement"
+      ],
+      "posted_at": {
+        "engagement": "2026-09-27T10:22:11.540341+09:00"
+      },
+      "content_types": {
+        "engagement": "scripts.survey_buffer"
+      }
     }
   }
 }
