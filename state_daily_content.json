@@ -1,22 +1,5 @@
 {
   "days": {
-    "2026-09-04": {
-      "posted_slots": [
-        "engagement",
-        "feature",
-        "funny"
-      ],
-      "posted_at": {
-        "engagement": "2026-09-04T09:21:38.854417+09:00",
-        "feature": "2026-09-04T18:33:48.447675+09:00",
-        "funny": "2026-09-04T22:44:34.489207+09:00"
-      },
-      "content_types": {
-        "engagement": "scripts.quick_reply_buffer",
-        "feature": "scripts.random_episode_buffer",
-        "funny": "scripts.funny_clip_spotify"
-      }
-    },
     "2026-09-05": {
       "posted_slots": [
         "engagement",
@@ -392,6 +375,17 @@
       ],
       "posted_at": {
         "engagement": "2026-10-09T08:55:57.801562+09:00"
+      },
+      "content_types": {
+        "engagement": "scripts.discussion_buffer"
+      }
+    },
+    "2026-10-10": {
+      "posted_slots": [
+        "engagement"
+      ],
+      "posted_at": {
+        "engagement": "2026-10-10T08:11:40.587308+09:00"
       },
       "content_types": {
         "engagement": "scripts.discussion_buffer"
