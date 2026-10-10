@@ -12,6 +12,12 @@ on:
     # Repeated runs absorb GitHub scheduler delays without duplicate posts.
     - cron: '12,42 * * * *'
   workflow_dispatch:
+    inputs:
+      slot:
+        description: 'Optional selected slot (daily duplicate guard remains active)'
+        type: choice
+        options: ['', engagement, feature, funny]
+        default: ''
 
 concurrency:
   group: daily-content-post
@@ -27,6 +33,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
@@ -34,6 +41,10 @@ jobs:
 
       - name: Install deps
         run: pip install -r requirements.txt
+
+      - name: Check regression tests before recovery post
+        if: github.event_name == 'push'
+        run: python -m unittest discover -s tests -v
 
       - name: Restore checked-in verified Spotify map
         run: python -m scripts.restore_spotify_map_from_canonical
@@ -46,9 +57,13 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+          # The authorized recovery commit selects just one funny slot.
+          # Future schedule runs keep the normal three-slot dispatcher.
+          DAILY_CONTENT_SLOT: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[test-funny]') && 'funny' || inputs.slot || '' }}
         run: python -m scripts.daily_content_buffer
 
       - name: Save all rotation and daily guard state
+        if: ${{ always() && !cancelled() }}
         shell: bash
         run: |
           set -euo pipefail
@@ -71,3 +86,9 @@ jobs:
           git commit -m "rotate daily multi-pattern posts [skip ci]"
           git pull --rebase
           git push
+
+      - name: Verify recovery post was published to X
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[test-funny]') || inputs.slot == 'funny'
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+        run: python -m scripts.verify_funny_publication

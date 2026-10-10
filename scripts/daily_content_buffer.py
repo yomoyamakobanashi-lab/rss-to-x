@@ -138,6 +138,9 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--now", help="ISO timestamp used for deterministic dry-runs")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--slot", choices=[s[0] for s in SLOTS],
+                        default=os.getenv("DAILY_CONTENT_SLOT") or None,
+                        help="Run one selected slot, retaining the same daily duplicate guard")
     args = parser.parse_args()
 
     now = parse_now(args.now)
@@ -147,7 +150,11 @@ def main() -> int:
         enqueue_latest(now)
 
     state = load_state()
-    slot = next_due_slot(now, state)
+    slot = args.slot or next_due_slot(now, state)
+    posted = (state.get("days", {}).get(now.astimezone(JST).date().isoformat()) or {}).get("posted_slots", [])
+    if args.slot and args.slot in posted:
+        print(f"[INFO] selected daily slot already posted today: {args.slot}")
+        return 0
     if slot is None:
         print(f"[INFO] no due daily content slot at {now.astimezone(JST).isoformat()}")
         return 0

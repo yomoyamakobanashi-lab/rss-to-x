@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from buffer_client import post_thread
+from buffer_client import post_thread, _ensure_reelpal_tag
 from scripts.episode_links import render_episode_reply
 
 BANK_PATHS = [
@@ -274,7 +274,30 @@ def render_reply(item: dict) -> str:
     )
 
 
-def save_state(state: dict, item: dict) -> None:
+def render_posts(item: dict) -> list[str]:
+    """Keep complete dialogue turns, splitting only between paragraphs for X."""
+    root = render_root(item)
+    from scripts.episode_links import x_length
+
+    if x_length(root) <= 280:
+        return [_ensure_reelpal_tag(root)]
+    paragraphs = root.rsplit("\n\n" + REELPAL_TAG, 1)[0].split("\n\n")
+    posts: list[str] = []
+    current = ""
+    for paragraph in paragraphs:
+        candidate = "\n\n".join(filter(None, [current, paragraph]))
+        if x_length(candidate + "\n\n" + REELPAL_TAG) > 280:
+            if current:
+                posts.append(_ensure_reelpal_tag(current))
+            current = paragraph
+        else:
+            current = candidate
+    if current:
+        posts.append(_ensure_reelpal_tag(current))
+    return posts
+
+
+def save_state(state: dict, item: dict, post_id: str | None = None) -> None:
     used_ids = state["used_ids"] + [item["id"]]
     recent_sources = (state["recent_sources"] + [item["source"]])[-RECENT_SOURCE_WINDOW:]
     recent_topics = (state["recent_topics"] + [item["topic"]])[-RECENT_TOPIC_WINDOW:]
@@ -285,6 +308,7 @@ def save_state(state: dict, item: dict) -> None:
                 "recent_sources": recent_sources,
                 "recent_topics": recent_topics,
                 "cycle": int(state.get("cycle", 1)),
+                "last_buffer_post_id": post_id,
             },
             ensure_ascii=False,
             separators=(",", ":"),
@@ -295,7 +319,7 @@ def save_state(state: dict, item: dict) -> None:
 
 def validate_full_bank(bank: list[dict]) -> None:
     for item in bank:
-        render_root(item)
+        render_posts(item)
         render_reply(item)
     print(f"[OK] validated {len(bank)} LISTEN-grounded funny clips")
 
@@ -310,7 +334,8 @@ def main() -> None:
         item = pick_clip(bank, state)
         if item:
             print(f"[DRY RUN] next id={item['id']} source={item['source']} topic={item['topic']}")
-            print(render_root(item))
+            for text in render_posts(item):
+                print(text)
             print("--- reply ---")
             print(render_reply(item))
         return
@@ -318,10 +343,10 @@ def main() -> None:
     if item is None:
         print(f"[INFO] funny clip bank exhausted: used={len(state['used_ids'])}, total={len(bank)}. No post sent; replenish with LISTEN-grounded clips from the archive.")
         return
-    root = render_root(item)
+    roots = render_posts(item)
     reply = render_reply(item)
-    post_id = post_thread([root, reply])
-    save_state(state, item)
+    post_id = post_thread([*roots, reply])
+    save_state(state, item, post_id)
     remaining = len(bank) - len(state["used_ids"]) - 1
     print(f"[OK] Buffer accepted funny clip thread: {post_id}; id={item['id']}; source={item['source']}; topic={item['topic']}; remaining={remaining}")
 

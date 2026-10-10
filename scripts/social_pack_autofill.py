@@ -13,6 +13,8 @@ import re
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from buffer_client import _ensure_reelpal_tag, BufferError
+from scripts.episode_links import x_length
 
 ROOT = Path(__file__).resolve().parents[1]
 LATEST_PATH = ROOT / "data" / "generated_chapters" / "latest.json"
@@ -28,7 +30,25 @@ def _clean(value: object) -> str:
 
 def _clip(value: str, limit: int) -> str:
     value = _clean(value)
-    return value if len(value) <= limit else value[: limit - 1].rstrip() + "…"
+    if x_length(value) <= limit:
+        return value
+    while value and x_length(value + "…") > limit:
+        value = value[:-1].rstrip()
+    return value + "…"
+
+
+def _fit_text(template: str, *fragments: str) -> str:
+    values = list(fragments)
+    while True:
+        text = template.format(*values)
+        try:
+            _ensure_reelpal_tag(text)
+            return text
+        except BufferError:
+            index = max(range(len(values)), key=lambda i: x_length(values[i]))
+            if x_length(values[index]) <= 4:
+                raise RuntimeError("social pack template leaves no room for chapter titles")
+            values[index] = _clip(values[index], x_length(values[index]) - 2)
 
 
 def _episode_id(url: str) -> str:
@@ -72,10 +92,11 @@ def build_items(latest: dict, now: datetime) -> list[dict]:
         {
             "id": f"auto-{episode_id}-three-hooks",
             "kind": "three_hooks",
-            "text": (
+            "text": _fit_text(
                 "今回のリルパル、話の入口はこの3つ。\n"
-                f"①{first_short}\n②{middle_short}\n③{last_short}\n"
-                "一つの作品から、今回もだいぶ遠くまで行きました。"
+                "①{0}\n②{1}\n③{2}\n"
+                "一つの作品から、今回もだいぶ遠くまで行きました。",
+                first_short, middle_short, last_short,
             ),
             "source_url": source_url,
             "not_before": due_one.isoformat(),
@@ -84,10 +105,11 @@ def build_items(latest: dict, now: datetime) -> list[dict]:
         {
             "id": f"auto-{episode_id}-episode-hook",
             "kind": "episode_hook",
-            "text": (
-                f"『{title_short}』回。\n\n"
-                f"{first_short}から始まり、{middle_short}を通って、最後は{last_short}まで。"
-                "映画一本から話がどこへ転がるか、その道筋ごと楽しめる回です。"
+            "text": _fit_text(
+                "『{0}』回。\n\n"
+                "{1}から始まり、{2}を通って、最後は{3}まで。"
+                "映画一本から話がどこへ転がるか、その道筋ごと楽しめる回です。",
+                title_short, first_short, middle_short, last_short,
             ),
             "source_url": source_url,
             "not_before": due_two.isoformat(),

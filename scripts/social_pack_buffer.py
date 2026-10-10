@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from buffer_client import BufferError, post_text, post_thread
+from buffer_client import BufferError, post_text, post_thread, _ensure_reelpal_tag
 from note_poster import x_length
 from scripts.episode_links import render_episode_reply
 
@@ -42,33 +42,46 @@ def parse_dt(value: str | None) -> datetime | None:
     return dt.astimezone(timezone.utc)
 
 
-def load_queue() -> list[dict]:
+def load_queue(*, strict: bool = True) -> list[dict]:
     data = json.loads(QUEUE_PATH.read_text(encoding="utf-8"))
     if not isinstance(data, list):
         raise RuntimeError("social pack queue must be a JSON array")
 
     seen: set[str] = set()
+    valid = []
     for item in data:
-        item_id = str(item.get("id") or "").strip()
-        kind = str(item.get("kind") or "").strip()
-        text = str(item.get("text") or "").strip()
-        source_url = str(item.get("source_url") or "").strip()
-        not_before = str(item.get("not_before") or "").strip()
-        if not item_id or kind not in ALLOWED_KINDS or not text or not not_before:
-            raise RuntimeError(f"invalid social pack entry: {item}")
-        if item_id in seen:
-            raise RuntimeError(f"duplicate social pack id: {item_id}")
-        seen.add(item_id)
-        if x_length(text) > ROOT_LIMIT:
-            raise RuntimeError(f"social pack root exceeds X limit: {item_id}")
-        if "http://" in text or "https://" in text:
-            raise RuntimeError(f"social pack root must remain link-free: {item_id}")
-        if source_url and not source_url.startswith("https://listen.style/p/reelpal/"):
-            raise RuntimeError(f"source_url must be ReelPal LISTEN URL: {item_id}")
-        if parse_dt(not_before) is None:
-            raise RuntimeError(f"invalid not_before: {item_id}")
-    return data
+        try:
+            validate_item(item, seen)
+        except (RuntimeError, BufferError) as exc:
+            if strict:
+                raise
+            print(f"[WARN] skipping invalid social pack: {exc}", file=sys.stderr)
+            continue
+        valid.append(item)
+    return valid
 
+
+def validate_item(item: dict, seen: set[str]) -> None:
+    if not isinstance(item, dict):
+        raise RuntimeError("social pack entry must be an object")
+    item_id = str(item.get("id") or "").strip()
+    kind = str(item.get("kind") or "").strip()
+    text = str(item.get("text") or "").strip()
+    source_url = str(item.get("source_url") or "").strip()
+    not_before = str(item.get("not_before") or "").strip()
+    if not item_id or kind not in ALLOWED_KINDS or not text or not not_before:
+        raise RuntimeError(f"invalid social pack entry: {item}")
+    if item_id in seen:
+        raise RuntimeError(f"duplicate social pack id: {item_id}")
+    seen.add(item_id)
+    if x_length(_ensure_reelpal_tag(text)) > ROOT_LIMIT:
+        raise RuntimeError(f"social pack root exceeds X limit: {item_id}")
+    if "http://" in text or "https://" in text:
+        raise RuntimeError(f"social pack root must remain link-free: {item_id}")
+    if source_url and not source_url.startswith("https://listen.style/p/reelpal/"):
+        raise RuntimeError(f"source_url must be ReelPal LISTEN URL: {item_id}")
+    if parse_dt(not_before) is None:
+        raise RuntimeError(f"invalid not_before: {item_id}")
 
 def load_state() -> dict:
     try:
@@ -122,7 +135,7 @@ def pick_due(queue: list[dict], state: dict, now: datetime) -> dict | None:
 
 
 def main() -> None:
-    queue = load_queue()
+    queue = load_queue(strict=False)
     state = load_state()
     now = datetime.now(timezone.utc)
 
@@ -131,13 +144,12 @@ def main() -> None:
         print("[INFO] social pack already posted today")
         return
 
-    item = pick_due(queue, state, now)
+    item, reply = pick_ready(queue, state, now)
     if item is None:
         print("[INFO] no due social pack item")
         return
 
     root = str(item["text"]).strip()
-    reply = build_reply(item)
     try:
         if reply:
             post_id = post_thread([root, reply])
@@ -154,6 +166,25 @@ def main() -> None:
         f"[OK] Buffer accepted social pack: {post_id}; "
         f"id={item['id']}; kind={item['kind']}"
     )
+
+
+def pick_ready(queue: list[dict], state: dict, now: datetime) -> tuple[dict | None, str | None]:
+    candidates = list(queue)
+    while candidates:
+        item = pick_due(candidates, state, now)
+        if item is None:
+            break
+        try:
+            reply = build_reply(item)
+            if reply:
+                _ensure_reelpal_tag(reply)
+            return item, reply
+        except (RuntimeError, BufferError) as exc:
+            # No API write has occurred. Leave this item unposted to retry after
+            # its exact episode link is verified; another ready item may run now.
+            print(f"[WARN] social pack not ready: id={item['id']}; {exc}", file=sys.stderr)
+            candidates.remove(item)
+    return None, None
 
 
 if __name__ == "__main__":

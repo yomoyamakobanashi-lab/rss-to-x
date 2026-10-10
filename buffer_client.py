@@ -17,6 +17,7 @@ import os
 from typing import Any, Dict, Iterable, List, Optional
 
 import requests
+from scripts.episode_links import x_length
 
 BUFFER_API_URL = "https://api.buffer.com"
 TIMEOUT = 30
@@ -31,12 +32,10 @@ def _ensure_reelpal_tag(text: str) -> str:
     clean = str(text or "").strip()
     if not clean:
         raise BufferError("Post text is empty.")
-    if REELPAL_TAG in clean:
-        return clean
-    tagged = f"{clean}\n\n{REELPAL_TAG}"
-    if len(tagged) > 280:
+    tagged = clean if REELPAL_TAG in clean else f"{clean}\n\n{REELPAL_TAG}"
+    if len(tagged) > 280 or x_length(tagged) > 280:
         raise BufferError(
-            f"Post exceeds 280 chars after required {REELPAL_TAG} tag is added: {len(tagged)}"
+            f"Post exceeds X limit after required {REELPAL_TAG} tag: weighted={x_length(tagged)}"
         )
     return tagged
 
