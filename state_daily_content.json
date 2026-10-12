@@ -385,13 +385,16 @@
     },
     "2026-10-12": {
       "posted_slots": [
-        "engagement"
+        "engagement",
+        "feature"
       ],
       "posted_at": {
-        "engagement": "2026-10-12T11:20:18.538081+09:00"
+        "engagement": "2026-10-12T11:20:18.538081+09:00",
+        "feature": "2026-10-12T18:42:45.629727+09:00"
       },
       "content_types": {
-        "engagement": "scripts.discussion_buffer"
+        "engagement": "scripts.discussion_buffer",
+        "feature": "scripts.social_pack_buffer"
       }
     }
   }
