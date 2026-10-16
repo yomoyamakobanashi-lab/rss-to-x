@@ -168,5 +168,21 @@
     "source_url": "https://listen.style/p/reelpal/fm7sj1uj",
     "not_before": "2026-10-14T12:10:00+09:00",
     "created_at": "2026-10-10T21:03:47.391030+09:00"
+  },
+  {
+    "id": "auto-n1tr54ey-three-hooks",
+    "kind": "three_hooks",
+    "text": "今回のリルパル、話の入口はこの3つ。\n①音声編集と配信サービスの雑談\n②科学館の体験装置と縮小への寂しさ\n③『帝都物語』から最新映画『ディガー』へ\n一つの作品から、今回もだいぶ遠くまで行きました。",
+    "source_url": "https://listen.style/p/reelpal/n1tr54ey",
+    "not_before": "2026-10-17T12:10:00+09:00",
+    "created_at": "2026-10-16T18:15:42.740402+09:00"
+  },
+  {
+    "id": "auto-n1tr54ey-episode-hook",
+    "kind": "episode_hook",
+    "text": "『【インターミッション】 #科学館 とか#プラネタリウム とか』回。\n\n音声編集と配信サービスの雑談から始まり、科学館の体験装置と縮小への寂しさを通って、最後は『帝都物語』から最新映画『ディガー』へまで。映画一本から話がどこへ転がるか、その道筋ごと楽しめる回です。",
+    "source_url": "https://listen.style/p/reelpal/n1tr54ey",
+    "not_before": "2026-10-20T12:10:00+09:00",
+    "created_at": "2026-10-16T18:15:42.740402+09:00"
   }
 ]
