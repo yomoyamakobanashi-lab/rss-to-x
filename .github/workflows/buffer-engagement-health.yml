@@ -29,7 +29,7 @@ jobs:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
           BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
           BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
-        run: python scripts/buffer_engagement_health.py
+        run: python -m scripts.buffer_engagement_health
       - name: Persist sanitized diagnostic
         if: always()
         run: |
