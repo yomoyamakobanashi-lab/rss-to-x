@@ -52,6 +52,11 @@ jobs:
       - name: Validate resolved listening links (pending new episodes do not block)
         run: python -m scripts.refresh_episode_platform_links --check
 
+      - name: Verify Python syntax and engagement episode mappings
+        run: |
+          python -m compileall -q scripts podcast_poster_buffer.py buffer_client.py
+          python -m unittest discover -s tests -v
+
       - name: Post at most one missing daily slot
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
