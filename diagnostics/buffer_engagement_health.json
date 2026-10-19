@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-19T03:40:02.217317+00:00",
+  "ok": true,
+  "x_channel": "6a8656e8ccaf649a67dcf951",
+  "engagement_api": {
+    "schema_detected": true,
+    "comment_type": true,
+    "mention_type": true,
+    "query_fields_matching": []
+  },
+  "notes": [
+    "Publishing connection is healthy if this check succeeds.",
+    "No public engagement query detected; use Buffer Community as source of truth."
+  ],
+  "organizations": 1
+}
