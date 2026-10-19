@@ -9,7 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from buffer_client import post_text
+from buffer_client import post_thread
+from scripts.episode_links import render_episode_reply
 
 POSTS_PATH = ROOT / "data" / "quick_reply_posts.json"
 STATE_PATH = ROOT / "state_quick_reply.json"
@@ -46,7 +47,8 @@ def main() -> None:
 
     post = posts[index]
     text = post["text"].strip()
-    post_id = post_text(text)
+    reply = render_episode_reply(title=post.get("source", ""), intro="🎧 関連するリルパルのエピソード")
+    post_id = post_thread([text, reply])
 
     next_index = index + 1
     STATE_PATH.write_text(
