@@ -63,7 +63,7 @@ def main() -> None:
 
     post = posts[index]
     text = post["text"].strip()
-    reply = render_episode_reply(title=post.get("source", ""), intro="🎧 この映画について語った回を聴く")
+    reply = render_episode_reply(guid=post["episode_guid"], intro="🎧 この映画について語った回を聴く")
     post_id = post_thread([text, reply])
 
     next_index = index + 1
