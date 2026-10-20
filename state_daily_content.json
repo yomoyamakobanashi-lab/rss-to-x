@@ -1,16 +1,5 @@
 {
   "days": {
-    "2026-09-15": {
-      "posted_slots": [
-        "engagement"
-      ],
-      "posted_at": {
-        "engagement": "2026-09-15T10:23:19.310717+09:00"
-      },
-      "content_types": {
-        "engagement": "scripts.discussion_buffer"
-      }
-    },
     "2026-09-16": {
       "posted_slots": [
         "engagement"
@@ -419,6 +408,17 @@
       "content_types": {
         "engagement": "scripts.discussion_buffer",
         "feature": "scripts.random_episode_buffer"
+      }
+    },
+    "2026-10-20": {
+      "posted_slots": [
+        "engagement"
+      ],
+      "posted_at": {
+        "engagement": "2026-10-20T10:14:03.362669+09:00"
+      },
+      "content_types": {
+        "engagement": "scripts.discussion_buffer"
       }
     }
   }
