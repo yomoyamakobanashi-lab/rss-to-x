@@ -439,13 +439,16 @@
     },
     "2026-10-27": {
       "posted_slots": [
-        "engagement"
+        "engagement",
+        "feature"
       ],
       "posted_at": {
-        "engagement": "2026-10-27T08:48:30.843932+09:00"
+        "engagement": "2026-10-27T08:48:30.843932+09:00",
+        "feature": "2026-10-27T19:28:03.558314+09:00"
       },
       "content_types": {
-        "engagement": "scripts.survey_buffer"
+        "engagement": "scripts.survey_buffer",
+        "feature": "scripts.random_episode_buffer"
       }
     }
   }
