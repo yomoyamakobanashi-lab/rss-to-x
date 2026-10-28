@@ -1,30 +1,34 @@
 {
-  "listen_episode_url": "https://listen.style/p/reelpal/n1tr54ey",
-  "title": "【インターミッション】　#科学館 とか#プラネタリウム とか",
+  "listen_episode_url": "https://listen.style/p/reelpal/9jxfttos",
+  "title": "【インターミッション】　#クレイフェイス とか#MCU とか#ワンピース とか#ストリートファイター とか",
   "chapters": [
     {
       "timestamp": "00:00",
-      "title": "音声編集と配信サービスの雑談"
+      "title": "DC映画「クレイフェイス」とアメコミ映画の方向性"
     },
     {
-      "timestamp": "04:44",
-      "title": "科学博物館と眠ってしまうプラネタリウム"
+      "timestamp": "04:13",
+      "title": "アベンジャーズとMCUへの距離感"
     },
     {
-      "timestamp": "10:44",
-      "title": "東芝科学館の記憶と科学実験"
+      "timestamp": "12:19",
+      "title": "映画と海外ドラマの連続性"
     },
     {
-      "timestamp": "16:43",
-      "title": "科学館の体験装置と縮小への寂しさ"
+      "timestamp": "17:32",
+      "title": "新作映画「ストリートファイター」と過去作の再評価"
     },
     {
-      "timestamp": "24:01",
-      "title": "ロボット展示とレトロフューチャー"
+      "timestamp": "23:29",
+      "title": "ストリートファイター6の変化とキャラクター設定"
     },
     {
-      "timestamp": "27:21",
-      "title": "『帝都物語』から最新映画『ディガー』へ"
+      "timestamp": "29:54",
+      "title": "リメイク作品と世代の思い入れ"
+    },
+    {
+      "timestamp": "32:33",
+      "title": "吹き替えへの芸人起用と再評価企画"
     }
   ]
 }
