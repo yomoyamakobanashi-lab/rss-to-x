@@ -1,16 +1,5 @@
 {
   "days": {
-    "2026-09-27": {
-      "posted_slots": [
-        "engagement"
-      ],
-      "posted_at": {
-        "engagement": "2026-09-27T10:22:11.540341+09:00"
-      },
-      "content_types": {
-        "engagement": "scripts.survey_buffer"
-      }
-    },
     "2026-09-28": {
       "posted_slots": [
         "engagement"
@@ -458,6 +447,17 @@
       "content_types": {
         "engagement": "scripts.survey_buffer",
         "feature": "scripts.weekly_digest_buffer"
+      }
+    },
+    "2026-11-01": {
+      "posted_slots": [
+        "engagement"
+      ],
+      "posted_at": {
+        "engagement": "2026-11-01T11:08:03.873098+09:00"
+      },
+      "content_types": {
+        "engagement": "scripts.survey_buffer"
       }
     }
   }
