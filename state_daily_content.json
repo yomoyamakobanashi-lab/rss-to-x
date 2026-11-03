@@ -451,13 +451,16 @@
     },
     "2026-11-03": {
       "posted_slots": [
-        "engagement"
+        "engagement",
+        "feature"
       ],
       "posted_at": {
-        "engagement": "2026-11-03T08:12:17.413744+09:00"
+        "engagement": "2026-11-03T08:12:17.413744+09:00",
+        "feature": "2026-11-03T20:51:22.225847+09:00"
       },
       "content_types": {
-        "engagement": "scripts.survey_buffer"
+        "engagement": "scripts.survey_buffer",
+        "feature": "scripts.random_episode_buffer"
       }
     }
   }
