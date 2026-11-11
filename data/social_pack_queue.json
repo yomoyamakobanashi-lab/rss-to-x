@@ -216,5 +216,21 @@
     "source_url": "https://listen.style/p/reelpal/t61jdwhu",
     "not_before": "2026-11-08T12:10:00+09:00",
     "created_at": "2026-11-04T15:12:45.993199+09:00"
+  },
+  {
+    "id": "auto-u1bezvea-three-hooks",
+    "kind": "three_hooks",
+    "text": "今回のリルパル、話の入口はこの3つ。\n①Google検索のAI概要と映画情報\n②『トイ・ストーリー5』への批判\n③『トイ・ストーリー』は1〜3で完結\n一つの作品から、今回もだいぶ遠くまで行きました。",
+    "source_url": "https://listen.style/p/reelpal/u1bezvea",
+    "not_before": "2026-11-12T12:10:00+09:00",
+    "created_at": "2026-11-11T19:46:08.696175+09:00"
+  },
+  {
+    "id": "auto-u1bezvea-episode-hook",
+    "kind": "episode_hook",
+    "text": "『【インターミッション】 #人魚 とか#セイレーン とか#スターバック…』回。\n\nGoogle検索のAI概要と映画情報から始まり、『トイ・ストーリー5』への批判を通って、最後は『トイ・ストーリー』は1〜3で完結まで。映画一本から話がどこへ転がるか、その道筋ごと楽しめる回です。",
+    "source_url": "https://listen.style/p/reelpal/u1bezvea",
+    "not_before": "2026-11-15T12:10:00+09:00",
+    "created_at": "2026-11-11T19:46:08.696175+09:00"
   }
 ]
