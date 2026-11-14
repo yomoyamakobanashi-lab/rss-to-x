@@ -93,7 +93,7 @@
     "https://listen.style/p/reelpal/letter": {
       "status": "pending_transcript",
       "detail": "turns=0 chars=0",
-      "attempted_at": "2026-11-13T00:38:55.308104+00:00"
+      "attempted_at": "2026-11-14T00:26:10.178965+00:00"
     },
     "https://listen.style/p/reelpal/t61jdwhu": {
       "status": "pending_links",
@@ -109,6 +109,11 @@
       "status": "pending_links",
       "detail": "No verified Spotify episode URL for the requested episode; refusing to publish a fallback link",
       "attempted_at": "2026-11-13T00:38:55.308104+00:00"
+    },
+    "https://listen.style/p/reelpal/4h539afw": {
+      "status": "pending_links",
+      "detail": "No verified Spotify episode URL for the requested episode; refusing to publish a fallback link",
+      "attempted_at": "2026-11-14T00:26:10.178965+00:00"
     }
   }
 }
