@@ -463,13 +463,16 @@
     },
     "2026-11-25": {
       "posted_slots": [
-        "engagement"
+        "engagement",
+        "funny"
       ],
       "posted_at": {
-        "engagement": "2026-11-25T11:45:21.866961+09:00"
+        "engagement": "2026-11-25T11:45:21.866961+09:00",
+        "funny": "2026-11-25T21:42:08.727706+09:00"
       },
       "content_types": {
-        "engagement": "scripts.survey_buffer"
+        "engagement": "scripts.survey_buffer",
+        "funny": "scripts.funny_clip_spotify"
       }
     }
   }
