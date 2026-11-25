@@ -12,7 +12,7 @@ import unicodedata
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.parse import quote_plus
+from urllib.parse import quote_plus, urlsplit
 from zoneinfo import ZoneInfo
 
 import feedparser
@@ -72,27 +72,34 @@ AUTO_BLOCKED_TERMS = {
     "you’re", "mandom", "監督", "主演", "配信", "replay",
 }
 
-ALLOWED_SOURCE_FRAGMENTS = (
-    "映画.com",
-    "シネマトゥデイ",
-    "映画ナタリー",
-    "ORICON NEWS",
-    "シネマカフェ",
-    "THE RIVER",
-    "Variety Japan",
-    "Real Sound",
-    "IGN Japan",
-    "SCREEN ONLINE",
-    "クランクイン",
-    "ぴあ映画",
-    "CINRA",
-    "KAI-YOU",
-    "MOVIE WALKER PRESS",
-    "Fan's Voice",
-    "Disney",
-    "ディズニー",
-    "松竹",
-)
+# Exact publisher identity plus official domain; unknown sources fail closed.
+ALLOWED_PUBLISHERS = {
+    "映画.com": ("eiga.com",),
+    "シネマトゥデイ": ("cinematoday.jp",),
+    "映画ナタリー": ("natalie.mu",),
+    "MOVIE WALKER PRESS": ("moviewalker.jp",),
+    "SCREEN ONLINE": ("screenonline.jp",),
+    "THE RIVER": ("theriver.jp",),
+    "Variety": ("variety.com",),
+    "Deadline": ("deadline.com",),
+    "The Hollywood Reporter": ("hollywoodreporter.com",),
+    "パラマウント": ("paramount.jp", "paramount.com"),
+    "Paramount Pictures": ("paramount.com", "paramountmovies.com"),
+    "ワーナー ブラザース ジャパン": ("warnerbros.co.jp",),
+    "ワーナー・ブラザース": ("warnerbros.co.jp", "warnerbros.com"),
+    "Warner Bros.": ("warnerbros.com",),
+    "ディズニー": ("disney.co.jp",),
+    "Disney": ("disney.com", "disney.co.jp"),
+    "東宝": ("toho.co.jp",),
+    "松竹": ("shochiku.co.jp",),
+    "東映": ("toei.co.jp",),
+    "ソニー・ピクチャーズ": ("sonypictures.jp",),
+    "Sony Pictures": ("sonypictures.com",),
+    "Netflix": ("netflix.com",),
+    "Netflix Tudum": ("netflix.com",),
+}
+NEWS_EVENT_TERMS = ("公開", "予告", "特報", "解禁", "発表", "決定", "続編", "キャスト", "興行収入", "上映", "配信", "製作", "制作", "trailer", "release", "announced", "casting", "box office")
+OPINION_TERMS = ("レビュー", "感想", "考察", "コラム", "批評", "ネタバレ", "ランキング", "おすすめ", "口コミ", "個人ブログ", "review", "opinion", "ranking")
 BLOCKED_HEADLINE_TERMS = (
     "訃報",
     "死去",
@@ -263,9 +270,22 @@ def source_name(entry) -> str:
     return str(getattr(source, "title", "") or "").strip()
 
 
-def allowed_source(source: str) -> bool:
-    source_n = norm(source)
-    return bool(source_n) and any(norm(fragment) in source_n for fragment in ALLOWED_SOURCE_FRAGMENTS)
+def allowed_source(source: str, source_url: str = "") -> bool:
+    domains = next((v for k, v in ALLOWED_PUBLISHERS.items() if norm(k) == norm(source)), ())
+    try:
+        parsed = urlsplit(source_url)
+        host = (parsed.hostname or "").lower().rstrip(".")
+        if parsed.scheme != "https" or parsed.username or parsed.password:
+            return False
+    except ValueError:
+        return False
+    return any(host == d or host.endswith("." + d) for d in domains)
+
+
+def commercial_news(headline: str) -> bool:
+    h = norm(headline)
+    return any(norm(t) in h for t in NEWS_EVENT_TERMS) and not any(norm(t) in h for t in OPINION_TERMS)
+
 
 
 def published_at(entry) -> datetime | None:
@@ -415,7 +435,7 @@ def collect_candidates(topics: list[dict], state: dict) -> list[dict]:
     for mode, selected_topic, query, entries in results:
         for entry in entries:
             source = source_name(entry)
-            if not allowed_source(source):
+            if not allowed_source(source, str((entry.get("source") or {}).get("href") or "")):
                 continue
             published = published_at(entry)
             if not published:
@@ -425,7 +445,7 @@ def collect_candidates(topics: list[dict], state: dict) -> list[dict]:
                 continue
 
             headline = clean_headline(entry, source)
-            if not headline or headline_is_sensitive(headline):
+            if not headline or headline_is_sensitive(headline) or not commercial_news(headline):
                 continue
             summary = clean_summary(entry)
             key = news_key(entry, headline, source)
