@@ -15,6 +15,21 @@ JST = ZoneInfo("Asia/Tokyo")
 
 
 class TrendDiscoveryTests(unittest.TestCase):
+    def test_commercial_source_requires_exact_identity_and_domain(self):
+        self.assertTrue(trend.allowed_source("映画.com", "https://eiga.com/"))
+        self.assertTrue(trend.allowed_source("Warner Bros.", "https://www.warnerbros.com/"))
+        self.assertFalse(trend.allowed_source("おもちさんの映画レビュー", "https://eiga.com/"))
+        self.assertFalse(trend.allowed_source("映画.com", "https://eiga.com.example.org/"))
+        self.assertFalse(trend.allowed_source("映画.com"))
+        self.assertFalse(trend.allowed_source("Disney ファンブログ", "https://disney.com/"))
+        self.assertFalse(trend.allowed_source("映画.com", "https://eiga.com@evil.example/"))
+
+    def test_only_factual_news_not_reviews(self):
+        self.assertTrue(trend.commercial_news("映画の最新予告が公開"))
+        self.assertFalse(trend.commercial_news("公開映画のおもちさんのレビュー"))
+        self.assertFalse(trend.commercial_news("映画の感想"))
+        self.assertFalse(trend.commercial_news("おすすめ映画ランキング"))
+
     def test_auto_terms_keep_titles_and_drop_generic_tags(self):
         title = "#ホラー映画 映画『#グレムリン』『#グレムリン２』 #Netflix #監督"
         self.assertEqual(trend.extract_episode_terms(title), ["グレムリン", "グレムリン2"])
@@ -63,7 +78,7 @@ class TrendDiscoveryTests(unittest.TestCase):
         fetch_feed.return_value = [{
             "id": "news-1",
             "title": "映画『グレムリン』最新作の予告が公開 - 映画.com",
-            "source": {"title": "映画.com"},
+            "source": {"title": "映画.com", "href": "https://eiga.com/"},
             "published_parsed": datetime.now(timezone.utc).timetuple(),
             "summary": "映画シリーズの最新予告",
             "link": "https://example.com/news-1",
