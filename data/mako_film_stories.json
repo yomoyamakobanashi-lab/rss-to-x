@@ -34,18 +34,31 @@
       "rights_reviewed_on": "2026-11-27"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "book_cover",
-      "asset_title": "ドラキュラ原作の1897年初版表紙候補",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Dracula_cover_600px.jpg",
-      "review_note": "1897年とされる画像は黄色の英国初版表紙と異なる。版の同定まで不採用。",
+      "asset_title": "『ドラキュラ』1897年初版の布装表紙",
+      "relation": "映画が無断翻案した原作の英国初版表紙。映画ポスターではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dracula-First-Edition-1897_(cropped).jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Dracula-First-Edition-1897_%28cropped%29.jpg/960px-Dracula-First-Edition-1897_%28cropped%29.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Dracula-First-Edition-1897_(cropped).jpg",
+      "rights_basis": "British Library Board由来。Commonsの個別ページ118–147行に1897年、忠実な複製のPD-scan、原産国・米国PD。表紙の文字主体のデザインは匿名で1897年公表、日本の公表後期間・英国戦時加算を考慮しても満了。元ファイル10.65MBのため同ページ掲載の960px縮小版を実際に表示確認。現代の再製本版ではない。縮小画像の実容量とCI取得は別途検証。",
+      "credit": "『Dracula』英国初版（1897）／British Library Board（縮小・切り出し版）",
       "checked_on": "2026-11-27",
-      "latest_candidate": {
+      "previous_candidate": {
+        "status": "pending",
         "asset_kind": "book_cover",
-        "asset_title": "1897年『ドラキュラ』初版布装表紙",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Dracula-First-Edition-1897.jpg",
-        "review_note": "British Library Board由来。9.9MB、PD-scanと原産国・米国PD表示。小さい別ファイルは現代の再製本・複製と確認したため使用せず。原版の縮小配信候補を探索。",
-        "checked_on": "2026-11-27"
+        "asset_title": "ドラキュラ原作の1897年初版表紙候補",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dracula_cover_600px.jpg",
+        "review_note": "1897年とされる画像は黄色の英国初版表紙と異なる。版の同定まで不採用。",
+        "checked_on": "2026-11-27",
+        "latest_candidate": {
+          "asset_kind": "book_cover",
+          "asset_title": "1897年『ドラキュラ』初版布装表紙",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Dracula-First-Edition-1897.jpg",
+          "review_note": "British Library Board由来。9.9MB、PD-scanと原産国・米国PD表示。小さい別ファイルは現代の再製本・複製と確認したため使用せず。原版の縮小配信候補を探索。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -313,7 +326,16 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Kuleshov_effect.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Kuleshov_effect.jpg",
+        "review_note": "Mikelochotecoの2012年自己制作、CC BY-SA 3.0、原画像取得成功。ただし裸体・首吊りを描く図のため一般向けタイムラインには採用せず、別の説明図を探す。",
+        "checked_on": "2026-11-27"
+      }
+    }
   },
   {
     "id": "wed-caligari-expressionism",
@@ -360,9 +382,9 @@
       "review_note": "画像取得済み。1920年公開と原版の来歴、米国タグ不足の補完を別資料で確認するまで保留。",
       "checked_on": "2026-11-27",
       "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Caligari_1920_still_01.jpg",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Caligari_1920_still_01.jpg",
-        "review_note": "画像表示成功。1920年の歪んだセットの実際の画面。個別ページに原産国・米国PD表記がある一方、原典は他言語Wikipediaからの移管。映画の共同著作者・旧法及びセットの権利を再確認する。",
+        "source_url": "https://commons.wikimedia.org/wiki/File:CABINET_DES_DR_CALIGARI_01.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/CABINET_DES_DR_CALIGARI_01.jpg",
+        "review_note": "James Moores Collection、Willy Hameister（1938年没）、1920年、原産国・米国PD表示（120–149行）、437KB原画像の歪んだセットを確認。ただし本編共同著作者・スチル独立性の最終確認を残す。",
         "checked_on": "2026-11-27"
       }
     }
@@ -1099,12 +1121,25 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "historical_art",
-      "asset_title": "1605年の火薬陰謀事件の参加者の版画",
-      "source_url": "https://commons.wikimedia.org/wiki/File:The_Gunpowder_Plot_Conspirators%2C_1605_from_NPG.jpg",
-      "review_note": "Crispijn van de Passeによる同時代版画、NPG由来、PD-Art表記、原画像2.14MB表示成功。NPGの商用画像利用条件と忠実複製の地域差を要確認。",
-      "checked_on": "2026-11-27"
+      "asset_title": "George Cruikshank《Guy Fawkes in Ordsall Cave》（1840）",
+      "relation": "記事で扱うAinsworthの歴史小説の挿絵。17世紀の本人の肖像や映画の仮面ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Guy_Fawkes_by_Cruikshank.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Guy_Fawkes_by_Cruikshank.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Guy_Fawkes_by_Cruikshank.jpg",
+      "rights_basis": "William Harrison Ainsworth『Guy Fawkes, or The Gunpowder Treason』1840年版のGeorge Cruikshankの挿絵（1878年没）。個別ページ122–155行で書誌、原産国及び米国PD、174KB。日本の保護期間も戦時加算込みで満了。既存の切り出し版を表示して絵柄を確認。",
+      "credit": "George Cruikshank（1840）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "asset_kind": "historical_art",
+        "asset_title": "1605年の火薬陰謀事件の参加者の版画",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_Gunpowder_Plot_Conspirators%2C_1605_from_NPG.jpg",
+        "review_note": "Crispijn van de Passeによる同時代版画、NPG由来、PD-Art表記、原画像2.14MB表示成功。NPGの商用画像利用条件と忠実複製の地域差を要確認。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -1370,7 +1405,12 @@
       "asset_title": "Boris Bilinskiの1927年版ポスター候補",
       "source_url": "https://commons.wikimedia.org/wiki/File:Boris_Bilinski_-_Filmplakat_f%C3%BCr_Metropolis.jpg",
       "review_note": "1927年のポスター、作者1948年没。原典が二次サイトのため機関所蔵品、原産国と日本の戦時加算・米国の権利を再確認。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Boris_Bilinski_-_Filmplakat_f%C3%BCr_Metropolis.jpg",
+        "review_note": "1927年Boris Bilinsky（1948年没）ポスター、原産国・米国PD表示、557KB。二次サイト由来。原産国・日本の戦時加算を含む権利と原典の機関照合まで保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -2833,8 +2873,8 @@
       "source_url": "https://commons.wikimedia.org/wiki/File:Joseph_Merrick_carte_de_visite_photo,_c._1889.jpg",
       "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Joseph_Merrick_carte_de_visite_photo%2C_c._1889.jpg",
       "license": "public_domain",
-      "rights_evidence_url": "個別ページによれば1889年頃に名刺判写真として配布。Royal London Hospital Archives RLHLH/P/3/24/2所蔵、同館担当者に撮影者不詳を照会済みと記録。英国匿名写真のPDおよび米国URAA非復活表示。日本の旧写真著作権・無名著作物期間および英国戦時加算を考慮しても満了と判断。181KBの原画像を開いて服を着た肖像であることを確認。第三者サイト経由のため所蔵機関による再確認を推奨。",
-      "rights_basis": "1889年頃の肖像／Royal London Hospital Archives RLHLH/P/3/24/2",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Joseph_Merrick_carte_de_visite_photo,_c._1889.jpg",
+      "rights_basis": "個別ページによれば1889年頃に名刺判写真として配布。Royal London Hospital Archives RLHLH/P/3/24/2所蔵、同館担当者に撮影者不詳を照会済みと記録。英国匿名写真のPDおよび米国URAA非復活表示。日本の旧写真著作権・無名著作物期間および英国戦時加算を考慮しても満了と判断。181KBの原画像を開いて服を着た肖像であることを確認。第三者サイト経由のため所蔵機関による再確認を推奨。",
       "checked_on": "2026-11-27",
       "previous_candidate": {
         "status": "pending",
@@ -2843,7 +2883,8 @@
         "source_url": "https://commons.wikimedia.org/wiki/File:Josephmerrick1889.jpg",
         "review_note": "1890年BMJ掲載、撮影者不詳、英国・米国PD表記と原画像575KB確認。ただし身体を露出した医学写真で、人物の尊厳と記事の主題を考慮し、服を着た肖像や本人の文書を優先する。",
         "checked_on": "2026-11-27"
-      }
+      },
+      "credit": "1889年頃の肖像／Royal London Hospital Archives RLHLH/P/3/24/2"
     }
   },
   {
@@ -3051,17 +3092,30 @@
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "film_still",
-      "asset_title": "1893年『Blacksmith Scene』の一コマ",
-      "source_url": "https://commons.wikimedia.org/wiki/File:BlacksmithScene.jpg",
-      "review_note": "NPS資料由来、Dickson 1935年没、PD表示確認。原画像取得を2回試行したが失敗。",
+      "asset_title": "1893年『鍛冶屋の場面』の連続2コマ",
+      "relation": "対象映画の現存する2コマ。2022年に発見された著作権登録用写真そのものとは断定しない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Movie_frames,_Henry_Pflug,_Chris_Musler_and_Edward_Daley_at_Chris_Musler%27s_blacksmith_shop._%22Blacksmith_Scene%22_(2901a7a2-97c1-49df-bd47-48ce535adbd3).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Movie_frames%2C_Henry_Pflug%2C_Chris_Musler_and_Edward_Daley_at_Chris_Musler%27s_blacksmith_shop._%22Blacksmith_Scene%22_%282901a7a2-97c1-49df-bd47-48ce535adbd3%29.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Movie_frames,_Henry_Pflug,_Chris_Musler_and_Edward_Daley_at_Chris_Musler%27s_blacksmith_shop._%22Blacksmith_Scene%22_(2901a7a2-97c1-49df-bd47-48ce535adbd3).jpg",
+      "rights_basis": "米国国立公園局Thomas Edison NHP資料2901a7a2-97c1-49df-bd47-48ce535adbd3。Commons個別ページ122–148行に1893年、米国PD、440KBと記録。監督Dickson1935年没、撮影Heise1910年没。日本の期間も戦時加算を含め満了。実画像表示で2コマを確認。",
+      "credit": "Blacksmith Scene（1893）／U.S. National Park Service",
       "checked_on": "2026-11-27",
-      "latest_candidate": {
+      "previous_candidate": {
+        "status": "pending",
+        "asset_kind": "film_still",
+        "asset_title": "1893年『Blacksmith Scene』の一コマ",
         "source_url": "https://commons.wikimedia.org/wiki/File:BlacksmithScene.jpg",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/BlacksmithScene.jpg",
-        "review_note": "個別ページとNPS出典・1893年の米国PDを再確認したが画像ファイル取得エラー。LOC公式記事にも実際の登録紙焼き画像あり、画像の直接URL・利用条件を別途確認する。",
-        "checked_on": "2026-11-27"
+        "review_note": "NPS資料由来、Dickson 1935年没、PD表示確認。原画像取得を2回試行したが失敗。",
+        "checked_on": "2026-11-27",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:BlacksmithScene.jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/BlacksmithScene.jpg",
+          "review_note": "個別ページとNPS出典・1893年の米国PDを再確認したが画像ファイル取得エラー。LOC公式記事にも実際の登録紙焼き画像あり、画像の直接URL・利用条件を別途確認する。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -4272,6 +4326,14 @@
       "film_title": "Bridge of Spies",
       "year": 2015,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hollow_Nickel.jpg",
+        "review_note": "FBI公式撮影、米国PD。個別資料に米国以外の再利用許可なし。FBI利用規約と適用地域を追加確認。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -4692,6 +4754,19 @@
       "film_title": "The Innocents",
       "year": 1961,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "『ねじの回転』の1898年連載扉絵",
+      "relation": "映画の原作が雑誌連載された際の扉絵。1961年映画の場面ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The-Turn-of-the-Screw-LaFarge.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/The-Turn-of-the-Screw-LaFarge.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:The-Turn-of-the-Screw-LaFarge.jpg",
+      "rights_basis": "John La Farge（1910年没）の1898年1月27日米国Collier's Weekly掲載図。Yale Beinecke Library由来、Commons個別ページ112–130行に掲載日、作者、米国PD、3.48MB。米国で公表後95年満了、日本でも死後70年・米国戦時加算を含め満了。原画像を実際に表示確認。",
+      "credit": "John La Farge／Collier's Weekly（1898）／Yale Beinecke Library",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4975,8 +5050,7 @@
       "status": "pending",
       "latest_candidate": {
         "source_url": "https://commons.wikimedia.org/wiki/File:Bambi_book_cover.jpg",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Bambi_book_cover.jpg",
-        "review_note": "1923年Ullstein刊表紙、Hans Bertle 1943年没、原産国・米国PD表記、95KBの画像を実際に確認。Morgan Libraryの書誌と刊年一致。ただし撮影画像の原典が第三者サイトで表紙の立体写真でもあるため所蔵機関の同版画像を優先して保留。",
+        "review_note": "Hans Bertle（1943年没）1923年表紙、原産国・米国PD表示あり。ただし画像メタデータに2011年書店撮影者の著作権主張があるため、現代の立体写真ではない所蔵機関スキャンを探索。",
         "checked_on": "2026-11-27"
       }
     }
