@@ -773,7 +773,20 @@
       "review_note": "オリジナル劇場用ポスターと架空の失踪者広告を区別。転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "メリーランド州バーキッツヴィルの町の入口標識（2019年）",
+      "relation": "『ブレア・ウィッチ・プロジェクト』の舞台となった実在の町を示す。怪談の実在を示す証拠ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:This_Is_Burkittsville.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/This_Is_Burkittsville.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:This_Is_Burkittsville.jpg",
+      "rights_basis": "個別ページ120–150行、2019年4月28日撮影、Flickr原典、2019年10月21日にCC BY 2.0のレビュー済み。商用共有可。標識は地名、年号、星と一般的な形状・事実的な文言。1.7MB原画像を実表示確認。",
+      "credit": "treybunn2／CC BY 2.0 https://creativecommons.org/licenses/by/2.0/（無改変）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "tue-watergate-evidence",
@@ -3334,6 +3347,19 @@
       "film_title": "Who Framed Roger Rabbit",
       "year": 1988,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "リチャード・ウィリアムズ・アニメーションのスタジオ外観（1985年と題された写真）",
+      "relation": "『ロジャー・ラビット』のアニメーション監督に関連するスタジオの外観。映画の撮影現場と断定しない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Richard_Williams_Animation_1985.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Richard_Williams_Animation_1985.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Richard_Williams_Animation_1985.jpg",
+      "rights_basis": "Commons個別ページ109–154行、Alexander Williams自己制作・CC BY-SA 4.0 International。ファイル名・題名は1985年、デジタル画像の日付は2020年。古い建物外観と社名の文字看板が主題。原画像1.07MBを実表示確認。商用共有可。",
+      "credit": "Alexander Williams／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/（無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -5092,7 +5118,20 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "二人で本を読む男女の名刺判写真（イェール大学所蔵）",
+      "relation": "物語を読むという行為を表現した歴史的写真。ネタバレ研究の参加者や研究の結果ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Photograph_of_a_man_and_a_woman_reading_a_book.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Photograph_of_a_man_and_a_woman_reading_a_book.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Photograph_of_a_man_and_a_woman_reading_a_book.jpg",
+      "rights_basis": "個別ページ112–131行、イェール大学Beinecke Library所蔵の名刺判写真、書誌番号2015107。図書館のFlickr原典のCC BY-SA 2.0を2011年8月25日確認。商用共有可。写真の撮影年は不明（2010年はデジタル公開日）。54KB原画像を実表示確認。",
+      "credit": "New York Gallery／Yale Collection of Western Americana, Beinecke Rare Book and Manuscript Library, WA Photos 357／CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0/（無改変）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "uncanny-valley-bunraku",
@@ -5610,6 +5649,19 @@
       "film_title": "PlayTime",
       "year": 1967,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ジャック・タチの舞台姿（1938年1月）",
+      "relation": "『プレイタイム』の監督の若い頃の写真。映画の撮影セットや撮影当時の写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kabarett_der_Komiker-_Jacques_Tati,_Portrait_-_LABW_-_Staatsarchiv_Freiburg_W_134_Nr._013575b.jpeg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Kabarett_der_Komiker-_Jacques_Tati%2C_Portrait_-_LABW_-_Staatsarchiv_Freiburg_W_134_Nr._013575b.jpeg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Kabarett_der_Komiker-_Jacques_Tati,_Portrait_-_LABW_-_Staatsarchiv_Freiburg_W_134_Nr._013575b.jpeg",
+      "rights_basis": "個別ページ118–169行、1938年1月1日、撮影者Willy Pragher、州立公文書館の公式デジタル資料 https://www.landesarchiv-bw.de/plink/?f=5-738411-1 、同館のCC BY 4.0 International明示。商用共有可。原画像458KBを実表示確認。番組支持を示さない。",
+      "credit": "Landesarchiv Baden-Württemberg, Staatsarchiv Freiburg W 134 Nr. 013575b / Fotograf: Willy Pragher／CC BY 4.0 https://creativecommons.org/licenses/by/4.0/（無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -5664,24 +5716,37 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Cinema.jpg",
-        "review_note": "マスク着用の映画館観客のストック写真。CommonsとPxHereのライセンス表示を確認したが、モデルリリースと原作者の来歴が不十分で保留。",
-        "checked_on": "2026-11-27"
-      },
-      "additional_candidates": [
-        {
-          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7492010/",
-          "review_note": "本文91–94行はElsevierの研究再利用許諾のみ、商用SNS掲載を明示しないため図表の転載は見送る。別の素材を検討。",
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "2021年5月18日、ニューヨークの無人の映画館",
+      "relation": "コロナ禍の映画館の一例。閉館中と断定せず、研究参加者や実験結果を表す画像ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Empty_Cinema_(51189700235).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Empty_Cinema_%2851189700235%29.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Empty_Cinema_(51189700235).jpg",
+      "rights_basis": "個別ページ120–152行、2021年5月18日撮影、Flickr原典、2021年5月19日のライセンスレビューでCC BY 2.0確認。商用共有可。空のスクリーンと座席、第三者の映画ポスターや観客は写っていない。原画像2.75MBを実表示確認。",
+      "credit": "Eden, Janine and Jim (edenpictures)／CC BY 2.0 https://creativecommons.org/licenses/by/2.0/（無改変）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Cinema.jpg",
+          "review_note": "マスク着用の映画館観客のストック写真。CommonsとPxHereのライセンス表示を確認したが、モデルリリースと原作者の来歴が不十分で保留。",
           "checked_on": "2026-11-27"
         },
-        {
-          "source_url": "https://commons.wikimedia.org/wiki/File:Elektriteater_closed_during_COVID-19_pandemic.jpg",
-          "review_note": "CC BY-SA 4.0の撮影写真、実画像取得済みだが現代の映画館告知ポスターが主被写体。写り込むデザインの権利が未確認のため保留。",
-          "checked_on": "2026-11-27"
-        }
-      ]
+        "additional_candidates": [
+          {
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7492010/",
+            "review_note": "本文91–94行はElsevierの研究再利用許諾のみ、商用SNS掲載を明示しないため図表の転載は見送る。別の素材を検討。",
+            "checked_on": "2026-11-27"
+          },
+          {
+            "source_url": "https://commons.wikimedia.org/wiki/File:Elektriteater_closed_during_COVID-19_pandemic.jpg",
+            "review_note": "CC BY-SA 4.0の撮影写真、実画像取得済みだが現代の映画館告知ポスターが主被写体。写り込むデザインの権利が未確認のため保留。",
+            "checked_on": "2026-11-27"
+          }
+        ]
+      }
     }
   },
   {
