@@ -141,7 +141,12 @@
       "asset_title": "1953年の東京物語の撮影風景",
       "source_url": "https://commons.wikimedia.org/wiki/File:Setsuko_Hara_and_Yasujiro_Ozu_in_Tokyo_Story.jpg",
       "review_note": "旧著作権法の日本PD・米国URAA非復活タグあり。ただし原典が個人サイトで初出の証拠不足。所蔵機関で照合。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Setsuko_Hara_and_Yasujiro_Ozu_in_Tokyo_Story.jpg",
+        "review_note": "1953年撮影と日本・米国PDの記載は確認したが、原典が個人Geocitiesサイトで来歴が弱い。機関所蔵資料で照合するまで保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -1431,10 +1436,22 @@
       }
     ],
     "poster": {
-      "status": "pending",
+      "status": "rights_checked",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1927_Boris_Bilinski_(1900-1948)_Plakat_f%C3%BCr_den_Film_Metropolis,_Staatliche_Museen_zu_Berlin.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/78/1927_Boris_Bilinski_%281900-1948%29_Plakat_f%C3%BCr_den_Film_Metropolis%2C_Staatliche_Museen_zu_Berlin.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:1927_Boris_Bilinski_(1900-1948)_Plakat_f%C3%BCr_den_Film_Metropolis,_Staatliche_Museen_zu_Berlin.jpg",
+      "rights_basis": "個別ページ119–145行で1927年・作者・PD-scanと日付・米国PD確認。図柄は都市景観に赤い題字と署名を持つフランス公開版。ベルリン国立博物館の所蔵ポスター解説 https://www.smb.museum/fileadmin/website/Presse/Pressematerial/2023/11/2023-10-26-GrossesKino_Thomson_Einfuehrung_Presse.pdf で1927年仏配給向け作者を照合。フランスの戦時延長は通常70年に吸収される旨 https://www.sne.fr/editeur-et-auteur/duree-des-droits-dauteurs/ 。日本は没後50年＋戦時加算を考慮しても2018年より前に満了、非復活。米国は1927年公表で満了。Commonsのスキャン元は不詳だが原作品を特定でき、忠実な平面複製。439KB原画像を実表示確認。",
+      "credit": "Boris Bilinsky（1900–1948）／Wikimedia Commons",
+      "checked_on": "2026-11-27",
       "film_title": "Metropolis",
       "year": 1927,
-      "review_note": "1927年版のポスターの作者・各地域での権利確認未了。"
+      "previous_candidate": {
+        "status": "pending",
+        "film_title": "Metropolis",
+        "year": 1927,
+        "review_note": "1927年版のポスターの作者・各地域での権利確認未了。"
+      }
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
@@ -1584,7 +1601,20 @@
       "review_note": "1929年公開版のポスターの権利未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "source_url": "https://commons.wikimedia.org/wiki/File:BlackmailUSWindowCardOndra.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/BlackmailUSWindowCardOndra.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:BlackmailUSWindowCardOndra.jpg",
+      "rights_basis": "個別ページ113–129行：1929年米国公表の法人広告。米国では1929年公表の95年経過により満了、日本は法人名義の公表後50年と戦時加算を考慮しても2018年延長前に満了。文化庁 https://www.bunka.go.jp/seisaku/chosakuken/hokaisei/kantaiheiyo_chosakuken/1411890.html 。ポスター集Hitchcock Poster Art pp.14–15参照が個別ページに記載。原画像134KBを実表示確認。",
+      "credit": "Sono Art-World Wide／WalterFilm経由／Wikimedia Commons",
+      "checked_on": "2026-11-27",
+      "asset_kind": "historical_art",
+      "asset_title": "『恐喝』1929年米国劇場用ウィンドウカード",
+      "relation": "主演女優を描き、The Powerful Talking Pictureとトーキーを宣伝した当時の劇場用広告。"
+    }
   },
   {
     "id": "sun-achmed-before-disney",
@@ -2005,6 +2035,19 @@
       "film_title": "The Birds",
       "year": 1963,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pseudo-nitzschia.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Pseudo-nitzschia.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Pseudo-nitzschia.jpg",
+      "rights_basis": "個別ページ121–143行。Oregon State UniversityのFlickr原典、2017年ライセンスレビュー済み。CC BY-SA 2.0は商用共有可。原画像48KBを実表示確認。",
+      "credit": "Oregon State University／CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0/ （無改変）",
+      "checked_on": "2026-11-27",
+      "asset_kind": "scientific_image",
+      "asset_title": "ドウモイ酸を生成しうる珪藻Pseudo-nitzschiaの顕微鏡写真",
+      "relation": "映画『鳥』の背景として本文が扱う毒素と関連する珪藻。1961年の事件の採取試料ではない。"
     }
   },
   {
@@ -2103,6 +2146,19 @@
       "film_title": "Room 237",
       "year": 2012,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "source_url": "https://commons.wikimedia.org/wiki/File:West_Wing_of_Timberline_Lodge,_Mid-March.jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/West_Wing_of_Timberline_Lodge%2C_Mid-March.jpg/960px-West_Wing_of_Timberline_Lodge%2C_Mid-March.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:West_Wing_of_Timberline_Lodge,_Mid-March.jpg",
+      "rights_basis": "個別ページ119–129行、本人撮影、CC0 1.0 Universalで商用利用明記。1930年代米国建築の外観写真。960px縮小版を実表示確認。",
+      "credit": "Tim-desser／CC0 1.0 https://creativecommons.org/publicdomain/zero/1.0/ （縮小のみ）",
+      "checked_on": "2026-11-27",
+      "asset_kind": "archival_photo",
+      "asset_title": "ティンバーライン・ロッジ西棟の雪景色（2024年3月）",
+      "relation": "『シャイニング』のホテル外観の撮影地として知られる実在建物。映画の場面や陰謀論を裏付ける証拠ではない。"
     }
   },
   {
@@ -3591,6 +3647,19 @@
       "film_title": "もののけ姫",
       "year": 1997,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tatara_(Making_Japanese_Iron_and_Steel).png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Tatara_%28Making_Japanese_Iron_and_Steel%29.png",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Tatara_(Making_Japanese_Iron_and_Steel).png",
+      "rights_basis": "個別ページ120–141行。本人撮影、CC BY-SA 4.0 International。商用共有可。原画像4.93MBを実表示確認、配信容量の上限はCIで再検査。",
+      "credit": "Toby Manzanares／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ （無改変）",
+      "checked_on": "2026-11-27",
+      "asset_kind": "archival_photo",
+      "asset_title": "岡山県新見市のたたら製鉄実演（2015年）",
+      "relation": "映画に描かれる製鉄技術を理解するための現代の実演写真。歴史上の女性の役割を証明する資料ではない。"
     }
   },
   {
@@ -3917,6 +3986,19 @@
       "film_title": "Argo",
       "year": 2012,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Robert_Anders_with_his_fake_Studio_6_business_card.jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Robert_Anders_with_his_fake_Studio_6_business_card.jpg/960px-Robert_Anders_with_his_fake_Studio_6_business_card.jpg",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Robert_Anders_with_his_fake_Studio_6_business_card.jpg",
+      "rights_basis": "個別ページ120–141行、米国外交使節のFlickr写真、2012年レビューでCC BY 2.0確認。商用共有可。名刺の業務情報と簡素な社名マークが被写体、映画作品素材ではない。960px縮小版を実表示確認。",
+      "credit": "US Mission Canada／CC BY 2.0 https://creativecommons.org/licenses/by/2.0/ （縮小のみ）",
+      "checked_on": "2026-11-27",
+      "asset_kind": "archival_photo",
+      "asset_title": "実際の脱出者が示す架空の映画会社Studio 6の名刺（2012年）",
+      "relation": "映画『アルゴ』の題材となった作戦で用いた架空会社の名刺を示す写真。2012年映画のポスターではない。"
     }
   },
   {
@@ -4396,6 +4478,14 @@
       "film_title": "The Wicker Man",
       "year": 1973,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_Wicker_Man_of_the_Druids.jpg",
+        "review_note": "ウェールズ国立図書館由来、1781年のPennantの挿絵、PD表示。原画像と960px版の取得に失敗。再取得後のみ承認。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -4431,6 +4521,14 @@
       "film_title": "White Zombie",
       "year": 1932,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:White_Zombie_ad_-_The_Film_Daily,_Jul-Dec_1932_(page_218_crop).jpg",
+        "review_note": "1932年Film Dailyのスキャン広告。米国の更新なしPD表示は確認、日本等の広告作者・法人名義・権利を確認するまで保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
