@@ -4,12 +4,13 @@ from __future__ import annotations
 import argparse
 import json
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import urlsplit
+from time import sleep
 from pathlib import Path
 
 import requests
 
-from scripts.mako_film_stories import load_bank, visual_assets
+from scripts.mako_film_stories import load_bank, visual_assets, MEDIA_USER_AGENT
 
 MAX_BYTES = 5 * 1024 * 1024
 MIME = {"image/jpeg", "image/png", "image/webp"}
@@ -21,9 +22,11 @@ def check_asset(task):
     try:
         with requests.get(
             url, stream=True, allow_redirects=False, timeout=(8, 20),
-            headers={"User-Agent": "ReelPalFilmStories/1.0 (editorial image accessibility audit)"},
+            headers={"User-Agent": MEDIA_USER_AGENT},
         ) as response:
             record["http_status"] = response.status_code
+            if response.status_code in (429, 503):
+                record["retry_after"] = response.headers.get("Retry-After")
             response.raise_for_status()
             if response.status_code != 200:
                 raise ValueError("HTTP response must be 200; redirects are not followed")
@@ -62,8 +65,23 @@ def main():
     args = parser.parse_args()
     rows = load_bank(require_full=True)
     tasks = [(row["id"], field, url) for row in rows for field, url in visual_assets(row)]
-    with ThreadPoolExecutor(max_workers=2) as pool:
-        results = list(pool.map(check_asset, tasks))
+    # No concurrent requests and no retries against a throttled host.
+    # A blocked host is unverified, not an invalid copyright record.
+    results = []
+    blocked = {}
+    for task in tasks:
+        host = urlsplit(task[2]).hostname
+        if host in blocked:
+            results.append({"story_id": task[0], "field": task[1], "url": task[2],
+                            "ok": False, "status": "deferred_rate_limit",
+                            "error": f"Host deferred after throttling; Retry-After={blocked[host]}"})
+            continue
+        result = check_asset(task)
+        results.append(result)
+        if result.get("http_status") in (429, 503):
+            blocked[host] = result.get("retry_after") or "unspecified"
+        sleep(1)
+
     registered = {task[0] for task in tasks}
     reachable = {result["story_id"] for result in results if result["ok"]}
     weekdays = Counter(row["weekday"] for row in rows if row["id"] in reachable)
@@ -73,6 +91,7 @@ def main():
         "reachable_stories": len(reachable),
         "reachable_by_weekday": {str(day): weekdays[day] for day in range(7)},
         "assets": results,
+        "deferred_hosts": blocked,
         "note": "Network accessibility only; does not independently certify legal rights or X publication.",
     }
     args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
