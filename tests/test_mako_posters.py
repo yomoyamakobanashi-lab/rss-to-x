@@ -40,7 +40,7 @@ class MakoPosterTests(unittest.TestCase):
         response.status_code=200
         response.headers={"Content-Type":"image/jpeg","Content-Length":"100"}
         response.iter_content.return_value=iter([bytes.fromhex("ffd8ff")])
-        with patch.object(stories.requests,"get") as get:
+        with patch.object(stories,"_BLOCKED_MEDIA_HOSTS",set()), patch.object(stories.requests,"get") as get:
             get.return_value.__enter__.return_value=response
             self.assertEqual(stories.reachable_poster(item()),item()["poster"]["image_url"])
             response.status_code=429
@@ -105,6 +105,25 @@ class MakoPosterTests(unittest.TestCase):
         with patch.object(stories,"reachable_visual",side_effect=[None,("related_image","https://upload.wikimedia.org/ready.jpg")]) as reach:
             self.assertEqual(pub.due_visual_story(now,state,[missing,other,ready]),(ready,"related_image","https://upload.wikimedia.org/ready.jpg"))
             self.assertEqual([a.args[0]["id"] for a in reach.call_args_list],["missing","ready"])
+
+    def test_throttled_host_is_not_requested_again_in_run(self):
+        response=MagicMock()
+        response.status_code=429
+        response.headers={"Retry-After":"1000"}
+        row=item()
+        with patch.object(stories,"_BLOCKED_MEDIA_HOSTS",set()), patch.object(stories.requests,"get") as get:
+            get.return_value.__enter__.return_value=response
+            self.assertIsNone(stories.reachable_poster(row))
+            self.assertIsNone(stories.reachable_poster(row))
+            get.assert_called_once()
+
+    def test_institutional_host_and_lookalike(self):
+        row=item()
+        row["poster"]["image_url"]="https://collectionapi.metmuseum.org/api/collection/v1/iiif/123/456/main-image"
+        self.assertEqual(stories.poster_url(row),row["poster"]["image_url"])
+        row["poster"]["image_url"]="https://collectionapi.metmuseum.org.invalid.test/image"
+        with self.assertRaises(ValueError):
+            stories.poster_url(row)
 
 if __name__=="__main__":
     unittest.main()
