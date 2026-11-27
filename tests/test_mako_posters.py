@@ -46,6 +46,18 @@ class MakoPosterTests(unittest.TestCase):
             response.status_code=429
             self.assertIsNone(stories.reachable_poster(item()))
 
+    def test_preflight_rejects_wrong_mime_and_oversize_stream(self):
+        response=MagicMock()
+        response.status_code=200
+        with patch.object(stories,"_BLOCKED_MEDIA_HOSTS",set()), patch.object(stories.requests,"get") as get:
+            get.return_value.__enter__.return_value=response
+            response.headers={"Content-Type":"image/png"}
+            response.iter_content.return_value=iter([bytes.fromhex("ffd8ff")])
+            self.assertIsNone(stories.reachable_poster(item()))
+            response.headers={"Content-Type":"image/jpeg"}
+            response.iter_content.return_value=iter([bytes.fromhex("ffd8ff"), b"x" * (5 * 1024 * 1024)])
+            self.assertIsNone(stories.reachable_poster(item()))
+
     def test_root_image_only(self):
         url=item()["poster"]["image_url"]
         with patch.object(buffer_client,"resolve_x_channel_id",return_value="channel"),patch.object(buffer_client,"_create_post",return_value="id") as create:
