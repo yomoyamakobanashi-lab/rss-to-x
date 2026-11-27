@@ -209,7 +209,14 @@
       "asset_title": "The witch no. 1（1892年の石版画）",
       "source_url": "https://commons.wikimedia.org/wiki/File:The_witch_no._1_LCCN2003677961.jpg",
       "review_note": "J.E. Baker 1914年没、LOC所蔵、PDとNo known restrictionsの記載、210KBの縮小候補。ただし原画像取得エラー。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "alternate_candidate": {
+        "asset_kind": "historical_art",
+        "asset_title": "1876年刊行のセイラム魔女裁判の後世の挿絵",
+        "source_url": "https://commons.wikimedia.org/wiki/File:WitchcraftAtSalemVillage.png",
+        "review_note": "出典書籍1876年、米国PD。画家の同定不確実、原画像取得失敗。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -555,7 +562,15 @@
       "review_note": "公式アーカイブにポスター掲載。SNS再利用条件は確認できていない。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "scientific_image",
+      "asset_title": "ホホジロザメの画像",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Great_white_shark.png",
+      "review_note": "Commons CC0表記、ただし第三者サイトが出典で撮影者の許諾の連鎖と画像内容を要確認。",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "mon-blair-witch-fiction",
@@ -662,7 +677,15 @@
       "review_note": "1948年版の画像権利・作者確認が必要。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "historical_art",
+      "asset_title": "1935–1942年の自転車の図",
+      "source_url": "https://commons.wikimedia.org/wiki/File:John_Cutting%2C_Bicycle%2C_1935-1942%2C_NGA_20852.jpg",
+      "review_note": "NGA提供CC0確認。原画像7.67MBで上限超過。米国資料であることを明記できる代替縮小画像を検討。",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "thu-memento-anterograde",
@@ -947,7 +970,15 @@
       "review_note": "日本公開2006年と作品年の表記差に注意。転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "historical_art",
+      "asset_title": "1605年の火薬陰謀事件の参加者の版画",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Gunpowder_Plot_Conspirators%2C_1605_from_NPG.jpg",
+      "review_note": "Crispijn van de Passeによる同時代版画、NPG由来、PD-Art表記、原画像2.14MB表示成功。NPGの商用画像利用条件と忠実複製の地域差を要確認。",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "thu-lucy-ten-percent-myth",
@@ -982,7 +1013,20 @@
       "review_note": "公式ポスターのSNS転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "Charles Bell『The anatomy of the brain』の脳解剖図",
+      "relation": "脳についての歴史的な解剖図。10%説を支持する資料ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_anatomy_of_the_brain._Wellcome_L0019329.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/The_anatomy_of_the_brain._Wellcome_L0019329.jpg",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:The_anatomy_of_the_brain._Wellcome_L0019329.jpg",
+      "rights_basis": "Wellcome Collection WMS1121、写真番号L0019329、Charles Bell（1774–1842）、1823年。個別ページ120–147行と167–168行にCC BY 4.0。原画像865KBの表示確認。改変なし・出典・ライセンスURLを明示。",
+      "credit": "Charles Bell／Wellcome Collection（改変なし） https://creativecommons.org/licenses/by/4.0/",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "fri-godzilla-lucky-dragon",
@@ -1140,7 +1184,20 @@
       "review_note": "劇場公開版の転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "IBM 1130システム",
+      "relation": "HALの名称の話に関連する同時代の実在IBM製コンピューターの参考写真。映画の機器ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:IBM_1130_system_TNMOC-CP.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/IBM_1130_system_TNMOC-CP.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:IBM_1130_system_TNMOC-CP.jpg",
+      "rights_basis": "BadgersCP本人の2024年撮影、The National Museum of ComputingのIBM 1130。個別ページ120–130行でCC0 1.0確認、原画像3.72MB表示成功。企業の推奨・提携を示唆しない。",
+      "credit": "IBM 1130の参考写真／BadgersCP",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "wed-metropolis-lost-reels",
@@ -1379,7 +1436,20 @@
       "review_note": "中田秀夫版。転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "VHSカセットの写真",
+      "relation": "記事で扱う家庭用ビデオ媒体の参考写真。映画の小道具ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:VHS_cassette.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/VHS_cassette.png",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:VHS_cassette.png",
+      "rights_basis": "撮影者Fluorinatedの自己撮影・背景除去、2020年。個別ページ120–130行で本人のCC0 1.0を確認。原画像リンク表示成功、359KB。商標による提携を示唆しない。",
+      "credit": "VHSカセットの参考写真／Fluorinated",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "tue-davinci-priory-hoax",
@@ -1829,6 +1899,14 @@
       "film_title": "The Passion of Joan of Arc",
       "year": 1928,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "historical_art",
+      "asset_title": "Jules Bastien-Lepage《Joan of Arc》",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Joan_of_Arc_MET_DP-14201-049.jpg",
+      "review_note": "The Met所蔵89.21.1、CC0確認。原画像5.59MBで既存5MB上限を超過。別画像か適切な縮小版を検証する。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -1931,7 +2009,20 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "ゴリラの写真",
+      "relation": "不注意による見落とし実験のゴリラにちなむ参考写真。実験の映像や着ぐるみではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Gorilla_gorilla_-_San_Francisco_Zoo_-_San_Francisco%2C_CA_-_DSC03909.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Gorilla_gorilla_-_San_Francisco_Zoo_-_San_Francisco%2C_CA_-_DSC03909.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Gorilla_gorilla_-_San_Francisco_Zoo_-_San_Francisco%2C_CA_-_DSC03909.jpg",
+      "rights_basis": "Daderot自身の2015年撮影、San Francisco Zoo。個別ページ120–130行にCC0 1.0を明記。原画像2.94MB表示成功。",
+      "credit": "ゴリラの参考写真（実験映像ではない）／Daderot",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "amadeus-salieri-pupil",
@@ -1972,7 +2063,14 @@
       "status": "pending",
       "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Salieri_painted_by_Joseph_Willibrord_M%C3%A4hler.jpg",
       "review_note": "画家を確認できる肖像候補、原画像8.94MBのため縮小版を要調査。第三者サイト由来のCC0宣言のみの別画像は不採用。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "alternate_candidate": {
+        "asset_kind": "historical_art",
+        "asset_title": "1802年のサリエリの肖像版画",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Salieri.jpg",
+        "review_note": "Riedelによる版画、PD-Art表記。ただし出典が個人ブログのため機関所蔵品を優先して再調査。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -2087,6 +2185,19 @@
       "film_title": "Terminator 2: Judgment Day",
       "year": 1991,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "騎士と守護聖人のステンドグラス",
+      "relation": "CGで動くステンドグラスの騎士を扱う記事に関連する歴史的な造形例。映画で使われた原画ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Stained_Glass_Panel_with_a_Knight_and_His_Patron_Saint_MET_sf41-170-104abs1.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Stained_Glass_Panel_with_a_Knight_and_His_Patron_Saint_MET_sf41-170-104abs1.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Stained_Glass_Panel_with_a_Knight_and_His_Patron_Saint_MET_sf41-170-104abs1.jpg",
+      "rights_basis": "Metropolitan Museum of Art所蔵41.170.104a-c、object ID467836。個別ページ144–150行とメタデータ183行に美術館提供CC0。原画像561KB表示成功。",
+      "credit": "騎士と守護聖人のステンドグラス／The Met",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2188,6 +2299,14 @@
       "film_title": "The Phantom of the Opera",
       "year": 1925,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "archival_photo",
+      "asset_title": "1864年のガルニエ宮建設写真",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Construction_du_palais_Garnier_(actuel_Op%C3%A9ra_national_de_Paris)%2C_9%C3%A8me_arrondissement_Paris._PH2704.jpg",
+      "review_note": "Paris Musées提供CC0、撮影者Durandelle 1917年没、原画像1.12MB表示成功。ただし埋込メタデータに宣伝用途許可の旧記載があり現行機関規約で照合するまで保留。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2469,6 +2588,14 @@
       "film_title": "The Elephant Man",
       "year": 1980,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "archival_photo",
+      "asset_title": "1889年のJoseph Merrickの医学誌掲載写真",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Josephmerrick1889.jpg",
+      "review_note": "1890年BMJ掲載、撮影者不詳、英国・米国PD表記と原画像575KB確認。ただし身体を露出した医学写真で、人物の尊厳と記事の主題を考慮し、服を着た肖像や本人の文書を優先する。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2597,6 +2724,14 @@
       "film_title": "L'Arrivée d'un train en gare de La Ciotat",
       "year": 1896,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "film_still",
+      "asset_title": "列車の到着の一コマ",
+      "source_url": "https://commons.wikimedia.org/wiki/File:L'Arriv%C3%A9e_d'un_train_en_gare_de_La_Ciotat.jpg",
+      "review_note": "MoMA出典、原画像631KB表示成功、米国PDのみ。共同作者Auguste 1954年没、フランス・日本の戦時加算等の確認が必要。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2627,6 +2762,14 @@
       "film_title": "Blacksmith Scene",
       "year": 1893,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "film_still",
+      "asset_title": "1893年『Blacksmith Scene』の一コマ",
+      "source_url": "https://commons.wikimedia.org/wiki/File:BlacksmithScene.jpg",
+      "review_note": "NPS資料由来、Dickson 1935年没、PD表示確認。原画像取得を2回試行したが失敗。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2662,6 +2805,14 @@
       "film_title": "怪談",
       "year": 1964,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "archival_photo",
+      "asset_title": "1888年の小泉八雲の肖像",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Picture_of_Lafcadio_Hearn.jpg",
+      "review_note": "1908年の書籍が出典。Commonsの米国PDのみ表示、撮影者と原産国での権利を追加確認。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2986,6 +3137,14 @@
       "film_title": "The Last Emperor",
       "year": 1987,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "archival_photo",
+      "asset_title": "2012年の天安門の写真",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Forbidden_City_(9870620895).jpg",
+      "review_note": "Gary Todd、CC0、原画像3.48MB表示成功。ただし天安門外観で紫禁城内の映画撮影地を直接示さない。歴史的宮殿内部または太和殿写真を優先。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3491,6 +3650,14 @@
       "film_title": "Aladdin",
       "year": 1992,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "historical_art",
+      "asset_title": "1895年頃のアラジン挿絵",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Story_of_Aladdin.jpg",
+      "review_note": "Walter Paget 1935年没、PD-Art表示。第三者サイトのウォーターマークがあり原典の別版を探索する。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3570,9 +3737,16 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1878–79年の立体視装置の図",
+      "relation": "左右の視差を利用する立体視技術の歴史的な例。映画の撮影機材ではない。",
       "source_url": "https://commons.wikimedia.org/wiki/File:PSM_V14_D130_New_form_of_stereoscope.jpg",
-      "review_note": "1878–79年の立体視装置の図、PD表示を確認。画像取得エラー。",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/PSM_V14_D130_New_form_of_stereoscope.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:PSM_V14_D130_New_form_of_stereoscope.jpg",
+      "rights_basis": "Popular Science Monthly vol.14 p.130、1878–79年刊、作者不詳、個別ページ124–131行のPD表示と書誌。米国公表から147年以上、日本の無名著作物期間も満了。原画像102KB表示成功。",
+      "credit": "Popular Science Monthly（1878–79）掲載の立体視装置",
       "checked_on": "2026-11-27"
     }
   },
@@ -4494,6 +4668,19 @@
       "film_title": "Star Wars: A New Hope",
       "year": 1977,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "旧Cine Capriのフィルム映写機",
+      "relation": "ライトセーバーの効果音の素材となった映写機に関する機器の参考写真。録音に使用した個体ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Projetor.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Projetor.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Projetor.jpg",
+      "rights_basis": "撮影者Admiral Beckett自身の2024年写真。個別ページ123–133行にCC0 1.0、ブラジルの旧Cine Capri所蔵機器と明記。原画像192KB表示成功。",
+      "credit": "フィルム映写機の参考写真／Admiral Beckett",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4594,11 +4781,16 @@
       "scope": "BFI本文16–20,30–33行：歴史と伝承の混在、講義形式、当時の精神医学への批評。本文の留保を維持。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "historical_art",
-      "asset_title": "Albrecht Dürer The Witch（1500年頃）",
-      "source_url": "https://commons.wikimedia.org/wiki/File:The_Witch_MET_DP815536.jpg",
-      "review_note": "美術館のCC0を個別ページ192–199行で再確認。画像取得エラー継続のため保留。",
+      "asset_title": "Hans Baldung Grien《The Witches' Sabbath》",
+      "relation": "映画が扱う近世ヨーロッパの魔女表象の参考版画。映画本編ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Witches'_Sabbath_MET_DP826750.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/The_Witches'_Sabbath_MET_DP826750.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:The_Witches'_Sabbath_MET_DP826750.jpg",
+      "rights_basis": "Hans Baldung Grien（1545年没）、The Met所蔵41.1.201、object ID336235。個別ページ160–166行に美術館提供CC0。原画像3.67MB表示成功。歴史的な美術作品で、裸婦表現があるため投稿時のプラットフォーム適合性に留意。",
+      "credit": "Hans Baldung Grien《The Witches' Sabbath》／The Met",
       "checked_on": "2026-11-27"
     }
   },
@@ -5006,6 +5198,19 @@
       "film_title": "The Conversation",
       "year": 1974,
       "review_note": "SNS転載許諾未確認。既存のラ・ジュテ重複枠と差替え、未公開。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "1967年の携帯式オープンリール録音機",
+      "relation": "録音を繰り返し聴く映画の時代背景を示す類似機器の参考写真。作中機材ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mriya_tape_recorder.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Mriya_tape_recorder.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Mriya_tape_recorder.jpg",
+      "rights_basis": "撮影者KVK2005自身の2025年写真。個別ページ125–135行にCC0 1.0、1967年製の機器と明記。原画像1.6MB表示成功。",
+      "credit": "1967年の録音機の参考写真／KVK2005",
+      "checked_on": "2026-11-27"
     }
   },
   {
