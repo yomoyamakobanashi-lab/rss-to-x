@@ -14,6 +14,7 @@ import feedparser
 import requests
 import podcast_poster_buffer as podcast
 from buffer_client import post_thread, _ensure_reelpal_tag
+from scripts.verify_funny_publication import verify
 from scripts import mako_film_stories as stories
 from scripts import funny_clip_spotify as funny
 
@@ -124,6 +125,11 @@ def companion(now,state):
     # second independent workflow. Reserve by actual clip ID/cycle.
     bank=funny.base.load_bank()
     rotation,_=funny.base.rollover_state(bank,funny.base.load_state())
+    # A reserved clip may have reached Buffer even if its rotation state was lost.
+    # Exclude all reserved IDs in the current cycle, without resending them.
+    prefix=f"funny:{rotation.get('cycle',1)}:"
+    reserved_ids={r.get("key","")[len(prefix):] for d in state["days"].values() for r in d.values() if isinstance(r,dict) and r.get("key","").startswith(prefix)}
+    rotation["used_ids"]=list(dict.fromkeys(rotation["used_ids"]+sorted(reserved_ids)))
     item=funny.base.pick_clip(bank,rotation)
     if item is None:
         print("[SKIP] no funny clip ready")
@@ -149,6 +155,11 @@ def main():
         return
     if os.getenv("GITHUB_REF")!="refs/heads/main" or os.getenv("REELPAL_UNIFIED_PUBLISH")!="1":
         raise RuntimeError("Live posting allowed only in the unified main workflow")
+    start = state.get("start_jst")
+    if not start or now.date().isoformat() < start:
+        print("[SKIP] waiting for coordinated JST cutover")
+        return
+    stories.load_bank(require_full=True)
     # Independent slots: a feed error must not prevent the editorial story.
     errors=[]
     try:
@@ -163,6 +174,15 @@ def main():
             print("[SKIP] no reviewed story for today's weekday")
     except Exception as exc:
         errors.append(f"story: {exc}")
+    # Reconcile accepted roots via read-only Buffer status; never resubmit on failure.
+    for rec in day_slots(state,now.date().isoformat()).values():
+        if rec.get("status") == "accepted" and rec.get("buffer_id"):
+            try:
+                post=verify(rec["buffer_id"],attempts=2,delay=5)
+                rec.update(status="root_confirmed", external_link=post["externalLink"])
+                write_ledger(state)
+            except Exception as exc:
+                errors.append(f"publication unconfirmed {rec['buffer_id']}: {exc}")
     if errors:
         raise RuntimeError("; ".join(errors))
 
