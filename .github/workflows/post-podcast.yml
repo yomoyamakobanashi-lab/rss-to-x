@@ -1,10 +1,9 @@
 name: Post Podcast via Buffer
 
 on:
-  schedule:
-    # 15分ごとにRSSを確認。最新回が未告知なら当日中の告知を最優先する。
-    - cron: '2,17,32,47 * * * *'
   workflow_dispatch:
+
+# Retired: all automatic publishing is centralized in mako-film-stories.yml.
 
 concurrency:
   group: podcast-post
@@ -12,6 +11,7 @@ concurrency:
 
 jobs:
   post:
+    if: ${{ false }} # Retired to enforce the daily cap
     runs-on: ubuntu-latest
     permissions:
       contents: write
