@@ -1166,5 +1166,283 @@
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
+  },
+  {
+    "id": "mon-ring-vhs-obon",
+    "weekday": 0,
+    "title": "幽霊はなぜビデオテープに宿ったのか",
+    "topic_key": "ring-1998-vhs-material-ghost",
+    "category": "映画怪異録",
+    "episode_guid": "372ffc7d-20b1-4a65-a978-fb2b3be26937",
+    "posts": [
+      "幽霊が出るのは墓場や古井戸とは限らない。\n\n1998年の『#リング』が選んだのは、家庭に普及したビデオテープだった。古い怪談と新しい機械が出会った瞬間だ。\n#まこの映画小話",
+      "英国映画協会の日本怪談映画史の解説によると、1960年代末頃までは、お盆に合わせた夏の幽霊映画公開が定番だった。仏教行事や歌舞伎、口承の怪談がその背景にある。",
+      "中田秀夫監督の『リング』では、ある映像を観ると電話が鳴り、7日後に命を落とすというルールが設定されている。幽霊の恐怖が、機械を通じて日常生活に入り込む。",
+      "VHSには実物があり、手に取って渡せる。中に巻かれたテープも見える。BFIの批評では、この物質感が画面内の異変と現実世界の境界を曖昧にする恐怖に結びつくと論じられている。",
+      "古い民間伝承を最新技術に移植すると、新しい怪談が生まれる。もし今、呪われた映像を描くなら、物として残るビデオとは違う恐怖になるかもしれない。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜10 great Japanese ghost stories",
+        "url": "https://www.bfi.org.uk/lists/10-great-japanese-ghost-stories",
+        "supports": "16行：お盆と夏の公開習慣、宗教・民俗・歌舞伎・口承。91–92行：映画の設定。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI｜When videotapes were sinister",
+        "url": "https://www.bfi.org.uk/features/ringu-hideo-nakata-videotapes-lynch-haneke",
+        "supports": "16–29行：1998年、監督、VHSの物質感についての批評。批評的解釈と事実を区別。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "リング",
+      "year": 1998,
+      "review_note": "中田秀夫版。転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "tue-davinci-priory-hoax",
+    "weekday": 1,
+    "title": "中世の秘密結社はいつ生まれた？",
+    "topic_key": "davinci-code-priory-modern-hoax",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "レオナルド・ダ・ヴィンチやニュートンが関わったとされる秘密結社。\n\n『#ダヴィンチコード』の謎を追うと、中世ではなく20世紀にたどり着く。\n#まこの映画小話",
+      "ロン・ハワード監督の2006年の映画は、ダン・ブラウンの小説を原作とする。殺人事件の謎から、キリストの時代に遡る秘密を追う物語だ。",
+      "歴史家ビル・パトナムは、シオン修道会をめぐる古代以来の秘密という物語は1950年代に生まれた捏造であり、1982年の書籍を通じて広まったと説明している。",
+      "宗教史家バート・アーマンも、原作の史実に関する主張を専門書で検証した。問題は虚構を創作すること自体ではなく、その根拠となる歴史資料まで正確だと受け取らせることだと指摘する。",
+      "有名な人物の名を並べ、古い資料が存在すると語れば、秘密の歴史はそれらしく聞こえる。しかし、資料がいつ誰によって作られたのかを問わなければ、その歴史の古ささえ確かめられない。"
+    ],
+    "sources": [
+      {
+        "name": "Sony Pictures｜The Da Vinci Code",
+        "url": "https://www.sonypictures.com/movies/thedavincicode",
+        "supports": "29–34行：原作、監督、物語の設定、2006年著作権表示。",
+        "access_scope": "公式作品ページ本文"
+      },
+      {
+        "name": "Guardian｜歴史家Bill Putnamへの取材",
+        "url": "https://www.theguardian.com/education/2005/sep/13/furthereducation.uk",
+        "supports": "49–51行：歴史家による1950年代の捏造・1982年書籍に関する説明。歴史家の見解として記述。",
+        "access_scope": "記事本文"
+      },
+      {
+        "name": "Bart Ehrman｜Truth and Fiction in The Da Vinci Code（OUP）",
+        "url": "https://academic.oup.com/book/50314",
+        "supports": "2516–2519行：歴史的正確性をうたう原作への研究者の批判。個別史料の検証内容は採用しない。",
+        "access_scope": "出版社の公開概要のみ"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "The Da Vinci Code",
+      "year": 2006,
+      "source_url": "https://www.sonypictures.com/movies/thedavincicode",
+      "review_note": "公式ページの画像は権利留保表示。転載しない。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "wed-rope-moving-walls",
+    "weekday": 2,
+    "title": "映画のために壁が動いた",
+    "topic_key": "rope-hidden-cuts-moving-set",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "カメラが通れないなら、壁の方を動かせばいい。\n\nヒッチコックの『#ロープ』（1948年）は、長回しを実現するため、部屋そのものを動かした映画だ。\n#まこの映画小話",
+      "物語の多くが一つの部屋で進む。劇中時間を観客の体験時間に近づけようと、監督は長いショットを連ねる方法を選んだ。",
+      "当時はフィルムを交換する必要がある。監督の回想によれば、人物がカメラの前を横切り、一時的に画面を暗くすることで一部の切れ目を隠した。ただし、すべてのカットが隠されているわけではない。",
+      "英国映画協会が紹介する撮影現場では、カメラの動きに合わせて画面外のスタッフが部屋の壁や家具を移動させた。自然に見える部屋の中で、見えないところでは舞台装置が動いていたわけだ。",
+      "編集が少なければ現実に近い、という単純な話でもない。切れ目を見せないための仕掛けを知ると、連続した時間や空間もまた映画が作り出した表現なのだとわかる。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Hot takes: a short history of the one-shot movie",
+        "url": "https://www.bfi.org.uk/lists/single-take-films",
+        "supports": "27–32行：監督の回想、フィルム交換とカット隠し、連続的な演出。",
+        "access_scope": "記事本文"
+      },
+      {
+        "name": "BFI｜On set with Alfred Hitchcock",
+        "url": "https://www.bfi.org.uk/features/set-alfred-hitchcock",
+        "supports": "39–40行：1948年作品、壁と家具の移動。",
+        "access_scope": "記事本文"
+      },
+      {
+        "name": "BFI｜10 great films set in one location",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-set-one-location",
+        "supports": "44行：隠されたカットは一部、劇中時間と空間の連続性。",
+        "access_scope": "記事本文"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Rope",
+      "year": 1948,
+      "review_note": "劇場用ポスター転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "thu-experiment-role-instructions",
+    "weekday": 3,
+    "title": "役割を与えるだけで人は残酷になる？",
+    "topic_key": "das-experiment-stanford-demand-characteristics",
+    "category": "映画心理学講義",
+    "posts": [
+      "看守の役を与えるだけで、普通の人は残酷になるのか。\n\n映画『#es』の着想となったスタンフォード監獄実験。実は看守が受けた指示について、後年の研究で争点になっている。\n#まこの映画小話",
+      "1971年の実験では、参加者に模擬監獄で看守と囚人の役割を割り当てた。2001年のドイツ映画『es』はこの実験に着想を得たスリラーであり、実験そのものの記録映像ではない。",
+      "研究者ティボー・ル・テクシエは資料を再検討し、看守たちは研究者が期待する行動を知らされ、指示や監督を受けていたと批判した。役割だけが行動を変えたという説明には問題がある。",
+      "一方、演劇史家スティーヴン・スコット＝ボトムズの資料分析は、研究者の指示があったことを認めつつ、看守たちの個々の反応や裁量に注目する。参加者全員が同じ行動を取ったわけではない。",
+      "この実験から、権力を与えれば誰もが必ず残酷になる、とは結論できない。むしろ、期待を伝える研究者、与えられた役割、個々の判断を区別する必要がある。衝撃的な実験にも再検証は必要だ。"
+    ],
+    "sources": [
+      {
+        "name": "filmportal.de｜Das Experiment",
+        "url": "https://www.filmportal.de/video/das-experiment-20002001",
+        "supports": "34–36行：1971年実験を着想とする2000/2001年映画。",
+        "access_scope": "作品解説本文"
+      },
+      {
+        "name": "Le Texier｜Investigating the Stanford Prison Experiment（Springer）",
+        "url": "https://link.springer.com/book/10.1007/978-3-031-49292-1",
+        "supports": "93–95行：看守への指示、研究者の監督、期待と方法論に対する著者の批判。",
+        "access_scope": "書籍紹介・概要のみ"
+      },
+      {
+        "name": "Scott-Bottoms (2020)｜The dirty work of the Stanford Prison Experiment",
+        "url": "https://doi.org/10.1177/2632666320944316",
+        "supports": "53–67、91–96、214行：アーカイブ分析、指示の存在とその限界、参加者の多様性。",
+        "access_scope": "公開論文本文"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Das Experiment",
+      "year": 2001,
+      "review_note": "ドイツ版『es』。2010年リメイクと区別。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "fri-seventh-seal-church-chess",
+    "weekday": 4,
+    "title": "死神とチェスをする絵が教会にあった",
+    "topic_key": "seventh-seal-albertus-pictor-chess",
+    "category": "銀幕人文学",
+    "posts": [
+      "死神とチェスをする騎士。映画史に残るあの場面は、監督の空想だけから生まれたわけではない。\n\nベルイマンの『#第七の封印』（1957年）と中世の教会絵画。\n#まこの映画小話",
+      "牧師の父を持つベルイマンは、幼い頃の教会を回想している。大人が説教を聞く間、少年の目を奪ったのは壁や天井の絵、聖人や怪物の姿だった。",
+      "スウェーデンのテービー教会には、中世の画家アルベルトゥス・ピクトルによる、死神と人間がチェスをする絵がある。ベルイマン財団の解説によれば、これが映画の場面の着想となった。",
+      "興味深いことに、映画の原型となった舞台劇『木の絵』には、死神という登場人物自体がいなかった。映画に作り替える過程で、中世美術のモチーフが中心に据えられたわけだ。",
+      "監督は1958年の文章で、疫病や最後の審判を恐れた中世の人々と、異なる恐怖を抱える現代人を結びつけている。数百年前の宗教画が、映画を通じて新しい時代の問いを語り始める。"
+    ],
+    "sources": [
+      {
+        "name": "Ingmar Bergman Foundation｜The Seventh Seal",
+        "url": "https://www.ingmarbergman.se/en/production/seventh-seal",
+        "supports": "43–55、111行：舞台劇と死神不在、教会での幼少期、絵画の着想。",
+        "access_scope": "公式アーカイブ本文"
+      },
+      {
+        "name": "Ingmar Bergman｜The Seventh Seal（1958年再録）",
+        "url": "https://www.ingmarbergman.se/en/production/seventh-seal-0",
+        "supports": "21–34行：本人の教会回想と中世・現代の恐怖についての記述。",
+        "access_scope": "本人の文章本文"
+      },
+      {
+        "name": "Ingmar Bergman Foundation｜Bergman and Visual Art",
+        "url": "https://www.ingmarbergman.se/en/universe/bergman-and-visual-art",
+        "supports": "テービー教会の壁画、アルベルトゥス・ピクトル（同作品解説）。",
+        "access_scope": "公式記事（検索結果と関連公式アーカイブ照合）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Det sjunde inseglet",
+      "year": 1957,
+      "review_note": "1957年映画版。転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sat-oz-ruby-mismatched-shoes",
+    "weekday": 5,
+    "title": "魔法の靴は左右別々だった",
+    "topic_key": "wizard-oz-ruby-slippers-color-mismatch",
+    "category": "映画の舞台裏",
+    "posts": [
+      "博物館にある映画『#オズの魔法使』の赤い靴。実は左右でサイズも違う。\n\nスミソニアンの所蔵品記録を読むと、映画美術と技術史が見えてくる。\n#まこの映画小話",
+      "1939年の映画でドロシーが履く赤い靴は、ボームの原作小説では銀色だった。鮮やかな色彩を映せるテクニカラーを生かすため、映画では赤い靴に変更されたと考えられている。",
+      "映画で使われた靴は複数制作された。スミソニアン所蔵の一足は、右が5BC、左が5C。内側の記載もそれぞれ別の組番号を示している。",
+      "同館によれば、一部の靴底には木製の撮影セットで足音を抑えるためのフェルトが貼られた。見た目のためだけでなく、録音のためにも衣装が工夫されている。",
+      "なお、左右がいつ取り違えられたのかは不明で、撮影中だったと断定できない。魔法の靴の現物には、映像に映らない映画制作と保存の歴史が刻まれている。"
+    ],
+    "sources": [
+      {
+        "name": "Smithsonian｜Ruby slippers worn by Judy Garland",
+        "url": "https://www.si.edu/object/ruby-slippers-worn-judy-garland-dorothy-wizard-oz:nmah_670130",
+        "supports": "79–85行：原作との色の違い、複数組、左右のサイズと番号、フェルト、取り違え時期不明。",
+        "access_scope": "所蔵品解説本文"
+      },
+      {
+        "name": "米国議会図書館｜To See the Wizard",
+        "url": "https://www.loc.gov/exhibits/oz/ozsect2.html",
+        "supports": "123行：原作銀色・映画赤色、カラー撮影を活用したとされること、複数のデザイン。",
+        "access_scope": "展示解説本文"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "The Wizard of Oz",
+      "year": 1939,
+      "review_note": "所蔵品画像に利用制限表示あり。ポスターは別途権利確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sun-casablanca-misquotation",
+    "weekday": 6,
+    "title": "映画に存在しない名台詞",
+    "topic_key": "casablanca-play-it-again-sam-misquote",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "映画を観たことがなくても知っている名台詞が、実は映画に存在しない。\n\n『#カサブランカ』の「Play it again, Sam!」は、その代表例だ。\n#まこの映画小話",
+      "米国映画協会（AFI）は、1942年の『カサブランカ』にはその英文のままの台詞が一度も登場しないと解説している。映画にはサムと、彼に演奏を求める場面があるのに、名台詞として広まった文言とは一致しない。",
+      "さらに1972年には、その言い回しを題名にした別の映画『ボギー！俺も男だ』が公開された。AFIのカタログによれば、こちらはウディ・アレンの同名舞台劇が原作で、『カサブランカ』の終幕から始まる。",
+      "元の映画にない言い回しが、その映画を参照する別の映画の題名になる。作品が文化に浸透するほど、原文そのものとは異なる記憶が独立して流通することもある。",
+      "これは名台詞の間違い探しで終わらない。映画を知っていると思うことと、映画を実際に観ていることの違いを感じさせる、ちょっと面白い例だ。"
+    ],
+    "sources": [
+      {
+        "name": "AFI Movie Club｜Casablanca",
+        "url": "https://www.afi.com/news/afi-movie-club-casablanca/",
+        "supports": "58–70行：有名な言い回しがそのまま映画に登場しないこと、1942年公開。",
+        "access_scope": "記事本文"
+      },
+      {
+        "name": "AFI Catalog｜Play It Again, Sam",
+        "url": "https://catalog.afi.com/Catalog/MovieDetails/54384",
+        "supports": "60–69行：1972年映画、同名舞台劇、元映画の終幕から始まること、広まった誤引用に由来する題名。",
+        "access_scope": "作品カタログ本文"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Casablanca",
+      "year": 1942,
+      "review_note": "1942年版ポスターの転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
   }
 ]
