@@ -37,8 +37,8 @@
       "status": "pending",
       "asset_kind": "book_cover",
       "asset_title": "ドラキュラ原作の1897年初版表紙候補",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Dracula-First-Edition-1897.jpg",
-      "review_note": "British Library由来、PD-scan表示だが9.9MB、別画像は後年版と混同の疑い。版の来歴と適切な縮小版を確認。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dracula_cover_600px.jpg",
+      "review_note": "1897年とされる画像は黄色の英国初版表紙と異なる。版の同定まで不採用。",
       "checked_on": "2026-11-27"
     }
   },
@@ -1329,7 +1329,20 @@
       "review_note": "当時のポスターの作者・利用地域別の権利未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "film_still",
+      "asset_title": "『アクメッド王子の冒険』（1926）の場面写真",
+      "relation": "作品本編の影絵アニメーションの画面",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lotte_Reiniger_Prinz_Achmed_001.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Lotte_Reiniger_Prinz_Achmed_001.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Lotte_Reiniger_Prinz_Achmed_001.jpg",
+      "rights_basis": "権利者Christel Strobel/Primrose Productions提供、VRT ticket #2018040610008781、個別ページ118–143行にCC BY-SA 4.0明示。原画像126KB取得。原画像を改変せず単独の資料として掲載、ライセンス・権利者を表示。",
+      "credit": "Lotte Reiniger/Primrose Productions（改変なし） https://creativecommons.org/licenses/by-sa/4.0/",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "mon-ring-vhs-obon",
@@ -1536,7 +1549,20 @@
       "source_url": "https://www.ingmarbergman.se/en/production/seventh-seal/media"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "テービー教会の《死とチェス》",
+      "relation": "映画の着想となった壁画の写真",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Taby_kyrka_Death_playing_chess.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Taby_kyrka_Death_playing_chess.jpg",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Taby_kyrka_Death_playing_chess.jpg",
+      "rights_basis": "Albertus Pictor 1507年没の壁画。撮影者Håkan Svensson自身の2003年撮影、個別ページ190–207行でCC BY 2.5 Genericの選択可を明示。原画像2.27MB取得。改変なし、ライセンス・氏名表示。",
+      "credit": "Håkan Svensson (Xauxa)（改変なし） https://creativecommons.org/licenses/by/2.5/",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "sat-oz-ruby-mismatched-shoes",
@@ -1680,6 +1706,19 @@
       "film_title": "Sleepy Hollow",
       "year": 1999,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "book_cover",
+      "asset_title": "1850年刊『The Legend of Sleepy Hollow』挿絵本の表紙",
+      "relation": "映画の原作となった文学作品の歴史的版。初版とは呼ばない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Washington_Irving's_Illustrations_of_the_Legend_of_Sleepy_Hollow%2C_Designed_and_Etched_by_F.O.C._Darley_for_the_Members_of_the_American_Art_Union%2C_1850_MET_MM89541.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Washington_Irving%27s_Illustrations_of_the_Legend_of_Sleepy_Hollow%2C_Designed_and_Etched_by_F.O.C._Darley_for_the_Members_of_the_American_Art_Union%2C_1850_MET_MM89541.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Washington_Irving's_Illustrations_of_the_Legend_of_Sleepy_Hollow%2C_Designed_and_Etched_by_F.O.C._Darley_for_the_Members_of_the_American_Art_Union%2C_1850_MET_MM89541.jpg",
+      "rights_basis": "The Met所蔵44.40.2、個別ページ112,175–183行で1850年版の表紙と美術館提供CC0を確認。原画像1.87MB取得。",
+      "credit": "Washington Irving／F. O. C. Darley／The Met（1850年版）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -1928,6 +1967,12 @@
       "film_title": "Amadeus",
       "year": 1984,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "pending",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Salieri_painted_by_Joseph_Willibrord_M%C3%A4hler.jpg",
+      "review_note": "画家を確認できる肖像候補、原画像8.94MBのため縮小版を要調査。第三者サイト由来のCC0宣言のみの別画像は不採用。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2652,6 +2697,19 @@
       "film_title": "東海道四谷怪談",
       "year": 1959,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "葛飾北斎《百物語 お岩さん》（1830）",
+      "relation": "提灯と幽霊の図像を示す同時代の浮世絵。舞台装置そのものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Oiwa_LCCN2005678554.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Oiwa_LCCN2005678554.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Oiwa_LCCN2005678554.jpg",
+      "rights_basis": "米国議会図書館LCCN2005678554、1830年刊、北斎1849年没。個別ページ118–155行に原産国・米国PD、LOCの米国内制限なし。日本でも期間満了。Original fileリンクから2.68MBの画像を取得、色見本を含む原画像のまま掲載。",
+      "credit": "葛飾北斎《百物語 お岩さん》／Library of Congress",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3442,7 +3500,7 @@
     "topic_key": "interstellar-dngr-scientific-research",
     "category": "映画の舞台裏",
     "posts": [
-      "ブラックホールを映画に登場させるために作ったプログラムが、科学研究にも使われた。\n\n『#インターステラー』の映像には、映画と物理学の共同研究がある。\n#まこの映画小話",
+      "ブラックホールを映画に登場させるために作ったプログラムが、科学研究にも使われた。\n\n『#インターステラー』の映像には、映画と物理学の共同研究がある。\n#まこの映画小話\n画像：EHT Collaboration",
       "物理学者キップ・ソーンと視覚効果チームは、回転するブラックホールの周囲を進む光の経路を計算する新しいレンダラーDNGRを開発した。",
       "2015年の論文は、光の束を使う描画方法がIMAX映像のちらつきを抑える上で重要だったと説明する。完成後には光が曲がる現象の研究にも応用された。",
       "一方、映画では観客が理解しやすいよう、色や明るさなどの表現を調整する判断もあった。映像は観測写真ではない。科学的な計算と映画的な選択が同居している点が面白い。"
@@ -3470,11 +3528,16 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "scientific_image",
-      "asset_title": "M87ブラックホール観測画像（2019年公表）",
+      "asset_title": "M87*のブラックホールの影（2019年公開）",
+      "relation": "映画の理論的なブラックホール描写と現実の観測画像を比較する資料。映画の映像ではない。",
       "source_url": "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87.jpg",
-      "review_note": "ESO公式にEHT Collaborationのクレジット。CC BY 4.0、原画像取得未完。",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Black_hole_-_Messier_87.jpg",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://www.eso.org/public/outreach/copyright/",
+      "rights_basis": "ESO公式画像eso1907aと著作権規約6–17行、Commonsの個別CC BY 4.0表示および原画像2.39MBを確認。営利再利用可、正確なクレジット表示・ライセンスリンク・非推奨表示が条件。改変なし。",
+      "credit": "EHT Collaboration（改変なし） https://creativecommons.org/licenses/by/4.0/",
       "checked_on": "2026-11-27"
     }
   },
@@ -3505,6 +3568,12 @@
       "film_title": "The Hobbit: An Unexpected Journey",
       "year": 2012,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "source_url": "https://commons.wikimedia.org/wiki/File:PSM_V14_D130_New_form_of_stereoscope.jpg",
+      "review_note": "1878–79年の立体視装置の図、PD表示を確認。画像取得エラー。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3861,6 +3930,19 @@
       "film_title": "Beauty and the Beast",
       "year": 1991,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "Walter Craneによる『美女と野獣』挿絵（1875）",
+      "relation": "物語の後世の挿絵であり、二人の女性作家の初版本ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Walter_Crane%2C_illustration_from_Beauty_and_the_Beast%2C_1875.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Walter_Crane%2C_illustration_from_Beauty_and_the_Beast%2C_1875.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Walter_Crane%2C_illustration_from_Beauty_and_the_Beast%2C_1875.jpg",
+      "rights_basis": "1875年制作、Walter Crane 1915年没。Commons個別ページ119–149行にUCLA図書館展覧会図録1997 p.40出典と忠実複製PDを明記。日本の戦時加算を含む期間も満了。原画像664KB取得。",
+      "credit": "Walter Crane《Beauty and the Beast》（1875）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3896,6 +3978,19 @@
       "film_title": "Pocahontas",
       "year": 1995,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "ポカホンタスの1616年の肖像版画",
+      "relation": "映画の人物の同時代の肖像史料。救命逸話の証拠ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pocahontas_by_Simon_van_de_Passe_1616.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Pocahontas_by_Simon_van_de_Passe_1616.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Pocahontas_by_Simon_van_de_Passe_1616.jpg",
+      "rights_basis": "Simon van de Passe 1647年没、1616年版画。個別ページ119–169行にNational Portrait Gallery所蔵・原産国および米国PD・忠実な複製と記載。日本の期間も満了。原画像372KB取得。",
+      "credit": "Simon van de Passe（1616）／National Portrait Gallery",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4502,8 +4597,8 @@
       "status": "pending",
       "asset_kind": "historical_art",
       "asset_title": "Albrecht Dürer The Witch（1500年頃）",
-      "source_url": "https://commons.wikimedia.org/wiki/File:The_Witch_MET_DP815535.jpg",
-      "review_note": "メトロポリタン美術館のCC0。直接取得に失敗。SNS向けの画像内容・取得可否を再確認。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Witch_MET_DP815536.jpg",
+      "review_note": "美術館のCC0を個別ページ192–199行で再確認。画像取得エラー継続のため保留。",
       "checked_on": "2026-11-27"
     }
   },
