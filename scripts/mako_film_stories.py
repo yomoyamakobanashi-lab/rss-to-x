@@ -19,7 +19,7 @@ CATEGORIES = ("映画怪異録", "銀幕陰謀論", "シネフィルの処方箋
 
 # Only explicit reuse permission, not merely a public poster URL, qualifies.
 POSTER_LICENSES = {"public_domain", "CC0", "CC-BY", "CC-BY-SA", "rights_holder_permission"}
-POSTER_HOSTS = {"upload.wikimedia.org", "collectionapi.metmuseum.org", "images.metmuseum.org", "cdn.eso.org"}
+POSTER_HOSTS = {"upload.wikimedia.org", "thumb.wikimedia.org", "collectionapi.metmuseum.org", "images.metmuseum.org", "cdn.eso.org"}
 MEDIA_USER_AGENT = "ReelPalFilmStories/1.1 (https://github.com/yomoyamakobanashi-lab/rss-to-x; editorial image accessibility)"
 _BLOCKED_MEDIA_HOSTS = set()
 
