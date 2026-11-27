@@ -371,11 +371,16 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "film_still",
-      "asset_title": "1902年版の月の顔の白黒場面",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Voyage_dans_la_lune_(1902)_still03.jpg",
-      "review_note": "画像取得済み。Méliès 1938年没、米国PD表記あり。ただし直接出典不明と記載。原版・他の権利者・復元版を照合。",
+      "asset_title": "1902年『月世界旅行』の大砲の場面の制作スチル",
+      "relation": "記事で扱う大砲と舞台装置の実際の制作資料。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:M%C3%A9li%C3%A8s_Trip_to_the_Moon_cannon_still.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/M%C3%A9li%C3%A8s_Trip_to_the_Moon_cannon_still.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:M%C3%A9li%C3%A8s_Trip_to_the_Moon_cannon_still.jpg",
+      "rights_basis": "La Caixa Foundationの展示資料由来、Georges Méliès（1938年没）、1902年。個別ページ119–156行で原産国・米国PDを確認。日本の死後70年にフランスの戦時加算を考慮しても2026年までに満了。746KB、直接画像表示成功。",
+      "credit": "Georges Méliès／La Caixa Foundation展示資料",
       "checked_on": "2026-11-27"
     }
   },
@@ -498,7 +503,20 @@
       "review_note": "日本版のポスターの利用許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "芥川龍之介の肖像資料",
+      "relation": "映画の原作に関わる作家の肖像。映画本編の画像ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Akutagawa_Ry%C5%ABnosuke.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Akutagawa_Ry%C5%ABnosuke.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Akutagawa_Ry%C5%ABnosuke.jpg",
+      "rights_basis": "国立国会図書館の肖像資料、1927年以前、日本の旧著作権法23条及び1970年法附則2条に基づくPD、米国URAA非復活を個別ページ123–129行で確認。675KB、直接画像表示成功。",
+      "credit": "国立国会図書館の肖像資料",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "fri-schindler-lists",
@@ -862,7 +880,20 @@
       "review_note": "1953年映画版のポスターを候補とする。1938年の放送資料とは区別。転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1906年ベルギー仏語版『宇宙戦争』の第一部扉絵",
+      "relation": "ラジオ劇の原作となった小説の歴史的挿絵。ラジオ放送の実写ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_War_of_the_Worlds_by_Henrique_Alvim_Corr%C3%AAa%2C_print_version_01.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/The_War_of_the_Worlds_by_Henrique_Alvim_Corr%C3%AAa%2C_print_version_01.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:The_War_of_the_Worlds_by_Henrique_Alvim_Corr%C3%AAa%2C_print_version_01.jpg",
+      "rights_basis": "1906年ベルギー刊の原作挿絵。Henrique Alvim Corrêa（1910年没）。個別ページ118–151行に原産国及び米国PD、British Libraryの該当版への参照あり。日本でも保護期間満了。944KB、直接画像表示成功。",
+      "credit": "Henrique Alvim Corrêa（1906年版）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "wed-third-man-city",
@@ -1919,7 +1950,14 @@
       "asset_title": "Jules Bastien-Lepage《Joan of Arc》",
       "source_url": "https://commons.wikimedia.org/wiki/File:Joan_of_Arc_MET_DP-14201-049.jpg",
       "review_note": "The Met所蔵89.21.1、CC0確認。原画像5.59MBで既存5MB上限を超過。別画像か適切な縮小版を検証する。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "alternate_candidate": {
+        "asset_title": "Pierre Henri Revoil《Joan of Arc Imprisoned in Rouen》（1819）",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Joan_of_Arc_Imprisoned_in_Rouen_MET_DP368011.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Joan_of_Arc_Imprisoned_in_Rouen_MET_DP368011.jpg",
+        "review_note": "The Met 2003.152、個別ページ173–179行でCC0確認、2.77MB。直接画像取得エラーのため保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
