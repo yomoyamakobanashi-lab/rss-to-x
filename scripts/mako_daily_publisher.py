@@ -47,7 +47,7 @@ def persist_reservation(state):
 def day_slots(state, date):
     return state["days"].setdefault(date, {})
 
-def reserve_and_send(state, date, slot, kind, key, texts):
+def reserve_and_send(state, date, slot, kind, key, texts, *, image_url=None):
     if slot not in ("story", "companion"):
         raise ValueError("Invalid slot")
     if datetime.now(JST).date().isoformat() != date:
@@ -65,7 +65,7 @@ def reserve_and_send(state, date, slot, kind, key, texts):
     # Commit reservation before calling Buffer. A timeout or runner crash never
     # triggers a blind automatic retry of a potentially published thread.
     persist_reservation(state)
-    post_id = post_thread(texts)
+    post_id = post_thread(texts, image_url=image_url) if image_url else post_thread(texts)
     rec.update(status="accepted", buffer_id=post_id)
     write_ledger(state)
     print(f"[OK] Buffer accepted {slot}: {kind} {post_id}",flush=True)
@@ -186,7 +186,8 @@ def main():
         try:
             item=due_story(now,state,rows)
             if item:
-                reserve_and_send(state,date,"story","story",item["id"],stories.render(item))
+                image_url=stories.reachable_poster(item)
+                reserve_and_send(state,date,"story","story",item["id"],stories.render(item),image_url=image_url)
             elif now.hour>=7 and "story" not in day_slots(state,date):
                 print("[SKIP] no reviewed story for today's weekday")
         except Exception as exc:
