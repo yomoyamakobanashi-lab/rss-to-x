@@ -3783,5 +3783,441 @@
       "year": 1940,
       "review_note": "SNS転載許諾未確認。"
     }
+  },
+  {
+    "id": "golem-prague-changing-legend",
+    "weekday": 0,
+    "title": "ゴーレムの故郷はプラハだけではなかった",
+    "topic_key": "golem-prague-legend-standardization",
+    "category": "映画怪異録",
+    "posts": [
+      "粘土から作られた人造人間ゴーレム。プラハの伝説として有名だが、かつてはポーランドにも同じくらい有名な別の伝承があった。\n#まこの映画小話 #ゴーレム",
+      "ベルリンのユダヤ博物館によれば、19世紀にはポーランドのヘウムのラビがゴーレムを作る物語も広く知られていた。1900年前後にプラハのラビ・レーヴを主人公とする版が主流になった。",
+      "パウル・ヴェゲナーが出演したゴーレム映画は三本あり、現存するのは1920年の第三作のみ。16世紀プラハを舞台にしたこの映画には、有機的な形の立体セットが用いられた。",
+      "昔から一つの場所で語り継がれてきたと思う伝承にも、競合する別の物語がある。映画が作った印象的な姿から、伝承の多様さにも目を向けたい。"
+    ],
+    "sources": [
+      {
+        "name": "ベルリン・ユダヤ博物館｜Golem",
+        "url": "https://www.jmberlin.de/en/golem-from-mysticism-to-minecraft",
+        "supports": "200–203、279–295行：伝承の地域差とプラハ版の普及、1920年のセット。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI｜10 great silent horror films",
+        "url": "https://www.bfi.org.uk/lists/10-great-silent-horror-films",
+        "supports": "61–68行：三本の映画、現存する第三作、プラハの伝説。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Golem: How He Came into the World",
+      "year": 1920,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "innocents-electronic-ghost",
+    "weekday": 0,
+    "title": "19世紀の幽霊を電子音で描いた映画",
+    "topic_key": "innocents-1961-electronic-sound",
+    "category": "映画怪異録",
+    "posts": [
+      "19世紀末の怪談を映画にするとき、制作陣は新しい電子音響を取り入れた。\n\n1961年の『#回転』。怖さを生むのは、幽霊の姿だけではない。\n#まこの映画小話",
+      "ジャック・クレイトン監督の原作はヘンリー・ジェイムズの1898年の小説『ねじの回転』。BFIはこの映画の音響編集者ピーター・マスグレイヴが制作を振り返る映像を公開している。",
+      "BFIの紹介によれば、音響には当時としては早い電子効果が用いられた。昔の怪談らしい音をそのまま再現するだけでなく、新しい技術で不安を形にしたわけだ。",
+      "怪談映画では何かが見えることより、何かが聞こえたのに正体がわからないことが怖い場合もある。次にホラーを観るなら、画面を埋める暗闇だけでなく音の演出も味わいたい。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Film 10: The Innocents (1961)",
+        "url": "https://www.bfi.org.uk/resources-events-teachers/resources-teachers/gothic-classroom/film-10-innocents-1961",
+        "supports": "16行：原作、監督、作品年。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI Player｜Creating the sound of The Innocents",
+        "url": "https://player.bfi.org.uk/free/film/watch-creating-the-sound-of-the-innocents-online",
+        "supports": "65行：音響編集者、電子効果の使用。映像自体ではなく公式紹介文を参照。",
+        "access_scope": "公式映像の紹介文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Innocents",
+      "year": 1961,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "donnie-brasco-six-years",
+    "weekday": 1,
+    "title": "六年にわたって別人だった捜査官",
+    "topic_key": "donnie-brasco-fbi-history",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "俳優ジョニー・デップが演じた架空の名前には、現実の持ち主がいた。\n\n『#フェイク』(Donnie Brasco)。FBIは六年に及んだ潜入捜査の歴史を公開している。\n#まこの映画小話",
+      "ジョー・ピストーネは1976年から1981年まで犯罪組織に潜入した。1981年7月、組織はドニー・ブラスコが実際にはFBI捜査官だったと知った。",
+      "FBIの公式記録によると、この捜査から連邦裁判で100件を超える有罪判決につながった。組織の実態について、長期間にわたる調査が証拠を提供した。",
+      "1997年の映画は潜入した人物と組織の人間関係をドラマ化する。実際の捜査の記録と映画の人物描写を区別すると、社会の中で役割を演じることについても考えたくなる。"
+    ],
+    "sources": [
+      {
+        "name": "FBI｜Joe Pistone, Undercover Agent",
+        "url": "https://www.fbi.gov/history/cases-and-criminals/joe-pistone-undercover-agent",
+        "supports": "45–60行：1976〜1981年の捜査、身元発覚、100件超の有罪判決。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Sony Pictures｜Donnie Brasco",
+        "url": "https://www.sonypictures.com/movies/donniebrasco",
+        "supports": "24–28行：1997年映画の設定、出演者。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Donnie Brasco",
+      "year": 1997,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "enigma-polish-cooperation",
+    "weekday": 1,
+    "title": "暗号解読の物語には前日譚がある",
+    "topic_key": "imitation-game-polish-mathematicians",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "エニグマ暗号の解読といえばアラン・チューリング。しかし、英国の研究者が戦時中の仕事を始める前に、大きな成果を上げていた数学者たちがいた。\n#まこの映画小話 #イミテーションゲーム",
+      "英国科学博物館によると、1930年代にはポーランド、フランス、英国がエニグマの解読に取り組んでいた。ポーランドの研究者たちは早い段階で解読の成果を得ていた。",
+      "1939年7月、ポーランドは英国とフランスの関係者に成果と知識を共有した。それがブレッチリー・パークの研究の土台となり、チューリングらの仕事につながった。",
+      "2014年の映画『イミテーション・ゲーム』はチューリングと仲間を中心に描く。天才の伝記から一歩外へ出ると、国境を越えて知識を引き継いだ人々の歴史が見えてくる。"
+    ],
+    "sources": [
+      {
+        "name": "英国科学博物館｜Breaking Enigma",
+        "url": "https://blog.sciencemuseum.org.uk/breaking-enigma-a-story-of-european-co-operation/",
+        "supports": "27–32行：各国の研究、1939年の知識共有と英国への影響。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Black Bear｜The Imitation Game",
+        "url": "https://www.blackbearpictures.com/film-and-tv/the-imitation-game",
+        "supports": "45行：映画の題材とチューリングのチーム。",
+        "access_scope": "制作会社公式作品解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Imitation Game",
+      "year": 2014,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "playtime-tativille",
+    "weekday": 2,
+    "title": "パリを撮るためにパリを作った",
+    "topic_key": "playtime-tativille-comedy-design",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "パリの日常を撮るために、パリそっくりの街を作った監督がいた。\n\nジャック・タチの『#プレイタイム』。その撮影用の街はタチヴィルと呼ばれた。\n#まこの映画小話",
+      "映画には似たような近代建築や、使いづらい設備に振り回される人々が現れる。現実の空港や街を何か月も閉鎖して多数の人物の演技を調整するのは難しい。",
+      "Criterionの批評は、タチが作った街そのものを脚本の第一稿のようなものと捉える。空間に仕込んだ仕掛けから、複数の小さな喜劇が同時に生まれる。",
+      "映画の主役がどこにいるかわからなくてもいい。画面の隅まで自由に眺め、観客が自分で笑いを見つける。そんな喜劇のために街ごと設計されたという話だ。"
+    ],
+    "sources": [
+      {
+        "name": "Criterion｜Playtime: Things Fall Apart, Beautifully",
+        "url": "https://www.criterion.com/current/posts/1680-playtime-things-fall-apart-beautifully",
+        "supports": "29–43行：タチヴィル、都市設計、複数の演技、撮影上の理由。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "PlayTime",
+      "year": 1967,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "still-walking-pop-song",
+    "weekday": 2,
+    "title": "映画のタイトルは母の好きな歌だった",
+    "topic_key": "still-walking-blue-light-yokohama",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "是枝裕和の『#歩いても歩いても』というタイトルは、1960年代の歌謡曲に由来する。\n\n映画で流れる『ブルー・ライト・ヨコハマ』は、監督の母が好きだった曲でもある。\n#まこの映画小話",
+      "Criterionの批評によれば、是枝は母の死を受けてこの映画を作った。台所で野菜を下ごしらえする手や、とうもろこしの天ぷらを揚げる音など、幼少期の記憶を思わせる細部が登場する。",
+      "作中の母親も同じ歌を好む。ただし彼女がその曲を大切にする理由は単純に楽しい思い出というわけではない。歌の意味は、それを聴く人物の人生によって変わる。",
+      "大きな事件を説明する代わりに、ありふれた歌や食事が家族の歴史を語る。何気ない物に人の記憶が宿るという、映画の静かな表現を味わいたい。"
+    ],
+    "sources": [
+      {
+        "name": "Criterion｜Still Walking: A Death in the Family",
+        "url": "https://www.criterion.com/current/posts/1743-still-walking-a-death-in-the-family",
+        "supports": "43–44行：母の死、料理、曲名、題名、母の好みと作中の意味。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "歩いても 歩いても",
+      "year": 2008,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "horror-pandemic-resilience",
+    "weekday": 3,
+    "title": "ホラー好きは危機に強かったのか",
+    "topic_key": "horror-pandemic-resilience-correlation",
+    "category": "映画心理学講義",
+    "posts": [
+      "ホラー好きは現実の危機に強い？ 新型コロナの流行中、そんな問いを調べた心理学研究がある。\n\n恐怖を娯楽にする意味を考える、意外な結果だ。\n#まこの映画小話",
+      "Scrivnerらは310人を対象に映画の好みとパンデミック時の心理的適応を調べた。ホラーなどのジャンルを好む人に、心理的な回復力の一部と関連する傾向が見られた。",
+      "研究者は、フィクションが恐怖や危機を疑似的に経験する機会になる可能性を指摘する。ただし調査は相関研究であり、ホラー鑑賞が原因で適応力が高くなったとは証明できない。",
+      "著者自身、一部の人では不安が増える可能性も挙げている。怖い映画は万能の処方箋ではない。自分がなぜ恐怖を楽しむのか、考えるための面白い研究だ。"
+    ],
+    "sources": [
+      {
+        "name": "Scrivner et al.｜Pandemic practice",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7492010/",
+        "supports": "要旨・301–307行：310人、関連、相関研究の限界、不安増加の可能性。",
+        "access_scope": "査読論文本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "drama-bonding-pain",
+    "weekday": 3,
+    "title": "悲しい映画を一緒に観ると何が変わる？",
+    "topic_key": "drama-social-bonding-wall-sit",
+    "category": "映画心理学講義",
+    "posts": [
+      "悲しい映画の上映前と上映後に、観客が壁に背をつけて座る姿勢をどれだけ続けられるか測った研究がある。\n\n映画と社会的なつながりを調べた実験だ。\n#まこの映画小話",
+      "2016年の研究では『Stuart: A Life Backwards』を観る群と、感情的な刺激の少ない映像を観る群を比較した。痛みへの耐性の指標と、集団への親近感を測った。",
+      "前者では平均して耐性の指標と集団への親近感が上昇した。ただし反応しない参加者もいた。研究者はエンドルフィンの関与を仮説として論じるが、脳内の物質を直接測ったわけではない。",
+      "悲しい物語を共有した後、他の観客との距離が縮まることがあるのかもしれない。映画館で同じ時間を過ごすという行為にも、研究する価値がある。"
+    ],
+    "sources": [
+      {
+        "name": "Dunbar et al. (2016)｜Emotional arousal when watching drama",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5043313/",
+        "supports": "168、178–202、232–237行：測定、結果、個人差、エンドルフィンの解釈。",
+        "access_scope": "査読論文本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Stuart: A Life Backwards",
+      "year": 2007,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "peter-pan-hospital-royalties",
+    "weekday": 4,
+    "title": "大人にならない少年が子どもを助け続ける",
+    "topic_key": "peter-pan-gosh-royalties-1929",
+    "category": "銀幕人文学",
+    "posts": [
+      "ピーター・パンの作者は、作品の権利を英国の小児病院に寄贈した。\n\n永遠に子どものままでいる少年は、現実でも子どもたちを支え続けている。\n#まこの映画小話 #ピーターパン",
+      "1929年、J・M・バリーはロンドンのグレート・オーモンド・ストリート病院を支援するため、『ピーター・パン』の権利を贈った。病院は舞台公演や書籍などから収入を得るようになった。",
+      "1988年には英国の著作権法に特別な規定が設けられ、病院は英国で一定の利用に対するロイヤルティーを継続して受け取れるようになった。作品の著作権が世界中で永久に続くという話ではない。",
+      "1953年のディズニー映画を知っていても、この贈り物の歴史を知る人は多くないかもしれない。物語が読者の心を動かすだけでなく、現実の医療を支える力にもなる話だ。"
+    ],
+    "sources": [
+      {
+        "name": "Great Ormond Street Hospital｜Peter Pan at GOSH",
+        "url": "https://www.gosh.nhs.uk/about-us/our-history/peter-pan-at-great-ormond-street-hospital/",
+        "supports": "118–126行：1929年寄贈、収入、1988年の英国法特例。",
+        "access_scope": "受贈病院の公式沿革"
+      },
+      {
+        "name": "Disney｜Peter Pan",
+        "url": "https://movies.disney.com/peter-pan",
+        "supports": "作品公開情報：1953年。",
+        "access_scope": "公式作品ページ"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Peter Pan",
+      "year": 1953,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "bambi-salten-exile",
+    "weekday": 4,
+    "title": "バンビの作者が森の外で経験したこと",
+    "topic_key": "bambi-salten-exile-literary-interpretation",
+    "category": "銀幕人文学",
+    "posts": [
+      "ディズニーの『#バンビ』の原作者は、ナチスによって著作が禁じられ、故郷を離れることになった。\n\n小鹿の物語の背景には、20世紀のヨーロッパ史がある。\n#まこの映画小話",
+      "フェリックス・ザルテンの原作を新訳した研究者ジャック・ザイプスは、これを弱い立場にある者が受ける迫害についての物語と読む。動物を描いた児童向けの話だけではないという解釈だ。",
+      "Publishers Weeklyの取材では、1935年にザルテンの著作が禁じられ、1939年に家族とともにスイスへ避難した経緯が紹介される。ディズニー版が公開されたのは1942年だった。",
+      "原作が特定の歴史的事件を予言したと断定することはできない。でも、森の中で危険にさらされる動物を描いた物語を、作者の生きた社会から読み直す価値はある。"
+    ],
+    "sources": [
+      {
+        "name": "Publishers Weekly｜New Bambi Translation Reveals the Dark Origins",
+        "url": "https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/88287-new-bambi-translation-reveals-the-dark-origins-of-the-disney-story.html",
+        "supports": "34–38、48–51行：新訳者の解釈、禁書、亡命、1942年映画。",
+        "access_scope": "新訳者への取材記事"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Bambi",
+      "year": 1942,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "wallace-gromit-ten-seconds",
+    "weekday": 5,
+    "title": "30人のアニメーターが一日に作る10秒",
+    "topic_key": "wallace-gromit-were-rabbit-production-rate",
+    "category": "映画の舞台裏",
+    "posts": [
+      "30人のアニメーターが力を合わせて、一日に完成する映像は10秒。\n\n『#ウォレスとグルミット 野菜畑で大ピンチ！』の公式制作記録にある数字だ。\n#まこの映画小話",
+      "アードマンによると企画から公開までに5年、新しいキャラクターは40体。人形の位置や表情を少しずつ変え、一コマずつ撮影していく制作には、気の遠くなるような時間がかかる。",
+      "一日に10秒という数字は制作チーム全体の完成映像についての説明であり、一人で10秒ずつ作ったという意味ではない。2006年にはアカデミー賞の長編アニメーション賞を受賞した。",
+      "観客が何気なく笑って通り過ぎる数秒の中に、膨大な作業が詰まっている。滑らかに動くことだけでは測れない、手で動かした時間の魅力だ。"
+    ],
+    "sources": [
+      {
+        "name": "Aardman｜The Curse of the Were-Rabbit",
+        "url": "https://aardman.com/film-tv-games/the-curse-of-the-were-rabbit/",
+        "supports": "16、23–61行：5年、30人、40体、1日10秒、受賞。",
+        "access_scope": "制作会社公式作品資料"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Wallace & Gromit: The Curse of the Were-Rabbit",
+      "year": 2005,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "lightsaber-projector-tv",
+    "weekday": 5,
+    "title": "宇宙の剣は映画館とテレビの音だった",
+    "topic_key": "star-wars-lightsaber-projector-tv",
+    "category": "映画の舞台裏",
+    "posts": [
+      "ライトセーバーの音は未来の機械から生まれたわけではない。古い映写機とテレビが材料だった。\n\n『#スターウォーズ』の音響担当ベン・バート本人の回想。\n#まこの映画小話",
+      "バートは映写技師の経験から、映写機のモーターの音が持つ音楽的な響きを覚えていた。さらにテレビの近くでマイクが拾った電気的な雑音も録音した。",
+      "二つの音を混ぜてライトセーバーの基本音を作った。本人によると、ベイダーの剣には雑音を多めに、オビ＝ワンの剣にはモーターの響きを多めにし、音で両者を区別したという。",
+      "映画館の古い機械の音が、今も未来の音として記憶されている。目立たない日常音をどう聞くかという、音響制作の面白さがここにある。"
+    ],
+    "sources": [
+      {
+        "name": "The Film Stage｜Ben Burtt interview",
+        "url": "https://thefilmstage.com/ben-burtt-on-how-modern-hollywood-has-lost-a-sensitivity-for-sound-lightsabers-and-the-wilhelm-scream/",
+        "supports": "171–173行：本人の映写技師経験、二つの音、異なる混合比。",
+        "access_scope": "音響担当者本人の公開インタビュー"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Star Wars: A New Hope",
+      "year": 1977,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "dracula-night-shift-spanish",
+    "weekday": 6,
+    "title": "昼のドラキュラと夜のドラキュラ",
+    "topic_key": "dracula-spanish-version-night-shoot",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "同じ城のセットで、昼は英語版、夜はスペイン語版のドラキュラが撮影されていた。\n\n1931年、トーキー時代のハリウッドには奇妙な映画制作の方法があった。\n#まこの映画小話",
+      "無声映画なら字幕を変えて海外に届けることができた。音声付き映画が広まると、別の言語で同じ作品を撮影する方法が採用された。",
+      "米国議会図書館の解説によると、英語版はトッド・ブラウニング、スペイン語版はジョージ・メルフォードが監督。セットや基本脚本は同じでも、出演者も上映時間も異なる二本の作品になった。",
+      "吹き替えと字幕が当たり前になる前、翻訳することは映画をもう一度作ることでもあった。同じ題材から異なる映像が生まれた二本を比べてみたい。"
+    ],
+    "sources": [
+      {
+        "name": "米国議会図書館｜From the National Film Registry: Drácula",
+        "url": "https://blogs.loc.gov/now-see-hear/2022/10/from-the-national-film-registry-drcula-1931/",
+        "supports": "249–254行：言語版制作、両監督、昼夜の撮影、上映時間の差。",
+        "access_scope": "国立映画登録簿の公式解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Drácula (Spanish version)",
+      "year": 1931,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "dumbo-time-cover",
+    "weekday": 6,
+    "title": "タイム誌の表紙を飾るはずだった小象",
+    "topic_key": "dumbo-time-cover-1941",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "『#ダンボ』は1941年12月に米国の雑誌TIMEの表紙を飾る予定だった。\n\nしかし世界の歴史を変える事件が起き、その計画は実現しなかった。\n#まこの映画小話",
+      "ディズニー公式資料によると、ダンボは前年の高額な二作品に続いて比較的低予算で制作され、スタジオに利益をもたらした。1941年10月に公開された64分の作品だった。",
+      "その年の5月にはスタジオの美術部門の多くが待遇改善などを求めてストライキに参加していた。PBSの資料によると、スト中にもダンボなどの制作は一部で続いていた。",
+      "さらに12月の真珠湾攻撃を受け、TIMEの表紙の予定が変更されたとディズニーは説明している。小象の物語の外には、労働争議と戦時下のメディアの歴史がある。"
+    ],
+    "sources": [
+      {
+        "name": "Disney D23｜Dumbo (film)",
+        "url": "https://d23.com/a-to-z/dumbo-film/",
+        "supports": "89–92行：公開、上映時間、予算と利益、TIME表紙予定の変更。",
+        "access_scope": "公式作品資料"
+      },
+      {
+        "name": "PBS American Experience｜Walt Disney's Empire",
+        "url": "https://www.pbs.org/wgbh/americanexperience/features/walt-disneys-empire/",
+        "supports": "82–86行：1941年のストライキと制作継続。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Dumbo",
+      "year": 1941,
+      "review_note": "ポスターのSNS転載許諾未確認。"
+    }
   }
 ]
