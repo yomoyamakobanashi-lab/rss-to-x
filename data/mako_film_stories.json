@@ -4457,5 +4457,185 @@
       "year": 1894,
       "review_note": "SNS転載許諾未確認"
     }
+  },
+  {
+    "id": "cat-people-lewton-bus",
+    "weekday": 0,
+    "title": "怪物が出ないのに怖いバス",
+    "topic_key": "cat-people-lewton-bus",
+    "category": "映画怪異録",
+    "posts": [
+      "ホラー映画史には、怪物ではなく路線バスの名前で呼ばれる恐怖演出がある。\n1942年の『#キャット・ピープル』が広めた「ルートン・バス」だ。\n#まこの映画小話",
+      "夜道を歩く女性は、黒豹に追われているかもしれない。観客も暗闇に何かが潜んでいると思い始める。緊張が高まった瞬間、大きな音が響く。",
+      "しかし現れたのはバスだった。英国映画協会はこの演出を後のホラー映画の定番となった技法として紹介している。恐怖の対象と驚きの原因は、同じである必要がない。",
+      "怪物を見せることだけが恐怖演出ではない。観客自身に怪物の存在を想像させれば、日常の音さえ恐怖に変わる。映画館を出た後のバスの音も少し違って聞こえるかもしれない。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Where to begin with Val Lewton",
+        "url": "https://www.bfi.org.uk/features/where-begin-val-lewton",
+        "supports": "40–43行：バスの場面と技法の普及",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Cat People",
+      "year": 1942,
+      "review_note": "SNS転載許諾未確認"
+    }
+  },
+  {
+    "id": "abscam-fictional-business",
+    "weekday": 1,
+    "title": "存在しない会社が政治腐敗を暴いた",
+    "topic_key": "abscam-fictional-business",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "2013年の『#アメリカン・ハッスル』の背景には、FBIが架空の会社を作った実際の事件がある。\nしかも当初の捜査対象は政治家ではなかった。\n#まこの映画小話",
+      "1978年、盗難美術品や偽造証券をめぐる捜査が始まった。架空企業アブドゥル・エンタープライゼズを利用した捜査は、やがて公職者の汚職事件へと発展する。",
+      "会合の映像は裁判の証拠となった。一方、犯罪を行う機会を捜査側が用意することは、許容される捜査なのかという法的な争点も生まれた。",
+      "映画は事件を脚色している。しかし実際の事件にも、虚構を作ることで現実の犯罪を明らかにするという逆説があった。フィクションと証拠の境界を考えさせる実話だ。"
+    ],
+    "sources": [
+      {
+        "name": "University of Virginia Law Library｜ABSCAM",
+        "url": "https://archives.law.virginia.edu/dengrove/writeup/abscam-fbi-sting-operation-targeting-political-corruption",
+        "supports": "12–20行：捜査の発端、録画、法的争点、映画",
+        "access_scope": "公開本文"
+      },
+      {
+        "name": "Ronald Reagan Presidential Library｜Abscam",
+        "url": "https://www.reaganlibrary.gov/archives/topic-guide/abscam",
+        "supports": "133–137行：架空企業と事件、映画化",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "American Hustle",
+      "year": 2013,
+      "review_note": "SNS転載許諾未確認"
+    }
+  },
+  {
+    "id": "la-jetee-one-moving-shot",
+    "weekday": 2,
+    "title": "まばたきが奇跡になる映画",
+    "topic_key": "la-jetee-one-moving-shot",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "映画で人が目を開けるだけの場面に、なぜ胸を打たれるのか。\nクリス・マルケルのSF短編『#ラ・ジュテ』は、その答えを映画の形式そのもので示してくれる。\n#まこの映画小話",
+      "作品のほとんどは白黒の静止写真で構成される。写真の連なりと語りによって、時間旅行の物語が進む。動く映像に慣れた観客は、動かない世界に次第に慣れていく。",
+      "眠る女性の写真が重なり合うように切り替わる場面で、突然、彼女の目が開く。作品中の唯一の短い動くショットだ。",
+      "普段は見過ごすほど小さな動きが、静止画の連続によって特別な出来事になる。映画の力は映像の豪華さだけではなく、何をどれだけ待たせるかにも宿る。"
+    ],
+    "sources": [
+      {
+        "name": "Criterion Collection｜La Jetée: Unchained Melody",
+        "url": "https://www.criterion.com/current/posts/485-la-jet-e-unchained-melody",
+        "supports": "42–49行：静止画編集と唯一の動く場面",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "La Jetée",
+      "year": 1963,
+      "review_note": "SNS転載許諾未確認"
+    }
+  },
+  {
+    "id": "heider-simmel-animated-shapes",
+    "weekday": 3,
+    "title": "三角形に悪意を感じる人間",
+    "topic_key": "heider-simmel-animated-shapes",
+    "category": "映画心理学講義",
+    "posts": [
+      "三角形と丸が動くだけの無声アニメを見せると、人はそこに人間関係を読み取る。\n1944年、心理学者ハイダーとジンメルが行った実験だ。\n#まこの映画小話",
+      "登場するのは二つの三角形と一つの円。人の顔も台詞もない。それでも最初の実験では34人の大学生のうち33人が、図形の動きを人間の行動になぞらえて説明した。",
+      "後年の研究では、様々な社会的状況を描く図形アニメーションを新たに作り、同様の社会的意味の読み取りを調べた。図形の形だけでなく、相互の動きが重要な手がかりになる。",
+      "アニメーションは顔を描かなくても物語を伝えられる。観客がただ動きを見ているのではなく、意図や感情を補っているからだ。映画を観ることは、意味を作ることでもある。"
+    ],
+    "sources": [
+      {
+        "name": "Attributing social meaning to animated shapes｜PMC",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7932368/",
+        "supports": "90–97、121–133行：1944年の実験と後続研究",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "frankenstein-anonymous-author",
+    "weekday": 4,
+    "title": "怪物を生んだ少女の名前は本になかった",
+    "topic_key": "frankenstein-anonymous-author",
+    "category": "銀幕人文学",
+    "posts": [
+      "映画史を代表する怪物の一人、フランケンシュタインの怪物。その原作の初版には、作者の名前がなかった。\n#まこの映画小話",
+      "1816年、ジュネーヴ湖畔で怪談を書く遊びが行われた。参加していた18歳のメアリー・シェリーは、生命を作り出す科学者の物語を構想する。1818年の初版は匿名で刊行された。",
+      "オックスフォード大学の解説によれば、当初は男性作家の作品だと広く考えられていた。舞台化を経て物語は知名度を増し、1831年には彼女の名で改訂版が刊行された。",
+      "怪物は外見によって社会から排除される。物語の作者自身も、その名を明示しないまま世に出た。両者を同一視はできないが、誰が語る資格を持つのかという問いを重ねて読むことができる。"
+    ],
+    "sources": [
+      {
+        "name": "University of Oxford｜Frankenstein by Mary Shelley",
+        "url": "https://english.web.ox.ac.uk/node/1278201",
+        "supports": "100–107行：匿名刊行、怪談競作、改訂版、排除の主題",
+        "access_scope": "公開本文"
+      },
+      {
+        "name": "British Library｜Mary Shelley’s Frankenstein",
+        "url": "https://www.britishlibrary.cn/en/works/frankenstein/",
+        "supports": "24–26、42–45行：創作背景と映画化",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Frankenstein",
+      "year": 1931,
+      "review_note": "SNS転載許諾未確認"
+    }
+  },
+  {
+    "id": "2001-rotating-centrifuge",
+    "weekday": 5,
+    "title": "宇宙船の床を歩くために撮影所を回した",
+    "topic_key": "2001-rotating-centrifuge",
+    "category": "映画の舞台裏",
+    "posts": [
+      "『#2001年宇宙の旅』で宇宙飛行士が円形の船内を歩く場面。実は俳優が重力に逆らったのではなく、巨大な撮影セットが回っていた。\n#まこの映画小話",
+      "ディスカバリー号の船内は、回転によって人工重力を生むという設定。制作陣はその空間を実際に回転する直径約11.6メートルのセットとして建造した。",
+      "椅子や机などは内側に固定され、俳優は回転するセットの下部で歩くことができた。監督は別の場所から映像を確認しながら演出したという。",
+      "未来の宇宙技術を説得力ある映像にするため、地上で巨大な機械を建造した。特殊効果は現実を消す技術だけではない。時には現実を作り替える技術なのだ。"
+    ],
+    "sources": [
+      {
+        "name": "The 2001 Archive｜The Special Effects of 2001",
+        "url": "https://2001archive.org/resources/the-special-effects-of-2001-a-space-odyssey/",
+        "supports": "18–23行：回転セットの寸法、人工重力、固定家具、演出",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "2001: A Space Odyssey",
+      "year": 1968,
+      "review_note": "SNS転載許諾未確認"
+    }
   }
 ]
