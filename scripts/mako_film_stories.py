@@ -21,8 +21,8 @@ CATEGORIES = ("映画怪異録", "銀幕陰謀論", "シネフィルの処方箋
 POSTER_LICENSES = {"public_domain", "CC0", "CC-BY", "CC-BY-SA", "rights_holder_permission"}
 POSTER_HOSTS = {"upload.wikimedia.org"}
 
-def poster_url(item):
-    poster = item.get("poster")
+def _asset_url(item, field):
+    poster = item.get(field)
     if poster is None:
         return None
     if not isinstance(poster, dict):
@@ -32,10 +32,13 @@ def poster_url(item):
         return None
     if status != "rights_checked":
         raise ValueError("Unknown poster review status: " + item["id"])
-    for key in ("film_title", "year", "source_url", "image_url", "license",
+    required = ("film_title", "year") if field == "poster" else ("asset_title", "relation", "asset_kind")
+    for key in (*required, "source_url", "image_url", "license",
                 "rights_evidence_url", "rights_basis", "credit", "checked_on"):
         if not str(poster.get(key) or "").strip():
             raise ValueError("Incomplete poster rights record: " + item["id"] + "/" + key)
+    if field == "related_image" and poster["asset_kind"] not in {"archival_photo", "historical_art", "book_cover", "film_still", "scientific_image", "diagram", "related_object"}:
+        raise ValueError("Invalid related image kind: " + item["id"])
     date.fromisoformat(poster["checked_on"])
     if poster["license"] not in POSTER_LICENSES:
         raise ValueError("Unapproved poster license: " + item["id"])
@@ -48,9 +51,15 @@ def poster_url(item):
         raise ValueError("Unapproved poster file host: " + item["id"])
     return poster["image_url"]
 
-def reachable_poster(item):
+def poster_url(item):
+    return _asset_url(item, "poster")
+
+def visual_assets(item):
+    """Prefer the actual poster, then a separately cleared relevant image."""
+    return [(field, url) for field in ("poster", "related_image") if (url := _asset_url(item, field))]
+
+def _reachable_image(item, url):
     """Check media before reserving a slot; no redirects or blind post retries."""
-    url = poster_url(item)
     if not url:
         return None
     try:
@@ -66,10 +75,19 @@ def reachable_poster(item):
                 raise ValueError("Not a supported image signature")
         return url
     except (requests.RequestException, ValueError, StopIteration) as exc:
-        print(f"[WARN] poster unavailable for {item['id']}; publishing text only: {exc}")
+        print(f"[WARN] image unavailable for {item['id']}; no image-less submission: {exc}")
         return None
 
-def render(item):
+def reachable_poster(item):
+    return _reachable_image(item, poster_url(item))
+
+def reachable_visual(item):
+    for field, url in visual_assets(item):
+        if _reachable_image(item, url):
+            return field, url
+    return None
+
+def render(item, *, visual_field=None):
     parts = list(item["posts"])
     # Each bibliographic entry gets its own reply if the combined sources
     # would exceed the conservative Buffer/X limit.
@@ -79,9 +97,14 @@ def render(item):
         cta = "関連回もぜひ。映画から人間・文化・社会を語るポッドキャスト Reel Friends in Tokyo。\n🎧 " + link
     else:
         cta = "映画の見方が変わる話を、番組でも。\n🎧 Reel Friends in Tokyo（リルパル）\n" + SHOW
-    if poster_url(item):
-        poster = item["poster"]
-        refs.append("ポスター資料：" + poster["credit"] + "\n" + poster["source_url"])
+    assets = dict(visual_assets(item))
+    field = visual_field or next(iter(assets), None)
+    if field:
+        if field not in assets:
+            raise ValueError("Unapproved visual selected: " + item["id"])
+        asset = item[field]
+        label = "ポスター資料：" if field == "poster" else "関連資料画像（映画ポスターではありません）："
+        refs.append(label + asset["credit"] + "／" + asset["license"] + "\n" + asset["source_url"])
     parts += refs + [cta]
     return [_ensure_reelpal_tag(f"{i+1}/{len(parts)}\n{p}") for i,p in enumerate(parts)]
 
@@ -107,7 +130,8 @@ def load_bank(require_full=False):
             u = urlsplit(s["url"])
             if u.scheme != "https" or not u.hostname or u.username or u.password or not s.get("supports") or not s.get("name"):
                 raise ValueError("Invalid source record: " + row["id"])
-        poster_url(row)
+        for field, _ in visual_assets(row):
+            render(row, visual_field=field)
         render(row)
     counts = Counter(r["weekday"] for r in rows)
     if require_full and any(counts[d] < 20 for d in range(7)):
