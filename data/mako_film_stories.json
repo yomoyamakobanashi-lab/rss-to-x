@@ -3594,6 +3594,19 @@
       "film_title": "F for Fake",
       "year": 1974,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "エルミア・デ・ホーリーの1974年11月イビサ島での写真",
+      "relation": "映画で扱われた贋作家本人の別撮影の写真。作品のスチルではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Elmyr_de_Hory_1974.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Elmyr_de_Hory_1974.png",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Elmyr_de_Hory_1974.png",
+      "rights_basis": "Commons個別ページ129–150行：1974年11月撮影、撮影者が自己制作としてCC BY-SA 4.0 Internationalを明示。商用共有可。画像1151×2073、2.05MB、直接URLで実表示確認。",
+      "credit": "Kitetoa／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/（無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3766,8 +3779,8 @@
     "related_image": {
       "status": "pending",
       "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Globuli_Placebo.jpg",
-        "review_note": "CC BY 4.0の本人制作写真だが原画像7.72MB、縮小版取得に失敗。別の鮮明な資料を探す。",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Capsules.jpg",
+        "review_note": "VictorMartinの自己制作、世界的PD宣言と条件なし許諾。原画像1.99MBを実表示確認したが焦点が甘いため、鮮明な代替候補を探す。",
         "checked_on": "2026-11-27"
       }
     }
@@ -4372,11 +4385,24 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6892313/",
-        "review_note": "原論文本文96行でCC BY 2.0確認。図表の内容・独立した素材URLおよび配信ホストの追加検証が必要。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "レオン・サレスによる《The Doctor》の版画（フィルズの1891年絵画に基づく）",
+      "relation": "病児を見守る医師を描いた作品。映画『ドクター』そのものや共感の実験結果ではなく、医療者と患者の関係を表現する関連芸術資料。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Doctor,_Leon_Salles_(after_Fildes)_Wellcome_L0006430.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/The_Doctor%2C_Leon_Salles_%28after_Fildes%29_Wellcome_L0006430.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:The_Doctor,_Leon_Salles_(after_Fildes)_Wellcome_L0006430.jpg",
+      "rights_basis": "Commons個別ページ124–149行：Wellcome Collection所蔵、同館の画像にCC BY 4.0明示。商用共有可。原画像1656×1152、819KB。個別ページからのリンクで実画像表示確認。クエリなしURLは今回の閲覧環境で取得失敗したため成功した直接URLを記録しCIで再確認。",
+      "credit": "Léon Salles (after Luke Fildes)／Wellcome Collection, L0006430／CC BY 4.0 https://creativecommons.org/licenses/by/4.0/（無改変）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6892313/",
+          "review_note": "原論文本文96行でCC BY 2.0確認。図表の内容・独立した素材URLおよび配信ホストの追加検証が必要。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -4692,8 +4718,8 @@
     "related_image": {
       "status": "pending",
       "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:The_Wicker_Man_of_the_Druids.jpg",
-        "review_note": "ウェールズ国立図書館由来、1781年のPennantの挿絵、PD表示。原画像と960px版の取得に失敗。再取得後のみ承認。",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Wicker_man_(Britannia_antiqua_illustrata).jpg",
+        "review_note": "1676年刊の挿絵、Cambridge St John's College由来、PDM。原画像のリンク・クエリなしURLとも今回再取得失敗。",
         "checked_on": "2026-11-27"
       },
       "additional_candidates": [
@@ -5085,12 +5111,25 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "archival_photo",
-      "asset_title": "アポロ13号の機械船",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Explosive_Evidence_-_GPN-2000-001119.jpg",
-      "review_note": "NASAの原画像311KB取得済み。NASA公式メディア利用規約の営利宣伝に関する条件と番組誘導の併記の適合性を確認するまで保留。",
-      "checked_on": "2026-11-27"
+      "asset_title": "微小重力実験の準備をする放物線飛行機内の研究者（2010年）",
+      "relation": "『アポロ13』の無重量場面の撮影に用いた放物線飛行の原理に関係する別の研究飛行の写真。NASAの映画撮影現場ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Parabelflug_PB271078.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Parabelflug_PB271078.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Parabelflug_PB271078.jpg",
+      "rights_basis": "Commons個別ページ120–141行：2010年11月27日の第16回放物線飛行実験の準備、本人撮影、CC BY-SA 4.0 International。商用共有可。機器・ロゴは付随的、研究者の番組支持を示さない。4032×3024、2.42MB、原画像リンクで表示確認。",
+      "credit": "Michael KR／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/（無改変）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "asset_kind": "archival_photo",
+        "asset_title": "アポロ13号の機械船",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Explosive_Evidence_-_GPN-2000-001119.jpg",
+        "review_note": "NASAの原画像311KB取得済み。NASA公式メディア利用規約の営利宣伝に関する条件と番組誘導の併記の適合性を確認するまで保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -5198,6 +5237,14 @@
       "film_title": "Fantasia",
       "year": 1940,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Fantasound_tracks.jpg",
+        "review_note": "1941年の業界誌に掲載された録音機の写真。米国PD（著作権表示なし）だが、日本など米国外の作者・職務著作・保護期間を精査するまで保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
