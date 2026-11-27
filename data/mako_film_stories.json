@@ -4246,6 +4246,11 @@
       "film_title": "Häxan",
       "year": 1922,
       "review_note": "SNS転載許諾未確認"
+    },
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "BFI本文16–20,30–33行：歴史と伝承の混在、講義形式、当時の精神医学への批評。本文の留保を維持。"
     }
   },
   {
@@ -4257,7 +4262,7 @@
     "posts": [
       "シャーロック・ホームズの生みの親が、少女たちの撮った妖精写真を信じていた。\n映画『FairyTale: A True Story』の背景にある、1917年からの英国の事件だ。\n#まこの映画小話",
       "コティングリーの少女たちが撮った写真には、小さな妖精が写っていた。コナン・ドイルはこれを信じ、写真は社会の注目を集めた。",
-      "追加撮影では、支持者が細工を見破るために印を付けた写真乾板まで用意した。しかし、妖精の絵を切り抜いて撮影場所に置く手法なら、乾板自体を細工する必要はない。",
+      "追加撮影では、支持者が細工を検出するため密かに印を付けた写真乾板まで渡した。しかし紙の妖精を帽子用のピンで固定して撮れば、乾板そのものに手を加える必要はない。",
       "1980年代になって撮影の仕掛けが明かされた。最後の一枚については少女たちの後年の説明に相違もある。画像が加工されていないことと、画像が示す出来事が真実であることは別問題なのだ。"
     ],
     "sources": [
@@ -4281,6 +4286,11 @@
       "film_title": "FairyTale: A True Story",
       "year": 1997,
       "review_note": "SNS転載許諾未確認"
+    },
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "博物館解説12–20,34–37,47–58行、所蔵資料43–46行。乾板の細工と被写体の仕掛けを区別。"
     }
   },
   {
@@ -4321,19 +4331,30 @@
     "posts": [
       "ホラー映画の音楽が怖いのは、不協和音だからだけではないかもしれない。\n人間の悲鳴と、悲鳴のように聞こえる映画音楽には、共通する音響的特徴があるという研究がある。\n#まこの映画小話",
       "2020年にTrevorらが発表した研究では、悲鳴、悲鳴ではない発声、悲鳴に似た音楽、そうでない音楽を比較した。音の分析に加え、聞き手による感情評価も行った。",
-      "着目したのは音の粗さ（roughness）。研究結果は、悲鳴の特徴の一つを音楽が模倣しているという仮説を支持した。すべての恐怖音楽に当てはまるという証明ではない。",
+      "公開抄録で示されたのは、悲鳴の音響的特徴の一つである音の粗さ（roughness）を、悲鳴に似た音楽も備えるという仮説を支持する結果。あらゆる恐怖音楽についての結論ではない。",
       "登場人物がまだ何も見つけていないのに、観客は音だけで危険を予感する。映画音楽は登場人物に代わって悲鳴を上げることもある、と考えると、ホラーの聞き方が変わる。"
     ],
     "sources": [
       {
         "name": "Trevor, Arnal & Frühholz (2020)｜JASA",
         "url": "https://pubmed.ncbi.nlm.nih.gov/32611175/",
-        "supports": "218–245行：著者、研究設計、感情評定、roughnessの結果（公開抄録）",
-        "access_scope": "公開本文"
+        "supports": "公開抄録：4種類の音源、感情価・覚醒度評定、roughness仮説",
+        "access_scope": "公開抄録（本文未取得）"
+      },
+      {
+        "name": "Swiss Open Access Repository｜Trevor et al. (2020)",
+        "url": "https://sonar.ch/global/documents/7240",
+        "supports": "25–26行：公開抄録の実験設計・結果・仮説の範囲",
+        "access_scope": "公開抄録（同一論文、独立追試ではない）"
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "abstract_only",
+      "scope": "公開抄録で支持される主張だけに限定。出版社本文はアクセス不可。論文全文の評価は未完了。"
+    }
   },
   {
     "id": "dracula-whitby-library-name",
@@ -4362,6 +4383,11 @@
       "film_title": "Dracula",
       "year": 1931,
       "review_note": "SNS転載許諾未確認"
+    },
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "English Heritage本文226–230,243–255行：旧名、図書館訪問日、小説での船の到着日、形式。"
     }
   },
   {
@@ -4386,8 +4412,8 @@
       {
         "name": "Focus Features｜Two Years in the Making",
         "url": "https://www.focusfeatures.com/article/two__years_in_the_making",
-        "supports": "200–210行：交換アニメーションの工程、コララインの技術",
-        "access_scope": "公開本文"
+        "supports": "203–210行：『ParaNorman』制作資料中のCoralineとの比較、交換用顔の3D印刷と表情数",
+        "access_scope": "配給会社公式記事本文（ParaNormanの制作資料における比較）"
       }
     ],
     "review_status": "source_checked",
@@ -4397,6 +4423,11 @@
       "film_title": "Coraline",
       "year": 2009,
       "review_note": "SNS転載許諾未確認"
+    },
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "MoPOP/LAIKA本文13–15,114–119行とFocus Features203–210行で照合。207,336は組み合わせ数で実物個数ではない。"
     }
   },
   {
@@ -4420,7 +4451,12 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "BFI本文20–32行：1894年の試み、現代の再同期、音量の障壁、1927年の公開。"
+    }
   },
   {
     "id": "black-maria-rotating-studio",
@@ -4430,7 +4466,7 @@
     "category": "映画トリビア研究所",
     "posts": [
       "昔の映画撮影所は、カメラではなく建物そのものを回していた。\nエジソンの研究所に建てられたブラック・マリアという撮影所の話だ。\n#まこの映画小話",
-      "1893年に建てられたこの施設は、屋根が開く構造だった。米国国立公園局の解説によると、建物は円形の軌道に載せられ、太陽の位置に合わせて向きを変えられた。",
+      "1890年代初頭、エジソンの研究所に設けられた撮影所は、屋根が開く構造だった。米国国立公園局によると、建物は円形の軌道に載せられ、太陽の位置に合わせて向きを変えられた。",
       "十分な人工照明がなかったため、フィルムに像を記録するには自然光が必要だった。照明条件を変えるために建築そのものを動かすという発想である。",
       "ここでは『フレッド・オットのくしゃみ』など短い映像が制作された。映画の初期には、俳優の演技だけでなく、光を確保すること自体が大きな技術的課題だったのだ。"
     ],
@@ -4438,13 +4474,13 @@
       {
         "name": "米国国立公園局｜Black Maria 音声ガイド",
         "url": "https://www.nps.gov/edis/learn/photosmultimedia/eng-extra-3.htm",
-        "supports": "71–80行：1893年、屋根、円形軌道、採光、くしゃみの短編",
+        "supports": "76–79行：1893年とする説明、円形軌道、屋根、短編",
         "access_scope": "公開音声ガイド文字起こし"
       },
       {
         "name": "New Jersey州政府｜History of Movies in NJ",
         "url": "https://www.nj.gov/nj/about/arts/movies.shtml",
-        "supports": "34–43行：自然光と撮影所の回転",
+        "supports": "36–42行：1892年12月とする説明、自然光、回転構造。年の記載に相違があるため本文は1890年代初頭とした",
         "access_scope": "公開本文"
       }
     ],
@@ -4455,6 +4491,11 @@
       "film_title": "Fred Ott’s Sneeze",
       "year": 1894,
       "review_note": "SNS転載許諾未確認"
+    },
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "NPSとNJ州政府で1892/1893年に相違あり。年を断定せず、共通して支持される回転・採光構造に絞った。"
     }
   },
   {
@@ -4484,6 +4525,11 @@
       "film_title": "Cat People",
       "year": 1942,
       "review_note": "SNS転載許諾未確認"
+    },
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "BFI本文37–41行：1942年、追跡を疑う場面、バスの音、後世の技法。"
     }
   },
   {
@@ -4519,6 +4565,11 @@
       "film_title": "American Hustle",
       "year": 2013,
       "review_note": "SNS転載許諾未確認"
+    },
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "UVA法学図書館14–20行、レーガン図書館133–137行：1978年の発端、架空企業、録画、法的争点、映画との関係。"
     }
   },
   {
@@ -4564,8 +4615,8 @@
     "category": "映画心理学講義",
     "posts": [
       "三角形と丸が動くだけの無声アニメを見せると、人はそこに人間関係を読み取る。\n1944年、心理学者ハイダーとジンメルが行った実験だ。\n#まこの映画小話",
-      "登場するのは二つの三角形と一つの円。人の顔も台詞もない。それでも最初の実験では34人の大学生のうち33人が、図形の動きを人間の行動になぞらえて説明した。",
-      "後年の研究では、様々な社会的状況を描く図形アニメーションを新たに作り、同様の社会的意味の読み取りを調べた。図形の形だけでなく、相互の動きが重要な手がかりになる。",
+      "登場するのは二つの三角形と一つの円。部屋のような図形もある。人の顔も台詞もない。それでも最初の実験では34人中33人が、図形を生き物に見立てて説明した。",
+      "2020年の追試研究でも、様々な社会的状況を表す図形アニメーションを使い、参加者が自然に社会的な意味を読み取ることが報告された。図形の動きの関係が物語を作る手がかりになる。",
       "アニメーションは顔を描かなくても物語を伝えられる。観客がただ動きを見ているのではなく、意図や感情を補っているからだ。映画を観ることは、意味を作ることでもある。"
     ],
     "sources": [
@@ -4574,10 +4625,21 @@
         "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7932368/",
         "supports": "90–97、121–133行：1944年の実験と後続研究",
         "access_scope": "公開本文"
+      },
+      {
+        "name": "Open University｜Heider and Simmelの研究解説",
+        "url": "https://www.open.edu/openlearn/society-politics-law/social-psychology-sense-making-crises/content-section-5.2",
+        "supports": "168、180、210–212行：図形構成と33/34名の解釈。専門家の解説部分のみ参照",
+        "access_scope": "大学公式教材本文"
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "partial_fulltext",
+      "scope": "Open Universityの解説本文で原研究の33/34を照合。2020年研究の公開抄録・検索取得本文で追試結果を照合したが、PMC全文再取得は遮断。"
+    }
   },
   {
     "id": "frankenstein-anonymous-author",
@@ -4586,7 +4648,7 @@
     "topic_key": "frankenstein-anonymous-author",
     "category": "銀幕人文学",
     "posts": [
-      "映画史を代表する怪物の一人、フランケンシュタインの怪物。その原作の初版には、作者の名前がなかった。\n#まこの映画小話",
+      "映画史を代表する怪物、フランケンシュタインの怪物。その原作は1818年に匿名で刊行され、当初は男性作家の作品だと思われていた。\n#まこの映画小話",
       "1816年、ジュネーヴ湖畔で怪談を書く遊びが行われた。参加していた18歳のメアリー・シェリーは、生命を作り出す科学者の物語を構想する。1818年の初版は匿名で刊行された。",
       "オックスフォード大学の解説によれば、当初は男性作家の作品だと広く考えられていた。舞台化を経て物語は知名度を増し、1831年には彼女の名で改訂版が刊行された。",
       "怪物は外見によって社会から排除される。物語の作者自身も、その名を明示しないまま世に出た。両者を同一視はできないが、誰が語る資格を持つのかという問いを重ねて読むことができる。"
@@ -4601,7 +4663,7 @@
       {
         "name": "British Library｜Mary Shelley’s Frankenstein",
         "url": "https://www.britishlibrary.cn/en/works/frankenstein/",
-        "supports": "24–26、42–45行：創作背景と映画化",
+        "supports": "24–26、42–45、67–68行：怪談競作、創作背景、孤独の主題",
         "access_scope": "公開本文"
       }
     ],
@@ -4612,6 +4674,11 @@
       "film_title": "Frankenstein",
       "year": 1931,
       "review_note": "SNS転載許諾未確認"
+    },
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "Oxford本文100–107行、British Library本文42–45,67–68行。匿名刊行と初期の受容を前面に。"
     }
   },
   {
@@ -4642,6 +4709,11 @@
       "year": 1968,
       "review_note": "SNS転載許諾未確認"
     },
-    "episode_guid": "d5cf8b71-36a5-4b5c-aa42-da8b3ddf1100"
+    "episode_guid": "d5cf8b71-36a5-4b5c-aa42-da8b3ddf1100",
+    "qa_review": {
+      "checked_on": "2026-11-27",
+      "status": "rechecked",
+      "scope": "The 2001 Archive本文18–19行：38フィートの回転セット、固定家具、俳優の歩行、監督の映像による演出。"
+    }
   }
 ]
