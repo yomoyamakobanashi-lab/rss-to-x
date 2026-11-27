@@ -19,7 +19,9 @@ CATEGORIES = ("映画怪異録", "銀幕陰謀論", "シネフィルの処方箋
 
 # Only explicit reuse permission, not merely a public poster URL, qualifies.
 POSTER_LICENSES = {"public_domain", "CC0", "CC-BY", "CC-BY-SA", "rights_holder_permission"}
-POSTER_HOSTS = {"upload.wikimedia.org"}
+POSTER_HOSTS = {"upload.wikimedia.org", "collectionapi.metmuseum.org", "images.metmuseum.org", "cdn.eso.org"}
+MEDIA_USER_AGENT = "ReelPalFilmStories/1.1 (https://github.com/yomoyamakobanashi-lab/rss-to-x; editorial image accessibility)"
+_BLOCKED_MEDIA_HOSTS = set()
 
 def _asset_url(item, field):
     poster = item.get(field)
@@ -62,9 +64,16 @@ def _reachable_image(item, url):
     """Check media before reserving a slot; no redirects or blind post retries."""
     if not url:
         return None
+    host = urlsplit(url).hostname
+    if host in _BLOCKED_MEDIA_HOSTS:
+        return None
     try:
         with requests.get(url, stream=True, allow_redirects=False, timeout=12,
-                          headers={"User-Agent": "ReelPalFilmStories/1.0 (public-domain poster verification)"}) as res:
+                          headers={"User-Agent": MEDIA_USER_AGENT}) as res:
+            if res.status_code in (429, 503):
+                _BLOCKED_MEDIA_HOSTS.add(host)
+                print(f"[WARN] {host} throttled; no further requests to host this run; Retry-After={res.headers.get('Retry-After', 'unspecified')}")
+                return None
             if res.status_code != 200 or res.headers.get("Content-Type", "").split(";")[0].lower() not in {"image/jpeg", "image/png", "image/webp"}:
                 raise ValueError("HTTP status or media type not suitable")
             size = int(res.headers.get("Content-Length", "0"))
