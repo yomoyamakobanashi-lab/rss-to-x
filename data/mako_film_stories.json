@@ -4399,5 +4399,63 @@
       "year": 2009,
       "review_note": "SNS転載許諾未確認"
     }
+  },
+  {
+    "id": "dickson-sound-before-talkies",
+    "weekday": 6,
+    "title": "トーキーより30年以上早かった録音映画",
+    "topic_key": "dickson-sound-before-talkies",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "無声映画の時代が始まったばかりの1890年代、すでに映像と録音音声を合わせる実験が行われていた。\n『ジャズ・シンガー』が公開される30年以上も前の話だ。\n#まこの映画小話",
+      "英国映画協会によると、エジソンとディクソンは1894年ごろから蓄音機の録音と映像を同期させる試みに取り組んだ。現在見られる実験映像と音声の同期は現代の技術による再現だ。",
+      "無声映画の上映にも、生演奏や効果音、俳優による発声などが伴うことがあった。問題は音の存在そのものではなく、安定した同期や十分な音量での再生をどう実現するかだった。",
+      "発明が生まれることと、それが産業全体に普及することには大きな隔たりがある。映画の音の歴史は、技術の発明だけでなく、上映環境の歴史でもある。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜All about film sound and how we restore it",
+        "url": "https://www.bfi.org.uk/features/all-about-film-sound-how-we-restore-it",
+        "supports": "20–34行：生演奏、1894年の試み、現代の同期再現、商業化の障壁と1927年の作品",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "black-maria-rotating-studio",
+    "weekday": 6,
+    "title": "太陽を追いかけて回る撮影所",
+    "topic_key": "black-maria-rotating-studio",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "昔の映画撮影所は、カメラではなく建物そのものを回していた。\nエジソンの研究所に建てられたブラック・マリアという撮影所の話だ。\n#まこの映画小話",
+      "1893年に建てられたこの施設は、屋根が開く構造だった。米国国立公園局の解説によると、建物は円形の軌道に載せられ、太陽の位置に合わせて向きを変えられた。",
+      "十分な人工照明がなかったため、フィルムに像を記録するには自然光が必要だった。照明条件を変えるために建築そのものを動かすという発想である。",
+      "ここでは『フレッド・オットのくしゃみ』など短い映像が制作された。映画の初期には、俳優の演技だけでなく、光を確保すること自体が大きな技術的課題だったのだ。"
+    ],
+    "sources": [
+      {
+        "name": "米国国立公園局｜Black Maria 音声ガイド",
+        "url": "https://www.nps.gov/edis/learn/photosmultimedia/eng-extra-3.htm",
+        "supports": "71–80行：1893年、屋根、円形軌道、採光、くしゃみの短編",
+        "access_scope": "公開音声ガイド文字起こし"
+      },
+      {
+        "name": "New Jersey州政府｜History of Movies in NJ",
+        "url": "https://www.nj.gov/nj/about/arts/movies.shtml",
+        "supports": "34–43行：自然光と撮影所の回転",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Fred Ott’s Sneeze",
+      "year": 1894,
+      "review_note": "SNS転載許諾未確認"
+    }
   }
 ]
