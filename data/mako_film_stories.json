@@ -1313,7 +1313,20 @@
       "review_note": "A24作品ページに画像あり、転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "アンデシュ・ソーン《夏至祭の踊り》（1897年）",
+      "relation": "スウェーデンの夏至祭を描いた歴史的絵画。花のおまじないそのものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Midsommardans.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Midsommardans.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Midsommardans.jpg",
+      "rights_basis": "Nationalmuseum NM1603、作者1920年没、個別ページ137–188、199–205行に1897年、館提供CC0、VRT #2014012310008984、原作品PD。日本の期間も満了。1.24MB、直接画像表示確認。",
+      "credit": "Anders Zorn《Midsummer Dance》／Nationalmuseum",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "sat-blackmail-live-dubbing",
@@ -2060,17 +2073,17 @@
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
     },
     "related_image": {
-      "status": "pending",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Salieri_painted_by_Joseph_Willibrord_M%C3%A4hler.jpg",
-      "review_note": "画家を確認できる肖像候補、原画像8.94MBのため縮小版を要調査。第三者サイト由来のCC0宣言のみの別画像は不採用。",
-      "checked_on": "2026-11-27",
-      "alternate_candidate": {
-        "asset_kind": "historical_art",
-        "asset_title": "1802年のサリエリの肖像版画",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Salieri.jpg",
-        "review_note": "Riedelによる版画、PD-Art表記。ただし出典が個人ブログのため機関所蔵品を優先して再調査。",
-        "checked_on": "2026-11-27"
-      }
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1802年のサリエリの肖像版画",
+      "relation": "実在のサリエリの同時代肖像。映画の俳優ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Antonio_Salieri_-_C.J._Riedel_fec._Lips._1802_-_btv1b84246888.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Antonio_Salieri_-_C.J._Riedel_fec._Lips._1802_-_btv1b84246888.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Antonio_Salieri_-_C.J._Riedel_fec._Lips._1802_-_btv1b84246888.jpg",
+      "rights_basis": "BnF Est.SalieriA.001、Gallica btv1b84246888。個別ページ118–165行に1802年刊、原産国と米国PD。19世紀初頭の版画で日本の保護期間も満了と判断。2.38MB、直接画像表示確認。",
+      "credit": "C. J. Riedel／Bibliothèque nationale de France（1802）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2143,6 +2156,19 @@
       "film_title": "Jurassic Park",
       "year": 1993,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "アジアゾウの子（2007年、メルボルン動物園）",
+      "relation": "鳴き声の素材となった子ゾウにちなむ参考写真。録音個体ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Elephant-Melbourne-Zoo-20070224-062.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/de/Elephant-Melbourne-Zoo-20070224-062.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Elephant-Melbourne-Zoo-20070224-062.jpg",
+      "rights_basis": "Gary Houstonの自己撮影、個別ページ120–137行でCC0 1.0、1.13MB。直接画像表示確認。",
+      "credit": "子ゾウの参考写真／Gary Houston",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2301,11 +2327,16 @@
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "archival_photo",
-      "asset_title": "1864年のガルニエ宮建設写真",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Construction_du_palais_Garnier_(actuel_Op%C3%A9ra_national_de_Paris)%2C_9%C3%A8me_arrondissement_Paris._PH2704.jpg",
-      "review_note": "Paris Musées提供CC0、撮影者Durandelle 1917年没、原画像1.12MB表示成功。ただし埋込メタデータに宣伝用途許可の旧記載があり現行機関規約で照合するまで保留。",
+      "asset_title": "ガルニエ宮の大広間（2023年）",
+      "relation": "原作・映画の舞台となった実在劇場の現在の内部。映画のセットではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Palais_Garnier_foyer%2C_Paris.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Palais_Garnier_foyer%2C_Paris.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Palais_Garnier_foyer%2C_Paris.jpg",
+      "rights_basis": "Gerda Arendt自身の2023年撮影、個別ページ121–138行のCC0 1.0、19世紀の内装装飾。4.44MB、直接画像表示確認。",
+      "credit": "ガルニエ宮／Gerda Arendt",
       "checked_on": "2026-11-27"
     }
   },
@@ -3139,11 +3170,16 @@
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "archival_photo",
-      "asset_title": "2012年の天安門の写真",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Forbidden_City_(9870620895).jpg",
-      "review_note": "Gary Todd、CC0、原画像3.48MB表示成功。ただし天安門外観で紫禁城内の映画撮影地を直接示さない。歴史的宮殿内部または太和殿写真を優先。",
+      "asset_title": "北京・紫禁城内の建築（2018年）",
+      "relation": "映画の舞台・撮影地である紫禁城内の現代写真。撮影時の映像ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Forbidden_City_2018-05_Beijing.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Forbidden_City_2018-05_Beijing.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Forbidden_City_2018-05_Beijing.jpg",
+      "rights_basis": "Melenda Petermannの自己撮影、個別ページ124–141行で太和殿と乾清宮の間、2018年、CC0 1.0を確認。119KB、直接画像表示確認。古建築の写真。",
+      "credit": "紫禁城／Melenda Petermann",
       "checked_on": "2026-11-27"
     }
   },
@@ -3812,6 +3848,19 @@
       "film_title": "E.T. the Extra-Terrestrial",
       "year": 1982,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "Atari 2600のジョイスティック",
+      "relation": "記事で扱うゲーム機の周辺機器の参考写真。発掘品ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Atari2600Joystick.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Atari2600Joystick.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Atari2600Joystick.jpg",
+      "rights_basis": "EC-BIHの自己撮影、個別ページ121–137行でCC0 1.0、3.8MB、直接画像でジョイスティックと確認。ゲームパッケージ等の第三者著作物は写っていない。",
+      "credit": "Atari 2600のコントローラー／EC-BIH",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4318,6 +4367,19 @@
       "film_title": "The Golem: How He Came into the World",
       "year": 1920,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "ミコラーシュ・アレシュ《プラハのマハラルとゴーレム》（1899）",
+      "relation": "ゴーレム伝承の歴史的挿絵。映画本編ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mikol%C3%A1%C5%A1_Ale%C5%A1_-_The_Maharal_of_Prague_and_the_Golem.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Mikol%C3%A1%C5%A1_Ale%C5%A1_-_The_Maharal_of_Prague_and_the_Golem.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Mikol%C3%A1%C5%A1_Ale%C5%A1_-_The_Maharal_of_Prague_and_the_Golem.jpg",
+      "rights_basis": "個別ページ118–152行に1899年『Květy』掲載、作者1913年没、原産国・米国PDと忠実な複製を明記。日本の死後70年・戦時加算を考慮しても満了。193KBの直接画像表示を確認。",
+      "credit": "Mikoláš Aleš（1899）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4955,6 +5017,19 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "English Heritage本文226–230,243–255行：旧名、図書館訪問日、小説での船の到着日、形式。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ウィットビー修道院跡と町（2018年）",
+      "relation": "原作の舞台となった町の現代写真。図書館の写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Whitby_Abbey_-_in_North_Yorkshire.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Whitby_Abbey_-_in_North_Yorkshire.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Whitby_Abbey_-_in_North_Yorkshire.jpg",
+      "rights_basis": "Ronnievonjohnson自身の2018年撮影、個別ページ120–137行でCC0 1.0と4.52MBを確認、直接画像を表示して内容確認。",
+      "credit": "ウィットビー修道院跡／Ronnievonjohnson",
+      "checked_on": "2026-11-27"
     }
   },
   {
