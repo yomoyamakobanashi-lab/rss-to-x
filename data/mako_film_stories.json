@@ -41,10 +41,10 @@
       "review_note": "1897年とされる画像は黄色の英国初版表紙と異なる。版の同定まで不採用。",
       "checked_on": "2026-11-27",
       "latest_candidate": {
-        "asset_kind": "archival_photo",
-        "asset_title": "1906年のBram Stoker肖像",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Bram_Stoker1.jpg",
-        "review_note": "W. & D. Downey、NPG所蔵とされる。個別ページに原産国PD記載、米国タグ不足・NPG原典の再利用条件未確定。保留。",
+        "asset_kind": "book_cover",
+        "asset_title": "1897年『ドラキュラ』初版布装表紙",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dracula-First-Edition-1897.jpg",
+        "review_note": "British Library Board由来。9.9MB、PD-scanと原産国・米国PD表示。小さい別ファイルは現代の再製本・複製と確認したため使用せず。原版の縮小配信候補を探索。",
         "checked_on": "2026-11-27"
       }
     }
@@ -1015,14 +1015,17 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "asset_kind": "archival_photo",
-        "asset_title": "1924年のハロルド・ロイドの宣伝写真",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Filmkomiek_Harold_Lloyd_in_zijn_film_uit_1923_'Safety_Last'%2C_SFA022002534.jpg",
-        "review_note": "Spaarnestad Photo資料SFA022002534、無署名・EU/米国PD表記、1.17MB。直接取得タイムアウト、保留。",
-        "checked_on": "2026-11-27"
-      }
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "『Safety Last!』の1923年3月31日付の映画業界誌広告",
+      "relation": "映画公開当時の公式広告。時計にぶら下がる眼鏡姿のロイドを描いている。劇場用ポスターとは区別する。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Safety_Last_-_Motion_Picture_News%2C_March_31%2C_1923.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Safety_Last_-_Motion_Picture_News%2C_March_31%2C_1923.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Safety_Last_-_Motion_Picture_News%2C_March_31%2C_1923.jpg",
+      "rights_basis": "Motion Picture News 1923-03-31 p.1576付近、Pathécomedy名義の米国公表広告。個別ページ120–141行に原誌スキャン、制作名義、米国PD表示。日本の団体名義または無名著作物の公表後の保護期間に米国戦時加算を含めても満了と判断。603KB、直接画像表示成功。商標は歴史資料として表示し提携を示唆しない。",
+      "credit": "Pathécomedy／Motion Picture News（1923年3月31日）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2049,6 +2052,16 @@
       "film_title": "Citizen Kane",
       "year": 1941,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "asset_kind": "archival_photo",
+        "asset_title": "1906年刊行書籍のウィリアム・ランドルフ・ハースト肖像",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Hon._William_Randolph_Hearst%2C_1906.jpg",
+        "review_note": "米国議会図書館所蔵書籍、Internet Archive経由のNo known restrictions表示。原画像744KB取得。写真自体の作者・無署名刊行の根拠を確認してから承認。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -2749,6 +2762,19 @@
       "film_title": "The Great Dictator",
       "year": 1940,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "1915年の映画雑誌『Film Fun』掲載のチャップリン",
+      "relation": "無声映画時代のチャップリンを示す当時の雑誌資料。『独裁者』の場面ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Charlie_Chaplin_reads_Film_Fun%2C_1915.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Charlie_Chaplin_reads_Film_Fun%2C_1915.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Charlie_Chaplin_reads_Film_Fun%2C_1915.jpg",
+      "rights_basis": "1915年米国Film Fun誌の無署名掲載写真。個別ページ121–137行に原誌スキャン、米国および無名著作物の公表後95年以下の国のPD表示。日本の無名著作物期間＋戦時加算を考慮しても満了。2.75MB、直接画像表示成功。",
+      "credit": "Film Fun（1915）／Internet Archive",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2893,7 +2919,14 @@
       "asset_title": "1893年『Blacksmith Scene』の一コマ",
       "source_url": "https://commons.wikimedia.org/wiki/File:BlacksmithScene.jpg",
       "review_note": "NPS資料由来、Dickson 1935年没、PD表示確認。原画像取得を2回試行したが失敗。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "latest_candidate": {
+        "asset_kind": "film_still",
+        "asset_title": "1893年『鍛冶屋の場面』の一コマ",
+        "source_url": "https://commons.wikimedia.org/wiki/File:BlacksmithScene.jpg",
+        "review_note": "NPS出典、作者Dickson 1935年没、原産国・米国PD記載を再確認したが、直接画像取得失敗。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -4746,6 +4779,16 @@
       "film_title": "Peter Pan",
       "year": 1953,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "asset_kind": "historical_art",
+        "asset_title": "Arthur Rackham《Put his strange case before old Solomon Caw》（1906）",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Peter_Pan_Put_his_strange_case_before_old_Solomon_Caw.jpg",
+        "review_note": "作者1939年没、英国原産国PD、1.07MB直接取得成功。ハーバード大学の同じ挿絵の38MB版は商用再利用可と明記。掲載用1.07MB版の原典と米国公表年の照合、Peter Panの英国特則との区別を確認してから承認。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -4775,6 +4818,16 @@
       "film_title": "Bambi",
       "year": 1942,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "asset_kind": "archival_photo",
+        "asset_title": "1895年頃のフェリックス・ザルテンの肖像（犬とともに）",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Felix-Salten-1895.jpg",
+        "review_note": "オーストリア国立図書館画像アーカイブ由来、無署名、原産国PD表示、129KB直接表示成功。米国公表年と個別権利条件未確定。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
