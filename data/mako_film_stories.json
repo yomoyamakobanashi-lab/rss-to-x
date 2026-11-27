@@ -1428,7 +1428,20 @@
       "review_note": "シリーズ第1作のポスター。転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "英国グレート・ヤーマスのミニゴルフ場（1991年）",
+      "relation": "『トイ・ストーリー』制作初期のミニゴルフをテーマとするピザ店という発想を理解する参考写真。ピクサーの資料や実際のモデルではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Miniature_golf_course%2C_Great_Yarmouth_-_geograph.org.uk_-_772632.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Miniature_golf_course%2C_Great_Yarmouth_-_geograph.org.uk_-_772632.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Miniature_golf_course%2C_Great_Yarmouth_-_geograph.org.uk_-_772632.jpg",
+      "rights_basis": "個別ページ127–169行、1991年8月15日、Geograph原典 https://www.geograph.org.uk/photo/772632 、CC BY-SA 2.0 Generic、商用共有可。屋外の一般的な景観、創作的造形物は主題でない。640×472、87KB、原画像実表示確認。",
+      "credit": "Keith Edkins / Miniature golf course, Great Yarmouth / CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0/（無改変）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "mon-frankenstein-galvanism",
@@ -1935,7 +1948,20 @@
       "review_note": "劇場用ポスター転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "若き日のアルフレッド・ヒッチコック（1925年）",
+      "relation": "『ロープ』の監督の初期の肖像。撮影時の記録やセットの写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alfred_Hitchcock_1925_Portrait.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Alfred_Hitchcock_1925_Portrait.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Alfred_Hitchcock_1925_Portrait.jpg",
+      "rights_basis": "個別ページ120–146行、1925年撮影、1927年10月10日Daily Mail掲載、英国匿名作品PDと米国公表期間満了の表示。英国・米国および日本の匿名写真の旧法期間・戦時加算を考慮しても満了。現代書籍由来の高画質複製だが忠実な平面写真の複製である。105KB、原画像表示確認。",
+      "credit": "撮影者不詳／Daily Mail 1927年10月10日掲載（Commons経由）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "thu-experiment-role-instructions",
@@ -3022,6 +3048,19 @@
       "film_title": "The Men Who Stare at Goats",
       "year": 2009,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "米中央情報局本部方面を示す道路標識（2008年）",
+      "relation": "本文で扱う研究計画を実施した情報機関に関する後年の写真。超能力研究の実験現場ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:George_Bush_Center_for_Intelligence_CIA.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/George_Bush_Center_for_Intelligence_CIA.JPG?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:George_Bush_Center_for_Intelligence_CIA.JPG",
+      "rights_basis": "個別ページ125–152行、2008年12月28日撮影者本人の写真、CC BY-SA 3.0 Unportedを選択。標識は事実的名称と標準的な文字・形状。商用共有可。590×649、197KB、原画像実表示確認。",
+      "credit": "Fletcher6／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/（Commons掲載の切り抜き版）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4208,6 +4247,19 @@
       "film_title": "Dracula",
       "year": 1931,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "scientific_image",
+      "asset_title": "質量分析装置の模式図（2023年）",
+      "relation": "同位体比分析に関わる質量分析の一般的な原理を説明する資料。2014年の墓地研究で使用した装置や実験結果そのものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Basic_Mass_Spectrometer.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Basic_Mass_Spectrometer.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Basic_Mass_Spectrometer.jpg",
+      "rights_basis": "個別ページ120–137行、2023年12月19日、本人作成、CC0 1.0 Universalで商用利用明記。1162×591、87KB、原画像を実表示確認。",
+      "credit": "SCB2024／CC0 1.0 https://creativecommons.org/publicdomain/zero/1.0/",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4243,6 +4295,19 @@
       "film_title": "Candyman",
       "year": 1992,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "シカゴのカブリニ・グリーン公営住宅（2004年）",
+      "relation": "映画の舞台となった実在の公営住宅地区の後年の写真。映画の場面ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:North_from_Sedgwick_%26_Locust_Sts.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/North_from_Sedgwick_%26_Locust_Sts.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:North_from_Sedgwick_%26_Locust_Sts.jpg",
+      "rights_basis": "個別ページ121–151行、2004年11月27日、Flickr原典、2015年6月16日ライセンスレビューでCC BY 2.0確認。商用共有可。1980年代以前の米国建築の外観が主題。954KBの直接画像を表示確認。",
+      "credit": "David Wilson／CC BY 2.0 https://creativecommons.org/licenses/by/2.0/（無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4905,11 +4970,24 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:White_Zombie_ad_-_The_Film_Daily,_Jul-Dec_1932_(page_218_crop).jpg",
-        "review_note": "1932年Film Dailyのスキャン広告。米国の更新なしPD表示は確認、日本等の広告作者・法人名義・権利を確認するまで保留。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "20世紀初頭のハイチ、ポルトープランスの市場",
+      "relation": "原作旅行記以前のハイチの日常生活を写した資料。伝承の実例やゾンビの証拠ではなく、映画が異国趣味的に扱った土地の歴史的文脈。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Haiti%2C_Port-au-Prince%2C_Market_Square_LCCN2016821757.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Haiti%2C_Port-au-Prince%2C_Market_Square_LCCN2016821757.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Haiti%2C_Port-au-Prince%2C_Market_Square_LCCN2016821757.jpg",
+      "rights_basis": "個別ページ121–158行、米国議会図書館原資料 https://www.loc.gov/pictures/item/2016821757/ 、1909–1920年頃、同館の権利制限なし表示、原産国・米国PD表示、PDM。旧法写真の期間と日本の戦時加算を考慮しても満了。2.91MB、原画像の表示確認。",
+      "credit": "National Photo Company Collection／Library of Congress, LCCN 2016821757, npcc.20196",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:White_Zombie_ad_-_The_Film_Daily,_Jul-Dec_1932_(page_218_crop).jpg",
+          "review_note": "1932年Film Dailyのスキャン広告。米国の更新なしPD表示は確認、日本等の広告作者・法人名義・権利を確認するまで保留。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -5040,12 +5118,25 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:OrlyAirport_-1965.jpg",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/OrlyAirport_-1965.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
-        "review_note": "1965年頃の空港写真。撮影者HZの相続人Juloによる世界的PD宣言（個別ページ113–129行）、672KB原画像を実表示確認。ただしフランスの建築著作権（管制塔が主要被写体、商用FOP制約）を確認するまで保留。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "1953年頃のパリ・オルリー空港に駐機する旅客機",
+      "relation": "映画の舞台であるオルリー空港の歴史的写真。映画の一コマや空港の同じ場所ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SNCASE_Armagnac_of_Transports_A%C3%A9riens_Intercontinentaux_at_Paris-Orly_airport%2C_France%2C_circa_in_1950_(286-MP-par-04680).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/SNCASE_Armagnac_of_Transports_A%C3%A9riens_Intercontinentaux_at_Paris-Orly_airport%2C_France%2C_circa_in_1950_%28286-MP-par-04680%29.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:SNCASE_Armagnac_of_Transports_A%C3%A9riens_Intercontinentaux_at_Paris-Orly_airport%2C_France%2C_circa_in_1950_(286-MP-par-04680).jpg",
+      "rights_basis": "個別ページ117–139行、説明本文1953年頃（ファイル名は1950年頃）、NARA由来の米国政府職務写真、米国PD・PDM。1950年代の旧法写真・団体名義の保護期間と日本の戦時加算を考慮して満了。建築物は遠景の付随物で、旅客機が主題。4.86MB、原画像実表示確認。容量はCIで再確認。",
+      "credit": "U.S. Department of State, Economic Cooperation Administration／NARA NAID 20002556, 286-MP-par-04680",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:OrlyAirport_-1965.jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/OrlyAirport_-1965.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+          "review_note": "1965年頃の空港写真。撮影者HZの相続人Juloによる世界的PD宣言（個別ページ113–129行）、672KB原画像を実表示確認。ただしフランスの建築著作権（管制塔が主要被写体、商用FOP制約）を確認するまで保留。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -5691,6 +5782,19 @@
       "film_title": "歩いても 歩いても",
       "year": 2008,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "エジプシャン・シアターでの是枝裕和監督の肖像（2025年）",
+      "relation": "記事で扱う映画の監督の後年の映画館イベント写真。作品撮影時の写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hirokazu_Kore-eda_-_The_Egyptian_Theatre.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Hirokazu_Kore-eda_-_The_Egyptian_Theatre.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Hirokazu_Kore-eda_-_The_Egyptian_Theatre.jpg",
+      "rights_basis": "個別ページ121–151行、2025年5月10日、作者本人撮影、CC BY 4.0 International、商用共有可。2026年9月15日の明度補正と切り抜き履歴。914KBの原画像表示確認。番組支持・推奨を示さない。",
+      "credit": "Kevin Paul／CC BY 4.0 https://creativecommons.org/licenses/by/4.0/（作者による明度補正・切り抜き済み版）",
+      "checked_on": "2026-11-27"
     }
   },
   {
