@@ -729,12 +729,25 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "archival_photo",
-      "asset_title": "ニクソン大統領辞任書（1974年8月9日）",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Letter_of_Resignation_of_Richard_M._Nixon%2C_1974.jpg",
-      "review_note": "NARA ARC 302035、米国政府職務著作・米国PD、原画像確認済み。日本を含む再利用の根拠をNARAで確認するまで保留。",
-      "checked_on": "2026-11-27"
+      "asset_title": "ウォーターゲート複合施設（2010年）",
+      "relation": "事件名の由来となった建物の後年の写真。事件当時の写真や証拠資料ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Watergate_Building_Complex_front.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Watergate_Building_Complex_front.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Watergate_Building_Complex_front.jpg",
+      "rights_basis": "個別ページ121–158行、2010年本人撮影、CC BY-SA 3.0 Unported、米国1990年以前の建築物、公共道路からの外観。日本の建築著作物の写真利用は著作権法46条の範囲。商用共有可。原画像2.56MB表示確認。",
+      "credit": "Archwizard／CC BY-SA 3.0（無改変） https://creativecommons.org/licenses/by-sa/3.0/",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "asset_kind": "archival_photo",
+        "asset_title": "ニクソン大統領辞任書（1974年8月9日）",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Letter_of_Resignation_of_Richard_M._Nixon%2C_1974.jpg",
+        "review_note": "NARA ARC 302035、米国政府職務著作・米国PD、原画像確認済み。日本を含む再利用の根拠をNARAで確認するまで保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -1465,7 +1478,20 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "diagram",
+      "asset_title": "変化盲の実験を説明する二枚の写真",
+      "relation": "葉の有無が異なる画像で、視覚的変化の検出を説明する例。本文の俳優交替実験の刺激そのものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Flicker.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Flicker.png",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Flicker.png",
+      "rights_basis": "個別ページ120–140行、2019年自己制作、CC BY-SA 4.0 International。商用共有可。原画像4.04MB、左右の植物画像の表示を確認。",
+      "credit": "K1a2n3y4e5／CC BY-SA 4.0（無改変） https://creativecommons.org/licenses/by-sa/4.0/",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "fri-midsommar-seven-flowers",
@@ -1795,7 +1821,20 @@
       "review_note": "ドイツ版『es』。2010年リメイクと区別。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "1971年スタンフォード監獄実験の研究者たち",
+      "relation": "実験の実施側を記録した資料。映画『es』のスチルでも、参加者の残酷性を示す証拠でもない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SPE1971_Jaffe,_Hanley_and_Zimbardo.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/SPE1971_Jaffe%2C_Hanley_and_Zimbardo.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:SPE1971_Jaffe,_Hanley_and_Zimbardo.jpg",
+      "rights_basis": "個別ページ115–151行、Zimbardoの公式ギャラリー由来、VRT許諾記録#2021081910009661、CC BY-SA 4.0 International。研究史の解説として使用し支持・推奨を示さない。原画像271KBの表示確認。",
+      "credit": "Philip Zimbardo／CC BY-SA 4.0（無改変） https://creativecommons.org/licenses/by-sa/4.0/",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "fri-seventh-seal-church-chess",
@@ -2101,6 +2140,19 @@
       "film_title": "The Matrix",
       "year": 1999,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "哲学者ニック・ボストロム（2014年）",
+      "relation": "本文が解説するシミュレーション論証の著者の公式広報写真。映画本編の画像ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nick_Bostrom.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Nick_Bostrom.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Nick_Bostrom.jpg",
+      "rights_basis": "個別ページ125–154行、研究所の公式広報写真、2016年4月にCommonsでライセンス確認済み。CC BY-SA 4.0 International、商用共有可。論証の解説用で番組の支持・推奨を示さない。原画像33KBの表示確認。",
+      "credit": "Future of Humanity Institute／CC BY-SA 4.0（無改変） https://creativecommons.org/licenses/by-sa/4.0/",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3355,6 +3407,19 @@
       "film_title": "Operation Mincemeat",
       "year": 2021,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "スペイン・ウエルバにあるウィリアム・マーティンの墓碑（2013年）",
+      "relation": "映画の元となった実在の墓。架空の名と本名の双方が記されている。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Wiliam_Martin_burial.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Wiliam_Martin_burial.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Wiliam_Martin_burial.jpg",
+      "rights_basis": "個別ページ120–135行、撮影者本人の2013年撮影、CC BY-SA 4.0 International。墓碑の事実的な銘文と標準的な十字意匠。商用共有可。原画像2.9MBの表示と銘文を確認。",
+      "credit": "Rufito／CC BY-SA 4.0（無改変） https://creativecommons.org/licenses/by-sa/4.0/",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3728,6 +3793,19 @@
       "film_title": "Snow White and the Seven Dwarfs",
       "year": 1937,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "1937年製ディズニーのマルチプレーンカメラ（2014年撮影）",
+      "relation": "『白雪姫』用に製作された実際の撮影装置。アニメの本編画像ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Disney_1937_multiplane_camera.jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Disney_1937_multiplane_camera.jpg/960px-Disney_1937_multiplane_camera.jpg",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Disney_1937_multiplane_camera.jpg",
+      "rights_basis": "個別ページ119–149行、Flickr上のCC BY 2.0を2015年にレビュー済み。2016年Jankeによる補正履歴あり。工業製品の撮影装置が主対象。商用共有可。原画像5.24MBのため同ページ指定の960px縮小版の表示確認。縮小版の実容量はCIでも検査する。",
+      "credit": "HarshLight／CC BY 2.0 https://creativecommons.org/licenses/by/2.0/ （Jankeによるコントラスト・遠近補正済み版の縮小画像）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4733,7 +4811,20 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1859年の犬種解説書に掲載されたプードルの挿絵",
+      "relation": "キャラクターの初期設定に登場する犬種を示す歴史資料。ベティ・ブープの原画でも直接の造形資料でもない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:144._Poodle.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/144._Poodle.JPG",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:144._Poodle.JPG",
+      "rights_basis": "個別ページ124–131行、1859年英国刊行、原資料はThe Dog in Health and Disease、PDM。19世紀半ばの刊行図版として米国・日本（戦時加算を含む）・英国の保護期間は満了。原画像33KBの表示確認。",
+      "credit": "The Dog in Health and Disease（1859年刊）／Wikimedia Commons",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "fantasia-early-stereo",
