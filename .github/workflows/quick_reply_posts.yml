@@ -1,8 +1,9 @@
 name: Quick Reply Posts via Buffer
 
 on:
-  # Scheduled publishing is centralized in daily_content_posts.yml.
   workflow_dispatch:
+
+# Retired: all automatic publishing is centralized in mako-film-stories.yml.
 
 concurrency:
   group: quick-reply-post
@@ -10,6 +11,7 @@ concurrency:
 
 jobs:
   post:
+    if: ${{ false }} # Retired to enforce the daily cap
     runs-on: ubuntu-latest
     permissions:
       contents: write
