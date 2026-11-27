@@ -3359,5 +3359,429 @@
       "year": 1982,
       "review_note": "SNS転載許諾未確認。"
     }
+  },
+  {
+    "id": "wicker-man-roman-accounts",
+    "weekday": 0,
+    "title": "怪談の証拠は誰が書いたのか",
+    "topic_key": "wicker-man-roman-accusations",
+    "category": "映画怪異録",
+    "posts": [
+      "巨大な人形にまつわる恐ろしい伝説。その記録を書いたのは、当事者ではなく彼らを外から見た古代ローマの著述家だった。\n\n『#ウィッカーマン』から史料の読み方へ。\n#まこの映画小話",
+      "1973年のロビン・ハーディ監督作品は、スコットランドの島で失踪事件を調べる警官の物語。キリスト教と異教の対立が恐怖の背景にある。",
+      "映画研究書『Folk horror on film』の章では、古代ローマの著述家がドルイドについて語った巨大な編み枝の人形の記録が、映画のモチーフになったと説明される。",
+      "だが古代人の告発が文献に残ることと、その記述どおりの儀礼が実際にあったことは同じではない。怪談映画をきっかけに史料を読むなら、誰が誰について書いたのかも問いたい。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜The Wicker Man (1973)",
+        "url": "https://www.bfi.org.uk/film/8f483b1c-9b99-5949-8e59-ae73d1477ccb/the-wicker-man",
+        "supports": "5–19行：作品年、監督、設定、宗教的対立。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Folk horror on film｜The context of The Wicker Man",
+        "url": "https://www.cambridge.org/core/books/abs/folk-horror-on-film/context-of-the-wicker-man/2F69D81972E4128C8490B9F981052E92",
+        "supports": "459行：古代ローマの著述家の告発と映画のモチーフ。史実としての儀礼は断定しない。",
+        "access_scope": "学術書章の公開概要"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Wicker Man",
+      "year": 1973,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "white-zombie-haiti",
+    "weekday": 0,
+    "title": "ゾンビは最初から人を襲う怪物だったのか",
+    "topic_key": "white-zombie-haitian-cultural-history",
+    "category": "映画怪異録",
+    "posts": [
+      "ゾンビといえば、人間を襲う死者。でも映画のゾンビは、最初からそんな怪物だったわけではない。\n\n1932年の『#ホワイトゾンビ』から、ハイチの伝承と映画の歴史へ。\n#まこの映画小話",
+      "文化人類学者Marina Mandićの研究は、ハイチのゾンビ伝承における支配された労働者という側面に注目する。後世の映画で広まった怪物のイメージとは異なる。",
+      "同研究によれば1932年の映画には、1929年の旅行記『The Magic Island』が影響した。当時の米国の旅行記にはハイチを異国趣味や恐怖の対象として描く傾向があり、映画にもその視線が引き継がれたと論じられる。",
+      "1968年以降に広まったゾンビ映画と比べると、怪物の意味も変わっている。映画を観て特定の宗教や土地の文化を理解したつもりにならないことも大切だ。"
+    ],
+    "sources": [
+      {
+        "name": "Mandić (2024)｜The Cultural Tradition of Zombification in Haiti",
+        "url": "https://www.eap-iea.org/index.php/eap/article/view/1250",
+        "supports": "35–40行：1932年作品、旅行記、植民地主義的表象、労働者のモチーフ、1968年以降との差。",
+        "access_scope": "査読誌の公開要旨"
+      },
+      {
+        "name": "PBS Monstrum｜Exhumed: A History of Zombies",
+        "url": "https://www.pbs.org/video/exhumed-a-history-of-zombies-ovvtqc/",
+        "supports": "502–523行：米国映画による伝承の変容、1932年作品。",
+        "access_scope": "公開番組の文字起こし"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "White Zombie",
+      "year": 1932,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "post-pentagon-papers-full-release",
+    "weekday": 1,
+    "title": "40年後に公開された残りの機密文書",
+    "topic_key": "the-post-pentagon-papers-2011-release",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "新聞が機密文書を暴露した。その40年後、初めて読めるようになった部分がまだあった。\n\n『#ペンタゴンペーパーズ 最高機密文書』の事件は、映画の後にも史料の歴史が続いている。\n#まこの映画小話",
+      "1967年に米国防長官が委嘱したベトナム戦争に関する調査報告。1971年6月に一部が新聞へ漏洩した。2017年のスピルバーグ映画は、新聞社がその報道を判断する過程を描く。",
+      "米国国立公文書館は漏洩40周年に完全な報告書を公開した。48箱、約7000ページ。その約34％が初めて利用可能になったと説明している。",
+      "ニュースが伝える事実は重要だが、事件の全容と同じではない。今では公開された原資料と映画を見比べられる。歴史を読み直す楽しみは、文書の公開によって増えていく。"
+    ],
+    "sources": [
+      {
+        "name": "米国国立公文書館｜Pentagon Papers",
+        "url": "https://www.archives.gov/research/pentagon-papers",
+        "supports": "23–30行：1967年委嘱、1971年漏洩、40周年公開、48箱約7000頁、34％。",
+        "access_scope": "公文書館公式資料案内"
+      },
+      {
+        "name": "Amblin｜The Post",
+        "url": "https://amblin.com/movie/the-post/",
+        "supports": "64–68行：2017年作品、監督、新聞社の報道判断。",
+        "access_scope": "制作会社公式作品解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Post",
+      "year": 2017,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "bridge-spies-nickel",
+    "weekday": 1,
+    "title": "少年が拾った硬貨から始まるスパイ事件",
+    "topic_key": "bridge-of-spies-hollow-nickel-history",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "新聞配達の少年が見つけた硬貨が、数年後に冷戦のスパイ事件につながった。\n\n『#ブリッジオブスパイ』の背景には、FBIが公開しているこんな記録がある。\n#まこの映画小話",
+      "FBIによれば、少年が見つけた中身のある硬貨には暗号化されたメッセージが入っていた。捜査官は出所を突き止めるまで数年を費やした。",
+      "1957年、捜査はソ連の諜報員ルドルフ・アベルとして知られる人物の逮捕につながる。彼は後に米国人パイロットのフランシス・ゲイリー・パワーズと交換された。2015年の映画はこの歴史をドラマ化した。",
+      "一枚の硬貨だけでは真相はわからない。FBIの所蔵品と事件記録を読むと、映画で描かれる冷戦の歴史にも、証拠を積み重ねる地道な時間があったことが見えてくる。"
+    ],
+    "sources": [
+      {
+        "name": "FBI｜Rudolf Abel and the Hollow Nickel Case",
+        "url": "https://www.fbi.gov/history/artifacts/rudolph-abel-hollow-nickel-case",
+        "supports": "49–58行：新聞配達少年、暗号、捜査、1957年逮捕、交換、2015年映画。",
+        "access_scope": "FBI公式所蔵品解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Bridge of Spies",
+      "year": 2015,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "la-jetee-still-photos",
+    "weekday": 2,
+    "title": "たった一度の動きが映画になる",
+    "topic_key": "la-jetee-photo-roman-one-moving-shot",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "ほとんど静止画だけなのに、時間旅行の映画として知られる作品がある。\n\nクリス・マルケルの『#ラジュテ』。動く映像が現れるのは、わずか一つの短いショットだ。\n#まこの映画小話",
+      "作品のクレジットでは写真小説と名乗っている。白黒写真に音楽、効果音、ナレーションを組み合わせたSFで、記憶と時間を扱う。",
+      "通常の映画では、人物が動いても特に驚かない。しかし静止した写真が続いた後では、ごく小さな動きも強烈な出来事になる。画面に何を足すかだけでなく、それまで何を見せなかったかが意味を作る。",
+      "動画を撮影しなければ映画にならないのか。写真をつないだこの作品は、映画という媒体の前提を考え直させてくれる。"
+    ],
+    "sources": [
+      {
+        "name": "Criterion｜La Jetée: Unchained Melody",
+        "url": "https://www.criterion.com/current/posts/485-la-jet-e-unchained-melody",
+        "supports": "24–26行：写真小説のクレジット、白黒静止画と音、一つの短い動きのショット。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "La Jetée",
+      "year": 1963,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "battle-algiers-newsreel",
+    "weekday": 2,
+    "title": "ニュース映像のように見えるフィクション",
+    "topic_key": "battle-algiers-nonprofessional-cast",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "歴史の記録映像のように見えるのに、俳優を使って撮り直された映画がある。\n\n1966年の『#アルジェの戦い』は、なぜこれほど記録映像らしく見えるのだろう。\n#まこの映画小話",
+      "ジッロ・ポンテコルヴォ監督は、アルジェリア独立戦争の一局面を白黒のドキュメンタリー風の映像で再構成した。BFIは、出演者の多くが職業俳優ではなかった点を紹介する。",
+      "独立運動に実際に関わったサアディ・ヤセフの回想が着想源となり、彼自身も映画に出演した。だが当事者が出演しているからといって、すべての場面が実際に記録された映像というわけではない。",
+      "粗い白黒映像や自然な演技に、私たちは歴史的な真実らしさを感じる。映像のリアリティと史料としての性質は別だ。その違いまで意識すると、映画の表現力がよく見えてくる。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜The Battle of Algiers at 55",
+        "url": "https://www.bfi.org.uk/features/battle-algiers-gillo-pontecorvo",
+        "supports": "19、29–31行：ドキュメンタリー風の撮影、回想録、本人出演、非職業俳優。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "La battaglia di Algeri",
+      "year": 1966,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "spoilers-reading-viewing",
+    "weekday": 3,
+    "title": "ネタバレすると本当に面白くなくなる？",
+    "topic_key": "spoiler-enjoyment-context-2013-2018",
+    "category": "映画心理学講義",
+    "posts": [
+      "ネタバレは絶対に映画をつまらなくする？ 研究結果は、それほど単純ではない。\n\n小説の読者と映像の観客を調べた心理学研究を比べてみよう。\n#まこの映画小話",
+      "2013年の短編小説の研究では、結末を先に知らされた読者が途中でも楽しさを高く報告する条件があった。研究者は物語の理解しやすさがその効果に関係すると説明する。",
+      "一方、2018年の映像研究では、作品のジャンルや関与の程度などによって影響が異なり、映画やテレビでの効果は小さく条件付きだと結論づけられた。",
+      "結末を知れば伏線に気づけることもあれば、初見の驚きが失われることもある。研究は他人にネタバレしてよいという許可ではない。鑑賞の楽しみ方を選ぶ権利は観客にある。"
+    ],
+    "sources": [
+      {
+        "name": "Leavitt & Christenfeld (2013)｜The fluency of spoilers",
+        "url": "https://www.benjamins.com/catalog/ssol.3.1.09lea",
+        "supports": "20–24行：短編、読書途中の楽しさ、処理流暢性、条件差。",
+        "access_scope": "査読論文公開要旨"
+      },
+      {
+        "name": "Johnson & Rosenbaum (2018)｜(Don't) Tell me how it ends",
+        "url": "https://research.vu.nl/en/publications/dont-tell-me-how-it-ends-spoilers-enjoyment-and-involvement-in-te/",
+        "supports": "68–71行：映像研究3件、条件付きで小さい効果。",
+        "access_scope": "大学リポジトリの査読論文要旨"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "uncanny-valley-bunraku",
+    "weekday": 3,
+    "title": "人形が人間そっくりでなくても心を動かす理由",
+    "topic_key": "mori-uncanny-valley-bunraku",
+    "category": "映画心理学講義",
+    "posts": [
+      "人間にそっくりなCGより、明らかに人形の方が生き生きして見えることがある。\n\n不気味の谷を提唱した日本の研究者は、実は文楽の人形にも注目していた。\n#まこの映画小話",
+      "森政弘は1970年の論考で、人間らしさと親近感の関係について仮説を示した。人間に近づいても親近感が単調に増えるとは限らず、ある領域で不気味さが生じるという発想だ。",
+      "本人が挙げたのが文楽。人形の大きさや肌は人間そっくりではないが、劇場での距離、手や目の動き、観客の没入が親近感を高めうると考えた。",
+      "これは提唱時の仮説であり、あらゆるCGに当てはまる法則ではない。でも写実性の追求と、キャラクターの魅力を作ることが同じでないと考えるには面白い視点だ。"
+    ],
+    "sources": [
+      {
+        "name": "森政弘｜The Uncanny Valley（1970年論考の公認英訳）",
+        "url": "https://spectrum.ieee.org/the-uncanny-valley",
+        "supports": "75–85行：仮説、文楽の大きさ・質感・動きと没入についての本人の考察。",
+        "access_scope": "著者公認の翻訳本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "beauty-beast-two-authors",
+    "weekday": 4,
+    "title": "美女と野獣は二人の女性作家が作り変えた",
+    "topic_key": "beauty-beast-villeneuve-beaumont-revision",
+    "category": "銀幕人文学",
+    "posts": [
+      "『#美女と野獣』のよく知られた物語は、最初の版を大幅に短くした児童向けの改作だった。\n\n二人のフランス女性作家をたどると、童話の歴史が見えてくる。\n#まこの映画小話",
+      "1740年にヴィルヌーヴ夫人が発表した文学的な童話には、夢の場面や複数の妖精、副筋があった。1756年、ボーモン夫人は年少の読者向けに物語を改めた。",
+      "ミシガン大学図書館の解説によれば、改作では副筋や夢の場面などが削られ、忍耐や勤勉などの教訓が強調された。この版が英語に翻訳され、19世紀の挿絵本に大きな影響を与えた。",
+      "1991年のディズニー版も、長い語り直しの歴史の中にある。何を削り、どんな人物像を残すか。童話を翻案することは、時代が子どもに何を伝えたいかという選択でもある。"
+    ],
+    "sources": [
+      {
+        "name": "University of Michigan Library｜Fairy Tale Fridays: Beauty and the Beast",
+        "url": "https://blogs.lib.umich.edu/beyond-reading-room/fairy-tale-fridays-beauty-and-beast",
+        "supports": "13–21行：1740年、1756年、削除した要素、教訓、後世の翻訳。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Disney｜Beauty and the Beast",
+        "url": "https://movies.disney.com/beauty-and-the-beast",
+        "supports": "69–73行：1991年アニメ映画。",
+        "access_scope": "公式作品ページ"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Beauty and the Beast",
+      "year": 1991,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "pocahontas-late-account",
+    "weekday": 4,
+    "title": "救命の逸話が印刷されたのは17年後",
+    "topic_key": "pocahontas-smith-1624-source-criticism",
+    "category": "銀幕人文学",
+    "posts": [
+      "ポカホンタスがジョン・スミスを救ったという有名な話。ところがスミスの初期の著作には、その逸話が見当たらない。\n\n『#ポカホンタス』から歴史資料を読み比べる。\n#まこの映画小話",
+      "米国国立公園局によると、1608年と1612年に刊行された記録には救命の逸話がなく、印刷物に初めて登場したのは1624年だった。後の著作は初期の記録にない情報を含んでいる。",
+      "これだけで逸話が虚偽だと断定はできない。しかし記録の成立時期や語り手の立場を考慮する必要がある。1995年のディズニー映画も後世の表象の一つだ。",
+      "スミスは植民地側の人物であり、彼の記録は中立の観察ではない。歴史上の先住民の女性を理解するには、映画と著名な探検家の語りだけでなく、別の資料や視点も必要になる。"
+    ],
+    "sources": [
+      {
+        "name": "米国国立公園局｜John Smith’s Writings",
+        "url": "https://www.nps.gov/articles/000/john-smith-writings.htm",
+        "supports": "20–30行：語り手の立場、1608・1612年の記録、1624年の逸話初出と疑問。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Smithsonian Magazine｜The True Story of Pocahontas",
+        "url": "https://www.smithsonianmag.com/history/true-story-pocahontas-more-complicated-than-you-might-think-180962649/",
+        "supports": "8、39–55行：逸話の不確実性、1995年映画、先住民の視点。",
+        "access_scope": "歴史家への公開取材"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Pocahontas",
+      "year": 1995,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "apollo13-freefall-filming",
+    "weekday": 5,
+    "title": "宇宙飛行士を演じるため本当に浮いた",
+    "topic_key": "apollo13-parabolic-flight-filming",
+    "category": "映画の舞台裏",
+    "posts": [
+      "『#アポロ13』の無重量状態は、すべてが合成映像だったわけではない。\n\nNASAの研究用航空機が撮影に使われた。宇宙へ行かずに浮くことができる理由も面白い。\n#まこの映画小話",
+      "NASAは放物線状の飛行をする航空機で、20〜25秒程度の微小重力状態を作る研究を行っている。その先代のKC-135機が映画の無重量場面の撮影に使われた。",
+      "重力が消えたのではなく、飛行機とその内部の人や物がともに自由落下するため、重さを支える床からの力がほぼなくなる。軌道上で宇宙飛行士が浮く現象にも共通する考え方だ。",
+      "映画のために宇宙を模造するのではなく、宇宙で起きる物理現象の一部を利用して撮る。映像の制作技術をたどると、理科の教科書の見え方まで変わってくる。"
+    ],
+    "sources": [
+      {
+        "name": "NASA Glenn｜What is Microgravity?",
+        "url": "https://www.nasa.gov/centers-and-facilities/glenn/what-is-microgravity/",
+        "supports": "262–266行：自由落下、放物線飛行の20〜25秒、KC-135での映画撮影。",
+        "access_scope": "NASA公式科学解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Apollo 13",
+      "year": 1995,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "gollum-face-hand-animation",
+    "weekday": 5,
+    "title": "ゴラムの顔は俳優のデータだけではできなかった",
+    "topic_key": "gollum-return-king-hand-animated-face",
+    "category": "映画の舞台裏",
+    "posts": [
+      "モーションキャプチャーで有名になったゴラム。でも2003年の『#ロードオブザリング 王の帰還』では、その顔の表情は手作業でアニメーションされていた。\n#まこの映画小話",
+      "当時の制作技術記事によれば、アンディ・サーキスの演技を土台に、動きの記録、実写映像に合わせたアニメーション、キーフレームによる手作業が組み合わされた。",
+      "顔はアニメーターが動かし、身体の演技には俳優の記録を活用した。声もサーキスが担当した。CGのキャラクターの演技は、一人の俳優から自動的に生成されたものではない。",
+      "ゴラムの演技を褒めるとき、俳優とアニメーターのどちらの功績かと二択にする必要はない。複数の専門家が一つの身体を演じているという、映画ならではの表現だ。"
+    ],
+    "sources": [
+      {
+        "name": "Computer Graphics World｜The Big and the Sméagol",
+        "url": "https://www.cgw.com/Publications/CGW/2004/Volume-27-Issue-1-Jan-2004-/The-Big-and-the-Sm-agol.aspx",
+        "supports": "38–48行：王の帰還でのサーキス、モーションキャプチャー、ロトモーション、キーフレーム、手作業の顔。",
+        "access_scope": "2004年制作技術記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Lord of the Rings: The Return of the King",
+      "year": 2003,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "betty-boop-poodle-code",
+    "weekday": 6,
+    "title": "ベティ・ブープは元々犬だった",
+    "topic_key": "betty-boop-poodle-production-code",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "あのベティ・ブープは、最初から人間の女性ではなかった。\n\n米国議会図書館のキャラクター設定画の解説を読むと、映画の規制が彼女の服装まで変えた歴史がわかる。\n#まこの映画小話 #ベティブープ",
+      "1930年に登場した当初はプードルとして描かれ、1932年に人間の姿になった。歌や踊りで知られるアニメーションの人気キャラクターになった。",
+      "1934年に映画の自主規制規定の厳格な運用が始まると、スカート丈は膝まで伸び、襟元も高くなった。同図書館の展示はこの変化を説明している。短編シリーズの制作は1939年に終了した。",
+      "アニメのキャラクターの服装は、デザイナーの好みだけで決まるわけではない。何をスクリーンで見せてよいかという社会の規範も、一本の線の形にまで入り込む。"
+    ],
+    "sources": [
+      {
+        "name": "米国議会図書館｜Cartoon America: Animation",
+        "url": "https://www.loc.gov/exhibits/cartoonamerica/cartoon-zip.html",
+        "supports": "116–120行：1930年プードル、1932年人間、1934年規定による服装変化、1939年制作終了。",
+        "access_scope": "設定画の公式展示解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "fantasia-early-stereo",
+    "weekday": 6,
+    "title": "1940年の映画館に65個の小型スピーカー",
+    "topic_key": "fantasia-fantasound-auditorium",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "映画館の音が観客を取り囲む。そんな上映を1940年に試みたアニメーションがある。\n\nディズニーの『#ファンタジア』と音響技術ファンタサウンド。\n#まこの映画小話",
+      "Hagley Museum and Libraryには、技術者ハーバート・ベラーによる当時の上映装置の図面が残る。ロードショー上映では4トラックの音響方式が使われた。",
+      "同館の解説が紹介する構成では、スクリーン背後の3基のホーンに加え、客席の周囲に65個の小型スピーカーが配置された。従来とは異なる音楽体験を映画館に持ち込もうとした。",
+      "ただし設置の費用が大きく、戦時経済の影響もあって広く実用化するのは難しかった。作品の革新は制作現場だけでなく、それを上映する映画館の設備にも依存している。"
+    ],
+    "sources": [
+      {
+        "name": "Hagley Museum and Library｜RCA, Fantasia, and Early Stereo",
+        "url": "https://www.hagley.org/librarynews/rca-fantasia-and-early-stereo",
+        "supports": "339–346行：1940年、ベラーの図面、4トラック、3ホーンと65スピーカー、費用。",
+        "access_scope": "技術史資料を所蔵する博物館の解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Fantasia",
+      "year": 1940,
+      "review_note": "SNS転載許諾未確認。"
+    }
   }
 ]
