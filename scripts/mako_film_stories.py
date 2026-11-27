@@ -9,7 +9,7 @@ from datetime import date
 
 import requests
 
-from buffer_client import _ensure_reelpal_tag
+from buffer_client import BufferError, _ensure_reelpal_tag
 from scripts.episode_links import resolve_episode_links
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -104,7 +104,16 @@ def render(item, *, visual_field=None):
             raise ValueError("Unapproved visual selected: " + item["id"])
         asset = item[field]
         label = "ポスター資料：" if field == "poster" else "関連資料画像（映画ポスターではありません）："
-        refs.append(label + asset["credit"] + "／" + asset["license"] + "\n" + asset["source_url"])
+        credit = label + asset["credit"] + "／" + asset["license"]
+        source = asset["source_url"]
+        combined = credit + "\n" + source
+        # Reserve space for numbering and the mandatory tag. Never truncate attribution.
+        try:
+            _ensure_reelpal_tag("99/99\n" + combined)
+        except BufferError:
+            refs.extend([credit, "画像出典：\n" + source])
+        else:
+            refs.append(combined)
     parts += refs + [cta]
     return [_ensure_reelpal_tag(f"{i+1}/{len(parts)}\n{p}") for i,p in enumerate(parts)]
 
@@ -130,9 +139,12 @@ def load_bank(require_full=False):
             u = urlsplit(s["url"])
             if u.scheme != "https" or not u.hostname or u.username or u.password or not s.get("supports") or not s.get("name"):
                 raise ValueError("Invalid source record: " + row["id"])
-        for field, _ in visual_assets(row):
-            render(row, visual_field=field)
-        render(row)
+        try:
+            for field, _ in visual_assets(row):
+                render(row, visual_field=field)
+            render(row)
+        except BufferError as exc:
+            raise ValueError(f"Invalid rendered story {row['id']}: {exc}") from exc
     counts = Counter(r["weekday"] for r in rows)
     if require_full and any(counts[d] < 20 for d in range(7)):
         raise ValueError(f"Initial release gate: require 20 checked stories per weekday; current={dict(counts)}")
