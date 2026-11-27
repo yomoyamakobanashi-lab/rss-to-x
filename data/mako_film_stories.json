@@ -4219,5 +4219,185 @@
       "year": 1941,
       "review_note": "ポスターのSNS転載許諾未確認。"
     }
+  },
+  {
+    "id": "haxan-modern-medicine",
+    "weekday": 0,
+    "title": "魔女を救うはずの医学が怖くなる映画",
+    "topic_key": "haxan-modern-medicine",
+    "category": "映画怪異録",
+    "posts": [
+      "100年前の怪奇映画には、悪魔よりも不気味な結末がある。\n1922年の『#魔女』（Häxan）は、魔女狩りを批判したあと、当時の精神医学を救済の手段として提示する。\n#まこの映画小話",
+      "監督ベンヤミン・クリステンセンは、古い版画を示す講義風の映像と、魔術や迫害を再現する劇映画を組み合わせた。怪談を見ているのか、歴史の授業を受けているのか、境界が曖昧になる。",
+      "終盤では、かつて魔女とされた女性たちを当時の医学で説明しようとする。ただし、これは1922年の映画が提示した見解であり、歴史上の被害者に対する現代の医学的診断ではない。",
+      "魔女という呼称を病名に置き換えれば、偏見は消えるのだろうか。英国映画協会も現代から見た終幕の不穏さを指摘する。怪物の正体より、人が他者をどう分類するかが怖い映画だ。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Häxan at 100",
+        "url": "https://www.bfi.org.uk/features/haxan-silent-era-witchcraft-film-100",
+        "supports": "16–20、30行：形式、歴史と迷信、終幕の精神医学と現代的批評",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Häxan",
+      "year": 1922,
+      "review_note": "SNS転載許諾未確認"
+    }
+  },
+  {
+    "id": "cottingley-fairies-camera-evidence",
+    "weekday": 1,
+    "title": "名探偵の生みの親が信じた妖精",
+    "topic_key": "cottingley-fairies-camera-evidence",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "シャーロック・ホームズの生みの親が、少女たちの撮った妖精写真を信じていた。\n映画『FairyTale: A True Story』の背景にある、1917年からの英国の事件だ。\n#まこの映画小話",
+      "コティングリーの少女たちが撮った写真には、小さな妖精が写っていた。コナン・ドイルはこれを信じ、写真は社会の注目を集めた。",
+      "追加撮影では、支持者が細工を見破るために印を付けた写真乾板まで用意した。しかし、妖精の絵を切り抜いて撮影場所に置く手法なら、乾板自体を細工する必要はない。",
+      "1980年代になって撮影の仕掛けが明かされた。最後の一枚については少女たちの後年の説明に相違もある。画像が加工されていないことと、画像が示す出来事が真実であることは別問題なのだ。"
+    ],
+    "sources": [
+      {
+        "name": "National Science and Media Museum｜Cottingley Fairies",
+        "url": "https://blog.scienceandmediamuseum.org.uk/the-story-of-the-cottingley-fairies-shows-that-image-manipulation-is-nothing-new/",
+        "supports": "12–20、34–37、47–58行：映画、ドイル、乾板、切り抜き、後年の説明の相違",
+        "access_scope": "公開本文"
+      },
+      {
+        "name": "Science Museum Group｜Frances Griffiths",
+        "url": "https://collection.sciencemuseumgroup.org.uk/people/ap28805",
+        "supports": "41–46行：写真と公表経緯",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "FairyTale: A True Story",
+      "year": 1997,
+      "review_note": "SNS転載許諾未確認"
+    }
+  },
+  {
+    "id": "red-shoes-art-compulsion",
+    "weekday": 2,
+    "title": "好きなことをやめられないという恐怖",
+    "topic_key": "red-shoes-art-compulsion",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "好きなことを仕事にするのは幸福なのか。\n1948年の映画『#赤い靴』では、踊ることを愛するバレリーナが、踊り続ける呪いの物語を舞台で演じる。\n#まこの映画小話",
+      "題材はアンデルセンの童話。魔法の靴が持ち主に踊りを強いる物語を、パウエルとプレスバーガーは芸術家の人生を描く映画の中に組み込んだ。",
+      "主人公を演じたモイラ・シアラーは実際のバレリーナ。映画では芸術と愛の間に立たされる主人公と、芸術への献身を求める興行主の関係が描かれる。",
+      "舞台上の呪いと舞台裏の要求は、どこまで違うのか。情熱を称賛する物語は多いが、この映画は情熱そのものが人を拘束する可能性を、美しい踊りの中に映し出す。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜The Red Shoes",
+        "url": "https://www.bfi.org.uk/bfi-film-releases/red-shoes",
+        "supports": "11–19行：童話、配役、芸術と愛の葛藤、製作年",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Red Shoes",
+      "year": 1948,
+      "review_note": "SNS転載許諾未確認"
+    }
+  },
+  {
+    "id": "scream-like-film-music",
+    "weekday": 3,
+    "title": "楽器が悲鳴を上げるとき",
+    "topic_key": "scream-like-film-music",
+    "category": "映画心理学講義",
+    "posts": [
+      "ホラー映画の音楽が怖いのは、不協和音だからだけではないかもしれない。\n人間の悲鳴と、悲鳴のように聞こえる映画音楽には、共通する音響的特徴があるという研究がある。\n#まこの映画小話",
+      "2020年にTrevorらが発表した研究では、悲鳴、悲鳴ではない発声、悲鳴に似た音楽、そうでない音楽を比較した。音の分析に加え、聞き手による感情評価も行った。",
+      "着目したのは音の粗さ（roughness）。研究結果は、悲鳴の特徴の一つを音楽が模倣しているという仮説を支持した。すべての恐怖音楽に当てはまるという証明ではない。",
+      "登場人物がまだ何も見つけていないのに、観客は音だけで危険を予感する。映画音楽は登場人物に代わって悲鳴を上げることもある、と考えると、ホラーの聞き方が変わる。"
+    ],
+    "sources": [
+      {
+        "name": "Trevor, Arnal & Frühholz (2020)｜JASA",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32611175/",
+        "supports": "218–245行：著者、研究設計、感情評定、roughnessの結果（公開抄録）",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "dracula-whitby-library-name",
+    "weekday": 4,
+    "title": "吸血鬼の名前を拾った図書館",
+    "topic_key": "dracula-whitby-library-name",
+    "category": "銀幕人文学",
+    "posts": [
+      "ドラキュラという名前は、吸血鬼小説の構想が始まった時点では決まっていなかった。\n映画で何度も蘇る怪物の名は、英国の港町の図書館で見つかった。\n#まこの映画小話",
+      "1890年、ブラム・ストーカーはウィットビーを訪れた。当時の構想では、吸血鬼の名はワンパイア伯爵（Count Wampyr）だったとEnglish Heritageは解説している。",
+      "図書館でドラキュラという名を知った日付は8月8日。完成した小説では、吸血鬼を運ぶ船がウィットビーに漂着する日も8月8日になっている。",
+      "1897年刊行の小説は日記や手紙、新聞記事、航海日誌などを組み合わせた形式を取る。実際の土地と日付を虚構へ織り込む手つきが、後世の吸血鬼映画につながるリアリティを支えている。"
+    ],
+    "sources": [
+      {
+        "name": "English Heritage｜How Dracula Came to Whitby",
+        "url": "https://www.english-heritage.org.uk/visit/places/whitby-abbey/history-and-stories/dracula/",
+        "supports": "224–255行：訪問、旧名、図書館、日付、小説形式",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Dracula",
+      "year": 1931,
+      "review_note": "SNS転載許諾未確認"
+    }
+  },
+  {
+    "id": "coraline-replacement-faces",
+    "weekday": 5,
+    "title": "20万通りの顔を持つ少女",
+    "topic_key": "coraline-replacement-faces",
+    "category": "映画の舞台裏",
+    "posts": [
+      "『#コララインとボタンの魔女』の主人公は、20万通りを超える顔の組み合わせを持っていた。\nしかも、それは画面の中だけのデータではない。\n#まこの映画小話",
+      "人形アニメーションでは表情の異なる顔の部品を交換し、少しずつ撮影する方法がある。従来の手作業による造形に、LAIKAは3Dプリンターを導入した。",
+      "MoPOPとLAIKAの展覧会資料によると、コララインの顔の組み合わせは207,336通り。これは実際に20万個の完成した顔を作ったという意味ではない。",
+      "コンピューターで設計したものを物理的な部品にして、人の手で人形を演技させる。CGと手作りは対立概念だと思いがちだが、この映画の豊かな表情は両者が協力した結果なのだ。"
+    ],
+    "sources": [
+      {
+        "name": "MoPOP・LAIKA｜Coraline",
+        "url": "https://www.laikahiddenworlds.com/coraline",
+        "supports": "112–120行：交換用顔、3D印刷、組み合わせ数",
+        "access_scope": "公開本文"
+      },
+      {
+        "name": "Focus Features｜Two Years in the Making",
+        "url": "https://www.focusfeatures.com/article/two__years_in_the_making",
+        "supports": "200–210行：交換アニメーションの工程、コララインの技術",
+        "access_scope": "公開本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Coraline",
+      "year": 2009,
+      "review_note": "SNS転載許諾未確認"
+    }
   }
 ]
