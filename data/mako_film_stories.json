@@ -1296,7 +1296,7 @@
     "topic_key": "das-experiment-stanford-demand-characteristics",
     "category": "映画心理学講義",
     "posts": [
-      "看守の役を与えるだけで、普通の人は残酷になるのか。\n\n映画『#es』の着想となったスタンフォード監獄実験。実は看守が受けた指示について、後年の研究で争点になっている。\n#まこの映画小話",
+      "看守の役を与えるだけで、普通の人は残酷になるのか。\n\n映画『#es エス』の着想となったスタンフォード監獄実験。実は看守が受けた指示について、後年の研究で争点になっている。\n#まこの映画小話",
       "1971年の実験では、参加者に模擬監獄で看守と囚人の役割を割り当てた。2001年のドイツ映画『es』はこの実験に着想を得たスリラーであり、実験そのものの記録映像ではない。",
       "研究者ティボー・ル・テクシエは資料を再検討し、看守たちは研究者が期待する行動を知らされ、指示や監督を受けていたと批判した。役割だけが行動を変えたという説明には問題がある。",
       "一方、演劇史家スティーヴン・スコット＝ボトムズの資料分析は、研究者の指示があったことを認めつつ、看守たちの個々の反応や裁量に注目する。参加者全員が同じ行動を取ったわけではない。",
@@ -1358,17 +1358,18 @@
         "access_scope": "本人の文章本文"
       },
       {
-        "name": "Ingmar Bergman Foundation｜Bergman and Visual Art",
-        "url": "https://www.ingmarbergman.se/en/universe/bergman-and-visual-art",
-        "supports": "テービー教会の壁画、アルベルトゥス・ピクトル（同作品解説）。",
-        "access_scope": "公式記事（検索結果と関連公式アーカイブ照合）"
+        "name": "Ingmar Bergman Foundation｜Media gallery for The Seventh Seal",
+        "url": "https://www.ingmarbergman.se/en/production/seventh-seal/media",
+        "supports": "163行：テービー教会の天井画、作者、騎士と死神のチェス、映画への影響。16–18行：公式ポスター権利表示。",
+        "access_scope": "公式資料本文"
       }
     ],
     "poster": {
       "status": "pending",
       "film_title": "Det sjunde inseglet",
       "year": 1957,
-      "review_note": "1957年映画版。転載許諾未確認。"
+      "review_note": "公式ページにスウェーデン版ポスターあり。© AB Svensk Filmindustri。転載許諾未確認。",
+      "source_url": "https://www.ingmarbergman.se/en/production/seventh-seal/media"
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
