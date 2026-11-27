@@ -160,29 +160,38 @@ def main():
         print("[SKIP] waiting for coordinated JST cutover")
         return
     stories.load_bank(require_full=True)
-    # Independent slots: a feed error must not prevent the editorial story.
+    # A free Buffer queue may support only one pending thread at a time.
+    # Confirm the previous accepted root before sending another thread.
     errors=[]
-    try:
-        companion(now,state)
-    except Exception as exc:
-        errors.append(f"companion: {exc}")
-    try:
-        item=due_story(now,state,rows)
-        if item:
-            reserve_and_send(state,now.date().isoformat(),"story","story",item["id"],stories.render(item))
-        elif now.hour>=7 and "story" not in day_slots(state,now.date().isoformat()):
-            print("[SKIP] no reviewed story for today's weekday")
-    except Exception as exc:
-        errors.append(f"story: {exc}")
-    # Reconcile accepted roots via read-only Buffer status; never resubmit on failure.
-    for rec in day_slots(state,now.date().isoformat()).values():
-        if rec.get("status") == "accepted" and rec.get("buffer_id"):
-            try:
-                post=verify(rec["buffer_id"],attempts=2,delay=5)
-                rec.update(status="root_confirmed", external_link=post["externalLink"])
-                write_ledger(state)
-            except Exception as exc:
-                errors.append(f"publication unconfirmed {rec['buffer_id']}: {exc}")
+    date=now.date().isoformat()
+    def pending():
+        return any(r.get("status")=="accepted" for r in day_slots(state,date).values())
+    def reconcile():
+        for rec in day_slots(state,date).values():
+            if rec.get("status")=="accepted" and rec.get("buffer_id"):
+                try:
+                    post=verify(rec["buffer_id"],attempts=2,delay=5)
+                    rec.update(status="root_confirmed",external_link=post["externalLink"])
+                    write_ledger(state)
+                except Exception as exc:
+                    errors.append(f"publication unconfirmed {rec['buffer_id']}: {exc}")
+    reconcile()
+    if not pending():
+        try:
+            companion(now,state)
+        except Exception as exc:
+            errors.append(f"companion: {exc}")
+        reconcile()
+    if not pending():
+        try:
+            item=due_story(now,state,rows)
+            if item:
+                reserve_and_send(state,date,"story","story",item["id"],stories.render(item))
+            elif now.hour>=7 and "story" not in day_slots(state,date):
+                print("[SKIP] no reviewed story for today's weekday")
+        except Exception as exc:
+            errors.append(f"story: {exc}")
+        reconcile()
     if errors:
         raise RuntimeError("; ".join(errors))
 
