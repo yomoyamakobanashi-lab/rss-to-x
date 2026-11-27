@@ -1445,5 +1445,505 @@
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
+  },
+  {
+    "id": "birds-algal-toxin",
+    "weekday": 0,
+    "title": "鳥が街を襲った日",
+    "topic_key": "birds-1961-marine-archive",
+    "category": "映画怪異録",
+    "posts": [
+      "1961年、カリフォルニアの海岸で、鳥たちが家々に衝突する異変が起きた。\n\n映画『#鳥』の着想の一つとされる事件。その原因を探る手掛かりが、半世紀も前の海洋標本にあった。\n#まこの映画小話",
+      "当時の新聞は、海鳥のハイイロミズナギドリが街に押し寄せる異変を報じた。1963年のヒッチコック映画は、ダフネ・デュ・モーリアの小説と、この事件から着想を得たとされる。",
+      "2012年に報告された研究では、事件の約5週間前に採集・保存された動物プランクトンを分析した。調べた標本の消化管から、有毒な珪藻と同じ種類の珪藻が見つかった。",
+      "研究者たちは、珪藻由来の神経毒ドウモイ酸が食物連鎖を通じて海鳥に取り込まれた可能性を指摘する。当時の鳥そのものを検査したわけではなく、有力な説明だ。",
+      "奇妙な事件を怪談のまま楽しむのもいい。でも、未来の研究者がその謎を解くためには、何気ない日常の観測記録が残されていることが重要なのだ。"
+    ],
+    "sources": [
+      {
+        "name": "Scripps海洋研究所｜The Story Behind Hitchcock's Crazed Birds",
+        "url": "https://scripps.ucsd.edu/news/story-behind-hitchcocks-crazed-birds",
+        "supports": "15–26行：1961年の事件、映画との関係、1963年公開、2012年研究、保存標本の分析、ドウモイ酸の仮説。研究機関の解説に基づく。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Birds",
+      "year": 1963,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "sleepy-hollow-town-name",
+    "weekday": 0,
+    "title": "怪談が町の名前を変えた",
+    "topic_key": "sleepy-hollow-fiction-geography",
+    "category": "映画怪異録",
+    "posts": [
+      "怪談の舞台になった町が、後から怪談にちなんで名前を変えた。\n\nティム・バートンの『#スリーピーホロウ』の原作には、現実の地名まで変えた力がある。\n#まこの映画小話",
+      "ワシントン・アーヴィングの短編は1819〜1820年刊行の作品集に収録された。作者は実在の土地や人名を取り込み、別人の手記を発見したという体裁で物語に現実味を与えた。",
+      "文化遺産を保存するHistoric Hudson Valleyによれば、原作にはハロウィンという言葉は登場しない。後世の挿絵や映像などによって、秋の怪談とハロウィンの結びつきが強まった。",
+      "実際の村ノース・タリータウンは1996年にスリーピー・ホロウへ改名。1999年にはバートンが怪談を独自の映画に仕立てた。土地に根ざした物語が、今度は土地そのもののイメージを作ったわけだ。"
+    ],
+    "sources": [
+      {
+        "name": "Historic Hudson Valley｜Irving’s Legend",
+        "url": "https://hudsonvalley.org/article/irvings-legend-the-story-behind-the-story/",
+        "supports": "74–83行：物語の体裁、刊行年、原作にハロウィンの言及がないこと、後世の表象。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Pomeroy Foundation｜Headless Horseman",
+        "url": "https://www.wgpfoundation.org/historic-markers/headless-horseman/",
+        "supports": "59–66行：1996年の改名、地域の伝承。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI｜Sleepy Hollow",
+        "url": "https://whatson.bfi.org.uk/imax/Online/default.asp?BOparam::WScontent::loadArticle::context_id=&BOparam::WScontent::loadArticle::permalink=sleepy-hollow-imax",
+        "supports": "30–51行：ティム・バートン監督の1999年映画と原作との関係。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "episode_guid": "2757eae5-7dcc-4f35-a882-850625312257",
+    "poster": {
+      "status": "pending",
+      "film_title": "Sleepy Hollow",
+      "year": 1999,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "room237-hidden-messages",
+    "weekday": 1,
+    "title": "五人が見つけた五つの映画",
+    "topic_key": "shining-room237-interpretive-evidence",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "同じ映画を何度も観ている五人が、それぞれまったく異なる秘密を見つけたと語る。\n\n『#シャイニング』の解釈そのものを題材にした映画『ROOM237』をご存じだろうか。\n#まこの映画小話",
+      "2012年のドキュメンタリー『ROOM237』では、五人の語り手がキューブリックの1980年の映画に隠された意味を論じる。歴史的暴力を読み取る人も、月面着陸捏造説を唱える人もいる。",
+      "ただし、映画の中に何かを読み取れることと、作り手が意図的に隠したことは違う。月面着陸についても、NASAの後年の月面画像にはアポロ11号の着陸船の下降段や足跡の経路が写っている。",
+      "『ROOM237』の制作者は、観客が提示された解釈を自分で考えられる余地を残そうとしたとBFIの取材で説明する。作品解釈と歴史的事実の検証は、同じ方法ではできない。",
+      "映画を深読みする自由は魅力的だ。一方で、どんな発見なら仮説を撤回するかも考えておく。解釈の面白さを失わずに、現実の主張には根拠を求めたい。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Unlocking Room 237",
+        "url": "https://www.bfi.org.uk/interviews/unlocking-room-237",
+        "supports": "16–31行：2012年、五人、複数の相異なる解釈、制作者の姿勢。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "NASA｜Apollo 11 Landing Site",
+        "url": "https://science.nasa.gov/resource/apollo-11-landing-site/",
+        "supports": "298–300行：月探査機の画像に残る着陸地点の物証。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "episode_guid": "e6993aef-c269-40c2-9855-6976ed73c391",
+    "poster": {
+      "status": "pending",
+      "film_title": "Room 237",
+      "year": 2012,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "matrix-simulation-trilemma",
+    "weekday": 1,
+    "title": "仮想現実説は三択だった",
+    "topic_key": "matrix-bostrom-disjunction",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "私たちは仮想世界に住んでいる？\n\n映画『#マトリックス』に似た問いを哲学者ニック・ボストロムは2003年に論じた。ところが、その論証は単純な仮想現実説ではない。\n#まこの映画小話",
+      "彼の論証が示そうとするのは、少なくとも次の三つのうち一つが成り立つということ。人類は高度文明になる前に絶滅する可能性が高い。高度文明は祖先のシミュレーションをほとんど実行しない。あるいは私たちはほぼ確実に仮想世界にいる。",
+      "本人は2025年のFAQでも、論証を受け入れることと、第三の仮説を受け入れることは別だと説明している。三つのうちどれが正しいかを論証だけで決められるわけではない。",
+      "しかも高度文明の計算能力や、意識を持つ存在のシミュレーションが可能かといった前提に依存する。奇妙な偶然を見つけただけでは、この仮説が真だという証拠にはならない。",
+      "『マトリックス』は現実への疑いを物語にした。哲学の論証は、その疑いがどんな条件で成立するのかを問う。映画と哲学の違いも含めて、知的な遊びとして楽しめる。"
+    ],
+    "sources": [
+      {
+        "name": "Nick Bostrom｜Simulation Argument FAQ",
+        "url": "https://simulation-argument.com/faq/",
+        "supports": "29–55、57–70行：2003年論文、三命題の選言、仮説と論証の区別、技術的前提、奇妙な現象への懐疑。",
+        "access_scope": "著者本人の公開解説"
+      },
+      {
+        "name": "Nick Bostrom｜The Simulation Argument（2003年一般向け解説）",
+        "url": "https://simulation-argument.com/matrix/",
+        "supports": "4–10行：映画との違い、シミュレーション仮説の意味。",
+        "access_scope": "著者本人の公開解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "episode_guid": "2f0cc584-52e9-4c90-b43f-5086b28b065f",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Matrix",
+      "year": 1999,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "joan-of-arc-hospital-print",
+    "weekday": 2,
+    "title": "病院の戸棚に眠った名作",
+    "topic_key": "joan-arc-oslo-hospital-original",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "火災で失われたと思われた映画の原版に由来するプリントが、半世紀後、病院の戸棚から見つかった。\n\n1928年の無声映画『#裁かるるジャンヌ』の数奇な運命。\n#まこの映画小話",
+      "デンマークのカール・テオドア・ドライヤー監督は、ジャンヌの裁判を極端な顔のアップや光と影によって描いた。しかし公開後、ネガは火災で失われたとされる。",
+      "監督は残った別テイクから再構成したが、その版にも火災による損失が生じた。後年には異なる編集や音楽を付けた版も流通した。",
+      "1981年、ノルウェーの精神科病院で保管されていたフィルムが発見された。そこにあったのは、失われたと思われていたオリジナル版の上映用プリントだった。",
+      "何十年もの間、人々は別の版を通してこの名作を知っていた。一本のフィルムの生き残りが、映画史そのものの見え方を変えることがある。"
+    ],
+    "sources": [
+      {
+        "name": "Janus Films｜The Passion of Joan of Arc",
+        "url": "https://www.janusfilms.com/films/1032",
+        "supports": "31–33行：顔のアップ、火災、1981年のノルウェーでの発見。",
+        "access_scope": "配給会社公式解説"
+      },
+      {
+        "name": "Pacific Chorale｜Voices of Light program notes",
+        "url": "https://www.pacificchorale.org/program-notes-for-voices-of-light",
+        "supports": "107–123行：1928年、二度の火災、再構成版、別版、病院の戸棚と原版プリント。",
+        "access_scope": "演奏会公式解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Passion of Joan of Arc",
+      "year": 1928,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "citizen-kane-newspaper-ban",
+    "weekday": 2,
+    "title": "新聞王を描いた映画が新聞から消えた",
+    "topic_key": "citizen-kane-hearst-publicity-ban",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "新聞王を描いた映画を、実際の新聞王が新聞から締め出した。\n\n『#市民ケーン』（1941年）は、物語の外でもメディアの権力をめぐる争いが起きた作品だ。\n#まこの映画小話",
+      "主人公は巨大な新聞帝国を築く架空の男。新聞王ウィリアム・ランドルフ・ハーストら実在の大富豪の姿が重ねられている。ハースト側は公開阻止に動いた。",
+      "AFIの資料によれば、ハースト傘下の新聞では、映画を扱った記事や広告の掲載が禁じられた。一時は製作会社RKOの他作品にも対象が広げられたという。",
+      "ただし監督オーソン・ウェルズは、主人公が特定の人物の伝記だという説明を否定している。実在の権力者たちが生きた時代を描くには、その歴史を無視できないとも述べた。",
+      "映画が権力と報道の関係を描き、その映画自体が報道の権力に直面する。スクリーンの外にまでテーマが広がったことを知ると、この作品はさらに面白い。"
+    ],
+    "sources": [
+      {
+        "name": "AFI｜Citizen Kane",
+        "url": "https://www.afi.com/robert-detail/27624-CITIZEN-KANE/",
+        "supports": "71行：1941年、公開阻止と傘下新聞の掲載禁止。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "AFI Catalog｜Citizen Kane",
+        "url": "https://catalog.afi.com/Film/27624-CITIZEN-KANE",
+        "supports": "150–162行：RKO製品への圧力、ウェルズの見解と複合的モデル、掲載禁止の経緯。",
+        "access_scope": "公式作品カタログ"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Citizen Kane",
+      "year": 1941,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "inside-out-sadness-function",
+    "weekday": 3,
+    "title": "なぜカナシミを消してはいけないのか",
+    "topic_key": "inside-out-emotion-consultants-sadness",
+    "category": "映画心理学講義",
+    "posts": [
+      "感情の登場人物は五人。でも、心理学者はもっと多くの感情を登場させようと提案していた。\n\nピクサーの『#インサイドヘッド』には、科学と物語の折り合いが見える。\n#まこの映画小話",
+      "監督ピート・ドクターは心理学者ダッカー・ケルトナーとポール・エクマンに相談した。研究対象の感情をもっと取り入れる提案もあったが、物語で扱える登場人物数を考慮し、五つに絞られた。",
+      "二人の研究者が評価したのは、むしろカナシミの役割だった。悲しみは喪失を認識する助けとなり、悲しみの表出は他者とのつながりや支援を促すこともある。",
+      "主人公を喜びだけで動かそうとしてもうまくいかない。感情にはそれぞれ異なる役割があり、喜びが多ければ必ず健全というわけでもない。もちろん映画の五人は心の仕組みをそのまま再現したものではない。",
+      "嫌な感情を消すことと、その感情を理解して扱えることは違う。カナシミの存在を排除しないという物語は、感情について考える良いきっかけになる。"
+    ],
+    "sources": [
+      {
+        "name": "UC Berkeley｜Psychologists write about Inside Out",
+        "url": "https://news.berkeley.edu/2015/07/07/psychologists-on-inside-out-nyt/",
+        "supports": "49–63行：二人の科学監修者、感情の役割、悲しみの社会的機能。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Keltner & Ekman｜The Science of Inside Out",
+        "url": "https://www.paulekman.com/blog/the-science-of-inside-out/",
+        "supports": "93–113行：登場感情数の提案と制作判断、悲しみと喪失・社会的つながり。",
+        "access_scope": "監修者本人の公開記事"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Inside Out",
+      "year": 2015,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "invisible-gorilla-attention",
+    "weekday": 3,
+    "title": "ゴリラを見逃す観客",
+    "topic_key": "invisible-gorilla-selective-attention",
+    "category": "映画心理学講義",
+    "posts": [
+      "画面の真ん中をゴリラが歩いていても、人は気づかないことがある。\n\n映画で細部を見逃すのは、単に注意力が低いからだろうか。1999年の心理学実験が面白い。\n#まこの映画小話 #心理学",
+      "サイモンズとチャブリスは、複数の人がボールをパスする映像を見せ、一方のチームのパス回数を数えるよう参加者に求めた。映像にはゴリラの着ぐるみを着た人が通り過ぎる条件があった。",
+      "英国Open Universityの解説では、ゴリラを認識した参加者は全体の44％と紹介される。これは特定の実験条件の結果で、誰もがいつも同じ割合で見逃すという意味ではない。",
+      "この現象は不注意による見落とし（非注意性盲目）と呼ばれる。二つの画面の違いを見逃す変化盲とは区別される。一つの課題に注意を集中すると、目の前の別の出来事が意識に上らないことがある。",
+      "だから一度観た映画を見直す意味がある。初見では物語を追い、二度目は背景や表情に注目する。見えている画面が同じでも、注意を向ける先が違えば別の発見がある。"
+    ],
+    "sources": [
+      {
+        "name": "Simons & Chabris (1999)｜Gorillas in our midst",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10694957/",
+        "supports": "240–241行：非注意性盲目と変化盲の区別、動的映像実験。DOI 10.1068/p281059。",
+        "access_scope": "査読論文の公開要旨"
+      },
+      {
+        "name": "Open University｜Forensic psychology 1.1",
+        "url": "https://www.open.edu/openlearn/mod/oucontent/view.php?id=88410&section=_unit4.1.1",
+        "supports": "335–340行：パス回数の課題、ゴリラ条件、44％の報告。",
+        "access_scope": "大学公開教材"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "amadeus-salieri-pupil",
+    "weekday": 4,
+    "title": "宿敵の息子を教えた作曲家",
+    "topic_key": "amadeus-salieri-mozart-son",
+    "category": "銀幕人文学",
+    "posts": [
+      "モーツァルトを憎んだ作曲家という印象が強いサリエリ。実際にはモーツァルトの息子の教師だった。\n\n映画『#アマデウス』から、名声と悪評の歴史をたどる。\n#まこの映画小話",
+      "1984年のミロス・フォアマン監督作品はピーター・シェーファーの戯曲を映画化したもの。サリエリとモーツァルトの対立はドラマの中心だが、毒殺説を支持する確かな証拠はない。",
+      "毒殺の噂はプーシキンが1830年に書いた劇などを通じて広まった。1791年に亡くなったモーツァルトの正確な死因は不明であり、噂と史実は区別したい。",
+      "サリエリは宮廷で活躍した作曲家で、教育者としても知られる。弟子にはベートーヴェンやシューベルト、そしてモーツァルトの息子フランツ・クサーヴァーがいた。",
+      "物語では嫉妬深い敵役が必要でも、歴史上の人物はそれだけで説明できない。サリエリの音楽にも耳を傾けてみると、天才と凡人という単純な対立が少し違って聞こえる。"
+    ],
+    "sources": [
+      {
+        "name": "Handel and Haydn Society｜Amadeus Fact vs Fiction",
+        "url": "https://handelandhaydn.org/amadeus-fact-fiction/",
+        "supports": "135–137行：プーシキンの劇、1979年戯曲・1984年映画、毒殺説と死因の不確実性。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "The Guardian｜The feud that never was",
+        "url": "https://www.theguardian.com/music/2003/dec/19/classicalmusicandopera.italy",
+        "supports": "59–76行：サリエリの宮廷音楽家・教育者としての経歴、フランツ・クサーヴァーらの師、毒殺説への異論。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Amadeus",
+      "year": 1984,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "spirited-away-river-bicycle",
+    "weekday": 4,
+    "title": "神様の体から出てきた自転車",
+    "topic_key": "spirited-away-river-cleanup-folklore",
+    "category": "銀幕人文学",
+    "posts": [
+      "神様の体から自転車が出てくる、あの奇妙な場面。\n\n『#千と千尋の神隠し』の川の神には、宮﨑駿自身が体験した川の清掃という現実の着想があった。\n#まこの映画小話",
+      "2001年のパリでの記者会見で、監督は近所の川を掃除したとき、車輪の突き出た自転車が沈んでいた経験を語った。あの場面は神話そのものではなく、実体験が出発点だという。",
+      "映画では汚れた神が湯屋を訪れ、千尋たちがゴミを取り除く。研究者BoydとNishimuraは、神々が入浴する湯屋や民間信仰の表現に神道的な文化のモチーフを読み取っている。",
+      "神話をそのまま映像化したのではなく、日常で目にした環境問題を、神々が生きる世界へ翻訳したと読める。川を汚したのは人間なのに、苦しんでいるのは川の神だ。",
+      "自然を資源として見るとゴミの問題になる。自然を神として見ると、傷ついた存在を助ける話になる。同じ現実でも、どんな物語に置き換えるかで感じ方が変わる。"
+    ],
+    "sources": [
+      {
+        "name": "Midnight Eye｜Hayao Miyazaki（2001年会見）",
+        "url": "https://old.midnighteye.com/interviews/hayao_miyazaki.shtml",
+        "supports": "42行および会見説明：監督本人の川の清掃と自転車の回想。",
+        "access_scope": "本人の発言を記録した記事"
+      },
+      {
+        "name": "The New Yorker｜The Auteur of Anime",
+        "url": "https://www.newyorker.com/magazine/2005/01/17/hayao-miyazaki-anime-studio-ghibli-profile",
+        "supports": "84行：川の神の場面と本人の清掃経験。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Boyd & Nishimura (2004)｜Shinto Perspectives",
+        "url": "https://digitalcommons.unomaha.edu/jrf/vol8/iss3/4/",
+        "supports": "25–31行：湯屋、神々、民間信仰と神道モチーフについての論文要旨。",
+        "access_scope": "学術論文の公開要旨"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "千と千尋の神隠し",
+      "year": 2001,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "jurassic-park-elephant-roar",
+    "weekday": 5,
+    "title": "ティラノサウルスは子ゾウだった",
+    "topic_key": "jurassic-park-sound-baby-elephant",
+    "category": "映画の舞台裏",
+    "posts": [
+      "『#ジュラシックパーク』のティラノサウルスの咆哮に、子ゾウの鳴き声が使われていた。\n\n映画で恐竜の声を聞いたことがある私たちは、何を聞いていたのだろう。\n#まこの映画小話",
+      "1993年の映画で音響を担当したゲイリー・ライドストロムは、2013年のNPRの取材で、恐竜の声に複数の動物の声を組み合わせたと説明した。ティラノサウルスにはトラの低音と子ゾウの高い声などを利用した。",
+      "録音した子ゾウの声は独特で、同じように鳴いてもらおうとしても再現できなかったという。そのため同じ録音が各咆哮に使われた。",
+      "ブラキオサウルスの声にはゾウや牛、ロバの音が混ぜられた。ロバの声を遅くすると歌うような響きになるという。絶滅した動物を、現存する動物の声で想像する仕事だった。",
+      "恐竜の本当の声がそのまま録音されているわけではない。それでも映画の音響が強烈な印象を残した結果、私たちが思い浮かべる恐竜の声まで形作っている。"
+    ],
+    "sources": [
+      {
+        "name": "NPR / KPBS｜Jurassic Bark",
+        "url": "https://www.kpbs.org/news/national/2013/04/13/jurassic-bark-how-sound-design-changed-our-imaginations",
+        "supports": "425–446行：1993年映画、ライドストロム本人の子ゾウ・トラ、ブラキオサウルス音源と再録音できなかった経験。",
+        "access_scope": "音響担当者本人の取材記事"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Jurassic Park",
+      "year": 1993,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "t2-stained-glass-cg",
+    "weekday": 5,
+    "title": "液体金属の怪物の前にステンドグラスが歩いた",
+    "topic_key": "terminator2-cg-stained-glass-lineage",
+    "category": "映画の舞台裏",
+    "posts": [
+      "『#ターミネーター2』の液体金属の怪物。その技術史をたどると、1985年の映画に登場したステンドグラスの騎士へ行き着く。\n#まこの映画小話 #映画裏話",
+      "『ヤング・シャーロック／ピラミッドの謎』では、窓の絵から抜け出した騎士が動き回る。ILMの回顧によれば、この騎士は長編映画で初めて登場した完全デジタルのキャラクターだった。",
+      "1989年の『アビス』では水の触手、1991年の『ターミネーター2』では液体金属のT-1000。ILMはこれらの技術の発展を連続した歴史として振り返っている。",
+      "同社はT2を、主要人物が部分的にCGで表現された最初の長編映画として位置づけている。人間の俳優の演技もあるから、CGだけで全人物を作ったという話ではない。",
+      "一つの映画の発明が次の映画の素材になる。画面の技術的な驚きは、過去の小さな試行錯誤の積み重ねでもある。"
+    ],
+    "sources": [
+      {
+        "name": "ILM｜Dennis Muren Talks Young Sherlock Holmes",
+        "url": "https://www.ilm.com/young-sherlock-holmes-ilm-dennis-muren-interview/",
+        "supports": "33–35、111行：完全デジタルの騎士、後続技術との連続性。",
+        "access_scope": "制作会社公式回顧"
+      },
+      {
+        "name": "ILM｜Terminator 2: Judgment Day",
+        "url": "https://www.ilm.com/vfx/terminator-2-judgment-day/",
+        "supports": "24–36行：主要人物への部分CG、監督。",
+        "access_scope": "制作会社公式作品資料"
+      },
+      {
+        "name": "ILM｜Evolutions: Animation",
+        "url": "https://www.ilm.com/ilm-evolutions-50-animation-part-one/",
+        "supports": "89–90行：アビスからT2、ジュラシック・パークへの技術史。",
+        "access_scope": "制作会社公式記事"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Terminator 2: Judgment Day",
+      "year": 1991,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "psycho-late-admission",
+    "weekday": 6,
+    "title": "映画館の入場ルールを変えた恐怖映画",
+    "topic_key": "psycho-no-late-admission-campaign",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "上映が始まった映画館には入れてもらえない。今では普通に思えるそのルールを、強烈に宣伝した映画がある。\n\n1960年の『#サイコ』だ。\n#まこの映画小話",
+      "かつては上映中に入館し、途中から映画を観ることも珍しくなかった。BFI掲載の映画研究者リンダ・ウィリアムズの論考によれば、ヒッチコックは観客に最初から最後まで鑑賞させることを重視した。",
+      "監督は上映途中の入場を認めない方針を打ち出した。観客に物語の驚きを順番通り体験してもらうためだったとされる。予告編も、映画の秘密を極力明かさない作りだった。",
+      "この作品の宣伝は、映画をどう観るべきかという観客の習慣にも関わった。もちろん現代の上映方式すべてを一作品が発明したわけではないが、映画館の観賞体験を変えた重要な一例だ。",
+      "映画はスクリーンの中だけで完結しない。入場の時刻、予告編、観客が知っている情報の量。そのすべてが恐怖の演出に関わるというのが面白い。"
+    ],
+    "sources": [
+      {
+        "name": "BFI / Sight and Sound｜Learning to scream: Linda Williams on Psycho",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/learning-scream-linda-williams-psycho",
+        "supports": "34–36、55行：1960年監督発言、当時の入場習慣、遅刻禁止方針、予告編の演出。",
+        "access_scope": "映画研究者の公開論考"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Psycho",
+      "year": 1960,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
+  },
+  {
+    "id": "hidden-fortress-droids",
+    "weekday": 6,
+    "title": "宇宙の二人組は戦国時代からやってきた",
+    "topic_key": "star-wars-hidden-fortress-peasant-duo",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "『#スターウォーズ』の口げんかばかりしている二体のドロイド。彼らを理解するための映画が、1958年の日本にある。\n\n黒澤明の『隠し砦の三悪人』だ。\n#まこの映画小話",
+      "黒澤映画では、金を求める農民二人が、身分を隠した姫と将軍に同行する。偉大な英雄の冒険でありながら、欲深くて頼りない人物たちが重要な役割を果たす。",
+      "スター・ウォーズ公式サイトは、農民二人とC-3PO、R2-D2の共通点を紹介している。姫と将軍にもレイア姫とオビ＝ワンとの類似があり、画面構成にも影響が見られるという。",
+      "ジョージ・ルーカスはCriterionのインタビューで、映画学校で黒澤作品と出会ったことや、その映像表現への敬意を語っている。もちろん、宇宙冒険のすべてが黒澤作品の翻案というわけではない。",
+      "歴史劇とSFは遠いように思えるが、人物の役割や語り方を移植すると、新しい世界が生まれる。銀河の物語を観たあと、戦国時代の二人組を観直してみたい。"
+    ],
+    "sources": [
+      {
+        "name": "StarWars.com｜Five Films that Inspired Star Wars Storytellers",
+        "url": "https://www.starwars.com/news/akira-kurosawa-star-wars-influence",
+        "supports": "45–53行：本人の黒澤への敬意、1958年作品、二農民とドロイド、姫と将軍の類似。",
+        "access_scope": "公式作品サイト"
+      },
+      {
+        "name": "Criterion｜The Hidden Fortress",
+        "url": "https://www.criterion.com/current/posts/117-the-hidden-fortress",
+        "supports": "24–30行：農民、姫と将軍、旅の筋書きと作品解説。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Star Wars: A New Hope",
+      "year": 1977,
+      "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    }
   }
 ]
