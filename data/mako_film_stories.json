@@ -39,7 +39,14 @@
       "asset_title": "ドラキュラ原作の1897年初版表紙候補",
       "source_url": "https://commons.wikimedia.org/wiki/File:Dracula_cover_600px.jpg",
       "review_note": "1897年とされる画像は黄色の英国初版表紙と異なる。版の同定まで不採用。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "latest_candidate": {
+        "asset_kind": "archival_photo",
+        "asset_title": "1906年のBram Stoker肖像",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bram_Stoker1.jpg",
+        "review_note": "W. & D. Downey、NPG所蔵とされる。個別ページに原産国PD記載、米国タグ不足・NPG原典の再利用条件未確定。保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -215,6 +222,13 @@
         "asset_title": "1876年刊行のセイラム魔女裁判の後世の挿絵",
         "source_url": "https://commons.wikimedia.org/wiki/File:WitchcraftAtSalemVillage.png",
         "review_note": "出典書籍1876年、米国PD。画家の同定不確実、原画像取得失敗。",
+        "checked_on": "2026-11-27"
+      },
+      "latest_candidate": {
+        "asset_kind": "historical_art",
+        "asset_title": "Joseph E. Bakerの1892年の石版画",
+        "source_url": "https://commons.wikimedia.org/wiki/File:TheWitch-no1.jpg",
+        "review_note": "米国議会図書館由来、作者1914年没、144KBの版。直接画像取得失敗のため保留。",
         "checked_on": "2026-11-27"
       }
     }
@@ -587,7 +601,14 @@
       "asset_title": "ホホジロザメの画像",
       "source_url": "https://commons.wikimedia.org/wiki/File:Great_white_shark.png",
       "review_note": "Commons CC0表記、ただし第三者サイトが出典で撮影者の許諾の連鎖と画像内容を要確認。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "latest_candidate": {
+        "asset_kind": "scientific_image",
+        "asset_title": "南アフリカのホホジロザメ",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Great_White_Shark_(Carcharodon_carcharias).jpg",
+        "review_note": "Andrew Shiva（Godot13）自身の2008年撮影、CC BY-SA 4.0および商用再利用を明示、3.65MB。直接画像取得エラー、保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -737,7 +758,20 @@
       "review_note": "転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "Polaroid Supercolor 635インスタントカメラ",
+      "relation": "主人公が記憶を補うために使う写真媒体の参考機器。劇中の撮影用個体・同一型番ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Polaroid_inst_camera.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Polaroid_inst_camera.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Polaroid_inst_camera.jpg",
+      "rights_basis": "撮影者ゴスロリ自身の2017年撮影。個別ページ120–137行でCC0 1.0、805KB。直接画像表示成功。商品名は資料説明に限定し、提携を示唆しない。",
+      "credit": "インスタントカメラの参考写真／ゴスロリ",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "fri-silence-hidden-christians",
@@ -771,7 +805,20 @@
       "review_note": "篠田正浩版と区別。転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "長崎・大浦天主堂（2018年）",
+      "relation": "潜伏キリシタン関連遺産の構成資産である聖堂の現代写真。映画の場面や17世紀当時の建物とは異なる。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Oura_Cathedral_20180623.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Oura_Cathedral_20180623.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Oura_Cathedral_20180623.jpg",
+      "rights_basis": "撮影者Houjyou-Minori自身の2018年撮影。個別ページ120–137行でCC0 1.0、1.58MBを確認。19世紀建築の外観、直接画像表示成功。",
+      "credit": "大浦天主堂／Houjyou-Minori（2018）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "sat-alien-giger-art",
@@ -966,7 +1013,17 @@
       "rights_reviewed_on": "2026-11-27"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "asset_kind": "archival_photo",
+        "asset_title": "1924年のハロルド・ロイドの宣伝写真",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Filmkomiek_Harold_Lloyd_in_zijn_film_uit_1923_'Safety_Last'%2C_SFA022002534.jpg",
+        "review_note": "Spaarnestad Photo資料SFA022002534、無署名・EU/米国PD表記、1.17MB。直接取得タイムアウト、保留。",
+        "checked_on": "2026-11-27"
+      }
+    }
   },
   {
     "id": "tue-v-vendetta-fawkes-symbol",
@@ -1945,19 +2002,17 @@
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "historical_art",
-      "asset_title": "Jules Bastien-Lepage《Joan of Arc》",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Joan_of_Arc_MET_DP-14201-049.jpg",
-      "review_note": "The Met所蔵89.21.1、CC0確認。原画像5.59MBで既存5MB上限を超過。別画像か適切な縮小版を検証する。",
-      "checked_on": "2026-11-27",
-      "alternate_candidate": {
-        "asset_title": "Pierre Henri Revoil《Joan of Arc Imprisoned in Rouen》（1819）",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Joan_of_Arc_Imprisoned_in_Rouen_MET_DP368011.jpg",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Joan_of_Arc_Imprisoned_in_Rouen_MET_DP368011.jpg",
-        "review_note": "The Met 2003.152、個別ページ173–179行でCC0確認、2.77MB。直接画像取得エラーのため保留。",
-        "checked_on": "2026-11-27"
-      }
+      "asset_title": "Jules Bastien-Lepage《Joan of Arc》（1879）",
+      "relation": "映画の歴史的主人公を描いた19世紀の絵画。映画のスチルではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:JoanOfArcLarge.jpeg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/JoanOfArcLarge.jpeg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:JoanOfArcLarge.jpeg",
+      "rights_basis": "The Met所蔵89.21.1、作者1884年没。Commonsの個別ページで館提供CC0を確認。別ファイルの5MB超過を回避し、この3.4MBの原画像を直接表示確認。",
+      "credit": "Jules Bastien-Lepage（1879）／The Met",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2876,11 +2931,16 @@
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "archival_photo",
-      "asset_title": "1888年の小泉八雲の肖像",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Picture_of_Lafcadio_Hearn.jpg",
-      "review_note": "1908年の書籍が出典。Commonsの米国PDのみ表示、撮影者と原産国での権利を追加確認。",
+      "asset_title": "1889年のラフカディオ・ハーンの肖像",
+      "relation": "映画の原作に関わる小泉八雲本人の肖像史料。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lafcadio_Hearn_portrait.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Lafcadio_Hearn_portrait.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Lafcadio_Hearn_portrait.jpg",
+      "rights_basis": "富山大学附属図書館由来、Frederick Gutekunst（1917年没）、1889年。個別ページ127–158行で原産国および米国PD、著作者を確認。日本の戦時加算を含む保護期間も満了。73KB、直接画像表示成功。",
+      "credit": "Frederick Gutekunst／富山大学附属図書館",
       "checked_on": "2026-11-27"
     }
   },
@@ -3726,11 +3786,16 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "historical_art",
-      "asset_title": "1895年頃のアラジン挿絵",
-      "source_url": "https://commons.wikimedia.org/wiki/File:The_Story_of_Aladdin.jpg",
-      "review_note": "Walter Paget 1935年没、PD-Art表示。第三者サイトのウォーターマークがあり原典の別版を探索する。",
+      "asset_title": "Virginia Frances Sterrettによる『Arabian Nights』の挿絵（1928）",
+      "relation": "アラジンの物語の後世の視覚表現。ガラン初版でもディズニーの場面でもない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Aladdin_01.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/Aladdin_01.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Aladdin_01.jpg",
+      "rights_basis": "1928年Penn Publishing Company刊、作者1931年没。個別ページ119–145行で原産国・米国PDと忠実な複製を確認。日本の死後70年と米国戦時加算を考慮しても満了。142KB、直接画像表示成功。",
+      "credit": "Virginia Frances Sterrett（1928年版）",
       "checked_on": "2026-11-27"
     }
   },
