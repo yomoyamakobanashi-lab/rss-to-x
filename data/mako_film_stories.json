@@ -375,17 +375,30 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "historical_art",
-      "asset_title": "1920年2月26日の無署名公開広告",
+      "asset_title": "『カリガリ博士』1920年2月26日公開告知（渦巻き文字の広告）",
+      "relation": "ドイツ初公開時の宣伝広告。表現主義的なタイポグラフィが映画の異様な美術を売りにしたこととつながる。",
       "source_url": "https://commons.wikimedia.org/wiki/File:1920-02_anonyme_K%C3%BCnstlerInnen_Plakat_Du_musst_Caligari_werden,_im_Marmorhaus_am_Donnerstag,_den_26._Februar.jpg",
-      "review_note": "画像取得済み。1920年公開と原版の来歴、米国タグ不足の補完を別資料で確認するまで保留。",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/1920-02_anonyme_K%C3%BCnstlerInnen_Plakat_Du_musst_Caligari_werden%2C_im_Marmorhaus_am_Donnerstag%2C_den_26._Februar.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:1920-02_anonyme_K%C3%BCnstlerInnen_Plakat_Du_musst_Caligari_werden,_im_Marmorhaus_am_Donnerstag,_den_26._Februar.jpg",
+      "rights_basis": "Commons 117–148行：1920年2月26日、無署名、PDM。Deutsche Kinemathek https://www.deutsche-kinemathek.de/de/besuch/ausstellungen/du-musst-caligari-werden-das-virtuelle-kabinett 29–30行が別の手の図柄と区別して渦巻き文字の広告を確認。無名公表作品としてドイツ・日本で公表後期間満了、米国は1920年刊行で満了。原画像38KBを表示確認。",
+      "credit": "作者不詳／1920年ベルリン公開広告／Olaf Brill資料",
       "checked_on": "2026-11-27",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:CABINET_DES_DR_CALIGARI_01.jpg",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/CABINET_DES_DR_CALIGARI_01.jpg",
-        "review_note": "James Moores Collection、Willy Hameister（1938年没）、1920年、原産国・米国PD表示（120–149行）、437KB原画像の歪んだセットを確認。ただし本編共同著作者・スチル独立性の最終確認を残す。",
-        "checked_on": "2026-11-27"
+      "previous_candidate": {
+        "status": "pending",
+        "asset_kind": "historical_art",
+        "asset_title": "1920年2月26日の無署名公開広告",
+        "source_url": "https://commons.wikimedia.org/wiki/File:1920-02_anonyme_K%C3%BCnstlerInnen_Plakat_Du_musst_Caligari_werden,_im_Marmorhaus_am_Donnerstag,_den_26._Februar.jpg",
+        "review_note": "画像取得済み。1920年公開と原版の来歴、米国タグ不足の補完を別資料で確認するまで保留。",
+        "checked_on": "2026-11-27",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:CABINET_DES_DR_CALIGARI_01.jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/CABINET_DES_DR_CALIGARI_01.jpg",
+          "review_note": "James Moores Collection、Willy Hameister（1938年没）、1920年、原産国・米国PD表示（120–149行）、437KB原画像の歪んだセットを確認。ただし本編共同著作者・スチル独立性の最終確認を残す。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -1223,7 +1236,20 @@
       "review_note": "1954年日本公開版の劇場ポスター。権利未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "第五福竜丸展示館で保存されている実物の船（2020年撮影）",
+      "relation": "1954年の被曝事件の実在船。ゴジラ本編の画像ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Daigo_Fukuryu_Maru_Exhibition_Hall.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Daigo_Fukuryu_Maru_Exhibition_Hall.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Daigo_Fukuryu_Maru_Exhibition_Hall.jpg",
+      "rights_basis": "Commons 123–143行：撮影者本人の2020年11月23日撮影、CC BY-SA 4.0 International。工業製品の船体が主被写体で背景展示は付随的。全地域で商用共有可、出典・作者・ライセンス明記、無改変。原画像1.63MBを表示確認。",
+      "credit": "KQuhen／CC BY-SA 4.0（無改変） https://creativecommons.org/licenses/by-sa/4.0/",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "sun-toy-story-pizza-planet",
@@ -2168,13 +2194,26 @@
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "asset_kind": "archival_photo",
-        "asset_title": "1906年刊行書籍のウィリアム・ランドルフ・ハースト肖像",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hon._William_Randolph_Hearst%2C_1906.jpg",
-        "review_note": "米国議会図書館所蔵書籍、Internet Archive経由のNo known restrictions表示。原画像744KB取得。写真自体の作者・無署名刊行の根拠を確認してから承認。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ウィリアム・ランドルフ・ハーストの1906年の肖像",
+      "relation": "ケーンの造形に影響を与えた実在の新聞王の肖像。劇中写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:William_Randolph_Hearst_cph_3a49373.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/40/William_Randolph_Hearst_cph_3a49373.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:William_Randolph_Hearst_cph_3a49373.jpg",
+      "rights_basis": "Commons 113–139行：1906年、米国議会図書館由来、撮影者James E. Purdy（1858–1933）。米国で1906年の著作権表示が写る公表済み画像。米国の保護期間満了、日本の旧法写真・戦時加算を考慮しても満了（著作者没後50年＋戦時加算も満了）。原画像173KBを表示確認。",
+      "credit": "J. E. Purdy／Library of Congress, cph.3a49373",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "asset_kind": "archival_photo",
+          "asset_title": "1906年刊行書籍のウィリアム・ランドルフ・ハースト肖像",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hon._William_Randolph_Hearst%2C_1906.jpg",
+          "review_note": "米国議会図書館所蔵書籍、Internet Archive経由のNo known restrictions表示。原画像744KB取得。写真自体の作者・無署名刊行の根拠を確認してから承認。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -2731,6 +2770,19 @@
       "film_title": "Man with a Movie Camera",
       "year": 1929,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "1927年製Debrie Parvo Model L 35mm撮影機",
+      "relation": "1929年の映画と同時代の映画撮影機。実際の撮影に使われた個体であるという主張はしない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Debrie_Parvo_35mm_Movie_Camera.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Debrie_Parvo_35mm_Movie_Camera.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Debrie_Parvo_35mm_Movie_Camera.jpg",
+      "rights_basis": "Commons 121–142行：2012年撮影者本人による明示的CC BY-SA 3.0。1927年製の工業製品を撮影した写真。全地域で商用共有可、出典・作者・ライセンスを明記し無改変で添付。原画像1.3MBを表示確認。",
+      "credit": "Fletcher6／CC BY-SA 3.0（無改変） https://creativecommons.org/licenses/by-sa/3.0/",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -5087,11 +5139,24 @@
       "review_note": "ポスターのSNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Bambi_book_cover.jpg",
-        "review_note": "Hans Bertle（1943年没）1923年表紙、原産国・米国PD表示あり。ただし画像メタデータに2011年書店撮影者の著作権主張があるため、現代の立体写真ではない所蔵機関スキャンを探索。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "ベルタ・ツェグカによるフェリックス・ザルテンの肖像画（1902年）",
+      "relation": "『バンビ』の原作者を描いた1902年刊の挿絵。ディズニー版の画像ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bertha_Czegka_Felix_Salten_1902.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Bertha_Czegka_Felix_Salten_1902.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Bertha_Czegka_Felix_Salten_1902.jpg",
+      "rights_basis": "Commons 121–142行：1902年ライプツィヒ刊の書籍スキャン。Getty ULAN https://www.getty.edu/vow/ULANFullDisplay?find=zola&nation=&role=&subjectid=500506242 でオーストリアの作者1880–1954を確認。原産国・ドイツの没後70年満了、米国は1902年刊行で満了、日本は旧法没後50年満了後の非復活、独・墺は連合国戦時加算対象外。原画像86KBを表示確認。",
+      "credit": "Bertha Czegka／Schwarz auf Weiss (Leipzig, 1902), p.187",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bambi_book_cover.jpg",
+          "review_note": "Hans Bertle（1943年没）1923年表紙、原産国・米国PD表示あり。ただし画像メタデータに2011年書店撮影者の著作権主張があるため、現代の立体写真ではない所蔵機関スキャンを探索。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -5753,6 +5818,19 @@
       "checked_on": "2026-11-27",
       "status": "partial_fulltext",
       "scope": "Open Universityの解説本文で原研究の33/34を照合。2020年研究の公開抄録・検索取得本文で追試結果を照合したが、PMC全文再取得は遮断。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "diagram",
+      "asset_title": "ハイダー＝ジンメル実験の模式図（2019年制作）",
+      "relation": "1944年の実験を説明するための後世の模式図。原実験の映像そのものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Heider-Simmel-animation.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Heider-Simmel-animation.png",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Heider-Simmel-animation.png",
+      "rights_basis": "Commons 121–142行：自己制作の幾何学的模式図、CC BY-SA 4.0 International。単純な円・三角形・箱の図を全地域で商用共有可、無改変・出典・作者・ライセンス明記。原画像3KBを表示確認。",
+      "credit": "Logeotalexandre／CC BY-SA 4.0（無改変） https://creativecommons.org/licenses/by-sa/4.0/",
+      "checked_on": "2026-11-27"
     }
   },
   {
