@@ -27,7 +27,7 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Validate bank and regression tests
         run: |
-          python -m scripts.mako_film_stories
+          python -m scripts.mako_film_stories --require-full
           python -m unittest discover -s tests -v
       - name: Restore verified episode links
         run: python -m scripts.restore_spotify_map_from_canonical
