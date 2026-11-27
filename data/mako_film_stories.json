@@ -598,7 +598,20 @@
       "review_note": "2004年リメイクと区別。権利未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1977年8月3日MKULTRA合同公聴会の表紙",
+      "relation": "本文が参照する米上院の公式公聴会記録の表紙。映画の筋書きや超能力を裏付けるものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:ProjectMKULTRA_Senate_Report.pdf",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/ProjectMKULTRA_Senate_Report.pdf/page1-960px-ProjectMKULTRA_Senate_Report.pdf.jpg?utm_campaign=index&utm_content=thumbnail&utm_source=commons.wikimedia.org",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:ProjectMKULTRA_Senate_Report.pdf",
+      "rights_basis": "個別ページ117–124行、米上院公式刊行物、米政府職務著作として米国PD。画像にあるのは事実的な表題・機関名・日付・一般的な活字装飾のみで、第三者著作物や肖像を含まない。日本などでもこの表紙の事実的な情報と通常の活字組版に独自の創作性は認めにくい。本文全体の国外権利を判断したものではない。960px JPEG実表示確認。表紙記載の日付は8月3日（Commonsメタデータの8月8日と異なる）。",
+      "credit": "U.S. Senate／U.S. Government Printing Office, 1977（表紙JPEG）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "thu-rashomon-memory",
@@ -2820,11 +2833,24 @@
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:It_Is_Required_That_You_See_Psycho_From_the_Very_Beginning!_(1960_poster).jpg",
-        "review_note": "1960年劇場向け遅刻入場禁止広告。個別ページ120–137行、Heritage Auctions由来、米国で更新なしPDとされるが他国の保護期間の注意書きあり。作者不詳、職務著作推定。日本・配信地域での権利を確認するまで保留。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "1926年開館の旧Cla-Zel映画館の外観（2022年）",
+      "relation": "入場時刻や上映の告知を担った映画館の建築例。『サイコ』の上映館・宣伝ポスターではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cla-Zel_Theatre,_Main_Street,_Bowling_Green,_OH_-_52099688163.jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Cla-Zel_Theatre%2C_Main_Street%2C_Bowling_Green%2C_OH_-_52099688163.jpg/960px-Cla-Zel_Theatre%2C_Main_Street%2C_Bowling_Green%2C_OH_-_52099688163.jpg?utm_campaign=index&utm_content=thumbnail&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Cla-Zel_Theatre,_Main_Street,_Bowling_Green,_OH_-_52099688163.jpg",
+      "rights_basis": "個別ページ118–142行、1926年の米国建築、2022年5月22日撮影、2023年3月20日Flickrレビュー済み、CC BY-SA 2.0。商用共有可。建物と文字主体の上映告知板が主題、隣の店の図柄は付随物。960×745の実画像を表示確認。",
+      "credit": "w_lemay／CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0/（縮小のみ）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:It_Is_Required_That_You_See_Psycho_From_the_Very_Beginning!_(1960_poster).jpg",
+          "review_note": "1960年劇場向け遅刻入場禁止広告。個別ページ120–137行、Heritage Auctions由来、米国で更新なしPDとされるが他国の保護期間の注意書きあり。作者不詳、職務著作推定。日本・配信地域での権利を確認するまで保留。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -4403,6 +4429,19 @@
       "film_title": "The Informant!",
       "year": 2009,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "マーク・ウィテカーの2008年広報写真",
+      "relation": "リシン価格カルテル事件の告発者本人の後年の広報写真。映画のスチルではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mark_Whitacre_(crop).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Mark_Whitacre_%28crop%29.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Mark_Whitacre_(crop).jpg",
+      "rights_basis": "個別ページ119–150行、撮影者名と本人サイトのメディア利用許諾文、CC BY-SA 3.0 Unportedを確認。商用共有可、番組支持や推奨を意味しない。1.73MB原画像の実表示確認。",
+      "credit": "Jacob Willis (Bauman Photographers)／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/（Nicoli Maegeによる切り抜き版）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4826,6 +4865,19 @@
       "film_title": "Night of the Living Dead",
       "year": 1968,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "エヴァンズ・シティ墓地の礼拝堂（2009年）",
+      "relation": "1968年作品の冒頭の撮影地にある実在の建物の後年の写真。映画本編の著作権状態に依存しない資料。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Evans_City_Cemetery_Chapel,_Evans_City,_PA_-_February_2009.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Evans_City_Cemetery_Chapel%2C_Evans_City%2C_PA_-_February_2009.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Evans_City_Cemetery_Chapel,_Evans_City,_PA_-_February_2009.jpg",
+      "rights_basis": "個別ページ120–148行、2009年2月15日、本人撮影、CC BY-SA 4.0 International、商用共有可。1968年以前の米国建築の外観。2.08MBの原画像実表示確認。",
+      "credit": "Marty Aligata／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/（無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4911,28 +4963,41 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:The_Wicker_Man_of_the_Druids.jpg",
-        "review_note": "ウェールズ国立図書館の1781年版資料を再照合。500pxプレビューも取得失敗。保留維持。",
-        "checked_on": "2026-11-27"
-      },
-      "additional_candidates": [
-        {
-          "source_url": "https://commons.wikimedia.org/wiki/File:The_Wicker_Man_of_the_Druids_crop.jpg",
-          "review_note": "1781年ウェールズ国立図書館由来切抜き、PD表示。原画像取得失敗。"
-        },
-        {
-          "source_url": "https://commons.wikimedia.org/wiki/File:Wicker_man_(Britannia_antiqua_illustrata).jpg",
-          "review_note": "1676年刊、St John's College Cambridge由来、作者不明、PDM。原画像取得失敗。"
-        },
-        {
-          "source_url": "https://commons.wikimedia.org/wiki/File:Wicker_man_(Britannia_antiqua_illustrata).jpg",
-          "review_note": "1676年刊の挿絵、Cambridge St John's College由来、PDM。原画像のリンク・クエリなしURLとも今回再取得失敗。",
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1550年刊行のユリウス・カエサルの肖像版画",
+      "relation": "『ガリア戦記』第6巻16節にドルイドの儀礼を記述した古代ローマ側の著述家を描く後世の版画。伝説の儀礼が実在したことを示す資料ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Portretbuste_van_Julius_Caesar,_RP-P-1910-6921.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Portretbuste_van_Julius_Caesar%2C_RP-P-1910-6921.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Portretbuste_van_Julius_Caesar,_RP-P-1910-6921.jpg",
+      "rights_basis": "個別ページ116–145行、1550年、ローマ刊行の銅版画、アムステルダム国立美術館所蔵、原資料PD、デジタル画像CC0 Universal。原典 http://hdl.handle.net/10934/RM0001.COLLECT.169692 。カエサルの記述は https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Caesar/Gallic_War/6B%2A.html 第6巻16節で照合。2.22MBの実画像確認。",
+      "credit": "作者不詳／Antonio Salamanca刊／Rijksmuseum, RP-P-1910-6921／CC0 1.0",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_Wicker_Man_of_the_Druids.jpg",
+          "review_note": "ウェールズ国立図書館の1781年版資料を再照合。500pxプレビューも取得失敗。保留維持。",
           "checked_on": "2026-11-27"
-        }
-      ],
-      "checked_on": "2026-11-27"
+        },
+        "additional_candidates": [
+          {
+            "source_url": "https://commons.wikimedia.org/wiki/File:The_Wicker_Man_of_the_Druids_crop.jpg",
+            "review_note": "1781年ウェールズ国立図書館由来切抜き、PD表示。原画像取得失敗。"
+          },
+          {
+            "source_url": "https://commons.wikimedia.org/wiki/File:Wicker_man_(Britannia_antiqua_illustrata).jpg",
+            "review_note": "1676年刊、St John's College Cambridge由来、作者不明、PDM。原画像取得失敗。"
+          },
+          {
+            "source_url": "https://commons.wikimedia.org/wiki/File:Wicker_man_(Britannia_antiqua_illustrata).jpg",
+            "review_note": "1676年刊の挿絵、Cambridge St John's College由来、PDM。原画像のリンク・クエリなしURLとも今回再取得失敗。",
+            "checked_on": "2026-11-27"
+          }
+        ],
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -5663,6 +5728,19 @@
       "film_title": "Donnie Brasco",
       "year": 1997,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "FBIが公開したジョセフ・ピストーンの歴史的写真",
+      "relation": "映画『フェイク』のモデルである実在の捜査官に関する歴史資料。俳優の写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:JosephPistone.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/JosephPistone.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "rights_holder_permission",
+      "rights_evidence_url": "https://www.fbi.gov/privacy-policy",
+      "rights_basis": "個別ページ122–142行、FBI職務撮影、米国PD。原典 https://www.fbi.gov/history/famous-cases/joe-pistone-undercover-agent 。FBI公式 https://www.fbi.gov/privacy-policy の34–37行は第三者権利表示のない情報の複製・配布を許可し、FBIの支持を装う利用を禁止。地域限定の文言なし。歴史記事の解説として使用し、番組のFBI公認を示さない。995KB原画像表示確認。",
+      "credit": "Federal Bureau of Investigation／Wikimedia Commons",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -6113,6 +6191,19 @@
       "film_title": "Drácula (Spanish version)",
       "year": 1931,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ジョージ・メルフォードの1914年映画人名鑑の肖像",
+      "relation": "スペイン語版『ドラキュラ』を監督した映画人の初期の肖像。1931年版の撮影写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:George_Melford_01.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/George_Melford_01.JPG?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:George_Melford_01.JPG",
+      "rights_basis": "個別ページ121–134行、1914年刊行の映画人名鑑（2012年はデジタル登録日）、Film World Publishing、米国公表期間満了。1914年公表の匿名・出版社名義の写真で、日本の旧法写真の公表後期間・戦時加算を含め満了。米国以外でも原刊行から112年経過。81KB原画像表示確認。",
+      "credit": "Film World Publishing／Who in the Film World (1914), p.60",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -6148,6 +6239,19 @@
       "film_title": "Dumbo",
       "year": 1941,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "1941年5月29日のディズニースタジオのストライキ",
+      "relation": "本文に登場する『ダンボ』制作期の実際の労働争議を写した報道写真。映画本編やTIME表紙ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Artists_on_strike_at_Disney_film_studios.jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Artists_on_strike_at_Disney_film_studios.jpg/960px-Artists_on_strike_at_Disney_film_studios.jpg?utm_campaign=index&utm_content=thumbnail&utm_source=commons.wikimedia.org",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Artists_on_strike_at_Disney_film_studios.jpg",
+      "rights_basis": "個別ページ121–142行、1941年5月29日、新聞社の写真の権利はUCLAに譲渡、同館のCC BY 4.0 International。原典 https://digital.library.ucla.edu/catalog/ark:/21198/zz0002v3hk 。商用共有可。広い群衆と街頭が主題、プラカードの文字や小さな図柄は報道写真内の付随的要素でありキャラクターを抽出・拡大しない。960×764画像を実表示確認。",
+      "credit": "Los Angeles Times Photographic Collection／UCLA Library, ark:/21198/zz0002v3hk／CC BY 4.0 https://creativecommons.org/licenses/by/4.0/（縮小のみ）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -6577,6 +6681,19 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "BFI本文37–41行：1942年、追跡を疑う場面、バスの音、後世の技法。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "1942年ニューヨークのグレイハウンドのバス乗り場",
+      "relation": "作品公開年の米国都市のバスの歴史的写真。映画で用いられた路線バス・車種とは断定しない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Boarding_interstate_buses_at_the_Greyhound_bus_terminal8d21917v.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Boarding_interstate_buses_at_the_Greyhound_bus_terminal8d21917v.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Boarding_interstate_buses_at_the_Greyhound_bus_terminal8d21917v.jpg",
+      "rights_basis": "個別ページ127–209行、米議会図書館 https://hdl.loc.gov/loc.pnp/fsa.8d21917 、権利制限なし、米政府OWI職務写真、米国PD。1942年の公表・旧法写真の期間と日本の戦時加算を考慮して満了。227KB原画像実表示確認。",
+      "credit": "Marjory Collins／Office of War Information／Library of Congress, LC-DIG-fsa-8d21917",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -6617,6 +6734,19 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "UVA法学図書館14–20行、レーガン図書館133–137行：1978年の発端、架空企業、録画、法的争点、映画との関係。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ABSCAM事件の1979年8月22日のFBI公開記録写真",
+      "relation": "本文が扱う実際の事件の記録。映画『アメリカン・ハッスル』の場面ではなく、FBIが公式公開した映像の静止画。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:ABSCAM.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/ABSCAM.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "rights_holder_permission",
+      "rights_evidence_url": "https://www.fbi.gov/privacy-policy",
+      "rights_basis": "個別ページ118–138行、FBI職務資料、米国PD。FBI公式事件ページ https://www.fbi.gov/history/cases-and-criminals/abscam 49–50行にも同じ写真と説明。FBI公式 https://www.fbi.gov/privacy-policy 34–37行で第三者帰属のない情報の複製・配布可、地域限定なし。FBIの公認を示さない歴史解説に限る。720KB原画像実表示確認。",
+      "credit": "Federal Bureau of Investigation／Wikimedia Commons",
+      "checked_on": "2026-11-27"
     }
   },
   {
