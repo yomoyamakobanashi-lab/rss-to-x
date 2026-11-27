@@ -1,0 +1,56 @@
+name: Mako film stories and daily companion
+
+on:
+  schedule:
+    - cron: '2,17,32,47 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: reelpal-unified-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - name: Validate bank and regression tests
+        run: |
+          python -m scripts.mako_film_stories
+          python -m unittest discover -s tests -v
+      - name: Restore verified episode links
+        run: python -m scripts.restore_spotify_map_from_canonical
+      - name: Configure durable reservation commits
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Publish only via unified ledger
+        env:
+          REELPAL_UNIFIED_PUBLISH: '1'
+          TZ: UTC
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          BUFFER_ORGANIZATION_ID: ${{ secrets.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_ID: ${{ secrets.BUFFER_CHANNEL_ID }}
+          PODCAST_MIN_AGE_MINUTES: '5'
+          PODCAST_MAX_CONTENT_AGE_HOURS: '24'
+        run: python -m scripts.mako_daily_publisher
+      - name: Persist accepted IDs and rotation
+        if: always() && !cancelled()
+        run: |
+          set -euo pipefail
+          git add state_mako_publish.json state_podcast.json state_funny_clip.json data/spotify_episodes.json data/episode_platform_links.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record unified publishing results [skip ci]"
+          git pull --rebase
+          git push origin HEAD:main
