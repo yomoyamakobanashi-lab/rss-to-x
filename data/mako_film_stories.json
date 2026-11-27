@@ -4044,6 +4044,19 @@
       "film_title": "ゴジラ-1.0",
       "year": 2023,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1945–1946年の東京・中野地域の地図",
+      "relation": "映画で再現された戦後東京と同時代の都市地図。撮影用の駐車場やセット設計図ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nakano,_Tokyo_-_U.S._Army_Map_Service,_1945-1946.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Nakano%2C_Tokyo_-_U.S._Army_Map_Service%2C_1945-1946.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Nakano,_Tokyo_-_U.S._Army_Map_Service,_1945-1946.jpg",
+      "rights_basis": "個別ページ118–135行：米陸軍地図局1945–46年の地図、米国政府職務著作で米国PD、撮影・デジタル複製の権利はCC0。日本では旧法の団体名義の地図の期間と戦時加算を考慮しても満了。原画像4,907,152バイトの表示を確認、上限適合はCIで検証。",
+      "credit": "U.S. Army Map Service／Daderot（デジタル画像）／CC0 1.0 https://creativecommons.org/publicdomain/zero/1.0/",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4382,6 +4395,19 @@
       "film_title": "M",
       "year": 1931,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "フリッツ・ラングとテア・フォン・ハルボウ（1923–1924年）",
+      "relation": "映画『M』の監督と共同脚本家の当時の写真。『M』の撮影風景ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Fritz_Lang_und_Thea_von_Harbou,_1923_od._1924.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Fritz_Lang_und_Thea_von_Harbou%2C_1923_od._1924.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Fritz_Lang_und_Thea_von_Harbou,_1923_od._1924.jpg",
+      "rights_basis": "個別ページ121–154行：1924年ドイツ雑誌Die Dame掲載（Ullstein-Bild番号00022210）、撮影者1937年没、原産国PD・米国PD表示。米国は1924年刊行、日本は旧法写真・没後50年の期間満了、ドイツの戦時加算なし。209KB原画像を実表示確認。",
+      "credit": "Waldemar Titzenthaler（1869–1937）／Die Dame 11/1924／Enno Kaufhold, Berliner Interieurs p.9",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4413,11 +4439,24 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Haunted_house_attraction_in_Hyde_Park_Winter_Wonderland_2017.jpg",
-        "review_note": "撮影者のCC BY-SA 4.0と原画像は確認したが、一時的な装飾造形物が主題に含まれるため、被写体の権利確認まで保留。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "心拍計Polar A3の写真（2023年）",
+      "relation": "恐怖と楽しさの関係を調べる際の生理測定を理解する参考画像。論文の実験でこの機器が使われたという意味ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Polar_A3-40861.jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Polar_A3-40861.jpg/960px-Polar_A3-40861.jpg?utm_campaign=index&utm_content=thumbnail&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Polar_A3-40861.jpg",
+      "rights_basis": "個別ページ119–171行：2023年12月14日本人撮影、CC BY-SA 4.0 International。作者が指定するクレジットを記載。工業製品写真、製品の推奨ではない。960×540縮小画像を実表示確認。容量はCIで検証。",
+      "credit": "© Raimond Spekking / CC BY-SA 4.0 (via Wikimedia Commons) https://creativecommons.org/licenses/by-sa/4.0/ （縮小のみ）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Haunted_house_attraction_in_Hyde_Park_Winter_Wonderland_2017.jpg",
+          "review_note": "撮影者のCC BY-SA 4.0と原画像は確認したが、一時的な装飾造形物が主題に含まれるため、被写体の権利確認まで保留。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -4783,8 +4822,8 @@
     "related_image": {
       "status": "pending",
       "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Wicker_man_(Britannia_antiqua_illustrata).jpg",
-        "review_note": "1676年刊の挿絵、Cambridge St John's College由来、PDM。原画像のリンク・クエリなしURLとも今回再取得失敗。",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_Wicker_Man_of_the_Druids.jpg",
+        "review_note": "ウェールズ国立図書館の1781年版資料を再照合。500pxプレビューも取得失敗。保留維持。",
         "checked_on": "2026-11-27"
       },
       "additional_candidates": [
@@ -4795,6 +4834,11 @@
         {
           "source_url": "https://commons.wikimedia.org/wiki/File:Wicker_man_(Britannia_antiqua_illustrata).jpg",
           "review_note": "1676年刊、St John's College Cambridge由来、作者不明、PDM。原画像取得失敗。"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Wicker_man_(Britannia_antiqua_illustrata).jpg",
+          "review_note": "1676年刊の挿絵、Cambridge St John's College由来、PDM。原画像のリンク・クエリなしURLとも今回再取得失敗。",
+          "checked_on": "2026-11-27"
         }
       ],
       "checked_on": "2026-11-27"
@@ -5006,6 +5050,19 @@
       "film_title": "La battaglia di Algeri",
       "year": 1966,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "19世紀末のアルジェ・カスバのクレベール通り",
+      "relation": "映画の舞台であるカスバの歴史的街並み。1966年の映画の映像や独立戦争当時の記録ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Alger,_la_Kasbah,_rue_Kleber,_RP-F-F18507.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Alger%2C_la_Kasbah%2C_rue_Kleber%2C_RP-F-F18507.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Alger,_la_Kasbah,_rue_Kleber,_RP-F-F18507.jpg",
+      "rights_basis": "個別ページ116–150行：1875–1900年のアルジェのコロタイプ印刷、Rijksmuseum所蔵、原資料PD、デジタル画像CC0。原資料 https://hdl.handle.net/10934/RM0001.COLLECT.262509 。19世紀公表の資料で日米・原産地の通常の保護期間満了。原画像1.51MBを実表示確認。",
+      "credit": "Alexandre Leroux／Rijksmuseum, RP-F-F18507",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -5609,10 +5666,22 @@
     "related_image": {
       "status": "pending",
       "latest_candidate": {
-        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7492010/",
-        "review_note": "本文91–94行はElsevierの研究再利用許諾のみ、商用SNS掲載を明示しないため図表の転載は見送る。別の素材を検討。",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Cinema.jpg",
+        "review_note": "マスク着用の映画館観客のストック写真。CommonsとPxHereのライセンス表示を確認したが、モデルリリースと原作者の来歴が不十分で保留。",
         "checked_on": "2026-11-27"
-      }
+      },
+      "additional_candidates": [
+        {
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7492010/",
+          "review_note": "本文91–94行はElsevierの研究再利用許諾のみ、商用SNS掲載を明示しないため図表の転載は見送る。別の素材を検討。",
+          "checked_on": "2026-11-27"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Elektriteater_closed_during_COVID-19_pandemic.jpg",
+          "review_note": "CC BY-SA 4.0の撮影写真、実画像取得済みだが現代の映画館告知ポスターが主被写体。写り込むデザインの権利が未確認のため保留。",
+          "checked_on": "2026-11-27"
+        }
+      ]
     }
   },
   {
@@ -5791,6 +5860,19 @@
       "film_title": "Wallace & Gromit: The Curse of the Were-Rabbit",
       "year": 2005,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ニック・パークの2005年の写真",
+      "relation": "ウォレスとグルミットの生みの親の同年の写真。映画制作の現場ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Nick_Park_2005.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Nick_Park_2005.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Nick_Park_2005.jpg",
+      "rights_basis": "個別ページ114–142行：2005年9月19日撮影、2009年12月12日Flickrライセンスレビュー確認、2014年明度補正履歴。CC BY-SA 2.0 Genericで商用共有可。人物の番組支持を示さない。237KBの原画像を実表示確認。",
+      "credit": "Sam Felder／CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0/ （元画像からの切り抜き・明度補正済み版）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -6185,6 +6267,19 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "MoPOP/LAIKA本文13–15,114–119行とFocus Features203–210行で照合。207,336は組み合わせ数で実物個数ではない。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "2010年設計の3DプリンターThing-O-Matic（V&A所蔵）",
+      "relation": "立体的な交換用パーツの製造に関わる3Dプリント技術の一例。『コラライン』で使用された実機や同方式とは限らない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Thing-O-Matic_3D_printer,_V%26A_Museum.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Thing-O-Matic_3D_printer%2C_V%26A_Museum.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Thing-O-Matic_3D_printer,_V%26A_Museum.jpg",
+      "rights_basis": "個別ページ119–136行：2010年設計のMakerBot工業製品、2026年3月15日本人撮影、CC0 1.0で商用利用明記。商品ロゴ・注意書きは装置の紹介に付随する。1.83MB原画像を実表示確認。",
+      "credit": "14GTR／Victoria and Albert Museum, CD.27-2018／CC0 1.0 https://creativecommons.org/publicdomain/zero/1.0/",
+      "checked_on": "2026-11-27"
     }
   },
   {
