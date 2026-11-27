@@ -69,5 +69,42 @@ class MakoPosterTests(unittest.TestCase):
             self.assertEqual(send.call_args.kwargs["image_url"],url)
             self.assertEqual(len(state["days"][date]),1)
 
+    def test_related_image_when_poster_pending(self):
+        row=item()
+        row["poster"]["status"]="pending"
+        row["related_image"]={**row["poster"],"status":"rights_checked","asset_kind":"archival_photo",
+                              "asset_title":"Historical photo","relation":"Illustrates the article"}
+        self.assertEqual(stories.visual_assets(row),[("related_image",row["related_image"]["image_url"])])
+        row["posts"]=["hook #まこの映画小話","body","end"]
+        row["sources"]=[{"name":"source","url":"https://example.org"}]
+        self.assertTrue(any("関連資料画像（映画ポスターではありません）" in p for p in stories.render(row,visual_field="related_image")))
+
+    def test_poster_preferred_and_related_fallback(self):
+        row=item()
+        row["related_image"]={**row["poster"],"asset_kind":"archival_photo","asset_title":"Photo",
+                              "relation":"Relevant","image_url":"https://upload.wikimedia.org/photo.jpg"}
+        with patch.object(stories,"_reachable_image",side_effect=[None,row["related_image"]["image_url"]]):
+            self.assertEqual(stories.reachable_visual(row),("related_image",row["related_image"]["image_url"]))
+
+    def test_no_visual_holds_slot_without_reservation(self):
+        now=datetime(2026,11,27,7,tzinfo=ZoneInfo("Asia/Tokyo"))
+        state={"days":{},"used_story_ids":[]}
+        row={"id":"missing","weekday":4}
+        with patch.object(pub,"reserve_and_send") as send:
+            self.assertIsNone(pub.due_visual_story(now,state,[row]))
+            send.assert_not_called()
+        self.assertEqual(state["days"][now.date().isoformat()],{})
+        self.assertEqual(state["used_story_ids"],[])
+
+    def test_visual_selection_skips_unavailable_and_preserves_weekday(self):
+        now=datetime(2026,11,27,7,tzinfo=ZoneInfo("Asia/Tokyo"))
+        state={"days":{},"used_story_ids":[]}
+        missing={"id":"missing","weekday":4}
+        other={"id":"other","weekday":5}
+        ready={"id":"ready","weekday":4}
+        with patch.object(stories,"reachable_visual",side_effect=[None,("related_image","https://upload.wikimedia.org/ready.jpg")]) as reach:
+            self.assertEqual(pub.due_visual_story(now,state,[missing,other,ready]),(ready,"related_image","https://upload.wikimedia.org/ready.jpg"))
+            self.assertEqual([a.args[0]["id"] for a in reach.call_args_list],["missing","ready"])
+
 if __name__=="__main__":
     unittest.main()
