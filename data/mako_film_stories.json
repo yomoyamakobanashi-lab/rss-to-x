@@ -211,25 +211,38 @@
       "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "historical_art",
-      "asset_title": "The witch no. 1（1892年の石版画）",
-      "source_url": "https://commons.wikimedia.org/wiki/File:The_witch_no._1_LCCN2003677961.jpg",
-      "review_note": "J.E. Baker 1914年没、LOC所蔵、PDとNo known restrictionsの記載、210KBの縮小候補。ただし原画像取得エラー。",
+      "asset_title": "Jacques de Gheyn II《Witches' Sabbath》（16世紀末〜17世紀初頭）",
+      "relation": "映画の舞台と近い時代にヨーロッパで描かれた魔女の表象。ニューイングランドの実際の事件や映画の場面ではない。",
+      "source_url": "https://www.metmuseum.org/art/collection/search/335532",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/335532/748470/main-image",
+      "license": "CC0",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met公式作品ページ62.196にPublic Domain表示。作者1565–1629、OA規約で商用・非商用利用可。作品ページの画像リンクを直接表示確認。GitHub runnerでの取得・容量は再監査対象。",
+      "credit": "Jacques de Gheyn II《Witches' Sabbath》／The Met",
       "checked_on": "2026-11-27",
-      "alternate_candidate": {
+      "previous_candidate": {
+        "status": "pending",
         "asset_kind": "historical_art",
-        "asset_title": "1876年刊行のセイラム魔女裁判の後世の挿絵",
-        "source_url": "https://commons.wikimedia.org/wiki/File:WitchcraftAtSalemVillage.png",
-        "review_note": "出典書籍1876年、米国PD。画家の同定不確実、原画像取得失敗。",
-        "checked_on": "2026-11-27"
-      },
-      "latest_candidate": {
-        "asset_kind": "historical_art",
-        "asset_title": "Joseph E. Bakerの1892年の石版画",
-        "source_url": "https://commons.wikimedia.org/wiki/File:TheWitch-no1.jpg",
-        "review_note": "米国議会図書館由来、作者1914年没、144KBの版。直接画像取得失敗のため保留。",
-        "checked_on": "2026-11-27"
+        "asset_title": "The witch no. 1（1892年の石版画）",
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_witch_no._1_LCCN2003677961.jpg",
+        "review_note": "J.E. Baker 1914年没、LOC所蔵、PDとNo known restrictionsの記載、210KBの縮小候補。ただし原画像取得エラー。",
+        "checked_on": "2026-11-27",
+        "alternate_candidate": {
+          "asset_kind": "historical_art",
+          "asset_title": "1876年刊行のセイラム魔女裁判の後世の挿絵",
+          "source_url": "https://commons.wikimedia.org/wiki/File:WitchcraftAtSalemVillage.png",
+          "review_note": "出典書籍1876年、米国PD。画家の同定不確実、原画像取得失敗。",
+          "checked_on": "2026-11-27"
+        },
+        "latest_candidate": {
+          "asset_kind": "historical_art",
+          "asset_title": "Joseph E. Bakerの1892年の石版画",
+          "source_url": "https://commons.wikimedia.org/wiki/File:TheWitch-no1.jpg",
+          "review_note": "米国議会図書館由来、作者1914年没、144KBの版。直接画像取得失敗のため保留。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -1897,13 +1910,19 @@
       "asset_kind": "book_cover",
       "asset_title": "1850年刊『The Legend of Sleepy Hollow』挿絵本の表紙",
       "relation": "映画の原作となった文学作品の歴史的版。初版とは呼ばない。",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Washington_Irving's_Illustrations_of_the_Legend_of_Sleepy_Hollow%2C_Designed_and_Etched_by_F.O.C._Darley_for_the_Members_of_the_American_Art_Union%2C_1850_MET_MM89541.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Washington_Irving%27s_Illustrations_of_the_Legend_of_Sleepy_Hollow%2C_Designed_and_Etched_by_F.O.C._Darley_for_the_Members_of_the_American_Art_Union%2C_1850_MET_MM89541.jpg",
+      "source_url": "https://www.metmuseum.org/art/collection/search/339866",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/339866/1360320/main-image",
       "license": "CC0",
-      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Washington_Irving's_Illustrations_of_the_Legend_of_Sleepy_Hollow%2C_Designed_and_Etched_by_F.O.C._Darley_for_the_Members_of_the_American_Art_Union%2C_1850_MET_MM89541.jpg",
-      "rights_basis": "The Met所蔵44.40.2、個別ページ112,175–183行で1850年版の表紙と美術館提供CC0を確認。原画像1.87MB取得。",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met公式作品ページ 44.40.2 Washington Irving's Illustrations of the Legend of Sleepy Hollow, 1849–50 のPublic Domain表示と公式OA規約（商用可）を確認。作品ページからリンクされた画像を直接表示して内容確認。GitHub runnerでの容量・取得は再監査対象。",
       "credit": "Washington Irving／F. O. C. Darley／The Met（1850年版）",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "previous_asset": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Washington_Irving's_Illustrations_of_the_Legend_of_Sleepy_Hollow%2C_Designed_and_Etched_by_F.O.C._Darley_for_the_Members_of_the_American_Art_Union%2C_1850_MET_MM89541.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Washington_Irving%27s_Illustrations_of_the_Legend_of_Sleepy_Hollow%2C_Designed_and_Etched_by_F.O.C._Darley_for_the_Members_of_the_American_Art_Union%2C_1850_MET_MM89541.jpg",
+        "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Washington_Irving's_Illustrations_of_the_Legend_of_Sleepy_Hollow%2C_Designed_and_Etched_by_F.O.C._Darley_for_the_Members_of_the_American_Art_Union%2C_1850_MET_MM89541.jpg",
+        "rights_basis": "The Met所蔵44.40.2、個別ページ112,175–183行で1850年版の表紙と美術館提供CC0を確認。原画像1.87MB取得。"
+      }
     }
   },
   {
@@ -2020,13 +2039,19 @@
       "asset_kind": "historical_art",
       "asset_title": "Jules Bastien-Lepage《Joan of Arc》（1879）",
       "relation": "映画の歴史的主人公を描いた19世紀の絵画。映画のスチルではない。",
-      "source_url": "https://commons.wikimedia.org/wiki/File:JoanOfArcLarge.jpeg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/JoanOfArcLarge.jpeg",
+      "source_url": "https://www.metmuseum.org/art/collection/search/435621",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/435621/1728774/main-image",
       "license": "CC0",
-      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:JoanOfArcLarge.jpeg",
-      "rights_basis": "The Met所蔵89.21.1、作者1884年没。Commonsの個別ページで館提供CC0を確認。別ファイルの5MB超過を回避し、この3.4MBの原画像を直接表示確認。",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met公式作品ページ 89.21.1 Joan of Arc, 1879 のPublic Domain表示と公式OA規約（商用可）を確認。作品ページからリンクされた画像を直接表示して内容確認。GitHub runnerでの容量・取得は再監査対象。",
       "credit": "Jules Bastien-Lepage（1879）／The Met",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "previous_asset": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:JoanOfArcLarge.jpeg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/JoanOfArcLarge.jpeg",
+        "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:JoanOfArcLarge.jpeg",
+        "rights_basis": "The Met所蔵89.21.1、作者1884年没。Commonsの個別ページで館提供CC0を確認。別ファイルの5MB超過を回避し、この3.4MBの原画像を直接表示確認。"
+      }
     }
   },
   {
@@ -2334,13 +2359,19 @@
       "asset_kind": "historical_art",
       "asset_title": "騎士と守護聖人のステンドグラス",
       "relation": "CGで動くステンドグラスの騎士を扱う記事に関連する歴史的な造形例。映画で使われた原画ではない。",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Stained_Glass_Panel_with_a_Knight_and_His_Patron_Saint_MET_sf41-170-104abs1.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Stained_Glass_Panel_with_a_Knight_and_His_Patron_Saint_MET_sf41-170-104abs1.jpg",
+      "source_url": "https://www.metmuseum.org/art/collection/search/467836",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/467836/946554/main-image",
       "license": "CC0",
-      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Stained_Glass_Panel_with_a_Knight_and_His_Patron_Saint_MET_sf41-170-104abs1.jpg",
-      "rights_basis": "Metropolitan Museum of Art所蔵41.170.104a-c、object ID467836。個別ページ144–150行とメタデータ183行に美術館提供CC0。原画像561KB表示成功。",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met公式作品ページ 41.170.104a-c Stained Glass Panel with a Knight and His Patron Saint, ca.1505–08 のPublic Domain表示と公式OA規約（商用可）を確認。作品ページからリンクされた画像を直接表示して内容確認。GitHub runnerでの容量・取得は再監査対象。",
       "credit": "騎士と守護聖人のステンドグラス／The Met",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "previous_asset": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Stained_Glass_Panel_with_a_Knight_and_His_Patron_Saint_MET_sf41-170-104abs1.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Stained_Glass_Panel_with_a_Knight_and_His_Patron_Saint_MET_sf41-170-104abs1.jpg",
+        "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Stained_Glass_Panel_with_a_Knight_and_His_Patron_Saint_MET_sf41-170-104abs1.jpg",
+        "rights_basis": "Metropolitan Museum of Art所蔵41.170.104a-c、object ID467836。個別ページ144–150行とメタデータ183行に美術館提供CC0。原画像561KB表示成功。"
+      }
     }
   },
   {
@@ -2637,13 +2668,19 @@
       "asset_kind": "historical_art",
       "asset_title": "ドガ《舞台上の踊り子》",
       "relation": "バレエを別の芸術媒体で表現した参考作品。映画の場面・制作資料ではない。",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Dancer_Onstage_MET_DT1913.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Dancer_Onstage_MET_DT1913.jpg",
+      "source_url": "https://www.metmuseum.org/art/collection/search/436134",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436134/796148/main-image",
       "license": "CC0",
-      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Dancer_Onstage_MET_DT1913.jpg",
-      "rights_basis": "Metropolitan Museum of Art所蔵1974.356.30、Degas 1917年没。Commons個別ページ169–175行に美術館提供CC0。原画像3.32MB確認。",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met公式作品ページ 1974.356.30 Dancer Onstage, ca.1877 のPublic Domain表示と公式OA規約（商用可）を確認。作品ページからリンクされた画像を直接表示して内容確認。GitHub runnerでの容量・取得は再監査対象。",
       "credit": "Edgar Degas《Dancer Onstage》／The Met",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "previous_asset": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Dancer_Onstage_MET_DT1913.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Dancer_Onstage_MET_DT1913.jpg",
+        "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Dancer_Onstage_MET_DT1913.jpg",
+        "rights_basis": "Metropolitan Museum of Art所蔵1974.356.30、Degas 1917年没。Commons個別ページ169–175行に美術館提供CC0。原画像3.32MB確認。"
+      }
     }
   },
   {
@@ -3908,13 +3945,18 @@
       "asset_kind": "scientific_image",
       "asset_title": "M87*のブラックホールの影（2019年公開）",
       "relation": "映画の理論的なブラックホール描写と現実の観測画像を比較する資料。映画の映像ではない。",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Black_hole_-_Messier_87.jpg",
+      "source_url": "https://eso.org/public/images/eso1907a/",
+      "image_url": "https://cdn.eso.org/images/publicationjpg/eso1907a.jpg",
       "license": "CC-BY",
       "rights_evidence_url": "https://www.eso.org/public/outreach/copyright/",
-      "rights_basis": "ESO公式画像eso1907aと著作権規約6–17行、Commonsの個別CC BY 4.0表示および原画像2.39MBを確認。営利再利用可、正確なクレジット表示・ライセンスリンク・非推奨表示が条件。改変なし。",
+      "rights_basis": "ESO公式作品ページのPublication JPEG（403.5KB）、EHT Collaborationクレジット、CC BY 4.0商用再利用条件を確認。直接画像を表示確認。公式画像のまま利用し推奨・提携を示唆しない。",
       "credit": "EHT Collaboration（改変なし） https://creativecommons.org/licenses/by/4.0/",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "previous_asset": {
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Black_hole_-_Messier_87.jpg",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87.jpg",
+        "rights_basis": "ESO公式画像eso1907aと著作権規約6–17行、Commonsの個別CC BY 4.0表示および原画像2.39MBを確認。営利再利用可、正確なクレジット表示・ライセンスリンク・非推奨表示が条件。改変なし。"
+      }
     }
   },
   {
@@ -5039,13 +5081,19 @@
       "asset_kind": "historical_art",
       "asset_title": "Hans Baldung Grien《The Witches' Sabbath》",
       "relation": "映画が扱う近世ヨーロッパの魔女表象の参考版画。映画本編ではない。",
-      "source_url": "https://commons.wikimedia.org/wiki/File:The_Witches'_Sabbath_MET_DP826750.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/The_Witches'_Sabbath_MET_DP826750.jpg",
+      "source_url": "https://www.metmuseum.org/art/collection/search/336235",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/336235/777491/main-image",
       "license": "CC0",
-      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:The_Witches'_Sabbath_MET_DP826750.jpg",
-      "rights_basis": "Hans Baldung Grien（1545年没）、The Met所蔵41.1.201、object ID336235。個別ページ160–166行に美術館提供CC0。原画像3.67MB表示成功。歴史的な美術作品で、裸婦表現があるため投稿時のプラットフォーム適合性に留意。",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met公式作品ページ 41.1.201 The Witches, 1510 のPublic Domain表示と公式OA規約（商用可）を確認。作品ページからリンクされた画像を直接表示して内容確認。GitHub runnerでの容量・取得は再監査対象。 歴史美術の裸体表現あり、プラットフォーム上の適合性に留意。",
       "credit": "Hans Baldung Grien《The Witches' Sabbath》／The Met",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "previous_asset": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:The_Witches'_Sabbath_MET_DP826750.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/The_Witches'_Sabbath_MET_DP826750.jpg",
+        "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:The_Witches'_Sabbath_MET_DP826750.jpg",
+        "rights_basis": "Hans Baldung Grien（1545年没）、The Met所蔵41.1.201、object ID336235。個別ページ160–166行に美術館提供CC0。原画像3.67MB表示成功。歴史的な美術作品で、裸婦表現があるため投稿時のプラットフォーム適合性に留意。"
+      }
     }
   },
   {
@@ -5134,13 +5182,19 @@
       "asset_kind": "historical_art",
       "asset_title": "ドガのバレエダンサー習作",
       "relation": "芸術家と身体表現という記事のテーマを補う美術作品。映画の場面ではない。",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Study_of_a_Ballet_Dancer_(recto)%3B_Two_Studies_of_Dancers_(verso)_MET_DP359012.jpg",
-      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Study_of_a_Ballet_Dancer_(recto)%3B_Two_Studies_of_Dancers_(verso)_MET_DP359012.jpg",
+      "source_url": "https://www.metmuseum.org/art/collection/search/460062",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/460062/1510687/main-image",
       "license": "CC0",
-      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Study_of_a_Ballet_Dancer_(recto)%3B_Two_Studies_of_Dancers_(verso)_MET_DP359012.jpg",
-      "rights_basis": "The Met所蔵1975.1.611、Commons個別ページ164–171行に美術館提供CC0。Degas 1917年没。原画像1.95MB確認。",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met公式作品ページ 1975.1.611 Study of a Ballet Dancer, ca.1873 のPublic Domain表示と公式OA規約（商用可）を確認。作品ページからリンクされた画像を直接表示して内容確認。GitHub runnerでの容量・取得は再監査対象。",
       "credit": "Edgar Degas《Study of a Ballet Dancer》／The Met",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "previous_asset": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Study_of_a_Ballet_Dancer_(recto)%3B_Two_Studies_of_Dancers_(verso)_MET_DP359012.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Study_of_a_Ballet_Dancer_(recto)%3B_Two_Studies_of_Dancers_(verso)_MET_DP359012.jpg",
+        "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Study_of_a_Ballet_Dancer_(recto)%3B_Two_Studies_of_Dancers_(verso)_MET_DP359012.jpg",
+        "rights_basis": "The Met所蔵1975.1.611、Commons個別ページ164–171行に美術館提供CC0。Degas 1917年没。原画像1.95MB確認。"
+      }
     }
   },
   {
