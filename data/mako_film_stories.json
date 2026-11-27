@@ -663,5 +663,111 @@
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
+  },
+  {
+    "id": "mon-war-of-worlds-radio-myth",
+    "weekday": 0,
+    "title": "全米を震撼させたという伝説",
+    "topic_key": "war-of-worlds-1938-radio-panic-myth",
+    "category": "映画怪異録",
+    "posts": [
+      "ラジオで火星人の襲来を伝えたら、全米がパニックになった。\n\n映画『#宇宙戦争』の原作を使った1938年の放送には、そんな逸話がある。ところが、その逸話自体にも疑問がある。\n#まこの映画小話",
+      "1938年10月30日、オーソン・ウェルズはH・G・ウェルズのSF小説をラジオドラマ化した。ニュース速報や目撃証言の形式で火星人の侵略を描き、一部の聴取者は現実の出来事だと受け取った。",
+      "米国議会図書館の解説によると、当夜の約5000世帯を対象とした電話調査では、この番組を聴いていたのは約2％。聴取者の多くは虚構だと理解していたという。全米規模の混乱という通説には注意が必要だ。",
+      "新聞は翌日から混乱を大きく報じた。ラジオという新しい競争相手の信用を落とす狙いがあったと考える研究者もいる。ただし新聞社全体の意図を断定できるわけではない。",
+      "同じ原作は1953年にバイロン・ハスキン、2005年にスピルバーグが映画化した。『ブレア・ウィッチ・プロジェクト』と合わせて考えると、ニュースらしい表現が虚構に現実味を与える仕組みが面白い。",
+      "虚構を信じた人がいたという話を、今度は私たちが無批判に信じてしまう。恐怖は物語だけでなく、物語についての報道からも生まれるのかもしれない。"
+    ],
+    "sources": [
+      {
+        "name": "米国議会図書館｜Page from the Past: War of the Worlds",
+        "url": "https://blogs.loc.gov/loc/2016/10/lcm-page-from-the-past-war-of-the-worlds/",
+        "supports": "1938年10月30日の放送、速報・目撃証言形式、一部聴取者の誤認、5000世帯の電話調査と約2％、新聞の誇張、競争関係についての研究者の仮説。本文414–418行。"
+      },
+      {
+        "name": "BFI｜H.G. Wells: 10 essential film adaptations",
+        "url": "https://www.bfi.org.uk/lists/hg-wells-10-essential-film-adaptations",
+        "supports": "1953年のハスキン版と2005年のスピルバーグ版。同ページのパニック規模の描写は採用せず、LOCの再検証を優先。"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "The War of the Worlds",
+      "year": 1953,
+      "review_note": "1953年映画版のポスターを候補とする。1938年の放送資料とは区別。転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "wed-third-man-city",
+    "weekday": 2,
+    "title": "街が主役になる映画",
+    "topic_key": "third-man-vienna-location-music",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "オーソン・ウェルズよりも存在感のある「出演者」がいる映画。\n\nキャロル・リードの『#第三の男』（1949年）。それは戦後のウィーンという街そのものだ。\n#まこの映画小話 #名作映画",
+      "1948年に約6週間、ウィーンで主要なロケ撮影が行われた。戦災の痕跡や街路が映し出される一方、屋内や下水道の一部はスタジオで再現された。現実の都市と映画美術が組み合わさっている。",
+      "傾いた画面や光と影が、人々の不安や疑念を感じさせる。さらに、アントン・カラスが奏でるツィターの音楽が、独特の街の雰囲気を作り出す。映画のために彼の音楽だけを使うという選択がなされた。",
+      "1999年、英国映画協会が映画・テレビ関係者1000人の投票で選んだ20世紀の英国映画100選では第1位。物語だけでなく、場所と撮影と音楽の関係を味わってほしい。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Vienna and The Third Man",
+        "url": "https://www.bfi.org.uk/features/location-location-location-vienna-third-man",
+        "supports": "1949年作品、1948年の約6週間の撮影、都市実景とスタジオ、傾いた画面、1999年の投票と1位（本文16–43行）。"
+      },
+      {
+        "name": "BFI｜15 great British film scores",
+        "url": "https://www.bfi.org.uk/lists/15-great-british-film-scores",
+        "supports": "カラスとツィター、音楽を単独採用した経緯（16–30行）。"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "The Third Man",
+      "year": 1949,
+      "review_note": "1949年版。転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sat-safety-last-glasses",
+    "weekday": 5,
+    "title": "眼鏡と映画の先入観",
+    "topic_key": "safety-last-lloyd-lensless-glasses",
+    "category": "映画の舞台裏",
+    "posts": [
+      "高層ビルの時計にぶら下がる、あの眼鏡の男。\n\n『#ロイドの要心無用』（1923年）のハロルド・ロイド。その眼鏡には、実はレンズがなかった。\n#まこの映画小話 #映画裏話",
+      "ロイドは1917年、眼鏡をトレードマークにした人物像を作り出した。本人は後年、眼鏡を掛けた人は知的でおとなしいと思われがちだからこそ、予想を裏切る行動が面白くなると説明している。",
+      "映画では都会で成功を夢見る青年が建物を登ることになる。時計の場面には撮影上の工夫が使われたが、危険が皆無だったわけではない。米国議会図書館は1994年にこの映画を保存登録対象に選んだ。",
+      "小道具ひとつで観客に人物像を想像させ、その予想をひっくり返す。笑いとスリルを生むのは運動能力だけではなく、観客の先入観を計算した演技でもある。"
+    ],
+    "sources": [
+      {
+        "name": "Criterion｜Safety Last!: High-Flying Harold",
+        "url": "https://www.criterion.com/current/posts/2804-safety-last-high-flying-harold",
+        "supports": "1917年の眼鏡キャラクター、レンズなし、本人の1964年発言の引用（38–41行）、作品の内容。"
+      },
+      {
+        "name": "米国議会図書館｜Safety Last! 上映解説",
+        "url": "https://blogs.loc.gov/now-see-hear/2016/09/now-playing-at-the-packard-campus-theater-september-9-10-2016/",
+        "supports": "1923年作品、撮影上の危険、1994年のNational Film Registry選出（253–257行）。"
+      },
+      {
+        "name": "Criterion｜Perfect Timing",
+        "url": "https://www.criterion.com/current/posts/2813-perfect-timing",
+        "supports": "時計の場面に撮影効果を使用したこと（20–21行）。"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Safety Last!",
+      "year": 1923,
+      "review_note": "当時のポスターの作者と権利を確認するまで添付しない。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
   }
 ]
