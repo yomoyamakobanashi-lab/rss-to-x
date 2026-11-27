@@ -2406,5 +2406,473 @@
       "year": 1893,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
     }
+  },
+  {
+    "id": "kwaidan-painted-night",
+    "weekday": 0,
+    "title": "日本の怪談を世界へ渡した外国人",
+    "topic_key": "kwaidan-hearn-painted-world",
+    "category": "映画怪異録",
+    "posts": [
+      "日本の怪談を映画化した小林正樹が手掛かりにしたのは、英語で日本の怪談を書いた作家だった。\n\n『#怪談』と小泉八雲。伝承は国境を越えて姿を変える。\n#まこの映画小話",
+      "ラフカディオ・ハーンは40歳で日本に定住し、帰化した。1904年には英語の怪談集を刊行。小林と脚本家・水木洋子は、彼が文章にした怪異譚から映画の四話を構成した。",
+      "映画の風景には手描きの背景美術が使われた。現実の森や空を記録するのではなく、絵画のような空間で怪異を表現する。日本の伝承が英語文学を経由し、さらに映像の色彩へ翻訳されたわけだ。",
+      "怪談が伝わるというのは、同じ物語をそのまま保存することだけではない。語る人や表現する媒体が変わるたびに、別の美しさや怖さが生まれる。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Watch a cult classic: Kwaidan",
+        "url": "https://www.bfi.org.uk/features/watch-cult-classic-7-kwaidan",
+        "supports": "29–31行：原作、脚本、ハーンの来日・帰化・1904年怪談集。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI Player｜Kwaidan",
+        "url": "https://player.bfi.org.uk/subscription/film/watch-kwaidan-1964-online",
+        "supports": "77行：四話と手描き背景。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "怪談",
+      "year": 1964,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "yotsuya-lantern-keren",
+    "weekday": 0,
+    "title": "提灯から幽霊が出てくる舞台",
+    "topic_key": "yotsuya-kaidan-kabuki-keren",
+    "category": "映画怪異録",
+    "posts": [
+      "CGがない江戸時代にも、幽霊を出現させる特殊効果があった。\n\n1959年の映画『#東海道四谷怪談』の原点となった歌舞伎には、観客を驚かせる仕掛けが残っている。\n#まこの映画小話",
+      "四代目鶴屋南北の歌舞伎は1825年に中村座で初演された。国立劇場の解説には、お岩が髪をとかすと毛が抜けたり、亡霊が提灯から現れたりする演出が紹介されている。",
+      "このような見た目にも驚きを与える仕掛けを歌舞伎ではケレンと呼ぶ。初演のお岩役を務めた三代目尾上菊五郎は生涯に九度この役を演じたという。",
+      "中川信夫監督の1959年版はカラーのシネマスコープ作品。舞台と映画では技術が違っても、観客にありえないものを見せるという欲望は共通する。昔の怪談には昔の特撮があったのだ。"
+    ],
+    "sources": [
+      {
+        "name": "国立劇場｜文化デジタルライブラリー 東海道四谷怪談",
+        "url": "https://www2.ntj.jac.go.jp/dglib/modules/kabuki_dic_en/entry.php?entryid=1212",
+        "supports": "68–70行：初演、南北、菊五郎、ケレンの例。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "JFDB｜東海道四谷怪談",
+        "url": "https://jfdb.jp/title/10054",
+        "supports": "88–111行：1959年7月公開、カラー、シネマスコープ、監督。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "東海道四谷怪談",
+      "year": 1959,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "f-for-fake-forger-biographer",
+    "weekday": 1,
+    "title": "贋作者を書いた作家も贋作を作った",
+    "topic_key": "f-for-fake-irving-hoax",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "美術品の贋作者について本を書いた作家が、その数年後に偽の自伝を書いた。\n\nオーソン・ウェルズの映画『#フェイク』には、そんな奇妙な入れ子構造がある。\n#まこの映画小話",
+      "画家エルミア・デ・ホーリーは有名画家の贋作で美術界を欺いた。彼の伝記を書いたクリフォード・アーヴィングも後に、実業家ハワード・ヒューズへの秘密の取材を根拠とする偽の自伝を作った。",
+      "ウェルズは二人を題材に、ドキュメンタリーとも手品ともつかない映画を制作した。映画評論家ジョナサン・ローゼンバウムは、映像編集で組み立てられた会話や、美術市場の専門家への批判に注目している。",
+      "贋作を見抜く映画を見ているつもりでも、その映画自体が観客を欺く。権威ある人物の言葉より、何を根拠に真実と判断したのかが問われる作品だ。"
+    ],
+    "sources": [
+      {
+        "name": "IDFA Archive｜F for Fake",
+        "url": "https://www.idfa.nl/en/film/9eebcd7e-5ce5-4a69-9dc7-d19f4bef31b0/f-for-fake/",
+        "supports": "40行：贋作者と伝記作家、ヒューズ自伝の捏造。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Criterion｜F for Fake: Orson Welles's Purloined Letter",
+        "url": "https://www.criterion.com/current/posts/364-orson-welles-s-purloined-letter-f-for-fake",
+        "supports": "34–39行と本文：制作と編集、専門家・美術市場の批評。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "F for Fake",
+      "year": 1974,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "mincemeat-fictional-identity",
+    "weekday": 1,
+    "title": "実在しない少佐の墓",
+    "topic_key": "mincemeat-hidden-identity-1997",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "第二次世界大戦中に、実在しない英国軍の少佐が作られた。\n\n『#オペレーションミンスミート』に描かれた欺瞞作戦。その人物の本名が墓に記されたのは、戦争から半世紀以上後だった。\n#まこの映画小話",
+      "1943年、英国の情報機関は連合軍の作戦をめぐってドイツ側を欺こうとした。架空の人物の存在を信じさせるという実在した作戦である。映画はこの歴史を題材にしている。",
+      "1956年にも関係者の回想録をもとに『The Man Who Never Was』が映画化された。しかし、当時は作戦の一部が機密扱いで、資料にも映画にも明かされなかった事実がある。",
+      "米国の第二次世界大戦博物館によれば、少佐として葬られた人物の本名グリンドゥル・マイケルが墓に追記されたのは1997年。後に公開された史料をもとに、2022年の映画が作られた。同じ事件の映画化でも、時代によって語れる歴史が違う。"
+    ],
+    "sources": [
+      {
+        "name": "National WWII Museum｜Operation Mincemeat",
+        "url": "https://www.nationalww2museum.org/war/articles/secret-agents-secret-armies-operation-mincemeat",
+        "supports": "本文および80–81行：1943年作戦、1956年映画、機密情報、本名の墓への追記、2022年映画。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Operation Mincemeat",
+      "year": 2021,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "ugetsu-maupassant",
+    "weekday": 2,
+    "title": "日本の怪談に混ざったフランス文学",
+    "topic_key": "ugetsu-ueda-maupassant",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "日本の怪談映画なのに、原典の一つはフランスの短編小説だった。\n\n溝口健二の『#雨月物語』（1953年）。日本文学だけを映画化したと思うと、その構成の面白さを見逃してしまう。\n#まこの映画小話",
+      "Criterionの作品解説によれば、映画は上田秋成の短編二篇とギ・ド・モーパッサンの作品一篇を組み合わせている。戦乱の中、成功を求める二人の男とその妻たちの運命を描く。",
+      "滑らかなカメラ移動と長いショットが、日常の世界と幻想の世界の境界を曖昧にする。怪異が登場すること自体よりも、欲望が人々をどこへ導くかが重い。",
+      "昔の日本を描いても、発想の源が日本だけとは限らない。映画を通して異なる土地の文学が出会い、一つの悲劇になる。原典を読み比べたくなる名作だ。"
+    ],
+    "sources": [
+      {
+        "name": "Criterion｜The Thin Line Between Reality and Fantasy in Ugetsu",
+        "url": "https://www.criterion.com/current/posts/4643-the-thin-line-between-reality-and-fantasy-in-ugetsu",
+        "supports": "22–24行：原作三篇、監督、1953年、長回し、戦乱と男女の物語。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "雨月物語",
+      "year": 1953,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "apu-trilogy-saved-ashes",
+    "weekday": 2,
+    "title": "燃えたネガを捨てなかった人々",
+    "topic_key": "apu-trilogy-1993-fire-restoration",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "燃えてしまった映画のネガを、復元できないとわかっていながら保管した人々がいた。\n\nインド映画の名作『#大地のうた』を含むオプー三部作の保存史だ。\n#まこの映画小話",
+      "サタジット・レイの三部作は1955年から1959年に公開された。第一作ではベンガルの農村で育つ少年と家族が描かれ、イタリアのネオレアリズモに着想を得た映画として評価された。",
+      "1993年、ロンドンの現像所の火災でオリジナルネガが焼損。当時は深刻な損傷を完全に修復できる技術がなかったが、Academy Film Archiveは素材を保管し続けた。",
+      "後にCriterionとイタリアの修復機関などが協力し、4K修復版を制作した。現在の技術で解決できないものを捨てない。その判断こそ、未来の映画文化を守ることになる。"
+    ],
+    "sources": [
+      {
+        "name": "Criterion｜Restoring The Apu Trilogy",
+        "url": "https://www.criterion.com/current/posts/3550-restoring-the-apu-trilogy",
+        "supports": "22–25行：1993年の火災、保管、修復と2015年公開。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Criterion｜The Apu Trilogy",
+        "url": "https://www.criterion.com/boxsets/1145-the-apu-trilogy",
+        "supports": "19–37行：三作の年、内容、ネオレアリズモ、修復機関。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Pather Panchali",
+      "year": 1955,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "nocebo-expectation-research",
+    "weekday": 3,
+    "title": "副作用は薬だけから生まれるのか",
+    "topic_key": "nocebo-film-expectations-meta-analysis",
+    "category": "映画心理学講義",
+    "posts": [
+      "良い効果を期待すると症状が改善することがある。では悪い効果を期待した場合は？\n\n映画『#NOCEBO』の題名にもなったノセボ効果を、心理学研究から考える。\n#まこの映画小話",
+      "2022年の映画では、原因のわからない体調不良に苦しむファッションデザイナーが登場する。ここから現実の医学用語へ脱線してみよう。",
+      "シドニー大学の研究者らの2023年のメタ分析は、対照条件を備えた130研究、計8219人のデータを検討した。治療の文脈で生じる否定的な期待が、身体症状などに影響することが示された。",
+      "ただし効果の大きさは研究間で異なる。期待による症状があるからといって、すべての副作用や病気が思い込みだとは言えない。言葉も体験も現実の症状に関わりうるという点が重要だ。"
+    ],
+    "sources": [
+      {
+        "name": "Epicmedia｜Nocebo",
+        "url": "https://www.epicmedia.ph/nocebo",
+        "supports": "4–8行：共同製作会社による作品設定。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Rooney et al. (2023)｜The nocebo effect across health outcomes",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37843534/",
+        "supports": "243–248行：定義、130研究8219人、効果と異質性。DOI 10.1037/hea0001326。",
+        "access_scope": "査読論文の公開要旨"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "episode_guid": "4729417b-c943-472d-b25d-4bc0cb674a1e",
+    "poster": {
+      "status": "pending",
+      "film_title": "Nocebo",
+      "year": 2022,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "soundtrack-same-scene-different-person",
+    "weekday": 3,
+    "title": "音楽が変わると人柄も変わる？",
+    "topic_key": "soundtrack-interpretation-eye-tracking-2020",
+    "category": "映画心理学講義",
+    "posts": [
+      "同じ俳優、同じ場面、違う音楽。すると観客が想像する登場人物の性格まで変わることがある。\n\n映画音楽について、2020年にこんな心理学研究が報告された。\n#まこの映画小話",
+      "118人を対象にした実験では、知らない映画の同じ場面に、憂うつな音楽と不安を誘う音楽をそれぞれ合わせた。主人公への共感、性格の印象、今後の展開の予想が音楽によって変わった。",
+      "別の実験では視線も計測した。不安を誘う音楽の条件では、目立たない人物に視線を向ける時間が長くなり、警戒に関連する瞳孔の変化も報告された。特定の映像と音楽で得られた結果だ。",
+      "音楽は画面の感情を飾るだけではない。何を意味のある情報として見るかにも関わる。次に映画を観るとき、もし音楽を別の曲にしたら登場人物がどう見えるか想像してみたい。"
+    ],
+    "sources": [
+      {
+        "name": "Ansani et al. (2020)｜How Soundtracks Shape What We See",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7575867/",
+        "supports": "100–102行：118人の実験、音楽条件、人物印象、視線・瞳孔の結果。",
+        "access_scope": "公開査読論文（要旨の該当箇所を照合）"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "mononoke-tatara-gender",
+    "weekday": 4,
+    "title": "タタラ場の歴史と映画の創作",
+    "topic_key": "mononoke-tatara-iron-gender-history",
+    "category": "銀幕人文学",
+    "posts": [
+      "『#もののけ姫』のタタラ場には、実際の製鉄技術と、歴史を大胆に作り替えた部分が同居している。\n\n映画の時代考証は、史実に忠実か否かだけでは語れない。\n#まこの映画小話",
+      "たたら製鉄は日本で独自の発展を遂げた技術だ。島根の奥出雲にある資料館はその伝統を伝え、日本政府観光局は近隣の製鉄所が映画の着想源と考えられていると紹介する。",
+      "歴史と映画を比較した研究では、製鉄の技術描写は考古学の知見にかなっている一方で、タタラ場の男女の平等なあり方は創作だと論じられている。",
+      "すべてを歴史どおりに描くことだけが歴史映画の価値ではない。技術のリアリティに支えられた場所で、別の社会のあり方を想像する。タタラ場はそういう読み方もできる。"
+    ],
+    "sources": [
+      {
+        "name": "JNTO｜Okuizumo Tatara Sword Museum",
+        "url": "https://faq.japan-travel.jnto.go.jp/en/spot/2317/",
+        "supports": "604–619行：伝統技術と映画のモデルと考えられている製鉄所。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Shadowing the Brutality and Cruelty of Nature（Springer）",
+        "url": "https://link.springer.com/chapter/10.1007/978-3-031-42235-5_12",
+        "supports": "118–122行：考古学研究と技術表現、ジェンダー平等の創作という著者の解釈。",
+        "access_scope": "公開学術書章の該当箇所"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "もののけ姫",
+      "year": 1997,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "last-emperor-forbidden-city",
+    "weekday": 4,
+    "title": "外国映画が開いた宮殿の扉",
+    "topic_key": "last-emperor-transnational-forbidden-city",
+    "category": "銀幕人文学",
+    "posts": [
+      "中国の皇帝を描くために、イタリアの監督が本物の紫禁城で撮影した。\n\n『#ラストエンペラー』は、映画の外側でも国境を越えた歴史的な出来事だった。\n#まこの映画小話",
+      "1987年のベルナルド・ベルトルッチ監督作品は、清朝最後の皇帝・溥儀の人生を描く。映画研究者ステファノ・バスキエラは、紫禁城での撮影許可を得た初の外国長編映画として紹介している。",
+      "撮影には中国側との共同製作手続きが必要だった。製作者ジェレミー・トーマスは撮影地の許可や物資の輸入、配役をめぐる調整を回想している。映画の映像はこうした交渉の上に成立した。",
+      "本物の宮殿が映っていても、歴史がそのまま映っているわけではない。誰の視点から過去を物語るのか、という問題は残る。東西の共同製作という背景も含めて鑑賞したい。"
+    ],
+    "sources": [
+      {
+        "name": "Baschiera (2014)｜From Beijing with love",
+        "url": "https://pure.qub.ac.uk/en/publications/from-beijing-with-love-the-global-dimension-of-bertoluccis-the-la/",
+        "supports": "75–76行：外国長編作品の撮影許可、東西合作と西洋作家の視線という研究テーマ。",
+        "access_scope": "査読論文の公開要旨"
+      },
+      {
+        "name": "TCM｜The Last Emperor",
+        "url": "https://www.tcm.com/articles/21409/the-last-emperor",
+        "supports": "9–15行：制作と許認可、プロデューサーの回想。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Criterion｜The Last Emperor",
+        "url": "https://www.criterion.com/films/254-the-last-emperor",
+        "supports": "20行：作品年、監督、溥儀の人生。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Last Emperor",
+      "year": 1987,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "seven-samurai-multicamera-rain",
+    "weekday": 5,
+    "title": "雨の中でカメラを増やした黒澤明",
+    "topic_key": "seven-samurai-weather-multicamera",
+    "category": "映画の舞台裏",
+    "posts": [
+      "『#七人の侍』の雨は、背景ではなくアクションの一部だった。\n\n画面の中で土が泥に変わり、視界が悪くなる。黒澤明は自然現象と撮影技術を組み合わせた。\n#まこの映画小話",
+      "1954年の作品では、アクションを複数のカメラから撮影する方法が用いられた。BFIは歴史的な衣装やセットの調査と、自然の光や天候の活用を、その時代劇表現の革新として評価する。",
+      "終盤の雨は、人物の動きだけでなく地面や空気まで変える。泥や雨の筋が画面に入り、晴れた日の同じ動作とは別の視覚的な迫力を生む。",
+      "アクション映画では俳優の動きに目が行きがちだが、動きが生まれる環境を設計するのも演出だ。雨のない同じ場面を想像すると、黒澤の選択の意味がよくわかる。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Seven Samurai: rocky road to classic status",
+        "url": "https://www.bfi.org.uk/features/seven-samurai-akira-kurosawa-classic-status",
+        "supports": "57行：複数カメラ、セット・衣装、光・天候。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI｜How Akira Kurosawa films command the weather",
+        "url": "https://www.bfi.org.uk/features/how-akira-kurosawa-films-command-weather",
+        "supports": "39行：雨と泥による場面の緊張感。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "七人の侍",
+      "year": 1954,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "godzilla-minus-one-parking-lot",
+    "weekday": 5,
+    "title": "戦後の東京を駐車場で撮る",
+    "topic_key": "godzilla-minus-one-vfx-parking-lot",
+    "category": "映画の舞台裏",
+    "posts": [
+      "戦後の街を再現するため、現代の駐車場で撮影した映画がある。\n\n『#ゴジラマイナスワン』の制作陣が技術学会で明かした、映像の作り方だ。\n#まこの映画小話",
+      "SIGGRAPH Asia 2024の発表概要によると、VFXの作業負担を抑えながら実写らしさを維持するため、道路状況が当時に近い駐車場で多くの場面を撮影した。人物や物体が落とす実際の影も利用したという。",
+      "約610のVFXショットが上映時間の約3分の2を占め、制作の中心となるスタッフは約35人だったと発表資料は説明する。数字は全映画スタッフ数ではない。",
+      "2024年には米国アカデミー賞の視覚効果賞を受賞した。CGですべてを作ることではなく、現場にある光や影をどこまで使えるかを考えることも、映像技術の重要な仕事なのだ。"
+    ],
+    "sources": [
+      {
+        "name": "SIGGRAPH Asia 2024｜Godzilla Minus One",
+        "url": "https://asia.siggraph.org/2024/presentation/?id=caf_526&sess=sess168",
+        "supports": "36–42行：610ショット、上映時間割合、駐車場、実写の影、約35人。",
+        "access_scope": "制作チームの学会発表公開概要"
+      },
+      {
+        "name": "東宝ゴジラ公式｜Academy Award for Best Visual Effects",
+        "url": "https://godzilla.com/en-gb/blogs/news/godzilla-minus-one-wins-academy-award-for-best-visual-effects",
+        "supports": "107–114行：2024年視覚効果賞と受賞者。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "episode_guid": "aac3692f-5452-48a2-a70d-6a917b05443e",
+    "poster": {
+      "status": "pending",
+      "film_title": "ゴジラ-1.0",
+      "year": 2023,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "akira-voice-first-radio",
+    "weekday": 6,
+    "title": "AKIRAはラジオドラマのように録音された",
+    "topic_key": "akira-1988-prescoring-voice-actors",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "完成した絵に声を当てるのではなく、声を録ってから絵を作った。\n\n1988年の『#AKIRA』。金田と鉄雄の声優が2019年の東京国際映画祭で明かした制作の思い出が面白い。\n#まこの映画小話",
+      "大友克洋監督は声優に脚本と全編の絵コンテを渡し、映像の完成前に台詞を録音した。金田役の岩田光央は、当時の収録をラジオドラマのようだったと振り返る。",
+      "鉄雄役の佐々木望も、声の高低やテンポを自分たちで工夫でき、人物の演技に集中できたと語った。口の動きだけでなく声の演技を先に設計できる方式だ。",
+      "私たちはアニメをまず絵として捉えがちだが、この場合は声も絵を作るための材料になる。音と映像の関係を意識して見直したくなる。"
+    ],
+    "sources": [
+      {
+        "name": "東京国際映画祭｜AKIRA Talk Show",
+        "url": "https://2019.tiff-jp.net/news/en/?p=15602",
+        "supports": "89–91、109–112行：1988年、2019年登壇、先行録音と絵コンテ、本人たちの回想。",
+        "access_scope": "映画祭公式の出演者取材記事"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "AKIRA",
+      "year": 1988,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "snow-white-multiplane-moon",
+    "weekday": 6,
+    "title": "アニメの月を大きくしないカメラ",
+    "topic_key": "snow-white-multiplane-perspective",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "カメラが森に近づいても、遠くの月は木と同じ速さで大きくならない。\n\n『#白雪姫』の制作陣は、平らな絵で奥行きを表現するために特殊なカメラを使った。\n#まこの映画小話",
+      "絵を一枚に描けば、カメラを近づけたときにすべてが同じ割合で拡大する。そこでディズニーのマルチプレーン・カメラでは、背景と人物などを別々の透明板やセルに分けた。",
+      "AFIが紹介する当時の技術記事によれば、絵の各層を別々に動かすことで、家や木や月を適切な大きさの関係に保てるようにした。各層の照明も調整できた。",
+      "同じ装置は1937年の短編『風車小屋のシンフォニー』で使われ、『白雪姫』にも用いられた。絵を動かす技術だけでなく、絵と絵の距離を設計する技術が、アニメの空間を変えたのだ。"
+    ],
+    "sources": [
+      {
+        "name": "Walt Disney Family Museum｜Multiplane Classroom Kit",
+        "url": "https://www.waltdisney.org/multiplane-classroom-kit",
+        "supports": "4行：多層の仕組み、1937年短編と白雪姫への使用。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "AFI Catalog｜Snow White and the Seven Dwarfs",
+        "url": "https://catalog.afi.com/Film/5865-SNOW-WHITEANDTHESEVENDWARFS",
+        "supports": "67–69行：1938年技術記事、各層の照明と移動、月や背景の大きさの関係。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Snow White and the Seven Dwarfs",
+      "year": 1937,
+      "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    }
   }
 ]
