@@ -5004,8 +5004,8 @@
       "source_url": "https://commons.wikimedia.org/wiki/File:Houghton_Typ_905.12.7265_-_Arthur_Rackham,_Peter_Pan_in_Kensington_Gardens.jpg",
       "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Houghton_Typ_905.12.7265_-_Arthur_Rackham%2C_Peter_Pan_in_Kensington_Gardens.jpg",
       "license": "public_domain",
-      "rights_evidence_url": "ハーバード大学Houghton Libraryが提供した画像。1906年署名、1912年ポートフォリオ由来。作者1939年没、英国及び米国・日本の保護期間は戦時加算を考慮しても満了。個別ページに館が画像への権利を主張せず商用再利用を許容すると明記、原画像528KBを表示確認。英国1988年法第301条・附則6のロイヤルティは戯曲又はその翻案の全部・実質的部分に関する規定。本画像は別作品の独立した挿絵として区別。参考 https://www.legislation.gov.uk/ukpga/1988/48/section/301/2021-11-18/data.html",
-      "rights_basis": "Arthur Rackham／Typ 905.12.7265, Houghton Library, Harvard University",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Houghton_Typ_905.12.7265_-_Arthur_Rackham,_Peter_Pan_in_Kensington_Gardens.jpg",
+      "rights_basis": "ハーバード大学Houghton Libraryが提供した画像。1906年署名、1912年ポートフォリオ由来。作者1939年没、英国及び米国・日本の保護期間は戦時加算を考慮しても満了。個別ページに館が画像への権利を主張せず商用再利用を許容すると明記、原画像528KBを表示確認。英国1988年法第301条・附則6のロイヤルティは戯曲又はその翻案の全部・実質的部分に関する規定。本画像は別作品の独立した挿絵として区別。参考 https://www.legislation.gov.uk/ukpga/1988/48/section/301/2021-11-18/data.html",
       "checked_on": "2026-11-27",
       "previous_candidate": {
         "status": "pending",
@@ -5015,7 +5015,8 @@
           "review_note": "1907年刊、Arthur Rackham（1939年没）、個別ページ119–149行で米国及び原産国PD。601KBと記載。直接画像取得を2回試したが失敗。保留。",
           "checked_on": "2026-11-27"
         }
-      }
+      },
+      "credit": "Arthur Rackham／Typ 905.12.7265, Houghton Library, Harvard University"
     }
   },
   {
