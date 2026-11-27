@@ -910,5 +910,261 @@
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
+  },
+  {
+    "id": "mon-frankenstein-galvanism",
+    "weekday": 0,
+    "title": "死体が動いた夜",
+    "topic_key": "frankenstein-galvanism-aldini",
+    "category": "映画怪異録",
+    "episode_guid": "2baa7812-d9b1-41bc-81b8-f8c872607759",
+    "posts": [
+      "死体に電気を流したら、まぶたが開いた。\n\n『#フランケンシュタイン』のような出来事が、1803年のロンドンで実際に報告されている。ただし、死者が蘇ったわけではない。\n#まこの映画小話",
+      "イタリアの研究者ルイージ・ガルヴァーニは、電気刺激によってカエルの筋肉が収縮する現象を研究した。その甥ジョヴァンニ・アルディーニは、さらに人間の遺体を用いた実験を行った。",
+      "ロンドンの実験では、処刑された男性の顔や手足が動いたと記録されている。報道は人々の関心を集めたが、筋肉が電気に反応することは、生命そのものが戻った証拠ではない。",
+      "メアリー・シェリーは1818年に小説『フランケンシュタイン』を出版。1831年版の序文では、仲間との生命についての議論を回想し、電気による死体の再生の可能性にも言及している。",
+      "2025年のギレルモ・デル・トロ版は、生命を作った者と作られた者を親子の関係として捉える。生命を作れるかという科学の問いが、作った生命にどう責任を負うかという倫理の問いに変わる。"
+    ],
+    "sources": [
+      {
+        "name": "英国科学博物館｜The science behind Frankenstein",
+        "url": "https://blog.sciencemuseum.org.uk/the-science-behind-mary-shelleys-frankenstein/",
+        "supports": "1818年出版、1831年序文、ガルヴァーニの筋収縮研究、1803年アルディーニの実験と報道（13–33行）"
+      },
+      {
+        "name": "Northwestern University｜Reviving the Body",
+        "url": "https://www.m.galter.northwestern.edu/visit/special-collections/exhibits/past-exhibits/reviving-the-body.html",
+        "supports": "1831年序文の原文、電気による筋収縮と生命を得たように見える現象（74–92行）"
+      },
+      {
+        "name": "Netflix Tudum｜デル・トロ監督インタビュー",
+        "url": "https://www.netflix.com/tudum/features/guillermo-del-toro-reflects-on-frankenstein",
+        "supports": "親子としての創造主と怪物の関係、監督の解釈（54–61行）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Frankenstein",
+      "year": 2025,
+      "review_note": "Netflix版の転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "tue-hal-ibm-myth",
+    "weekday": 1,
+    "title": "HALの名前に隠された企業名？",
+    "topic_key": "2001-hal-ibm-name-myth",
+    "category": "銀幕陰謀論",
+    "episode_guid": "d5cf8b71-36a5-4b5c-aa42-da8b3ddf1100",
+    "posts": [
+      "HALの3文字を、アルファベットで一つずつ進めるとIBMになる。\n\n『#2001年宇宙の旅』のコンピューターに隠された暗号？ 実は制作時のメモが残っている。\n#まこの映画小話",
+      "1965年9月、キューブリックは協力者ロジャー・カラスに、将来のコンピューターに詳しい専門家を探すようメモを送った。IBMから助言を得られないか尋ねている。",
+      "翌年8月には、暴走するコンピューターが映画の主要テーマだとIBMが理解しているのか、相手を困らせないかと心配するメモも送った。これらは英国映画協会が紹介している。",
+      "監督と原作者クラークはIBMをずらしたという説を否定した。一方、映画史研究者ネイサン・エイブラムズは2017年の論文で、監督の否定も含めて別の解釈を提示している。",
+      "企業名との類似は確かに存在する。しかし類似だけでは意図の証明にならない。実際の制作協力、本人の説明、研究者の解釈。それぞれ違う種類の証拠として楽しむのが面白い。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Stanley Kubrick seeks computer expert",
+        "url": "https://www.bfi.org.uk/features/stanley-kubrick-seeks-mad-computer-expert",
+        "supports": "1965年9月22日と1966年8月31日のメモ、IBMの技術協力、両作者の否定（17–29行）"
+      },
+      {
+        "name": "Abrams (2017), What was HAL?（論文要旨）",
+        "url": "https://research.bangor.ac.uk/en/publications/what-was-hal-ibm-jewishness-and-stanley-kubricks-2001-a-space-ody/",
+        "supports": "査読論文要旨に示された作者の否定への異論と別の解釈の存在。論文本文の個別主張は未採用（16–27行）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "2001: A Space Odyssey",
+      "year": 1968,
+      "review_note": "劇場公開版の転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "wed-metropolis-lost-reels",
+    "weekday": 2,
+    "title": "80年後に帰ってきた映画",
+    "topic_key": "metropolis-argentina-restoration-2008",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "世界的な名作なのに、何十年も本来の姿では観られなかった映画がある。\n\n1927年の『#メトロポリス』。失われた映像が見つかったのは、ドイツから遠く離れたアルゼンチンだった。\n#まこの映画小話",
+      "フリッツ・ラングが監督した未来都市の物語は、公開後に短縮・再編集された版が流通した。SF作家H・G・ウェルズもアメリカ版を観て批判していたが、その版は大幅に改変されていたという。",
+      "2008年、ブエノスアイレスで失われていた映像約27分が発見された。2010年にその映像を組み込んだ修復版が公開された。現在、BFIでは147分の版を紹介している。",
+      "ただし最初の公開版が完全に復元されたわけではない。長年観客が目にしてきたものと、作り手が当初意図したもの。その間に距離があることは忘れたくない。",
+      "名作という評価さえ、どの版を観たかで変わりうる。映画を保存するという仕事は、過去の作品を未来の観客がもう一度評価できるようにする仕事でもある。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Metropolis at 90",
+        "url": "https://www.bfi.org.uk/features/metropolis-fritz-lang-silent-sci-fi",
+        "supports": "1927年、監督、短縮版、ウェルズによる批判、原版の欠落、2008年発見（28–37行）"
+      },
+      {
+        "name": "BFI Film Classics｜Metropolis（書籍紹介）",
+        "url": "https://shop.bfi.org.uk/metropolis-bfi-film-classics-paperback/",
+        "supports": "2008年ブエノスアイレスで約27分発見、2010年修復版公開（書籍紹介163行）"
+      },
+      {
+        "name": "BFI Player｜Metropolis",
+        "url": "https://player.bfi.org.uk/subscription/film/watch-metropolis-1927-online",
+        "supports": "147分版の上映資料（79行）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Metropolis",
+      "year": 1927,
+      "review_note": "1927年版のポスターの作者・各地域での権利確認未了。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "thu-change-blindness-cinema",
+    "weekday": 3,
+    "title": "主演俳優が入れ替わっても気づかない？",
+    "topic_key": "film-cut-change-blindness-levin-simons",
+    "category": "映画心理学講義",
+    "posts": [
+      "映画の途中で俳優が別人になったら、さすがに気づくと思う？\n\n心理学者は、まさにそれを短い映画で実験した。結果は私たちの自信に反するものだった。\n#まこの映画小話 #心理学",
+      "1997年、レヴィンとサイモンズは短い映像を用いて、場面の途中で物や人物を変更する実験を報告した。カメラの角度が切り替わる瞬間、画面の中心にいる唯一の俳優を別人にしても、変化を見逃した成人がいた。",
+      "こうした現象は #変化盲（change blindness）と呼ばれる。映像の切り替わりなどで変化を知らせる視覚的な手掛かりが途切れると、大きな変化でも気づきにくくなることがある。",
+      "映画の編集では、異なるショットをつないでも、一つの連続した出来事として見えることが多い。研究結果を、観客がつなぎ目を必ず見逃すという意味に広げてはいけないが、映画鑑賞にも通じる興味深い現象だ。",
+      "目の前のものを細部まで記録しているつもりでも、私たちの知覚は必ずしもそうではない。映画の粗探しが得意な人も、初見では一度試されてみたくなる実験だ。"
+    ],
+    "sources": [
+      {
+        "name": "Levin & Simons (1997)（論文要旨）",
+        "url": "https://ndl.iitkgp.ac.in/re_document/paperity/paperity/10288726",
+        "supports": "短編映像を用いた実験、カットを挟んだ中心人物の入れ替えと成人の見逃し（92–109行）。DOI 10.3758/BF03214339。要旨の範囲内の主張のみ。"
+      },
+      {
+        "name": "Visual Cognition Lab｜Change Blindness",
+        "url": "https://www.simonslab.com/research.html",
+        "supports": "映画のカット等による変化検出の困難、本人の自信と実際の差（12–18行）"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "fri-midsommar-seven-flowers",
+    "weekday": 4,
+    "title": "恐怖の祭りと恋のおまじない",
+    "topic_key": "midsommar-swedish-folklore-tradition",
+    "category": "銀幕人文学",
+    "episode_guid": "2a35454c-e3c5-4678-a8ad-2a479b5a01f4",
+    "posts": [
+      "『#ミッドサマー』を観ると、スウェーデンの夏至祭が怖くなるかもしれない。\n\nでも実際の民間伝承には、7種類の花を枕の下に入れて恋人の夢を見るという、意外に可愛らしい習慣がある。\n#まこの映画小話",
+      "スウェーデンの野外博物館スカンセンの解説によると、夏至祭の夜には不思議な力が宿ると考えられてきた。7種類、地域によっては9種類の花を黙って摘み、枕の下に入れると未来の伴侶が夢に現れるという伝承がある。",
+      "映画で印象的な葉で飾られた柱にも、歴史的な謎がある。北方民族博物館は、農耕社会の豊作への願いとの関係を示す一方、それが男性器の象徴と理解されていたという史料は所蔵資料から確認できないとしている。",
+      "同館によれば、現在の祭りの形は19世紀半ば以降に広まった部分も多く、キリスト教以前に同様の祭りがあったかは不明。古く見える伝統が、必ずしも古代から変わらず続いたとは限らない。",
+      "アリ・アスターの映画は、夏至祭を舞台にした架空の恐怖譚。現実の祭りそのものを残酷な儀礼だと誤解せず、映画が民俗的な記号をどう作り替えるかに注目すると面白い。"
+    ],
+    "sources": [
+      {
+        "name": "Skansen｜About the Midsummer Tradition",
+        "url": "https://www.skansen.se/en/see-and-do/holidays-and-traditions/midsummer-tradition/",
+        "supports": "夜の魔力の伝承、7または9種の花と恋占い（107–110行）"
+      },
+      {
+        "name": "Nordiska museet｜Midsummer",
+        "url": "https://www.nordiskamuseet.se/en/traditions-celebrations/midsummer/",
+        "supports": "キリスト教以前の起源不明、19世紀の形、柱の豊穣との関連と男性器象徴説の史料不足（40–54行）"
+      },
+      {
+        "name": "A24｜Midsommar",
+        "url": "https://a24films.com/films/midsommar",
+        "supports": "2019年、監督、スウェーデンの祭りを舞台とする物語（50–58行）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Midsommar",
+      "year": 2019,
+      "source_url": "https://a24films.com/films/midsommar",
+      "review_note": "A24作品ページに画像あり、転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sat-blackmail-live-dubbing",
+    "weekday": 5,
+    "title": "画面の女優と声の女優が別人",
+    "topic_key": "blackmail-1929-live-dubbing",
+    "category": "映画の舞台裏",
+    "posts": [
+      "カメラの前で口を動かす女優。カメラの外で台詞をしゃべる別の女優。\n\nヒッチコックの『#恐喝』（1929年）では、そんな奇妙な撮影が行われた。\n#まこの映画小話 #映画裏話",
+      "製作当初は無声映画だったが、音声付きの映画にすることになった。チェコ出身の主演女優アニー・オンドラの発音は、ロンドンの商店主の娘という設定と合わないと判断された。",
+      "そこでジョーン・バリーが画面外から声を当て、オンドラが口の動きを合わせた。後から音を録り直すのではなく、撮影現場で別人が台詞を言う方法だった。",
+      "同作には無声版と音声版がある。まだ音声付き映画を上映できない映画館も多かったためだ。米国映画芸術科学アカデミーでは2013年に両方の版を続けて上映した。",
+      "声が聞こえるようになったことで、役者に求められる条件まで変わった。技術革新の裏には、映像と音をどう結びつけるかという、こんな現場の試行錯誤がある。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜On set with Alfred Hitchcock",
+        "url": "https://www.bfi.org.uk/features/set-alfred-hitchcock",
+        "supports": "1929年、無声映画から音声映画への変更、発音と役柄、バリーが画面外で台詞（14–16行）"
+      },
+      {
+        "name": "BFI｜10 great early sound films",
+        "url": "https://www.bfi.org.uk/lists/10-great-early-sound-films",
+        "supports": "同時録音での口の動きと声の分担、両版（39–47行）"
+      },
+      {
+        "name": "Academy｜Alfred Hitchcock's Blackmail",
+        "url": "https://www.oscars.org/events/alfred-hitchcocks-blackmail",
+        "supports": "無声版の配給理由、2013年の連続上映（7–22行）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Blackmail",
+      "year": 1929,
+      "review_note": "1929年公開版のポスターの権利未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sun-achmed-before-disney",
+    "weekday": 6,
+    "title": "白雪姫より前の長編アニメーション",
+    "topic_key": "achmed-reiniger-surviving-animation",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "ディズニーの『白雪姫』より11年も前に公開された、今も観られる長編アニメーションがある。\n\nロッテ・ライニガーの『#アクメッド王子の冒険』（1926年）だ。\n#まこの映画小話",
+      "千夜一夜物語に着想を得たこの作品では、手で切り抜いた人物のシルエットを少しずつ動かして撮影した。複数の背景を重ねて撮影する装置も制作チームが開発したという。",
+      "実はこの作品より前にもアルゼンチンで長編アニメーションが作られていたが、現存していない。したがって『アクメッド王子の冒険』は現存する最古の長編アニメーションだ。",
+      "第二次世界大戦中、ドイツにあったネガは失われた。英国の映画協会に先立つ保存機関へ預けられていた彩色済みの上映用フィルムが残り、作品の存続につながった。",
+      "もしそのフィルムも失われていたら、アニメーション史の語られ方も変わっていたかもしれない。何が最初だったかという歴史には、何が残ったかという偶然が関わっている。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜10 great animated films directed by women",
+        "url": "https://www.bfi.org.uk/lists/10-great-animated-films-directed-women",
+        "supports": "1926年、先行するアルゼンチン長編の消失、現存最古、手作業の切り抜きと千夜一夜（30–38行）"
+      },
+      {
+        "name": "BFI National Archive｜Inside the Archive #76",
+        "url": "https://www.bfi.org.uk/inside-the-archive/news/inside-archive-76-queer-collaborations-centenary-celebrations-victorian-education",
+        "supports": "多層撮影装置、Film Societyの35mm彩色プリント、戦時中National Film Libraryへ預託、1945年ネガ消失（59–66行）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Die Abenteuer des Prinzen Achmed",
+      "year": 1926,
+      "review_note": "当時のポスターの作者・利用地域別の権利未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
   }
 ]
