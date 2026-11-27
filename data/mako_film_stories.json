@@ -250,5 +250,177 @@
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
+  },
+  {
+    "id": "mon-mummy-curse-press",
+    "weekday": 0,
+    "title": "呪いを育てた新聞",
+    "topic_key": "mummy-1932-tutankhamun-media",
+    "category": "映画怪異録",
+    "episode_guid": "14303dfa-c3a0-4c07-a28c-0e91371e25a6",
+    "posts": [
+      "ミイラの呪いを育てたのは、古代の魔術ではなく新聞だったのかもしれない。\n\n1932年の『#ミイラ再生』とツタンカーメンの呪い。怪談が生まれた背景を掘ってみよう。\n#まこの映画小話",
+      "1922年、ツタンカーメン王墓の発見が世界的なニュースになった。マンチェスター大学のエジプト学者ジョイス・ティルズリーによれば、発掘報道の独占契約が他紙の憶測を促したという。",
+      "翌年の発掘資金提供者カーナヴォン卿の死をきっかけに、呪いの噂が拡大した。墓に死を予告する銘文があったという話も広まったが、同大学の解説では、そのような銘文は確認されていない。",
+      "英国映画協会は、カール・フロイント監督の『ミイラ再生』がこの呪い伝説に着想を得たと説明する。古代の信仰そのものと、近代の報道や映画が作り上げたエジプト像は区別したい。",
+      "不思議な出来事を恐れるだけでなく、誰がどのように恐怖の物語を広めたのかにも目を向ける。怪談を読み解く面白さは、そこにもある。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Universal horror cycle",
+        "url": "https://www.bfi.org.uk/features/where-begin-universal-horror-cycle",
+        "supports": "The Mummy（1932）の監督とツタンカーメンの呪い伝説からの着想（The Mummyの段落）"
+      },
+      {
+        "name": "マンチェスター大学｜呪い伝説の成立",
+        "url": "https://www.manchester.ac.uk/about/news/90th-anniversary-of-the-curse-of-tutankhamen--how-a-modern-myth-was-born/",
+        "supports": "1922年発見、独占報道契約に関する研究者の解釈、1923年の死と噂、銘文の証拠が見つかっていないこと"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "The Mummy",
+      "year": 1932,
+      "review_note": "映画版を1932年に固定。転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "tue-manchurian-mkultra",
+    "weekday": 1,
+    "title": "映画の洗脳と史実の境界",
+    "topic_key": "manchurian-candidate-mkultra-distinction",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "陰謀が描かれた映画と、実在した秘密研究。似ているからといって、同じ事実とは限らない。\n\n1962年の『#影なき狙撃者』から、冷戦期の洗脳への恐怖を考える。\n#まこの映画小話",
+      "ジョン・フランケンハイマー監督の本作はリチャード・コンドンの小説を映画化した政治スリラー。朝鮮戦争の帰還兵が陰謀に巻き込まれる物語で、冷戦期の不信感が色濃く反映されている。",
+      "一方、1977年8月3日には米国上院で、CIAの行動変容研究計画「MKULTRA」をめぐる合同公聴会が開かれた。これは上院の公式記録で確認できる史実だ。",
+      "ただし、公聴会の存在は映画の筋書きが現実に起きたことや、人間の意思を完全に操れる技術の存在を証明しない。史実と創作を結びつけるときこそ、証拠の射程を確かめたい。",
+      "映画が時代の恐怖を表現することと、恐怖の対象が実在することは別問題だ。両者を区別して観ると、政治スリラーは情報を疑う力を磨く教材にもなる。"
+    ],
+    "sources": [
+      {
+        "name": "Criterion｜The Manchurian Candidate",
+        "url": "https://www.criterion.com/films/28784-the-manchurian-candidate",
+        "supports": "1962年、監督、原作、帰還兵をめぐる虚構の筋書きと冷戦背景"
+      },
+      {
+        "name": "米国上院｜MKULTRA合同公聴会",
+        "url": "https://www.intelligence.senate.gov/1977/08/03/hearings-joint-hearing-subcommittee-health-and-scientific-research-committee-human-resources-project/",
+        "supports": "1977年8月3日の公聴会の開催・議題のみ。研究の成果や能力は主張しない"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "The Manchurian Candidate",
+      "year": 1962,
+      "review_note": "2004年リメイクと区別。権利未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "thu-rashomon-memory",
+    "weekday": 3,
+    "title": "記憶は録画ではない",
+    "topic_key": "rashomon-eyewitness-memory",
+    "category": "映画心理学講義",
+    "posts": [
+      "同じ事件なのに、語る人が変わるとまるで別の物語になる。\n\n黒澤明の『#羅生門』（1950年）。目撃証言をめぐる心理学と一緒に観ると、さらに面白い。\n#まこの映画小話 #心理学",
+      "映画は一つの事件について四つの異なる語りを提示する。回想の映像まで変わるから、観客も何を信じるべきか迷う。芥川龍之介の二作品をもとにした映画だ。",
+      "心理学者エリザベス・ロフタスは、体験後に得た誤情報が記憶を変える可能性を研究してきた。記憶は録画データのように、そのまま再生されるとは限らない。",
+      "ただし『羅生門』の証言の違いをすべて記憶の変容で説明することはできない。意図的な虚偽や自己正当化も考えられる。映画は実験ではなく、複数の解釈を促す作品だ。",
+      "話し手が誠実かどうかと、話された記憶が正確かどうかは別の問題。誰かの証言を吟味するとき、語りの自信だけで判断していないか考えてみたい。"
+    ],
+    "sources": [
+      {
+        "name": "Criterion｜Rashomon",
+        "url": "https://www.criterion.com/films/307-rashomon",
+        "supports": "1950年、黒澤監督、四つの語り、回想形式、芥川の二作品を原作とすること"
+      },
+      {
+        "name": "APA｜ロフタスへのインタビュー",
+        "url": "https://www.apa.org/news/podcasts/speaking-of-psychology/memory-manipulated",
+        "supports": "体験後の情報や誤情報が記憶を変容させ得るという研究者本人の説明（冒頭）"
+      },
+      {
+        "name": "APA心理学辞典｜目撃記憶",
+        "url": "https://dictionary.apa.org/eyewitness-memory",
+        "supports": "目撃証言の信頼性と誤情報効果の関係"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Rashomon",
+      "year": 1950,
+      "review_note": "日本版のポスターの利用許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "fri-schindler-lists",
+    "weekday": 4,
+    "title": "リストは一枚ではなかった",
+    "topic_key": "schindlers-list-historical-records",
+    "category": "銀幕人文学",
+    "posts": [
+      "『#シンドラーのリスト』の題名は、一枚の名簿を想像させる。\n\nしかし史実では、名簿は複数存在した。映画から歴史へ踏み込んでみよう。\n#まこの映画小話 #映画史",
+      "米国ホロコースト記念博物館によれば、1944年秋、オスカー・シンドラーは工場をブリュンリッツへ移転した。ユダヤ人の収容者たちが移送され、そこで生き延びる可能性が高まった。",
+      "同館の解説では、移送名簿には男女別のものがあり、内容も複数回変更された。作成者は収容所の事務を担当したマルセル・ゴルトベルクで、シンドラー本人が書いたわけではない。",
+      "救援には妻エミーリエ、ユダヤ人の協力者、地域の人々も関わった。映画の題名に込められた象徴的な意味と、複数の人々が関与した歴史の過程を区別して考えたい。",
+      "史実との違いを知ることは、映画の価値を否定することではない。作品を入口に、実際の記録や生存者の証言へ進む。それも歴史映画の大切な観方だと思う。"
+    ],
+    "sources": [
+      {
+        "name": "米国ホロコースト記念博物館｜Oskar Schindler",
+        "url": "https://encyclopedia.ushmm.org/content/en/article/oskar-schindler",
+        "supports": "1944年の移転、移送名簿の複数性・作成者、妻や協力者の役割、1993年の映画と史実の違い（Did Oskar Schindler Create a List?等）"
+      },
+      {
+        "name": "同館｜Ludmilla Pageの証言",
+        "url": "https://encyclopedia.ushmm.org/content/en/oral-history/ludmilla-page-describes-german-industrialist-oskar-schindler",
+        "supports": "生存者の証言と移送・救援の個別事例（概要と証言）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Schindler's List",
+      "year": 1993,
+      "review_note": "映画ポスターの権利確認未了。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sat-jaws-broken-shark",
+    "weekday": 5,
+    "title": "壊れるサメが映画を変えた",
+    "topic_key": "jaws-mechanical-shark-editing",
+    "category": "映画の舞台裏",
+    "posts": [
+      "怖い映画を撮るはずが、肝心の怪物が思うように動かない。\n\n『#ジョーズ』（1975年）の撮影現場で起きた機械仕掛けのサメの不調は、映画表現を考える格好の題材だ。\n#まこの映画小話",
+      "米国映画芸術科学アカデミーの資料によると、ブルースと呼ばれた機械仕掛けのサメたちの不調が、撮影上の大きな難題になった。",
+      "スピルバーグとスタッフは、工夫したカメラアングルや編集によって問題に対応した。怪物を見せることだけでなく、何を見せずに観客に想像させるかも、映画の技術だ。",
+      "見えないものが怖いという効果を、機械の故障だけで説明する必要はない。音楽や演出も含めて成立する映画だからだ。制作上の制約が表現の工夫を促した事例として楽しみたい。",
+      "撮影現場の失敗を知ると、完成した映画の見え方まで変わる。次に『ジョーズ』を観るときは、サメの姿が映らない場面にも注目してみよう。"
+    ],
+    "sources": [
+      {
+        "name": "映画芸術科学アカデミー｜Jaws",
+        "url": "https://www.oscars.org/collection-highlights/jaws",
+        "supports": "1975年、スピルバーグ監督、機械式のサメの不調、編集・撮影アングルによる対処（冒頭解説）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Jaws",
+      "year": 1975,
+      "source_url": "https://www.oscars.org/collection-highlights/jaws",
+      "review_note": "公式アーカイブにポスター掲載。SNS再利用条件は確認できていない。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
   }
 ]
