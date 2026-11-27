@@ -358,7 +358,13 @@
       "asset_title": "1920年2月26日の無署名公開広告",
       "source_url": "https://commons.wikimedia.org/wiki/File:1920-02_anonyme_K%C3%BCnstlerInnen_Plakat_Du_musst_Caligari_werden,_im_Marmorhaus_am_Donnerstag,_den_26._Februar.jpg",
       "review_note": "画像取得済み。1920年公開と原版の来歴、米国タグ不足の補完を別資料で確認するまで保留。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Caligari_1920_still_01.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Caligari_1920_still_01.jpg",
+        "review_note": "画像表示成功。1920年の歪んだセットの実際の画面。個別ページに原産国・米国PD表記がある一方、原典は他言語Wikipediaからの移管。映画の共同著作者・旧法及びセットの権利を再確認する。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -734,7 +740,13 @@
       "asset_title": "1935–1942年の自転車の図",
       "source_url": "https://commons.wikimedia.org/wiki/File:John_Cutting%2C_Bicycle%2C_1935-1942%2C_NGA_20852.jpg",
       "review_note": "NGA提供CC0確認。原画像7.67MBで上限超過。米国資料であることを明記できる代替縮小画像を検討。",
-      "checked_on": "2026-11-27"
+      "checked_on": "2026-11-27",
+      "latest_candidate": {
+        "source_url": "https://www.metmuseum.org/art/collection/search/362652",
+        "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/362652/1659507/main-image",
+        "review_note": "1894年の自転車旅行広告、The MetのPD/OA表示と実画像確認。映画の戦後ローマの労働生活との関係が弱いため、1940年代イタリアの自転車・街路画像を優先して保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -984,7 +996,20 @@
       "review_note": "1949年版。転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "1890年頃のコンサート・ツィター",
+      "relation": "映画の音楽に用いられる楽器の種類を示す参考資料。アントン・カラス本人の楽器ではなく、米国製の例。",
+      "source_url": "https://www.metmuseum.org/art/collection/search/503552",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/503552/2464186/main-image",
+      "license": "CC0",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met 2002.227、Hartmann Bros. & Reinhard、New York、ca.1890。個別ページにPublic Domain、公式OA規約で商用再利用可。画像リンクを開いて楽器全体を確認。CIで容量を再監査。",
+      "credit": "コンサート・ツィターの参考写真／The Met",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "sat-safety-last-glasses",
@@ -2801,12 +2826,24 @@
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "archival_photo",
-      "asset_title": "1889年のJoseph Merrickの医学誌掲載写真",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Josephmerrick1889.jpg",
-      "review_note": "1890年BMJ掲載、撮影者不詳、英国・米国PD表記と原画像575KB確認。ただし身体を露出した医学写真で、人物の尊厳と記事の主題を考慮し、服を着た肖像や本人の文書を優先する。",
-      "checked_on": "2026-11-27"
+      "asset_title": "1889年頃のジョゼフ・メリックの名刺判肖像",
+      "relation": "本人の服を着た肖像資料。映画俳優や医学的な露出写真ではない。人物の尊厳を重視する。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Joseph_Merrick_carte_de_visite_photo,_c._1889.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/be/Joseph_Merrick_carte_de_visite_photo%2C_c._1889.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "個別ページによれば1889年頃に名刺判写真として配布。Royal London Hospital Archives RLHLH/P/3/24/2所蔵、同館担当者に撮影者不詳を照会済みと記録。英国匿名写真のPDおよび米国URAA非復活表示。日本の旧写真著作権・無名著作物期間および英国戦時加算を考慮しても満了と判断。181KBの原画像を開いて服を着た肖像であることを確認。第三者サイト経由のため所蔵機関による再確認を推奨。",
+      "rights_basis": "1889年頃の肖像／Royal London Hospital Archives RLHLH/P/3/24/2",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "asset_kind": "archival_photo",
+        "asset_title": "1889年のJoseph Merrickの医学誌掲載写真",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Josephmerrick1889.jpg",
+        "review_note": "1890年BMJ掲載、撮影者不詳、英国・米国PD表記と原画像575KB確認。ただし身体を露出した医学写真で、人物の尊厳と記事の主題を考慮し、服を着た肖像や本人の文書を優先する。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -2963,12 +3000,25 @@
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
     },
     "related_image": {
-      "status": "pending",
-      "asset_kind": "film_still",
-      "asset_title": "列車の到着の一コマ",
-      "source_url": "https://commons.wikimedia.org/wiki/File:L'Arriv%C3%A9e_d'un_train_en_gare_de_La_Ciotat.jpg",
-      "review_note": "MoMA出典、原画像631KB表示成功、米国PDのみ。共同作者Auguste 1954年没、フランス・日本の戦時加算等の確認が必要。",
-      "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1860年頃のパリ・リヨン鉄道の立体写真（透過光で列車が現れる）",
+      "relation": "映画以前の視覚メディアで列車を題材にした光学的演出を示す。リュミエール作品の画面や当時の観客ではない。",
+      "source_url": "https://www.metmuseum.org/art/collection/search/281971",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/281971/1587289/main-image",
+      "license": "CC0",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met所蔵1997.82、個別ページにPublic Domain、1860年頃、フランスの作者不詳。公式OA規約は商用利用も認める。透過光の画像リンクを実際に開いて列車と左右の立体写真を確認（2026-11-27）。配信環境での容量と取得はCIで別途監査。",
+      "credit": "1860年頃の立体写真（映画の場面ではない）／The Met",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "asset_kind": "film_still",
+        "asset_title": "列車の到着の一コマ",
+        "source_url": "https://commons.wikimedia.org/wiki/File:L'Arriv%C3%A9e_d'un_train_en_gare_de_La_Ciotat.jpg",
+        "review_note": "MoMA出典、原画像631KB表示成功、米国PDのみ。共同作者Auguste 1954年没、フランス・日本の戦時加算等の確認が必要。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -3008,10 +3058,9 @@
       "review_note": "NPS資料由来、Dickson 1935年没、PD表示確認。原画像取得を2回試行したが失敗。",
       "checked_on": "2026-11-27",
       "latest_candidate": {
-        "asset_kind": "film_still",
-        "asset_title": "1893年『鍛冶屋の場面』の一コマ",
         "source_url": "https://commons.wikimedia.org/wiki/File:BlacksmithScene.jpg",
-        "review_note": "NPS出典、作者Dickson 1935年没、原産国・米国PD記載を再確認したが、直接画像取得失敗。",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/BlacksmithScene.jpg",
+        "review_note": "個別ページとNPS出典・1893年の米国PDを再確認したが画像ファイル取得エラー。LOC公式記事にも実際の登録紙焼き画像あり、画像の直接URL・利用条件を別途確認する。",
         "checked_on": "2026-11-27"
       }
     }
@@ -4873,12 +4922,24 @@
       "review_note": "ポスターのSNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Arthur_Rackham_Peter_Pan_in_Kensington_Gardens_illustration.jpg",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Arthur_Rackham_Peter_Pan_in_Kensington_Gardens_illustration.jpg",
-        "review_note": "1907年刊、Arthur Rackham（1939年没）、個別ページ119–149行で米国及び原産国PD。601KBと記載。直接画像取得を2回試したが失敗。保留。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "Arthur Rackhamによる1906年の『Peter Pan in Kensington Gardens』挿絵",
+      "relation": "1906年の別作品の挿絵。戯曲Peter Panやディズニー映画の画面ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Houghton_Typ_905.12.7265_-_Arthur_Rackham,_Peter_Pan_in_Kensington_Gardens.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Houghton_Typ_905.12.7265_-_Arthur_Rackham%2C_Peter_Pan_in_Kensington_Gardens.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "ハーバード大学Houghton Libraryが提供した画像。1906年署名、1912年ポートフォリオ由来。作者1939年没、英国及び米国・日本の保護期間は戦時加算を考慮しても満了。個別ページに館が画像への権利を主張せず商用再利用を許容すると明記、原画像528KBを表示確認。英国1988年法第301条・附則6のロイヤルティは戯曲又はその翻案の全部・実質的部分に関する規定。本画像は別作品の独立した挿絵として区別。参考 https://www.legislation.gov.uk/ukpga/1988/48/section/301/2021-11-18/data.html",
+      "rights_basis": "Arthur Rackham／Typ 905.12.7265, Houghton Library, Harvard University",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Arthur_Rackham_Peter_Pan_in_Kensington_Gardens_illustration.jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Arthur_Rackham_Peter_Pan_in_Kensington_Gardens_illustration.jpg",
+          "review_note": "1907年刊、Arthur Rackham（1939年没）、個別ページ119–149行で米国及び原産国PD。601KBと記載。直接画像取得を2回試したが失敗。保留。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -4913,10 +4974,9 @@
     "related_image": {
       "status": "pending",
       "latest_candidate": {
-        "asset_kind": "archival_photo",
-        "asset_title": "1895年頃のフェリックス・ザルテンの肖像（犬とともに）",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Felix-Salten-1895.jpg",
-        "review_note": "オーストリア国立図書館画像アーカイブ由来、無署名、原産国PD表示、129KB直接表示成功。米国公表年と個別権利条件未確定。",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Bambi_book_cover.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Bambi_book_cover.jpg",
+        "review_note": "1923年Ullstein刊表紙、Hans Bertle 1943年没、原産国・米国PD表記、95KBの画像を実際に確認。Morgan Libraryの書誌と刊年一致。ただし撮影画像の原典が第三者サイトで表紙の立体写真でもあるため所蔵機関の同版画像を優先して保留。",
         "checked_on": "2026-11-27"
       }
     }
