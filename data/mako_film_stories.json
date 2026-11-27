@@ -2874,5 +2874,490 @@
       "year": 1937,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
     }
+  },
+  {
+    "id": "dracula-burial-isotopes",
+    "weekday": 0,
+    "title": "吸血鬼はよそ者だったのか",
+    "topic_key": "dracula-polish-burial-isotopes",
+    "category": "映画怪異録",
+    "posts": [
+      "吸血鬼と恐れられた人々は、村の外から来た人だったのか？\n\n『#魔人ドラキュラ』から現実の吸血鬼伝承へ。ポーランドの墓地を調べた研究者は、歯にその答えを求めた。\n#まこの映画小話",
+      "近世のドラスコの墓地では、死者の復活を防ぐ目的と解釈される特殊な埋葬が発見された。よそから来た人が共同体の不安を背負わされたのではないか、という仮説があった。",
+      "2014年の研究では、歯のエナメル質のストロンチウム同位体比を比較した。調査できた特殊埋葬の5人はいずれも地域の値の範囲に入った。少なくとも非地元出身者だったという仮説は支持されなかった。",
+      "研究者は感染症の流行など別の可能性にも言及するが、なぜその人々が選ばれたのかは確定していない。吸血鬼の実在ではなく、人間が誰を恐れるのかを考える考古学だ。"
+    ],
+    "sources": [
+      {
+        "name": "Gregoricka et al. (2014)｜Apotropaic Practices and the Undead",
+        "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0113564",
+        "supports": "Results / Discussion：5人の同位体比、非地元出身仮説の棄却、疫病仮説の留保。",
+        "access_scope": "査読論文本文"
+      },
+      {
+        "name": "AFI Catalog｜Dracula",
+        "url": "https://catalog.afi.com/Film/7690-DRACULA",
+        "supports": "423–437行：ストーカー原作、1931年公開。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Dracula",
+      "year": 1931,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "candyman-liverpool-chicago",
+    "weekday": 0,
+    "title": "怪談が大西洋を渡るとき",
+    "topic_key": "candyman-urban-legend-transplant",
+    "category": "映画怪異録",
+    "posts": [
+      "英国の怪談を米国に移したら、怪物の意味まで変わった。\n\n1992年の『#キャンディマン』は、クライヴ・バーカーの短編をシカゴへ移植した映画だ。\n#まこの映画小話",
+      "原作の舞台はリバプール。映画では実在したシカゴの公営住宅地区カブリーニ・グリーンに舞台を移した。都市伝説を研究する大学院生が、そこで語られる怪談に接近する。",
+      "BFIの上映資料は、場所の変更によって米国の人種や階級の分断が物語に組み込まれた点に注目する。怪物の背景も、映画のために新たな歴史を与えられている。",
+      "鏡の前で名前を呼ぶ遊びは既存の怪談を連想させ、映画の後にはそれ自体が子どもたちの間で流通したとBFIは紹介する。怪談が映画になり、映画がまた怪談を作る。そんな循環が面白い。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Where to begin with Bernard Rose",
+        "url": "https://www.bfi.org.uk/features/where-begin-bernard-rose",
+        "supports": "41–44行：原作、実在の住宅地区、鏡の怪談の流通。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI Southbank｜Candyman programme notes",
+        "url": "https://bfidatadigipres.github.io/in%20dreams%20are%20monsters/2022/10/29/candyman/",
+        "supports": "11–18行：リバプールからシカゴへの移植、社会的背景と神話化についての批評。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Candyman",
+      "year": 1992,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "argo-unmade-film",
+    "weekday": 1,
+    "title": "存在しない映画の製作資料",
+    "topic_key": "argo-fictional-production-archive",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "公開されなかった映画の製作資料がCIAの博物館にある。\n\n2012年の『#アルゴ』が描くのは、映画を作るふりをした現実の事件だ。\n#まこの映画小話",
+      "1979年のイラン米国大使館占拠事件で逃れた6人の外交官を救出するため、米国とカナダが協力した。CIAの展示によれば、1980年の救出にあたり架空のSF映画『Argo』が用意された。",
+      "CIAの博物館には架空の映画の企画書が残されている。表題だけでなく、物語や視覚資料も含まれている。作られなかった映画の記録が、実際の外交史の資料になった。",
+      "映画は現実を描くものだと思いがちだが、この事件では映画の企画そのものが現実の歴史に関わった。後からその出来事が本物の映画になったという二重構造も興味深い。"
+    ],
+    "sources": [
+      {
+        "name": "CIA Museum｜Argo Producer Notes",
+        "url": "https://www.cia.gov/legacy/museum/artifact/argo-producer-notes/",
+        "supports": "33–42行：実物資料、架空の企画、救出の背景。",
+        "access_scope": "公式所蔵品解説"
+      },
+      {
+        "name": "CIA Museum｜Rescue of the Canadian Six",
+        "url": "https://www.cia.gov/legacy/museum/exhibit/rescue-of-the-canadian-six-n-a-classic-case-of-deception/",
+        "supports": "37–39行：米加協力、架空映画。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Academy Awards Database｜Argo",
+        "url": "https://awardsdatabase.oscars.org/search/getresults?query=%7B%22FilmTitle%22%3A%22argo%22%2C%22Sort%22%3A%222-Film+Title-Alpha%22%2C%22AwardShowNumberFrom%22%3A0%2C%22Search%22%3A30%7D",
+        "supports": "60–65行：2012年作品。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Argo",
+      "year": 2012,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "informant-price-fixing-evidence",
+    "weekday": 1,
+    "title": "飼料添加物をめぐる国際的な陰謀",
+    "topic_key": "informant-lysine-cartel-evidence",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "世界的な企業の陰謀を描いたコメディ。争点は石油でも兵器でもなく、家畜の飼料に使われるアミノ酸だった。\n\n『#インフォーマント！』の背景にあるリシン価格カルテル事件。\n#まこの映画小話",
+      "米国司法省の記録では、1992年から1995年にかけて5社と6人がリシンの価格や販売量をめぐって共謀した。事件初期には価格が約70％上昇したという。",
+      "パデュー大学の解説によれば、企業幹部マーク・ウィテカーがFBIの情報提供者となった。司法省は録音・録画などの証拠が裁判で用いられたと説明する。",
+      "2009年の映画はこの告発者を主人公にする。映画の人物描写をそのまま史実とは扱わず、企業間の競争が失われたことを裏付ける記録に目を向けたい。実在する陰謀は、証拠によって検証できる。"
+    ],
+    "sources": [
+      {
+        "name": "米国司法省反トラスト局｜Chapter 4",
+        "url": "https://www.justice.gov/atr/chapter-4",
+        "supports": "81–87行：関係者数、期間、価格上昇、録音録画証拠。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Purdue University｜Lysine: A Case Study in International Price Fixing",
+        "url": "https://ag.purdue.edu/commercialag/home/paer-article/lysine-a-case-study-in-international-price-fixing/",
+        "supports": "43行：ウィテカーとFBI。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Apple TV｜The Informant!",
+        "url": "https://tv.apple.com/jp/movie/the-informant/umc.cmc.9qpnxyzhez35qrdljvp797cn?l=en",
+        "supports": "11–19行：作品設定、2009年。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Informant!",
+      "year": 2009,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "breathless-jumpcut",
+    "weekday": 2,
+    "title": "つながらない編集が映画を変えた",
+    "topic_key": "breathless-jumpcut-continuity",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "映画の編集では、カットのつなぎ目を目立たせないことが一つの定石だ。\n\n1960年の『#勝手にしやがれ』は、むしろそのつなぎ目を観客に見せた。\n#まこの映画小話",
+      "ゴダールの長編デビュー作には、手持ちカメラによる長い撮影と、時間を飛ばすジャンプカットが同居する。移動中の人物が不連続に見えることもある。",
+      "英国映画協会の上映資料は、ショットの前後を削って残りをつないだという制作逸話を紹介する。ただしこれだけが編集の動機だったと確定する必要はない。",
+      "自然な連続性を保つのではなく、時間の飛躍そのものをリズムとして見せる。何気ない会話まで違った感覚で見える。ルールを破ることが、新しい表現のルールになる瞬間だ。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Where to begin with Jean-Luc Godard",
+        "url": "https://www.bfi.org.uk/features/where-begin-jean-luc-godard-early-stuff",
+        "supports": "18・39行：1960年、手持ち撮影とジャンプカット。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI Southbank｜Breathless programme notes",
+        "url": "https://bfidatadigipres.github.io/sight%20and%20sound%20greatest%20films%20of%20all%20time%202022%3Cbr%3E38=/2023/02/01/breathless/",
+        "supports": "27行：編集に関する逸話・批評。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "À bout de souffle",
+      "year": 1960,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "m-director-whistle",
+    "weekday": 2,
+    "title": "俳優の代わりに監督が口笛を吹いた",
+    "topic_key": "m-1931-lang-whistle",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "画面の人物が口笛を吹く。しかし、実際に吹いたのは俳優ではなく監督だった。\n\n1931年のフリッツ・ラング作品『#M』の音の仕掛け。\n#まこの映画小話",
+      "映画の人物を演じたピーター・ローレは口笛を吹けなかったため、監督ラングがグリーグの曲を吹いたとイェール大学の作品解説は紹介している。",
+      "同じ旋律が繰り返されることで、姿を見せずに人物の存在を感じさせる。音のモチーフは映像を補うだけでなく、画面の外にも物語の空間を作る。",
+      "トーキーの黎明期には、声や音を付けるだけでも新しい挑戦だった。その段階で既に、音が何を見せないかを演出する映画があった。耳で映画を観る面白さが詰まっている。"
+    ],
+    "sources": [
+      {
+        "name": "Yale University Library｜Film Notes: M",
+        "url": "https://web.library.yale.edu/film/notes/fn00049",
+        "supports": "29・34行：1931年、ラングの口笛、グリーグの反復モチーフ。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI｜10 great early sound films",
+        "url": "https://www.bfi.org.uk/lists/10-great-early-sound-films",
+        "supports": "Mの項：口笛による人物の存在の提示。",
+        "access_scope": "公開記事検索結果の補助照合（本文確認はYale）"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "M",
+      "year": 1931,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "recreational-fear-optimum",
+    "weekday": 3,
+    "title": "怖すぎると楽しくなくなる？",
+    "topic_key": "horror-fear-inverted-u-2020",
+    "category": "映画心理学講義",
+    "posts": [
+      "怖い映画をわざわざ観るのはなぜだろう。恐怖が強いほど楽しいのなら、一番怖い映画が一番面白いはずだ。\n\n心理学者がお化け屋敷でこの疑問を調べた。\n#まこの映画小話 #ホラー映画",
+      "2020年の研究では、デンマークのお化け屋敷を訪れた12〜57歳の110人に心拍計を装着し、行動と本人の感想を調べた。",
+      "自己報告された恐怖と楽しさには逆U字型の関係が見られた。弱すぎても強すぎても楽しさが下がり、中程度の恐怖で楽しさが高くなる傾向だ。",
+      "ただしこれは特定のお化け屋敷での研究であり、映画でも同じ結果になるとは限らない。怖さを最大にすることと、恐怖を楽しませることは別の課題だと考えるきっかけになる。"
+    ],
+    "sources": [
+      {
+        "name": "Andersen et al. (2020)｜Playing With Fear",
+        "url": "https://www.psychologicalscience.org/journals/psychological-science/0956797620972116/",
+        "supports": "296–304行：対象者、測定、逆U字型の結果。",
+        "access_scope": "査読論文の公開要旨"
+      },
+      {
+        "name": "Aarhus University｜New Publication: Playing with Fear",
+        "url": "https://cc.au.dk/en/recreational-fear-lab/news-and-events/show/artikel/new-publication-playing-with-fear",
+        "supports": "57–60行：研究場所、方法と結果。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "doctor-empathy-training",
+    "weekday": 3,
+    "title": "映画を観た後の共感は一か月残る？",
+    "topic_key": "doctor-film-empathy-transient-2019",
+    "category": "映画心理学講義",
+    "posts": [
+      "映画を観ると他人に優しくなれる？ その効果が一か月後まで続くかを調べた研究がある。\n\n医師と患者の関係を描いた映画『#ドクター』が実験に使われた。\n#まこの映画小話",
+      "2019年の研究では医学生133人を、映画鑑賞、コミュニケーション研修、両方、対照の4群に分け、共感尺度の得点を比較した。",
+      "介入直後は三つの介入群で改善が見られた。しかし映画だけの群では一か月後、事前得点との差が有意ではなかった。研修のみと両方の群では改善が維持された。",
+      "これは医学生の自己報告尺度の結果で、他者に親切にする行動を直接測ったわけではない。感動することを学びの終点にせず、対話や実践につなぐ意味を考えたくなる。"
+    ],
+    "sources": [
+      {
+        "name": "Shariat et al. (2019)｜Does watching a movie improve empathy?",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6892313/",
+        "supports": "Methods / Results：133人、4群、JSE、直後と一か月後の比較。",
+        "access_scope": "査読論文本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Doctor",
+      "year": 1991,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "pinocchio-original-ending",
+    "weekday": 4,
+    "title": "ピノキオは一度死んでいた",
+    "topic_key": "pinocchio-serial-ending-editor",
+    "category": "銀幕人文学",
+    "posts": [
+      "ピノキオが人間の男の子になる結末は、最初から予定されていたわけではない。\n\n1881年の連載は、現在の第15章で主人公が命を落とすところで終わっていた。\n#まこの映画小話 #ピノキオ",
+      "コッローディの物語はイタリアの子ども向け新聞に掲載された。シカゴ大学の公開教材によれば、編集者が人気のある物語の続編を求め、1882年から再開された。",
+      "1940年のディズニー映画では原作で小さな役だったコオロギが重要な役になった。原作でピノキオ自身に潰される存在を、成長を助ける良心の象徴へ変えたわけだ。",
+      "よく知られた児童文学も、作者一人の最初の構想だけで成立したとは限らない。編集者や読者、後の映画制作者も、物語がどんな形で残るかに関わってきた。"
+    ],
+    "sources": [
+      {
+        "name": "University of Chicago Library｜Pinocchio",
+        "url": "https://ecuip.lib.uchicago.edu/diglib/fathom/72810000/indexnew.html",
+        "supports": "70–80行：初回連載、第15章の結末、編集者の要請と再開。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Disney D23｜Pinocchio (film)",
+        "url": "https://d23.com/a-to-z/pinocchio-film/",
+        "supports": "91–94行：1940年映画、コオロギの原作との差。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Pinocchio",
+      "year": 1940,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "aladdin-hanna-diyab",
+    "weekday": 4,
+    "title": "アラジンを語った名もなき旅人",
+    "topic_key": "aladdin-diyab-galland-collaboration",
+    "category": "銀幕人文学",
+    "posts": [
+      "『#アラジン』の物語をフランスの翻訳者に語った人物の名前を、ご存じだろうか。\n\nハンナ・ディヤーブ。彼の名前は長く有名な物語の陰に隠れていた。\n#まこの映画小話",
+      "1709年、ディヤーブはアントワーヌ・ガランにアラジンなどの物語を語った。ガランの日記にはその記録があるが、刊行された物語集ではディヤーブの貢献は明記されなかった。",
+      "彼自身の旅行記がバチカン図書館に残っており、近年の翻訳刊行で研究が進んだ。研究者には欧州の昔話の特徴との関係を論じる人もいる。単一の作者や文化に還元できない歴史だ。",
+      "1992年のディズニー映画はこの物語の新しい形の一つ。翻訳と語り直しを経て世界的な作品になった話を、その伝播に関わった人々の名前から読み直したい。"
+    ],
+    "sources": [
+      {
+        "name": "Fundación de Cultura Islámica｜Hanna Diyab and the Thousand and One Nights",
+        "url": "https://funci.org/hanna-diyab-and-the-questions-surrounding-the-thousand-and-one-nights/?lang=en",
+        "supports": "35–46行：1709年、日記、未記名、旅行記、翻訳。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Bottigheimer｜East Meets West",
+        "url": "https://digitalcommons.wayne.edu/marvels/vol28/iss2/5/",
+        "supports": "20行：1709年の語りと欧州昔話との関係。",
+        "access_scope": "学術論文の公開要旨"
+      },
+      {
+        "name": "Disney D23｜Aladdin (film)",
+        "url": "https://d23.com/a-to-z/aladdin-film/",
+        "supports": "89–91行：1992年映画。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "episode_guid": "70c3bcbf-7f48-4490-b8ea-e8df93010868",
+    "poster": {
+      "status": "pending",
+      "film_title": "Aladdin",
+      "year": 1992,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "interstellar-blackhole-research",
+    "weekday": 5,
+    "title": "映画のブラックホールが研究論文になった",
+    "topic_key": "interstellar-dngr-scientific-research",
+    "category": "映画の舞台裏",
+    "posts": [
+      "ブラックホールを映画に登場させるために作ったプログラムが、科学研究にも使われた。\n\n『#インターステラー』の映像には、映画と物理学の共同研究がある。\n#まこの映画小話",
+      "物理学者キップ・ソーンと視覚効果チームは、回転するブラックホールの周囲を進む光の経路を計算する新しいレンダラーDNGRを開発した。",
+      "2015年の論文は、光の束を使う描画方法がIMAX映像のちらつきを抑える上で重要だったと説明する。完成後には光が曲がる現象の研究にも応用された。",
+      "一方、映画では観客が理解しやすいよう、色や明るさなどの表現を調整する判断もあった。映像は観測写真ではない。科学的な計算と映画的な選択が同居している点が面白い。"
+    ],
+    "sources": [
+      {
+        "name": "James et al. (2015)｜Gravitational lensing by spinning black holes",
+        "url": "https://authors.library.caltech.edu/records/njdcq-95891",
+        "supports": "23–29行：光束描画、科学的知見、映画の表現上の選択。",
+        "access_scope": "査読論文の公開要旨"
+      },
+      {
+        "name": "James et al.｜Building Interstellar's black hole",
+        "url": "https://authors.library.caltech.edu/records/awp8p-s4d82",
+        "supports": "23行：科学顧問とVFXの共同開発、科学研究への転用。",
+        "access_scope": "学会資料の公開要旨"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Interstellar",
+      "year": 2014,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "hobbit-stereo-scale",
+    "weekday": 5,
+    "title": "立体映画が古い遠近法を使えなくした",
+    "topic_key": "hobbit-stereo-forced-perspective",
+    "category": "映画の舞台裏",
+    "posts": [
+      "遠くの人を小さく見せる古典的な撮影トリックが、3D映画ではうまく使えなかった。\n\n『#ホビット 思いがけない冒険』の制作陣が直面した問題だ。\n#まこの映画小話",
+      "俳優の距離を変える遠近法は、一つの視点から見ると身長差のように見える。しかし左右二つの視点を記録する立体撮影では、奥行きの違いが問題になる。",
+      "VFX担当者への取材によると、制作陣は二つのセットを用意した。ホビットたちは通常より30％大きなセットで演じ、ガンダルフ役らは別のセットで演じた。カメラの動きを同期させ、その場で映像を合成して確認した。",
+      "新しい技術は古い技術を単に便利にするだけではない。以前の方法が使えなくなり、別の発明が必要になる。映画の技術史には、そんな逆説がある。"
+    ],
+    "sources": [
+      {
+        "name": "Computer Graphics World｜Shaping Middle-earth",
+        "url": "https://www.cgw.com/Publications/CGW/2013/Volume-36-Issue-2-Jan-Feb-2013-/Shaping-Middle-earth.aspx",
+        "supports": "82–88行：立体撮影での遠近法の問題、二つのセット、30％、同期カメラ。",
+        "access_scope": "VFX担当者の取材記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Hobbit: An Unexpected Journey",
+      "year": 2012,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "night-living-dead-copyright",
+    "weekday": 6,
+    "title": "タイトル変更で著作権を失った映画",
+    "topic_key": "night-living-dead-us-copyright-notice",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "映画のタイトルを変えたとき、ある表示が抜け落ちた。結果、米国で著作権を失った映画がある。\n\n1968年の『#ナイトオブザリビングデッド』だ。\n#まこの映画小話",
+      "米国著作権局の解説によれば、当時適用された1909年法では著作権表示が保護の条件だった。公開直前に作品名が変更され、新しいタイトル画面が作られた。",
+      "ところが配給側が著作権表示を入れ忘れたため、米国では公開時からパブリックドメインになったという。現代の著作権法でも同じことが起きるという意味ではない。",
+      "後のゾンビ映画に大きな影響を与えた作品の歴史に、こんな事務的な失敗がある。なお、米国での権利状態だけで日本での利用や別版の権利まで判断することはできない。"
+    ],
+    "sources": [
+      {
+        "name": "米国著作権局｜Copyright Horror Stories",
+        "url": "https://blogs.loc.gov/copyright/2020/10/copyright-horror-stories/",
+        "supports": "197–200行：1968年、題名変更、表示漏れ、1909年法と米国PD。",
+        "access_scope": "米国著作権局公式解説"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Night of the Living Dead",
+      "year": 1968,
+      "review_note": "SNS転載許諾未確認。"
+    }
+  },
+  {
+    "id": "et-atari-excavation",
+    "weekday": 6,
+    "title": "映画のゲームが考古学の遺物になった",
+    "topic_key": "et-atari-landfill-archaeology",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "売れ残った『#ET』のゲームが砂漠に埋められたという都市伝説。2014年、実際に発掘された。\n\n映画から派生したゲームが考古学の研究対象になった話。\n#まこの映画小話",
+      "1983年、アタリの製品がニューメキシコ州アラモゴードの埋立地へ運ばれた。後に大量のE.T.のゲームが埋められたという噂が広まった。",
+      "2014年4月、ドキュメンタリー『Atari: Game Over』のため、研究者と市の作業員が発掘を実施した。現地でE.T.のカートリッジが見つかったことはNPRも報じている。",
+      "ただし発掘されたことと、噂の数量やゲーム一本が業界全体を崩壊させたという説明が正しいことは別だ。数十年前の消費文化も、現物を掘り起こして検証する歴史になりうる。"
+    ],
+    "sources": [
+      {
+        "name": "Ruggill et al.｜Dig? Dug! Field Notes",
+        "url": "https://digitalcommons.odu.edu/reconstruction/vol15/iss3/10/",
+        "supports": "26–29行：1983年の廃棄、2014年発掘、映画、研究者参加。",
+        "access_scope": "研究者の報告冒頭（公開要旨欄）"
+      },
+      {
+        "name": "NPR / KPBS｜E.T.'s Home Is Found",
+        "url": "https://www.kpbs.org/news/2014/04/26/ets-home-is-found-trove-of-atari-games-unearthed",
+        "supports": "403–415行：発掘とE.T.カートリッジ発見。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "E.T. the Extra-Terrestrial",
+      "year": 1982,
+      "review_note": "SNS転載許諾未確認。"
+    }
   }
 ]
