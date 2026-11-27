@@ -422,5 +422,245 @@
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
+  },
+  {
+    "id": "mon-blair-witch-fiction",
+    "weekday": 0,
+    "title": "怪談を信じさせた宣伝",
+    "topic_key": "blair-witch-fiction-marketing",
+    "category": "映画怪異録",
+    "posts": [
+      "映画の中だけでなく、映画館に入る前から始まっていた怪談。\n\n『#ブレアウィッチプロジェクト』（1999年）は、虚構を実際の記録に見せる宣伝でも恐怖を生んだ。\n#まこの映画小話 #ホラー映画",
+      "物語は、魔女の伝説を調べる学生3人が残した映像という設定。いわゆるファウンド・フッテージ形式の代表的な作品だ。発見された映像という体裁そのものが、フィクションの一部になっている。",
+      "英国映画協会の解説によれば、宣伝には架空のニュース報道や失踪者のポスターが使われ、一部の観客は出来事を本当だと信じた。実在の失踪事件を撮影した映画ではない。",
+      "映像が粗いから本物らしい。情報が少ないから想像が膨らむ。そんな感覚を巧みに利用するのが本作の面白さだと思う。\nただし、実話らしさと事実であることは別物だ。"
+    ],
+    "sources": [
+      {
+        "name": "BFI Player｜The Blair Witch Project",
+        "url": "https://player.bfi.org.uk/rentals/film/watch-the-blair-witch-project-1999-online",
+        "supports": "1999年、学生3人の架空の記録、ファウンド・フッテージ、宣伝で一部の観客が実話と信じたこと"
+      },
+      {
+        "name": "BFI｜10 great films about camping",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-about-camping",
+        "supports": "架空のニュースと失踪者ポスターによる宣伝（The Blair Witch Project節）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "The Blair Witch Project",
+      "year": 1999,
+      "review_note": "オリジナル劇場用ポスターと架空の失踪者広告を区別。転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "tue-watergate-evidence",
+    "weekday": 1,
+    "title": "陰謀を暴くには何が必要か",
+    "topic_key": "all-presidents-men-watergate-evidence",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "陰謀が実在した事件と、根拠のない陰謀論はどう区別する？\n\n『#大統領の陰謀』（1976年）は、疑惑を証拠で確かめるという地道な仕事を描いた映画だ。\n#まこの映画小話",
+      "作品の題材は、米国のウォーターゲート事件。新聞記者ボブ・ウッドワードとカール・バーンスタインが取材を重ね、事件の隠蔽を追う。二人による1974年の著書が原作となっている。",
+      "米国国立公文書館には、ニクソン政権の録音資料が残されている。1972年6月23日の録音は、事件の捜査を妨げようとした大統領の関与を示す重要な証拠となった。ニクソンは1974年に辞任した。",
+      "疑惑を持つことだけなら誰にでもできる。しかし、疑惑を事実として述べるには検証できる記録が必要だ。何がわかり、何がまだわからないのか。その境界を描く映画としても観たい。"
+    ],
+    "sources": [
+      {
+        "name": "米国議会図書館｜All the President’s Men",
+        "url": "https://blogs.loc.gov/now-see-hear/2021/08/from-the-film-registry-all-the-presidents-men-1976/",
+        "supports": "作品年、原作年、新聞記者2人と隠蔽追及の筋書き（Introduction）"
+      },
+      {
+        "name": "米国国立公文書館｜Listening to Nixon",
+        "url": "https://www.archives.gov/publications/prologue/2007/fall/tapes.html",
+        "supports": "1972年6月23日録音による捜査妨害の証拠、1974年辞任（本文と注の録音741-2）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "All the President's Men",
+      "year": 1976,
+      "review_note": "転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "wed-bicycle-thieves-street",
+    "weekday": 2,
+    "title": "自転車一台で社会を描く",
+    "topic_key": "bicycle-thieves-neorealism-location",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "たった一台の自転車を失うだけで、家族の生活が崩れかねない。\n\nヴィットリオ・デ・シーカの『#自転車泥棒』（1948年）。派手な事件がなくても社会を描けることを教えてくれる。\n#まこの映画小話",
+      "戦後ローマで、ようやく仕事を得た父親アントニオ。しかし仕事に必要な自転車を盗まれ、息子ブルーノと街中を探し回る。イタリアのネオレアリズモを代表する作品として知られる。",
+      "英国映画協会は撮影地の現在と当時の映像を照合している。盗難場面の撮影はローマのフランチェスコ・クリスピ通り周辺。実際の街路や市場が、生活苦という物語に具体的な厚みを与えている。",
+      "自転車は単なる小道具ではなく、仕事を得る手段でもある。物を失う痛みが人によって違うのはなぜか。主人公の行動を道徳だけで裁かず、その背景にある社会も考えたくなる一本だ。"
+    ],
+    "sources": [
+      {
+        "name": "BFI Player｜Bicycle Thieves",
+        "url": "https://player.bfi.org.uk/subscription/film/watch-bicycle-thieves-1948-online",
+        "supports": "1948年、戦後ローマ、父と息子、自転車が仕事に必要、ネオレアリズモ"
+      },
+      {
+        "name": "BFI｜In search of the locations from Bicycle Thieves",
+        "url": "https://www.bfi.org.uk/features/locations-bicycle-thieves-rome",
+        "supports": "監督、ローマ実景、盗難場面のVia Francesco Crispi周辺での撮影（The robbery節）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Ladri di biciclette",
+      "year": 1948,
+      "review_note": "1948年版の画像権利・作者確認が必要。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "thu-memento-anterograde",
+    "weekday": 3,
+    "title": "観客も記憶に迷う映画",
+    "topic_key": "memento-anterograde-amnesia-editing",
+    "category": "映画心理学講義",
+    "posts": [
+      "映画の主人公が過去を忘れたのではなく、新しい出来事を記憶しづらくなったとしたら？\n\n『#メメント』（2000年）を、前向性健忘という観点から観てみよう。\n#まこの映画小話 #心理学",
+      "前向性健忘は、発症後の新しい記憶を形成することが難しくなる状態。逆行性健忘は、それ以前の記憶が失われる状態を指す。両者は同時に生じる場合もある。",
+      "クリストファー・ノーラン監督の本作で主人公は、写真やメモ、タトゥーを手掛かりに行動する。時間順序を崩した編集によって、観客も直前に何があったのかわからない感覚を味わう。",
+      "ハーバード大学の心理学者ダニエル・シャクターらは、本作の前向性健忘の描写を評価する一方、現実の症状は映画の設定ほど単純とは限らないことを指摘している。",
+      "映画は医学書ではない。でも編集によって、通常とは異なる記憶の経験を想像させることができる。物語の内容だけでなく、語る順序にも意味があると気づかされる。"
+    ],
+    "sources": [
+      {
+        "name": "Harvard Gazette｜Hollywood, amnesia and memory",
+        "url": "https://news.harvard.edu/gazette/story/2022/02/hollywood-amnesia-and-what-it-reminds-us-about-memory/",
+        "supports": "2000年、監督、写真・メモ・タトゥー、前向性・逆行性健忘、シャクターによる評価と留保（専門家の討論）"
+      },
+      {
+        "name": "Association for Psychological Science｜Countering Neuromyths",
+        "url": "https://www.psychologicalscience.org/observer/countering-neuromyths-in-the-movies-2",
+        "supports": "前向性健忘の説明と逆方向の物語構成による観客の混乱の表現（Mementoの段落）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Memento",
+      "year": 2000,
+      "review_note": "転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "fri-silence-hidden-christians",
+    "weekday": 4,
+    "title": "見えない信仰が残したもの",
+    "topic_key": "silence-hidden-christians-nagasaki",
+    "category": "銀幕人文学",
+    "posts": [
+      "信仰を公に示すことが禁じられても、信仰は消えるとは限らない。\n\n『#沈黙サイレンス』（2016年）から、長崎の潜伏キリシタンの歴史へ。\n#まこの映画小話 #宗教史",
+      "マーティン・スコセッシ監督が遠藤周作の小説を映画化。日本へ渡ったイエズス会の宣教師たちの苦悩を描く。信仰を守るとはどういうことなのか、という問いが物語を貫く。",
+      "UNESCOの世界遺産「長崎と天草地方の潜伏キリシタン関連遺産」は、集落10件、城跡1件、聖堂1件の計12件で構成される。17世紀から19世紀までの禁教期に、信仰を伝えてきた人々の歴史を示す。",
+      "禁教が正式に解かれたのは1873年。孤立した集落や島々では、地域社会の中で独自の信仰の伝承が行われていた。映画の宣教師の視点だけでは見えにくい、信徒たち自身の歴史もある。",
+      "信仰を言葉にできないとき、何がその信仰を支えるのか。映画を入り口に、現実の遺産や地域の歴史を知ることで、この問いにはさらに奥行きが生まれる。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜10 great Catholic films",
+        "url": "https://www.bfi.org.uk/lists/10-great-catholic-films",
+        "supports": "2016年、監督、遠藤周作の原作、イエズス会宣教師の物語（Silence節）"
+      },
+      {
+        "name": "UNESCO｜Hidden Christian Sites in the Nagasaki Region",
+        "url": "https://whc.unesco.org/en/list/1495/",
+        "supports": "12の構成資産の内訳、禁教期の信仰継承、集落と島々、1873年の禁教解除（Outstanding Universal Value）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Silence",
+      "year": 2016,
+      "review_note": "篠田正浩版と区別。転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sat-alien-giger-art",
+    "weekday": 5,
+    "title": "美術作品から生まれた怪物",
+    "topic_key": "alien-giger-necronom-iv",
+    "category": "映画の舞台裏",
+    "posts": [
+      "あの怪物は、映画のためにゼロから考案されたわけではない。\n\n『#エイリアン』（1979年）の造形には、映画以前に描かれていた美術作品が関わっている。\n#まこの映画小話 #映画裏話",
+      "スイスの芸術家H・R・ギーガーによる1976年の作品『Necronom IV』が、エイリアンの姿を生み出す着想となった。生物と機械の境界が曖昧になるような造形が特徴だ。",
+      "撮影当時の『Sight and Sound』の記事によれば、監督リドリー・スコットは怪物の外見が恐怖を損ねないかを重視していた。ギーガーの作品に出会い、恐怖と美しさを併せ持つデザインを見いだした。",
+      "1980年のアカデミー賞ではギーガー、カルロ・ランバルディら5人が視覚効果賞を受賞した。怪物の造形は一人の芸術家だけではなく、映画制作チームの仕事でもある。",
+      "何が生物で何が機械なのか、判別しにくい不気味さ。次に観るときは怪物の動きだけでなく、骨格や表面、背景の形がどう響き合っているかにも注目したい。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Alien at 40",
+        "url": "https://www.bfi.org.uk/features/alien-40-ridley-scott-sigourney-weaver",
+        "supports": "1979年、1976年のNecronom IVが造形の着想、骨や機械の融合"
+      },
+      {
+        "name": "Sight and Sound｜Alien encounter",
+        "url": "https://www.bfi.org.uk/sight-and-sound/features/alien-encounter-set-ridley-scotts-sci-fi-horror",
+        "supports": "撮影当時のスコットの発言、怪物の造形の重要性とギーガー作品との出会い（本文）"
+      },
+      {
+        "name": "Academy｜52nd Academy Awards",
+        "url": "https://www.oscars.org/oscars/ceremonies/1980",
+        "supports": "1980年視覚効果賞、受賞者5名（Visual Effects節）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Alien",
+      "year": 1979,
+      "review_note": "1979年版。ポスターとギーガー作品の転載権は別々に確認する。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sun-wilhelm-scream",
+    "weekday": 6,
+    "title": "映画を渡り歩く叫び声",
+    "topic_key": "wilhelm-scream-sound-library",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "『#スターウォーズ』と『インディ・ジョーンズ』に、同じ叫び声が登場するのをご存じだろうか。\n\n音響スタッフたちが愛用した効果音、ウィルヘルムの叫び。\n#まこの映画小話 #映画豆知識",
+      "音響資料を保存してきた研究者クレイグ・スミスによると、この叫び声は1951年の映画『遠い太鼓』用に録音されたもの。その後、別の映画にも使われるストック効果音になった。",
+      "音響デザイナーのベン・バートは、1953年の西部劇『The Charge at Feather River』の登場人物ウィルヘルムにちなんで命名。1977年の『スター・ウォーズ』にも使用した。",
+      "バートは後年のインタビューで、友人の音響スタッフと効果音を映画に忍ばせることを内輪の遊びとして楽しんでいたと語っている。なお、最初の声の主はシェブ・ウーリーとする説があるが、確定資料はない。",
+      "映像の中の隠しネタだけでなく、音にも映画史が潜んでいる。聞き覚えのある効果音が流れたら、別の映画とのつながりを探してみるのも楽しい。"
+    ],
+    "sources": [
+      {
+        "name": "LAist｜The Original Wilhelm Scream Was Found",
+        "url": "https://laist.com/news/arts-and-entertainment/the-original-wilhelm-scream-was-found-and-its-a-call-for-better-sound-effect-preservation",
+        "supports": "保存研究者への取材、1951年の録音、1953年の映画にちなむ命名、Star Wars・Indiana Jonesでの使用、声の主の未確定性"
+      },
+      {
+        "name": "The Film Stage｜Ben Burtt interview",
+        "url": "https://thefilmstage.com/ben-burtt-on-how-modern-hollywood-has-lost-a-sensitivity-for-sound-lightsabers-and-the-wilhelm-scream/",
+        "supports": "本人の回想：リチャード・アンダーソンとの内輪の遊びとインディ・ジョーンズでの使用"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Star Wars: Episode IV – A New Hope",
+      "year": 1977,
+      "review_note": "1977年公開版の劇場用ポスター。転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
   }
 ]
