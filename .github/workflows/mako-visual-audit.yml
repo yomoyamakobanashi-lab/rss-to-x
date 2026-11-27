@@ -1,0 +1,53 @@
+name: Mako visual accessibility audit
+
+on:
+  push:
+    branches:
+      - feature/mako-film-stories
+    paths:
+      - 'data/mako_film_stories.json'
+      - 'scripts/mako_film_stories.py'
+      - 'scripts/audit_mako_visuals.py'
+      - '.github/workflows/mako-visual-audit.yml'
+      - 'state_mako_publish.json'
+  pull_request:
+    paths:
+      - 'data/mako_film_stories.json'
+      - 'scripts/mako_film_stories.py'
+      - 'scripts/audit_mako_visuals.py'
+      - '.github/workflows/mako-visual-audit.yml'
+      - 'state_mako_publish.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mako-visual-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - name: Validate editorial bank and regression tests
+        run: |
+          python -m scripts.mako_film_stories --require-full
+          python -m unittest discover -s tests -v
+      - name: Verify actual image bytes and weekday coverage
+        run: python -m scripts.audit_mako_visuals --min-per-day 2
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mako-visual-audit
+          path: mako-visual-audit.json
+          if-no-files-found: ignore
+          retention-days: 7
