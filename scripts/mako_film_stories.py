@@ -76,12 +76,26 @@ def _reachable_image(item, url):
                 return None
             if res.status_code != 200 or res.headers.get("Content-Type", "").split(";")[0].lower() not in {"image/jpeg", "image/png", "image/webp"}:
                 raise ValueError("HTTP status or media type not suitable")
-            size = int(res.headers.get("Content-Length", "0"))
-            if size > 5 * 1024 * 1024:
-                raise ValueError("Image exceeds conservative 5 MB limit")
-            head = next(res.iter_content(32), b"")
-            if not (head.startswith(b"\xff\xd8\xff") or head.startswith(b"\x89PNG\r\n\x1a\n") or (head.startswith(b"RIFF") and head[8:12] == b"WEBP")):
-                raise ValueError("Not a supported image signature")
+            max_bytes = 5 * 1024 * 1024
+            mime = res.headers.get("Content-Type", "").split(";")[0].lower()
+            declared = int(res.headers.get("Content-Length", "0"))
+            if declared < 0 or declared > max_bytes:
+                raise ValueError("Image exceeds conservative 5 MiB limit")
+            size = 0
+            head = bytearray()
+            for chunk in res.iter_content(65536):
+                size += len(chunk)
+                if size > max_bytes:
+                    raise ValueError("Downloaded image exceeds 5 MiB limit")
+                if len(head) < 12:
+                    head.extend(chunk[:12-len(head)])
+            valid = (
+                mime == "image/jpeg" and head.startswith(b"\xff\xd8\xff")
+                or mime == "image/png" and head.startswith(b"\x89PNG\r\n\x1a\n")
+                or mime == "image/webp" and head.startswith(b"RIFF") and head[8:12] == b"WEBP"
+            )
+            if not valid:
+                raise ValueError("Image signature and MIME type do not agree")
         return url
     except (requests.RequestException, ValueError, StopIteration) as exc:
         print(f"[WARN] image unavailable for {item['id']}; no image-less submission: {exc}")
