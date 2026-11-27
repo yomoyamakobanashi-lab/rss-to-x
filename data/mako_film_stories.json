@@ -2516,6 +2516,19 @@
       "film_title": "Star Wars: A New Hope",
       "year": 1977,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "室町後期の胴丸（1550年頃）",
+      "relation": "『隠し砦の三悪人』の戦国時代を理解するための同時代の武具。映画の小道具・撮影資料ではない。",
+      "source_url": "https://www.metmuseum.org/art/collection/search/22505",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/22505/1296405/main-image",
+      "license": "CC0",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/image-resources",
+      "rights_basis": "個別ページにPublic Domain表示。画像は1550年頃の胴丸本体（18世紀の兜は写っていない）。原作品は日米とも保護期間満了、博物館による写真はMet CC0方針で商用・非商用の再利用可。公式直配信の実画像表示確認。",
+      "credit": "The Metropolitan Museum of Art, Gift of Bashford Dean, 1914, 14.100.120a–g",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2641,6 +2654,19 @@
       "film_title": "The Philadelphia Experiment",
       "year": 1984,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "米海軍護衛駆逐艦USS Eldridge（1944年頃）",
+      "relation": "都市伝説の対象とされた実在艦の米海軍写真。瞬間移動の証拠ではなく映画の場面でもない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:USS_Eldridge_(DE-173)_underway,_circa_in_1944.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/USS_Eldridge_%28DE-173%29_underway%2C_circa_in_1944.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:USS_Eldridge_(DE-173)_underway,_circa_in_1944.jpg",
+      "rights_basis": "個別ページ133–143行、1944年頃の米海軍職務写真、NavSource由来、PD-US Navyと全関連権利について既知の制限なしを示すPDM。日本についても1944年の旧法写真の保護期間は戦時加算を考慮して満了。米海軍の公式解説 https://www.history.navy.mil/content/history/nhhc/research/library/online-reading-room/title-list-alphabetically/p/philadelphia-experiment.html で艦名を照合。原画像729×398、92KBを表示確認。",
+      "credit": "U.S. Navy／NavSource／Wikimedia Commons",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3537,6 +3563,19 @@
       "film_title": "七人の侍",
       "year": 1954,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "歌川広重《東海道五十三次之内 庄野 白雨》",
+      "relation": "雨の筋、斜面、身体の動きで悪天候を表現した江戸時代の浮世絵。映画の雨の演出との比較資料であり、黒澤への直接の影響を主張しない。",
+      "source_url": "https://www.metmuseum.org/art/collection/search/57043",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/57043/133571/main-image",
+      "license": "CC0",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/image-resources",
+      "rights_basis": "個別ページにPublic Domain表示、作者没年1858年、江戸時代の木版画。日米・原産国で保護期間満了。MetのCC0方針は商用・非商用の無制限利用を認める。公式直配信の実画像表示確認。",
+      "credit": "歌川広重（1797–1858）／The Metropolitan Museum of Art, JP2867",
+      "checked_on": "2026-11-27"
     }
   },
   {
