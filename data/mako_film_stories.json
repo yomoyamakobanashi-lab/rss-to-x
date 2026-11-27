@@ -1607,7 +1607,20 @@
       "review_note": "公式ページの画像は権利留保表示。転載しない。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "レオナルド・ダ・ヴィンチの肖像版画（1786年）",
+      "relation": "記事で名前が挙がるレオナルドの後世の肖像。秘密結社との関係を示す史料ではない。",
+      "source_url": "https://www.metmuseum.org/art/collection/search/411913",
+      "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/411913/774517/main-image",
+      "license": "CC0",
+      "rights_evidence_url": "https://www.metmuseum.org/policies/frequently-asked-questions-image-and-data-resources",
+      "rights_basis": "The Met 53.600.3177の個別ページ22–33,53–61行で1786年の版画とPublic Domain表示を確認。公式OA規約に商用・非商用利用可と明記。実画像リンクを表示し内容を照合。GitHub runnerでの取得は再監査対象。",
+      "credit": "レオナルド・ダ・ヴィンチ肖像版画（1786年）／The Met",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "wed-rope-moving-walls",
