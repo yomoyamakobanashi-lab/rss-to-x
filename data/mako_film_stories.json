@@ -1029,7 +1029,20 @@
       "review_note": "1977年公開版の劇場用ポスター。転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "RCA 44-Aリボンマイク（2008年撮影）",
+      "relation": "映画音響の歴史的録音機材の例。ウィルヘルムの叫びの録音で実際に使用された機種・個体という主張はしない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:RCA_44-A_Velocity_Microphone.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/RCA_44-A_Velocity_Microphone.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:RCA_44-A_Velocity_Microphone.jpg",
+      "rights_basis": "個別ページ125–136行、Flickr原典、2009年10月21日のライセンスレビューでCC BY-SA 2.0を確認（当初のCC BY表記は採用しない）。工業製品の写真、商用共有可。原画像205KBを実表示確認。",
+      "credit": "Roadside Guitars／CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0/ （無改変）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "mon-war-of-worlds-radio-myth",
@@ -2567,6 +2580,19 @@
       "film_title": "千と千尋の神隠し",
       "year": 2001,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "パリのサン・マルタン運河の清掃時に見つかった自転車（2016年）",
+      "relation": "宮﨑駿が語った川の清掃体験と同種の現実の事例。映画の着想元となった日本の川ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Velo_dans_le_canal.jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Velo_dans_le_canal.jpg/960px-Velo_dans_le_canal.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Velo_dans_le_canal.jpg",
+      "rights_basis": "個別ページ123–144行、2016年1月6日、本人撮影、CC BY-SA 4.0 International。商用共有可。原画像5.52MBのため960×640版を実表示確認。画像は泥に埋まった自転車を写す。CIで実配信容量も検査する。",
+      "credit": "Yvesmaurin (Yves Maurin)／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ （縮小のみ）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2701,6 +2727,14 @@
       "film_title": "Psycho",
       "year": 1960,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:It_Is_Required_That_You_See_Psycho_From_the_Very_Beginning!_(1960_poster).jpg",
+        "review_note": "1960年劇場向け遅刻入場禁止広告。個別ページ120–137行、Heritage Auctions由来、米国で更新なしPDとされるが他国の保護期間の注意書きあり。作者不詳、職務著作推定。日本・配信地域での権利を確認するまで保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -3627,6 +3661,19 @@
       "film_title": "Pather Panchali",
       "year": 1955,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "サタジット・レイの肖像画（1997年制作、2009年修正）",
+      "relation": "オプー三部作の監督を描いた後年の肖像画。映画の制作写真や修復ネガではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:SatyajitRay.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/SatyajitRay.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:SatyajitRay.jpg",
+      "rights_basis": "個別ページ132–162行、作者本人制作・公開、1997年制作、2009年修正、2019年に縁を切り抜いた履歴。CC BY-SA 3.0 Unported。商用共有可。原画像932KBを実表示確認。",
+      "credit": "Rishiraj Sahoo／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/ （2019年に縁を切り抜いた版）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4149,6 +4196,19 @@
       "film_title": "À bout de souffle",
       "year": 1960,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "1927年製Moviola Model Dフィルム編集機（2020年撮影）",
+      "relation": "物理的なフィルム編集を理解するための歴史的装置。ゴダールがこの個体を使用したという意味ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Moviola_Model_D_(MOMI).jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Moviola_Model_D_%28MOMI%29.jpg/960px-Moviola_Model_D_%28MOMI%29.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Moviola_Model_D_(MOMI).jpg",
+      "rights_basis": "個別ページ119–140行、Museum of the Moving Image展示の工業製品、2020年本人撮影、CC BY-SA 4.0 International。商用共有可。原画像18.06MBのため960×1440版を実表示確認。CIで容量確認。",
+      "credit": "HaeB／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ （縮小のみ）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4984,6 +5044,19 @@
       "film_title": "The Lord of the Rings: The Return of the King",
       "year": 2003,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "顔にマーカーを装着したフェイシャル・モーションキャプチャの例（2006年）",
+      "relation": "顔の動きを記録する技術の例。ゴラム制作時の素材ではなく、顔が手作業でアニメーションされた本文と対比する参考資料。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Motion_capture_facial.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Motion_capture_facial.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Motion_capture_facial.jpg",
+      "rights_basis": "個別ページ121–143行、2006年本人制作、CC BY-SA 3.0 Unportedを選択。商用共有可。技術の解説用で人物の番組推奨を示さない。原画像47KBを実表示確認。",
+      "credit": "Mounirzok／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/ （無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -6219,6 +6292,19 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "The 2001 Archive本文18–19行：38フィートの回転セット、固定家具、俳優の歩行、監督の映像による演出。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "scientific_image",
+      "asset_title": "回転式宇宙居住施設内部の構想図（2009年）",
+      "relation": "回転による人工重力を視覚化した別の宇宙施設構想。映画のディスカバリー号や撮影セットではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Interior_of_a_revolving_space_station_(artwork).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Interior_of_a_revolving_space_station_%28artwork%29.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Interior_of_a_revolving_space_station_(artwork).jpg",
+      "rights_basis": "個別ページ118–139行、2009年本人制作、宇宙居住施設設計競技用のトーラス型施設の構想。CC BY-SA 4.0 International、商用共有可。原画像505KBを実表示確認。",
+      "credit": "Mrazvan22／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ （無改変）",
+      "checked_on": "2026-11-27"
     }
   }
 ]
