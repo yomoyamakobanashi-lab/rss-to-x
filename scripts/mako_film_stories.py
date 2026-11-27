@@ -5,6 +5,9 @@ import json
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlsplit
+from datetime import date
+
+import requests
 
 from buffer_client import _ensure_reelpal_tag
 from scripts.episode_links import resolve_episode_links
@@ -13,6 +16,58 @@ ROOT = Path(__file__).resolve().parents[1]
 BANK = ROOT / "data/mako_film_stories.json"
 SHOW = "https://open.spotify.com/show/4o8l9DJWMuwUht2pvkEytS"
 CATEGORIES = ("映画怪異録", "銀幕陰謀論", "シネフィルの処方箋", "映画心理学講義", "銀幕人文学", "映画の舞台裏", "映画トリビア研究所")
+
+# Only explicit reuse permission, not merely a public poster URL, qualifies.
+POSTER_LICENSES = {"public_domain", "CC0", "CC-BY", "CC-BY-SA", "rights_holder_permission"}
+POSTER_HOSTS = {"upload.wikimedia.org"}
+
+def poster_url(item):
+    poster = item.get("poster")
+    if poster is None:
+        return None
+    if not isinstance(poster, dict):
+        raise ValueError("Invalid poster record: " + item["id"])
+    status = poster.get("status")
+    if status == "pending":
+        return None
+    if status != "rights_checked":
+        raise ValueError("Unknown poster review status: " + item["id"])
+    for key in ("film_title", "year", "source_url", "image_url", "license",
+                "rights_evidence_url", "rights_basis", "credit", "checked_on"):
+        if not str(poster.get(key) or "").strip():
+            raise ValueError("Incomplete poster rights record: " + item["id"] + "/" + key)
+    date.fromisoformat(poster["checked_on"])
+    if poster["license"] not in POSTER_LICENSES:
+        raise ValueError("Unapproved poster license: " + item["id"])
+    for key in ("source_url", "image_url", "rights_evidence_url"):
+        u = urlsplit(poster[key])
+        if u.scheme != "https" or not u.hostname or u.username or u.password:
+            raise ValueError("Invalid poster URL: " + item["id"])
+    u = urlsplit(poster["image_url"])
+    if u.hostname not in POSTER_HOSTS or u.port not in (None, 443):
+        raise ValueError("Unapproved poster file host: " + item["id"])
+    return poster["image_url"]
+
+def reachable_poster(item):
+    """Check media before reserving a slot; no redirects or blind post retries."""
+    url = poster_url(item)
+    if not url:
+        return None
+    try:
+        with requests.get(url, stream=True, allow_redirects=False, timeout=12,
+                          headers={"User-Agent": "ReelPalFilmStories/1.0 (public-domain poster verification)"}) as res:
+            if res.status_code != 200 or res.headers.get("Content-Type", "").split(";")[0].lower() not in {"image/jpeg", "image/png", "image/webp"}:
+                raise ValueError("HTTP status or media type not suitable")
+            size = int(res.headers.get("Content-Length", "0"))
+            if size > 5 * 1024 * 1024:
+                raise ValueError("Image exceeds conservative 5 MB limit")
+            head = next(res.iter_content(32), b"")
+            if not (head.startswith(b"\xff\xd8\xff") or head.startswith(b"\x89PNG\r\n\x1a\n") or (head.startswith(b"RIFF") and head[8:12] == b"WEBP")):
+                raise ValueError("Not a supported image signature")
+        return url
+    except (requests.RequestException, ValueError, StopIteration) as exc:
+        print(f"[WARN] poster unavailable for {item['id']}; publishing text only: {exc}")
+        return None
 
 def render(item):
     parts = list(item["posts"])
@@ -24,6 +79,9 @@ def render(item):
         cta = "関連回もぜひ。映画から人間・文化・社会を語るポッドキャスト Reel Friends in Tokyo。\n🎧 " + link
     else:
         cta = "映画の見方が変わる話を、番組でも。\n🎧 Reel Friends in Tokyo（リルパル）\n" + SHOW
+    if poster_url(item):
+        poster = item["poster"]
+        refs.append("ポスター資料：" + poster["credit"] + "\n" + poster["source_url"])
     parts += refs + [cta]
     return [_ensure_reelpal_tag(f"{i+1}/{len(parts)}\n{p}") for i,p in enumerate(parts)]
 
@@ -49,6 +107,7 @@ def load_bank(require_full=False):
             u = urlsplit(s["url"])
             if u.scheme != "https" or not u.hostname or u.username or u.password or not s.get("supports") or not s.get("name"):
                 raise ValueError("Invalid source record: " + row["id"])
+        poster_url(row)
         render(row)
     counts = Counter(r["weekday"] for r in rows)
     if require_full and any(counts[d] < 20 for d in range(7)):
