@@ -179,5 +179,76 @@
     ],
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
+  },
+  {
+    "id": "wed-caligari-expressionism",
+    "weekday": 2,
+    "title": "壁まで演技する映画",
+    "topic_key": "caligari-expressionist-space",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "俳優だけでなく、壁まで演技する映画がある。\n\n1920年の『#カリガリ博士』。歪んだ窓、傾いた建物、鋭い影。ホラー映画の怖さを空間から考えてみたい。\n#まこの映画小話 #映画史",
+      "ロベルト・ヴィーネ監督の本作は、ドイツ表現主義映画の代表作。美術に関わったヘルマン・ヴァルム、ヴァルター・ライマン、ヴァルター・レーリヒの手掛けた舞台装置が、現実とは異なる街を作り出した。",
+      "表現主義では、外界をありのまま写すことより、内面の感情を表現することが重視される。本作の不自然な遠近感や角張った背景も、見る側に不安を感じさせる造形として読める。",
+      "ホラー映画は怪物を登場させなくても、画面の構成で不気味さを生み出せる。建物が人間よりも饒舌に感情を伝える。そんな目で観ると、美術の役割が見えてくる。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜100 years of The Cabinet of Dr. Caligari",
+        "url": "https://www.bfi.org.uk/features/100-years-cabinet-dr-caligari/",
+        "supports": "1920年公開、監督名、表現主義の主観的感情表現、セットの歪み（It drew on the popular arts節）"
+      },
+      {
+        "name": "BFI｜10 great European horror films",
+        "url": "https://www.bfi.org.uk/lists/10-great-european-horror-films",
+        "supports": "3人のセットデザイナーと描かれたセット・遠近感の歪み（Caligari節）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "The Cabinet of Dr. Caligari",
+      "year": 1920,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Das_Kabinett_des_Doktor_Caligari_1920_Poster.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Das_Kabinett_des_Doktor_Caligari_1920_Poster.jpg",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Das_Kabinett_des_Doktor_Caligari_1920_Poster.jpg",
+      "review_note": "CommonsのPD表示を確認。作者帰属・日本での利用可否を追加確認し、画像URL取得時429のため自動添付は未承認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sun-melies-moon",
+    "weekday": 6,
+    "title": "CG以前の宇宙旅行",
+    "topic_key": "melies-1902-trick-cinema",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "宇宙旅行を描く映画は、CGよりずっと前からあった。\n\nジョルジュ・メリエスの『#月世界旅行』（1902年）。月の顔に宇宙船が突き刺さる、あの映像の裏には手作りの特撮がある。\n#まこの映画小話 #映画豆知識",
+      "映画に登場するのは、大砲で宇宙船を打ち出して月を目指す天文学者たち。科学的に正確な宇宙飛行を再現するというより、ジュール・ヴェルヌらの物語に着想を得た空想の冒険だ。",
+      "BFIの解説によると、撮影には機械で動く舞台装置や多重露光、火薬を使った演出などが取り入れられた。メリエスの映画には、現実には存在しない出来事を映像にする発想が詰まっている。",
+      "映像技術は進歩しても、存在しない世界をどう見せるかという問いは変わらない。CGの豪華さとは別の、手作りの映画的想像力を味わいたくなる一本だ。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜10 great films with DIY special effects",
+        "url": "https://www.bfi.org.uk/lists/10-great-films-with-diy-special-effects",
+        "supports": "1902年、監督、ヴェルヌの小説、大砲による月旅行、機械式舞台装置・多重露光・火薬（A Trip to the Moon節）"
+      },
+      {
+        "name": "BFI Player｜A Trip to the Moon",
+        "url": "https://player.bfi.org.uk/free/film/watch-a-trip-to-the-moon-1902-online",
+        "supports": "公開年、監督、月の目に着地する映像、原作の着想"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "A Trip to the Moon",
+      "year": 1902,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Trip-to-moon-1902.jpg",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Trip-to-moon-1902.jpg",
+      "review_note": "CommonsにポスターとPD-Artの表示あり。ただし米国PDタグ不備の注意書き、原典・画像品質の再確認が必要。未承認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
   }
 ]
