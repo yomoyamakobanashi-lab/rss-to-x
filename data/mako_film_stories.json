@@ -206,9 +206,9 @@
     "related_image": {
       "status": "pending",
       "asset_kind": "historical_art",
-      "asset_title": "1892年のセイラム魔女裁判を描いた石版画",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Salem_witch.jpg",
-      "review_note": "米国議会図書館所蔵、Joseph E. Baker 1914年没。1892年の後世の想像画と明記する。7.36MBで上限超過、適切な公式縮小画像と利用条件を確認するまで保留。",
+      "asset_title": "The witch no. 1（1892年の石版画）",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_witch_no._1_LCCN2003677961.jpg",
+      "review_note": "J.E. Baker 1914年没、LOC所蔵、PDとNo known restrictionsの記載、210KBの縮小候補。ただし原画像取得エラー。",
       "checked_on": "2026-11-27"
     }
   },
@@ -621,7 +621,15 @@
       "review_note": "転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "archival_photo",
+      "asset_title": "ニクソン大統領辞任書（1974年8月9日）",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Letter_of_Resignation_of_Richard_M._Nixon%2C_1974.jpg",
+      "review_note": "NARA ARC 302035、米国政府職務著作・米国PD、原画像確認済み。日本を含む再利用の根拠をNARAで確認するまで保留。",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "wed-bicycle-thieves-street",
@@ -1084,7 +1092,20 @@
       "review_note": "Netflix版の転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "ガルヴァーニの動物電気実験図",
+      "relation": "記事のアルディーニによる実験の前史。1803年の人体実験そのものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Luigi_Galvani_Experiment.jpeg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Luigi_Galvani_Experiment.jpeg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Luigi_Galvani_Experiment.jpeg",
+      "rights_basis": "18世紀刊、Galvani 1798年没。Commons個別ページ198–205行に原産国・米国PD明記、日本の期間も満了。実画像2.82MB確認。",
+      "credit": "ガルヴァーニの実験図（人体実験ではない）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "tue-hal-ibm-myth",
@@ -2285,6 +2306,19 @@
       "film_title": "The Red Shoes",
       "year": 1948,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "ドガ《舞台上の踊り子》",
+      "relation": "バレエを別の芸術媒体で表現した参考作品。映画の場面・制作資料ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dancer_Onstage_MET_DT1913.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Dancer_Onstage_MET_DT1913.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Dancer_Onstage_MET_DT1913.jpg",
+      "rights_basis": "Metropolitan Museum of Art所蔵1974.356.30、Degas 1917年没。Commons個別ページ169–175行に美術館提供CC0。原画像3.32MB確認。",
+      "credit": "Edgar Degas《Dancer Onstage》／The Met",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2711,6 +2745,19 @@
       "film_title": "雨月物語",
       "year": 1953,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "モーパッサンの肖像写真（1888年頃）",
+      "relation": "映画の翻案に関係する作家の肖像史料",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Maupassant_by_Nadar.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Maupassant_by_Nadar.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Maupassant_by_Nadar.jpg",
+      "rights_basis": "BnF Gallica btv1b53155773n/f1所蔵、Nadar 1910年没。Commons個別ページ117–152行に原産国・米国PDおよび忠実な複製と記載。日本の戦時加算込みの期間も満了。原画像3.26MB確認。",
+      "credit": "Atelier Nadar／Bibliothèque nationale de France",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3331,6 +3378,19 @@
       "film_title": "Pinocchio",
       "year": 1940,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1883年版ピノキオの挿絵",
+      "relation": "原作の初期挿絵。首吊り場面そのものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pinocchio_visto_da_Enrico_Mazzanti_(1883).jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Pinocchio_visto_da_Enrico_Mazzanti_(1883).jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Pinocchio_visto_da_Enrico_Mazzanti_(1883).jpg",
+      "rights_basis": "Enrico Mazzanti 1910年没、1883年版の挿絵。Commons個別ページ114–140行に原産国・米国PD明記。日本の期間も満了。実画像250×334、87KB確認。出典は旧Wikipedia移管であり、画像解像度は低い。",
+      "credit": "Enrico Mazzanti／1883年版挿絵",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3408,6 +3468,14 @@
       "film_title": "Interstellar",
       "year": 2014,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "scientific_image",
+      "asset_title": "M87ブラックホール観測画像（2019年公表）",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87.jpg",
+      "review_note": "ESO公式にEHT Collaborationのクレジット。CC BY 4.0、原画像取得未完。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3745,7 +3813,20 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "19世紀中頃の恵比寿の文楽人形",
+      "relation": "文楽人形の造形を示す参考資料。研究で使用された人形とは断定しない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ebisu_Bunraku_puppet_from_Japan%2C_mid-19th_century.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Ebisu_Bunraku_puppet_from_Japan%2C_mid-19th_century.JPG",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Ebisu_Bunraku_puppet_from_Japan%2C_mid-19th_century.JPG",
+      "rights_basis": "19世紀中頃の日本の人形、撮影者Hiartの2019年写真、Commons個別ページ118–134行に本人によるCC0 1.0 Universal宣言。古い人形自体の著作権も満了。原画像1.35MB確認。",
+      "credit": "19世紀の文楽人形の参考写真／Hiart",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "beauty-beast-two-authors",
@@ -3844,6 +3925,14 @@
       "film_title": "Apollo 13",
       "year": 1995,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "archival_photo",
+      "asset_title": "アポロ13号の機械船",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Explosive_Evidence_-_GPN-2000-001119.jpg",
+      "review_note": "NASAの原画像311KB取得済み。NASA公式メディア利用規約の営利宣伝に関する条件と番組誘導の併記の適合性を確認するまで保留。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4065,6 +4154,19 @@
       "film_title": "The Imitation Game",
       "year": 2014,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "エニグマ暗号機の写真",
+      "relation": "暗号解読史を示す機器の参考写真。ポーランドの解読対象の個体と断定しない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:An_Enigma_machine.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/67/An_Enigma_machine.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:An_Enigma_machine.jpg",
+      "rights_basis": "2018年撮影、Robert-brook自身の著作物としてCC0 1.0 Universalで世界的な商用再利用を許容（個別ページ121–140行）。旧式機器の写真。原画像968KB確認。",
+      "credit": "暗号機の参考写真／Robert-brook",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4443,6 +4545,19 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "博物館解説12–20,34–37,47–58行、所蔵資料43–46行。乾板の細工と被写体の仕掛けを区別。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1914年刊の妖精の挿絵",
+      "relation": "妖精写真事件に関わる時代の妖精図像。写真自体ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cottingley_fairies_illustration.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Cottingley_fairies_illustration.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Cottingley_fairies_illustration.jpg",
+      "rights_basis": "1914年Princess Mary's Gift Book p.104、Claude A. Shepperson 1921年没。Commons個別ページ123–138行に原産国・米国PDを明記、日本の戦時加算込みでも満了。実画像343KB確認。",
+      "credit": "Claude A. Shepperson／Princess Mary's Gift Book (1914)",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4472,6 +4587,19 @@
       "film_title": "The Red Shoes",
       "year": 1948,
       "review_note": "SNS転載許諾未確認"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "ドガのバレエダンサー習作",
+      "relation": "芸術家と身体表現という記事のテーマを補う美術作品。映画の場面ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Study_of_a_Ballet_Dancer_(recto)%3B_Two_Studies_of_Dancers_(verso)_MET_DP359012.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Study_of_a_Ballet_Dancer_(recto)%3B_Two_Studies_of_Dancers_(verso)_MET_DP359012.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Study_of_a_Ballet_Dancer_(recto)%3B_Two_Studies_of_Dancers_(verso)_MET_DP359012.jpg",
+      "rights_basis": "The Met所蔵1975.1.611、Commons個別ページ164–171行に美術館提供CC0。Degas 1917年没。原画像1.95MB確認。",
+      "credit": "Edgar Degas《Study of a Ballet Dancer》／The Met",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4608,6 +4736,19 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "BFI本文20–32行：1894年の試み、現代の再同期、音量の障壁、1927年の公開。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "film_still",
+      "asset_title": "ディクソン実験録音映画（1894–95年）の一コマ",
+      "relation": "記事で扱う実験映画の画面。音声なしの静止画。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:DicksonFilm_Still.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/DicksonFilm_Still.png",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:DicksonFilm_Still.png",
+      "rights_basis": "Edison Manufacturing Company制作、W.K.L. Dickson 1935年没、1894–95年映画。Commons個別ページ122–140行にPD-LOC、PD-US、NPS資料由来を記録。日本の期間も満了。現代の音声復元部分ではなく原画面の静止画90KB。",
+      "credit": "Dickson Experimental Sound Film（1894–95）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4648,6 +4789,19 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "NPSとNJ州政府で1892/1893年に相違あり。年を断定せず、共通して支持される回転・採光構造に絞った。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ブラック・マリア撮影所（1890年代）",
+      "relation": "回転式撮影所そのものの外観",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Black_Maria.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Black_Maria.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Black_Maria.jpg",
+      "rights_basis": "NPS出典、Commons個別ページ119–145行に1890年代、W.K.L. Dickson 1935年没、米国PDを記載。日本の死後70年＋米国/英国の戦時加算約10年でも満了。原画像1.82MB確認。",
+      "credit": "ブラック・マリア撮影所／W. K. L. Dickson・NPS",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4831,6 +4985,19 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "Oxford本文100–107行、British Library本文42–45,67–68行。匿名刊行と初期の受容を前面に。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "book_cover",
+      "asset_title": "Frankenstein 1818年初版第1巻の標題紙",
+      "relation": "匿名刊行を直接示す史料",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Frankenstein_1818_edition_title_page.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Frankenstein_1818_edition_title_page.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Frankenstein_1818_edition_title_page.jpg",
+      "rights_basis": "1818年刊、Mary Shelley 1851年没。Commons個別ページ120–136行に著者・出版社・原産国および米国PDを明示。日本の死後70年と英国戦時加算を考慮しても満了。実画像は作者名のない標題紙、718KB。",
+      "credit": "1818年初版標題紙／Mary Shelley",
+      "checked_on": "2026-11-27"
     }
   },
   {
