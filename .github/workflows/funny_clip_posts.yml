@@ -1,9 +1,9 @@
 name: Daily Funny Clips via Buffer
 
 on:
-  # Scheduled publishing is centralized in daily_content_posts.yml.
-  # Keep this entry point for a deliberate manual retry/diagnostic only.
   workflow_dispatch:
+
+# Retired: all automatic publishing is centralized in mako-film-stories.yml.
 
 concurrency:
   group: funny-clip-post
@@ -11,6 +11,7 @@ concurrency:
 
 jobs:
   post:
+    if: ${{ false }} # Retired to enforce the daily cap
     runs-on: ubuntu-latest
     permissions:
       contents: write
