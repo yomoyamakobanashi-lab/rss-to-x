@@ -1945,5 +1945,466 @@
       "year": 1977,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
     }
+  },
+  {
+    "id": "phantom-opera-real-building",
+    "weekday": 0,
+    "title": "怪人より先に劇場の怪談があった",
+    "topic_key": "phantom-opera-garnier-accident",
+    "category": "映画怪異録",
+    "posts": [
+      "オペラ座の怪人は架空の人物。でも、劇場で起きた事故まで作り話だったわけではない。\n\n『#オペラ座の怪人』の恐怖には、パリの劇場が実際に経験した出来事が織り込まれている。\n#まこの映画小話",
+      "パリ・オペラ座の公式解説は、1862年の踊り子の衣装の火災や1896年のシャンデリアにまつわる事故を、小説の着想となった実際の出来事として紹介する。地下の貯水空間や5番の桟敷席も物語のイメージと結びついた。",
+      "1925年の映画化では、実在の劇場の設計図を参照したセットが米国のスタジオに建設されたと、当時の製作発表に記録されている。衣装担当者は19世紀のオペラ公演で使われた衣装を探したという。",
+      "現実の建物の歴史から怪談が生まれ、その怪談のために遠く離れた場所で建物が再現された。幽霊の存在を確かめる話ではなく、現実の空間がフィクションを支える話だ。"
+    ],
+    "sources": [
+      {
+        "name": "パリ・オペラ座｜Palais Garnier and the Phantom",
+        "url": "https://www.operadeparis.fr/en/news/the-palais-garnier-home-of-the-legendary-phantom-of-the-opera-is-now-on-airbnb",
+        "supports": "335–338行：歴史的な事故と原作の関係、地下の空間、桟敷席。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "AFI Catalog｜The Phantom of the Opera",
+        "url": "https://catalog.afi.com/Film/11345-THE-PHANTOM-OF-THE-OPERA",
+        "supports": "43–54行：1924年の業界紙およびスタジオ発表による衣装調達とセット製作。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Phantom of the Opera",
+      "year": 1925,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "exorcist-campus-steps",
+    "weekday": 0,
+    "title": "74段の階段が映画の名前で呼ばれるまで",
+    "topic_key": "exorcist-georgetown-steps-fiction-place",
+    "category": "映画怪異録",
+    "posts": [
+      "大学のそばにある普通の石段が、今では映画の名で呼ばれている。\n\n『#エクソシスト』の舞台となったジョージタウンには、作品の誕生にまつわる記録が残っている。\n#まこの映画小話",
+      "ジョージタウン大学図書館によると、原作者ウィリアム・ピーター・ブラッティは同大学在学中、1949年に行われた悪魔払いの新聞報道を目にした。これが1971年刊行の小説の着想になった。",
+      "悪魔払いが行われたという記録と、超自然的な原因が実証されたということは別だ。1972年秋には大学周辺で映画の撮影が行われ、従来Mストリートの階段と呼ばれた74段の石段も使われた。",
+      "現実の報道から小説が生まれ、映画になり、映画の名前が現実の場所に残った。怪談そのものだけでなく、人々が物語の痕跡を求めて場所を訪れるという文化も興味深い。"
+    ],
+    "sources": [
+      {
+        "name": "Georgetown University Archives｜Filming of The Exorcist",
+        "url": "https://guides.library.georgetown.edu/exorcist_movie",
+        "supports": "71–73行：1949年の報道と原作者、1971年小説、1972年の撮影、74段の階段の旧称と現在の通称。",
+        "access_scope": "大学図書館の公式資料ガイド"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Exorcist",
+      "year": 1973,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "philadelphia-experiment-paper-myth",
+    "weekday": 1,
+    "title": "消えた軍艦を海軍の資料で追う",
+    "topic_key": "philadelphia-experiment-letters-1955",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "軍艦が瞬間移動したという都市伝説。実はその噂を解説した米国海軍の資料が公開されている。\n\n1984年の映画『#フィラデルフィアエクスペリメント』の元になった話をたどる。\n#まこの映画小話",
+      "米海軍研究局の説明では、噂の発端は1955年のUFO本と、その著者に届いた手紙だった。手紙には1943年に軍艦が姿を消したという主張があったが、報道されたとされる新聞は特定されていない。",
+      "海軍は船の磁気的な検知を抑える研究などが噂の背景になった可能性を挙げている。目に見えなくすることとは別の技術だ。実際に瞬間移動を実現したという説明ではない。",
+      "海軍研究局自身も1946年に設立された組織であり、透明化の研究は行っていないと説明している。映画では架空の実験が物語を動かすが、その冒頭の説明を史料として読んではいけない。"
+    ],
+    "sources": [
+      {
+        "name": "米海軍研究局｜Philadelphia Experiment; UFO's",
+        "url": "https://www.esd.whs.mil/Portals/54/Documents/FOID/Reading%20Room/UFOsandUAPs/onr_ph1.pdf?ver=2017-05-22-113513-680",
+        "supports": "1–2頁：1955年の書籍と手紙、新聞未特定、研究局の否定、噂の起源についての仮説。",
+        "access_scope": "国防総省公開の原資料PDF・両ページ画像確認"
+      },
+      {
+        "name": "AFI Catalog｜The Philadelphia Experiment",
+        "url": "https://catalog.afi.com/Film/57165-THE-PHILADELPHIA-EXPERIMENT",
+        "supports": "1984年作品、冒頭の説明文と製作記録（56–68行）。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Philadelphia Experiment",
+      "year": 1984,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "goats-cia-remote-viewing",
+    "weekday": 1,
+    "title": "CIAが超能力を研究していたのは本当？",
+    "topic_key": "men-who-stare-at-goats-stargate-evaluation",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "超能力を使う軍人を描いたコメディがある。しかも米国の情報機関が超能力を研究したこと自体は本当だ。\n\n映画『#ヤギと男と男と壁と』と、CIAの公開記録。\n#まこの映画小話",
+      "CIAの公式解説によれば、1972年から離れた場所や物を知覚できるという遠隔透視の研究が行われた。1977年には国防情報局へ引き継がれ、後にSTARGATEと呼ばれる計画につながった。",
+      "1995年、独立した研究者による評価が行われた。CIAの紹介では、結果は不安定で情報収集に利用できるほど信頼性がないと判断され、計画は再開されなかった。超能力の存在が確立したという結論ではない。",
+      "研究が実在したことと、研究対象の能力が実在すると証明されたことは別。映画の奇抜な設定を楽しむのと同時に、国家機関も仮説を検討し、実用性がなければ打ち切るという点に注目したい。"
+    ],
+    "sources": [
+      {
+        "name": "CIA｜Did CIA Really Study Psychic Powers?",
+        "url": "https://www.cia.gov/stories/story/ask-molly-did-cia-really-study-psychic-powers",
+        "supports": "51–58行：1972年研究開始、1977年移管、1995年独立評価、実用性の不足と再開しなかった判断。",
+        "access_scope": "CIA歴史担当の説明を掲載した公式記事"
+      },
+      {
+        "name": "日活｜ヤギと男と男と壁と",
+        "url": "https://www.nikkatsu.com/movie/32309.html",
+        "supports": "2–24行：邦題、2009年製作、超能力部隊を描いた映画。宣伝文の実話性は根拠にしない。",
+        "access_scope": "配給会社公式ページ"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Men Who Stare at Goats",
+      "year": 2009,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "vertov-camera-protagonist",
+    "weekday": 2,
+    "title": "主人公はカメラだった",
+    "topic_key": "man-with-movie-camera-no-actors",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "俳優も物語の台詞もないのに、映画史の名作になった作品がある。\n\n1929年の『#カメラを持った男』。主人公は、人間というより映画を撮るという行為そのものだ。\n#まこの映画小話",
+      "ジガ・ヴェルトフは、演劇的な筋書きや俳優に頼らない映画を目指した。作品はソ連の都市生活の一日を描くが、一つの都市の記録ではなく、三つの都市の映像を組み合わせている。",
+      "カメラマンのミハイル・カウフマンと編集者エリザヴェータ・スヴィロワも、この映画の表現を支えた。BFIの解説は、三人の共同性とモンタージュによる新しい知覚の試みを評価している。",
+      "街を映しただけなら記録映像で終わるかもしれない。どんな角度から撮り、何と何をつなぐかで、見慣れた日常が別の世界になる。映画を見る目そのものが変わる一本だ。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Man with a Movie Camera",
+        "url": "https://www.bfi.org.uk/film/cacbb2df-be18-5e59-b5c3-f0eb9ea3a90d/man-with-a-movie-camera",
+        "supports": "5–16行：1929年、三都市、俳優や字幕を避けた方針、編集者・撮影者、モンタージュ。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Man with a Movie Camera",
+      "year": 1929,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "red-shoes-ballet-screen",
+    "weekday": 2,
+    "title": "バレエを劇場ではなく映画にする",
+    "topic_key": "red-shoes-composed-film",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "バレエを撮るだけなら、客席にカメラを置けばいい。では、映画にしかできないバレエとは？\n\n1948年の『#赤い靴』はその問いに挑んだ名作だ。\n#まこの映画小話",
+      "パウエルとプレスバーガーはアンデルセンの童話をもとに、踊りへの情熱と人生の葛藤を描いた。主演のモイラ・シアラーは実際のバレリーナ。音楽を表現の中心に据えた映画を二人は目指した。",
+      "劇中のバレエは一つの舞台を正面から記録したものではない。BFIの所蔵資料には、美術家ハイン・ヘクロートらが考案した場面の連なりが残る。映像は分けて撮影し、編集で一つの踊りに組み立てられた。",
+      "映画は美術と音楽の両部門でアカデミー賞を受賞した。踊りを忠実に保存するのではなく、色彩、編集、音楽を組み合わせて別の芸術にする。この発想が魅力だ。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜The Red Shoes (1948)",
+        "url": "https://www.bfi.org.uk/film/3b330bf5-17bf-5fb6-8377-ccf367e58c15/the-red-shoes",
+        "supports": "8–22行：原作、主演者、監督、音楽を中心にした映画、受賞。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "BFI｜Moira Shearer's ballet shoes and other artefacts",
+        "url": "https://www.bfi.org.uk/features/red-shoes-moira-shearer-ballet-shoes-powell-pressburger",
+        "supports": "49–55行：美術家、場面の構成、撮影と編集、後世への影響。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Red Shoes",
+      "year": 1948,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "truman-show-delusion-cultural-form",
+    "weekday": 3,
+    "title": "映画の名前が心理学辞典に載った",
+    "topic_key": "truman-show-delusion-cultural-content",
+    "category": "映画心理学講義",
+    "posts": [
+      "ある映画のタイトルが、後に心理学の辞典に載ることになった。\n\n1998年の『#トゥルーマンショー』。現実の精神医学では、どんな意味で参照されているのだろう。\n#まこの映画小話",
+      "ピーター・ウィアー監督の映画では、主人公が自分の暮らし全体を撮影されていたと知る。周囲の人々は演者だったというフィクションだ。",
+      "APA心理学辞典によると、精神科医ジョエル・ゴールドと哲学者イアン・ゴールドは2006年に、現実には放送されていないのに自分が番組の主人公だと確信する妄想を、この映画の名にちなんで提案した。",
+      "ただし既知の被害・誇大妄想などと重なり、独立した病態ではないという批判もある。映画を観ると病気になるという説明ではない。苦しむ人を見世物にするのではなく、時代の文化が体験を語る言葉にもなるという点に注目したい。"
+    ],
+    "sources": [
+      {
+        "name": "Paramount｜The Truman Show",
+        "url": "https://www.paramount.com/movies/the-truman-show",
+        "supports": "12、25–27行：1998年、監督、番組の中で暮らす主人公。",
+        "access_scope": "公式作品ページ"
+      },
+      {
+        "name": "APA Dictionary｜Truman Show delusion",
+        "url": "https://dictionary.apa.org/truman-show-delusion",
+        "supports": "4–6行：用語の提案者と時期、定義、独立性をめぐる異論。",
+        "access_scope": "心理学専門辞典本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Truman Show",
+      "year": 1998,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "mcgurk-lips-hearing",
+    "weekday": 3,
+    "title": "耳で聞いた声を目が変える",
+    "topic_key": "mcgurk-effect-audiovisual-speech",
+    "category": "映画心理学講義",
+    "posts": [
+      "口元の映像を変えただけで、同じ音が別の音に聞こえることがある。\n\n映画の吹き替えを考える上でも面白い、1976年に報告された #マガーク効果。\n#まこの映画小話 #心理学",
+      "マガークとマクドナルドの実験では、ある子音を発音する声に、別の子音を発音する口の映像を重ねた。例えば音声がb、映像の口元がgのとき、dのように聞こえる場合がある。",
+      "音声だけでは聞き取れる言葉でも、映像と合わせると知覚が変わりうる。心理学者ティッパナは2014年の論考で、これは視覚と聴覚の統合を示す現象だと説明している。反応には複数の型がある。",
+      "『雨に唄えば』では声と映像のずれが喜劇になる。現実の知覚でも、私たちが聞く音は耳だけの情報で決まらない。吹き替え映画を見るとき、口元と声がどう一つの人物にまとまるかを意識したい。"
+    ],
+    "sources": [
+      {
+        "name": "Tiippana (2014)｜What is the McGurk effect?",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4091305/",
+        "supports": "74–83行：1976年実験、b/g/dの例、感覚統合、反応の多様性。",
+        "access_scope": "査読論文全文"
+      },
+      {
+        "name": "AFI Movie Club｜Singin' in the Rain",
+        "url": "https://www.afi.com/news/afi-movie-club-singin-in-the-rain/",
+        "supports": "50行：作中の吹き替え場面。映画と知覚研究の関係は筆者の比較。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Singin' in the Rain",
+      "year": 1952,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "elephant-man-joseph-voice",
+    "weekday": 4,
+    "title": "映画とは違う名前で語った本人",
+    "topic_key": "elephant-man-merrick-autobiography",
+    "category": "銀幕人文学",
+    "posts": [
+      "映画『#エレファントマン』の主人公はジョン・メリック。実在した人物の名前はジョゼフ・ケアリー・メリックだった。\n\nさらに、本人の視点で書かれた小冊子も残っている。\n#まこの映画小話",
+      "19世紀末のロンドンでは、身体に障害のあるメリックが見世物として紹介された。1980年のデヴィッド・リンチの映画は、医師との出会いをジョンという名前の人物を通して描いている。",
+      "ロンドン博物館によると、1884年の自伝的小冊子は興行の場で販売され、メリックも利益の半分を受け取った。幼少期や仕事を得る難しさが一人称で語られている。",
+      "ただし本人がどこまで執筆し、興行主がどこまで関与したかは不明だ。映画の語りだけで彼の人生を知ったつもりにならず、本人の視点を伝える限られた資料にも向き合う必要がある。"
+    ],
+    "sources": [
+      {
+        "name": "London Museum｜Joseph Merrick: The Elephant Man",
+        "url": "https://www.londonmuseum.org.uk/collections/london-stories/joseph-merrick-elephant-man/",
+        "supports": "117–139、152–157行：本名、興行、自伝小冊子、利益、執筆者の不確実性。",
+        "access_scope": "公開記事本文"
+      },
+      {
+        "name": "Criterion｜The Elephant Man",
+        "url": "https://www.criterion.com/films/29677-the-elephant-man",
+        "supports": "20–30行：映画の人物名ジョン、監督、1980年。",
+        "access_scope": "公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Elephant Man",
+      "year": 1980,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "chaplin-dictator-voice",
+    "weekday": 4,
+    "title": "無言の喜劇王が言葉を選んだ日",
+    "topic_key": "great-dictator-silent-tramp-speech",
+    "category": "銀幕人文学",
+    "posts": [
+      "無言の身振りで世界を笑わせてきた喜劇王が、最後に長い言葉を観客へ届けた。\n\n1940年の『#チャップリンの独裁者』。その演説には映画史上の転換がある。\n#まこの映画小話",
+      "チャップリン公式サイトの製作史によると、1938年秋、ミュンヘン会談の頃には脚本の初稿ができつつあった。英国は翌年ドイツと戦争状態に入り、映画は米国が参戦する前の1940年10月にニューヨークで公開された。",
+      "チャップリンは独裁者とユダヤ人の床屋を一人二役で演じる。それまで国籍や母語を限定しない身振りで愛された人物像とは異なり、最後には政治的な言葉を正面から語る。",
+      "笑いが言葉へ変わる瞬間は、喜劇の失敗なのか、それとも喜劇だけでは伝えられないことがあったのか。観客を笑わせる映画が、観客に判断を求める映画に変わるところが面白い。"
+    ],
+    "sources": [
+      {
+        "name": "Charlie Chaplin公式｜Filming The Great Dictator",
+        "url": "https://www.charliechaplin.com/en/biography/articles/13-The-Great-Dictator",
+        "supports": "36–50行：脚本、公開日、戦争の背景、二役、身振りから演説への転換。",
+        "access_scope": "公式アーカイブの製作史"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Great Dictator",
+      "year": 1940,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "roger-rabbit-actor-costume",
+    "weekday": 5,
+    "title": "存在しないウサギが水道をひねる",
+    "topic_key": "roger-rabbit-practical-rigs-voice-costume",
+    "category": "映画の舞台裏",
+    "posts": [
+      "アニメのウサギが実写の蛇口をひねる。でも撮影現場にはウサギがいない。\n\n『#ロジャーラビット』の制作陣は、どうやってこの矛盾を解決したのか。\n#まこの映画小話",
+      "1988年の映画では、実写の小道具を動かす機械が隠されていた。ウサギが蛇口をひねる場面では、適切なタイミングで水が出るような仕掛けを使い、後からアニメの動きと合わせた。",
+      "主人公を演じたボブ・ホスキンスは、そこにいないキャラクターを相手に芝居をする必要があった。ロジャーの声を担当したチャールズ・フライシャーは、画面外でウサギの衣装を着て生の台詞を言ったという。",
+      "光や影の変化も一コマずつ追跡してアニメと実写を合わせた。ILMの回顧からわかるのは、架空の人物を現実に感じさせるには絵の技術だけでなく、人間同士の演技や物理的な仕掛けも重要だったことだ。"
+    ],
+    "sources": [
+      {
+        "name": "ILM｜Evolutions: Animation",
+        "url": "https://www.ilm.com/ilm-evolutions-50-animation-part-one/",
+        "supports": "76–81行：蛇口の仕掛け、光と影の追跡、声優の衣装、ホスキンスとの共演。",
+        "access_scope": "制作会社公式回顧"
+      },
+      {
+        "name": "ILM｜Who Framed Roger Rabbit?",
+        "url": "https://www.ilm.com/vfx/who-framed-roger-rabbit/",
+        "supports": "20–37行：実写・セルアニメ・特殊効果の組み合わせと製作情報。",
+        "access_scope": "制作会社公式作品資料"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Who Framed Roger Rabbit",
+      "year": 1988,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "davy-jones-tentacle-acting",
+    "weekday": 5,
+    "title": "タコの髭に演技をさせる",
+    "topic_key": "pirates-davy-jones-tentacles-performance",
+    "category": "映画の舞台裏",
+    "posts": [
+      "デイヴィ・ジョーンズの触手は、コンピューターに任せて動かしただけではない。\n\n『#パイレーツオブカリビアン デッドマンズ・チェスト』の髭にも演技が必要だった。\n#まこの映画小話",
+      "2006年の映画に向け、ILMは撮影現場で俳優の動きを記録できる軽量なモーションキャプチャーの仕組みImocapを開発した。実写の役者と同じ場所で演技できる点が重要だった。",
+      "ビル・ナイの微細な表情を残すため、動きの記録だけでなく、撮影映像を参照してアニメーターが動きを作った。触手は手作業のアニメーションと物理シミュレーションを組み合わせている。",
+      "触手があまりに目立つと、顔の感情を邪魔する。制作陣はその動きが演技を補うように設計したという。CG技術の進歩は、俳優の仕事を消すだけではなく、演技を別の身体に翻訳する技術でもある。"
+    ],
+    "sources": [
+      {
+        "name": "ILM｜Pirates of the Caribbean: Dead Man's Chest",
+        "url": "https://www.ilm.com/vfx/pirates-of-the-caribbean-dead-mans-chest-2/",
+        "supports": "21–23行：Imocapの開発、撮影現場での動き記録。",
+        "access_scope": "制作会社公式資料"
+      },
+      {
+        "name": "ILM｜Evolutions: Animation",
+        "url": "https://www.ilm.com/ilm-evolutions-50-animation-part-one/",
+        "supports": "124–128行：2006年、ナイの演技、手作業とシミュレーション、表情を補う触手。",
+        "access_scope": "制作会社公式回顧"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Pirates of the Caribbean: Dead Man's Chest",
+      "year": 2006,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "lumiere-train-panic-myth",
+    "weekday": 6,
+    "title": "列車から逃げた観客は本当にいた？",
+    "topic_key": "lumiere-arrival-train-panic-legend",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "映画の始まりには、列車が画面から飛び出すと思った観客が逃げたという伝説がある。\n\nリュミエール兄弟の『#ラシオタ駅への列車の到着』。この逸話、実は映画史家が疑っている。\n#まこの映画小話",
+      "映画史研究者マルティン・ロイペルディンガーの2004年の論考を紹介した国際ドキュメンタリー協会の記事によれば、当時の観客が本当にパニックに陥ったことを示す同時代の報告は見つかっていない。",
+      "作家ゴーリキーは列車が迫ってくるような映像体験を印象的に描いた。ところが、その感想と観客が物理的な危険を信じて逃げたという出来事は同じではない。後の映画史にもパニックの逸話が引き継がれた。",
+      "新しいメディアの力を語るために、かつての観客を今よりも騙されやすい存在として描いてしまう。そんな映画史の語り方まで含め、この短い映画は面白い。"
+    ],
+    "sources": [
+      {
+        "name": "International Documentary Association｜Lumiere Illuminated",
+        "url": "https://www.documentary.org/feature/lumiere-illuminated-moving-image-debunks-myths-surrounding-arrival-train",
+        "supports": "56–63行：研究者の論考紹介、ゴーリキーの感想、同時代パニック報告の不在、逸話の流通。原論文の直接閲覧ではない。",
+        "access_scope": "研究論文を紹介する公開記事本文"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "L'Arrivée d'un train en gare de La Ciotat",
+      "year": 1896,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
+  },
+  {
+    "id": "blacksmith-paper-copyright",
+    "weekday": 6,
+    "title": "映画を守ったのは紙だった",
+    "topic_key": "blacksmith-shop-copyright-paper-discovery",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "世界最初期の映画の一つは、映画フィルムではなく一枚の紙に残された画像から、著作権登録の正体が判明した。\n#まこの映画小話 #映画史",
+      "米国で映画を著作権登録する専用の区分ができたのは1912年。それ以前、映画製作者はフィルムの各コマを印画紙に焼き付け、写真として登録する方法を使った。",
+      "1893年の米国最初の映画著作権登録は作品名が曖昧だった。2022年、研究者クラウディ・オプ・デン・カンプが米国議会図書館で1893年11月14日付の手紙を発見した。",
+      "手紙には鍛冶屋の場面の小さな写真が18枚添えられていた。これにより登録作品が『鍛冶屋の場面』と特定された。フィルム自体は既に知られていたが、登録記録と結びつける証拠が欠けていたのだ。",
+      "映画を研究するには映像だけでなく手紙、帳簿、写真も必要になる。著作権を守るための事務手続きが、一世紀以上後に映画史の謎を解いた。"
+    ],
+    "sources": [
+      {
+        "name": "米国議会図書館｜Scholar identifies the first motion picture ever copyrighted",
+        "url": "https://newsroom.loc.gov/news/scholar-at-the-library-of-congress-identifies-the-first-motion-picture--ever-copyrighted/s/6b6eaee5-b504-4776-82f7-f6c2fc114c18",
+        "supports": "14–29行：2022年発表、1893年登録、1912年までの制度、印画紙、発見された手紙と18枚の写真、作品の特定。",
+        "access_scope": "研究成果の公式発表"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Blacksmith Scene",
+      "year": 1893,
+      "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    }
   }
 ]
