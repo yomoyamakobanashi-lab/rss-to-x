@@ -1,0 +1,183 @@
+[
+  {
+    "id": "mon-nosferatu-1922",
+    "weekday": 0,
+    "title": "消されるはずだった吸血鬼",
+    "topic_key": "nosferatu-1922-copyright",
+    "category": "映画怪異録",
+    "posts": [
+      "映画そのものが消滅するはずだった、吸血鬼映画がある。\n\n1922年の『#吸血鬼ノスフェラトゥ』。怪談よりも奇妙な実話は、裁判所がフィルムの廃棄を命じたことだ。\n#まこの映画小話 #ホラー映画",
+      "ムルナウ監督の作品は、ブラム・ストーカーの小説『ドラキュラ』を許諾なく映画化したもの。登場人物の名前や舞台を変えていたが、著作権侵害で作者の遺族から訴えられた。",
+      "廃棄命令にもかかわらず、作品は完全には失われなかった。現在も観られるのは、フィルムが残ったからだ。怪異や呪いの実証ではなく、記録で確かめられる映画史の出来事である。",
+      "吸血鬼の不死性を描いた映画が、現実でも消滅を免れた。そう考えると、映画を保存すること自体が物語の続きのようにも思える。\n次に観るときは、怪物だけでなくフィルムの来歴にも注目したい。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Nosferatu (1922)",
+        "url": "https://www.bfi.org.uk/resources-events-teachers/resources-teachers/gothic-classroom/film-2-nosferatu-1922",
+        "supports": "無許諾映画化、名前変更、訴訟、廃棄命令と現存"
+      },
+      {
+        "name": "米国議会図書館｜Copyright Horror Stories",
+        "url": "https://blogs.loc.gov/copyright/2020/10/copyright-horror-stories/",
+        "supports": "著作権訴訟とフィルムの存続を照合"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "tue-capricorn-one",
+    "weekday": 1,
+    "title": "月面着陸陰謀論と映画の力",
+    "topic_key": "capricorn-one-apollo-hoax",
+    "category": "銀幕陰謀論",
+    "posts": [
+      "『#カプリコン1』は、宇宙飛行の映像が捏造されるというフィクション。\n\n現実の月面着陸を疑う陰謀論と、映画が作り出すリアリティはどう関係するのだろう。\n#まこの映画小話 #SF映画",
+      "ピーター・ハイアムズ監督の1977年の映画では、有人火星探査が偽装される。現実のアポロ計画を暴いたドキュメンタリーではない。BFIは本作を、ウォーターゲート事件後の不信感を背景にした映画群の一つとして紹介している。",
+      "現実には、NASAの月探査機LROが数十年後にアポロ11号の着陸地点を撮影している。残された着陸船の下降段や宇宙飛行士の足跡の経路も確認できる。映画の筋書きは月面着陸捏造の証拠にはならない。",
+      "面白いのは、映像を巧みに作る技術と、映像を検証する技術の両方が存在すること。『あり得そうな物語』と『証拠のある事実』を見分けることも、映画を観る力の一部だと思う。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Conspiracy movies",
+        "url": "https://www.bfi.org.uk/features/conspiracy-movies-thrillers-fritz-lang-adam-curtis",
+        "supports": "映画の設定、年、時代背景"
+      },
+      {
+        "name": "NASA｜Apollo 11 Landing Site",
+        "url": "https://science.nasa.gov/resource/apollo-11-landing-site/",
+        "supports": "LROによる下降段と足跡の経路の撮影"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "wed-tokyo-story",
+    "weekday": 2,
+    "title": "小津安二郎が描いた家族の距離",
+    "topic_key": "tokyo-story-family-distance",
+    "category": "シネフィルの処方箋",
+    "posts": [
+      "映画史の名作なのに、大事件がほとんど起きない。\n\n小津安二郎の『#東京物語』（1953年）は、家族が会いに来るだけで、こんなにも胸が痛くなる映画だ。\n#まこの映画小話 #名作映画",
+      "尾道から東京へ出てきた老夫婦。子どもたちは生活に忙しく、二人に十分な時間を割けない。血のつながりよりも、亡くなった息子の妻・紀子の気遣いが印象に残る。",
+      "2012年の英映画誌Sight and Soundの監督投票では、世界の映画監督が選ぶ歴代映画の第1位になった。批評家投票とは別の調査なので、区別しておきたい。",
+      "親不孝な子どもを責めるだけで終わらないのがこの映画の魅力だと思う。誰もが自分の日常を抱えている。その日常の積み重ねが、家族を遠ざけてしまう。\n自分ならどの人物に近いだろう。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Tokyo Story: anatomy of a classic",
+        "url": "https://www.bfi.org.uk/features/tokyo-story-anatomy-classic",
+        "supports": "1953年、老夫婦と紀子、2012年監督投票第1位"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "thu-twelve-angry-men",
+    "weekday": 3,
+    "title": "多数派と異なる判断を下す勇気",
+    "topic_key": "12-angry-men-asch-conformity",
+    "category": "映画心理学講義",
+    "posts": [
+      "11人が有罪。自分だけが違う判断を下したら、あなたは意見を貫けるだろうか。\n\n『#十二人の怒れる男』を、社会心理学の #同調 から読み解く。\n#まこの映画小話",
+      "心理学者ソロモン・アッシュの実験では、集団の協力者が意図的に誤った判断を示す。参加者がその判断に同調するか、異議を唱えるかを調べる仕組みだった。",
+      "映画では、最初の投票で11人が有罪を支持し、陪審員8番だけが異議を示す。彼は自分が絶対に正しいと宣言するのではなく、疑問が残っていることを理由に話し合いを求める。",
+      "実験と映画は条件も目的も違うので、同じ現象だと断定はできない。それでも集団で判断するとき、根拠より周囲の意見に引きずられていないかを考える材料にはなる。",
+      "多数派も少数派も、人数そのものが正しさの証明にはならない。異なる意見を歓迎するというより、異論の根拠を検討できる場をつくることが大切なのかもしれない。"
+    ],
+    "sources": [
+      {
+        "name": "APA心理学辞典｜Asch situation",
+        "url": "https://dictionary.apa.org/asch-situation",
+        "supports": "実験手続きと同調の測定"
+      },
+      {
+        "name": "AFI Catalog｜12 Angry Men",
+        "url": "https://catalog.afi.com/Catalog/moviedetails/53690?cp=1&pos=0",
+        "supports": "初回投票と8番の異議"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "fri-the-witch",
+    "weekday": 4,
+    "title": "魔女裁判より前の魔女映画",
+    "topic_key": "the-witch-1630-salem-1692",
+    "category": "銀幕人文学",
+    "episode_guid": "d6bad1a2-deae-4302-97b0-82c5473243bc",
+    "posts": [
+      "『#ウィッチ』は有名なセイラム魔女裁判そのものを描いた映画ではない。\n\n舞台は1630年のニューイングランド。魔女という存在を、人々がどんな現実として受け止めていたのか。\n#まこの映画小話 #宗教史",
+      "ロバート・エガース監督はBFIのインタビューで、当時の民間伝承を調べる過程が作品の方向を決めたと語っている。現代の観客が想像する魔女像ではなく、当時の世界観に近づく試みとして興味深い。",
+      "一方、実際のセイラム魔女裁判が始まったのは1692年。マサチューセッツ州の裁判所の沿革資料にも記録されている。映画の設定とは62年の隔たりがあり、混同しないようにしたい。",
+      "この映画を観ると、信仰が人を支える面と、恐怖の説明を一つに固定してしまう危険の両方を考えたくなる。歴史的背景を知ることで、単なる怪物退治とは違う怖さが見えてくる。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜Robert Eggers on The Witch",
+        "url": "https://www.bfi.org.uk/sight-and-sound/interviews/voices-undead-robert-eggers-witch",
+        "supports": "1630年の設定と監督の民間伝承調査"
+      },
+      {
+        "name": "マサチューセッツ州｜裁判所の沿革",
+        "url": "https://www.mass.gov/info-details/about-the-supreme-judicial-court",
+        "supports": "1692年の裁判設置と歴史"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sat-back-to-the-future-casting",
+    "weekday": 5,
+    "title": "もう一人のマーティ",
+    "topic_key": "back-to-the-future-recasting",
+    "category": "映画の舞台裏",
+    "posts": [
+      "『#バックトゥザフューチャー』には、マイケル・J・フォックスではないマーティがいた。\n\nすでに撮影が進んでいたのに、主演を変更したという製作裏話。\n#まこの映画小話 #映画裏話",
+      "最初にマーティ役として撮影に入ったのはエリック・ストルツ。AFIの作品資料によれば、約5週間の撮影後にフォックスへ交代し、必要な場面が撮り直された。",
+      "監督ロバート・ゼメキスは俳優の才能の問題ではなく、作品で目指した演技との違いを理由に挙げている。フォックスは当時のテレビ出演と並行して映画を撮影した。",
+      "タイムトラベルで歴史が変わる映画の撮影現場でも、大きな分岐点があったわけだ。脚本が同じでも、演技のテンポや表情が変われば、映画全体の印象は変わる。別のマーティを想像してみるのも面白い。"
+    ],
+    "sources": [
+      {
+        "name": "AFI Catalog｜Back to the Future",
+        "url": "https://catalog.afi.com/Catalog/MovieDetails/55763",
+        "supports": "主演交代、約5週間、監督の説明、テレビ出演との並行"
+      },
+      {
+        "name": "SYFY WIRE｜Casting change",
+        "url": "https://www.syfy.com/syfy-wire/back-to-the-future-why-michael-j-fox-replaced-eric-stotlz",
+        "supports": "主演交代の経緯を照合"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sun-kuleshov",
+    "weekday": 6,
+    "title": "表情は編集によって変わる",
+    "topic_key": "kuleshov-effect-montage",
+    "category": "映画トリビア研究所",
+    "posts": [
+      "俳優の顔がまったく同じでも、編集次第で違う感情に見えてしまう。\n\n映画の仕組みを知るなら、まずは #クレショフ効果。観客も映画の意味を作っているという話。\n#まこの映画小話 #映画豆知識",
+      "ソ連の映画作家レフ・クレショフの名を冠したこの効果は、映像を並べることによって観客の意味の受け取り方が変わるという考え方。1920年代のソ連映画のモンタージュ理論と深く関係している。",
+      "例えば無表情の顔の直後に料理を見せれば、空腹に見えるかもしれない。別の映像なら、別の心情を読み取るかもしれない。これは仕組みを説明するための例で、実験映像の厳密な再現ではない。",
+      "俳優が感情を演じるだけでなく、ショット同士の関係から観客が感情を補う。映画を観ているとき、私たちはどこまで映像を見て、どこから意味を作り出しているのだろう。"
+    ],
+    "sources": [
+      {
+        "name": "BFI｜10 great Soviet films of the 1920s",
+        "url": "https://www.bfi.org.uk/lists/10-great-soviet-films-1920s",
+        "supports": "クレショフ効果、並置による意味形成、1920年代ソ連モンタージュ"
+      }
+    ],
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  }
+]
