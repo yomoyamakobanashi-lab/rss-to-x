@@ -623,7 +623,20 @@
       "review_note": "映画ポスターの権利確認未了。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "クラクフの旧シンドラー琺瑯工場（2012年）",
+      "relation": "救出活動に関連する実在の工場建物。記事で扱う名簿自体ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Usine_d%27%C3%A9mail_d%27Oskar_Schindler.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Usine_d%27%C3%A9mail_d%27Oskar_Schindler.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Usine_d%27%C3%A9mail_d%27Oskar_Schindler.jpg",
+      "rights_basis": "個別ページ120–141行。本人撮影、2012年3月2日、CC BY-SA 3.0 Unported。商用共有可。工業建築の外観写真、原画像576KBの実表示確認。実名入り1945年名簿も取得できたが、広報用根画像には犠牲者への配慮から建物を選定。",
+      "credit": "Traveller008／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/ （無改変）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "sat-jaws-broken-shark",
@@ -788,17 +801,30 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
-      "asset_kind": "historical_art",
-      "asset_title": "1935–1942年の自転車の図",
-      "source_url": "https://commons.wikimedia.org/wiki/File:John_Cutting%2C_Bicycle%2C_1935-1942%2C_NGA_20852.jpg",
-      "review_note": "NGA提供CC0確認。原画像7.67MBで上限超過。米国資料であることを明記できる代替縮小画像を検討。",
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ローマのフランチェスコ・クリスピ通り（2015年）",
+      "relation": "本文に登場する盗難場面の撮影地付近の後年の写真。1948年当時の街並みではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rom%2C_die_Stra%C3%9Fe_Via_Francesco_Crispi%2C_Nordteil.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Rom%2C_die_Stra%C3%9Fe_Via_Francesco_Crispi%2C_Nordteil.JPG",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Rom%2C_die_Stra%C3%9Fe_Via_Francesco_Crispi%2C_Nordteil.JPG",
+      "rights_basis": "個別ページ119–146行。本人撮影、2015年1月29日、CC BY 3.0 Unported。旧市街の建物と街路が主題、現代の創作物が主題ではない。商用共有可。原画像3MBの実表示確認。",
+      "credit": "Dguendel／CC BY 3.0 https://creativecommons.org/licenses/by/3.0/ （無改変）",
       "checked_on": "2026-11-27",
-      "latest_candidate": {
-        "source_url": "https://www.metmuseum.org/art/collection/search/362652",
-        "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/362652/1659507/main-image",
-        "review_note": "1894年の自転車旅行広告、The MetのPD/OA表示と実画像確認。映画の戦後ローマの労働生活との関係が弱いため、1940年代イタリアの自転車・街路画像を優先して保留。",
-        "checked_on": "2026-11-27"
+      "previous_candidate": {
+        "status": "pending",
+        "asset_kind": "historical_art",
+        "asset_title": "1935–1942年の自転車の図",
+        "source_url": "https://commons.wikimedia.org/wiki/File:John_Cutting%2C_Bicycle%2C_1935-1942%2C_NGA_20852.jpg",
+        "review_note": "NGA提供CC0確認。原画像7.67MBで上限超過。米国資料であることを明記できる代替縮小画像を検討。",
+        "checked_on": "2026-11-27",
+        "latest_candidate": {
+          "source_url": "https://www.metmuseum.org/art/collection/search/362652",
+          "image_url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/362652/1659507/main-image",
+          "review_note": "1894年の自転車旅行広告、The MetのPD/OA表示と実画像確認。映画の戦後ローマの労働生活との関係が弱いため、1940年代イタリアの自転車・街路画像を優先して保留。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -2005,7 +2031,20 @@
       "review_note": "1942年版ポスターの転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "映画を再現したモロッコのRick’s Caféの入口（2022年）",
+      "relation": "1942年の映画をもとに2004年開業した実在の店。映画のロケ地ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Entrance_to_Rick%E2%80%99s_Caf%C3%A9_in_Casablanca.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Entrance_to_Rick%E2%80%99s_Caf%C3%A9_in_Casablanca.jpg",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Entrance_to_Rick%E2%80%99s_Caf%C3%A9_in_Casablanca.jpg",
+      "rights_basis": "個別ページ119–142行。本人撮影、2022年5月30日、CC BY 4.0 International。1930年代の建物外観・店名の文字看板を写す。商用共有可。原画像1.22MBの実表示確認。",
+      "credit": "Quintin Soloviev／CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ （無改変）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "birds-algal-toxin",
@@ -4485,7 +4524,18 @@
         "source_url": "https://commons.wikimedia.org/wiki/File:The_Wicker_Man_of_the_Druids.jpg",
         "review_note": "ウェールズ国立図書館由来、1781年のPennantの挿絵、PD表示。原画像と960px版の取得に失敗。再取得後のみ承認。",
         "checked_on": "2026-11-27"
-      }
+      },
+      "additional_candidates": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:The_Wicker_Man_of_the_Druids_crop.jpg",
+          "review_note": "1781年ウェールズ国立図書館由来切抜き、PD表示。原画像取得失敗。"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Wicker_man_(Britannia_antiqua_illustrata).jpg",
+          "review_note": "1676年刊、St John's College Cambridge由来、作者不明、PDM。原画像取得失敗。"
+        }
+      ],
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4595,11 +4645,24 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Hollow_Nickel.jpg",
-        "review_note": "FBI公式撮影、米国PD。個別資料に米国以外の再利用許可なし。FBI利用規約と適用地域を追加確認。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "グリーニッケ橋と旧東西境界の標識（2011年）",
+      "relation": "記事のアベルとパワーズの交換に関連する実在の橋。硬貨そのものや交換当時の写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Glienicke_Bridge_Berlin_in_May_2011.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Glienicke_Bridge_Berlin_in_May_2011.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Glienicke_Bridge_Berlin_in_May_2011.jpg",
+      "rights_basis": "個別ページ113–136行。本人撮影、2011年4月29日、CC BY-SA 4.0 International。公共の境界標識の地図と事実的文言、橋の外観。商用共有可。原画像817KBの実表示確認。",
+      "credit": "Chris j wood／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/ （無改変）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hollow_Nickel.jpg",
+          "review_note": "FBI公式撮影、米国PD。個別資料に米国以外の再利用許可なし。FBI利用規約と適用地域を追加確認。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -5670,6 +5733,19 @@
       "checked_on": "2026-11-27",
       "status": "abstract_only",
       "scope": "公開抄録で支持される主張だけに限定。出版社本文はアクセス不可。論文全文の評価は未完了。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "エドヴァルド・ムンク《叫び》（1893年）",
+      "relation": "恐怖や叫びを表現する別の芸術の例。本文の音響実験の刺激・実験結果ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Edvard_Munch_-_The_Scream_-_NG.M.00939_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Edvard_Munch_-_The_Scream_-_NG.M.00939_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg/960px-Edvard_Munch_-_The_Scream_-_NG.M.00939_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Edvard_Munch_-_The_Scream_-_NG.M.00939_-_National_Museum_of_Art%2C_Architecture_and_Design.jpg",
+      "rights_basis": "個別ページ144–164・191–213行。国立博物館所蔵1893年作品、作者1944年没。原産国・米国でPD、日でも旧法没後50年と戦時加算を考慮しても2018年までに満了。デジタル複製にCC BY 4.0明示。960px版を実表示確認、容量はCIで確認。",
+      "credit": "Edvard Munch／National Museum of Art, Architecture and Design, NG.M.00939／CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ （縮小のみ）",
+      "checked_on": "2026-11-27"
     }
   },
   {
