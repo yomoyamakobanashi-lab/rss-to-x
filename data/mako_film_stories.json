@@ -20,7 +20,7 @@
       {
         "name": "米国議会図書館｜Copyright Horror Stories",
         "url": "https://blogs.loc.gov/copyright/2020/10/copyright-horror-stories/",
-        "supports": "201–206行：宣伝資料、1929年米国公開、当時の米国著作権手続き"
+        "supports": "201–206行：無許諾、宣伝資料、1929年米国公開、当時の米国納本要件"
       }
     ],
     "review_status": "source_checked",
@@ -60,6 +60,11 @@
           "checked_on": "2026-11-27"
         }
       }
+    },
+    "qa_review": {
+      "status": "rechecked",
+      "checked_on": "2026-11-27",
+      "note": "BFI本文18–20行と米国著作権局ブログ201–206行を再読。改名・舞台変更・廃棄命令・1929年米国公開・納本要件を照合。結末は法域差の解釈。"
     }
   },
   {
@@ -106,6 +111,11 @@
       "rights_basis": "NASA撮影の政府制作画像。個別資料のPD-NASA表記およびNASA公式 https://www.nasa.gov/nasa-brand-center/images-and-media/ の情報・教育用途の利用条件を照合。ロゴ・人物なし、情報目的の文脈に限り、NASAの番組推奨や提携を示唆しない。原画像取得済み。",
       "credit": "1969年のアポロ11号月面足跡（LRO画像ではない）／NASA",
       "checked_on": "2026-11-27"
+    },
+    "qa_review": {
+      "status": "rechecked",
+      "checked_on": "2026-11-27",
+      "note": "BFI本文57–65行とNASA本文298–300行を再読。架空の火星探査と実際のLRO観測を区別。政治不信はBFIの映画史的解釈。"
     }
   },
   {
@@ -124,7 +134,7 @@
       {
         "name": "BFI｜Tokyo Story: anatomy of a classic",
         "url": "https://www.bfi.org.uk/features/tokyo-story-anatomy-classic",
-        "supports": "18、29–33行：途中退席、2012年の両投票、老夫婦の訪問"
+        "supports": "18、29–36行：途中退席、2012年の両投票、老夫婦の訪問と紀子の関係"
       }
     ],
     "review_status": "source_checked",
@@ -147,6 +157,11 @@
         "review_note": "1953年撮影と日本・米国PDの記載は確認したが、原典が個人Geocitiesサイトで来歴が弱い。機関所蔵資料で照合するまで保留。",
         "checked_on": "2026-11-27"
       }
+    },
+    "qa_review": {
+      "status": "rechecked",
+      "checked_on": "2026-11-27",
+      "note": "BFI本文18、29–36行を再読。途中退席、2012年監督1位・批評家3位、家族関係を照合。結末は筆者の鑑賞解釈。"
     }
   },
   {
