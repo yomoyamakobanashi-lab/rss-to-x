@@ -596,19 +596,17 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
-      "asset_kind": "scientific_image",
-      "asset_title": "ホホジロザメの画像",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Great_white_shark.png",
-      "review_note": "Commons CC0表記、ただし第三者サイトが出典で撮影者の許諾の連鎖と画像内容を要確認。",
-      "checked_on": "2026-11-27",
-      "latest_candidate": {
-        "asset_kind": "scientific_image",
-        "asset_title": "南アフリカのホホジロザメ",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Great_White_Shark_(Carcharodon_carcharias).jpg",
-        "review_note": "Andrew Shiva（Godot13）自身の2008年撮影、CC BY-SA 4.0および商用再利用を明示、3.65MB。直接画像取得エラー、保留。",
-        "checked_on": "2026-11-27"
-      }
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1877年刊のホホジロザメの図",
+      "relation": "機械仕掛けのサメのモデルに関連する歴史的な博物図。映画の美術資料ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:FMIB_46036_White_Shark.jpeg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/FMIB_46036_White_Shark.jpeg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:FMIB_46036_White_Shark.jpeg",
+      "rights_basis": "Jonathan Couch（1870年没）、1877年刊 History of the Fishes of the British Islands。University of Washington Freshwater and Marine Image Bank accession 46036。個別ページ117–157行に所蔵元のPD・許諾不要・出典表示要請。日本・米国・英国でも保護期間満了。原画像282KB表示確認。",
+      "credit": "Jonathan Couch（1877）／Freshwater and Marine Image Bank, University of Washington",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -1772,7 +1770,20 @@
       "review_note": "所蔵品画像に利用制限表示あり。ポスターは別途権利確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "1900年の原作挿絵：銀の靴を手にするドロシー",
+      "relation": "記事で言及する原作の銀色の靴を描く挿絵。1939年映画の画像ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dorothy_Gale_with_silver_shoes.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Dorothy_Gale_with_silver_shoes.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Dorothy_Gale_with_silver_shoes.jpg",
+      "rights_basis": "個別ページ121–140行で1900年のW. W. Denslow（1915年没）の挿絵、原産国PDを確認。米国1900年刊のため米国期間も満了、日本の死後70年と戦時加算を考慮しても満了。米国PDタグ不足はこの公表年で補う。原画像349KBを表示確認。",
+      "credit": "W. W. Denslow『The Wonderful Wizard of Oz』（1900）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "sun-casablanca-misquotation",
@@ -2473,6 +2484,19 @@
       "film_title": "The Exorcist",
       "year": 1973,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "2007年のエクソシストの階段",
+      "relation": "映画のロケ地の実際の階段。1973年の撮影時の写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Exorcist_Stairs.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Exorcist_Stairs.jpg",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Exorcist_Stairs.jpg",
+      "rights_basis": "Dmitry K撮影、2007年、Flickr出典。個別ページ121–144行にCC BY 2.0と2009年のFlickreviewR確認。原画像516KB表示確認。無改変、作者・ライセンス・出典を明記。推奨を示唆しない。",
+      "credit": "Dmitry K（改変なし） https://creativecommons.org/licenses/by/2.0/",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -2845,6 +2869,19 @@
       "film_title": "Pirates of the Caribbean: Dead Man's Chest",
       "year": 2006,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "タコの標本写真",
+      "relation": "デイヴィ・ジョーンズの触腕を考える参考として、実在のタコの吸盤と腕の形態を示す。映画の制作資料・モデル個体ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Octopus_vulgaris_-_National_Museum_of_Nature_and_Science,_Tokyo_-_DSC07565.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Octopus_vulgaris_-_National_Museum_of_Nature_and_Science%2C_Tokyo_-_DSC07565.JPG",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Octopus_vulgaris_-_National_Museum_of_Nature_and_Science,_Tokyo_-_DSC07565.JPG",
+      "rights_basis": "Daderotの2013年自己撮影、国立科学博物館展示。個別ページ119–129行に撮影制限なしとCC0 1.0 Universalを明記。標本（自然物）の写真、原画像3.22MB表示確認。",
+      "credit": "タコの標本／Daderot（国立科学博物館、2013）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4783,10 +4820,9 @@
     "related_image": {
       "status": "pending",
       "latest_candidate": {
-        "asset_kind": "historical_art",
-        "asset_title": "Arthur Rackham《Put his strange case before old Solomon Caw》（1906）",
-        "source_url": "https://commons.wikimedia.org/wiki/File:Peter_Pan_Put_his_strange_case_before_old_Solomon_Caw.jpg",
-        "review_note": "作者1939年没、英国原産国PD、1.07MB直接取得成功。ハーバード大学の同じ挿絵の38MB版は商用再利用可と明記。掲載用1.07MB版の原典と米国公表年の照合、Peter Panの英国特則との区別を確認してから承認。",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Arthur_Rackham_Peter_Pan_in_Kensington_Gardens_illustration.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Arthur_Rackham_Peter_Pan_in_Kensington_Gardens_illustration.jpg",
+        "review_note": "1907年刊、Arthur Rackham（1939年没）、個別ページ119–149行で米国及び原産国PD。601KBと記載。直接画像取得を2回試したが失敗。保留。",
         "checked_on": "2026-11-27"
       }
     }
