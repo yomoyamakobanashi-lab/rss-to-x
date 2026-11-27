@@ -23,6 +23,32 @@ class MakoStoriesTests(unittest.TestCase):
                 for ref in r["sources"]:
                     self.assertTrue(any(ref["url"] in t for t in parts[1:-1]))
 
+    def test_initial_bank_has_image_record_for_every_story(self):
+        rows=bank.load_bank(require_full=True)
+        self.assertTrue(all(bank.visual_assets(r) for r in rows))
+
+    def test_prior_day_ambiguous_reservation_blocks_publication(self):
+        now=datetime(2026,11,28,7,tzinfo=JST)
+        state={"start_jst":"2026-11-27","days":{"2026-11-27":{"story":{"kind":"story","key":"old","status":"reserved"}}},"used_story_ids":["old"]}
+        with patch.object(pub,"load_ledger",return_value=state), patch.object(bank,"load_bank",return_value=[]), patch.object(pub,"datetime") as clock, patch.object(pub.argparse.ArgumentParser,"parse_args",return_value=pub.argparse.Namespace(dry_run=False)), patch.dict(pub.os.environ,{"GITHUB_REF":"refs/heads/main","REELPAL_UNIFIED_PUBLISH":"1"}), patch.object(pub,"companion") as companion, patch.object(pub,"due_visual_story") as due, patch.object(pub,"post_thread") as send:
+            clock.now.return_value=now
+            with self.assertRaisesRegex(RuntimeError,"Ambiguous reservation"):
+                pub.main()
+            companion.assert_not_called()
+            due.assert_not_called()
+            send.assert_not_called()
+
+    def test_prior_day_accepted_root_consumes_matching_current_slot(self):
+        now=datetime(2026,11,28,7,tzinfo=JST)
+        state={"start_jst":"2026-11-27","days":{"2026-11-27":{"story":{"kind":"story","key":"old","status":"accepted","buffer_id":"old-id"}}},"used_story_ids":["old"]}
+        with patch.object(pub,"load_ledger",return_value=state), patch.object(bank,"load_bank",return_value=[]), patch.object(pub,"datetime") as clock, patch.object(pub.argparse.ArgumentParser,"parse_args",return_value=pub.argparse.Namespace(dry_run=False)), patch.dict(pub.os.environ,{"GITHUB_REF":"refs/heads/main","REELPAL_UNIFIED_PUBLISH":"1"}), patch.object(pub,"companion"), patch.object(pub,"write_ledger"), patch.object(pub,"verify",return_value={"externalLink":"https://x.com/example/status/1"}) as verify, patch.object(pub,"post_thread") as send:
+            clock.now.return_value=now
+            pub.main()
+            verify.assert_called_once()
+            self.assertEqual(state["days"]["2026-11-27"]["story"]["status"],"root_confirmed")
+            self.assertEqual(state["days"]["2026-11-28"]["story"]["status"],"carryover_confirmed")
+            send.assert_not_called()
+
     def test_weekday_and_used_filter(self):
         rows=bank.load_bank()
         state={"days":{},"used_story_ids":[]}
