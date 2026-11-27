@@ -32,6 +32,14 @@
       "source_url": "https://www.smb.museum/fileadmin/website/Presse/Pressematerial/2022/12/SSG_Nosferatu_Pressebilder.pdf",
       "review_note": "Berlin State Museumsの展示資料にAlbin Grauによる1921年広告の記載。1922年の劇場版原画と現代版を区別し、Grauの没年1971年および日本・原産国での保護期間を精査する。許諾未確認。",
       "rights_reviewed_on": "2026-11-27"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "book_cover",
+      "asset_title": "ドラキュラ原作の1897年初版表紙候補",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Dracula-First-Edition-1897.jpg",
+      "review_note": "British Library由来、PD-scan表示だが9.9MB、別画像は後年版と混同の疑い。版の来歴と適切な縮小版を確認。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -65,6 +73,19 @@
       "film_title": "Capricorn One",
       "year": 1977,
       "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "scientific_image",
+      "asset_title": "アポロ11号の月面の足跡（1969年）",
+      "relation": "映画の架空の宇宙探査と実際の月面探査を区別する史料。LRO画像とは別の1969年の撮影と明記する。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Apollo_11_bootprint_-_GPN-2001-000014.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Apollo_11_bootprint_-_GPN-2001-000014.jpg",
+      "license": "rights_holder_permission",
+      "rights_evidence_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "rights_basis": "NASA撮影の政府制作画像。個別資料のPD-NASA表記およびNASA公式 https://www.nasa.gov/nasa-brand-center/images-and-media/ の情報・教育用途の利用条件を照合。ロゴ・人物なし、情報目的の文脈に限り、NASAの番組推奨や提携を示唆しない。原画像取得済み。",
+      "credit": "1969年のアポロ11号月面足跡（LRO画像ではない）／NASA",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -93,6 +114,14 @@
       "film_title": "Tokyo Story",
       "year": 1953,
       "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "archival_photo",
+      "asset_title": "1953年の東京物語の撮影風景",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Setsuko_Hara_and_Yasujiro_Ozu_in_Tokyo_Story.jpg",
+      "review_note": "旧著作権法の日本PD・米国URAA非復活タグあり。ただし原典が個人サイトで初出の証拠不足。所蔵機関で照合。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -126,6 +155,19 @@
       "film_title": "12 Angry Men",
       "year": 1957,
       "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "diagram",
+      "asset_title": "アッシュの同調実験の線分比較図",
+      "relation": "記事内で言及する心理学実験の説明図。映画の画像でも実験原資料でもない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Asch_experiment.png",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/The_Asch_experiment.png",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:The_Asch_experiment.png",
+      "rights_basis": "単純な直線、枠、A/B/Cの符号のみからなる幾何学図形。Commons個別資料は創作性を欠く単純図形としてPD-shapeと明記。図の内容を直接確認した。原画像取得済み。",
+      "credit": "同調実験の線分比較の説明図／Helen",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -160,6 +202,14 @@
       "film_title": "The Witch",
       "year": 2015,
       "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "historical_art",
+      "asset_title": "1892年のセイラム魔女裁判を描いた石版画",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Salem_witch.jpg",
+      "review_note": "米国議会図書館所蔵、Joseph E. Baker 1914年没。1892年の後世の想像画と明記する。7.36MBで上限超過、適切な公式縮小画像と利用条件を確認するまで保留。",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -194,6 +244,19 @@
       "film_title": "Back to the Future",
       "year": 1985,
       "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "DeLorean DMC-12の実車写真（2022年）",
+      "relation": "映画のタイムマシンのベース車。同型車の参考写真であり撮影用車両ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:DeLorean_DMC-12_-_2022.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/DeLorean_DMC-12_-_2022.jpg",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:DeLorean_DMC-12_-_2022.jpg",
+      "rights_basis": "撮影者Kirchenfanが自身の著作物として2022年に公開し、CC0 1.0 Universalで世界的な権利放棄・商用利用を明示。通常の車両の写真であり映画の小道具の複製ではない。原画像取得済み。車名は関連資料の説明のみに使用し提携を示唆しない。",
+      "credit": "同型車の参考写真（撮影車ではない）／Kirchenfan",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -254,7 +317,15 @@
       "alternative_candidate_url": "https://commons.wikimedia.org/wiki/File:1920-02_anonyme_K%C3%BCnstlerInnen_Plakat_Du_musst_Caligari_werden,_im_Marmorhaus_am_Donnerstag,_den_26._Februar.jpg"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "historical_art",
+      "asset_title": "1920年2月26日の無署名公開広告",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1920-02_anonyme_K%C3%BCnstlerInnen_Plakat_Du_musst_Caligari_werden,_im_Marmorhaus_am_Donnerstag,_den_26._Februar.jpg",
+      "review_note": "画像取得済み。1920年公開と原版の来歴、米国タグ不足の補完を別資料で確認するまで保留。",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "sun-melies-moon",
@@ -291,7 +362,15 @@
       "alternative_candidate_url": "https://commons.wikimedia.org/wiki/File:Voyage_dans_la_Lune_affiche.jpg"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "film_still",
+      "asset_title": "1902年版の月の顔の白黒場面",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Voyage_dans_la_lune_(1902)_still03.jpg",
+      "review_note": "画像取得済み。Méliès 1938年没、米国PD表記あり。ただし直接出典不明と記載。原版・他の権利者・復元版を照合。",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "mon-mummy-curse-press",
@@ -326,7 +405,20 @@
       "review_note": "映画版を1932年に固定。転載許諾未確認。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "1922年11月、ツタンカーメン王墓の入口で撮影された発掘関係者",
+      "relation": "映画の呪い伝説を生んだ発掘の実写史料",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Howard_Carter,_Lord_Carnarvon_and_Lady_Evelyn_Herbert_at_Tutankhamen%27s_tomb.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Howard_Carter%2C_Lord_Carnarvon_and_Lady_Evelyn_Herbert_at_Tutankhamen%27s_tomb.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Howard_Carter,_Lord_Carnarvon_and_Lady_Evelyn_Herbert_at_Tutankhamen%27s_tomb.jpg",
+      "rights_basis": "Harry Burton撮影（1922年）、1940年没。Griffith Institute Archive由来。Commons個別資料は米国での1931年以前の公表および原産国での保護期間満了を明記。日本でも死後70年に連合国戦時加算約10年を加えても2026年までに満了する。原画像取得・内容を確認。",
+      "credit": "発掘当時の写真／Harry Burton・Griffith Institute Archive",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "tue-manchurian-mkultra",
@@ -1066,7 +1158,15 @@
       "review_note": "1927年版のポスターの作者・各地域での権利確認未了。"
     },
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "historical_art",
+      "asset_title": "Boris Bilinskiの1927年版ポスター候補",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Boris_Bilinski_-_Filmplakat_f%C3%BCr_Metropolis.jpg",
+      "review_note": "1927年のポスター、作者1948年没。原典が二次サイトのため機関所蔵品、原産国と日本の戦時加算・米国の権利を再確認。",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "thu-change-blindness-cinema",
@@ -4295,6 +4395,14 @@
       "checked_on": "2026-11-27",
       "status": "rechecked",
       "scope": "BFI本文16–20,30–33行：歴史と伝承の混在、講義形式、当時の精神医学への批評。本文の留保を維持。"
+    },
+    "related_image": {
+      "status": "pending",
+      "asset_kind": "historical_art",
+      "asset_title": "Albrecht Dürer The Witch（1500年頃）",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_Witch_MET_DP815535.jpg",
+      "review_note": "メトロポリタン美術館のCC0。直接取得に失敗。SNS向けの画像内容・取得可否を再確認。",
+      "checked_on": "2026-11-27"
     }
   },
   {
