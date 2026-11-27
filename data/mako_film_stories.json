@@ -156,7 +156,8 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "episode_guid": "73938f1f-b8be-4b52-abed-24269a0d31b6"
   },
   {
     "id": "sun-kuleshov",
@@ -766,6 +767,146 @@
       "film_title": "Safety Last!",
       "year": 1923,
       "review_note": "当時のポスターの作者と権利を確認するまで添付しない。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "tue-v-vendetta-fawkes-symbol",
+    "weekday": 1,
+    "title": "悪役の顔が抵抗の象徴になるまで",
+    "topic_key": "v-vendetta-fawkes-symbol-history",
+    "category": "銀幕陰謀論",
+    "episode_guid": "1228b723-6111-40f8-ab42-67fbfd7d9af5",
+    "posts": [
+      "『#Vフォーヴェンデッタ』の仮面には、400年以上の歴史がある。\n\n実在した陰謀の参加者の顔が、なぜ権力への抵抗を表す記号になったのだろう。\n#まこの映画小話 #映画史",
+      "1605年のイングランドで、国王と議会を狙った陰謀が発覚した。ガイ・フォークスはその参加者の一人。英国議会の解説は、当時の宗教的・政治的分断を事件の背景に挙げている。",
+      "ロンドン博物館によれば、フォークスは長く悪役として表象されたが、1841年のウィリアム・ハリソン・エインズワースの歴史小説などを通じ、悲劇的な反英雄としても描かれるようになった。",
+      "『Vフォー・ヴェンデッタ』の漫画と映画では、主人公Vがその顔を模した仮面を着用する。後には現実の抗議運動でも使われた。歴史上の本人と、後世に作られたイメージは同じではない。",
+      "記号の意味は固定されていない。時代や使う人が変われば、同じ顔が違う思想を表すこともある。仮面そのものの歴史を知ると、作品の政治的寓意にも別の奥行きが生まれる。"
+    ],
+    "sources": [
+      {
+        "name": "英国議会｜Overview of the Gunpowder plot",
+        "url": "https://www.parliament.uk/about/living-heritage/evolutionofparliament/parliamentaryauthority/the-gunpowder-plot-of-1605/overview/",
+        "supports": "1605年の陰謀と宗教的・政治的分断という背景（Overview冒頭）"
+      },
+      {
+        "name": "London Museum｜The symbolism of Guy Fawkes",
+        "url": "https://www.londonmuseum.org.uk/collections/london-stories/symbolism-of-guy-fawkes/",
+        "supports": "悪役から反英雄への表象変化、1841年の小説、漫画と映画の仮面、現実の抗議運動（Fawkes became an anti-hero / A symbol of resistance節）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "V for Vendetta",
+      "year": 2005,
+      "review_note": "日本公開2006年と作品年の表記差に注意。転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "thu-lucy-ten-percent-myth",
+    "weekday": 3,
+    "title": "眠っている90％の脳はどこにある？",
+    "topic_key": "lucy-ten-percent-brain-neuromyth",
+    "category": "映画心理学講義",
+    "episode_guid": "d7eb38ab-6440-457d-b11f-5eeb1cf17693",
+    "posts": [
+      "脳の90％は眠っていて、目覚めれば超能力が使える？\n\n『#LUCY』の発想は魅力的だけれど、その前提には有名な神経科学の誤解がある。\n#まこの映画小話 #心理学",
+      "2014年の映画『LUCY／ルーシー』は、人間の脳の未使用部分を使えるようになるという設定を物語に取り入れた。米国の神経科学教育サイトBrainFactsは公開当時からこの前提を検証している。",
+      "神経科学者ニック・スピッツァーは、人間が脳の10％しか使わないという説明を否定する。脳全体が使われている。ただし、すべての神経細胞が常に一斉に活動するという意味ではない。",
+      "この俗説の由来には複数の説明がある。BrainFactsの記事では、初期の脳研究の誤読や自己啓発的な言説が候補として挙げられるが、起源を一つに確定できるわけではない。",
+      "潜在能力という言葉は、努力で自分を変えたいという願望にも響く。科学らしい言葉が願望に結びつくと、私たちはどこまで根拠を吟味できるだろう。SFを楽しむことと、その設定を事実として信じることは別だ。"
+    ],
+    "sources": [
+      {
+        "name": "BrainFacts/SfN｜Debunked: The 10 Percent Brain Myth",
+        "url": "https://www.brainfacts.org/thinking-sensing-and-behaving/thinking-and-awareness/2019/debunked-the-10-percent-brain-myth-061719",
+        "supports": "UC San Diegoの神経科学者Nick Spitzer本人による10％説の否定とLUCYへの言及（Transcript）"
+      },
+      {
+        "name": "Dana Foundation / BrainFacts｜Lucy and the 10 Percent Brain Myth",
+        "url": "https://www.brainfacts.org/brain-anatomy-and-function/anatomy/2014/lucy-and-the-10-percent-brain-myth",
+        "supports": "2014年公開前の設定の検討、俗説起源の複数仮説と不確実性（冒頭および後続の解説）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Lucy",
+      "year": 2014,
+      "review_note": "公式ポスターのSNS転載許諾未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "fri-godzilla-lucky-dragon",
+    "weekday": 4,
+    "title": "怪獣の前に現実の船があった",
+    "topic_key": "godzilla-1954-daigo-fukuryumaru",
+    "category": "銀幕人文学",
+    "episode_guid": "cb237a06-e00b-48ef-b82f-ce2cf6135e9b",
+    "posts": [
+      "1954年の『#ゴジラ』を観る前に、知っておきたい一隻の漁船がある。\n\n第五福竜丸。怪獣映画の恐怖は、当時の日本にとって決して空想だけではなかった。\n#まこの映画小話 #映画史",
+      "1954年3月1日、焼津のマグロ漁船・第五福竜丸が、米国のビキニ環礁での水爆実験による放射性降下物を浴びた。都立第五福竜丸展示館はこの船と事件の記録を保存している。",
+      "同じ年に製作された本多猪四郎監督の『ゴジラ』。Criterionの映画史解説は、冒頭の海上での異変を第五福竜丸事件への明確な参照と読み、製作の背景に核への不安を位置づけている。",
+      "被害は第五福竜丸だけにとどまらず、他の漁船やマーシャル諸島の住民にも及んだ。展示館は、広域の被害を捉えるためにビキニ事件という呼び方を用いている。",
+      "怪獣を倒せば物語は終わる。しかし、怪獣を生み出す社会の問題はそれで終わらない。『ゴジラ』を観た後に、実際の記録や展示資料にも触れてみてほしい。"
+    ],
+    "sources": [
+      {
+        "name": "都立第五福竜丸展示館｜第五福竜丸とは",
+        "url": "https://d5f.org/about",
+        "supports": "1954年3月1日の被ばく、船の保存、他の漁船とマーシャル諸島の被害、ビキニ事件という呼称（各節）"
+      },
+      {
+        "name": "Criterion｜Reign of Destruction",
+        "url": "https://www.criterion.com/current/posts/6649-reign-of-destruction",
+        "supports": "本多監督の1954年版と事件の関係、冒頭の海上場面、製作背景（冒頭の核時代と映画製作に関する段落）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "ゴジラ",
+      "year": 1954,
+      "review_note": "1954年日本公開版の劇場ポスター。権利未確認。"
+    },
+    "review_status": "source_checked",
+    "checked_on": "2026-11-27"
+  },
+  {
+    "id": "sun-toy-story-pizza-planet",
+    "weekday": 6,
+    "title": "宇宙ピザ店はゴルフ場だった",
+    "topic_key": "toy-story-pizza-planet-design-evolution",
+    "category": "映画トリビア研究所",
+    "episode_guid": "47ad36cd-b281-45fa-9fce-02ea355c105f",
+    "posts": [
+      "『#トイストーリー』のピザ・プラネットは、最初から宇宙をテーマにしていたわけではない。\n\nピクサー公式の制作資料に残る、舞台設定の意外な変化。\n#まこの映画小話 #ピクサー",
+      "初期の案ではピザ店はミニゴルフをテーマにしていた。ところがバズ・ライトイヤーが物語に加わると、店は宇宙をモチーフにした施設へと変更された。",
+      "ピクサーの解説によると、このデザインなら、自分を本物の宇宙戦士だと思うバズが店を宇宙港と誤認することにも説得力が生まれる。背景美術が、登場人物の認識や行動の理由に関わっている。",
+      "さらに店の配達用トラックは、後の複数のピクサー作品にもカメオ出演した。何気ない舞台設定から生まれた小道具が、作品をまたいで遊べる映画ファンの楽しみになったわけだ。",
+      "キャラクターの性格が美術を変え、美術が物語の進行を支える。世界初の長編フルCGアニメーションという技術史だけでなく、こうしたデザインの工夫にも注目したくなる。"
+    ],
+    "sources": [
+      {
+        "name": "Pixar｜Toy Story",
+        "url": "https://www.pixar.com/toy-story",
+        "supports": "ミニゴルフ案から宇宙テーマへ変更、バズの誤認を可能にしたデザイン、配達トラックのカメオ（Pizza Planet節）"
+      },
+      {
+        "name": "Pixar｜Our Story",
+        "url": "https://www.pixar.com/our-story",
+        "supports": "1995年公開、世界初のコンピューターアニメーション長編（1995年欄）"
+      }
+    ],
+    "poster": {
+      "status": "pending",
+      "film_title": "Toy Story",
+      "year": 1995,
+      "review_note": "シリーズ第1作のポスター。転載許諾未確認。"
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
