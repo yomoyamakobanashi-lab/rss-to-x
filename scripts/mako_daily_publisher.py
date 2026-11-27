@@ -179,16 +179,34 @@ def main():
     errors=[]
     date=now.date().isoformat()
     def pending():
-        return any(r.get("status")=="accepted" for r in day_slots(state,date).values())
+        return any(r.get("status") in ("reserved", "accepted")
+                   for day in state["days"].values() for r in day.values())
     def reconcile():
-        for rec in day_slots(state,date).values():
-            if rec.get("status")=="accepted" and rec.get("buffer_id"):
-                try:
-                    post=verify(rec["buffer_id"],attempts=2,delay=5)
-                    rec.update(status="root_confirmed",external_link=post["externalLink"])
-                    write_ledger(state)
-                except Exception as exc:
-                    errors.append(f"publication unconfirmed {rec['buffer_id']}: {exc}")
+        # A queue entry can remain unresolved across midnight. Never ignore it
+        # just because the current JST date is different.
+        for original_date, day in list(state["days"].items()):
+            for slot, rec in list(day.items()):
+                if rec.get("status")=="reserved":
+                    errors.append(f"Ambiguous reservation {original_date}/{slot}; reconcile manually before further posting")
+                elif rec.get("status")=="accepted":
+                    if not rec.get("buffer_id"):
+                        errors.append(f"Missing Buffer ID {original_date}/{slot}; reconcile manually")
+                        continue
+                    try:
+                        post=verify(rec["buffer_id"],attempts=2,delay=5)
+                        rec.update(status="root_confirmed",external_link=post["externalLink"],
+                                   confirmed_at=datetime.now(JST).isoformat())
+                        # If confirmation crosses midnight, conservatively spend
+                        # the matching slot today too. The actual sent date is
+                        # not returned by the verification query.
+                        if original_date != date:
+                            day_slots(state,date).setdefault(slot, {
+                                "kind":rec["kind"], "key":"carryover:"+rec["key"],
+                                "status":"carryover_confirmed", "original_date":original_date,
+                                "buffer_id":rec["buffer_id"]})
+                        write_ledger(state)
+                    except Exception as exc:
+                        errors.append(f"publication unconfirmed {rec['buffer_id']}: {exc}")
     reconcile()
     if not pending():
         try:
