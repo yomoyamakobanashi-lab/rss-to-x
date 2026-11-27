@@ -146,16 +146,29 @@
       "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
     },
     "related_image": {
-      "status": "pending",
+      "status": "rights_checked",
       "asset_kind": "archival_photo",
-      "asset_title": "1953年の東京物語の撮影風景",
-      "source_url": "https://commons.wikimedia.org/wiki/File:Setsuko_Hara_and_Yasujiro_Ozu_in_Tokyo_Story.jpg",
-      "review_note": "旧著作権法の日本PD・米国URAA非復活タグあり。ただし原典が個人サイトで初出の証拠不足。所蔵機関で照合。",
+      "asset_title": "千光寺から見た尾道市街と尾道水道（2006年）",
+      "relation": "『東京物語』の舞台・撮影地である尾道の後年の景観。1953年の映画と同じ画角や当時の風景ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Onomichi_from_Senko-ji.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Onomichi_from_Senko-ji.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Onomichi_from_Senko-ji.jpg",
+      "rights_basis": "個別ページ122–140行：2006年3月2日本人撮影、CC BY-SA 3.0 Unported（GFDL移行）。商用共有可。都市景観全体で個別の美術作品が主題ではない。1024×768、96KBの原画像を実表示確認。撮影地の根拠はカンヌ映画祭公式 https://www.festival-cannes.com/en/f/tokyo-monogatari/ とJNTO https://www.japan.travel/en/uk/inspiration/setting-the-scene-4-bfi-japan-2020-films-and-their-filming-locations/ 。",
+      "credit": "Shinkansen（日本語版Wikipedia）／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/（無改変）",
       "checked_on": "2026-11-27",
-      "latest_candidate": {
+      "previous_candidate": {
+        "status": "pending",
+        "asset_kind": "archival_photo",
+        "asset_title": "1953年の東京物語の撮影風景",
         "source_url": "https://commons.wikimedia.org/wiki/File:Setsuko_Hara_and_Yasujiro_Ozu_in_Tokyo_Story.jpg",
-        "review_note": "1953年撮影と日本・米国PDの記載は確認したが、原典が個人Geocitiesサイトで来歴が弱い。機関所蔵資料で照合するまで保留。",
-        "checked_on": "2026-11-27"
+        "review_note": "旧著作権法の日本PD・米国URAA非復活タグあり。ただし原典が個人サイトで初出の証拠不足。所蔵機関で照合。",
+        "checked_on": "2026-11-27",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Setsuko_Hara_and_Yasujiro_Ozu_in_Tokyo_Story.jpg",
+          "review_note": "1953年撮影と日本・米国PDの記載は確認したが、原典が個人Geocitiesサイトで来歴が弱い。機関所蔵資料で照合するまで保留。",
+          "checked_on": "2026-11-27"
+        }
       }
     },
     "qa_review": {
@@ -1008,7 +1021,20 @@
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
-    "episode_guid": "24ae9826-9108-4171-ad82-8cdcaca8e10b"
+    "episode_guid": "24ae9826-9108-4171-ad82-8cdcaca8e10b",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "H・R・ギーガーの肖像（2012年）",
+      "relation": "『エイリアン』の造形に関わった芸術家の後年の肖像。映画のスチルやデザイン原画ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:HR_Giger_2012.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/HR_Giger_2012.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:HR_Giger_2012.jpg",
+      "rights_basis": "個別ページ118–151行。本人撮影、2012年7月1日。権利者の許諾はVRT #2014052310013916で確認され、CC BY-SA 3.0 Unportedを明示。商用共有可。444×600、152KBの原画像リンクを実表示確認。肖像の使用は映画史の紹介であり、番組への支持を示さない。",
+      "credit": "Matthias Belz／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/（無改変）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "sun-wilhelm-scream",
@@ -3777,11 +3803,24 @@
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Capsules.jpg",
-        "review_note": "VictorMartinの自己制作、世界的PD宣言と条件なし許諾。原画像1.99MBを実表示確認したが焦点が甘いため、鮮明な代替候補を探す。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "複数の錠剤・カプセルを収めた容器（2013年）",
+      "relation": "薬の効果に対する期待を扱う本文の概念的な参考写真。ノセボを生じさせた薬剤、実験刺激、特定の治療を示すものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bottle_of_Assorted_Pills.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Bottle_of_Assorted_Pills.JPG?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Bottle_of_Assorted_Pills.JPG",
+      "rights_basis": "個別ページ120–148行、2013年1月31日の自己撮影、CC BY-SA 3.0 Unported、商用共有可。648×484、119KBの原画像を実表示確認。特定製品の推奨・薬効表示なし。",
+      "credit": "ParentingPatch／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/（無改変）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Capsules.jpg",
+          "review_note": "VictorMartinの自己制作、世界的PD宣言と条件なし許諾。原画像1.99MBを実表示確認したが焦点が甘いため、鮮明な代替候補を探す。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
@@ -3806,7 +3845,20 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "フォックス・スタジオでの映画音楽録音風景（2004年）",
+      "relation": "映像に音楽を付ける制作過程の例。2020年の心理学実験に使用された刺激・研究参加者ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Cesar_Benito_conducting_at_Fox_Studios.JPG",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Cesar_Benito_conducting_at_Fox_Studios.JPG?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Cesar_Benito_conducting_at_Fox_Studios.JPG",
+      "rights_basis": "個別ページ121–149行、作曲家Cesar Benitoが自身の音楽の録音でオーケストラを指揮する様子。2004年7月26日本人撮影としてCC BY-SA 3.0 Unportedを明示、商用共有可。2464×1632、2.1MBの原画像を実表示確認。番組支持を示さない。",
+      "credit": "Wonderlyne／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/（無改変）",
+      "checked_on": "2026-11-27"
+    }
   },
   {
     "id": "mononoke-tatara-gender",
@@ -4021,6 +4073,19 @@
       "film_title": "AKIRA",
       "year": 1988,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ラジオドラマの収録風景（南アフリカ、2005年）",
+      "relation": "声を演じるラジオドラマの収録例。『AKIRA』の制作現場・出演者ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Recording_a_radio_drama.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Recording_a_radio_drama.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Recording_a_radio_drama.jpg",
+      "rights_basis": "個別ページ120–148行、Radio Khweziでの2005年10月30日録音、本人撮影、CC BY-SA 4.0 International。商用共有可。2816×2120、1.41MBの原画像を実表示確認。人物の支持・推奨を示さない。",
+      "credit": "Marius140%／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/（無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4811,6 +4876,19 @@
       "film_title": "The Post",
       "year": 2017,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "ワシントン・ポスト編集主幹ベン・ブラッドリーの肖像（2010年）",
+      "relation": "ペンタゴン文書報道に関わった実在の新聞編集者。映画『ペンタゴン・ペーパーズ』のスチルや1971年当時の写真ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Benjamin_C._Bradlee.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Benjamin_C._Bradlee.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Benjamin_C._Bradlee.jpg",
+      "rights_basis": "個別ページ113–136行、2010年11月1日の撮影、Flickr原典。2014年10月29日のライセンスレビューでCC BY-SA 2.0 Generic確認、商用共有可。4320×2880、3.75MBの原画像を実表示確認。人物の番組支持を示さない。",
+      "credit": "Miguel Ariel Contreras Drake-McLaughlin／CC BY-SA 2.0 https://creativecommons.org/licenses/by-sa/2.0/（無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -4890,6 +4968,15 @@
       "film_title": "La Jetée",
       "year": 1963,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:OrlyAirport_-1965.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/OrlyAirport_-1965.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+        "review_note": "1965年頃の空港写真。撮影者HZの相続人Juloによる世界的PD宣言（個別ページ113–129行）、672KB原画像を実表示確認。ただしフランスの建築著作権（管制塔が主要被写体、商用FOP制約）を確認するまで保留。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -5239,11 +5326,24 @@
       "review_note": "SNS転載許諾未確認。"
     },
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Fantasound_tracks.jpg",
-        "review_note": "1941年の業界誌に掲載された録音機の写真。米国PD（著作権表示なし）だが、日本など米国外の作者・職務著作・保護期間を精査するまで保留。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "related_object",
+      "asset_title": "1930年代の映画館用ホーンスピーカー（ロンドン映画博物館所蔵）",
+      "relation": "初期のトーキー映画館で使われた音響装置の例。ファンタサウンドの実機や65個のスピーカーの一つではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:1930%27s_loudspeaker_from_a_cinema_in_the_UK.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/54/1930%27s_loudspeaker_from_a_cinema_in_the_UK.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:1930%27s_loudspeaker_from_a_cinema_in_the_UK.jpg",
+      "rights_basis": "個別ページ120–148行。英国LittlehamptonのPalladium Cinemaで使われた1930年代の工業製品。2014年10月12日本人撮影、CC BY-SA 4.0 International、商用共有可。683×1024、320KBの原画像を実表示確認。背景の展示物は付随的。",
+      "credit": "YellowFratello／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/（無改変）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Fantasound_tracks.jpg",
+          "review_note": "1941年の業界誌に掲載された録音機の写真。米国PD（著作権表示なし）だが、日本など米国外の作者・職務著作・保護期間を精査するまで保留。",
+          "checked_on": "2026-11-27"
+        }
       }
     }
   },
