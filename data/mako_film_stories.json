@@ -363,12 +363,25 @@
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
     "related_image": {
-      "status": "pending",
-      "latest_candidate": {
-        "source_url": "https://commons.wikimedia.org/wiki/File:Kuleshov_effect.jpg",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Kuleshov_effect.jpg",
-        "review_note": "Mikelochotecoの2012年自己制作、CC BY-SA 3.0、原画像取得成功。ただし裸体・首吊りを描く図のため一般向けタイムラインには採用せず、別の説明図を探す。",
-        "checked_on": "2026-11-27"
+      "status": "rights_checked",
+      "asset_kind": "film_still",
+      "asset_title": "1917年の無声映画『Za schastem』に出演したレフ・クレショフの一コマ",
+      "relation": "編集理論の提唱者が若い頃に出演した別の映画の場面。クレショフ効果の原実験映像ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lev_Kuleshov_1917.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Lev_Kuleshov_1917.jpg",
+      "license": "public_domain",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Lev_Kuleshov_1917.jpg",
+      "rights_basis": "個別ページ121–150行、1917年ロシア帝国公開、PDM、米国の公表期間満了。https://www.silentera.com/PSFL/data/Z/ZaSchastem1917.html で作品・出演者・監督・撮影を照合。日本の旧法映画の公表後期間は満了。現代の字幕等を含まない白黒の忠実なフレーム切り出し。原画像163KBの実表示確認。",
+      "credit": "Yevgeni Bauer／Boris Zavelev／Za schastem (1917)（DVD由来の切り出し）",
+      "checked_on": "2026-11-27",
+      "previous_candidate": {
+        "status": "pending",
+        "latest_candidate": {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kuleshov_effect.jpg",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Kuleshov_effect.jpg",
+          "review_note": "Mikelochotecoの2012年自己制作、CC BY-SA 3.0、原画像取得成功。ただし裸体・首吊りを描く図のため一般向けタイムラインには採用せず、別の説明図を探す。",
+          "checked_on": "2026-11-27"
+        }
       }
     },
     "qa_review": {
@@ -2446,6 +2459,19 @@
       "film_title": "Inside Out",
       "year": 2015,
       "review_note": "版・権利者とSNS転載許諾の確認後のみ添付。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "科学監修者ポール・エクマンの2013年公式広報写真",
+      "relation": "本文に登場する感情研究者の公式写真。映画本編の素材ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Paul_Ekman.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Paul_Ekman.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Paul_Ekman.jpg",
+      "rights_basis": "個別ページ119–146行、権利者Paul Ekman Group, LLCからの許諾をVRT #2014100110013055で確認。CC BY-SA 3.0 Unportedで商用共有可。人物の番組支持を示さない。原画像1.67MBの実表示確認。",
+      "credit": "Paul Ekman Group, LLC／CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/（無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3088,6 +3114,19 @@
       "film_title": "The Truman Show",
       "year": 1998,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "archival_photo",
+      "asset_title": "『トゥルーマン・ショー』の撮影に使われた住宅の2018年写真",
+      "relation": "フィクションの舞台となった実在の建築の外観。心理学的症状の実例ではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:House_from_The_Truman_Show_film.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/House_from_The_Truman_Show_film.jpg",
+      "license": "CC-BY-SA",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:House_from_The_Truman_Show_film.jpg",
+      "rights_basis": "個別ページ120–141行、2018年本人撮影、CC BY-SA 4.0 International。公道から見える米国建築の外観（17 USC 120(a)）、日本の建築著作物の写真利用は著作権法46条の範囲。商用共有可。原画像3.6MBの実表示確認。",
+      "credit": "Jakesilb14／CC BY-SA 4.0 https://creativecommons.org/licenses/by-sa/4.0/（無改変）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3123,6 +3162,19 @@
       "film_title": "Singin' in the Rain",
       "year": 1952,
       "review_note": "ポスターの作者・版・SNS再利用許諾未確認。初期映画でポスターがない場合は別の権利確認済み資料を検討。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "scientific_image",
+      "asset_title": "マガーク効果の実演動画から自動生成された静止画（2024年）",
+      "relation": "口元と音声の不一致を示す実演動画の一コマ。1976年の原実験の刺激ではなく、静止画だけで効果が起こるわけではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:The_McGurk_Effect.webm",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/The_McGurk_Effect.webm/960px-The_McGurk_Effect.webm.jpg",
+      "license": "CC-BY",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:The_McGurk_Effect.webm",
+      "rights_basis": "個別ページ121–150行、2024年YouTubeのCC BY 3.0表示。商用共有・翻案可。人物の番組支持を示さず、実演内容の紹介のみ。背景の絵画は付随的。個別ページの960×540 JPEGプレビューの実表示確認、CIで媒体と容量を再確認。",
+      "credit": "The Plant Yourself Podcast／CC BY 3.0 https://creativecommons.org/licenses/by/3.0/（動画からの静止画）",
+      "checked_on": "2026-11-27"
     }
   },
   {
@@ -3710,6 +3762,14 @@
       "film_title": "Nocebo",
       "year": 2022,
       "review_note": "ポスターの版・権利者・SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Globuli_Placebo.jpg",
+        "review_note": "CC BY 4.0の本人制作写真だが原画像7.72MB、縮小版取得に失敗。別の鮮明な資料を探す。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -4273,7 +4333,15 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://commons.wikimedia.org/wiki/File:Haunted_house_attraction_in_Hyde_Park_Winter_Wonderland_2017.jpg",
+        "review_note": "撮影者のCC BY-SA 4.0と原画像は確認したが、一時的な装飾造形物が主題に含まれるため、被写体の権利確認まで保留。",
+        "checked_on": "2026-11-27"
+      }
+    }
   },
   {
     "id": "doctor-empathy-training",
@@ -4302,6 +4370,14 @@
       "film_title": "The Doctor",
       "year": 1991,
       "review_note": "SNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6892313/",
+        "review_note": "原論文本文96行でCC BY 2.0確認。図表の内容・独立した素材URLおよび配信ホストの追加検証が必要。",
+        "checked_on": "2026-11-27"
+      }
     }
   },
   {
@@ -5382,7 +5458,15 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "related_image": {
+      "status": "pending",
+      "latest_candidate": {
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7492010/",
+        "review_note": "本文91–94行はElsevierの研究再利用許諾のみ、商用SNS掲載を明示しないため図表の転載は見送る。別の素材を検討。",
+        "checked_on": "2026-11-27"
+      }
+    }
   },
   {
     "id": "drama-bonding-pain",
@@ -5411,6 +5495,19 @@
       "film_title": "Stuart: A Life Backwards",
       "year": 2007,
       "review_note": "ポスターのSNS転載許諾未確認。"
+    },
+    "related_image": {
+      "status": "rights_checked",
+      "asset_kind": "historical_art",
+      "asset_title": "観客が同じ映画を観る場面のイラスト（2012年）",
+      "relation": "映画鑑賞という集団経験を表す模式的なイラスト。研究対象者や研究の結果を描いたものではない。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Movie_theater_with_an_audience.svg",
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Movie_theater_with_an_audience.svg/960px-Movie_theater_with_an_audience.svg.png",
+      "license": "CC0",
+      "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Movie_theater_with_an_audience.svg",
+      "rights_basis": "個別ページ120–134行、Open Clipart原典でCC0を明示、商用利用可。個別ページの960×812 PNGプレビューを実表示確認。CIで媒体と容量を再確認。",
+      "credit": "Merlin2525／Open Clipart／CC0 1.0 https://creativecommons.org/publicdomain/zero/1.0/（PNG変換）",
+      "checked_on": "2026-11-27"
     }
   },
   {
