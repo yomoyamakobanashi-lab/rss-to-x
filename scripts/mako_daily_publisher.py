@@ -76,6 +76,20 @@ def due_story(now, state, rows):
         return None
     return stories.select(rows,now.weekday(),set(state["used_story_ids"]))
 
+def due_visual_story(now, state, rows):
+    """Skip unlicensed or unavailable images before any durable reservation."""
+    if now.hour < 7 or "story" in day_slots(state,now.date().isoformat()):
+        return None
+    used = set(state["used_story_ids"])
+    for item in rows:
+        if item["weekday"] != now.weekday() or item["id"] in used:
+            continue
+        visual = stories.reachable_visual(item)
+        if visual:
+            field, url = visual
+            return item, field, url
+    return None
+
 def newest_feed():
     response=requests.get(RSS,timeout=30,headers={"User-Agent":"ReelPalDaily/1.0"})
     response.raise_for_status()
@@ -184,12 +198,12 @@ def main():
         reconcile()
     if not pending():
         try:
-            item=due_story(now,state,rows)
-            if item:
-                image_url=stories.reachable_poster(item)
-                reserve_and_send(state,date,"story","story",item["id"],stories.render(item),image_url=image_url)
+            ready=due_visual_story(now,state,rows)
+            if ready:
+                item, field, image_url=ready
+                reserve_and_send(state,date,"story","story",item["id"],stories.render(item,visual_field=field),image_url=image_url)
             elif now.hour>=7 and "story" not in day_slots(state,date):
-                print("[SKIP] no reviewed story for today's weekday")
+                raise RuntimeError("No unused story with a reachable rights-cleared visual; story slot held without reservation")
         except Exception as exc:
             errors.append(f"story: {exc}")
         reconcile()
