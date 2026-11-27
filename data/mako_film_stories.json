@@ -24,7 +24,15 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Nosferatu",
+      "year": 1922,
+      "source_url": "https://www.smb.museum/fileadmin/website/Presse/Pressematerial/2022/12/SSG_Nosferatu_Pressebilder.pdf",
+      "review_note": "Berlin State Museumsの展示資料にAlbin Grauによる1921年広告の記載。1922年の劇場版原画と現代版を区別し、Grauの没年1971年および日本・原産国での保護期間を精査する。許諾未確認。",
+      "rights_reviewed_on": "2026-11-27"
+    }
   },
   {
     "id": "tue-capricorn-one",
@@ -51,7 +59,13 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Capricorn One",
+      "year": 1977,
+      "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    }
   },
   {
     "id": "wed-tokyo-story",
@@ -73,7 +87,13 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "Tokyo Story",
+      "year": 1953,
+      "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    }
   },
   {
     "id": "thu-twelve-angry-men",
@@ -100,7 +120,13 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "12 Angry Men",
+      "year": 1957,
+      "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    }
   },
   {
     "id": "fri-the-witch",
@@ -128,7 +154,13 @@
       }
     ],
     "review_status": "source_checked",
-    "checked_on": "2026-11-27"
+    "checked_on": "2026-11-27",
+    "poster": {
+      "status": "pending",
+      "film_title": "The Witch",
+      "year": 2015,
+      "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    }
   },
   {
     "id": "sat-back-to-the-future-casting",
@@ -156,7 +188,13 @@
     ],
     "review_status": "source_checked",
     "checked_on": "2026-11-27",
-    "episode_guid": "73938f1f-b8be-4b52-abed-24269a0d31b6"
+    "episode_guid": "73938f1f-b8be-4b52-abed-24269a0d31b6",
+    "poster": {
+      "status": "pending",
+      "film_title": "Back to the Future",
+      "year": 1985,
+      "review_note": "初期投稿候補。劇場版ポスターの公式配給元・素材利用規約と権利者の許諾を優先して調査する。"
+    }
   },
   {
     "id": "sun-kuleshov",
@@ -211,7 +249,9 @@
       "source_url": "https://commons.wikimedia.org/wiki/File:Das_Kabinett_des_Doktor_Caligari_1920_Poster.jpg",
       "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Das_Kabinett_des_Doktor_Caligari_1920_Poster.jpg",
       "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Das_Kabinett_des_Doktor_Caligari_1920_Poster.jpg",
-      "review_note": "CommonsのPD表示を確認。作者帰属・日本での利用可否を追加確認し、画像URL取得時429のため自動添付は未承認。"
+      "review_note": "Commonsの1920年版・米国PD・作者1945年没表示と別ファイルの両作者情報を確認。Fritz Bernhardの同名異人の可能性と原版の来歴に疑義があり、画像の直接取得にも失敗。機関所蔵品と作者を照合するまで未承認。",
+      "rights_reviewed_on": "2026-11-27",
+      "alternative_candidate_url": "https://commons.wikimedia.org/wiki/File:1920-02_anonyme_K%C3%BCnstlerInnen_Plakat_Du_musst_Caligari_werden,_im_Marmorhaus_am_Donnerstag,_den_26._Februar.jpg"
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
@@ -246,7 +286,9 @@
       "year": 1902,
       "source_url": "https://commons.wikimedia.org/wiki/File:Trip-to-moon-1902.jpg",
       "rights_evidence_url": "https://commons.wikimedia.org/wiki/File:Trip-to-moon-1902.jpg",
-      "review_note": "CommonsにポスターとPD-Artの表示あり。ただし米国PDタグ不備の注意書き、原典・画像品質の再確認が必要。未承認。"
+      "review_note": "260×273のポスター画像は米国PDタグ不備・原版来歴不十分。別候補の監督自筆ポスター下絵は完成ポスターではないため区別。仏国・日本の戦時加算を含む期間と原版・デジタル画像の権利を要確認。",
+      "rights_reviewed_on": "2026-11-27",
+      "alternative_candidate_url": "https://commons.wikimedia.org/wiki/File:Voyage_dans_la_Lune_affiche.jpg"
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
@@ -765,7 +807,9 @@
       "status": "pending",
       "film_title": "Safety Last!",
       "year": 1923,
-      "review_note": "当時のポスターの作者と権利を確認するまで添付しない。"
+      "review_note": "1923年ポスター候補を発見。作者・原版来歴・日本を含む利用地域・直接画像を要確認。",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Safety_last_poster.jpg",
+      "rights_reviewed_on": "2026-11-27"
     },
     "review_status": "source_checked",
     "checked_on": "2026-11-27"
