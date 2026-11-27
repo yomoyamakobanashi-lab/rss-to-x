@@ -1,15 +1,6 @@
 name: Mako visual accessibility audit
 
 on:
-  push:
-    branches:
-      - feature/mako-film-stories
-    paths:
-      - 'data/mako_film_stories.json'
-      - 'scripts/mako_film_stories.py'
-      - 'scripts/audit_mako_visuals.py'
-      - '.github/workflows/mako-visual-audit.yml'
-      - 'state_mako_publish.json'
   pull_request:
     paths:
       - 'data/mako_film_stories.json'
@@ -17,6 +8,8 @@ on:
       - 'scripts/audit_mako_visuals.py'
       - '.github/workflows/mako-visual-audit.yml'
       - 'state_mako_publish.json'
+      - 'tests/test_mako_posters.py'
+      - 'scripts/mako_daily_publisher.py'
   workflow_dispatch:
 
 permissions:
