@@ -171,6 +171,13 @@ def load_bank(require_full=False):
     counts = Counter(r["weekday"] for r in rows)
     if require_full and any(counts[d] < 20 for d in range(7)):
         raise ValueError(f"Initial release gate: require 20 checked stories per weekday; current={dict(counts)}")
+    if require_full:
+        pending = [r["id"] for r in rows if (r.get("qa_review") or {}).get("status") != "rechecked" or not (r.get("qa_review") or {}).get("checked_on") or not (r.get("qa_review") or {}).get("note")]
+        if pending:
+            raise ValueError(f"Initial release gate: {len(pending)} stories lack completed editorial/source re-audit")
+        visual_counts = Counter(r["weekday"] for r in rows if visual_assets(r))
+        if any(visual_counts[d] < 2 for d in range(7)):
+            raise ValueError(f"Initial release gate: insufficient cleared visual records: {dict(visual_counts)}")
     return rows
 
 def select(rows, weekday, used):
