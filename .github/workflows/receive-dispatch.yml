@@ -1,13 +1,13 @@
 name: receive-dispatch
 
 on:
-  repository_dispatch:
-    types: [post-podcast, post-note]
   workflow_dispatch:
+
+# Retired: all automatic publishing is centralized in mako-film-stories.yml.
 
 jobs:
   post-podcast:
-    if: github.event.action == 'post-podcast'
+    if: ${{ false }} # Retired to enforce the daily cap
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -49,7 +49,7 @@ jobs:
           git push
 
   post-note:
-    if: github.event.action == 'post-note'
+    if: ${{ false }} # Retired to enforce the daily cap
     runs-on: ubuntu-latest
     permissions:
       contents: write

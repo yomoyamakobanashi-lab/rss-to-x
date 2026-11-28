@@ -1,10 +1,9 @@
 name: Trend Episode Tie-in
 
 on:
-  schedule:
-    # 12:35 / 15:35 / 19:35 JST。通常3枠から90分以上離し、1日最大1投稿。
-    - cron: '35 3,6,10 * * *'
   workflow_dispatch:
+
+# Retired: all automatic publishing is centralized in mako-film-stories.yml.
 
 concurrency:
   group: trend-episode-tiein
@@ -12,6 +11,7 @@ concurrency:
 
 jobs:
   post:
+    if: ${{ false }} # Retired to enforce the daily cap
     runs-on: ubuntu-latest
     permissions:
       contents: write

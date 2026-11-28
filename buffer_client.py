@@ -190,21 +190,31 @@ def post_video(text: str, video_url: str) -> str:
     })
 
 
-def post_thread(posts: Iterable[str]) -> str:
+def post_thread(posts: Iterable[str], *, image_url: Optional[str] = None) -> str:
     texts = [_ensure_reelpal_tag(p) for p in posts if str(p).strip()]
     if not texts:
         raise BufferError("Thread is empty.")
 
+    assets = []
+    if image_url:
+        from urllib.parse import urlsplit
+        url = urlsplit(image_url)
+        if url.scheme != "https" or not url.hostname or url.username or url.password:
+            raise BufferError("Thread image requires a public HTTPS URL.")
+        assets = [{"image": {"url": image_url}}]
+    thread = [{"text": text} for text in texts]
+    if assets:
+        thread[0]["assets"] = assets
     channel_id = resolve_x_channel_id()
     data: Dict[str, Any] = {
         "text": texts[0],
         "channelId": channel_id,
         "schedulingType": "automatic",
         "mode": "shareNow",
-        "assets": [],
+        "assets": assets,
         "metadata": {
             "twitter": {
-                "thread": [{"text": text} for text in texts],
+                "thread": thread,
             }
         },
     }

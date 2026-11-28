@@ -1,23 +1,9 @@
 name: Daily Multi-Pattern Posts via Buffer
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - '.github/workflows/daily_content_posts.yml'
-  schedule:
-    # Twice-hourly heartbeat. The dispatcher publishes at most one missing JST
-    # slot per run: 08:10 engagement, 17:10 feature, 21:20 funny clip.
-    # Repeated runs absorb GitHub scheduler delays without duplicate posts.
-    - cron: '12,42 * * * *'
   workflow_dispatch:
-    inputs:
-      slot:
-        description: 'Optional selected slot (daily duplicate guard remains active)'
-        type: choice
-        options: ['', engagement, feature, funny]
-        default: ''
+
+# Retired: all automatic publishing is centralized in mako-film-stories.yml.
 
 concurrency:
   group: daily-content-post
@@ -25,6 +11,7 @@ concurrency:
 
 jobs:
   post:
+    if: ${{ false }} # Retired to enforce the daily cap
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
